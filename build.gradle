@@ -150,8 +150,8 @@ project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
 
 sonarqube {
   properties {
-    property "sonar.projectName", "Reform :: ia-task-configuration"
-    property "sonar.projectKey", "uk.gov.hmcts.reform:ia-task-configuration"
+    property "sonar.projectName", "Reform :: sscs-task-configuration"
+    property "sonar.projectKey", "uk.gov.hmcts.reform:sscs-task-configuration"
     property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.destination.path}"
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build/reports/pitest"
@@ -280,7 +280,7 @@ mainClassName = 'uk.gov.hmcts.reform.iataskconfiguration.Application'
 
 bootJar {
   getArchiveFileName().set(provider {
-    'ia-task-configuration.jar'
+    'sscs-task-configuration.jar'
   })
 
   manifest {

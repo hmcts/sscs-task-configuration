@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <decision id="wa-task-initiation-sscs-asylum" name="Task initiation DMN">
+    <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
+      <input id="Input_1" label="Event Id" biodi:width="150" camunda:inputVariable="eventId">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0gxli97" label="Post event state" biodi:width="150" camunda:inputVariable="postEventState">
+        <inputExpression id="LiteralExpression_0dijl5x" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0a0i7vo" label="Case data" biodi:width="150" camunda:inputVariable="caseData">
+        <inputExpression id="LiteralExpression_18qwedg" typeRef="context">
+          <text>if(additionalData != null and additionalData.Data != null) then
+            additionalData.Data
+else
+null</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="150" />
+      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
+      <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" biodi:width="150" />
+      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
+      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="150" />
+      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="167" />
+      <rule id="DecisionRule_1k8i9hn">
+        <description>This event is automatically set in the backend to be sent to the TCW</description>
+        <inputEntry id="UnaryTests_0h7w1r5">
+          <text>"nonCompliant"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04h5jg8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jwc1y5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1f3k7q8">
+          <text>"nonCompliantCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0el1oa6">
+          <text>"Review non-compliant appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f8uqqi">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_133o9s1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ukwua4">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mhv54f">
+          <text>"Non-compliant appeal"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0b2rkcb">
+      <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="wa-task-initiation-sscs-asylum">
+        <dc:Bounds height="80" width="180" x="150" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
