@@ -1,8 +1,8 @@
 apiVersion: v2
 appVersion: "1.0"
-description: A Helm chart for ia-task-configuration
-name: ia-task-configuration
-home: https://github.com/hmcts/ia-task-configuration
+description: A Helm chart for sscs-task-configuration
+name: sscs-task-configuration
+home: https://github.com/hmcts/sscs-task-configuration
 version: 0.0.3
 maintainers:
   - name: HMCTS IA team
