@@ -1,7 +1,5 @@
 package uk.gov.hmcts.reform.sscstaskconfiguration.dmn;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -13,8 +11,6 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -77,19 +73,4 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     }
 
-    private static Map<String, Object> mapAppealType(String appealType) {
-        String appealTypeJson = "{\n"
-            + "   \"Data\":{\n"
-            + "      \"appealType\":\"" + appealType + "\"\n"
-            + "   }"
-            + "}";
-
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {};
-            return mapper.readValue(appealTypeJson, typeRef);
-        } catch (IOException exp) {
-            return null;
-        }
-    }
 }
