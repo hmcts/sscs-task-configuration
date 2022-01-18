@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
+    <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
+      <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
+        <inputExpression id="LiteralExpression_0mra7c4" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1gmuynt" label="Task type" biodi:width="433" camunda:inputVariable="taskType">
+        <inputExpression id="LiteralExpression_06iiuqg" typeRef="string">
+          <text>if(taskAttributes != null and taskAttributes.taskType != null) then
+            taskAttributes. taskType
+else if(taskType != null) then
+           taskType
+else
+null</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Name" name="name" typeRef="string" />
+      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803" />
+      <rule id="DecisionRule_10goihw">
+        <inputEntry id="UnaryTests_1n5wqd9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04lvh6q">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qayxq9">
+          <text>"caseName"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lbw710">
+          <text>caseData.appellant.name.lastName + " " + caseData.appellant.name.firstName</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xh6yqh">
+        <inputEntry id="UnaryTests_138e5ef">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kpd113">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15029tr">
+          <text>"appealType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mn1js2">
+          <text>if caseData.appealType = "refusalOfHumanRights" then "Human rights" else if caseData.appealType = "refusalOfEu" then "EEA" else if caseData.appealType = "deprivation" then "DoC" else if caseData.appealType = "protection" then "Protection" else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qbrzih">
+        <inputEntry id="UnaryTests_0sgk9gd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mvokun">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_194f7nt">
+          <text>"region"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hlvz73">
+          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.region != null) then caseData.caseManagementLocation.region else "1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09ksn97">
+        <inputEntry id="UnaryTests_0i2az6v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r0efn4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12canls">
+          <text>"location"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hg2iro">
+          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null) then caseData.caseManagementLocation.baseLocation else "765324"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xsawhn">
+        <inputEntry id="UnaryTests_19dgc8v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v0wsg1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dqrppp">
+          <text>"locationName"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yff1wo">
+          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null  and caseData.staffLocation != null) then caseData.staffLocation else "Taylor House"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yf9fqm">
+        <inputEntry id="UnaryTests_11xijq8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r6p5ko">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nlcr5p">
+          <text>"caseManagementCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v8s40b">
+          <text>if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code = "refusalOfHumanRights") then "Human rights"
+else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code = "refusalOfEu") then "EEA"
+else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code = "deprivation") then "DoC"
+else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code = "protection") then "Protection"
+else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code = "revocationOfProtection") then "Revocation"
+else if caseData.appealType = "refusalOfHumanRights" then "Human rights"
+else if caseData.appealType = "refusalOfEu" then "EEA"
+else if caseData.appealType = "deprivation" then "DoC"
+else if caseData.appealType = "protection" then "Protection"
+else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b3lvi5">
+        <inputEntry id="UnaryTests_1n34fh3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08pgifm">
+          <text>"nonCompliant"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nlybba">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0u1sa2d">
+          <text>"routine_work"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1ifewa3">
+      <dmndi:DMNShape id="DMNShape_0ijg0or" dmnElementRef="wa-task-configuration-sscs-benefit">
+        <dc:Bounds height="80" width="180" x="150" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
