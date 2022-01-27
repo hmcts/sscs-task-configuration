@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
   <decision id="wa-task-initiation-sscs-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" biodi:width="150" camunda:inputVariable="eventId">
@@ -54,6 +54,64 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mhv54f">
           <text>"Non-compliant appeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_14htjjr">
+        <inputEntry id="UnaryTests_13yi1km">
+          <text>"dwpSupplementaryResponse","uploadFurtherEvidence","uploadDocumentFurtherEvidence","dwpUploadResponse","uploadDocument"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lz6kaw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n5y3t4">
+          <text>(caseData.addedDocument.audioDocument &gt;= 1) or (caseData.addedDocument.videoDocument &gt;= 1)</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10jlsrn">
+          <text>"processAudioVideoEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07gzqrs">
+          <text>"Process audio / video evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uzcjmq">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08bktnz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t47gf9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d0q6cx">
+          <text>"Review audio/video evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1izavtt">
+        <inputEntry id="UnaryTests_00gd3el">
+          <text>"processAudioVideo"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nrua1t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oav75p" expressionLanguage="juel">
+          <text>caseData.processAudioVideoAction=="sendToJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qb3yd6">
+          <text>"processAudioVideoEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rp8oex">
+          <text>"Process audio / video evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dtzhqw">
+          <text>"Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ul0tmw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ec7syc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14bjh0l">
+          <text>"Review audio/video evidence"</text>
         </outputEntry>
       </rule>
     </decisionTable>

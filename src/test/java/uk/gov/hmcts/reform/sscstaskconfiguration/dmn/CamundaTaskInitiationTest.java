@@ -16,6 +16,8 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import static java.util.Collections.singletonList;
+import static java.util.stream.Stream.concat;
+import static java.util.stream.Stream.of;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_SSCS_ASYLUM;
@@ -29,19 +31,62 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     static Stream<Arguments> scenarioProvider() {
 
-        return Stream.of(
-            Arguments.of(
-                "nonCompliant",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "nonCompliantCase",
-                        "name", "Review non-compliant appeal",
-                        "group", "TCW",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "Non-compliant appeal"
-                        )
+        return concat(of(rowOne()), rowTwo());
+    }
+
+    /*private static Arguments rowThree() {
+        return Arguments.of(
+            "processAudioVideo",
+            null,
+            Map.of("processAudioVideoAction", 2),
+            singletonList(
+                Map.of(
+                    "taskId", "processAudioVideoEvidence",
+                    "name", "Process audio / video evidence",
+                    "group", "Judge",
+                    "processCategories", "Review audio/video evidence"
+                )
+            )
+        );
+    }*/
+
+    private static Stream<Arguments> rowTwo() {
+        return of(
+                "dwpSupplementaryResponse",
+                "uploadFurtherEvidence",
+                "uploadDocumentFurtherEvidence",
+                "dwpUploadResponse",
+                "uploadDocument"
+            )
+            .map(taskId ->
+                     Arguments.of(
+                         taskId,
+                         null,
+                         Map.of("addedDocument", Map.of("addedDocument", "document")),
+                         singletonList(
+                             Map.of(
+                                 "taskId", "processAudioVideoEvidence",
+                                 "name", "Process audio / video evidence",
+                                 "group", "TCW",
+                                 "processCategories", "Review audio/video evidence"
+                             )
+                         )
+                     )
+            );
+    }
+
+    private static Arguments rowOne() {
+        return Arguments.of(
+            "nonCompliant",
+            null,
+            null,
+            singletonList(
+                Map.of(
+                    "taskId", "nonCompliantCase",
+                    "name", "Review non-compliant appeal",
+                    "group", "TCW",
+                    "workingDaysAllowed", 2,
+                    "processCategories", "Non-compliant appeal"
                 )
             )
         );
@@ -51,13 +96,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     @MethodSource("scenarioProvider")
     void given_multiple_event_ids_should_evaluate_dmn(String eventId,
                                                       String postEventState,
-                                                      Map<String, Object> map,
+                                                      Map<String, Object> caseData,
                                                       List<Map<String, String>> expectation) {
 
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
-        inputVariables.putValue("additionalData", map);
+        inputVariables.putValue("caseData", caseData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -69,7 +114,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(1));
+        assertThat(logic.getRules().size(), is(3));
 
     }
 
