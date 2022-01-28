@@ -1,5 +1,15 @@
 package uk.gov.hmcts.reform.sscstaskconfiguration.dmn;
 
+import static java.util.Collections.singletonList;
+import static java.util.stream.Stream.concat;
+import static java.util.stream.Stream.of;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_SSCS_ASYLUM;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -10,17 +20,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
-
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Stream;
-
-import static java.util.Collections.singletonList;
-import static java.util.stream.Stream.concat;
-import static java.util.stream.Stream.of;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_SSCS_ASYLUM;
 
 class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
@@ -34,21 +33,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         return concat(of(rowOne()), rowTwo());
     }
 
-    /*private static Arguments rowThree() {
-        return Arguments.of(
-            "processAudioVideo",
-            null,
-            Map.of("processAudioVideoAction", 2),
-            singletonList(
-                Map.of(
-                    "taskId", "processAudioVideoEvidence",
-                    "name", "Process audio / video evidence",
-                    "group", "Judge",
-                    "processCategories", "Review audio/video evidence"
-                )
-            )
-        );
-    }*/
+//    private static Arguments rowThree() {
+//        return Arguments.of(
+//            "processAudioVideo",
+//            null,
+//            Map.of("processAudioVideoAction", "sendToJudge"),
+//            singletonList(
+//                Map.of(
+//                    "taskId", "processAudioVideoEvidence",
+//                    "name", "Process audio / video evidence",
+//                    "group", "Judge",
+//                    "processCategories", "Review audio/video evidence"
+//                )
+//            )
+//        );
+//    }
 
     private static Stream<Arguments> rowTwo() {
         return of(
@@ -62,7 +61,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                      Arguments.of(
                          taskId,
                          null,
-                         Map.of("addedDocument", Map.of("addedDocument", "document")),
+                         Map.of("addedDocument", Map.of("audioDocument", "1")),
                          singletonList(
                              Map.of(
                                  "taskId", "processAudioVideoEvidence",
@@ -102,7 +101,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
-        inputVariables.putValue("caseData", caseData);
+        inputVariables.putValue("caseData", (caseData == null) ? null : Map.of("Data", caseData));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
