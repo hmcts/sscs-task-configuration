@@ -3,12 +3,12 @@ package uk.gov.hmcts.reform.sscstaskconfiguration;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum DmnDecisionTable {
-    WA_TASK_ALLOWED_DAYS_SSCS_BENEFIT("wa-task-allowed-days-sscs-benefit", "wa-task-allowed-days-sscs-benefit.dmn"),
-    WA_TASK_CANCELLATION_SSCS_BENEFIT("wa-task-cancellation-sscs-benefit", "wa-task-cancellation-sscs-benefit.dmn"),
-    WA_TASK_COMPLETION_SSCS_BENEFIT("wa-task-completion-sscs-benefit", "wa-task-completion-sscs-benefit.dmn"),
-    WA_TASK_CONFIGURATION_SSCS_BENEFIT("wa-task-configuration-sscs-benefit", "wa-task-configuration-sscs-benefit.dmn"),
-    WA_TASK_INITIATION_SSCS_BENEFIT("wa-task-initiation-sscs-benefit", "wa-task-initiation-sscs-benefit.dmn"),
-    WA_TASK_PERMISSIONS_SSCS_BENEFIT("wa-task-permissions-sscs-benefit", "wa-task-permissions-sscs-benefit.dmn");
+    WA_TASK_ALLOWED_DAYS_SSCS_ASYLUM("wa-task-allowed-days-sscs-asylum", "wa-task-allowed-days-sscs-asylum.dmn"),
+    WA_TASK_CANCELLATION_SSCS_ASYLUM("wa-task-cancellation-sscs-asylum", "wa-task-cancellation-sscs-asylum.dmn"),
+    WA_TASK_COMPLETION_SSCS_ASYLUM("wa-task-completion-sscs-asylum", "wa-task-completion-sscs-asylum.dmn"),
+    WA_TASK_CONFIGURATION_SSCS_ASYLUM("wa-task-configuration-sscs-asylum", "wa-task-configuration-sscs-asylum.dmn"),
+    WA_TASK_INITIATION_SSCS_ASYLUM("wa-task-initiation-sscs-asylum", "wa-task-initiation-sscs-asylum.dmn"),
+    WA_TASK_PERMISSIONS_SSCS_ASYLUM("wa-task-permissions-sscs-asylum", "wa-task-permissions-sscs-asylum.dmn");
 
     @JsonValue
     private final String key;
