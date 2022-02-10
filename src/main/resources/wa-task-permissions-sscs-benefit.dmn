@@ -22,7 +22,7 @@ else
       <output id="OutputClause_1n914lw" label="Assignment Priority" name="assignmentPriority" typeRef="integer" />
       <output id="OutputClause_04cbxc1" label="Auto Assignable" name="autoAssignable" typeRef="boolean" />
       <rule id="DecisionRule_03pnfh8">
-        <description>supervisor task permissions</description>
+        <description>Supervisor task permissions</description>
         <inputEntry id="UnaryTests_1ossj9o">
           <text></text>
         </inputEntry>
@@ -49,7 +49,7 @@ else
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ivpl63">
-        <description>case manager task permissions</description>
+        <description>Case manager task permissions</description>
         <inputEntry id="UnaryTests_155q736">
           <text>"nonCompliantCase"</text>
         </inputEntry>
@@ -126,6 +126,33 @@ else
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1kjalwr">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1khl2xx">
+        <description>Judge</description>
+        <inputEntry id="UnaryTests_13an5ms">
+          <text>"nonCompliantCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o6yjyx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lyrtuv">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06l1ywb">
+          <text>"Read,Refer,Execute"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oxr6hi">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r3m3rx">
+          <text>"SSCS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xjg5c7">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02siarc">
           <text>false</text>
         </outputEntry>
       </rule>
