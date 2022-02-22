@@ -129,6 +129,33 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_10bp02r">
+        <description>supervisor task permissions</description>
+        <inputEntry id="UnaryTests_15xnalk">
+          <text>"nonCompliantCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y7p0fb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sumsjc">
+          <text>"caseworker-sscs-registrar"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0syqyls">
+          <text>"Read,Refer,Own,Manage,Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09olf5o">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0710j08">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bgekmq">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fwc2um">
+          <text>true</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
