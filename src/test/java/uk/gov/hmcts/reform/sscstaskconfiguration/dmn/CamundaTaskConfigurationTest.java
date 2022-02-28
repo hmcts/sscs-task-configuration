@@ -1,16 +1,23 @@
 package uk.gov.hmcts.reform.sscstaskconfiguration.dmn;
 
+import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
+import org.camunda.bpm.engine.variable.VariableMap;
+import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 import org.junit.jupiter.params.provider.Arguments;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -23,75 +30,122 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_SSCS_BENEFIT;
     }
 
-    private static Stream<Arguments> rowOne() {
+//    private static Stream<Arguments> rowOne() {
+//        return Stream.of(
+//            Arguments.of(
+//                singletonList(
+//                    Map.of(
+//                        "name", "location",
+//                        "value", 1
+//                    )
+//                )
+//            )
+//        );
+//    }
+//
+//        private static Stream<Arguments> rowTwo() {
+//        return Stream.of(
+//            Arguments.of(
+//                singletonList(
+//                    Map.of(
+//                        "name", "locationName",
+//                        "value", "HMCTS"
+//                    )
+//                )
+//            )
+//        );
+//    }
+//
+//    private static Stream<Arguments> rowThree() {
+//        return Stream.of(
+//            Arguments.of(
+//                singletonList(
+//                    Map.of(
+//                        "name", "workType",
+//                        "value", "routine_work"
+//                    )
+//                )
+//            )
+//        );
+//    }
+//
+//    private static Stream<Arguments> rowFour() {
+//        return Stream.of(
+//            Arguments.of(
+//                singletonList(
+//                    Map.of(
+//                        "name", "roleCategory",
+//                        "value", "LEGAL_OPERATIONS"
+//                    )
+//                )
+//            )
+//        );
+//    }
+//
+//    private static Stream<Arguments> rowFive() {
+//        return Stream.of(
+//            Arguments.of(
+//                singletonList(
+//                    Map.of(
+//                        "name", "description",
+//                        "value", "Description of what needs to be done to complete the task"
+//                    )
+//                )
+//            )
+//        );
+//    }
+
+    static Stream<Arguments> scenarioProvider() {
+        List<Map<String, Object>> expectationList = List.of(
+            Map.of(
+                "name", "location",
+                "value", "1"
+            ),
+            Map.of(
+                "name", "locationName",
+                "value", "HMCTS"
+            ),
+            Map.of(
+                "name", "workType",
+                "value", "routine_work"
+            ),
+            Map.of(
+                "name", "roleCategory",
+                "value", "LEGAL_OPERATIONS"
+            ),
+            Map.of(
+                "name", "description",
+                "value", "Description of what needs to be done to complete the task"
+            )
+        );
+
         return Stream.of(
             Arguments.of(
-                singletonList(
-                    Map.of(
-                        "name", "location",
-                        "value", 1
-                    )
-                )
+                expectationList
             )
         );
     }
 
-        private static Stream<Arguments> rowTwo() {
-        return Stream.of(
-            Arguments.of(
-                singletonList(
-                    Map.of(
-                        "name", "locationName",
-                        "value", "HMCTS"
-                    )
-                )
-            )
-        );
-    }
 
-    private static Stream<Arguments> rowThree() {
-        return Stream.of(
-            Arguments.of(
-                singletonList(
-                    Map.of(
-                        "name", "workType",
-                        "value", "routine_work"
-                    )
-                )
-            )
-        );
-    }
+    @ParameterizedTest
+    @MethodSource("scenarioProvider")
+    void when_caseData_and_taskType_then_return_expected_name_and_value_rows_one(List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("caseData", null);
+        inputVariables.putValue("taskAttributes", null);
 
-    private static Stream<Arguments> rowFour() {
-        return Stream.of(
-            Arguments.of(
-                singletonList(
-                    Map.of(
-                        "name", "roleCategory",
-                        "value", "LEGAL_OPERATIONS"
-                    )
-                )
-            )
-        );
-    }
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+        List<Map<String, Object>> dmnDecisionResultList = dmnDecisionTableResult.getResultList().stream()
+            .collect(Collectors.toList());
 
-    private static Stream<Arguments> rowFive() {
-        return Stream.of(
-            Arguments.of(
-                singletonList(
-                    Map.of(
-                        "name", "description",
-                        "value", "Description of what needs to be done to complete the task"
-                    )
-                )
-            )
-        );
+        assertThat(dmnDecisionResultList, is(expectation));
     }
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
+
         assertThat(logic.getRules().size(), is(5));
     }
 
