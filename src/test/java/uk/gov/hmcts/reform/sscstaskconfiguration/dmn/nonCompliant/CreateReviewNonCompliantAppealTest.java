@@ -17,10 +17,6 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
-
-
-
-
 public class CreateReviewNonCompliantAppealTest extends DmnDecisionTableBaseUnitTest {
 
     @BeforeAll
@@ -28,7 +24,25 @@ public class CreateReviewNonCompliantAppealTest extends DmnDecisionTableBaseUnit
         CURRENT_DMN_DECISION_TABLE = WA_TASK_INITIATION_SSCS_BENEFIT;
     }
 
-    static Stream<Arguments> scenarioProvider() {
+    static Stream<Arguments> nonCompliantScenarioProvider() {
+
+        return Stream.of(
+            Arguments.of(
+                "nonCompliant",
+                singletonList(
+                    Map.of(
+                        "taskId", "nonCompliantCase",
+                        "name", "Review non-compliant appeal",
+                        "group", "TCW",
+                        "processCategories", "Non-compliant appeal"
+
+                    )
+                )
+            )
+        );
+    }
+
+    static Stream<Arguments> draftToNonCompliantScenarioProvider() {
 
         return Stream.of(
             Arguments.of(
@@ -46,10 +60,27 @@ public class CreateReviewNonCompliantAppealTest extends DmnDecisionTableBaseUnit
         );
     }
 
-    @ParameterizedTest(name = "event id: {0} pre event state: {1}  post event state: {2} appeal type: {3}")
-    @MethodSource("scenarioProvider")
-    void given_multiple_event_ids_should_evaluate_dmn(String eventId,
-                                                      List<Map<String, String>> expectation) {
+
+    @ParameterizedTest(name = "event id: {0} ")
+    @MethodSource("nonCompliantScenarioProvider")
+    void testNonCompliantDmn(String eventId,
+                             List<Map<String, String>> expectation) {
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+
+    }
+
+
+    @ParameterizedTest(name = "event id: {0} ")
+    @MethodSource("draftToNonCompliantScenarioProvider")
+    void testDraftToNonCompliantDmn(String eventId,
+                                    List<Map<String, String>> expectation) {
 
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
