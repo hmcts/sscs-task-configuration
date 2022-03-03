@@ -17,8 +17,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static java.util.Arrays.asList;
-import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_SSCS_BENEFIT;
@@ -29,71 +27,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_SSCS_BENEFIT;
     }
-
-//    private static Stream<Arguments> rowOne() {
-//        return Stream.of(
-//            Arguments.of(
-//                singletonList(
-//                    Map.of(
-//                        "name", "location",
-//                        "value", 1
-//                    )
-//                )
-//            )
-//        );
-//    }
-//
-//        private static Stream<Arguments> rowTwo() {
-//        return Stream.of(
-//            Arguments.of(
-//                singletonList(
-//                    Map.of(
-//                        "name", "locationName",
-//                        "value", "HMCTS"
-//                    )
-//                )
-//            )
-//        );
-//    }
-//
-//    private static Stream<Arguments> rowThree() {
-//        return Stream.of(
-//            Arguments.of(
-//                singletonList(
-//                    Map.of(
-//                        "name", "workType",
-//                        "value", "routine_work"
-//                    )
-//                )
-//            )
-//        );
-//    }
-//
-//    private static Stream<Arguments> rowFour() {
-//        return Stream.of(
-//            Arguments.of(
-//                singletonList(
-//                    Map.of(
-//                        "name", "roleCategory",
-//                        "value", "LEGAL_OPERATIONS"
-//                    )
-//                )
-//            )
-//        );
-//    }
-//
-//    private static Stream<Arguments> rowFive() {
-//        return Stream.of(
-//            Arguments.of(
-//                singletonList(
-//                    Map.of(
-//                        "name", "description",
-//                        "value", "Description of what needs to be done to complete the task"
-//                    )
-//                )
-//            )
-//        );
-//    }
 
     static Stream<Arguments> scenarioProvider() {
         List<Map<String, Object>> expectationList = List.of(
@@ -129,7 +62,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @MethodSource("scenarioProvider")
-    void when_caseData_and_taskType_then_return_expected_name_and_value_rows_one(List<Map<String, String>> expectation) {
+    void testTaskConfigurationDmn(List<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("caseData", null);
         inputVariables.putValue("taskAttributes", null);
