@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
-      <input id="Input_1" label="Event Id" biodi:width="150" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="232" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -20,12 +20,11 @@ else
 null</text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="150" />
+      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
-      <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" biodi:width="150" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="150" />
-      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="167" />
+      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="273" />
       <rule id="DecisionRule_1k8i9hn">
         <description>This event is automatically set in the backend to be sent to the TCW</description>
         <inputEntry id="UnaryTests_0h7w1r5">
@@ -43,9 +42,6 @@ null</text>
         <outputEntry id="LiteralExpression_0el1oa6">
           <text>"Review non-compliant appeal"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1f8uqqi">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_133o9s1">
           <text></text>
         </outputEntry>
@@ -54,6 +50,32 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mhv54f">
           <text>"Non-compliant appeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xca00x">
+        <inputEntry id="UnaryTests_0m0pdx9">
+          <text>"draftToIncompleteApplication", "incompleteApplicationReceived"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_087it8y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ztfm0s">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16rjk56">
+          <text>"reviewIncompleteAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zzimui">
+          <text>"Review Incomplete Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oeazlt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_187dsab">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y54qlr">
+          <text>"Routine work"</text>
         </outputEntry>
       </rule>
     </decisionTable>
