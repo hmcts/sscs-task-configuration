@@ -38,41 +38,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "someCaseData",
                 List.of(
                     Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
+                        "name", "case-allocator",
+                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                         "autoAssignable", false
-                    )
-                )
-            ),
-            Arguments.of(
-                "null",
-                "someCaseData",
-                List.of(
+                    ),
                     Map.of(
                         "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
-                        "autoAssignable", false
-                    )
-                )
-            ),
-            Arguments.of(
-                "someTaskType",
-                "null",
-                List.of(
-                    Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
-                        "autoAssignable", false
-                    )
-                )
-            ),
-            Arguments.of(
-                "someTaskType",
-                "{}",
-                List.of(
-                    Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
+                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                         "autoAssignable", false
                     )
                 )
@@ -116,7 +88,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(4));
+        assertThat(logic.getRules().size(), is(8));
 
     }
 

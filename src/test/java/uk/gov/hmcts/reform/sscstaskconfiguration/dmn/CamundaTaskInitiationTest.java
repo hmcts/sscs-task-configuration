@@ -38,7 +38,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "nonCompliantCase",
                         "name", "Review non-compliant appeal",
-                        "group", "TCW",
                         "workingDaysAllowed", 2,
                         "processCategories", "Non-compliant appeal"
                         )
@@ -69,7 +68,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(1));
+        assertThat(logic.getRules().size(), is(2));
 
     }
 

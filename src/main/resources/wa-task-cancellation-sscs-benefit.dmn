@@ -67,29 +67,6 @@
           <text>"Routine work"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0ccvxld">
-        <inputEntry id="UnaryTests_1kvydld">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_04d5ar7">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_03vrwxq">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1jzs9aq">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_04po3ny">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05gge4r">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07m14bs">
-          <text></text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
