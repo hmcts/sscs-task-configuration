@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class OpenAPIConfiguration {
+public class OpenApiConfiguration {
 
     @Bean
-    public OpenAPI openAPI() {
+    public OpenAPI openApi() {
         return new OpenAPI()
             .info(new Info().title("SSCS Task Configuration")
                       .description("SSCS task configuration for Work Allocation")
