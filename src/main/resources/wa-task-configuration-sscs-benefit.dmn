@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
+    <informationRequirement id="InformationRequirement_1j70su9">
+      <requiredDecision href="#nextHearing" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
         <inputExpression id="LiteralExpression_0mra7c4" typeRef="string">
@@ -31,7 +34,7 @@ null</text>
           <text>"caseName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1rfnlqn">
-          <text></text>
+          <text>caseData.caseNamePublic</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1s03bv2">
           <text>true</text>
@@ -48,7 +51,7 @@ null</text>
           <text>"caseManagementCategory"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0atr3gl">
-          <text></text>
+          <text>if(caseData.caseManagementCategory!=null) then caseData.caseManagementCategory.value.code else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hr0naf">
           <text>true</text>
@@ -66,7 +69,7 @@ null</text>
           <text>"location"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jb6taf">
-          <text></text>
+          <text>if(caseData.regionalProcessingCenter!=null) then caseData.regionalProcessingCenter.epimsId else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0t0wpwg">
           <text>true</text>
@@ -84,7 +87,7 @@ null</text>
           <text>"locationName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0efrhlm">
-          <text></text>
+          <text>if(caseData.regionalProcessingCenter!=null) then caseData.regionalProcessingCenter.name else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1n6uzb4">
           <text>true</text>
@@ -136,7 +139,7 @@ null</text>
           <text>"priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yq77of">
-          <text></text>
+          <text>if(nextHearing!=null) then nextHearing.hearingDate else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05klryr">
           <text>true</text>
@@ -203,8 +206,8 @@ null</text>
         <outputEntry id="LiteralExpression_1sd17vb">
           <text>"nextHearingId" </text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1jpfbdl" expressionLanguage="javascript">
-          <text></text>
+        <outputEntry id="LiteralExpression_1jpfbdl" expressionLanguage="feel">
+          <text>if(nextHearing!=null) then nextHearing.hearingId else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0u5nw0y">
           <text>true</text>
@@ -220,8 +223,8 @@ null</text>
         <outputEntry id="LiteralExpression_1kpzbii">
           <text>"nextHearingDate" </text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1ebksar">
-          <text></text>
+        <outputEntry id="LiteralExpression_1ebksar" expressionLanguage="feel">
+          <text>if(nextHearing!=null) then nextHearing.hearingDate else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13eate1">
           <text>true</text>
@@ -280,10 +283,54 @@ null</text>
       </rule>
     </decisionTable>
   </decision>
+  <decision id="nextHearing" name="Find Next Hearing">
+    <variable id="InformationItem_1h8zcrp" name="nextHearing" typeRef="json" />
+    <literalExpression id="LiteralExpression_0rsqzn3" expressionLanguage="javascript">
+      <text>function findNextHearing(hearings) {
+    if(hearings==null) {
+      return null;
+    }
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var nextDate = null;
+    var nextHearing = null;
+
+    hearings.forEach(function(h) {
+        var hearingDate = new Date(h.value.hearingDate).getTime();
+        if(hearingDate &gt;= today) {
+            if(nextDate != null) {
+                if(hearingDate &lt; nextDate) {
+                    nextDate = hearingDate 
+                    nextHearing = h;
+                }
+            } else {
+                nextDate = hearingDate;
+                nextHearing = h;
+            }                   
+        }
+   });
+   if(nextHearing) {
+        return nextHearing.value;
+   }
+   return null;
+}
+
+nextHearing = findNextHearing(caseData.hearings);
+</text>
+    </literalExpression>
+  </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="DMNDiagram_1ifewa3">
       <dmndi:DMNShape id="DMNShape_0ijg0or" dmnElementRef="wa-task-configuration-sscs-benefit">
-        <dc:Bounds height="80" width="180" x="150" y="80" />
+        <dc:Bounds height="80" width="180" x="160" y="40" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1x189i1" dmnElementRef="InformationRequirement_1j70su9">
+        <di:waypoint x="520" y="80" />
+        <di:waypoint x="360" y="80" />
+        <di:waypoint x="340" y="80" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1w4i08s" dmnElementRef="nextHearing">
+        <dc:Bounds height="80" width="180" x="520" y="40" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>

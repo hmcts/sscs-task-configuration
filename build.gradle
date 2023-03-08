@@ -155,8 +155,8 @@ sonarqube {
     property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.destination.path}"
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build/reports/pitest"
-    property "sonar.exclusions", "src/main/java/uk/gov/hmcts/reform/iataskconfiguration/config/**," +
-      "src/main/java/uk/gov/hmcts/reform/iataskconfiguration/Application.java"
+    property "sonar.exclusions", "src/main/java/uk/gov/hmcts/reform/sscstaskconfiguration/config/**," +
+      "src/main/java/uk/gov/hmcts/reform/sscstaskconfiguration/Application.java"
   }
 }
 
