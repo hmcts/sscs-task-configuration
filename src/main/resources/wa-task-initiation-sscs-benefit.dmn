@@ -23,7 +23,7 @@ null</text>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
-      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="150" />
+      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="208" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="273" />
       <rule id="DecisionRule_1k8i9hn">
         <description>This event is automatically set in the backend to be sent to the TCW</description>
@@ -75,6 +75,32 @@ null</text>
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1y54qlr">
+          <text>"Routine work"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fw59xg">
+        <inputEntry id="UnaryTests_1xuywjj">
+          <text>"hmctsResponseReviewed", "validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r32833">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06qwty9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01zq61j">
+          <text>"referredToInterlocJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ptda7t">
+          <text>"Referred to interloc"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14ar4hy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rj02r6">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02ekbax">
           <text>"Routine work"</text>
         </outputEntry>
       </rule>
