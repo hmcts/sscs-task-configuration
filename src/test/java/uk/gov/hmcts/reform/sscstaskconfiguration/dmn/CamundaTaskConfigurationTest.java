@@ -35,6 +35,17 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations().build()
             ),
             Arguments.of(
+                "reviewIncompleteAppeal",
+                CaseDataBuilder.defaultCase()
+                    .withNextHearing("1234567","2023-03-16")
+                    .build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue("priorityDate", "2023-03-16", true)
+                    .expectedValue("nextHearingId", "1234567", true)
+                    .expectedValue("nextHearingDate", "2023-03-16", true)
+                    .build()
+            ),
+            Arguments.of(
                "reviewIncompleteAppeal",
                 CaseDataBuilder.defaultCase()
                     .isScottishCase("Yes")

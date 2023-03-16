@@ -48,7 +48,7 @@ null</text>
           <text>"caseManagementCategory"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0atr3gl">
-          <text>if(caseData.caseManagementCategory!=null) then caseData.caseManagementCategory.value.label else ""</text>
+          <text>if(caseData!=null and caseData.caseManagementCategory!=null) then caseData.caseManagementCategory.value.label else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hr0naf">
           <text>true</text>
@@ -66,7 +66,7 @@ null</text>
           <text>"location"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jb6taf">
-          <text>if(caseData.regionalProcessingCenter!=null) then caseData.regionalProcessingCenter.epimsId else ""</text>
+          <text>if(caseData!=null and caseData.regionalProcessingCenter!=null) then caseData.regionalProcessingCenter.epimsId else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0t0wpwg">
           <text>true</text>
@@ -84,7 +84,7 @@ null</text>
           <text>"locationName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0efrhlm">
-          <text>if(caseData.regionalProcessingCenter!=null) then caseData.regionalProcessingCenter.name else ""</text>
+          <text>if(caseData!=null and caseData.regionalProcessingCenter!=null) then caseData.regionalProcessingCenter.name else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1n6uzb4">
           <text>true</text>
@@ -136,7 +136,7 @@ null</text>
           <text>"priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yq77of" expressionLanguage="feel">
-          <text>if(caseData.nextHearindDate!=null) then caseData.nextHearindDate else ""</text>
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then caseData.nextHearingDate else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05klryr">
           <text>true</text>
@@ -204,7 +204,7 @@ null</text>
           <text>"nextHearingId" </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jpfbdl" expressionLanguage="feel">
-          <text>if(caseData.nextHearingd!=null) then caseData.nextHearingId else ""</text>
+          <text>if(caseData!=null and caseData.nextHearingId!=null) then caseData.nextHearingId else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0u5nw0y">
           <text>true</text>
@@ -221,7 +221,7 @@ null</text>
           <text>"nextHearingDate" </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ebksar" expressionLanguage="feel">
-          <text>if(caseData.nextHearing!=null) then caseData.nextHearindDate else ""</text>
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then caseData.nextHearingDate else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13eate1">
           <text>true</text>

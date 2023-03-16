@@ -29,6 +29,12 @@ public class CaseDataBuilder {
         return this;
     }
 
+    public CaseDataBuilder withNextHearing(String hearingId, String hearingDate) {
+        caseData.put("nextHearingId", hearingId);
+        caseData.put("nextHearingDate", hearingDate);
+        return this;
+    }
+
     public Map<String,Object> build() {
         return caseData;
     }
