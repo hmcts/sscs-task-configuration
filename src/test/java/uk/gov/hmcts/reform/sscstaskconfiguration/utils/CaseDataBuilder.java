@@ -35,6 +35,14 @@ public class CaseDataBuilder {
         return this;
     }
 
+    public CaseDataBuilder withRegionalProgressingCentre(String id, String name) {
+        caseData.put("regionalProcessingCenter", Map.of(
+            "name", name,
+            "epimsId", id
+        ));
+        return this;
+    }
+
     public Map<String,Object> build() {
         return caseData;
     }
