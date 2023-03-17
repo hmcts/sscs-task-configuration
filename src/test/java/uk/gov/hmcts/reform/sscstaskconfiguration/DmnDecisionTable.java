@@ -9,7 +9,7 @@ public enum DmnDecisionTable {
     WA_TASK_CONFIGURATION_SSCS_BENEFIT("wa-task-configuration-sscs-benefit", "wa-task-configuration-sscs-benefit.dmn"),
     WA_TASK_INITIATION_SSCS_BENEFIT("wa-task-initiation-sscs-benefit", "wa-task-initiation-sscs-benefit.dmn"),
     WA_TASK_PERMISSIONS_SSCS_BENEFIT("wa-task-permissions-sscs-benefit", "wa-task-permissions-sscs-benefit.dmn"),
-    WA_TASK_TYPES_SSCS_BENEFIT("wa-task-type-sscs-benefit", "wa-task-type-sscs-benefit.dmn");
+    WA_TASK_TYPES_SSCS_BENEFIT("wa-task-types-sscs-benefit", "wa-task-types-sscs-benefit.dmn");
 
     @JsonValue
     private final String key;
