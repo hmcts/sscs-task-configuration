@@ -285,14 +285,14 @@ null</text>
   </decision>
   <decision id="Decision_14s18db" name="Non Working Days">
     <decisionTable id="DecisionTable_19ggug0" hitPolicy="FIRST">
-      <input id="InputClause_1wj25b3" label="isScottishCase" camunda:inputVariable="caseData.isScottishCase">
+      <input id="InputClause_1wj25b3" label="isScottishCase" camunda:inputVariable="isScottishCase">
         <inputExpression id="LiteralExpression_0leh29i" typeRef="string">
-          <text>caseData.isScottishCase</text>
+          <text>if(caseData!=null and caseData.isScottishCase!=null) then caseData.isScottishCase else "No"</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0zwrz49" label="regionalProcessingCenter" camunda:inputVariable="caseData.regionalProcessingCenter.name">
+      <input id="InputClause_0zwrz49" label="processingVenue" camunda:inputVariable="processingVenue">
         <inputExpression id="LiteralExpression_1ioqfw6" typeRef="string">
-          <text>caseData.regionalProcessingCenter.name</text>
+          <text>if(caseData!=null and caseData.processingVenue!=null) then caseData.processingVenue else null</text>
         </inputExpression>
       </input>
       <output id="OutputClause_0c1hiz8" name="nonWorkingDayCalendar" typeRef="string" biodi:width="970" />
@@ -312,7 +312,7 @@ null</text>
           <text>"Yes"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ysss6b">
-          <text>"DUNDEE"</text>
+          <text>"Dundee"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0x4hza9">
           <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland-dundee.json"</text>
@@ -323,7 +323,7 @@ null</text>
           <text>"Yes"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xwiy14">
-          <text>"EDINBURGH"</text>
+          <text>"Edinburgh"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0a68vda">
           <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland-edinburgh.json"</text>

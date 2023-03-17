@@ -46,4 +46,9 @@ public class CaseDataBuilder {
     public Map<String,Object> build() {
         return caseData;
     }
+
+    public CaseDataBuilder withProcessingVenue(String processingVenue) {
+        caseData.put("processingVenue", processingVenue);
+        return this;
+    }
 }

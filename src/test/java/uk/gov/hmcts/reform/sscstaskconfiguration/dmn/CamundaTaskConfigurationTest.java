@@ -59,11 +59,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewIncompleteAppeal",
                 CaseDataBuilder.defaultCase()
                     .isScottishCase("Yes")
-                    .withRegionalProgressingCentre("123456", "EDINBURGH")
+                    .withRegionalProgressingCentre("123456", "GLASGOW")
+                    .withProcessingVenue("Edinburgh")
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue("location", "123456", true)
-                    .expectedValue("locationName", "EDINBURGH", true)
+                    .expectedValue("locationName", "GLASGOW", true)
                     .expectedValue("dueDateNonWorkingCalendar",
                                    ConfigurationExpectationBuilder.SCOTLAND_CALENDAR_EDINBURGH,true)
                     .build()
@@ -72,11 +73,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewIncompleteAppeal",
                 CaseDataBuilder.defaultCase()
                     .isScottishCase("Yes")
-                    .withRegionalProgressingCentre("123456", "DUNDEE")
+                    .withRegionalProgressingCentre("123456", "GLASGOW")
+                    .withProcessingVenue("Dundee")
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue("location", "123456", true)
-                    .expectedValue("locationName", "DUNDEE", true)
+                    .expectedValue("locationName", "GLASGOW", true)
                     .expectedValue("dueDateNonWorkingCalendar",
                                    ConfigurationExpectationBuilder.SCOTLAND_CALENDAR_DUNDEE,true)
                     .build()
