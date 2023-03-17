@@ -9,11 +9,6 @@ import java.util.Map;
 
 public class ConfigurationExpectationBuilder {
 
-    public static String ENGLAND_AND_WALES_CALENDAR = "https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-england-and-wales.json";
-    public static String SCOTLAND_CALENDAR = "https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland.json";
-    public static String SCOTLAND_CALENDAR_DUNDEE = "https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland-dundee.json";
-    public static String SCOTLAND_CALENDAR_EDINBURGH = "https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland-edinburgh.json";
-
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
 
     private Map<String,Map<String,Object>> expectations = new HashMap<>();
@@ -37,7 +32,7 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue("nextHearingId", "", true);
         builder.expectedValue("nextHearingDate", "", true);
         builder.expectedValue("dueDateOrigin", now(), true);
-        builder.expectedValue("dueDateNonWorkingCalendar", ENGLAND_AND_WALES_CALENDAR, true);
+        builder.expectedValue("dueDateNonWorkingCalendar", CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR, true);
         builder.expectedValue("dueDateIntervalDays", "5", true);
         return builder;
     }

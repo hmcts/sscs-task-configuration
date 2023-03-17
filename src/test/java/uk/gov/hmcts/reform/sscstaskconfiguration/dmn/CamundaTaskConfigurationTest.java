@@ -13,12 +13,14 @@ import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 import uk.gov.hmcts.reform.sscstaskconfiguration.utils.CaseDataBuilder;
 import uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder;
+import uk.gov.hmcts.reform.sscstaskconfiguration.utils.CourtSpecificCalendars;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -52,21 +54,21 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue("dueDateNonWorkingCalendar",
-                                   ConfigurationExpectationBuilder.SCOTLAND_CALENDAR,true)
+                                   CourtSpecificCalendars.SCOTLAND_CALENDAR,true)
                     .build()
             ),
             Arguments.of(
-                "reviewIncompleteAppeal",
-                CaseDataBuilder.defaultCase()
+                    "reviewIncompleteAppeal",
+                    CaseDataBuilder.defaultCase()
                     .isScottishCase("Yes")
                     .withRegionalProgressingCentre("123456", "GLASGOW")
                     .withProcessingVenue("Edinburgh")
                     .build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                    ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue("location", "123456", true)
                     .expectedValue("locationName", "GLASGOW", true)
                     .expectedValue("dueDateNonWorkingCalendar",
-                                   ConfigurationExpectationBuilder.SCOTLAND_CALENDAR_EDINBURGH,true)
+                                   CourtSpecificCalendars.SCOTLAND_CALENDAR_EDINBURGH, true)
                     .build()
             ),
             Arguments.of(
@@ -80,7 +82,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("location", "123456", true)
                     .expectedValue("locationName", "GLASGOW", true)
                     .expectedValue("dueDateNonWorkingCalendar",
-                                   ConfigurationExpectationBuilder.SCOTLAND_CALENDAR_DUNDEE,true)
+                                   CourtSpecificCalendars.SCOTLAND_CALENDAR_DUNDEE,true)
                     .build()
             )
         );
@@ -110,6 +112,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getRules().size(), is(15));
     }
 
+
+
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
         assertThat(results.size(), is(expectation.size()));
         for (int index = 0; index < expectation.size(); index++) {
@@ -131,6 +135,51 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         return actual != null
             && (expected.isEqual(actual) || expected.isBefore(actual))
             && (now.isEqual(actual) || now.isAfter(actual));
+    }
+
+    static Stream<Arguments> scenarioProviderCourtSpecificCalendars() {
+        return Stream.of(
+            Arguments.of(
+                Map.of(),
+                singletonList(Map.of("nonWorkingDayCalendar", CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR))
+            ),
+            Arguments.of(
+                Map.of("isScottishCase", "No"),
+                singletonList(Map.of("nonWorkingDayCalendar", CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR))
+            ),
+            Arguments.of(
+                Map.of("isScottishCase", "Yes"),
+                singletonList(Map.of("nonWorkingDayCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR))
+            ),
+            Arguments.of(
+                Map.of("isScottishCase", "Yes",
+                       "processingVenue", "Dundee"),
+                singletonList(Map.of("nonWorkingDayCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_DUNDEE))
+            ),
+            Arguments.of(
+                Map.of("isScottishCase", "Yes",
+                       "processingVenue", "Edinburgh"),
+                singletonList(Map.of("nonWorkingDayCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_EDINBURGH))
+            ),
+            Arguments.of(
+                Map.of("isScottishCase", "Yes",
+                       "processingVenue", "AnywhereElse"),
+                singletonList(Map.of("nonWorkingDayCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR))
+            )
+        );
+    }
+
+    @ParameterizedTest(name = "caseData: {0}")
+    @MethodSource("scenarioProviderCourtSpecificCalendars")
+    void use_correct_court_specific_calendar_for_venue(Map<String, Object> caseData,
+                                            List<Map<String, String>> expectation) {
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("caseData", caseData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateRequiredDecision("sscs-task-configuration-non-working-days", inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 }
 

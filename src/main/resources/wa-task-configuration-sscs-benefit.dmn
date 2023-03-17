@@ -2,7 +2,7 @@
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <informationRequirement id="InformationRequirement_1t76wn6">
-      <requiredDecision href="#Decision_14s18db" />
+      <requiredDecision href="#sscs-task-configuration-non-working-days" />
     </informationRequirement>
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -283,7 +283,7 @@ null</text>
       </rule>
     </decisionTable>
   </decision>
-  <decision id="Decision_14s18db" name="Non Working Days">
+  <decision id="sscs-task-configuration-non-working-days" name="Non Working Days">
     <decisionTable id="DecisionTable_19ggug0" hitPolicy="FIRST">
       <input id="InputClause_1wj25b3" label="isScottishCase" camunda:inputVariable="isScottishCase">
         <inputExpression id="LiteralExpression_0leh29i" typeRef="string">
@@ -352,7 +352,7 @@ null</text>
         <di:waypoint x="360" y="80" />
         <di:waypoint x="340" y="80" />
       </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_08tkxxo" dmnElementRef="Decision_14s18db">
+      <dmndi:DMNShape id="DMNShape_08tkxxo" dmnElementRef="sscs-task-configuration-non-working-days">
         <dc:Bounds height="80" width="180" x="450" y="40" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
