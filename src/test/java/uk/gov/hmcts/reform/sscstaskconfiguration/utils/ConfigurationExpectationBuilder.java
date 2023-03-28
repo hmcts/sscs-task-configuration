@@ -58,16 +58,15 @@ public class ConfigurationExpectationBuilder {
     }
 
     public ConfigurationExpectationBuilder expectedValue(String name, Object value, boolean canReconfigure) {
-         expectations.put(name, Map.of(
+        expectations.put(name, Map.of(
             "name", name,
             "value", value,
             "canReconfigure", canReconfigure
         ));
-         return this;
+        return this;
     }
 
     public static String now() {
         return LocalDateTime.now().format(dateTimeFormat);
     }
-
 }

@@ -4,7 +4,6 @@ import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -95,7 +94,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest(name = "task type: {0} case data: {1}")
     @MethodSource("scenarioProvider")
-    void should_return_correct_configuration_values_for_scenario(String taskType, Map<String, Object> caseData, List<Map<String, Object>> expectation) {
+    void should_return_correct_configuration_values_for_scenario(
+            String taskType, Map<String, Object> caseData,
+            List<Map<String, Object>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskType", taskType);
         inputVariables.putValue("caseData", caseData);
