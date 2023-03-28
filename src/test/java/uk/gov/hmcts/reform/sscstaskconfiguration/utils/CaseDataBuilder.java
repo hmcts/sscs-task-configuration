@@ -2,6 +2,7 @@ package uk.gov.hmcts.reform.sscstaskconfiguration.utils;
 
 import java.util.HashMap;
 import java.util.Map;
+
 public class CaseDataBuilder {
 
     HashMap<String,Object> caseData;
