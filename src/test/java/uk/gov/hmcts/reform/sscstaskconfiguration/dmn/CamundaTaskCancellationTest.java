@@ -46,8 +46,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 singletonList(
                     Map.of(
-                        "action", "Reconfigure",
-                        "processCategories","Routine work"
+                        "action", "Reconfigure"
                     )
                 )
             ),
@@ -57,8 +56,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 singletonList(
                     Map.of(
-                        "action", "Reconfigure",
-                        "processCategories","Routine work"
+                        "action", "Reconfigure"
                     )
                 )
             )
