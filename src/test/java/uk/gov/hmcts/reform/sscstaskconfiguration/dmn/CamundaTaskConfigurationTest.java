@@ -178,7 +178,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("caseData", caseData);
 
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateRequiredDecision("sscs-task-configuration-non-working-days", inputVariables);
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateRequiredDecision(
+            "sscs-task-configuration-non-working-days", inputVariables);
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }

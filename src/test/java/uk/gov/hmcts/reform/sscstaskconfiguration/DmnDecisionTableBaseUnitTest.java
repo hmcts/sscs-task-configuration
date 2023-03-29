@@ -34,8 +34,10 @@ public abstract class DmnDecisionTableBaseUnitTest {
     }
 
     public DmnDecisionTableResult evaluateRequiredDecision(String decisionTableId, Map<String, Object> variables) {
-        Optional<DmnDecision> requiredDecision = decision.getRequiredDecisions().stream().filter(d -> d.getKey().equals(decisionTableId)).findFirst();
-        if(requiredDecision.isPresent()) {
+        Optional<DmnDecision> requiredDecision = decision.getRequiredDecisions().stream()
+            .filter(d -> d.getKey().equals(decisionTableId))
+            .findFirst();
+        if (requiredDecision.isPresent()) {
             return dmnEngine.evaluateDecisionTable(requiredDecision.get(), variables);
         }
         return null;

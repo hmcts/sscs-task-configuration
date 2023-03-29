@@ -165,7 +165,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("TODAY", today);
         inputVariables.putValue("additionalData", Map.of("Data", caseData));
 
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateRequiredDecision("sscs-task-initiation-date-calculation-defaults", inputVariables);
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateRequiredDecision(
+            "sscs-task-initiation-date-calculation-defaults", inputVariables);
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
