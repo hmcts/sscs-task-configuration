@@ -241,7 +241,7 @@ null</text>
           <text>substring(string(now()),1,16)</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12wh31l">
-          <text>true</text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0csil93">
