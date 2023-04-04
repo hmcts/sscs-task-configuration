@@ -30,7 +30,7 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue("majorPriority", "5000", true);
         builder.expectedValue(
             "description",
-            "[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoFromParty)",
+            "[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)",
             true
         );
         builder.expectedValue("nextHearingId", "", true);
