@@ -36,7 +36,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewIncompleteAppeal",
                 CaseDataBuilder.defaultCase()
-                    .withNextHearing("1234567","2023-03-16")
+                    .withNextHearing("1234567", "2023-03-16")
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue("priorityDate", "2023-03-16", true)
@@ -45,12 +45,22 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-               "reviewIncompleteAppeal",
+                "reviewIncompleteAppeal",
                 CaseDataBuilder.defaultCase()
                     .isScottishCase("Yes")
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue("dueDateNonWorkingCalendar", ConfigurationExpectationBuilder.SCOTLAND_CALENDAR,true)
+                    .expectedValue("dueDateNonWorkingCalendar", ConfigurationExpectationBuilder.SCOTLAND_CALENDAR, true)
+                    .build()
+            ),
+            Arguments.of(
+                "requestInfoIncompleteApplication",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue("minorPriority", "300", true)
+                    .expectedValue("majorPriority", "3000", true)
+                    .expectedValue("description", "[Review Information Requested](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)", true)
+                    .expectedValue("dueDateIntervalDays", "3", true)
                     .build()
             )
         );
@@ -64,8 +74,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest(name = "task type: {0} case data: {1}")
     @MethodSource("scenarioProvider")
     void should_return_correct_configuration_values_for_scenario(
-            String taskType, Map<String, Object> caseData,
-            List<Map<String, Object>> expectation) {
+        String taskType, Map<String, Object> caseData,
+        List<Map<String, Object>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskType", taskType);
         inputVariables.putValue("caseData", caseData);
@@ -79,7 +89,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(15));
+        assertThat(logic.getRules().size(), is(19));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
@@ -88,10 +98,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             if ("dueDateOrigin".equals(expectation.get(index).get("name"))) {
                 assertEquals(
                     results.get(index).get("canReconfigure"),
-                    expectation.get(index).get("canReconfigure"));
+                    expectation.get(index).get("canReconfigure")
+                );
                 assertTrue(validNow(
                     LocalDateTime.parse(results.get(index).get("value").toString()),
-                    LocalDateTime.parse(expectation.get(index).get("value").toString())));
+                    LocalDateTime.parse(expectation.get(index).get("value").toString())
+                ));
             } else {
                 assertThat(results.get(index), is(expectation.get(index)));
             }
