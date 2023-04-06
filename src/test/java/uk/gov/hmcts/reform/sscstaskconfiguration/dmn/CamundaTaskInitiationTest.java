@@ -79,7 +79,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Information Requested",
                         "delayDuration", 2,
                         "workingDaysAllowed", 3,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewInformationRequested"
                     )
                 )
             )
