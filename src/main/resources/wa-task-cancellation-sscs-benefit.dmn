@@ -104,6 +104,34 @@
           <text>"reviewInformationRequested"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ctfolu">
+        <inputEntry id="UnaryTests_1gdbh3i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cz71n2">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"readyToList"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1snvtwi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1b3n99x">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ctddic">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12ygzai">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bpimbx">
+          <text>"reviewFtaResponse"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_06vo1lb">
         <inputEntry id="UnaryTests_0ivl1q1">
           <text></text>

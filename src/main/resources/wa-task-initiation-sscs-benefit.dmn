@@ -130,6 +130,32 @@ null</text>
           <text>"reviewInformationRequested"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1xqagg7">
+        <inputEntry id="UnaryTests_00i9dmn">
+          <text>"dwpUploadResponse"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nspqgr">
+          <text>"withDwp"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c5m4yi">
+          <text>"dwpFurtherInfo"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14npkzr">
+          <text>"reviewFtaResponse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1208ebj">
+          <text>"Review FTA Response"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17h8e8i">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dl8lim">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1elelam">
+          <text>"reviewFtaResponse"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
