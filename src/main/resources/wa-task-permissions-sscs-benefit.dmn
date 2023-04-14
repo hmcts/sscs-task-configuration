@@ -317,6 +317,84 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1w4vbcb">
+        <inputEntry id="UnaryTests_1wys202">
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1svp3wg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1q6o4ha">
+          <text>"CTSC-Caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t4cseo">
+          <text>"Read","Own","Claim","Unclaim","Manage","Cancel","UnclaimAssign","CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_186yphk">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16k7c0i">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0704b5a">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jwpibd">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ifmb2o">
+        <inputEntry id="UnaryTests_0oy3y9s">
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m46jiq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_154828g">
+          <text>"CTSC-Administrator"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bx8mjo">
+          <text>"Read","Own","Claim","Unclaim","Manage","Cancel","UnclaimAssign","CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jg56wu">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qdnyv6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p037lz">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gpeu97">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17041zd">
+        <inputEntry id="UnaryTests_1rasako">
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04ehtmt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u1alq8">
+          <text>"CTSC-Team-Leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c7fhew">
+          <text>"Read","Own","Claim","Unclaim","Manage","UnclaimAssign","Assign","Unassign","Cancel","CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1o1xc3z">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mmmv0a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1037d8z">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10dk27c">
+          <text>false</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

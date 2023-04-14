@@ -274,6 +274,35 @@
           <text>"Translation Tasks"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1rfp02v">
+        <inputEntry id="UnaryTests_0q0aptw">
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lkxm5v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08ea8kt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f8s4vb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_169r5qy">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0prhktc">
+          <text>"Action Unprocessed Correspondence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wru75o">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bgwvi2">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l3zbqn">
+          <text>"Routine work"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
@@ -371,7 +400,7 @@ null</text>
         <outputEntry id="LiteralExpression_1veyac7">
           <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
         </outputEntry>
-      </rule>
+      </rule>      
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
