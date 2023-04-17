@@ -44,7 +44,7 @@
       </rule>
       <rule id="DecisionRule_0fapfny">
         <inputEntry id="UnaryTests_1kt3e2j">
-          <text>"dwpUploadResponse"</text>
+          <text>"hmctsResponseReviewed"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_12md732">
           <text>"reviewFtaResponse"</text>

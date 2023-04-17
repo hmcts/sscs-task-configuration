@@ -12,7 +12,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0a0i7vo" label="Case data" biodi:width="150" camunda:inputVariable="caseData">
+      <input id="InputClause_0a0i7vo" label="Case data" biodi:width="401" camunda:inputVariable="caseData">
         <inputExpression id="LiteralExpression_18qwedg" typeRef="context">
           <text>if(additionalData != null and additionalData.Data != null) then
             additionalData.Data
@@ -138,7 +138,10 @@ null</text>
           <text>"withDwp"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0c5m4yi">
-          <text>"dwpFurtherInfo"</text>
+          <text>if(caseData != null and caseData.dwpFurtherInfo!= null) then
+            caseData.dwpFurtherInfo == "Y"
+else
+false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14npkzr">
           <text>"reviewFtaResponse"</text>

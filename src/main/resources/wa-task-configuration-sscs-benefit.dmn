@@ -255,7 +255,7 @@ null</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12okm4q">
-          <text>"[Review FTA Response](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/dwpUploadResponse)"</text>
+          <text>"[Review FTA Response](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ehr5wt">
           <text>true</text>
