@@ -23,16 +23,13 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue("caseManagementCategory", "Personal Independence Payment", true);
         builder.expectedValue("location", "123456", true);
         builder.expectedValue("locationName", "BRADFORD", true);
-        builder.expectedValue("work_type", "routine_work", true);
+        builder.expectedValue("workType", "routine_work", true);
         builder.expectedValue("roleCategory", "CTSC", true);
         builder.expectedValue("priorityDate", "", true);
         builder.expectedValue("minorPriority", "500", true);
         builder.expectedValue("majorPriority", "5000", true);
-        builder.expectedValue(
-            "description",
-            "[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)",
-            true
-        );
+        builder.expectedValue("description","[Request Information From Party](/case/SSCS/Benefit/"
+            + "${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)",true);
         builder.expectedValue("nextHearingId", "", true);
         builder.expectedValue("nextHearingDate", "", true);
         builder.expectedValue("dueDateOrigin", now(), true);
@@ -47,7 +44,7 @@ public class ConfigurationExpectationBuilder {
             expectations.get("caseManagementCategory"),
             expectations.get("location"),
             expectations.get("locationName"),
-            expectations.get("work_type"),
+            expectations.get("workType"),
             expectations.get("roleCategory"),
             expectations.get("priorityDate"),
             expectations.get("minorPriority"),

@@ -39,7 +39,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .withNextHearing("1234567", "2023-03-16")
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue("priorityDate", "2023-03-16", true)
+                    .expectedValue("priorityDate", "2023-03-06", true)
                     .expectedValue("nextHearingId", "1234567", true)
                     .expectedValue("nextHearingDate", "2023-03-16", true)
                     .build()
@@ -54,12 +54,13 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-                "requestInfoIncompleteApplication",
+                "reviewInformationRequested",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue("minorPriority", "300", true)
                     .expectedValue("majorPriority", "3000", true)
-                    .expectedValue("description", "[Review Information Requested](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)", true)
+                    .expectedValue("description", "[Review Information Requested](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/interlocInformationReceived)",true)
                     .expectedValue("dueDateIntervalDays", "3", true)
                     .build()
             ),
