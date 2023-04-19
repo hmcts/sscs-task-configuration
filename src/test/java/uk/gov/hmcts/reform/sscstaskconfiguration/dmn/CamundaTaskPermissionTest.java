@@ -55,7 +55,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 defaultCtscPermissions()
             ),
             Arguments.of(
-                "requestInfoIncompleteApplication",
+                "reviewInformationRequested",
                 "someCaseData",
                 defaultCtscPermissions()
             )
@@ -75,7 +75,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "autoAssignable", false
             ),
             Map.of(
-                "name", "CTSC-Caseworker",
+                "name", "Allocated-CTSC-Caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
                 "assignmentPriority", 1,
                 "roleCategory", "CTSC",
