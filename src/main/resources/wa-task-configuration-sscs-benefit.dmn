@@ -95,7 +95,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"work_type"</text>
@@ -112,7 +112,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -164,7 +164,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"requestInfoIncompleteApplication"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -198,7 +198,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"requestInfoIncompleteApplication"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -241,6 +241,23 @@ null</text>
           <text>"[Review Information Requested](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x6to7m">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cr3j74">
+        <inputEntry id="UnaryTests_146fq27">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1068h1q">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tj3hf1">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0slkx69">
+          <text>"[Action Unprocessed Correspondence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionUnprocessedCorrespondence)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kviqys">
           <text>true</text>
         </outputEntry>
       </rule>

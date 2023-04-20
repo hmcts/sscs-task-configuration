@@ -54,13 +54,13 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-                "requestInfoIncompleteApplication",
+                "actionUnprocessedCorrespondence",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue("minorPriority", "300", true)
                     .expectedValue("majorPriority", "3000", true)
-                    .expectedValue("description", "[Review Information Requested](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)", true)
-                    .expectedValue("dueDateIntervalDays", "3", true)
+                    .expectedValue("description", "[Action Unprocessed Correspondence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionUnprocessedCorrespondence)", true)
+                    .expectedValue("work_type", "routine_work", true)
                     .build()
             )
         );
@@ -89,7 +89,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(19));
+        assertThat(logic.getRules().size(), is(20));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

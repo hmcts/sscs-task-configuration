@@ -82,6 +82,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "reviewInformationRequested"
                     )
                 )
+            ),
+            Arguments.of(
+                List.of("dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"),
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "delayDuration", null,
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    )
+                )
             )
 
         );
@@ -109,7 +123,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(4));
+        assertThat(logic.getRules().size(), is(5));
 
     }
 
