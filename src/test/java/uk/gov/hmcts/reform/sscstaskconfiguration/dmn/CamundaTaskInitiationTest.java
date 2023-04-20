@@ -89,14 +89,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "draftToIncompleteApplication",
+                List.of("dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"),
                 null,
                 null,
                 singletonList(
                     Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal",
-                        "workingDaysAllowed", 5,
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "delayDuration", null,
+                        "workingDaysAllowed", 10,
                         "processCategories", "Routine work"
                     )
                 )

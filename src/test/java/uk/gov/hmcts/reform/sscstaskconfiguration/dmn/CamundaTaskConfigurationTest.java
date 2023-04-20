@@ -200,7 +200,16 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         + "[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)<br/>"
                         + "[Interloc Information Received](/case/SSCS/Benefit/${[CASE_REFERENCE]}"
                             + "/trigger/interlocInformationReceived)", true)
-                    .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "10", true)
+                    .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "10", true).build()
+            ),
+            Arguments.of(
+                "actionUnprocessedCorrespondence",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue("minorPriority", "300", true)
+                    .expectedValue("majorPriority", "3000", true)
+                    .expectedValue("description", "[Action Unprocessed Correspondence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionUnprocessedCorrespondence)", true)
+                    .expectedValue("work_type", "routine_work", true)
                     .build()
             )
         );
