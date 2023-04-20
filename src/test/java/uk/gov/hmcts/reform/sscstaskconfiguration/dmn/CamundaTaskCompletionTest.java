@@ -77,7 +77,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "dwpUploadResponse",
+                "hmctsResponseReviewed",
                 asList(
                     Map.of(
                         "taskType", "reviewFtaResponse",

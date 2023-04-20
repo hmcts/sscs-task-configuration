@@ -86,20 +86,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "Y")),
+                Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
                 singletonList(
                     Map.of(
                         "taskId", "reviewFtaResponse",
                         "name", "Review FTA Response",
                         "workingDaysAllowed", 2,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewFtaResponse"
                     )
                 )
             ),
             Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "N")),
+                Map.of("Data", Map.of("dwpFurtherInfo", "No")),
                 List.of()
             )
         );

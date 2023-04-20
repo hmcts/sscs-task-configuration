@@ -12,12 +12,13 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0a0i7vo" label="Case data" biodi:width="401" camunda:inputVariable="caseData">
-        <inputExpression id="LiteralExpression_18qwedg" typeRef="context">
-          <text>if(additionalData != null and additionalData.Data != null) then
-            additionalData.Data
-else
-null</text>
+      <input id="InputClause_09qqpx6" label="DWP Further Info" camunda:inputVariable="dwpFurtherInfo">
+        <inputExpression id="LiteralExpression_0nsfl92" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.dwpFurtherInfo
+            != null) then
+            additionalData.Data.dwpFurtherInfo 
+            else
+            null</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
@@ -33,7 +34,7 @@ null</text>
         <inputEntry id="UnaryTests_04h5jg8">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0jwc1y5">
+        <inputEntry id="UnaryTests_1wvprxb">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1f3k7q8">
@@ -59,7 +60,7 @@ null</text>
         <inputEntry id="UnaryTests_087it8y">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0ztfm0s">
+        <inputEntry id="UnaryTests_04ulcvj">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_16rjk56">
@@ -85,7 +86,7 @@ null</text>
         <inputEntry id="UnaryTests_1r32833">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_06qwty9">
+        <inputEntry id="UnaryTests_14kwvou">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_01zq61j">
@@ -111,7 +112,7 @@ null</text>
         <inputEntry id="UnaryTests_0lh9r0z">
           <text>"withDwp"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0nbt8pu">
+        <inputEntry id="UnaryTests_0eauflk">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1rw39zd">
@@ -137,11 +138,8 @@ null</text>
         <inputEntry id="UnaryTests_1nspqgr">
           <text>"withDwp"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0c5m4yi">
-          <text>if(caseData != null and caseData.dwpFurtherInfo!= null) then
-            caseData.dwpFurtherInfo == "Y"
-else
-false</text>
+        <inputEntry id="UnaryTests_0bql2sl">
+          <text>"Yes"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14npkzr">
           <text>"reviewFtaResponse"</text>

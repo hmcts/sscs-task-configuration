@@ -157,7 +157,7 @@ else
       </rule>
       <rule id="DecisionRule_19cn0u8">
         <inputEntry id="UnaryTests_1vcxbly">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","dwpUploadResponse"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hxa6gg">
           <text></text>
@@ -183,7 +183,7 @@ else
       </rule>
       <rule id="DecisionRule_0e3o7rq">
         <inputEntry id="UnaryTests_1kc55kf">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","dwpUploadResponse"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0e41w3x">
           <text></text>
@@ -209,7 +209,7 @@ else
       </rule>
       <rule id="DecisionRule_0q51lrq">
         <inputEntry id="UnaryTests_03ctmk1">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","dwpUploadResponse"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tw6aye">
           <text></text>

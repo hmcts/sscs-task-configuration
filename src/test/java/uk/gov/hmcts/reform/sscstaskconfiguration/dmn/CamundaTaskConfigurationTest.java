@@ -65,12 +65,13 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-                "dwpUploadResponse",
+                "reviewFtaResponse",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue("minorPriority", "300", true)
                     .expectedValue("majorPriority", "3000", true)
-                    .expectedValue("description", "[Review Information Requested](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/dwpUploadResponse)", true)
+                    .expectedValue("description", "[Review FTA Response](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)", true)
                     .expectedValue("dueDateIntervalDays", "2", true)
                     .build()
             )
