@@ -89,7 +89,50 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                List.of("dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"),
+                "dwpSupplementaryResponse",
+                "dwpSupplementaryResponse",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "delayDuration", null,
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocument",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "delayDuration", null,
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "attachScannedDocs",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "delayDuration", null,
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                List.of("uploadDocumentFurtherEvidence"),
                 null,
                 null,
                 singletonList(
