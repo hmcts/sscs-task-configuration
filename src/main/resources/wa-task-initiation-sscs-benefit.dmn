@@ -21,6 +21,15 @@
             null</text>
         </inputExpression>
       </input>
+      <input id="InputClause_19ghw9y" label="Language Preference Welsh" biodi:width="226" camunda:inputVariable="languagePreferenceWelsh">
+        <inputExpression id="LiteralExpression_0lq7c6k" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.languagePreferenceWelsh
+            != null) then
+            additionalData.Data.languagePreferenceWelsh
+            else
+            null</text>
+        </inputExpression>
+      </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
@@ -35,6 +44,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1wvprxb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_186kf4g">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1f3k7q8">
@@ -63,6 +75,9 @@
         <inputEntry id="UnaryTests_04ulcvj">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1l6xrs4">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_16rjk56">
           <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
@@ -87,6 +102,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14kwvou">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m44hra">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_01zq61j">
@@ -115,6 +133,9 @@
         <inputEntry id="UnaryTests_0eauflk">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1x6e0h1">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1rw39zd">
           <text>"reviewInformationRequested"</text>
         </outputEntry>
@@ -141,6 +162,9 @@
         <inputEntry id="UnaryTests_0bql2sl">
           <text>"Yes"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_06twvx4">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_14npkzr">
           <text>"reviewFtaResponse"</text>
         </outputEntry>
@@ -155,6 +179,38 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1elelam">
           <text>"reviewFtaResponse"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ayetr8">
+        <inputEntry id="UnaryTests_06b2evz">
+          <text>"dwpSupplementaryResponse",
+"uploadDocument",
+"attachScannedDocs",
+"uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04f7fw7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05gj6vg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tq8m1x">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_020molb">
+          <text>"reviewBilingualDocument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oph97h">
+          <text>"Review Bi-Lingual Document"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uf6uj8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0duu5cv">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0otfkfu">
+          <text>"reviewBilingualDocument"</text>
         </outputEntry>
       </rule>
     </decisionTable>
