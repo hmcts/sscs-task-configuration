@@ -101,7 +101,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -118,7 +118,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -172,7 +172,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"reviewInformationRequested","reviewFtaResponse"</text>
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -208,7 +208,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"reviewInformationRequested","reviewFtaResponse"</text>
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -268,6 +268,23 @@ null</text>
           <text>"[Review FTA Response](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ehr5wt">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p938bu">
+        <inputEntry id="UnaryTests_0xvluzi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fdbij6">
+          <text>"reviewBilingualDocument"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12q677g">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ydax3u">
+          <text>"[Request translation from WLU](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestTranslationFromWLU)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hkaics">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -336,6 +353,23 @@ null</text>
           <text>nonWorkingDayCalendar</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06j1l34">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vryjpz">
+        <inputEntry id="UnaryTests_1fy938w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dlxkjg">
+          <text>"reviewBilingualDocument"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vmpg33">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wp4c3a">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c7f3mw">
           <text>true</text>
         </outputEntry>
       </rule>
