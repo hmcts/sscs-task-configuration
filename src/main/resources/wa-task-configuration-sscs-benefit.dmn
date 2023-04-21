@@ -426,6 +426,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_06w5m65">
+        <inputEntry id="UnaryTests_129pg5m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oty722">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dk6n8z">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lra6gz">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16kzkpy">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0v3ob2a">
         <inputEntry id="UnaryTests_0zacm9e">
           <text></text>
