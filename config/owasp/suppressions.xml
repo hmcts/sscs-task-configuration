@@ -21,4 +21,11 @@
     <packageUrl regex="true">^pkg:maven/org\.springframework/spring\-web@5.3.25$</packageUrl>
     <cve>CVE-2016-1000027</cve>
   </suppress>
+  <suppress>
+    <notes><![CDATA[
+   Spring framework - possible DoS from user provided SpEL expressions
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.springframework/spring\-*@*$</packageUrl>
+    <cve>CVE-2023-20863</cve>
+  </suppress>
 </suppressions>

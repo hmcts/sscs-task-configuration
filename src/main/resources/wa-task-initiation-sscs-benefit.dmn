@@ -22,7 +22,7 @@
         </inputExpression>
       </input>
       <input id="InputClause_19ghw9y" label="Language Preference Welsh" biodi:width="226" camunda:inputVariable="languagePreferenceWelsh">
-        <inputExpression id="LiteralExpression_0lq7c6k" typeRef="string">
+        <inputExpression id="LiteralExpression_0lq7c6k" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.languagePreferenceWelsh
             != null) then
             additionalData.Data.languagePreferenceWelsh
@@ -195,7 +195,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0tq8m1x">
-          <text>"Yes"</text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_020molb">
           <text>"reviewBilingualDocument"</text>
