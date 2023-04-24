@@ -105,7 +105,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "dwpSupplementaryResponse",
                 null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", "Yes")),
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
                 singletonList(
                     Map.of(
                         "taskId", "reviewBilingualDocument",
@@ -118,7 +118,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadDocument",
                 null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", "Yes")),
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
                 singletonList(
                     Map.of(
                         "taskId", "reviewBilingualDocument",
@@ -131,13 +131,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "dwpUploadResponse",
                 null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", "No")),
+                Map.of("Data", Map.of("languagePreferenceWelsh", false)),
                 List.of()
             ),
             Arguments.of(
                 "attachScannedDocs",
                 null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", "Yes")),
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
                 singletonList(
                     Map.of(
                         "taskId", "reviewBilingualDocument",
@@ -150,7 +150,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadDocumentFurtherEvidence",
                 null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", "Yes")),
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
                 singletonList(
                     Map.of(
                         "taskId", "reviewBilingualDocument",
