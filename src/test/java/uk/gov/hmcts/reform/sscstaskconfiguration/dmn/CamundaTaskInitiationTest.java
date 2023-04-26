@@ -19,6 +19,7 @@ import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_SSCS_BENEFIT;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.InitiationScenarioBuilder.event;
 
 class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
@@ -147,19 +148,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
-            Arguments.of(
-                "uploadDocumentFurtherEvidence",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewBilingualDocument",
-                        "name", "Review Bi-Lingual Document",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "reviewBilingualDocument"
-                    )
-                )
-            )
+            event("uploadDocumentFurtherEvidence")
+                .withCaseData("languagePreferenceWelsh", true)
+                .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document", 10)
+                .build(),
+            event("sendToAdmin")
+                .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
+                .build()
         );
     }
 
@@ -185,7 +180,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(6));
+        assertThat(logic.getRules().size(), is(7));
 
     }
 

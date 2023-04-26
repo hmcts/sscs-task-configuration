@@ -12,11 +12,12 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_COMPLETION_SSCS_BENEFIT;
@@ -31,69 +32,13 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
 
         return Stream.of(
-            Arguments.of(
-                "nonCompliant",
-                asList(
-                    Map.of(
-                        "taskType", "reviewTheAppeal",
-                        "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestInfoIncompleteApplication",
-                asList(
-                    Map.of(
-                        "taskType", "reviewIncompleteAppeal",
-                        "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
-                "interlocInformationReceived",
-                asList(
-                    Map.of(
-                        "taskType", "reviewInformationRequested",
-                        "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
-                "validSendToInterloc",
-                asList(
-                    Map.of(
-                        "taskType", "reviewInformationRequested",
-                        "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
-                "interlocSendToTcw",
-                asList(
-                    Map.of(
-                        "taskType", "reviewInformationRequested",
-                        "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
-                "hmctsResponseReviewed",
-                asList(
-                    Map.of(
-                        "taskType", "reviewFtaResponse",
-                        "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestTranslationFromWLU",
-                asList(
-                    Map.of(
-                        "taskType", "reviewBilingualDocument",
-                        "completionMode", "Auto"
-                    )
-                )
-            )
+            eventAutoCompletesTasks("nonCompliant","reviewTheAppeal"),
+            eventAutoCompletesTasks("requestInfoIncompleteApplication","reviewIncompleteAppeal"),
+            eventAutoCompletesTasks("interlocInformationReceived", "reviewInformationRequested", "reviewAdminAction"),
+            eventAutoCompletesTasks("validSendToInterloc", "reviewInformationRequested", "reviewAdminAction"),
+            eventAutoCompletesTasks("interlocSendToTcw", "reviewInformationRequested", "reviewAdminAction"),
+            eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse"),
+            eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument")
         );
     }
 
@@ -113,9 +58,15 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(5));
+        assertThat(logic.getRules().size(), is(6));
 
     }
 
-
+    public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
+        return Arguments.of(event, Arrays.stream(tasks).map(t -> Map.of(
+                "taskType", t,
+                "completionMode", "Auto"
+            )).collect(Collectors.toList())
+        );
+    }
 }

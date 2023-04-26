@@ -213,6 +213,35 @@
           <text>"reviewBilingualDocument"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_00z0ypi">
+        <inputEntry id="UnaryTests_0b3cbrp">
+          <text>"sendToAdmin"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h1lt5w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rdsw6q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uy8py7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dvy239">
+          <text>"reviewAdminAction"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o512rv">
+          <text>"Review Admin Action"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xlhj92">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_019bkck">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00vxeom">
+          <text>"reviewAdminAction"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

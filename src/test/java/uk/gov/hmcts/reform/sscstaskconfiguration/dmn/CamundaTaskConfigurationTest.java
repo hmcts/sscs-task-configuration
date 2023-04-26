@@ -96,6 +96,20 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         + "${[CASE_REFERENCE]}/trigger/requestTranslationFromWLU)", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .build()
+            ),
+            Arguments.of(
+                "reviewAdminAction",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(DESCRIPTION,
+                        "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)<br/>"
+                        + "[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)<br/>"
+                        + "[Interloc Information Received](/case/SSCS/Benefit/${[CASE_REFERENCE]}"
+                            + "/trigger/interlocInformationReceived)", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
+                    .build()
             )
         );
     }
@@ -123,7 +137,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(23));
+        assertThat(logic.getRules().size(), is(24));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
