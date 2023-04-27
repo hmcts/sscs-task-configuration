@@ -112,7 +112,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewBilingualDocument",
                         "name", "Review Bi-Lingual Document",
                         "workingDaysAllowed", 10,
-                        "processCategories", "reviewBilingualDocument"
+                        "processCategories", "Translation Tasks"
                     )
                 )
             ),
@@ -125,7 +125,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewBilingualDocument",
                         "name", "Review Bi-Lingual Document",
                         "workingDaysAllowed", 10,
-                        "processCategories", "reviewBilingualDocument"
+                        "processCategories", "Translation Tasks"
                     )
                 )
             ),
@@ -144,13 +144,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewBilingualDocument",
                         "name", "Review Bi-Lingual Document",
                         "workingDaysAllowed", 10,
-                        "processCategories", "reviewBilingualDocument"
+                        "processCategories", "Translation Tasks"
                     )
                 )
             ),
             event("uploadDocumentFurtherEvidence")
                 .withCaseData("languagePreferenceWelsh", true)
-                .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document", 10)
+                .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document",
+                                 10, "Translation Tasks")
+                .build(),
+            event("uploadWelshDocument")
+                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
+                                 10, "Translation Tasks")
                 .build(),
             event("sendToAdmin")
                 .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
@@ -180,7 +185,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(7));
+        assertThat(logic.getRules().size(), is(8));
 
     }
 

@@ -210,7 +210,36 @@
           <text>10</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0otfkfu">
-          <text>"reviewBilingualDocument"</text>
+          <text>"Translation Tasks"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07ed4hc">
+        <inputEntry id="UnaryTests_18obcuw">
+          <text>"uploadWelshDocument"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l0p24z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kq94pm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fnsevb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13f3ypf">
+          <text>"issueOutstandingTranslation"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t7lhrj">
+          <text>"Issue Outstanding Translation"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ek5mkr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yf7t06">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lck5ho">
+          <text>"Translation Tasks"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00z0ypi">
