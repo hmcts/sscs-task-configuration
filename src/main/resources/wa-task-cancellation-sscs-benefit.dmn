@@ -132,6 +132,33 @@
           <text>"reviewFtaResponse"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_08ygl8s">
+        <inputEntry id="UnaryTests_1dqsse9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17129al">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"struckOut",
+"readyToList"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eji6eu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0p86xn0">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08j2tip">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19rup5v">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0teg9tb">
+          <text>"reviewFtaDueDate"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0z06aj3">
         <inputEntry id="UnaryTests_1v1po3z">
           <text></text>

@@ -32,7 +32,7 @@
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
-      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
+      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="955" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="208" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="273" />
       <rule id="DecisionRule_1k8i9hn">
@@ -269,6 +269,37 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_00vxeom">
           <text>"reviewAdminAction"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15u0n7b">
+        <inputEntry id="UnaryTests_0xg9m4u">
+          <text>"appealCreated"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a07zej">
+          <text>"withFta"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mplnrd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kt8czx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_017dwto">
+          <text>"reviewFtaDueDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1s960dq">
+          <text>"Review FTA Due Date"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qxxwkc">
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.dwpDueDate!= null and additionalData.Data.dwpDueDate!= "")
+	then (date(additionalData.Data.dwpDueDate) - today()).days
+else 0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w3hy6t">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0szrm6t">
+          <text>"reviewFtaDueDate"</text>
         </outputEntry>
       </rule>
     </decisionTable>
