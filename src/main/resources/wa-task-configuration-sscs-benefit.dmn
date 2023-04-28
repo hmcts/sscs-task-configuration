@@ -101,7 +101,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -118,7 +118,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -154,7 +154,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -199,6 +199,24 @@ null</text>
           <text>5000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0a9nh45">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0l03bs7">
+        <description>Low priority if hearing data not available</description>
+        <inputEntry id="UnaryTests_0fj4f9h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0epq85p">
+          <text>"reviewFtaDueDate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1653vwt">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1al9tsm">
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 5000 else 6000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zukoi1">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -338,6 +356,23 @@ null</text>
           <text>"[Action Unprocessed Correspondence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionUnprocessedCorrespondence)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kviqys">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bn3hur">
+        <inputEntry id="UnaryTests_1m1nkh5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_173tie7">
+          <text>"reviewFtaDueDate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s7k1vp">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_098mpbp">
+          <text>"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ef73m6">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -482,7 +517,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>
