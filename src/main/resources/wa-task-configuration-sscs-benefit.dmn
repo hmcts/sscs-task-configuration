@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -95,10 +95,10 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
-          <text>"work_type"</text>
+          <text>"workType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16td79g">
           <text>"routine_work"</text>
@@ -112,7 +112,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -125,7 +125,7 @@ null</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1loicg1">
-        <description>hearing date if available</description>
+        <description>Hearing date if available minus 10 days</description>
         <inputEntry id="UnaryTests_039jxa1">
           <text></text>
         </inputEntry>
@@ -136,13 +136,14 @@ null</text>
           <text>"priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yq77of" expressionLanguage="feel">
-          <text>if(caseData!=null and caseData.nextHearingDate!=null) then caseData.nextHearingDate else ""</text>
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then date(caseData.nextHearingDate) - duration("P10D")  else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05klryr">
           <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1u4vdqa">
+        <description>Default priorty</description>
         <inputEntry id="UnaryTests_00f1los">
           <text></text>
         </inputEntry>
@@ -160,23 +161,25 @@ null</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1a8gebd">
+        <description>High priority if hearing data not available</description>
         <inputEntry id="UnaryTests_1spe9nj">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xxo6ds">
-          <text>300</text>
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 500 else 300</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0m753dr">
           <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0j08ox4">
+        <description>Default priorty</description>
         <inputEntry id="UnaryTests_01wd578">
           <text></text>
         </inputEntry>
@@ -194,17 +197,18 @@ null</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_18ijrs0">
+        <description>High priority if hearing data not available</description>
         <inputEntry id="UnaryTests_1h85ecq">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_123h2cy">
-          <text>3000</text>
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 5000 else 3000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0587fwj">
           <text>true</text>
@@ -232,7 +236,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15wzdbz">
-          <text>"requestInfoIncompleteApplication"</text>
+          <text>"reviewInformationRequested"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0b20p45">
           <text>"description"</text>
@@ -258,6 +262,40 @@ null</text>
           <text>"[Action Unprocessed Correspondence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionUnprocessedCorrespondence)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kviqys">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rt6nh7">
+        <inputEntry id="UnaryTests_1dsknmi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08bjsdv">
+          <text>"reviewFtaResponse"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k0e9b0">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12okm4q">
+          <text>"[Review FTA Response](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ehr5wt">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p938bu">
+        <inputEntry id="UnaryTests_0xvluzi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fdbij6">
+          <text>"reviewBilingualDocument"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12q677g">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ydax3u">
+          <text>"[Request translation from WLU](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestTranslationFromWLU)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hkaics">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -335,7 +373,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0oty722">
-          <text>"actionUnprocessedCorrespondence"</text>
+          <text>"actionUnprocessedCorrespondence","reviewBilingualDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1dk6n8z">
           <text>"dueDateIntervalDays"</text>
@@ -369,7 +407,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pw9fy3">
-          <text>"requestInfoIncompleteApplication"</text>
+          <text>"reviewInformationRequested"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0hvbenp">
           <text>"dueDateIntervalDays"</text>
@@ -378,6 +416,23 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lu12o9">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dj6t85">
+        <inputEntry id="UnaryTests_1b6teoc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_035g0v3">
+          <text>"reviewFtaResponse"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hcibko">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tr6hlv">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xobr9s">
           <text>true</text>
         </outputEntry>
       </rule>

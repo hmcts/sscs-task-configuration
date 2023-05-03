@@ -26,6 +26,16 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK
 
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
+    public static final String YES = "Yes";
+    public static final String MINOR_PRIORITY = "minorPriority";
+    public static final String MAJOR_PRIORITY = "majorPriority";
+    public static final String DESCRIPTION = "description";
+    public static final String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
+    public static final String PRIORITY_DATE = "priorityDate";
+    public static final String NEXT_HEARING_ID = "nextHearingId";
+    public static final String NEXT_HEARING_DATE = "nextHearingDate";
+    public static final String DUE_DATE_NON_WORKING_CALENDAR = "dueDateNonWorkingCalendar";
+
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
             Arguments.of(
@@ -39,28 +49,63 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .withNextHearing("1234567", "2023-03-16")
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue("priorityDate", "2023-03-16", true)
-                    .expectedValue("nextHearingId", "1234567", true)
-                    .expectedValue("nextHearingDate", "2023-03-16", true)
+                    .expectedValue(PRIORITY_DATE, "2023-03-06", true)
+                    .expectedValue(NEXT_HEARING_ID, "1234567", true)
+                    .expectedValue(NEXT_HEARING_DATE, "2023-03-16", true)
                     .build()
             ),
             Arguments.of(
                 "reviewIncompleteAppeal",
                 CaseDataBuilder.defaultCase()
-                    .isScottishCase("Yes")
+                    .isScottishCase(YES)
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue("dueDateNonWorkingCalendar", ConfigurationExpectationBuilder.SCOTLAND_CALENDAR, true)
+                    .expectedValue(DUE_DATE_NON_WORKING_CALENDAR,
+                                   ConfigurationExpectationBuilder.SCOTLAND_CALENDAR, true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewInformationRequested",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(DESCRIPTION, "[Review Information Requested](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/interlocInformationReceived)",true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewFtaResponse",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(DESCRIPTION, "[Review FTA Response](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
             Arguments.of(
                 "actionUnprocessedCorrespondence",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue("minorPriority", "300", true)
-                    .expectedValue("majorPriority", "3000", true)
-                    .expectedValue("description", "[Action Unprocessed Correspondence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionUnprocessedCorrespondence)", true)
-                    .expectedValue("work_type", "routine_work", true)
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(DESCRIPTION, "[Action Unprocessed Correspondence](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/actionUnprocessedCorrespondence)", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewBilingualDocument",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(DESCRIPTION, "[Request translation from WLU](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/requestTranslationFromWLU)", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .build()
             )
         );
@@ -89,7 +134,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(21));
+        assertThat(logic.getRules().size(), is(24));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

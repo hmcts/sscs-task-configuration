@@ -11,6 +11,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -85,16 +86,52 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "dwpSupplementaryResponse",
-                "dwpSupplementaryResponse",
                 null,
                 null,
                 singletonList(
                     Map.of(
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
-                        "delayDuration", null,
                         "workingDaysAllowed", 10,
                         "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                "withDwp",
+                Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewFtaResponse",
+                        "name", "Review FTA Response",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "reviewFtaResponse"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                "withDwp",
+                Map.of("Data", Map.of("dwpFurtherInfo", "No")),
+                List.of()
+            ),
+            Arguments.of(
+                "dwpSupplementaryResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    ),
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
                     )
                 )
             ),
@@ -106,9 +143,27 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
-                        "delayDuration", null,
                         "workingDaysAllowed", 10,
                         "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocument",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    ),
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
                     )
                 )
             ),
@@ -120,27 +175,68 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
-                        "delayDuration", null,
                         "workingDaysAllowed", 10,
                         "processCategories", "Routine work"
                     )
                 )
             ),
             Arguments.of(
-                List.of("uploadDocumentFurtherEvidence"),
+                "dwpUploadResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", false)),
+                List.of()
+            ),
+            Arguments.of(
+                "attachScannedDocs",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    ),
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocumentFurtherEvidence",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    ),
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocumentFurtherEvidence",
                 null,
                 null,
                 singletonList(
                     Map.of(
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
-                        "delayDuration", null,
                         "workingDaysAllowed", 10,
                         "processCategories", "Routine work"
                     )
                 )
             )
-
         );
     }
 
@@ -166,7 +262,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(5));
+        assertThat(logic.getRules().size(), is(7));
 
     }
 

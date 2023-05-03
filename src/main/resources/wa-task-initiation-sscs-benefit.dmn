@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
-      <input id="Input_1" label="Event Id" biodi:width="232" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="278" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -12,12 +12,22 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0a0i7vo" label="Case data" biodi:width="150" camunda:inputVariable="caseData">
-        <inputExpression id="LiteralExpression_18qwedg" typeRef="context">
-          <text>if(additionalData != null and additionalData.Data != null) then
-            additionalData.Data
-else
-null</text>
+      <input id="InputClause_09qqpx6" label="DWP Further Info" camunda:inputVariable="dwpFurtherInfo">
+        <inputExpression id="LiteralExpression_0nsfl92" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.dwpFurtherInfo
+            != null) then
+            additionalData.Data.dwpFurtherInfo
+            else
+            null</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_19ghw9y" label="Language Preference Welsh" biodi:width="226" camunda:inputVariable="languagePreferenceWelsh">
+        <inputExpression id="LiteralExpression_0lq7c6k" typeRef="boolean">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.languagePreferenceWelsh
+            != null) then
+            additionalData.Data.languagePreferenceWelsh
+            else
+            null</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
@@ -33,7 +43,10 @@ null</text>
         <inputEntry id="UnaryTests_04h5jg8">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0jwc1y5">
+        <inputEntry id="UnaryTests_1wvprxb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_186kf4g">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1f3k7q8">
@@ -59,7 +72,10 @@ null</text>
         <inputEntry id="UnaryTests_087it8y">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0ztfm0s">
+        <inputEntry id="UnaryTests_04ulcvj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l6xrs4">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_16rjk56">
@@ -85,7 +101,10 @@ null</text>
         <inputEntry id="UnaryTests_1r32833">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_06qwty9">
+        <inputEntry id="UnaryTests_14kwvou">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m44hra">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_01zq61j">
@@ -111,7 +130,10 @@ null</text>
         <inputEntry id="UnaryTests_0lh9r0z">
           <text>"withDwp"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0nbt8pu">
+        <inputEntry id="UnaryTests_0eauflk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x6e0h1">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1rw39zd">
@@ -140,6 +162,9 @@ null</text>
         <inputEntry id="UnaryTests_08ea8kt">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_18ea8kt">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_169r5qy">
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
@@ -154,6 +179,67 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1l3zbqn">
           <text>"Routine work"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xqagg7">
+        <inputEntry id="UnaryTests_00i9dmn">
+          <text>"dwpUploadResponse"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nspqgr">
+          <text>"withDwp"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bql2sl">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06twvx4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14npkzr">
+          <text>"reviewFtaResponse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1208ebj">
+          <text>"Review FTA Response"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17h8e8i">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dl8lim">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1elelam">
+          <text>"reviewFtaResponse"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ayetr8">
+        <inputEntry id="UnaryTests_06b2evz">
+          <text>"dwpSupplementaryResponse",
+"uploadDocument",
+"attachScannedDocs",
+"uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04f7fw7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05gj6vg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tq8m1x">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_020molb">
+          <text>"reviewBilingualDocument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oph97h">
+          <text>"Review Bi-Lingual Document"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uf6uj8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0duu5cv">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0otfkfu">
+          <text>"reviewBilingualDocument"</text>
         </outputEntry>
       </rule>
     </decisionTable>
