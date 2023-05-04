@@ -71,11 +71,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "name", "CTSC-Administrator",
                         "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+
                         "autoAssignable", false
                     ),
                     Map.of(
                         "name", "CTSC-Team-Leader",
-                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
                         "autoAssignable", false
                     )
                 )
