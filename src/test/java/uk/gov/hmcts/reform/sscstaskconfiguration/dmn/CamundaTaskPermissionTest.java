@@ -62,7 +62,23 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "actionUnprocessedCorrespondence",
                 "someCaseData",
-                defaultCtscPermissions()
+                List.of(
+                    Map.of(
+                        "name", "Allocated-CTSC-Caseworker",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "autoAssignable", true
+                    ),
+                    Map.of(
+                        "name", "CTSC-Administrator",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "CTSC-Team-Leader",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "autoAssignable", false
+                    )
+                )
             ),
             Arguments.of(
                 "reviewBilingualDocument",
