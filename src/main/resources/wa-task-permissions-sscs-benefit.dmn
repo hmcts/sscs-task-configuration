@@ -239,7 +239,7 @@ else
       <rule id="DecisionRule_0e3o7rq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1kc55kf">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0e41w3x">
           <text></text>
