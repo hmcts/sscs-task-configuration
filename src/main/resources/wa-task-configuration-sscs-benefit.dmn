@@ -107,6 +107,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1lvz2py">
+        <inputEntry id="UnaryTests_0grdkbd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a9atyt">
+          <text>"reviewConfidentialityRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xklqhp">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n1ugbr">
+          <text>"pre_hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c8uu42">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0460vvp">
         <inputEntry id="UnaryTests_0pa4ux4">
           <text></text>
@@ -121,6 +138,23 @@ null</text>
           <text>"CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02omkc8">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i2nhzv">
+        <inputEntry id="UnaryTests_05olspb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lqa97e">
+          <text>"reviewConfidentialityRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ga9m4z">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uzw2y1">
+          <text>"Judicial"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lymbb3">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -148,7 +182,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -184,7 +218,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal"</text>
+          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -353,6 +387,28 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0mmz3sm">
+        <inputEntry id="UnaryTests_0sqjy1z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m1vtvw">
+          <text>"reviewConfidentialityRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j64nuj">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g0dnak">
+          <text>"[Review confidentiality request](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewConfidentialityRequest)&lt;br/&gt;" +
+"[Send to Admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Issue direction](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
+"[Issue Final Decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueFinalDecision)&lt;br/&gt;" + 
+"[Amend Interloc Review State](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ghkeyl">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -461,7 +517,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>

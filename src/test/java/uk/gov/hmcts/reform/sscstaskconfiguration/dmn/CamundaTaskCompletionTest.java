@@ -35,12 +35,18 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("nonCompliant","reviewTheAppeal"),
             eventAutoCompletesTasks("requestInfoIncompleteApplication","reviewIncompleteAppeal"),
             eventAutoCompletesTasks("interlocInformationReceived", "reviewInformationRequested", "reviewAdminAction"),
-            eventAutoCompletesTasks("validSendToInterloc", "reviewInformationRequested", "reviewAdminAction"),
+            eventAutoCompletesTasks("validSendToInterloc", "reviewInformationRequested", "reviewAdminAction",
+                                    "reviewConfidentialityRequest"),
             eventAutoCompletesTasks("interlocSendToTcw",
                                     "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate"),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse"),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument"),
-            eventAutoCompletesTasks("actionFurtherEvidence","issueOutstandingTranslation")
+            eventAutoCompletesTasks("actionFurtherEvidence","issueOutstandingTranslation"),
+            eventAutoCompletesTasks("reviewConfidentialityRequest","reviewConfidentialityRequest"),
+            eventAutoCompletesTasks("sendToAdmin","reviewConfidentialityRequest"),
+            eventAutoCompletesTasks("directionIssued","reviewConfidentialityRequest"),
+            eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest"),
+            eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest")
         );
     }
 
@@ -60,7 +66,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(8));
+        assertThat(logic.getRules().size(), is(9));
 
     }
 

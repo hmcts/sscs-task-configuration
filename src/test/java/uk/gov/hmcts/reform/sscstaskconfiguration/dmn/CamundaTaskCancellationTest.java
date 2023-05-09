@@ -36,26 +36,31 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
-                .cancel("reviewFtaDueDate").build(),
+                .cancel("reviewFtaDueDate")
+                .cancel("reviewConfidentialityRequest").build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
-                .cancel("reviewFtaDueDate").build(),
+                .cancel("reviewFtaDueDate")
+                .cancel("reviewConfidentialityRequest").build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
-                .cancel("reviewFtaDueDate").build(),
+                .cancel("reviewFtaDueDate")
+                .cancel("reviewConfidentialityRequest").build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
-                .cancel("reviewFtaResponse").build(),
+                .cancel("reviewFtaResponse")
+                .cancel("reviewConfidentialityRequest").build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
-                .cancel("reviewFtaDueDate").build(),
+                .cancel("reviewFtaDueDate")
+                .cancel("reviewConfidentialityRequest").build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal").build(),
             event("makeCaseUrgent")
@@ -67,7 +72,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate").build(),
             event("decisionIssued")
-                .cancel("reviewIncompleteAppeal").build(),
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewConfidentialityRequest").build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks").build()
         );
@@ -95,7 +101,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(7));
+        assertThat(logic.getRules().size(), is(8));
 
     }
 }

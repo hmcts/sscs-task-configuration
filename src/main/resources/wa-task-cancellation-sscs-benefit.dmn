@@ -182,6 +182,34 @@
           <text>"Translation Tasks"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0itp0v4">
+        <inputEntry id="UnaryTests_0bpsw37">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12hvrb3">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rg17ow">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sxpdi4">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0aachah">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l97rz7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ez8rj7">
+          <text>"reviewConfidentialityRequest"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_06vo1lb">
         <inputEntry id="UnaryTests_0ivl1q1">
           <text></text>

@@ -30,11 +30,13 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     public static final String MINOR_PRIORITY = "minorPriority";
     public static final String MAJOR_PRIORITY = "majorPriority";
     public static final String DESCRIPTION = "description";
+    public static final String WORK_TYPE = "workType";
     public static final String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
     public static final String PRIORITY_DATE = "priorityDate";
     public static final String NEXT_HEARING_ID = "nextHearingId";
     public static final String NEXT_HEARING_DATE = "nextHearingDate";
     public static final String DUE_DATE_NON_WORKING_CALENDAR = "dueDateNonWorkingCalendar";
+    public static final String ROLE_CATEGORY = "roleCategory";
 
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
@@ -132,6 +134,24 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         + "/trigger/interlocSendToTcw)", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
+            ),
+            Arguments.of(
+                "reviewConfidentialityRequest",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(WORK_TYPE, "pre_hearing_work", true)
+                    .expectedValue(ROLE_CATEGORY, "Judicial", true)
+                    .expectedValue(DESCRIPTION,
+                        "[Review confidentiality request](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewConfidentialityRequest)<br/>"
+                        + "[Send to Admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)<br/>"
+                        + "[Issue direction](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)<br/>"
+                        + "[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)<br/>"
+                        + "[Issue Final Decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueFinalDecision)<br/>"
+                        + "[Amend Interloc Review State](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
             )
         );
     }
@@ -159,7 +179,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(27));
+        assertThat(logic.getRules().size(), is(30));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

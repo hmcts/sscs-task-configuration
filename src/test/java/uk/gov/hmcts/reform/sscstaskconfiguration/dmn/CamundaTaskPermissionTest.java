@@ -31,6 +31,43 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_PERMISSIONS_SSCS_BENEFIT;
     }
 
+    static Map<String, Object> permission(String role, String value) {
+        return Map.of(
+            "name", role,
+            "value", value,
+            "autoAssignable", false
+        );
+    }
+
+    static Map<String, Object> permission(String role, String value, String roleCategory) {
+        return Map.of(
+            "name", role,
+            "value", value,
+            "roleCategory", roleCategory,
+            "autoAssignable", false
+        );
+    }
+
+    static Map<String, Object> permission(String role, String value, String roleCategory, int assignmentPriority) {
+        return Map.of(
+            "name", role,
+            "value", value,
+            "roleCategory", roleCategory,
+            "assignmentPriority", assignmentPriority,
+            "autoAssignable", true
+        );
+    }
+
+    static Map<String, Object> permission(String role, String value, String roleCategory, String authorisations) {
+        return Map.of(
+            "name", role,
+            "value", value,
+            "roleCategory", roleCategory,
+            "authorisations", authorisations,
+            "autoAssignable", false
+        );
+    }
+
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
             Arguments.of(
@@ -78,6 +115,23 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewFtaDueDate",
                 "someCaseData",
                 defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewFtaDueDate",
+                "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewConfidentialityRequest",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+                )
             )
         );
     }
@@ -190,7 +244,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(11));
+        assertThat(logic.getRules().size(), is(15));
 
     }
 

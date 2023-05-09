@@ -12,6 +12,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -165,6 +166,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             eventWithState("appealCreated", "withFta")
                 .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
                 .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", Arrays.asList("Confidentiality Request"))
+                .initiativesTask("reviewConfidentialityRequest", "Review confidentiality request", 2)
+                .build(),
+            event("uploadWelshDocument")
+                .withCaseData("scannedDocumentTypes", Arrays.asList("Confidentiality Request"))
+                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
+                                 10, "Translation Tasks")
+                .initiativesTask("reviewConfidentialityRequest", "Review confidentiality request", 2)
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", Arrays.asList("Confidentiality Request"))
+                .initiativesTask("reviewConfidentialityRequest", "Review confidentiality request", 2)
                 .build()
         );
     }
@@ -191,7 +206,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(9));
+        assertThat(logic.getRules().size(), is(10));
 
     }
 

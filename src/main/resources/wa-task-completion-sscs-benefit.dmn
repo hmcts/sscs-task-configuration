@@ -97,6 +97,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1f54r9s">
+        <inputEntry id="UnaryTests_134fjvk">
+          <text>"reviewConfidentialityRequest","sendToAdmin","directionIssued","validSendToInterloc","issueFinalDecision","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ebaydg">
+          <text>"reviewConfidentialityRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0awtpm3">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
