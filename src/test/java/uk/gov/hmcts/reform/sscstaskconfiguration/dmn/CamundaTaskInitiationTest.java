@@ -399,7 +399,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             eventWithState("appealCreated", "withFta")
                 .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
                 .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
-                .build()
+                .build(),
+            Arguments.of(
+                "validAppealCreated",
+                "validAppeal",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewValidAppeal",
+                        "name", "Review Valid Appeal",
+                        "delayDuration", 3,
+                        "workingDaysAllowed", 5,
+                        "processCategories", "reviewValidAppeal"
+                    )
+                )
+            )
         );
     }
 
@@ -424,7 +438,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(10));
+        assertThat(logic.getRules().size(), is(11));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
