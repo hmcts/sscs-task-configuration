@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_COMPLETION_SSCS_BENEFIT;
@@ -33,7 +32,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
         return Stream.of(
             Arguments.of(
                 "nonCompliant",
-                asList(
+                List.of(
                     Map.of(
                         "taskType", "reviewTheAppeal",
                         "completionMode", "Auto"
@@ -42,7 +41,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "requestInfoIncompleteApplication",
-                asList(
+                List.of(
                     Map.of(
                         "taskType", "reviewIncompleteAppeal",
                         "completionMode", "Auto"
@@ -51,7 +50,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "interlocInformationReceived",
-                asList(
+                List.of(
                     Map.of(
                         "taskType", "reviewInformationRequested",
                         "completionMode", "Auto"
@@ -60,7 +59,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "validSendToInterloc",
-                asList(
+                List.of(
                     Map.of(
                         "taskType", "reviewInformationRequested",
                         "completionMode", "Auto"
@@ -69,7 +68,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "interlocSendToTcw",
-                asList(
+                List.of(
                     Map.of(
                         "taskType", "reviewInformationRequested",
                         "completionMode", "Auto"
@@ -78,7 +77,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "actionFurtherEvidence",
-                asList(
+                List.of(
                     Map.of(
                         "taskType", "actionUnprocessedCorrespondence",
                         "completionMode", "Auto"
@@ -87,7 +86,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "hmctsResponseReviewed",
-                asList(
+                List.of(
                     Map.of(
                         "taskType", "reviewFtaResponse",
                         "completionMode", "Auto"
@@ -96,9 +95,18 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "requestTranslationFromWLU",
-                asList(
+                List.of(
                     Map.of(
                         "taskType", "reviewBilingualDocument",
+                        "completionMode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadWelshDocument",
+                List.of(
+                    Map.of(
+                        "taskType", "reviewValidAppeal",
                         "completionMode", "Auto"
                     )
                 )
@@ -122,7 +130,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(6));
+        assertThat(logic.getRules().size(), is(7));
 
     }
 

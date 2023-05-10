@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -95,7 +95,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -112,7 +112,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -148,7 +148,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -193,6 +193,24 @@ null</text>
           <text>5000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0a9nh45">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nsjxrb">
+        <description>Default priorty</description>
+        <inputEntry id="UnaryTests_1m8fade">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1er22bd">
+          <text>"reviewValidAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15rpj6m">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14mzmpp">
+          <text>6000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13rhu0i">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -299,6 +317,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0q3doc2">
+        <inputEntry id="UnaryTests_1gybgbw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gjlb0g">
+          <text>"reviewValidAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1m55a59">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f53jur">
+          <text>"[Review Valid Appeal](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewValidAppeal)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tou6l9">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -390,7 +425,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1swv4p3">
-          <text>"reviewIncompleteAppeal"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ndgnkl">
           <text>"dueDateIntervalDays"</text>

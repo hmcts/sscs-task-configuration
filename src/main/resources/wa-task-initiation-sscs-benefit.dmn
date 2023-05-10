@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" biodi:width="278" camunda:inputVariable="eventId">
@@ -240,6 +240,35 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0otfkfu">
           <text>"reviewBilingualDocument"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ru3w7f">
+        <inputEntry id="UnaryTests_1xo57u6">
+          <text>"validAppealCreated"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kt1u0j">
+          <text>"validAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07mrjzx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01jgvo4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_132d9b7">
+          <text>"reviewValidAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0omk3t0">
+          <text>"Review Valid Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jsyluq">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0exrqrc">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1obxfvo">
+          <text>"reviewValidAppeal"</text>
         </outputEntry>
       </rule>
     </decisionTable>
