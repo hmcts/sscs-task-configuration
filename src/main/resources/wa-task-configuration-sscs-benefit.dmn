@@ -95,7 +95,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal","reviewListingError"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -112,7 +112,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal","reviewListingError"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -166,7 +166,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -220,7 +220,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -331,6 +331,23 @@ null</text>
           <text>"[Review Valid Appeal](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewValidAppeal)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tou6l9">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w6ramv">
+        <inputEntry id="UnaryTests_0i769ig">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0do6jny">
+          <text>"reviewListingError"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s0vl1q">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1s2f9ma">
+          <text>"[Review Listing Error](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewListingError)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j27evi">
           <text>true</text>
         </outputEntry>
       </rule>
