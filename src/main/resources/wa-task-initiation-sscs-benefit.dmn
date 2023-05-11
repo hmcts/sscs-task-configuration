@@ -363,6 +363,35 @@ else 0</text>
           <text>"reviewValidAppeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1j3chr7">
+        <inputEntry id="UnaryTests_1y13f9l">
+          <text>"readyToList","listingError"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fgz2uh">
+          <text>"listingError"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ov3f7v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xhmuxk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0iajs67">
+          <text>"reviewListingError"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tml8j0">
+          <text>"Review Listing Error"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o2expb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_107bt8v">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03n06hh">
+          <text>"reviewListingError"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
@@ -460,7 +489,7 @@ null</text>
         <outputEntry id="LiteralExpression_1veyac7">
           <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
         </outputEntry>
-      </rule>      
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

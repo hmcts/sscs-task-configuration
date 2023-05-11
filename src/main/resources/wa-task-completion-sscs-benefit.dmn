@@ -119,6 +119,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0m5vzzi">
+        <inputEntry id="UnaryTests_1u0vf36">
+          <text>"updateListingRequirement","readyToList"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pm4iv8">
+          <text>"reviewListingError"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zwws2c">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
