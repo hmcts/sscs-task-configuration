@@ -127,6 +127,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(DESCRIPTION, "[Review Listing Error](/case/SSCS/Benefit" +
                         "/${[CASE_REFERENCE]}/trigger/reviewListingError)", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .build()
             )
         );
