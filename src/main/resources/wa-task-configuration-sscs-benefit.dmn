@@ -118,7 +118,7 @@ null</text>
           <text>"workType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0n1ugbr">
-          <text>"pre_hearing_work"</text>
+          <text>"pre_hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c8uu42">
           <text>true</text>
@@ -384,28 +384,6 @@ null</text>
           <text>"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ef73m6">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0mmz3sm">
-        <inputEntry id="UnaryTests_0sqjy1z">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0m1vtvw">
-          <text>"reviewConfidentialityRequest"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0j64nuj">
-          <text>"description"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1g0dnak">
-          <text>"[Review confidentiality request](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewConfidentialityRequest)&lt;br/&gt;" +
-"[Send to Admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
-"[Issue direction](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
-"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
-"[Issue Final Decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueFinalDecision)&lt;br/&gt;" + 
-"[Amend Interloc Review State](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ghkeyl">
           <text>true</text>
         </outputEntry>
       </rule>

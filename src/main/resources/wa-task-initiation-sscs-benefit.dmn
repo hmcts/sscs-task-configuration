@@ -21,7 +21,7 @@
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_19ghw9y" label="Language Preference Welsh" biodi:width="174" camunda:inputVariable="languagePreferenceWelsh">
+      <input id="InputClause_19ghw9y" label="Language Preference Welsh" biodi:width="153" camunda:inputVariable="languagePreferenceWelsh">
         <inputExpression id="LiteralExpression_0lq7c6k" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.languagePreferenceWelsh
             != null) then
@@ -30,13 +30,13 @@
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0vqvmjn" label="Scanned Document Types" biodi:width="352" camunda:inputVariable="scannedDocumentTypes">
+      <input id="InputClause_0vqvmjn" label="Scanned Document Types" biodi:width="236" camunda:inputVariable="scannedDocumentTypes">
         <inputExpression id="LiteralExpression_1d10a3h" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.scannedDocumentTypes
             != null) then
             additionalData.Data.scannedDocumentTypes
             else
-            []</text>
+ []</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
@@ -352,13 +352,13 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_02za9vp">
-          <text>contains(scannedDocumentTypes,"Confidentiality Request")</text>
+          <text>contains(scannedDocumentTypes, "confidentialityRequest")</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_03lalib">
           <text>"reviewConfidentialityRequest"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1tct797">
-          <text>"Review confidentiality request"</text>
+          <text>"Review Confidentiality Request"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16cf6y6">
           <text></text>

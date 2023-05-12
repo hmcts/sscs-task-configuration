@@ -12,7 +12,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -168,18 +167,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
                 .build(),
             event("actionFurtherEvidence")
-                .withCaseData("scannedDocumentTypes", Arrays.asList("Confidentiality Request"))
-                .initiativesTask("reviewConfidentialityRequest", "Review confidentiality request", 2)
+                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
+                .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
                 .build(),
             event("uploadWelshDocument")
-                .withCaseData("scannedDocumentTypes", Arrays.asList("Confidentiality Request"))
+                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
                 .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
                                  10, "Translation Tasks")
-                .initiativesTask("reviewConfidentialityRequest", "Review confidentiality request", 2)
+                .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
                 .build(),
             event("manageWelshDocuments")
-                .withCaseData("scannedDocumentTypes", Arrays.asList("Confidentiality Request"))
-                .initiativesTask("reviewConfidentialityRequest", "Review confidentiality request", 2)
+                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
+                .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
                 .build()
         );
     }
