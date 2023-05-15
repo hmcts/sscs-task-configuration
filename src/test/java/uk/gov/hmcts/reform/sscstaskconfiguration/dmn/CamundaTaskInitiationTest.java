@@ -259,6 +259,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewListingError",
                         "name", "Review Listing Error",
+                        "workingDaysAllowed", 3,
                         "processCategories", "reviewListingError"
                     )
                 )
