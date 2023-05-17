@@ -114,8 +114,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
-                    .expectedValue(DESCRIPTION, "[Review Valid Appeal](/case/SSCS/Benefit" +
-                        "/${[CASE_REFERENCE]}/trigger/reviewValidAppeal)", true)
+                    .expectedValue(DESCRIPTION, "[Review Valid Appeal](/case/SSCS/Benefit"
+                        + "/${[CASE_REFERENCE]}/trigger/reviewValidAppeal)", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .build()
             ),
@@ -125,8 +125,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION, "[Review Listing Error](/case/SSCS/Benefit" +
-                        "/${[CASE_REFERENCE]}/trigger/reviewListingError)", true)
+                    .expectedValue(DESCRIPTION, "[Review Listing Error](/case/SSCS/Benefit"
+                        + "/${[CASE_REFERENCE]}/trigger/reviewListingError)", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .build()
             )
