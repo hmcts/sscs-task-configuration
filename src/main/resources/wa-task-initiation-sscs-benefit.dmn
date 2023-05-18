@@ -418,7 +418,7 @@ else 0</text>
           <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0e4k1cx">
-          <text>"Routine Work"</text>
+          <text> "sendToRoboticsError"</text>
         </outputEntry>
       </rule>
     </decisionTable>

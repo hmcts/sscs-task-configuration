@@ -154,7 +154,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","sendToRoboticsError"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -208,7 +208,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0epq85p">
-          <text>"reviewFtaDueDate","reviewValidAppeal"</text>
+          <text>"reviewFtaDueDate","reviewValidAppeal","sendToRoboticsError"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1653vwt">
           <text>"majorPriority"</text>
