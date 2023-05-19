@@ -210,6 +210,35 @@
           <text>"reviewConfidentialityRequest"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1g2wf79">
+        <inputEntry id="UnaryTests_02ucmgp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qn6rtd">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision",
+"decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_070tper">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04kah9a">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15d884r">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15t5xtn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qngd2x">
+          <text>"reviewReinstatementRequestJudge"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_06vo1lb">
         <inputEntry id="UnaryTests_0ivl1q1">
           <text></text>

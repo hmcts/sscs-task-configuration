@@ -124,14 +124,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewConfidentialityRequest",
                 "someCaseData",
-                List.of(
-                    permission("case-allocator","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
-                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
-                )
+                defaultPermissionsJudgesReviewTasks()
+            ),
+            Arguments.of(
+                "reviewReinstatementRequestJudge",
+                "someCaseData",
+                defaultPermissionsJudgesReviewTasks()
             )
         );
     }
@@ -205,6 +203,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             )
+        );
+    }
+
+    private static List<Map<String, Object>> defaultPermissionsJudgesReviewTasks() {
+        return List.of(
+            permission("case-allocator","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
+            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
         );
     }
 
