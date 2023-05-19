@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <informationRequirement id="InformationRequirement_1t76wn6">
       <requiredDecision href="#sscs-task-configuration-non-working-days" />
     </informationRequirement>
     <informationRequirement id="InformationRequirement_172js3g">
       <requiredDecision href="#nextHearing" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_05ef9lu">
+      <requiredDecision href="#sscs-task-configuration-non-working-days" />
     </informationRequirement>
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -101,7 +104,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
- <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -118,7 +121,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
- <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -154,7 +157,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","sendToRoboticsError"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -208,7 +211,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0epq85p">
-          <text>"reviewFtaDueDate","reviewValidAppeal","sendToRoboticsError"</text>
+          <text>"reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1653vwt">
           <text>"majorPriority"</text>
@@ -410,6 +413,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_062r40k">
+        <inputEntry id="UnaryTests_1qa09r4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a4h6yx">
+          <text>"reviewRoboticFail"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s7tol9">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vkt2gs">
+          <text>"[Re-sends the case to GAPS 2](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/resendCaseToGAPS2)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17tgqaf">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -534,7 +554,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pw9fy3">
-          <text>"reviewInformationRequested","reviewListingError"</text>
+          <text>"reviewInformationRequested","reviewListingError","reviewRoboticFail"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0hvbenp">
           <text>"dueDateIntervalDays"</text>
@@ -678,11 +698,6 @@ null</text>
       <dmndi:DMNShape id="DMNShape_0ijg0or" dmnElementRef="wa-task-configuration-sscs-benefit">
         <dc:Bounds height="80" width="180" x="160" y="40" />
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_1vrh8rb" dmnElementRef="InformationRequirement_1t76wn6">
-        <di:waypoint x="250" y="210" />
-        <di:waypoint x="250" y="140" />
-        <di:waypoint x="250" y="120" />
-      </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_1mgaz03" dmnElementRef="sscs-task-configuration-non-working-days">
         <dc:Bounds height="80" width="180" x="160" y="210" />
       </dmndi:DMNShape>
@@ -702,6 +717,11 @@ null</text>
       <dmndi:DMNShape id="DMNShape_1mgaz02" dmnElementRef="Decision_1ol51p5">
         <dc:Bounds height="80" width="180" x="780" y="40" />
       </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1c2ddij" dmnElementRef="InformationRequirement_05ef9lu">
+        <di:waypoint x="250" y="210" />
+        <di:waypoint x="250" y="140" />
+        <di:waypoint x="250" y="120" />
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
