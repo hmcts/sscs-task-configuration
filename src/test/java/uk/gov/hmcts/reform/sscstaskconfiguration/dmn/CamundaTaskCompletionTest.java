@@ -38,15 +38,15 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("validSendToInterloc", "reviewInformationRequested", "reviewAdminAction",
                                     "reviewConfidentialityRequest"),
             eventAutoCompletesTasks("interlocSendToTcw",
-                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate"),
+                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate", "reviewUrgentHearingRequest"),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse"),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument"),
             eventAutoCompletesTasks("actionFurtherEvidence","issueOutstandingTranslation"),
             eventAutoCompletesTasks("reviewConfidentialityRequest","reviewConfidentialityRequest"),
-            eventAutoCompletesTasks("sendToAdmin","reviewConfidentialityRequest"),
-            eventAutoCompletesTasks("directionIssued","reviewConfidentialityRequest"),
+            eventAutoCompletesTasks("sendToAdmin","reviewConfidentialityRequest", "reviewUrgentHearingRequest"),
+            eventAutoCompletesTasks("directionIssued","reviewConfidentialityRequest", "reviewUrgentHearingRequest"),
             eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest"),
-            eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest")
+            eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest", "reviewUrgentHearingRequest")
         );
     }
 
@@ -66,7 +66,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(9));
+        assertThat(logic.getRules().size(), is(10));
 
     }
 

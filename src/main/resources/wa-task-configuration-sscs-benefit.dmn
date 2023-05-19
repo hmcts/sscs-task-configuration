@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -112,7 +112,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a9atyt">
-          <text>"reviewConfidentialityRequest"</text>
+          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xklqhp">
           <text>"workType"</text>
@@ -146,7 +146,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lqa97e">
-          <text>"reviewConfidentialityRequest"</text>
+          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ga9m4z">
           <text>"roleCategory"</text>
@@ -182,7 +182,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest", "reviewUrgentHearingRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -218,7 +218,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest"</text>
+          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest", "reviewUrgentHearingRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -495,7 +495,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest", "reviewUrgentHearingRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>
