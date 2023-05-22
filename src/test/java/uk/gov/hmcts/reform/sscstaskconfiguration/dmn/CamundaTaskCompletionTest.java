@@ -37,8 +37,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("interlocInformationReceived", "reviewInformationRequested", "reviewAdminAction"),
             eventAutoCompletesTasks("validSendToInterloc", "reviewInformationRequested", "reviewAdminAction",
                                     "reviewConfidentialityRequest"),
-            eventAutoCompletesTasks("interlocSendToTcw",
-                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate", "reviewUrgentHearingRequest"),
+            eventAutoCompletesTasks("interlocSendToTcw","reviewInformationRequested", "reviewAdminAction",
+                                    "reviewFtaDueDate", "reviewUrgentHearingRequest"),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse"),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument"),
             eventAutoCompletesTasks("actionFurtherEvidence","issueOutstandingTranslation"),
@@ -46,7 +46,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("sendToAdmin","reviewConfidentialityRequest", "reviewUrgentHearingRequest"),
             eventAutoCompletesTasks("directionIssued","reviewConfidentialityRequest", "reviewUrgentHearingRequest"),
             eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest"),
-            eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest", "reviewUrgentHearingRequest")
+            eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
+                                    "reviewUrgentHearingRequest")
         );
     }
 
