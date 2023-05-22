@@ -182,7 +182,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest", "reviewUrgentHearingRequest"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -191,6 +191,23 @@ null</text>
           <text>500</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ptswou">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08pr8ok">
+        <inputEntry id="UnaryTests_0s4kgb0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ymggmb">
+          <text>"reviewUrgentHearingRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n43g1v">
+          <text>"minorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0my7u45">
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 500 else 100</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wbmf6w">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -218,7 +235,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest", "reviewUrgentHearingRequest"</text>
+          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -227,6 +244,23 @@ null</text>
           <text>5000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0a9nh45">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1h4aasr">
+        <inputEntry id="UnaryTests_10aosjo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pk8oi8">
+          <text>"reviewUrgentHearingRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zms8im">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00sjgj4">
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 5000 else 1000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r7i123">
           <text>true</text>
         </outputEntry>
       </rule>
