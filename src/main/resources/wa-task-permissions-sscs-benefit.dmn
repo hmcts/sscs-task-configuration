@@ -157,7 +157,7 @@ else
       </rule>
       <rule id="DecisionRule_0nasu18">
         <inputEntry id="UnaryTests_16558sm">
-          <text>"reviewConfidentialityRequest"</text>
+          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_04qt2zh">
           <text></text>
