@@ -119,6 +119,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0d06llx">
+        <inputEntry id="UnaryTests_16nn4kn">
+          <text>"reviewPheRequest","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14b5adl">
+          <text>"reviewPheRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1micw2h">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

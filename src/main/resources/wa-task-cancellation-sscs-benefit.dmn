@@ -239,6 +239,35 @@
           <text>"reviewReinstatementRequestJudge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_17gkhmc">
+        <inputEntry id="UnaryTests_07n5vyu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hntzw6">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision",
+"decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zn1d9u">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ckrdi0">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00h9xqp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0piu1ni">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hde770">
+          <text>"reviewPheRequestJudge"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_06vo1lb">
         <inputEntry id="UnaryTests_0ivl1q1">
           <text></text>

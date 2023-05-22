@@ -38,34 +38,39 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewReinstatementRequestJudge").build(),
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge").build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewReinstatementRequestJudge").build(),
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge").build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewReinstatementRequestJudge").build(),
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge").build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewReinstatementRequestJudge").build(),
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge").build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewReinstatementRequestJudge").build(),
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge").build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal").build(),
             event("makeCaseUrgent")
@@ -79,11 +84,13 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             event("decisionIssued")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewReinstatementRequestJudge").build(),
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge").build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks").build(),
             event("issueFinalDecision")
-                .cancel("reviewReinstatementRequestJudge").build()
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge").build()
         );
     }
 
@@ -109,7 +116,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(9));
+        assertThat(logic.getRules().size(), is(10));
 
     }
 }

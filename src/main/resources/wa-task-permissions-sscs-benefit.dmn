@@ -157,7 +157,7 @@ else
       </rule>
       <rule id="DecisionRule_0nasu18">
         <inputEntry id="UnaryTests_16558sm">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewPheRequestJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_04qt2zh">
           <text></text>
@@ -343,6 +343,32 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1l7sw0j">
+        <inputEntry id="UnaryTests_0ct3egt">
+          <text>"reviewPheRequestJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ri0myh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0latm85">
+          <text>"interloc-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kfzhkb">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x3yf5i">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jo4pvk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ebple8">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p4p8ex">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_11w1a99">
         <inputEntry id="UnaryTests_04reol6">
           <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge"</text>
@@ -367,6 +393,32 @@ else
         </outputEntry>
         <outputEntry id="LiteralExpression_18icg6r">
           <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kumsrg">
+        <inputEntry id="UnaryTests_1nrlamk">
+          <text>"reviewPheRequestJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gpzj1d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1j63fje">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g0c765">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hk9c0g">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18gv8wp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q0ortp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jo2oci">
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1gd7pun">
@@ -397,7 +449,7 @@ else
       </rule>
       <rule id="DecisionRule_1a3ndv4">
         <inputEntry id="UnaryTests_0i1ce54">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewPheRequestJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yl9r0u">
           <text></text>
