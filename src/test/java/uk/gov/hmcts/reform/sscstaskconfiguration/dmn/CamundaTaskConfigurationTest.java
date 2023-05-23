@@ -145,35 +145,22 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewConfidentialityRequest",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue(WORK_TYPE, "pre_hearing", true)
-                    .expectedValue(ROLE_CATEGORY, "Judicial", true)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
-                    .build()
+                ConfigurationExpectationBuilder.defaultJudicialTaskExpectations().build()
             ),
             Arguments.of(
                 "reviewReinstatementRequestJudge",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue(WORK_TYPE, "pre_hearing", true)
-                    .expectedValue(ROLE_CATEGORY, "Judicial", true)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
-                    .build()
+                ConfigurationExpectationBuilder.defaultJudicialTaskExpectations().build()
             ),
             Arguments.of(
                 "reviewPheRequestJudge",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue(WORK_TYPE, "pre_hearing", true)
-                    .expectedValue(ROLE_CATEGORY, "Judicial", true)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
-                    .build()
+                ConfigurationExpectationBuilder.defaultJudicialTaskExpectations().build()
+            ),
+            Arguments.of(
+                "ftaNotProvidedAppointeeDetailsJudge",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultJudicialTaskExpectations().build()
             )
         );
     }
