@@ -424,6 +424,35 @@ else 0</text>
           <text> "reviewRoboticFail"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0m3ft60">
+        <inputEntry id="UnaryTests_1wru0hw">
+          <text>"directionDueDate"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s0uqeg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eda9os">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bh8fmt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02ma9kd">
+          <text>"reviewBfDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i35tkf">
+          <text>"Review BF Date"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17qexd4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pi8gz7">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i8s31y">
+          <text>"reviewBfDate"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
@@ -521,7 +550,7 @@ null</text>
         <outputEntry id="LiteralExpression_1veyac7">
           <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
         </outputEntry>
-      </rule>
+      </rule>      
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

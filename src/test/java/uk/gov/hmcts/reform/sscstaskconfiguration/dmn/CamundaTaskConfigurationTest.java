@@ -250,6 +250,17 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         + "/${[CASE_REFERENCE]}/trigger/resendCaseToGAPS2)", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .build()
+            ),
+            Arguments.of(
+                "reviewBfDate",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(DESCRIPTION, "[Amend due date](/case/SSCS/Benefit"
+                      + "/${[CASE_REFERENCE]}/trigger/amendDueDate)", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
+                    .build()
             )
         );
     }
