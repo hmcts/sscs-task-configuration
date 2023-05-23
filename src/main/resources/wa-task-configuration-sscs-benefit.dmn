@@ -104,7 +104,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -121,7 +121,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -427,6 +427,23 @@ null</text>
           <text>"[Re-sends the case to GAPS 2](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/resendCaseToGAPS2)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17tgqaf">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0407j4e">
+        <inputEntry id="UnaryTests_1sx10yp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07xhl4g">
+          <text>"reviewBfDate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1biyumo">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08oadw3">
+          <text>"[Amend due date](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/amendDueDate)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n21l6b">
           <text>true</text>
         </outputEntry>
       </rule>

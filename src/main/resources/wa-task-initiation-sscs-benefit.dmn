@@ -426,7 +426,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_0m3ft60">
         <inputEntry id="UnaryTests_1wru0hw">
-          <text>"directionDueDate"</text>
+          <text>"reviewBfDateRequired"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0s0uqeg">
           <text></text>
