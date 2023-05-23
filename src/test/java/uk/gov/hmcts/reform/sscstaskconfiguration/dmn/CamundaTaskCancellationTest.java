@@ -61,7 +61,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError").build(),
             event("validSendToInterloc")
-                .cancel("reviewIncompleteAppeal").build(),
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewBfDate").build(),
             event("makeCaseUrgent")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested").build(),
@@ -72,7 +73,11 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             event("decisionIssued")
                 .cancel("reviewIncompleteAppeal").build(),
             event("cancelTranslations")
-                .cancel("reviewBilingualDocument").build()
+                .cancel("reviewBilingualDocument").build(),
+            event("interlocSendToTcw")
+                .cancel("reviewBfDate").build(),
+            event("makeCaseUrgent")
+                .cancel("reviewBfDate").build()
         );
     }
 
