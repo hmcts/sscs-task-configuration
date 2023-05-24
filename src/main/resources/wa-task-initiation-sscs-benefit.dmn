@@ -48,11 +48,11 @@
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0hozxm4" label="Review By" camunda:inputVariable="reviewBy">
+      <input id="InputClause_0hozxm4" label="Action" camunda:inputVariable="action">
         <inputExpression id="LiteralExpression_1p7eoqt" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.reviewBy
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.action
             != null) then
-            additionalData.Data.reviewBy
+            additionalData.Data.action
             else
             null</text>
         </inputExpression>
@@ -560,6 +560,44 @@ else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1m0z4jo">
           <text>"ftaNotProvidedAppointeeDetailsJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16b5asi">
+        <inputEntry id="UnaryTests_1vwoori">
+          <text>"actionPostponementRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0allobu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ju9g5s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1663o38">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hqjmb0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_180d3ei">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09k2ys3">
+          <text>"sendToJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vexkc3">
+          <text>"reviewPostponementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1euaavz">
+          <text>"Review Postponement Request"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r4c03j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mme1q1">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11r59et">
+          <text>"reviewPostponementRequestJudge"</text>
         </outputEntry>
       </rule>
     </decisionTable>

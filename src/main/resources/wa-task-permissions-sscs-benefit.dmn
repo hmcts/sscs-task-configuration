@@ -157,7 +157,7 @@ else
       </rule>
       <rule id="DecisionRule_0nasu18">
         <inputEntry id="UnaryTests_16558sm">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_04qt2zh">
           <text></text>
@@ -395,9 +395,35 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0y3eeve">
+        <inputEntry id="UnaryTests_0k1mji4">
+          <text>"reviewPostponementRequestJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1avmryt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0q303vt">
+          <text>"hearing-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14ky6gs">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0712tz4">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t9smpw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ewnnen">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ddal6k">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0kumsrg">
         <inputEntry id="UnaryTests_1nrlamk">
-          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge"</text>
+          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gpzj1d">
           <text></text>
@@ -449,7 +475,7 @@ else
       </rule>
       <rule id="DecisionRule_1a3ndv4">
         <inputEntry id="UnaryTests_0i1ce54">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yl9r0u">
           <text></text>

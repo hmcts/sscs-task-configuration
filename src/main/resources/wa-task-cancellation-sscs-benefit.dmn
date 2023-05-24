@@ -295,6 +295,36 @@
           <text>"ftaNotProvidedAppointeeDetailsJudge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_00622z5">
+        <inputEntry id="UnaryTests_1646usm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_042gx9w">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision",
+"decisionIssued",
+"actionPostponementRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fe9021">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1913jqm">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pdqpe1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b4wx5h">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ex3eru">
+          <text>"reviewPostponementRequestJudge"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_06vo1lb">
         <inputEntry id="UnaryTests_0ivl1q1">
           <text></text>
