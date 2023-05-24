@@ -51,7 +51,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("interlocReviewStateAmend",
                                     "reviewConfidentialityRequest", "reviewReinstatementRequestJudge",
                                     "reviewPheRequestJudge"),
-            eventAutoCompletesTasks("reviewPheRequest","reviewPheRequestJudge")
+            eventAutoCompletesTasks("reviewPhmeRequest","reviewPheRequestJudge")
         );
     }
 
