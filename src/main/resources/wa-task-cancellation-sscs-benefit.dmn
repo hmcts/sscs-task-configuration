@@ -256,6 +256,29 @@
           <text>"reviewUrgentHearingRequest"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0gfe5m1">
+        <inputEntry id="UnaryTests_1pbpfql">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bp5hhr">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision", "decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19splrn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1p40brj">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11jftpc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1inqywk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1iw0cc8">
+          <text>"referredByTcwPreHearing"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

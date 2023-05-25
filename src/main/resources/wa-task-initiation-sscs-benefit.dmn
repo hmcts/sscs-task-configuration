@@ -39,6 +39,15 @@
  []</text>
         </inputExpression>
       </input>
+      <input id="InputClause_0ifsdbf" label="Work Type">
+        <inputExpression id="LiteralExpression_0r82kbl" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.workType
+            != null) then
+            additionalData.Data.workType
+            else
+ []</text>
+        </inputExpression>
+      </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="955" />
@@ -59,6 +68,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0nvkala">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fisv2g">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1f3k7q8">
@@ -93,6 +105,9 @@
         <inputEntry id="UnaryTests_0y2l1i4">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_09zgab4">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_16rjk56">
           <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
@@ -123,6 +138,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10tlj9q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a34c3p">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_01zq61j">
@@ -157,6 +175,9 @@
         <inputEntry id="UnaryTests_08u2x4a">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1gvdjmq">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1rw39zd">
           <text>"reviewInformationRequested"</text>
         </outputEntry>
@@ -187,6 +208,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0s6h853">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0od4zqh">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14npkzr">
@@ -223,6 +247,9 @@
         <inputEntry id="UnaryTests_1pubv09">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_10sps96">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_020molb">
           <text>"reviewBilingualDocument"</text>
         </outputEntry>
@@ -253,6 +280,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pxh2cm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qiux8t">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_13f3ypf">
@@ -287,6 +317,9 @@
         <inputEntry id="UnaryTests_09x38bx">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0mag8mf">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1dvy239">
           <text>"reviewAdminAction"</text>
         </outputEntry>
@@ -317,6 +350,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ccwhs7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eja9e9">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_017dwto">
@@ -353,6 +389,9 @@ else 0</text>
         <inputEntry id="UnaryTests_02za9vp">
           <text>contains(scannedDocumentTypes, "confidentialityRequest")</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1yk3ftd">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_03lalib">
           <text>"reviewConfidentialityRequest"</text>
         </outputEntry>
@@ -384,6 +423,9 @@ else 0</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1lmecib">
           <text>contains(scannedDocumentTypes, "urgentHearingRequest")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vhcrzn">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_10e5vtm">
           <text>"reviewUrgentHearingRequest"</text>
@@ -417,6 +459,9 @@ else 0</text>
         <inputEntry id="UnaryTests_1artp2w">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0wsg96d">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0jd1uny">
           <text>"reviewUrgentHearingRequest"</text>
         </outputEntry>
@@ -431,6 +476,41 @@ else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07mh446">
           <text>"reviewUrgentHearingRequest"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_114m1jf">
+        <inputEntry id="UnaryTests_01j9v2i">
+          <text>"tcwReferToJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0phwa4k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vwit8f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mfdwpj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zhspby">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11bt77z">
+          <text>"preHearingWork"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wid6ky">
+          <text>"referredByTcwPreHearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01iy7nj">
+          <text>"Referred By TCW Pre Hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09slazv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nutppq">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06674q7">
+          <text>"referredByTcwPreHearing"</text>
         </outputEntry>
       </rule>
     </decisionTable>
