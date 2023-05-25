@@ -329,6 +329,35 @@
           <text>"reviewBfDate"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1p4mccj">
+        <inputEntry id="UnaryTests_0rbvkw2">
+          <text>"createBundleAndAllocateCaseRolesRequired"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mo20gw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0awqtic">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ualttb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fjsi2c">
+          <text>"createBundleAndAllocateCaseRoles"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vxicos">
+          <text>"Create Bundle And Allocate Case Roles"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t0m0vy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18yp8dc">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0km2j5l">
+          <text>"createBundleAndAllocateCaseRoles"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

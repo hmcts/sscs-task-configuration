@@ -115,6 +115,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewBfDate",
                 "someCaseData",
                 defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "createBundleAndAllocateCaseRoles",
+                "someCaseData",
+                defaultAdminCaseWorkerPermissions()
             )
 
         );
@@ -156,6 +161,41 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
+    private static List<Map<String, Object>> defaultAdminCaseWorkerPermissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Allocated-Admin-Caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 1,
+                "roleCategory", "ADMIN",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "Regional-Centre-Admin",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 2,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Regional-Centre-Team-Leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
+                "assignmentPriority", 3,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            )
+        );
+    }
     private static List<Map<String, Object>> defaultCtscPermissionsWithCompleteOwn() {
         return List.of(
             Map.of(
@@ -228,7 +268,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(13));
+        assertThat(logic.getRules().size(), is(16));
 
     }
 

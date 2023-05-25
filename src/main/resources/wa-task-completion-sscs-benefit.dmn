@@ -108,6 +108,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1xhkcil">
+        <inputEntry id="UnaryTests_1qzsk8a">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14xiepf">
+          <text>"createBundleAndAllocateCaseRoles"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16gzm5k">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -107,6 +107,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_17ycln9">
+        <inputEntry id="UnaryTests_0t7w2jf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bax4so">
+          <text>"createBundleAndAllocateCaseRoles"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_152y5tj">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10g7rvi">
+          <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gdykjs">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0460vvp">
         <inputEntry id="UnaryTests_0pa4ux4">
           <text></text>
@@ -121,6 +138,23 @@ null</text>
           <text>"CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02omkc8">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bt5kqm">
+        <inputEntry id="UnaryTests_0usjdch">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dd312o">
+          <text>"createBundleAndAllocateCaseRoles"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02ykby3">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_106wbkf">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ue19py">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -166,7 +200,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -220,7 +254,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -368,6 +402,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0h0wvdg">
+        <inputEntry id="UnaryTests_1f8wwv4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lhzyrz">
+          <text>"createBundleAndAllocateCaseRoles"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08n3dd4">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dqinsx">
+          <text>"[Create a bundle in the case](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/createBundle)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wo3dip">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -476,7 +527,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pw9fy3">
-          <text>"reviewInformationRequested","reviewListingError"</text>
+          <text>"reviewInformationRequested","reviewListingError","createBundleAndAllocateCaseRoles"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0hvbenp">
           <text>"dueDateIntervalDays"</text>
