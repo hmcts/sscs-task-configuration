@@ -261,6 +261,19 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                       + "/${[CASE_REFERENCE]}/trigger/amendDueDate)", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .build()
+            ),
+            Arguments.of(
+                "createBundleAndAllocateCaseRoles",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(DESCRIPTION, "[Create a bundle in the case](/case/SSCS/Benefit"
+                        + "/${[CASE_REFERENCE]}/trigger/createBundle)", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
+                    .expectedValue("workType", "hearing_work", true)
+                    .expectedValue("roleCategory", "ADMIN", true)
+                    .build()
             )
         );
     }
@@ -289,7 +302,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(33));
+        assertThat(logic.getRules().size(), is(36));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

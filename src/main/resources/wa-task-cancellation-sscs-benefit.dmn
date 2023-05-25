@@ -308,6 +308,33 @@
           <text>"reviewBfDate"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1nu2ldm">
+        <inputEntry id="UnaryTests_0693ik2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hibi91">
+          <text>"voidCase",
+"appealWithdrawn",
+"confirmLapsed",
+"appealDormant",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qbs7tk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02onz7h">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17teidj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_077poyt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wjxsx8">
+          <text>"createBundleAndAllocateCaseRoles"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
