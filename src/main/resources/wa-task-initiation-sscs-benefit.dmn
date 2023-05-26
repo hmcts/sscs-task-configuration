@@ -45,7 +45,7 @@
             != null) then
             additionalData.Data.workType
             else
- []</text>
+            null</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
