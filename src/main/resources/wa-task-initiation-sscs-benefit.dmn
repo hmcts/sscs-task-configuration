@@ -39,7 +39,7 @@
  []</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0ifsdbf" label="Work Type">
+      <input id="InputClause_0ifsdbf" label="Work Type" camunda:inputVariable="workType">
         <inputExpression id="LiteralExpression_0r82kbl" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.workType
             != null) then
