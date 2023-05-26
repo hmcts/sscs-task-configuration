@@ -726,6 +726,37 @@
           <text>"confirmPanelComposition"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1wtwxi7">
+        <inputEntry id="UnaryTests_18x7xls">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0svgrm0">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l7p0rv">
+          <text></text>
+        </inputEntry>
+				<inputEntry id="UnaryTests_7qsdhuv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wd9eb7">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0igyc2n">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pxw1dl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1v97qen">
+          <text>"referredToInterlocJudge"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_06vo1lb">
         <inputEntry id="UnaryTests_0ivl1q1">
           <text></text>
