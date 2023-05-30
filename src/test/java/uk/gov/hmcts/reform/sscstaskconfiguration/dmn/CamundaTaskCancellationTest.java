@@ -69,8 +69,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewUrgentHearingRequest")
-                .cancel("referredByTcwPreHearing").build(),
+                .cancel("reviewUrgentHearingRequest").build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal").build(),
             event("makeCaseUrgent")

@@ -199,7 +199,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("tcwReferToJudge")
                 .withCaseData("workType", "preHearingWork")
-                .initiativesTask("referredByTcwPreHearing", "Referred By TCW Pre Hearing", 2)
+                .initiativesTask("referredByTcwPreHearing", "Referred By TCW", 2)
                 .build()
         );
     }
