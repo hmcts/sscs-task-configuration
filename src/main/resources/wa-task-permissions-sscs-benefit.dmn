@@ -499,6 +499,84 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0mwh9xm">
+        <inputEntry id="UnaryTests_0yxatz8">
+          <text>"prepareForHearingJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pc43zs">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_190xdpy">
+          <text>"hearing-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03q5xvg">
+          <text>"Read,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nwah6k">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dff7m3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17bi68x">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_196de5m">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1eh8py1">
+        <inputEntry id="UnaryTests_17ynj09">
+          <text>"prepareForHearingJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05kn4pi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12m70ly">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wo4e4q">
+          <text>"Read,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ascwu5">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fw24bq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mjr362">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zwzier">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lzvos6">
+        <inputEntry id="UnaryTests_0o6w2sc">
+          <text>"prepareForHearingJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v3ta0p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xsoe7w">
+          <text>"fee-paid-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12r7ov9">
+          <text>"Read,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v668ph">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16rbmkc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qejmsg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05zv1de">
+          <text>false</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
