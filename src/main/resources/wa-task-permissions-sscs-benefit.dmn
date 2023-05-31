@@ -158,7 +158,7 @@ else
       <rule id="DecisionRule_19cn0u8">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1vcxbly">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","reviewInformationRequested","reviewFtaResponse","reviewValidAppeal","reviewListingError","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","reviewInformationRequested","reviewFtaResponse","reviewValidAppeal","reviewListingError","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hxa6gg">
           <text></text>
@@ -239,7 +239,7 @@ else
       <rule id="DecisionRule_0e3o7rq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1kc55kf">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","reviewInformationRequested","reviewFtaResponse", "reviewValidAppeal","reviewListingError","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","reviewInformationRequested","reviewFtaResponse","reviewValidAppeal","reviewListingError","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0e41w3x">
           <text></text>
@@ -320,7 +320,7 @@ else
       <rule id="DecisionRule_0q51lrq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_03ctmk1">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","reviewInformationRequested","reviewFtaResponse","reviewValidAppeal","reviewListingError","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","reviewInformationRequested","reviewFtaResponse","reviewValidAppeal","reviewListingError","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tw6aye">
           <text></text>

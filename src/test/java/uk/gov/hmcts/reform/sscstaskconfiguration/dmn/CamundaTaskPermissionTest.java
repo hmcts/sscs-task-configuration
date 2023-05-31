@@ -120,6 +120,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "createBundleAndAllocateCaseRoles",
                 "someCaseData",
                 defaultAdminCaseWorkerPermissions()
+            ),
+            Arguments.of(
+                "reviewOutstandingDraftDecision",
+                "someCaseData",
+                defaultCtscPermissions()
             )
 
         );

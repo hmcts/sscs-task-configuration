@@ -358,6 +358,35 @@
           <text>"createBundleAndAllocateCaseRoles"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1f5w4c4">
+        <inputEntry id="UnaryTests_0qiv0kj">
+          <text>"reviewOutstandingDraftDecisionRequired"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1krl7rh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mkgvjz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tznkmo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vwc25i">
+          <text>"reviewOutstandingDraftDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0h47uws">
+          <text>"Review Outstanding Draft Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vx78sp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0psa5ku">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n2xei6">
+          <text>"reviewOutstandingDraftDecision"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -302,6 +302,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "createBundleAndAllocateCaseRoles"
                     )
                 )
+            ),
+            Arguments.of(
+                "reviewOutstandingDraftDecisionRequired",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewOutstandingDraftDecision",
+                        "name", "Review Outstanding Draft Decision",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "reviewOutstandingDraftDecision"
+                    )
+                )
             )
         );
     }
@@ -328,7 +341,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(11));
+        assertThat(logic.getRules().size(), is(12));
 
     }
 

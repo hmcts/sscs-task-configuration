@@ -282,6 +282,35 @@
           <text>"createBundleAndAllocateCaseRoles"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1kel1yh">
+        <inputEntry id="UnaryTests_1k5ul82">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kelakn">
+          <text>"issueFinalDecision",
+"issueAdjournmentNotice",
+"voidCase",
+"appealWithdrawn",
+"confirmLapsed",
+"appealDormant",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xms9yw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i21zzg">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q3ya2s">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tt0yyv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16qatwq">
+          <text>"reviewOutstandingDraftDecision"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

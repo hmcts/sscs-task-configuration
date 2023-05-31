@@ -112,7 +112,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bax4so">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_152y5tj">
           <text>"workType"</text>
@@ -129,7 +129,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal","reviewListingError","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal","reviewListingError","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -200,7 +200,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -254,7 +254,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -510,7 +510,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1swv4p3">
-          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ndgnkl">
           <text>"dueDateIntervalDays"</text>
