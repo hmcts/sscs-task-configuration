@@ -41,7 +41,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewIncompleteAppeal",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations().build()
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(DESCRIPTION,"[Request Information From Party](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)",true).build()
             ),
             Arguments.of(
                 "reviewIncompleteAppeal",
@@ -52,6 +54,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(PRIORITY_DATE, "2023-03-06", true)
                     .expectedValue(NEXT_HEARING_ID, "1234567", true)
                     .expectedValue(NEXT_HEARING_DATE, "2023-03-16", true)
+                    .expectedValue(DESCRIPTION,"[Request Information From Party](/case/SSCS/Benefit/"
+                    + "${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)",true)
                     .build()
             ),
             Arguments.of(
@@ -62,6 +66,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(DUE_DATE_NON_WORKING_CALENDAR,
                                    ConfigurationExpectationBuilder.SCOTLAND_CALENDAR, true)
+                    .expectedValue(DESCRIPTION,"[Request Information From Party](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)",true)
                     .build()
             ),
             Arguments.of(

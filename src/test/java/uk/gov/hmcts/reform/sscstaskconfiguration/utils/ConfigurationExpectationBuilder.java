@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ConfigurationExpectationBuilder {
 
@@ -13,6 +14,11 @@ public class ConfigurationExpectationBuilder {
 
     public static String SCOTLAND_CALENDAR = "https://www.gov.uk/bank-holidays/scotland.json";
 
+    private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
+        "caseName","caseManagementCategory","location","locationName","workType","roleCategory",
+        "priorityDate","minorPriority","majorPriority","description","nextHearingId","nextHearingDate",
+        "dueDateOrigin","dueDateNonWorkingCalendar","dueDateIntervalDays"
+    );
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
 
     private Map<String,Map<String,Object>> expectations = new HashMap<>();
@@ -28,8 +34,6 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue("priorityDate", "", true);
         builder.expectedValue("minorPriority", "500", true);
         builder.expectedValue("majorPriority", "5000", true);
-        builder.expectedValue("description","[Request Information From Party](/case/SSCS/Benefit/"
-            + "${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)",true);
         builder.expectedValue("nextHearingId", "", true);
         builder.expectedValue("nextHearingDate", "", true);
         builder.expectedValue("dueDateOrigin", now(), true);
@@ -39,23 +43,10 @@ public class ConfigurationExpectationBuilder {
     }
 
     public List<Map<String,Object>> build() {
-        return Arrays.asList(
-            expectations.get("caseName"),
-            expectations.get("caseManagementCategory"),
-            expectations.get("location"),
-            expectations.get("locationName"),
-            expectations.get("workType"),
-            expectations.get("roleCategory"),
-            expectations.get("priorityDate"),
-            expectations.get("minorPriority"),
-            expectations.get("majorPriority"),
-            expectations.get("description"),
-            expectations.get("nextHearingId"),
-            expectations.get("nextHearingDate"),
-            expectations.get("dueDateOrigin"),
-            expectations.get("dueDateNonWorkingCalendar"),
-            expectations.get("dueDateIntervalDays")
-        );
+        return EXPECTED_PROPERTIES.stream()
+            .filter(p -> expectations.containsKey(p))
+            .map(p -> expectations.get(p))
+            .collect(Collectors.toList());
     }
 
     public ConfigurationExpectationBuilder expectedValue(String name, Object value, boolean canReconfigure) {
