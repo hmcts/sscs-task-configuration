@@ -47,13 +47,14 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "referredByTcwPreHearing"),
             eventAutoCompletesTasks("directionIssued","reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "referredByTcwPreHearing"),
-            eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest"),
+            eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest", "writeDecisionJudge"),
             eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
                                     "reviewUrgentHearingRequest", "referredByTcwPreHearing"),
             eventAutoCompletesTasks("decisionIssued", "referredByTcwPreHearing"),
             eventAutoCompletesTasks("struckOut", "referredByTcwPreHearing"),
             eventAutoCompletesTasks("writeFinalDecision", "referredByTcwPreHearing", "prepareForHearingJudge"),
-            eventAutoCompletesTasks("adjournCase", "prepareForHearingJudge")
+            eventAutoCompletesTasks("adjournCase", "prepareForHearingJudge"),
+            eventAutoCompletesTasks("issueAdjournmentNotice", "writeDecisionJudge")
         );
     }
 
@@ -73,7 +74,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(12));
+        assertThat(logic.getRules().size(), is(13));
 
     }
 

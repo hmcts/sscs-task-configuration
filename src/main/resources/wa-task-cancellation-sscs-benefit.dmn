@@ -370,6 +370,32 @@
           <text>"prepareForHearingJudge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1j6ww7a">
+        <inputEntry id="UnaryTests_0od8g9c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rqi3zd">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision", "decisionIssued","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1atwth5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10was21">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ny5eo2">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pajzvr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jv0hsx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i21qjq">
+          <text>"writeDecisionJudge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
