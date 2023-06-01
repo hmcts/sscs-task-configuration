@@ -449,7 +449,7 @@ else
       </rule>
       <rule id="DecisionRule_1a3ndv4">
         <inputEntry id="UnaryTests_0i1ce54">
-          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest"</text>
+          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yl9r0u">
           <text></text>
@@ -470,32 +470,6 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15hg7hf">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1k9n8b0">
-        <inputEntry id="UnaryTests_0j7mtyf">
-          <text>"referredByTcwPreHearing"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0dek92d">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0jotbnv">
-          <text>"fee-paid-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1qyaikq">
-          <text>"Read,Own,Claim,Unclaim"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0bwd4v2">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_135ah1t">
-          <text>"00"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1b920in">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1yijm4l">
           <text>false</text>
         </outputEntry>
       </rule>

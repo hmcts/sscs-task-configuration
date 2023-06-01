@@ -153,7 +153,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     permission("task-supervisor","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
                     permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","00")
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
                 )
             ),
             Arguments.of(
@@ -289,7 +289,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(23));
+        assertThat(logic.getRules().size(), is(22));
 
     }
 
