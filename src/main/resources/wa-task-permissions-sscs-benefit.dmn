@@ -371,7 +371,7 @@ else
       </rule>
       <rule id="DecisionRule_1f61zlf">
         <inputEntry id="UnaryTests_05a7znm">
-          <text>"referredByTcwPreHearing"</text>
+          <text>"referredByTcwPreHearing", "referredByAdminJudgePreHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0kjokwp">
           <text></text>
@@ -423,7 +423,7 @@ else
       </rule>
       <rule id="DecisionRule_01s46gl">
         <inputEntry id="UnaryTests_1nn2r2v">
-          <text>"referredByTcwPreHearing"</text>
+          <text>"referredByTcwPreHearing", "referredByAdminJudgePreHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0tb6bfa">
           <text></text>
@@ -449,7 +449,7 @@ else
       </rule>
       <rule id="DecisionRule_1a3ndv4">
         <inputEntry id="UnaryTests_0i1ce54">
-          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing"</text>
+          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "referredByAdminJudgePreHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yl9r0u">
           <text></text>
