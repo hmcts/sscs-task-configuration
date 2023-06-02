@@ -40,6 +40,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewConfidentialityRequest")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("referredByTcwPreHearing")
+                .cancel("referredByTcwPostHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
                 .cancel("referredByAdminJudgePreHearing")
@@ -52,6 +53,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewConfidentialityRequest")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("referredByTcwPreHearing")
+                .cancel("referredByTcwPostHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
                 .cancel("referredByAdminJudgePreHearing")
@@ -64,6 +66,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewConfidentialityRequest")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("referredByTcwPreHearing")
+                .cancel("referredByTcwPostHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
                 .cancel("referredByAdminJudgePreHearing")
@@ -75,6 +78,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewConfidentialityRequest")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("referredByTcwPreHearing")
+                .cancel("referredByTcwPostHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
                 .cancel("referredByAdminJudgePreHearing")
@@ -105,11 +109,13 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewConfidentialityRequest")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("referredByTcwPreHearing")
+                .cancel("referredByTcwPostHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge").build(),
             event("issueFinalDecision")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("referredByTcwPreHearing")
+                .cancel("referredByTcwPostHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
                 .cancel("referredByAdminJudgePreHearing")
@@ -149,7 +155,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(4));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(15));
+        assertThat(logic.getRules().size(), is(16));
 
     }
 }

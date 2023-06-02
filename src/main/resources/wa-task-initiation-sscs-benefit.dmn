@@ -611,6 +611,47 @@ else 0</text>
           <text>"referredByTcwPreHearing"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ng2b5o">
+        <inputEntry id="UnaryTests_1z0stab">
+          <text>"tcwReferToJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12gqka1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_046fzw2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f482al">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08ie768">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1chz3d9">
+          <text>"postHearingWork"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vrwjtx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e3pul6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_110uunu">
+          <text>"referredByTcwPostHearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hvc7is">
+          <text>"Referred By TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0k1t2j5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tu3n8x">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02w3lqr">
+          <text>"referredByTcwPostHearing"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0z8zz9l">
         <inputEntry id="UnaryTests_0b3x5ea">
           <text>"createBundle"</text>

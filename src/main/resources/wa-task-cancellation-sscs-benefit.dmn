@@ -318,6 +318,32 @@
           <text>"referredByTcwPreHearing"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_09a7x7q">
+        <inputEntry id="UnaryTests_1brj5cs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pl20f2">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "issueFinalDecision", "decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_056qqfw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yreqh4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14z7e8c">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07rhjw8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vb4w5o">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gd51dn">
+          <text>"referredByTcwPostHearing"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0zcwrpw">
         <inputEntry id="UnaryTests_058qyon">
           <text></text>
