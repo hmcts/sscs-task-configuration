@@ -125,8 +125,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewOutstandingDraftDecision",
                 "someCaseData",
                 defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "updateHearingDetails",
+                "someCaseData",
+                defaultAdminCaseWorkerPermissionsWithCompleteOwn()
             )
-
         );
     }
 
@@ -196,6 +200,55 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "Regional-Centre-Team-Leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
                 "assignmentPriority", 3,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            )
+        );
+    }
+    private static List<Map<String, Object>> defaultAdminCaseWorkerPermissionsWithCompleteOwn() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Allocated-Admin-Caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "assignmentPriority", 1,
+                "roleCategory", "ADMIN",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "Hearing-Centre-Administrator",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "assignmentPriority", 2,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Regional-Centre-Administrator",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "assignmentPriority", 3,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Hearing-Centre-Team-Leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
+                "assignmentPriority", 4,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Regional-Centre-Team-Leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete",
+                "assignmentPriority", 5,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             )
@@ -273,7 +326,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(16));
+        assertThat(logic.getRules().size(), is(21));
 
     }
 

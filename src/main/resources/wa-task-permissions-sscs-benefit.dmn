@@ -449,6 +449,136 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_11o9ort">
+        <inputEntry id="UnaryTests_0y7w4q3">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uz3fbr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hj7d8f">
+          <text>"Allocated-Admin-Caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fnpa7m">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ffzh3t">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_162iqvi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qgor2t">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d6wqgr">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jwp8u1">
+        <inputEntry id="UnaryTests_13icbwl">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dckxao">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0whac9a">
+          <text>"Hearing-Centre-Administrator"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v50xvs">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gd3p1m">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08vk3db">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10475y0">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14h12rj">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f3zhbn">
+        <inputEntry id="UnaryTests_0ts4hry">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17urjd1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05p1ldn">
+          <text>"Regional-Centre-Administrator"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lk5e46">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kdo8qo">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bvykxv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p8j4ft">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01lb56o">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ssems5">
+        <inputEntry id="UnaryTests_18rdiko">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f37t6v">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08i1orq">
+          <text>"Hearing-Centre-Team-Leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lj8yc1">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09oxoho">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01nkc0j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_019w8yv">
+          <text>4</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w0vcy4">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12g2sr5">
+        <inputEntry id="UnaryTests_14vsf22">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v6gjk9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06wurlv">
+          <text>"Regional-Centre-Team-Leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05tbv9v">
+          <text>"Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0llgx7q">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12zz9sq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0beuk3r">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0u8gfz3">
+          <text>false</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

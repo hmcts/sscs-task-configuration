@@ -39,8 +39,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
                 .cancel("createBundleAndAllocateCaseRoles")
-                .cancel("reviewOutstandingDraftDecision").build(),
-
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("updateHearingDetails").build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -48,7 +48,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
                 .cancel("createBundleAndAllocateCaseRoles")
-                .cancel("reviewOutstandingDraftDecision").build(),
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("updateHearingDetails").build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -56,13 +57,15 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
                 .cancel("createBundleAndAllocateCaseRoles")
-                .cancel("reviewOutstandingDraftDecision").build(),
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("updateHearingDetails").build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("createBundleAndAllocateCaseRoles")
-                .cancel("reviewOutstandingDraftDecision").build(),
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("updateHearingDetails").build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -70,7 +73,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
                 .cancel("createBundleAndAllocateCaseRoles")
-                .cancel("reviewOutstandingDraftDecision").build(),
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("updateHearingDetails").build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewBfDate").build(),
@@ -117,7 +121,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(11));
+        assertThat(logic.getRules().size(), is(12));
 
     }
 }

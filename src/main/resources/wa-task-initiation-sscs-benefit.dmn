@@ -387,6 +387,35 @@
           <text>"reviewOutstandingDraftDecision"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0q5r02y">
+        <inputEntry id="UnaryTests_0dzkc9h">
+          <text>"updateHearingDetailsRequired"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v0kdzk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1th7bjf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nk7fu2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lhodvq">
+          <text>"updateHearingDetails"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zdq44r">
+          <text>"Update Hearing Details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kjjnhd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x2qv6l">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_098nvyc">
+          <text>"updateHearingDetails"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

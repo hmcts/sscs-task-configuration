@@ -311,6 +311,33 @@
           <text>"reviewOutstandingDraftDecision"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1uvxsdn">
+        <inputEntry id="UnaryTests_0s2d83m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e9lz5z">
+          <text>"voidCase",
+"appealWithdrawn",
+"confirmLapsed",
+"appealDormant",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1whrdfo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10cy77b">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03ke661">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02v2pyc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0100qiz">
+          <text>"updateHearingDetails"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
