@@ -163,6 +163,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0qat8lg">
+        <inputEntry id="UnaryTests_05x4mhq">
+          <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","struckOut","writeFinalDecision","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z6tdkp">
+          <text>"referredByAdminJudgePostHearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bsvzu1">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

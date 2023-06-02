@@ -422,6 +422,32 @@
           <text>"referredByAdminJudgePreHearing"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0tk9wb4">
+        <inputEntry id="UnaryTests_1kkmza0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ipq6zx">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ugyxal">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18br6pq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rr8c40">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00nxduv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qbympb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1m78e9j">
+          <text>"referredByAdminJudgePostHearing"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

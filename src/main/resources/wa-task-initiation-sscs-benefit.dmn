@@ -736,6 +736,47 @@ else 0</text>
           <text>"referredByAdminJudgePreHearing"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0akkta4">
+        <inputEntry id="UnaryTests_1ozna9d">
+          <text>"validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dycgti">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iof9wa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yfz2sy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_008ay5k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ppqfl7">
+          <text>"postHearingWork"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12nvbie">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gh4os4">
+          <text>"reviewByJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ugtta8">
+          <text>"referredByAdminJudgePostHearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0l3q057">
+          <text>"Referred By Admin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00e2zgc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0obm3z4">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qvhdbh">
+          <text>"referredByAdminJudgePostHearing"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
