@@ -225,14 +225,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "autoAssignable", true
             ),
             Map.of(
-                "name", "Hearing-Centre-Administrator",
+                "name", "Hearing-Centre-Admin",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
                 "assignmentPriority", 2,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             ),
             Map.of(
-                "name", "Regional-Centre-Administrator",
+                "name", "Regional-Centre-Admin",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
                 "assignmentPriority", 3,
                 "roleCategory", "ADMIN",
