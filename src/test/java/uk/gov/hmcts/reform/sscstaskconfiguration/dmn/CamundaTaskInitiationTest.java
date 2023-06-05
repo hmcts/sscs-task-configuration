@@ -222,6 +222,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("selectWhoReviewsCase", "reviewByJudge")
                 .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2, "Routine work")
                 .initiativesTask("referredByAdminJudgePostHearing", "Referred By Admin", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("workType", "postHearingWork")
+                .withCaseData("selectWhoReviewsCase", "reviewByJudge")
+                .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2, "Routine work")
+                .initiativesTask("referredByAdminJudgePostHearing", "Referred By Admin", 2)
+                .build(),
+            event("dwpUploadResponse")
+                .withCaseData("benefitCode", "026")
+                .initiativesTask("confirmPanelComposition", "Confirm Panel Composition", 2)
                 .build()
         );
     }
@@ -248,7 +258,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(18));
+        assertThat(logic.getRules().size(), is(19));
 
     }
 

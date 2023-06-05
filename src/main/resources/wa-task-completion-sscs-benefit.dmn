@@ -185,6 +185,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_00edb2e">
+        <inputEntry id="UnaryTests_0jnjl5c">
+          <text>"confirmPanelComposition"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0012hqu">
+          <text>"confirmPanelComposition"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r7rrlr">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
