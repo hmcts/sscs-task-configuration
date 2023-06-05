@@ -700,6 +700,32 @@
           <text>"referredByAdminJudgePreHearing"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_041chga">
+        <inputEntry id="UnaryTests_00pp9ie">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nz0ujs">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tk93y6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nvhcf4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a5htnz">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18fz34a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0crkn5j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w4fiw1">
+          <text>"confirmPanelComposition"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_06vo1lb">
         <inputEntry id="UnaryTests_0ivl1q1">
           <text></text>
