@@ -749,7 +749,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_0cpmj2d">
         <inputEntry id="UnaryTests_1hsovn9">
-          <text>"createBundle"</text>
+          <text>"writeDecisionRequired"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1afwgju">
           <text></text>
@@ -782,9 +782,7 @@ else 0</text>
           <text>"Write Decision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nak2ut">
-          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.nextHearingDate!= null and additionalData.Data.nextHearingDate!= "")
-	then (date(additionalData.Data.nextHearingDate) - today()).days
-else 0</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0n742fz">
           <text>2</text>

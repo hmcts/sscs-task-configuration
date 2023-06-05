@@ -209,7 +209,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("panel", Map.of("assignedTo", "panel member 1"))
                 .withCaseData("nextHearingDate", LocalDate.now().plusDays(7).toString())
                 .initiativesTask("prepareForHearingJudge", "Prepare For Hearing", 2)
-                .initiativesTaskWithDelay("writeDecisionJudge", "Write Decision", 7,2)
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("workType", "preHearingWork")
@@ -232,6 +231,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("dwpUploadResponse")
                 .withCaseData("benefitCode", "026")
                 .initiativesTask("confirmPanelComposition", "Confirm Panel Composition", 2)
+                .build(),
+            event("writeDecisionRequired")
+                .initiativesTask("writeDecisionJudge", "Write Decision", 2)
                 .build()
         );
     }
