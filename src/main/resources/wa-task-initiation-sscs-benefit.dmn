@@ -30,6 +30,19 @@
             null</text>
         </inputExpression>
       </input>
+      <input id="InputClause_182dc3l" label="Scanned Document Types" camunda:inputVariable="scannedDocumentTypes">
+        <inputExpression id="LiteralExpression_1xk35k0" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.scannedDocumentTypes
+
+!= null) then
+
+additionalData.Data.scannedDocumentTypes
+
+else
+
+[]</text>
+        </inputExpression>
+      </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
@@ -47,6 +60,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_186kf4g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01npweg">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1f3k7q8">
@@ -78,6 +94,9 @@
         <inputEntry id="UnaryTests_1l6xrs4">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1450plt">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_16rjk56">
           <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
@@ -105,6 +124,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0m44hra">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ffwz3t">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_01zq61j">
@@ -136,6 +158,9 @@
         <inputEntry id="UnaryTests_1x6e0h1">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_17rj4mb">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1rw39zd">
           <text>"reviewInformationRequested"</text>
         </outputEntry>
@@ -165,6 +190,9 @@
         <inputEntry id="UnaryTests_18ea8kt">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_01uyg0m">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_169r5qy">
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
@@ -192,6 +220,9 @@
           <text>"Yes"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_06twvx4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w3ol2v">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14npkzr">
@@ -226,6 +257,9 @@
         <inputEntry id="UnaryTests_0tq8m1x">
           <text>true</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0110od3">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_020molb">
           <text>"reviewBilingualDocument"</text>
         </outputEntry>
@@ -253,6 +287,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_01jgvo4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yqmn7r">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_132d9b7">
@@ -284,6 +321,9 @@
         <inputEntry id="UnaryTests_0xhmuxk">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_16qwh8m">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0iajs67">
           <text>"reviewListingError"</text>
         </outputEntry>
@@ -311,6 +351,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bh8fmt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0idyhfm">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02ma9kd">
@@ -342,6 +385,9 @@
         <inputEntry id="UnaryTests_1ualttb">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_10c9c50">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0fjsi2c">
           <text>"createBundleAndAllocateCaseRoles"</text>
         </outputEntry>
@@ -369,6 +415,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tznkmo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oonkki">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vwc25i">
@@ -400,6 +449,9 @@
         <inputEntry id="UnaryTests_0nk7fu2">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_16p2558">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1lhodvq">
           <text>"updateHearingDetails"</text>
         </outputEntry>
@@ -414,6 +466,70 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_098nvyc">
           <text>"updateHearingDetails"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_159jvnt">
+        <inputEntry id="UnaryTests_17g0wqc">
+          <text>"correctionRequested"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ryrx3x">
+          <text>"dormantAppealState","postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16bebeu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bx4ome">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14bui83">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lhefav">
+          <text>"reviewCorrectionApplcationAdmin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qevlb8">
+          <text>"Review Correction Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05jnz0k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k2ne5n">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lhv17h">
+          <text>"reviewCorrectionApplcationAdmin"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bbgr6z">
+        <inputEntry id="UnaryTests_0szutu2">
+          <text>"actionFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ewgejp">
+          <text>"dormantAppealState","postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ktx4h4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rhh4z7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1htj8my">
+          <text>contains(scannedDocumentTypes, "correctionApplication")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0urd5j4">
+          <text>"reviewCorrectionApplcationAdmin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bvvo3o">
+          <text>"Review Correction Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fb7f9q">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j8nrin">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15i6ld6">
+          <text>"reviewCorrectionApplcationAdmin"</text>
         </outputEntry>
       </rule>
     </decisionTable>

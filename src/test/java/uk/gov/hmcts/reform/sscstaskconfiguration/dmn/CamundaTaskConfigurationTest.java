@@ -171,7 +171,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
 
-        Arguments.of(
+            Arguments.of(
             "updateHearingDetails",
             CaseDataBuilder.defaultCase().build(),
             ConfigurationExpectationBuilder.defaultExpectations()
@@ -181,7 +181,17 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedValue("workType", "hearing_work", true)
                 .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                 .build()
-        )
+            ),
+            Arguments.of(
+                "reviewCorrectionApplcationAdmin",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue("workType", "post_hearing_work", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
+                    .build()
+            )
         );
     }
 
@@ -208,7 +218,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(31));
+        assertThat(logic.getRules().size(), is(32));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

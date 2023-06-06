@@ -130,6 +130,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "updateHearingDetails",
                 "someCaseData",
                 defaultAdminCaseWorkerPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "reviewCorrectionApplcationAdmin",
+                "someCaseData",
+                defaultCtscPermissionsWithComplete()
             )
         );
     }
@@ -254,6 +259,41 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+    private static List<Map<String, Object>> defaultCtscPermissionsWithComplete() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Allocated-CTSC-Caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 1,
+                "roleCategory", "CTSC",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "CTSC-Administrator",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 2,
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "CTSC-Team-Leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete",
+                "assignmentPriority", 3,
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            )
+        );
+    }
     private static List<Map<String, Object>> defaultCtscPermissionsWithCompleteOwn() {
         return List.of(
             Map.of(
@@ -326,7 +366,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(21));
+        assertThat(logic.getRules().size(), is(22));
 
     }
 

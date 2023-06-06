@@ -124,12 +124,29 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1l5gl6z">
+        <inputEntry id="UnaryTests_0ueb5ap">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j02414">
+          <text>"reviewCorrectionApplcationAdmin"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08l6xdr">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dow8s8">
+          <text>"post_hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16rx1iu">
+          <text></text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0460vvp">
         <inputEntry id="UnaryTests_0pa4ux4">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal","reviewListingError","reviewBfDate","reviewOutstandingDraftDecision"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal","reviewListingError","reviewBfDate","reviewOutstandingDraftDecision","reviewCorrectionApplcationAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -200,7 +217,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision","updateHearingDetails"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision","updateHearingDetails","reviewCorrectionApplcationAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -254,7 +271,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision","updateHearingDetails"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision","updateHearingDetails","reviewCorrectionApplcationAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -527,7 +544,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pw9fy3">
-          <text>"reviewInformationRequested","reviewListingError","createBundleAndAllocateCaseRoles"</text>
+          <text>"reviewInformationRequested","reviewListingError","createBundleAndAllocateCaseRoles","reviewCorrectionApplcationAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0hvbenp">
           <text>"dueDateIntervalDays"</text>
