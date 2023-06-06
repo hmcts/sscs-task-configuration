@@ -50,12 +50,13 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing"),
             eventAutoCompletesTasks("directionIssued","reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "referredByTcwPreHearing", "referredByTcwPostHearing",
-                                    "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing"),
+                                    "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing",
+                                    "ftaRequestTimeExtension"),
             eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest", "writeDecisionJudge"),
             eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
                                     "reviewUrgentHearingRequest", "referredByTcwPreHearing",
                                     "referredByTcwPostHearing", "referredByAdminJudgePreHearing",
-                                    "referredByAdminJudgePostHearing"),
+                                    "referredByAdminJudgePostHearing", "ftaRequestTimeExtension"),
             eventAutoCompletesTasks("decisionIssued", "referredByTcwPreHearing", "referredByTcwPostHearing",
                                     "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing"),
             eventAutoCompletesTasks("struckOut", "referredByTcwPreHearing", "referredByTcwPostHearing",
@@ -85,7 +86,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(17));
+        assertThat(logic.getRules().size(), is(18));
 
     }
 

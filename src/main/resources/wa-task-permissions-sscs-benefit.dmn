@@ -181,6 +181,58 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_00qbanj">
+        <inputEntry id="UnaryTests_15it3xr">
+          <text>"ftaRequestTimeExtension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00wwakw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jyhxrk">
+          <text>"tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12frsv4">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fbxwu3">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lql2bs">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0h602hr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hwyi79">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0k08lmp">
+        <inputEntry id="UnaryTests_1v6k40s">
+          <text>"ftaRequestTimeExtension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hmqvzx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_176s7f8">
+          <text>"allocated-tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08vpmm9">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_099gdnz">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a1f2sd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vv1418">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wuji9l">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_19cn0u8">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1vcxbly">
@@ -600,6 +652,32 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gu3ptd">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0n3p7iv">
+        <inputEntry id="UnaryTests_16ml552">
+          <text>"ftaRequestTimeExtension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nsuxox">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_049tafk">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eoxo3l">
+          <text>"Read,Execute,Unclaim,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mt3xq2">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06huyiv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jgp8l6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1opdjaw">
           <text>false</text>
         </outputEntry>
       </rule>
