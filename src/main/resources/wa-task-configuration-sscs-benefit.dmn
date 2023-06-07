@@ -180,7 +180,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lqa97e">
-          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "referredByTcwPostHearing", "prepareForHearingJudge", "writeDecisionJudge", "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "confirmPanelComposition", "ftaRequestTimeExtension"</text>
+          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "referredByTcwPostHearing", "prepareForHearingJudge", "writeDecisionJudge", "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "confirmPanelComposition"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ga9m4z">
           <text>"roleCategory"</text>
@@ -189,6 +189,23 @@ null</text>
           <text>"Judicial"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lymbb3">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qde3ue">
+        <inputEntry id="UnaryTests_0xa5tez">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k28xtv">
+          <text>"ftaRequestTimeExtension"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fq2vj2">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04gssk0">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j6qgxu">
           <text>true</text>
         </outputEntry>
       </rule>
