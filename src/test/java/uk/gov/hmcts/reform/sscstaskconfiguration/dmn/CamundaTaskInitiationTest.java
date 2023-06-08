@@ -341,6 +341,65 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "reviewFtaValidityChallenge"
                     )
                 )
+            ),
+            Arguments.of(
+                "sendToDwp",
+                null,
+                Map.of("Data",
+                       Map.of("caseManagementCategory",
+                              Map.of("value",
+                                     Map.of ("code", "childSupport")
+                              )
+                       )
+                ),
+                singletonList(
+                    Map.of(
+                        "taskId", "ftaResponseOverdue",
+                        "name", "Referred to Interloc - FTA response overdue",
+                        "delayDuration", 42,
+                        "workingDaysAllowed", 2,
+                        "processCategories", "ftaResponseOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendToDwp",
+                null,
+                Map.of("Data",
+                       Map.of("caseManagementCategory",
+                              Map.of("value",
+                                     Map.of ("code", "PIP")
+                              )
+                       )
+                ),
+                singletonList(
+                    Map.of(
+                        "taskId", "ftaResponseOverdue",
+                        "name", "Referred to Interloc - FTA response overdue",
+                        "delayDuration", 28,
+                        "workingDaysAllowed", 2,
+                        "processCategories", "ftaResponseOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "ftaResponseOverdue",
+                null,
+                Map.of("Data",
+                       Map.of("directionTypeDl",
+                              Map.of("value",
+                                     Map.of ("code", "grantExtension")
+                              )
+                       )
+                ),
+                singletonList(
+                    Map.of(
+                        "taskId", "ftaResponseOverdue",
+                        "name", "Referred to Interloc - FTA response overdue",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "ftaResponseOverdue"
+                    )
+                )
             )
         );
     }
@@ -367,7 +426,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(14));
+        assertThat(logic.getRules().size(), is(16));
 
     }
 

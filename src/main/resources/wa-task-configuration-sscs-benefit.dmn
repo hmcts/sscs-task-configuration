@@ -129,7 +129,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1v5trmu">
-          <text>"reviewFtaValidityChallenge"</text>
+          <text>"reviewFtaValidityChallenge","ftaResponseOverdue"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1k3xuup">
           <text>"workType"</text>
@@ -180,7 +180,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tuha5h">
-          <text>"reviewFtaValidityChallenge"</text>
+          <text>"reviewFtaValidityChallenge","ftaResponseOverdue"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1o7b9tn">
           <text>"roleCategory"</text>
@@ -216,7 +216,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","reviewFtaValidityChallenge"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","reviewFtaValidityChallenge","ftaResponseOverdue"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -252,7 +252,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewBfDate","reviewFtaValidityChallenge"</text>
+          <text>"reviewIncompleteAppeal","reviewBfDate","reviewFtaValidityChallenge","ftaResponseOverdue"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -470,6 +470,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1j683jx">
+        <inputEntry id="UnaryTests_1nl8q85">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07k216n">
+          <text>"ftaResponseOverdue"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jgd7tz">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o987pi">
+          <text>"[Ability to amend interloc review state flag](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" + "[Send an interlocutory decision notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18s1qx2">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -595,7 +612,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","updateHearingDetails","reviewFtaValidityChallenge"</text>
+          <text>"reviewFtaResponse","updateHearingDetails","reviewFtaValidityChallenge","ftaResponseOverdue"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>

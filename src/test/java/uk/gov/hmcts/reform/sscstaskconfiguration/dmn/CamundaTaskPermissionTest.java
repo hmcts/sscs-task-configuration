@@ -135,6 +135,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewFtaValidityChallenge",
                 "someCaseData",
             defaultLegal_OperationsPermissions()
+            ),
+            Arguments.of(
+                "ftaResponseOverdue",
+                "someCaseData",
+                defaultLegal_OperationsPermissions()
             )
         );
     }

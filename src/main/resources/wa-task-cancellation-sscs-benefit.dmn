@@ -366,6 +366,37 @@
           <text>"reviewFtaValidityChallenge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0w5uh76">
+        <inputEntry id="UnaryTests_0kaguu4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xdhiku">
+          <text>"responseReceived",
+"adminSendTorRsponseReceived",
+"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision",
+"decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hp6ik1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sydhj4">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tqyw8z">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ul69or">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1764ax1">
+          <text>"ftaResponseOverdue"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

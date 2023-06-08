@@ -130,6 +130,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1nc8wby">
+        <inputEntry id="UnaryTests_1diy2b3">
+          <text>"directionIssued","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_158ieji">
+          <text>"ftaResponseOverdue"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v999ae">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -135,6 +135,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewFtaValidityChallenge",
                         "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "ftaResponseOverdue",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -146,7 +150,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     )
                 )
-            ),Arguments.of(
+            ),
+            Arguments.of(
                 "sendToAdmin",
                 List.of(
                     Map.of(
@@ -154,7 +159,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     )
                 )
-            ),Arguments.of(
+            ),
+            Arguments.of(
                 "tcwReferToJudge",
                 List.of(
                     Map.of(
@@ -162,11 +168,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     )
                 )
-            ),Arguments.of(
+            ),
+            Arguments.of(
                 "interlocReviewStateAmend",
                 List.of(
                     Map.of(
                         "taskType", "reviewFtaValidityChallenge",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "ftaResponseOverdue",
                         "completionMode", "Auto"
                     )
                 )
@@ -190,7 +201,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(11));
+        assertThat(logic.getRules().size(), is(12));
 
     }
 

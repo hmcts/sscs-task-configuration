@@ -581,7 +581,7 @@ else
       </rule>
       <rule id="DecisionRule_0nw0i54">
         <inputEntry id="UnaryTests_0wsd1tk">
-          <text>"reviewFtaValidityChallenge"</text>
+          <text>"reviewFtaValidityChallenge","ftaResponseOverdue"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1r5ulvf">
           <text></text>
@@ -607,7 +607,7 @@ else
       </rule>
       <rule id="DecisionRule_1or1g8k">
         <inputEntry id="UnaryTests_1ylw02y">
-          <text>"reviewFtaValidityChallenge"</text>
+          <text>"reviewFtaValidityChallenge","ftaResponseOverdue"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10oom5t">
           <text></text>
@@ -633,7 +633,7 @@ else
       </rule>
       <rule id="DecisionRule_0w8b4ye">
         <inputEntry id="UnaryTests_1ifq3df">
-          <text>"reviewFtaValidityChallenge"</text>
+          <text>"reviewFtaValidityChallenge","ftaResponseOverdue"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08yald4">
           <text></text>
