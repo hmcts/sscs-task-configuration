@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
-      <input id="Input_1" label="Event Id" biodi:width="150" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="278" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -12,20 +12,41 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0a0i7vo" label="Case data" biodi:width="150" camunda:inputVariable="caseData">
-        <inputExpression id="LiteralExpression_18qwedg" typeRef="context">
-          <text>if(additionalData != null and additionalData.Data != null) then
-            additionalData.Data
-else
-null</text>
+      <input id="InputClause_09qqpx6" label="DWP Further Info" camunda:inputVariable="dwpFurtherInfo">
+        <inputExpression id="LiteralExpression_0nsfl92" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.dwpFurtherInfo
+            != null) then
+            additionalData.Data.dwpFurtherInfo
+            else
+            null</text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="150" />
+      <input id="InputClause_19ghw9y" label="Language Preference Welsh" biodi:width="226" camunda:inputVariable="languagePreferenceWelsh">
+        <inputExpression id="LiteralExpression_0lq7c6k" typeRef="boolean">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.languagePreferenceWelsh
+            != null) then
+            additionalData.Data.languagePreferenceWelsh
+            else
+            null</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1iggxvg" label="Direction Type" camunda:inputVariable="directionType">
+        <inputExpression id="LiteralExpression_06x7ggq" typeRef="string">
+          <text>if(additionalData != null
+    and additionalData.Data != null
+    and additionalData.Data.directionTypeDl != null
+    and additionalData.Data.directionTypeDl.value !=null
+    and additionalData.Data.directionTypeDl.value.code !=null ) then
+        additionalData.Data.directionTypeDl.value.code
+else
+     null</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
-      <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" biodi:width="150" />
-      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
-      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="150" />
-      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="167" />
+      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="481" />
+      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="208" />
+      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="273" />
       <rule id="DecisionRule_1k8i9hn">
         <description>This event is automatically set in the backend to be sent to the TCW</description>
         <inputEntry id="UnaryTests_0h7w1r5">
@@ -34,7 +55,13 @@ null</text>
         <inputEntry id="UnaryTests_04h5jg8">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0jwc1y5">
+        <inputEntry id="UnaryTests_1wvprxb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_186kf4g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ktz5v0">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1f3k7q8">
@@ -42,9 +69,6 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0el1oa6">
           <text>"Review non-compliant appeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1f8uqqi">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_133o9s1">
           <text></text>
@@ -54,6 +78,491 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mhv54f">
           <text>"Non-compliant appeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xca00x">
+        <inputEntry id="UnaryTests_0m0pdx9">
+          <text>"draftToIncompleteApplication", "incompleteApplicationReceived"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_087it8y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04ulcvj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l6xrs4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u35w5b">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16rjk56">
+          <text>"reviewIncompleteAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zzimui">
+          <text>"Review Incomplete Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oeazlt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_187dsab">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y54qlr">
+          <text>"Routine work"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fw59xg">
+        <inputEntry id="UnaryTests_1xuywjj">
+          <text>"hmctsResponseReviewed", "validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r32833">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14kwvou">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m44hra">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_042m4np">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01zq61j">
+          <text>"referredToInterlocJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ptda7t">
+          <text>"Referred to interloc"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14ar4hy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rj02r6">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02ekbax">
+          <text>"Routine work"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02rz2kk">
+        <inputEntry id="UnaryTests_0rqm4u2">
+          <text>"requestInfoIncompleteApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lh9r0z">
+          <text>"withDwp"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eauflk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x6e0h1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jv4wdv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rw39zd">
+          <text>"reviewInformationRequested"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u6r5ub">
+          <text>"Review Information Requested"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bi0kgo">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_007uex6">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nj3ev8">
+          <text>"reviewInformationRequested"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rfp02v">
+        <inputEntry id="UnaryTests_0q0aptw">
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lkxm5v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08ea8kt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18ea8kt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nzjajx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_169r5qy">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0prhktc">
+          <text>"Action Unprocessed Correspondence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wru75o">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bgwvi2">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l3zbqn">
+          <text>"Routine work"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xqagg7">
+        <inputEntry id="UnaryTests_00i9dmn">
+          <text>"dwpUploadResponse"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nspqgr">
+          <text>"withDwp"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bql2sl">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06twvx4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_050twh6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14npkzr">
+          <text>"reviewFtaResponse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1208ebj">
+          <text>"Review FTA Response"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17h8e8i">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dl8lim">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1elelam">
+          <text>"reviewFtaResponse"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ayetr8">
+        <inputEntry id="UnaryTests_06b2evz">
+          <text>"dwpSupplementaryResponse",
+"uploadDocument",
+"attachScannedDocs",
+"uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04f7fw7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05gj6vg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tq8m1x">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u62h2f">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_020molb">
+          <text>"reviewBilingualDocument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oph97h">
+          <text>"Review Bi-Lingual Document"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uf6uj8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0duu5cv">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0otfkfu">
+          <text>"reviewBilingualDocument"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ru3w7f">
+        <inputEntry id="UnaryTests_1xo57u6">
+          <text>"validAppealCreated"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kt1u0j">
+          <text>"validAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07mrjzx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01jgvo4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05mo9g6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_132d9b7">
+          <text>"reviewValidAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0omk3t0">
+          <text>"Review Valid Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jsyluq">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0exrqrc">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1obxfvo">
+          <text>"reviewValidAppeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1j3chr7">
+        <inputEntry id="UnaryTests_1y13f9l">
+          <text>"readyToList","listingError"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fgz2uh">
+          <text>"listingError"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ov3f7v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xhmuxk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01vn3dn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0iajs67">
+          <text>"reviewListingError"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tml8j0">
+          <text>"Review Listing Error"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o2expb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_107bt8v">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03n06hh">
+          <text>"reviewListingError"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0m3ft60">
+        <inputEntry id="UnaryTests_1wru0hw">
+          <text>"reviewBfDateRequired"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s0uqeg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eda9os">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bh8fmt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nafuq7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02ma9kd">
+          <text>"reviewBfDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i35tkf">
+          <text>"Review BF Date"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17qexd4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pi8gz7">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i8s31y">
+          <text>"reviewBfDate"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p4mccj">
+        <inputEntry id="UnaryTests_0rbvkw2">
+          <text>"createBundleAndAllocateCaseRolesRequired"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mo20gw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0awqtic">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ualttb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13cewh7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fjsi2c">
+          <text>"createBundleAndAllocateCaseRoles"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vxicos">
+          <text>"Create Bundle And Allocate Case Roles"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t0m0vy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18yp8dc">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0km2j5l">
+          <text>"createBundleAndAllocateCaseRoles"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f5w4c4">
+        <inputEntry id="UnaryTests_0qiv0kj">
+          <text>"reviewOutstandingDraftDecisionRequired"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1krl7rh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mkgvjz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tznkmo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1acv36m">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vwc25i">
+          <text>"reviewOutstandingDraftDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0h47uws">
+          <text>"Review Outstanding Draft Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vx78sp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0psa5ku">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n2xei6">
+          <text>"reviewOutstandingDraftDecision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0q5r02y">
+        <inputEntry id="UnaryTests_0dzkc9h">
+          <text>"updateHearingDetailsRequired"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v0kdzk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1th7bjf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nk7fu2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jqs7ei">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lhodvq">
+          <text>"updateHearingDetails"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zdq44r">
+          <text>"Update Hearing Details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kjjnhd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x2qv6l">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_098nvyc">
+          <text>"updateHearingDetails"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vafl6q">
+        <inputEntry id="UnaryTests_1223hmt">
+          <text>"dwpChallengeValidity"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zmligz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_102fgbw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18a6ivq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r2pr6j">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lx91v9">
+          <text>"reviewFtaValidityChallenge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uk94ly">
+          <text>"Review FTA validity challenge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ogy07e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j49h1u">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x71hs4">
+          <text>"reviewFtaValidityChallenge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ggw72g">
+        <inputEntry id="UnaryTests_0adv4iz">
+          <text>"sendToDwp"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_184x7ns">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d73nme">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uxm1b1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1db6i5y">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1myacgq">
+          <text>"ftaResponseOverdue"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_143rqir">
+          <text>"Referred to Interloc - FTA response overdue"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d3eiq1">
+          <text>if (additionalData!=null and additionalData.Data!=null and additionalData.Data.caseManagementCategory!=null and additionalData.Data.caseManagementCategory.value!=null and additionalData.Data.caseManagementCategory.value.code!=null and additionalData.Data.caseManagementCategory.value.code="childSupport")
+	then 42
+else 28</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t3i0yd">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04ebkkv">
+          <text>"ftaResponseOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pktpx0">
+        <inputEntry id="UnaryTests_1iysou6">
+          <text>"ftaResponseOverdue"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_043g978">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h3nkr0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0enf0y5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10zdtbc">
+          <text>"grantExtension"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rfdf12">
+          <text>"ftaResponseOverdue"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1alcbzr">
+          <text>"Referred to Interloc - FTA response overdue"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kthspv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13rv9gx">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1airhzf">
+          <text>"ftaResponseOverdue"</text>
         </outputEntry>
       </rule>
     </decisionTable>

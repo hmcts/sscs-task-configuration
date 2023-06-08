@@ -16,10 +16,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_CANCELLATION_SSCS_BENEFIT;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.CancellationScenarioBuilder.event;
 
 class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
     @BeforeAll
@@ -28,18 +28,91 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     static Stream<Arguments> scenarioProvider() {
-
         return Stream.of(
-            Arguments.of(
-                null,
-                "nonCompliant",
-                null,
-                singletonList(
-                    Map.of(
-                        "action", "Cancel"
-                    )
-                )
-            )
+            event("nonCompliant").cancelAll().build(),
+            event("addHearing").reconfigureAll().build(),
+            event("caseUpdated").reconfigureAll().build(),
+            event("voidCase")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("createBundleAndAllocateCaseRoles")
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("updateHearingDetails")
+                .cancel("reviewFtaValidityChallenge")
+                .cancel("ftaResponseOverdue").build(),
+            event("appealWithdrawn")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("createBundleAndAllocateCaseRoles")
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("updateHearingDetails")
+                .cancel("reviewFtaValidityChallenge")
+                .cancel("ftaResponseOverdue").build(),
+            event("appealDormant")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("createBundleAndAllocateCaseRoles")
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("updateHearingDetails")
+                .cancel("reviewFtaValidityChallenge")
+                .cancel("ftaResponseOverdue").build(),
+            event("confirmLapsed")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse")
+                .cancel("createBundleAndAllocateCaseRoles")
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("updateHearingDetails")
+                .cancel("reviewFtaValidityChallenge")
+                .cancel("ftaResponseOverdue").build(),
+            event("struckOut")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("createBundleAndAllocateCaseRoles")
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("updateHearingDetails")
+                .cancel("reviewFtaValidityChallenge")
+                .cancel("ftaResponseOverdue").build(),
+            event("validSendToInterloc")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewBfDate").build(),
+            event("makeCaseUrgent")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewBfDate").build(),
+            event("readyToList")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse").build(),
+            event("decisionIssued")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("ftaResponseOverdue").build(),
+            event("cancelTranslations")
+                .cancel("reviewBilingualDocument").build(),
+            event("interlocSendToTcw")
+                .cancel("reviewBfDate").build(),
+            event("issueFinalDecision")
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("reviewFtaValidityChallenge")
+                .cancel("ftaResponseOverdue").build(),
+            event("issueAdjournmentNotice")
+                .cancel("reviewOutstandingDraftDecision").build(),
+            event("responseReceived")
+                .cancel("ftaResponseOverdue").build(),
+            event("adminSendTorRsponseReceived")
+                .cancel("ftaResponseOverdue").build()
         );
     }
 
@@ -65,7 +138,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(1));
+        assertThat(logic.getRules().size(), is(14));
 
     }
 }

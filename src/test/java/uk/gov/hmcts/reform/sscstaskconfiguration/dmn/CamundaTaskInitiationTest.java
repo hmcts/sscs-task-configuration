@@ -11,6 +11,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -38,10 +39,366 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "nonCompliantCase",
                         "name", "Review non-compliant appeal",
-                        "group", "TCW",
                         "workingDaysAllowed", 2,
                         "processCategories", "Non-compliant appeal"
-                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                "draftToIncompleteApplication",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "incompleteApplicationReceived",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestInfoIncompleteApplication",
+                "withDwp",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewInformationRequested",
+                        "name", "Review Information Requested",
+                        "delayDuration", 2,
+                        "workingDaysAllowed", 3,
+                        "processCategories", "reviewInformationRequested"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpSupplementaryResponse",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                "withDwp",
+                Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewFtaResponse",
+                        "name", "Review FTA Response",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "reviewFtaResponse"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                "withDwp",
+                Map.of("Data", Map.of("dwpFurtherInfo", "No")),
+                List.of()
+            ),
+            Arguments.of(
+                "dwpSupplementaryResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    ),
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocument",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocument",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    ),
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "attachScannedDocs",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", false)),
+                List.of()
+            ),
+            Arguments.of(
+                "attachScannedDocs",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    ),
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocumentFurtherEvidence",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    ),
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocumentFurtherEvidence",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "validAppealCreated",
+                "validAppeal",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewValidAppeal",
+                        "name", "Review Valid Appeal",
+                        "delayDuration", 3,
+                        "workingDaysAllowed", 5,
+                        "processCategories", "reviewValidAppeal"
+                    )
+                )
+            ),
+            Arguments.of(
+                "readyToList",
+                "listingError",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewListingError",
+                        "name", "Review Listing Error",
+                        "workingDaysAllowed", 3,
+                        "processCategories", "reviewListingError"
+                    )
+                )
+            ),
+            Arguments.of(
+                "listingError",
+                "listingError",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewListingError",
+                        "name", "Review Listing Error",
+                        "workingDaysAllowed", 3,
+                        "processCategories", "reviewListingError"
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewBfDateRequired",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBfDate",
+                        "name", "Review BF Date",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "reviewBfDate"
+                    )
+                )
+            ),
+            Arguments.of(
+                "createBundleAndAllocateCaseRolesRequired",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "createBundleAndAllocateCaseRoles",
+                        "name", "Create Bundle And Allocate Case Roles",
+                        "workingDaysAllowed", 3,
+                        "processCategories", "createBundleAndAllocateCaseRoles"
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewOutstandingDraftDecisionRequired",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewOutstandingDraftDecision",
+                        "name", "Review Outstanding Draft Decision",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "reviewOutstandingDraftDecision"
+                    )
+                )
+            ),
+            Arguments.of(
+                "updateHearingDetailsRequired",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "updateHearingDetails",
+                        "name", "Update Hearing Details",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "updateHearingDetails"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpChallengeValidity",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewFtaValidityChallenge",
+                        "name", "Review FTA validity challenge",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "reviewFtaValidityChallenge"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendToDwp",
+                null,
+                Map.of("Data",
+                       Map.of("caseManagementCategory",
+                              Map.of("value",
+                                     Map.of ("code", "childSupport")
+                              )
+                       )
+                ),
+                singletonList(
+                    Map.of(
+                        "taskId", "ftaResponseOverdue",
+                        "name", "Referred to Interloc - FTA response overdue",
+                        "delayDuration", 42,
+                        "workingDaysAllowed", 2,
+                        "processCategories", "ftaResponseOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendToDwp",
+                null,
+                Map.of("Data",
+                       Map.of("caseManagementCategory",
+                              Map.of("value",
+                                     Map.of ("code", "PIP")
+                              )
+                       )
+                ),
+                singletonList(
+                    Map.of(
+                        "taskId", "ftaResponseOverdue",
+                        "name", "Referred to Interloc - FTA response overdue",
+                        "delayDuration", 28,
+                        "workingDaysAllowed", 2,
+                        "processCategories", "ftaResponseOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "ftaResponseOverdue",
+                null,
+                Map.of("Data",
+                       Map.of("directionTypeDl",
+                              Map.of("value",
+                                     Map.of ("code", "grantExtension")
+                              )
+                       )
+                ),
+                singletonList(
+                    Map.of(
+                        "taskId", "ftaResponseOverdue",
+                        "name", "Referred to Interloc - FTA response overdue",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "ftaResponseOverdue"
+                    )
                 )
             )
         );
@@ -69,7 +426,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(1));
+        assertThat(logic.getRules().size(), is(16));
 
     }
 

@@ -38,44 +38,299 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "someCaseData",
                 List.of(
                     Map.of(
+                        "name", "case-allocator",
+                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
                         "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
+                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                         "autoAssignable", false
                     )
                 )
             ),
             Arguments.of(
-                "null",
+                "reviewIncompleteAppeal",
+                "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewInformationRequested",
+                "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "actionUnprocessedCorrespondence",
                 "someCaseData",
                 List.of(
                     Map.of(
+                        "name", "case-allocator",
+                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
                         "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
+                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "Allocated-CTSC-Caseworker",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "assignmentPriority", 1,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", true
+                    ),
+                    Map.of(
+                        "name", "CTSC-Administrator",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "assignmentPriority", 2,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "CTSC-Team-Leader",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
+                        "assignmentPriority", 3,
+                        "roleCategory", "CTSC",
                         "autoAssignable", false
                     )
                 )
             ),
             Arguments.of(
-                "someTaskType",
-                "null",
-                List.of(
-                    Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
-                        "autoAssignable", false
-                    )
-                )
+                "reviewBilingualDocument",
+                "someCaseData",
+                defaultCtscPermissionsWithCompleteOwn()
             ),
             Arguments.of(
-                "someTaskType",
-                "{}",
-                List.of(
-                    Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
-                        "autoAssignable", false
-                    )
-                )
+                "reviewValidAppeal",
+                "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewListingError",
+                "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewBfDate",
+                "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "createBundleAndAllocateCaseRoles",
+                "someCaseData",
+                defaultAdminCaseWorkerPermissions()
+            ),
+            Arguments.of(
+                "reviewOutstandingDraftDecision",
+                "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "updateHearingDetails",
+                "someCaseData",
+                defaultAdminCaseWorkerPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "reviewFtaValidityChallenge",
+                "someCaseData",
+            defaultLegal_OperationsPermissions()
+            ),
+            Arguments.of(
+                "ftaResponseOverdue",
+                "someCaseData",
+                defaultLegal_OperationsPermissions()
+            )
+        );
+    }
+
+    private static List<Map<String, Object>> defaultCtscPermissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Allocated-CTSC-Caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 1,
+                "roleCategory", "CTSC",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "CTSC-Administrator",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 2,
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "CTSC-Team-Leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
+                "assignmentPriority", 3,
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            )
+        );
+    }
+
+    private static List<Map<String, Object>> defaultAdminCaseWorkerPermissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Allocated-Admin-Caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 1,
+                "roleCategory", "ADMIN",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "Regional-Centre-Admin",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 2,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Regional-Centre-Team-Leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
+                "assignmentPriority", 3,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            )
+        );
+    }
+    private static List<Map<String, Object>> defaultAdminCaseWorkerPermissionsWithCompleteOwn() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Allocated-Admin-Caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "assignmentPriority", 1,
+                "roleCategory", "ADMIN",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "Hearing-Centre-Admin",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "assignmentPriority", 2,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Regional-Centre-Admin",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "assignmentPriority", 3,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Hearing-Centre-Team-Leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
+                "assignmentPriority", 4,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Regional-Centre-Team-Leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete",
+                "assignmentPriority", 5,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            )
+        );
+    }
+    private static List<Map<String, Object>> defaultCtscPermissionsWithCompleteOwn() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Allocated-CTSC-Caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "assignmentPriority", 1,
+                "roleCategory", "CTSC",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "CTSC-Administrator",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "assignmentPriority", 2,
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "CTSC-Team-Leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
+                "assignmentPriority", 3,
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            )
+        );
+    }
+    private static List<Map<String, Object>> defaultLegal_OperationsPermissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Allocated-Tribunal-Caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 1,
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "TCW",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 2,
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "judge",
+                "value", "Read,Execute,Unclaim,UnclaimAssign",
+                "assignmentPriority", 3,
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", false
             )
         );
     }
@@ -116,7 +371,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(4));
+        assertThat(logic.getRules().size(), is(24));
 
     }
 
