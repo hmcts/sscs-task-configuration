@@ -36,7 +36,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("requestInfoIncompleteApplication","reviewIncompleteAppeal"),
             eventAutoCompletesTasks("interlocInformationReceived", "reviewInformationRequested", "reviewAdminAction"),
             eventAutoCompletesTasks("validSendToInterloc", "reviewInformationRequested", "reviewAdminAction",
-                                    "reviewConfidentialityRequest"),
+                                    "reviewConfidentialityRequest", "referredToInterlocTCW"),
             eventAutoCompletesTasks("interlocSendToTcw","reviewInformationRequested", "reviewAdminAction",
                                     "reviewFtaDueDate", "reviewUrgentHearingRequest", "referredByTcwPreHearing",
                                     "referredByTcwPostHearing", "referredByAdminJudgePreHearing",
@@ -47,18 +47,20 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("reviewConfidentialityRequest","reviewConfidentialityRequest"),
             eventAutoCompletesTasks("sendToAdmin","reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "referredByTcwPreHearing", "referredByTcwPostHearing",
-                                    "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "referredByJudge"),
+                                    "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "referredByJudge",
+                                    "referredToInterlocTCW"),
             eventAutoCompletesTasks("directionIssued","reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "referredByTcwPreHearing", "referredByTcwPostHearing",
                                     "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing",
-                                    "ftaRequestTimeExtension", "referredByJudge"),
+                                    "ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW"),
             eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest", "writeDecisionJudge"),
             eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
                                     "reviewUrgentHearingRequest", "referredByTcwPreHearing",
                                     "referredByTcwPostHearing", "referredByAdminJudgePreHearing",
-                                    "referredByAdminJudgePostHearing", "ftaRequestTimeExtension", "referredByJudge"),
+                                    "referredByAdminJudgePostHearing", "ftaRequestTimeExtension", "referredByJudge",
+                                    "referredToInterlocTCW"),
             eventAutoCompletesTasks("decisionIssued", "referredByTcwPreHearing", "referredByTcwPostHearing",
-                                    "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing"),
+                                    "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "referredToInterlocTCW"),
             eventAutoCompletesTasks("struckOut", "referredByTcwPreHearing", "referredByTcwPostHearing",
                                     "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing"),
             eventAutoCompletesTasks("writeFinalDecision", "referredByTcwPreHearing", "referredByTcwPostHearing",
@@ -67,7 +69,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("adjournCase", "prepareForHearingJudge"),
             eventAutoCompletesTasks("issueAdjournmentNotice", "writeDecisionJudge"),
             eventAutoCompletesTasks("confirmPanelComposition", "confirmPanelComposition"),
-            eventAutoCompletesTasks("tcwReferToJudge", "referredByJudge")
+            eventAutoCompletesTasks("tcwReferToJudge", "referredByJudge", "referredToInterlocTCW")
         );
     }
 
@@ -87,7 +89,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(19));
+        assertThat(logic.getRules().size(), is(20));
 
     }
 

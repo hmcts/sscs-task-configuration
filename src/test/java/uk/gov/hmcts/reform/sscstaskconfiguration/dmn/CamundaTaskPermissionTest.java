@@ -244,6 +244,18 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     permission("allocated-tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
                                "LEGAL_OPERATIONS", 1)
                 )
+            ),
+            Arguments.of(
+                "referredToInterlocTCW",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
+                    permission("allocated-tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                               "LEGAL_OPERATIONS", 1),
+                    permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
+                )
             )
         );
     }
