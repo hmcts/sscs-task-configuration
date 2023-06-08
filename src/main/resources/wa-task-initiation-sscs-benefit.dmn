@@ -967,6 +967,94 @@ else 0</text>
           <text>"ftaRequestTimeExtension"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0hcql9l">
+        <inputEntry id="UnaryTests_1s0ertb">
+          <text>"interlocSendToTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ums92h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wxhh6b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nw3zrc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04bjx33">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bdy2qr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1feevas">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yjdozi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00iahli">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e6rssy">
+          <text>"referredByJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1901u5r">
+          <text>"Referred By Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jyc9ke">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0racdtz">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dpuocn">
+          <text>"referredByJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ekrmt5">
+        <inputEntry id="UnaryTests_0vgr8oi">
+          <text>"validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16l46fv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m1rlc3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pwank7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dpfysn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h1bkxj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tuxo7c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_039oyxy">
+          <text>"reviewByTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lnxuel">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01cvrfq">
+          <text>"referredByJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07c1td9">
+          <text>"Referred By Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d5eb63">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r8m4f3">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07kn0h4">
+          <text>"referredByJudge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

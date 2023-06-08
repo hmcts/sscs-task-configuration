@@ -183,7 +183,7 @@ else
       </rule>
       <rule id="DecisionRule_00qbanj">
         <inputEntry id="UnaryTests_15it3xr">
-          <text>"ftaRequestTimeExtension"</text>
+          <text>"ftaRequestTimeExtension", "referredByJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_00wwakw">
           <text></text>
@@ -209,7 +209,7 @@ else
       </rule>
       <rule id="DecisionRule_0k08lmp">
         <inputEntry id="UnaryTests_1v6k40s">
-          <text>"ftaRequestTimeExtension"</text>
+          <text>"ftaRequestTimeExtension", "referredByJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hmqvzx">
           <text></text>
