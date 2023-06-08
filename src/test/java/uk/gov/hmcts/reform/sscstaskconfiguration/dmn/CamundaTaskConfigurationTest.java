@@ -197,7 +197,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         + "${[CASE_REFERENCE]}/trigger/sendToAdmin)<br/>"
                         + "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)", true)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
-                    .expectedValue("workType", "pre_hearing_work", true)
+                    .expectedValue("workType", "pre_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
@@ -212,7 +212,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         + "[Send an interlocutory decision notice](/case/SSCS/Benefit/"
                         + "${[CASE_REFERENCE]}/trigger/decisionIssued)", true)
                     .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
-                    .expectedValue("workType", "pre_hearing_work", true)
+                    .expectedValue("workType", "pre_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             )
