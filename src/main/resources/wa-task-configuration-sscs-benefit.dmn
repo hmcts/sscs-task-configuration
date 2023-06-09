@@ -112,7 +112,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a9atyt">
-          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","ftaRequestTimeExtension", "referredToInterlocTCW"</text>
+          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","ftaRequestTimeExtension", "referredToInterlocTCW", "reviewPostponementRequestTCW"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xklqhp">
           <text>"workType"</text>
@@ -197,7 +197,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gq5crh">
-          <text>"ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW"</text>
+          <text>"ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW", "reviewPostponementRequestTCW"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kt3532">
           <text>"roleCategory"</text>
@@ -250,7 +250,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ymggmb">
-          <text>"reviewUrgentHearingRequest", "writeDecisionJudge"</text>
+          <text>"reviewUrgentHearingRequest", "writeDecisionJudge", "reviewPostponementRequestTCW"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1n43g1v">
           <text>"minorPriority"</text>
@@ -303,7 +303,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pk8oi8">
-          <text>"reviewUrgentHearingRequest", "writeDecisionJudge"</text>
+          <text>"reviewUrgentHearingRequest", "writeDecisionJudge", "reviewPostponementRequestTCW"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0zms8im">
           <text>"majorPriority"</text>
@@ -523,6 +523,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0fv9ty1">
+        <inputEntry id="UnaryTests_14fxds4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xp3mpb">
+          <text>"reviewPostponementRequestTCW"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0klccdr">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15k210f">
+          <text>"[Action Postponement Request](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionPostponementRequest)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13d2acc">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -631,7 +648,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "referredByTcwPostHearing", "prepareForHearingJudge", "writeDecisionJudge", "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "confirmPanelComposition", "ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "referredByTcwPostHearing", "prepareForHearingJudge", "writeDecisionJudge", "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "confirmPanelComposition", "ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW", "reviewPostponementRequestTCW"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>

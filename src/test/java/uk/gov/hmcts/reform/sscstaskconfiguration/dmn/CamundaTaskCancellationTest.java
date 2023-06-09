@@ -47,7 +47,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("confirmPanelComposition")
                 .cancel("referredByJudge")
-                .cancel("referredToInterlocTCW").build(),
+                .cancel("referredToInterlocTCW")
+                .cancel("reviewPostponementRequestTCW").build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -63,7 +64,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("confirmPanelComposition")
                 .cancel("referredByJudge")
-                .cancel("referredToInterlocTCW").build(),
+                .cancel("referredToInterlocTCW")
+                .cancel("reviewPostponementRequestTCW").build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -79,7 +81,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("confirmPanelComposition")
                 .cancel("referredByJudge")
-                .cancel("referredToInterlocTCW").build(),
+                .cancel("referredToInterlocTCW")
+                .cancel("reviewPostponementRequestTCW").build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -94,7 +97,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("confirmPanelComposition")
                 .cancel("referredByJudge")
-                .cancel("referredToInterlocTCW").build(),
+                .cancel("referredToInterlocTCW")
+                .cancel("reviewPostponementRequestTCW").build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -108,7 +112,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("confirmPanelComposition")
                 .cancel("referredByJudge")
-                .cancel("referredToInterlocTCW").build(),
+                .cancel("referredToInterlocTCW")
+                .cancel("reviewPostponementRequestTCW").build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal").build(),
             event("makeCaseUrgent")
@@ -127,7 +132,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByTcwPostHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
-                .cancel("referredByJudge").build(),
+                .cancel("referredByJudge")
+                .cancel("reviewPostponementRequestTCW").build(),
             event("issueFinalDecision")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("referredByTcwPreHearing")
@@ -138,7 +144,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("confirmPanelComposition")
                 .cancel("referredByJudge")
-                .cancel("referredToInterlocTCW").build(),
+                .cancel("referredToInterlocTCW")
+                .cancel("reviewPostponementRequestTCW").build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks").build(),
             event("interlocReviewStateAmend")
@@ -174,7 +181,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(4));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(19));
+        assertThat(logic.getRules().size(), is(20));
 
     }
 }
