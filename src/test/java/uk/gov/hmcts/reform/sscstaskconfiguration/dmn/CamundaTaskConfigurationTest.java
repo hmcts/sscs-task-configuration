@@ -263,8 +263,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue(DESCRIPTION, "[Send a directions notice]"
-                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)<br/>" +
-                        "[Return the case to an admin with a note]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)<br/>"
+                        + "[Return the case to an admin with a note]"
                         + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)<br/>"
                         + "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)<br/>"
                         + "[Ability to amend interloc review state flag]"
