@@ -1150,6 +1150,138 @@ else "Referred to interloc"</text>
           <text>"referredToInterlocTCW"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ipe0he">
+        <inputEntry id="UnaryTests_19epj3f">
+          <text>"actionFurtherEvidence", "uploadWelshDocument", "manageWelshDocuments"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u4wvpw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fllf8s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w40iqt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15ucsky">
+          <text>contains(scannedDocumentTypes, "postponementRequest")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dt0dn1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02a001n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yspo6z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mpbduz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n2q24g">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bkrnhy">
+          <text>"Review postponement request"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a655p5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05chjgl">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kwo8ym">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_158qpos">
+        <inputEntry id="UnaryTests_16rdmc0">
+          <text>"postponementRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1udpbev">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s2jdd5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lvppv2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y5cxo2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b0erus">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10sn912">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pacgjv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0amzw7c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06u1pl0">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xgwqn0">
+          <text>"Review postponement request"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wnpqms">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b4qbel">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ibjphb">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rpnxtg">
+        <inputEntry id="UnaryTests_1cb6v5b">
+          <text>"validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u4kzyn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0410isr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01uphbm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0virutu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_199eg28">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x7c0ws">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19l8cgy">
+          <text>"reviewByTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b6rmge">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0scabqy">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xi8ndv">
+          <text>"Review postponement request"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0aht9o1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03exjq6">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00jk15a">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="Decision_0e6yas5" name="Interloc Referral Reason">

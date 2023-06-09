@@ -247,6 +247,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2, "Routine work")
                 .initiativesTask("referredByJudge", "Referred By Judge", 2)
                 .initiativesTask("referredToInterlocTCW", "Referred to interloc - Complex Case", 2)
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("uploadWelshDocument")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
+                                 10, "Translation Tasks")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("postponementRequest")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
                 .build()
         );
     }
@@ -273,7 +291,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(24));
+        assertThat(logic.getRules().size(), is(27));
 
     }
 
