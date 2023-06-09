@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
+    <informationRequirement id="InformationRequirement_05owtqm">
+      <requiredDecision href="#Decision_0e6yas5" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" biodi:width="278" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
@@ -1055,6 +1058,240 @@ else 0</text>
           <text>"referredByJudge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_12nywat">
+        <inputEntry id="UnaryTests_1l5ws5l">
+          <text>"hmctsResponseReviewed", "validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08iceto">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ygjiio">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rg51sa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nlzt2s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11hhsge">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02yp93t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0juzcpc">
+          <text>"reviewByTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_111py3e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pjusdl">
+          <text>"referredToInterlocTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mh47dl">
+          <text>if(interlocReferralReasonLabel!=null) then
+  "Referred to interloc - " + interlocReferralReasonLabel
+else "Referred to interloc"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19gb45e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qm4uri">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wz99nr">
+          <text>"referredToInterlocTCW"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xr14za">
+        <inputEntry id="UnaryTests_1lxt545">
+          <text>"nonCompliantSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c2gv9n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eib6q4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aemv7r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gex52w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fhf2om">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16safd4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1li1q9q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08kc211">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1q7ni75">
+          <text>"referredToInterlocTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yyx2hs">
+          <text>if(interlocReferralReasonLabel!=null) then
+  "Referred to interloc - " + interlocReferralReasonLabel
+else "Referred to interloc"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sihcyc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mg0r8y">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fozup4">
+          <text>"referredToInterlocTCW"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_0e6yas5" name="Interloc Referral Reason">
+    <decisionTable id="DecisionTable_1c2mn3w" hitPolicy="FIRST">
+      <input id="InputClause_071qujm" label="Interloc referal reason" biodi:width="391" camunda:inputVariable="interlocReferralReason">
+        <inputExpression id="LiteralExpression_1afiydh" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.interlocReferralReason
+            != null) then
+            additionalData.Data.interlocReferralReason
+            else
+            null</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_06g1umb" label="Label" name="interlocReferralReasonLabel" typeRef="string" biodi:width="655" />
+      <rule id="DecisionRule_1hpmdfx">
+        <inputEntry id="UnaryTests_0r2og56">
+          <text>null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a8vl1x">
+          <text>null</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p1vh0l">
+        <inputEntry id="UnaryTests_0b16zk4">
+          <text>"confirmPanelCompositionAndListingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_028chvk">
+          <text>"Confirm panel composition and listing directions"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_14gm0ru">
+        <inputEntry id="UnaryTests_0g0iinw">
+          <text>"reviewPostponementRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g5m02s">
+          <text>"Review hearing postponement request"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1v8swws">
+        <inputEntry id="UnaryTests_11byvls">
+          <text>"timeExtension"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05n38eq">
+          <text>"Time extension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kn5ls6">
+        <inputEntry id="UnaryTests_124a50z">
+          <text>"reviewAudioVideoEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ypkyq4">
+          <text>"Review A/V evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rna2fy">
+        <inputEntry id="UnaryTests_0yiqu78">
+          <text>"rejectHearingRecordingRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sh84lh">
+          <text>"Reject hearing recording request"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09kevgl">
+        <inputEntry id="UnaryTests_19r0dlv">
+          <text>"postHearingRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07p3fpl">
+          <text>"Post Hearing Request"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12a7xs3">
+        <inputEntry id="UnaryTests_1gxpzdw">
+          <text>"phmeRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0y1rnzx">
+          <text>"PHE request"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0l2db42">
+        <inputEntry id="UnaryTests_1w4o8xl">
+          <text>"over300Pages"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08rcpba">
+          <text>"Over 300 pages"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18unw4g">
+        <inputEntry id="UnaryTests_0wsfwub">
+          <text>"over13months"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vw4sqh">
+          <text>"Over 13 months"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1r3i411">
+        <inputEntry id="UnaryTests_05v2f4r">
+          <text>"noResponseToDirection"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04i7d5u">
+          <text>"No response to a direction"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lgff14">
+        <inputEntry id="UnaryTests_0h0nfym">
+          <text>"noMrn"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18av15n">
+          <text>"No MRN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i0q2mz">
+        <inputEntry id="UnaryTests_0bj7l5k">
+          <text>"listingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gprf8n">
+          <text>"Listing Directions"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ksgdjx">
+        <inputEntry id="UnaryTests_0ytuqf7">
+          <text>"over13MonthsAndGroundsMissing"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1oqywd8">
+          <text>"Grounds for appeal missing"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kw6ct6">
+        <inputEntry id="UnaryTests_0ygp14q">
+          <text>"complexCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nzdngs">
+          <text>"Complex Case"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jjhy21">
+        <inputEntry id="UnaryTests_0nzzl3n">
+          <text>"adviceOnHowToProceed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dtxott">
+          <text>"Advice on how to proceed"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
@@ -1062,6 +1299,14 @@ else 0</text>
       <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="wa-task-initiation-sscs-benefit">
         <dc:Bounds height="80" width="180" x="150" y="80" />
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1hvee9a" dmnElementRef="Decision_0e6yas5">
+        <dc:Bounds height="80" width="180" x="440" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_16su672" dmnElementRef="InformationRequirement_05owtqm">
+        <di:waypoint x="440" y="120" />
+        <di:waypoint x="350" y="120" />
+        <di:waypoint x="330" y="120" />
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>

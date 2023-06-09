@@ -183,7 +183,7 @@ else
       </rule>
       <rule id="DecisionRule_00qbanj">
         <inputEntry id="UnaryTests_15it3xr">
-          <text>"ftaRequestTimeExtension", "referredByJudge"</text>
+          <text>"ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_00wwakw">
           <text></text>
@@ -209,7 +209,7 @@ else
       </rule>
       <rule id="DecisionRule_0k08lmp">
         <inputEntry id="UnaryTests_1v6k40s">
-          <text>"ftaRequestTimeExtension", "referredByJudge"</text>
+          <text>"ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hmqvzx">
           <text></text>
@@ -657,7 +657,7 @@ else
       </rule>
       <rule id="DecisionRule_0n3p7iv">
         <inputEntry id="UnaryTests_16ml552">
-          <text>"ftaRequestTimeExtension"</text>
+          <text>"ftaRequestTimeExtension", "referredToInterlocTCW"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0nsuxox">
           <text></text>

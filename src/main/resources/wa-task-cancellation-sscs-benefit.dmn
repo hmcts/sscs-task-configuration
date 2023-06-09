@@ -526,6 +526,32 @@
           <text>"referredByJudge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1m1tqro">
+        <inputEntry id="UnaryTests_17crcpw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12xkoec">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05ri7dz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p86rtc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0h42t94">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10jmml3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i69yza">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lit4w6">
+          <text>"referredToInterlocTCW"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
