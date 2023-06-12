@@ -33,19 +33,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
 
         return Stream.of(
-            Arguments.of(
-                "nonCompliant",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "nonCompliantCase",
-                        "name", "Review non-compliant appeal",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "Non-compliant appeal"
-                    )
-                )
-            ),
+            event("nonCompliant")
+                .initiativesTask("nonCompliantCase", "Review non-compliant appeal",
+                                 2, "Non-compliant appeal")
+                .initiativesTask("reviewNonCompliantAppeal", "Review Non Compliant Appeal",
+                                 2)
+                .build(),
             Arguments.of(
                 "draftToIncompleteApplication",
                 null,
@@ -265,6 +258,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("postponementRequest")
                 .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("draftToNonCompliant")
+                .initiativesTask("reviewNonCompliantAppeal", "Review Non Compliant Appeal",
+                                 2)
                 .build()
         );
     }
@@ -291,7 +288,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(27));
+        assertThat(logic.getRules().size(), is(28));
 
     }
 

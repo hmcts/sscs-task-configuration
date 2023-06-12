@@ -112,7 +112,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a9atyt">
-          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","ftaRequestTimeExtension", "referredToInterlocTCW", "reviewPostponementRequestTCW"</text>
+          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","ftaRequestTimeExtension", "referredToInterlocTCW", "reviewPostponementRequestTCW", "reviewNonCompliantAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xklqhp">
           <text>"workType"</text>
@@ -197,7 +197,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gq5crh">
-          <text>"ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW", "reviewPostponementRequestTCW"</text>
+          <text>"ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW", "reviewPostponementRequestTCW", "reviewNonCompliantAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kt3532">
           <text>"roleCategory"</text>
@@ -233,7 +233,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest", "referredByTcwPreHearing", "referredByTcwPostHearing", "prepareForHearingJudge", "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "confirmPanelComposition", "ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest", "referredByTcwPreHearing", "referredByTcwPostHearing", "prepareForHearingJudge", "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "confirmPanelComposition", "ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW", "reviewNonCompliantAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -286,7 +286,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest", "referredByTcwPreHearing", "referredByTcwPostHearing", "prepareForHearingJudge", "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "confirmPanelComposition", "ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW"</text>
+          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest", "referredByTcwPreHearing", "referredByTcwPostHearing", "prepareForHearingJudge", "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "confirmPanelComposition", "ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW", "reviewNonCompliantAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -540,6 +540,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1tw6n7m">
+        <inputEntry id="UnaryTests_04budqi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15ql0nd">
+          <text>"reviewNonCompliantAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1eyvd2b">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02x0fbn">
+          <text>"[Send a directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" + "[Send an interlocutory decision notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" + "[Return the case to an admin with a note](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" + "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)&lt;br/&gt;" + "[Strike out due to no response](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/struckOut)&lt;br/&gt;" + "[Ability to amend interloc review state flag](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lpozva">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -648,7 +665,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "referredByTcwPostHearing", "prepareForHearingJudge", "writeDecisionJudge", "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "confirmPanelComposition", "ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW", "reviewPostponementRequestTCW"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "referredByTcwPostHearing", "prepareForHearingJudge", "writeDecisionJudge", "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing", "confirmPanelComposition", "ftaRequestTimeExtension", "referredByJudge", "referredToInterlocTCW", "reviewPostponementRequestTCW", "reviewNonCompliantAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>
