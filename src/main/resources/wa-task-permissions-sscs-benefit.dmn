@@ -657,6 +657,84 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_08mro80">
+        <inputEntry id="UnaryTests_0imxjv1">
+          <text>"processAudioVideoEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04q3l26">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1thlm7u">
+          <text>"Allocated-Tribunal-Caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19g4e91">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zg3j3g">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qohy6r">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_129ijni">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d543bd">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lh0900">
+        <inputEntry id="UnaryTests_1t96noj">
+          <text>"processAudioVideoEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03b9h5a">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_018dmbp">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l1hvva">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a66kd9">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_130kwql">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yitxgw">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w2dag2">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i22gph">
+        <inputEntry id="UnaryTests_1034xn5">
+          <text>"processAudioVideoEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fcgldq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_168qjn1">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13xluu7">
+          <text>"Read,Execute,Unclaim,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xnrq7n">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1melhix">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p1ycdc">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wlqvck">
+          <text>false</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
