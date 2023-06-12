@@ -578,6 +578,32 @@
           <text>"reviewPostponementRequestTCW"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0i9hmlc">
+        <inputEntry id="UnaryTests_0hj1xid">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c5jj3t">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "issueFinalDecision", "decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ynavyn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a5hllt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gta7za">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xq1yop">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vb09vj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rhevi6">
+          <text>"reviewNonCompliantAppeal"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
