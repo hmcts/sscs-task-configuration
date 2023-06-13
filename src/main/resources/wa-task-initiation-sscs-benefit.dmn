@@ -62,11 +62,11 @@
             0</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0z9x17a" label="Who Reviews Case" camunda:inputVariable="selectWhoReviewsCase">
+      <input id="InputClause_0z9x17a" label="Who Reviews Case" camunda:inputVariable="reviewBy">
         <inputExpression id="LiteralExpression_0d7n6ez" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.selectWhoReviewsCase
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.reviewBy
             != null) then
-            additionalData.Data.selectWhoReviewsCase
+            additionalData.Data.reviewBy
             else
             null</text>
         </inputExpression>
@@ -1324,6 +1324,50 @@ else "Referred to interloc"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1rwg4t8">
           <text>"reviewNonCompliantAppeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1r5qkhj">
+        <inputEntry id="UnaryTests_04halm6">
+          <text>"updateNotListable"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gwpr8y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02g1jo8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1elfh8x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eftctr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09w8fge">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bth84h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04ornlh">
+          <text>"reviewByTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19kx0ma">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0g0cp8v">
+          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04p3xjn">
+          <text>"FTA Not Provided Appointee Details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q1h7l2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tf3bhg">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1juyrn4">
+          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
         </outputEntry>
       </rule>
     </decisionTable>

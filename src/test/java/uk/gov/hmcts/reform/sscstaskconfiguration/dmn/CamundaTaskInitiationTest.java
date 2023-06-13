@@ -205,19 +205,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("workType", "preHearingWork")
-                .withCaseData("selectWhoReviewsCase", "reviewByJudge")
+                .withCaseData("reviewBy", "reviewByJudge")
                 .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2, "Routine work")
                 .initiativesTask("referredByAdminJudgePreHearing", "Referred By Admin", 2)
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("workType", "postHearingWork")
-                .withCaseData("selectWhoReviewsCase", "reviewByJudge")
+                .withCaseData("reviewBy", "reviewByJudge")
                 .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2, "Routine work")
                 .initiativesTask("referredByAdminJudgePostHearing", "Referred By Admin", 2)
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("workType", "postHearingWork")
-                .withCaseData("selectWhoReviewsCase", "reviewByJudge")
+                .withCaseData("reviewBy", "reviewByJudge")
                 .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2, "Routine work")
                 .initiativesTask("referredByAdminJudgePostHearing", "Referred By Admin", 2)
                 .build(),
@@ -235,7 +235,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("referredByJudge", "Referred By Judge", 2)
                 .build(),
             event("validSendToInterloc")
-                .withCaseData("selectWhoReviewsCase", "reviewByTcw")
+                .withCaseData("reviewBy", "reviewByTcw")
                 .withCaseData("interlocReferralReason", "complexCase")
                 .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2, "Routine work")
                 .initiativesTask("referredByJudge", "Referred By Judge", 2)
@@ -262,6 +262,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("draftToNonCompliant")
                 .initiativesTask("reviewNonCompliantAppeal", "Review Non Compliant Appeal",
                                  2)
+                .build(),
+            event("updateNotListable")
+                .withCaseData("reviewBy", "reviewByTcw")
+                .initiativesTask("ftaNotProvidedAppointeeDetailsTcw", "FTA Not Provided Appointee Details", 2)
                 .build()
         );
     }
@@ -288,7 +292,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(28));
+        assertThat(logic.getRules().size(), is(29));
 
     }
 
