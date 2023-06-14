@@ -317,7 +317,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "updateHearingDetailsRequired",
+                "hearingToday",
                 null,
                 null,
                 singletonList(
