@@ -304,7 +304,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "reviewOutstandingDraftDecisionRequired",
+                "hearingToday",
                 null,
                 null,
                 singletonList(
