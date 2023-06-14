@@ -232,7 +232,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("benefitCode", "026")
                 .initiativesTask("confirmPanelComposition", "Confirm Panel Composition", 2)
                 .build(),
-            event("writeDecisionRequired")
+            event("hearingToday")
                 .initiativesTask("writeDecisionJudge", "Write Decision", 2)
                 .build()
         );
