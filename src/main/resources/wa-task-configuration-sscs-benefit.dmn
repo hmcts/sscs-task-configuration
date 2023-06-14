@@ -95,7 +95,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal","reviewListingError","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal","reviewListingError","reviewBfDate","referredByAdminTcw"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -180,7 +180,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tuha5h">
-          <text>"reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence"</text>
+          <text>"reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence","referredByAdminTcw"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1o7b9tn">
           <text>"roleCategory"</text>
@@ -216,7 +216,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence","referredByAdminTcw"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -252,7 +252,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewBfDate","reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence"</text>
+          <text>"reviewIncompleteAppeal","reviewBfDate","reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence","referredByAdminTcw"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -504,6 +504,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0xzl6pd">
+        <inputEntry id="UnaryTests_0epowep">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yqqywc">
+          <text>"referredByAdminTcw"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pmqede">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06gvohv">
+          <text>"[Ability to amend interloc review state flag](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" + "[Send a directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" + "[Return the case to an admin with a note](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" + "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rjas4r">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -629,7 +646,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","updateHearingDetails","reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence"</text>
+          <text>"reviewFtaResponse","updateHearingDetails","reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence","referredByAdminTcw"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>

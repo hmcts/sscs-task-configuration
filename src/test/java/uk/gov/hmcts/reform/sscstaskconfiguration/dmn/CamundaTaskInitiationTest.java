@@ -483,6 +483,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "processAudioVideoEvidence"
                     )
                 )
+            ),
+            Arguments.of(
+                "validSendToInterloc",
+                null,
+                Map.of("Data", Map.of("action", "reviewByTcw")),
+                singletonList(
+                    Map.of(
+                        "taskId", "referredByAdminTcw",
+                        "name", "Referred by Admin",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "referredByAdminTcw"
+                    )
+                )
             )
         );
     }
@@ -509,7 +522,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(17));
+        assertThat(logic.getRules().size(), is(18));
 
     }
 
