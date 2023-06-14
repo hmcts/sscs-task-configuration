@@ -139,6 +139,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "ftaResponseOverdue",
                         "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "referredByAdminTcw",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -157,6 +161,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewFtaValidityChallenge",
                         "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "referredByAdminTcw",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -165,6 +173,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "taskType", "reviewFtaValidityChallenge",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "referredByAdminTcw",
                         "completionMode", "Auto"
                     )
                 )
@@ -182,6 +194,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     Map.of(
                         "taskType", "processAudioVideoEvidence",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "referredByAdminTcw",
                         "completionMode", "Auto"
                     )
                 )
@@ -214,7 +230,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(13));
+        assertThat(logic.getRules().size(), is(14));
 
     }
 

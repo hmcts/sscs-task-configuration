@@ -43,7 +43,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("updateHearingDetails")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaResponseOverdue")
-                .cancel("processAudioVideoEvidence").build(),
+                .cancel("processAudioVideoEvidence")
+                .cancel("referredByAdminTcw").build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -55,7 +56,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("updateHearingDetails")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaResponseOverdue")
-                .cancel("processAudioVideoEvidence").build(),
+                .cancel("processAudioVideoEvidence")
+                .cancel("referredByAdminTcw").build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -67,7 +69,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("updateHearingDetails")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaResponseOverdue")
-                .cancel("processAudioVideoEvidence").build(),
+                .cancel("processAudioVideoEvidence")
+                .cancel("referredByAdminTcw").build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -77,7 +80,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("updateHearingDetails")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaResponseOverdue")
-                .cancel("processAudioVideoEvidence").build(),
+                .cancel("processAudioVideoEvidence")
+                .cancel("referredByAdminTcw").build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -89,7 +93,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("updateHearingDetails")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaResponseOverdue")
-                .cancel("processAudioVideoEvidence").build(),
+                .cancel("processAudioVideoEvidence")
+                .cancel("referredByAdminTcw").build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewBfDate").build(),
@@ -104,7 +109,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             event("decisionIssued")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("ftaResponseOverdue")
-                .cancel("processAudioVideoEvidence").build(),
+                .cancel("processAudioVideoEvidence")
+                .cancel("referredByAdminTcw").build(),
             event("cancelTranslations")
                 .cancel("reviewBilingualDocument").build(),
             event("interlocSendToTcw")
@@ -113,7 +119,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewOutstandingDraftDecision")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaResponseOverdue")
-                .cancel("processAudioVideoEvidence").build(),
+                .cancel("processAudioVideoEvidence")
+                .cancel("referredByAdminTcw").build(),
             event("issueAdjournmentNotice")
                 .cancel("reviewOutstandingDraftDecision").build(),
             event("responseReceived")
@@ -145,7 +152,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(15));
+        assertThat(logic.getRules().size(), is(16));
 
     }
 }
