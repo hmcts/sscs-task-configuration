@@ -112,7 +112,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bax4so">
-          <text>"createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision"</text>
+          <text>"createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision","updateHearingDetails"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_152y5tj">
           <text>"workType"</text>
@@ -146,7 +146,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0dd312o">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"createBundleAndAllocateCaseRoles","updateHearingDetails"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02ykby3">
           <text>"roleCategory"</text>
@@ -200,7 +200,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision","updateHearingDetails"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -254,7 +254,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision"</text>
+          <text>"requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewListingError","createBundleAndAllocateCaseRoles","reviewOutstandingDraftDecision","updateHearingDetails"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -544,7 +544,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse"</text>
+          <text>"reviewFtaResponse","updateHearingDetails"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>
