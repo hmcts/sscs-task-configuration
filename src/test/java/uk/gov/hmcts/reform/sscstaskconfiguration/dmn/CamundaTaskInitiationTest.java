@@ -441,7 +441,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "reviewBfDateRequired",
+                "directionDueToday",
                 null,
                 null,
                 singletonList(

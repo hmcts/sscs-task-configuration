@@ -426,7 +426,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_0m3ft60">
         <inputEntry id="UnaryTests_1wru0hw">
-          <text>"reviewBfDateRequired"</text>
+          <text>"directionDueToday"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0s0uqeg">
           <text></text>
@@ -457,6 +457,9 @@ else 0</text>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
     <informationRequirement id="InformationRequirement_0tk6k3u">
+      <requiredDecision href="#Decision_1n3y86t" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0tx6qya">
       <requiredDecision href="#Decision_1n3y86t" />
     </informationRequirement>
     <decisionTable id="DecisionTable_172aal0">
@@ -550,7 +553,7 @@ null</text>
         <outputEntry id="LiteralExpression_1veyac7">
           <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
         </outputEntry>
-      </rule>      
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
@@ -561,11 +564,6 @@ null</text>
       <dmndi:DMNShape id="DMNShape_155l404" dmnElementRef="sscs-task-initiation-date-calculation-defaults">
         <dc:Bounds height="80" width="180" x="450" y="80" />
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_1q6bx3v" dmnElementRef="InformationRequirement_0tk6k3u">
-        <di:waypoint x="740" y="120" />
-        <di:waypoint x="650" y="120" />
-        <di:waypoint x="630" y="120" />
-      </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_0s4z50s" dmnElementRef="Decision_1n3y86t">
         <dc:Bounds height="80" width="180" x="740" y="80" />
       </dmndi:DMNShape>
@@ -573,6 +571,11 @@ null</text>
         <di:waypoint x="450" y="120" />
         <di:waypoint x="350" y="120" />
         <di:waypoint x="330" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1tvyl7t" dmnElementRef="InformationRequirement_0tx6qya">
+        <di:waypoint x="740" y="120" />
+        <di:waypoint x="650" y="120" />
+        <di:waypoint x="630" y="120" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
