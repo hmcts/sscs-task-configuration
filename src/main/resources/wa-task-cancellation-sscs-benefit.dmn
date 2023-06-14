@@ -500,6 +500,32 @@
           <text>"confirmPanelComposition"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1859t7j">
+        <inputEntry id="UnaryTests_1qgmfki">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xwcou1">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision","decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08igi32">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iuhu4g">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0okl4oc">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yudyu7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tgq5ux">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kg003p">
+          <text>"ftaRequestTimeExtension"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
