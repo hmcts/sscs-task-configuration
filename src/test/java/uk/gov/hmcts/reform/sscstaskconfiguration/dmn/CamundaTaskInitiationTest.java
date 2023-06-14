@@ -383,7 +383,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "ftaResponseOverdue",
+                "directionDueToday",
                 null,
                 Map.of("Data",
                        Map.of("directionTypeDl",
