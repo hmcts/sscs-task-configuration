@@ -400,6 +400,89 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "ftaResponseOverdue"
                     )
                 )
+            ),
+            Arguments.of(
+                "uploadDocument",
+                null,
+                Map.of("Data", Map.of("scannedDocumentTypes", Arrays.asList("audioDocument"))),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    ),
+                    Map.of(
+                        "taskId", "processAudioVideoEvidence",
+                        "name", "Process audio/video evidence",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "processAudioVideoEvidence"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpSupplementaryResponse",
+                null,
+                Map.of("Data", Map.of("scannedDocumentTypes", Arrays.asList("videoDocument", "audioDocument"))),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    ),
+                    Map.of(
+                        "taskId", "processAudioVideoEvidence",
+                        "name", "Process audio/video evidence",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "processAudioVideoEvidence"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                null,
+                Map.of("Data", Map.of("scannedDocumentTypes", Arrays.asList("audioDocument", "other"))),
+                singletonList(
+                    Map.of(
+                        "taskId", "processAudioVideoEvidence",
+                        "name", "Process audio/video evidence",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "processAudioVideoEvidence"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadFurtherEvidence",
+                null,
+                Map.of("Data", Map.of("scannedDocumentTypes", Arrays.asList("videoDocument"))),
+                singletonList(
+                    Map.of(
+                        "taskId", "processAudioVideoEvidence",
+                        "name", "Process audio/video evidence",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "processAudioVideoEvidence"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocumentFurtherEvidence",
+                null,
+                Map.of("Data", Map.of("scannedDocumentTypes", Arrays.asList("videoDocument"))),
+                 Arrays.asList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    ),
+                    Map.of(
+                        "taskId", "processAudioVideoEvidence",
+                        "name", "Process audio/video evidence",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "processAudioVideoEvidence"
+                    )
+                )
             )
         );
     }
@@ -426,7 +509,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(16));
+        assertThat(logic.getRules().size(), is(17));
 
     }
 

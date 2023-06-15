@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -129,7 +129,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1v5trmu">
-          <text>"reviewFtaValidityChallenge","ftaResponseOverdue"</text>
+          <text>"reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1k3xuup">
           <text>"workType"</text>
@@ -180,7 +180,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tuha5h">
-          <text>"reviewFtaValidityChallenge","ftaResponseOverdue"</text>
+          <text>"reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1o7b9tn">
           <text>"roleCategory"</text>
@@ -216,7 +216,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","reviewFtaValidityChallenge","ftaResponseOverdue"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -252,7 +252,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewBfDate","reviewFtaValidityChallenge","ftaResponseOverdue"</text>
+          <text>"reviewIncompleteAppeal","reviewBfDate","reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -481,9 +481,26 @@ null</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0o987pi">
-          <text>"[Ability to amend interloc review state flag](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" + "[Send an interlocutory decision notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)"</text>
+          <text>"[Ability to amend interloc review state flag](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" +"[Send an interlocutory decision notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_18s1qx2">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1th71jq">
+        <inputEntry id="UnaryTests_1kvduos">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xckwek">
+          <text>"processAudioVideoEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xor5gr">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dqdloj">
+          <text>"[Ability to amend interloc review state flag](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" + "[Issue a direction notice based on audio and video evidence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/processAudioVideo)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10pj3bt">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -612,7 +629,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","updateHearingDetails","reviewFtaValidityChallenge","ftaResponseOverdue"</text>
+          <text>"reviewFtaResponse","updateHearingDetails","reviewFtaValidityChallenge","ftaResponseOverdue","processAudioVideoEvidence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>
