@@ -455,6 +455,35 @@
           <text>"referredByAdminTcw"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_03ohw97">
+        <inputEntry id="UnaryTests_0wjtd96">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vf524d">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"interlocReviewStateAmend", "issueFinalDecision",
+"issueAdjournmentNotice", "decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h2urun">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14nqnr9">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10u82e4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s73q6l">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yv6s1u">
+          <text>"prepareForHearingTribunalMember"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
