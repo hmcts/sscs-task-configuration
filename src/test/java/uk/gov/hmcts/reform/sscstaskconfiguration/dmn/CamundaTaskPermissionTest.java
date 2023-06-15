@@ -130,6 +130,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "updateHearingDetails",
                 "someCaseData",
                 defaultAdminCaseWorkerPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "reviewFtaValidityChallenge",
+                "someCaseData",
+            defaultLegal_OperationsPermissions()
             )
         );
     }
@@ -289,6 +294,41 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+    private static List<Map<String, Object>> defaultLegal_OperationsPermissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Allocated-Tribunal-Caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 1,
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "TCW",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 2,
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "judge",
+                "value", "Read,Execute,Unclaim,UnclaimAssign",
+                "assignmentPriority", 3,
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", false
+            )
+        );
+    }
 
     @ParameterizedTest(name = "task type: {0} case data: {1}")
     @MethodSource("scenarioProvider")
@@ -326,7 +366,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(21));
+        assertThat(logic.getRules().size(), is(24));
 
     }
 

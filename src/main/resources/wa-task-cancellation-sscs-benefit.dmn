@@ -338,6 +338,34 @@
           <text>"updateHearingDetails"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0wd7a7p">
+        <inputEntry id="UnaryTests_1uhtrdq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ktm9vu">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1555h1o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zhnl9v">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18x29tp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_024f296">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_128xrai">
+          <text>"reviewFtaValidityChallenge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

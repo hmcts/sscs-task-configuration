@@ -328,6 +328,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "updateHearingDetails"
                     )
                 )
+            ),
+            Arguments.of(
+                "dwpChallengeValidity",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewFtaValidityChallenge",
+                        "name", "Review FTA validity challenge",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "reviewFtaValidityChallenge"
+                    )
+                )
             )
         );
     }
@@ -354,7 +367,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(13));
+        assertThat(logic.getRules().size(), is(14));
 
     }
 

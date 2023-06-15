@@ -416,6 +416,35 @@
           <text>"updateHearingDetails"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1vafl6q">
+        <inputEntry id="UnaryTests_1223hmt">
+          <text>"dwpChallengeValidity"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zmligz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_102fgbw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18a6ivq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lx91v9">
+          <text>"reviewFtaValidityChallenge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uk94ly">
+          <text>"Review FTA validity challenge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ogy07e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j49h1u">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x71hs4">
+          <text>"reviewFtaValidityChallenge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
