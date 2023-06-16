@@ -157,7 +157,7 @@
           <text>"createBundle"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14xiepf">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"allocateCaseRolesAndCreateBundle"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16gzm5k">
           <text>"Auto"</text>

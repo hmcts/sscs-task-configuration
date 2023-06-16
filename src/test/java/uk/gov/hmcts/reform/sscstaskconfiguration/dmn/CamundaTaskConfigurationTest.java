@@ -263,7 +263,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-                "createBundleAndAllocateCaseRoles",
+                "allocateCaseRolesAndCreateBundle",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)

@@ -40,7 +40,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
                 .cancel("reviewRoboticFail")
-                .cancel("createBundleAndAllocateCaseRoles").build(),
+                .cancel("allocateCaseRolesAndCreateBundle").build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -49,7 +49,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
                 .cancel("reviewRoboticFail")
-                .cancel("createBundleAndAllocateCaseRoles").build(),
+                .cancel("allocateCaseRolesAndCreateBundle").build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -58,12 +58,12 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
                 .cancel("reviewRoboticFail")
-                .cancel("createBundleAndAllocateCaseRoles").build(),
+                .cancel("allocateCaseRolesAndCreateBundle").build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
-                .cancel("createBundleAndAllocateCaseRoles").build(),
+                .cancel("allocateCaseRolesAndCreateBundle").build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -72,7 +72,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
                 .cancel("reviewRoboticFail")
-                .cancel("createBundleAndAllocateCaseRoles").build(),
+                .cancel("allocateCaseRolesAndCreateBundle").build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewBfDate").build(),

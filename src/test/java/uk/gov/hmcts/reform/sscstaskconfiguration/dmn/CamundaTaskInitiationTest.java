@@ -459,10 +459,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 singletonList(
                     Map.of(
-                        "taskId", "createBundleAndAllocateCaseRoles",
-                        "name", "Create Bundle And Allocate Case Roles",
+                        "taskId", "allocateCaseRolesAndCreateBundle",
+                        "name", "Allocate Case Roles and Create Bundle",
                         "workingDaysAllowed", 3,
-                        "processCategories", "createBundleAndAllocateCaseRoles"
+                        "processCategories", "allocateCaseRolesAndCreateBundle"
                     )
                 )
             )

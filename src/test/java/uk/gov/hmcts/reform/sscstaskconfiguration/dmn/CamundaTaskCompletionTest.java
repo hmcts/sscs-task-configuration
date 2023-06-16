@@ -44,7 +44,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal"),
             eventAutoCompletesTasks("updateListingRequirement","reviewListingError"),
             eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail"),
-            eventAutoCompletesTasks("createBundle","createBundleAndAllocateCaseRoles")
+            eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle")
         );
     }
 

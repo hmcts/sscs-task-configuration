@@ -451,7 +451,7 @@ else
       </rule>
       <rule id="DecisionRule_0lrmqi3">
         <inputEntry id="UnaryTests_0hmsc8n">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"allocateCaseRolesAndCreateBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0sl4o03">
           <text></text>
@@ -477,7 +477,7 @@ else
       </rule>
       <rule id="DecisionRule_0nbw4ui">
         <inputEntry id="UnaryTests_1al4cv3">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"allocateCaseRolesAndCreateBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1rnjky3">
           <text></text>
@@ -503,7 +503,7 @@ else
       </rule>
       <rule id="DecisionRule_006yjl7">
         <inputEntry id="UnaryTests_0y6uyce">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"allocateCaseRolesAndCreateBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ill48g">
           <text></text>

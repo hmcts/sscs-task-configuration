@@ -121,7 +121,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bax4so">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"allocateCaseRolesAndCreateBundle"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_152y5tj">
           <text>"workType"</text>
@@ -155,7 +155,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0dd312o">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"allocateCaseRolesAndCreateBundle"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02ykby3">
           <text>"roleCategory"</text>
@@ -208,7 +208,7 @@ null</text>
         <inputEntry id="UnaryTests_1spe9nj">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_168dkl4"> <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","createBundleAndAllocateCaseRoles"</text>
+        <inputEntry id="UnaryTests_168dkl4"> <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -261,7 +261,7 @@ null</text>
         <inputEntry id="UnaryTests_1h85ecq">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0hvpmuj"> <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","createBundleAndAllocateCaseRoles"</text>
+        <inputEntry id="UnaryTests_0hvpmuj"> <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -484,7 +484,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lhzyrz">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"allocateCaseRolesAndCreateBundle"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_08n3dd4">
           <text>"description"</text>
@@ -620,7 +620,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pw9fy3">
-          <text>"reviewInformationRequested","reviewListingError","reviewRoboticFail","createBundleAndAllocateCaseRoles"</text>
+          <text>"reviewInformationRequested","reviewListingError","reviewRoboticFail","allocateCaseRolesAndCreateBundle"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0hvbenp">
           <text>"dueDateIntervalDays"</text>

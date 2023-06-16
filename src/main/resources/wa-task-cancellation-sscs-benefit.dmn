@@ -332,7 +332,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1wjxsx8">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"allocateCaseRolesAndCreateBundle"</text>
         </outputEntry>
       </rule>
     </decisionTable>

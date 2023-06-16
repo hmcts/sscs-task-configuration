@@ -7,6 +7,9 @@
     <informationRequirement id="InformationRequirement_15q89yx">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
     </informationRequirement>
+    <informationRequirement id="InformationRequirement_01znqtr">
+      <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" biodi:width="278" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
@@ -467,10 +470,10 @@ else 0</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0fjsi2c">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"allocateCaseRolesAndCreateBundle"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vxicos">
-          <text>"Create Bundle And Allocate Case Roles"</text>
+          <text>"Allocate Case Roles and Create Bundle"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1t0m0vy">
           <text></text>
@@ -479,7 +482,7 @@ else 0</text>
           <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0km2j5l">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"allocateCaseRolesAndCreateBundle"</text>
         </outputEntry>
       </rule>
     </decisionTable>
@@ -596,15 +599,15 @@ null</text>
       <dmndi:DMNShape id="DMNShape_0s4z50s" dmnElementRef="Decision_1n3y86t">
         <dc:Bounds height="80" width="180" x="740" y="80" />
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_14da4uj" dmnElementRef="InformationRequirement_15q89yx">
-        <di:waypoint x="450" y="120" />
-        <di:waypoint x="350" y="120" />
-        <di:waypoint x="330" y="120" />
-      </dmndi:DMNEdge>
       <dmndi:DMNEdge id="DMNEdge_1tvyl7t" dmnElementRef="InformationRequirement_0tx6qya">
         <di:waypoint x="740" y="120" />
         <di:waypoint x="650" y="120" />
         <di:waypoint x="630" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_16exzs4" dmnElementRef="InformationRequirement_01znqtr">
+        <di:waypoint x="450" y="120" />
+        <di:waypoint x="350" y="120" />
+        <di:waypoint x="330" y="120" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
