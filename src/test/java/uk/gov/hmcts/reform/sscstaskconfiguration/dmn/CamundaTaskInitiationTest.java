@@ -501,8 +501,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "createBundle",
                 null,
                 Map.of("Data", Map.of(
-                    "sessionCategory", 3,
-                    "panelCount", 4)),
+                    "assignedCaseRoles", Arrays.asList("tribunal-member-1", "tribunal-member-2", "tribunal-member-3"))),
                 Arrays.asList(
                     Map.of(
                         "taskId", "prepareForHearingTribunalMember1",
@@ -528,8 +527,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "createBundle",
                 null,
                 Map.of("Data", Map.of(
-                    "sessionCategory", 3,
-                    "panelCount", 2)),
+                    "assignedCaseRoles", Arrays.asList("tribunal-member-1"))),
                 Arrays.asList(
                     Map.of(
                         "taskId", "prepareForHearingTribunalMember1",
@@ -543,9 +541,29 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "createBundle",
                 null,
                 Map.of("Data", Map.of(
-                    "sessionCategory", 1,
-                    "panelCount", 2)),
-                Arrays.asList()
+                    "assignedCaseRoles", Arrays.asList("tribunal-member-2"))),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "prepareForHearingTribunalMember2",
+                        "name", "Prepare for hearing",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "prepareForHearingTribunalMember"
+                    )
+                )
+            ),
+            Arguments.of(
+                "createBundle",
+                null,
+                Map.of("Data", Map.of(
+                    "assignedCaseRoles", Arrays.asList("tribunal-member-3"))),
+                Arrays.asList(
+                    Map.of(
+                        "taskId", "prepareForHearingTribunalMember3",
+                        "name", "Prepare for hearing",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "prepareForHearingTribunalMember"
+                    )
+                )
             ),
             Arguments.of(
                 "createBundle",

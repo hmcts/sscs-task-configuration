@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" biodi:width="278" camunda:inputVariable="eventId">
@@ -60,22 +60,13 @@ else
      null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0r5g41z" label="Session Category" camunda:inputVariable="sessionCategory">
-        <inputExpression id="LiteralExpression_089qqoy" typeRef="integer">
+      <input id="InputClause_0r5g41z" label="Assigned Case Roles" camunda:inputVariable="assignedCaseRoles">
+        <inputExpression id="LiteralExpression_089qqoy" typeRef="string">
           <text>if(additionalData != null
     and additionalData.Data != null
-    and additionalData.Data.sessionCategory!= null) then additionalData.Data.sessionCategory
+    and additionalData.Data.assignedCaseRoles!= null) then additionalData.Data.assignedCaseRoles
 else
-     null</text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_118dvf4" label="Panel Count" camunda:inputVariable="panelCount">
-        <inputExpression id="LiteralExpression_0er6i3q" typeRef="integer">
-          <text>if(additionalData != null
-    and additionalData.Data != null
-    and additionalData.Data.panelCount!= null) then additionalData.Data.panelCount
-else
-     null</text>
+     []</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
@@ -107,9 +98,6 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1egvk7t">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0vn8ldw">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1f3k7q8">
@@ -153,9 +141,6 @@ else
         <inputEntry id="UnaryTests_1dj78xm">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1r0oki1">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_16rjk56">
           <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
@@ -195,9 +180,6 @@ else
           <text>"reviewByJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1b1hpy9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0xnoh9j">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_01zq61j">
@@ -241,9 +223,6 @@ else
         <inputEntry id="UnaryTests_02gyx31">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1p61qyp">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_1rw39zd">
           <text>"reviewInformationRequested"</text>
         </outputEntry>
@@ -285,9 +264,6 @@ else
         <inputEntry id="UnaryTests_06jouvf">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1we40dl">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_169r5qy">
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
@@ -327,9 +303,6 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_112mzvt">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0cfaw47">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14npkzr">
@@ -376,9 +349,6 @@ else
         <inputEntry id="UnaryTests_1tj4dk0">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1a1m2la">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_020molb">
           <text>"reviewBilingualDocument"</text>
         </outputEntry>
@@ -418,9 +388,6 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tqxmem">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0nsz9ry">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_132d9b7">
@@ -464,9 +431,6 @@ else
         <inputEntry id="UnaryTests_03ku60t">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0lv2yej">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_0iajs67">
           <text>"reviewListingError"</text>
         </outputEntry>
@@ -506,9 +470,6 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ehsbg1">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_119qaar">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02ma9kd">
@@ -552,9 +513,6 @@ else
         <inputEntry id="UnaryTests_02rt9zj">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1lfm8cp">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_0fjsi2c">
           <text>"createBundleAndAllocateCaseRoles"</text>
         </outputEntry>
@@ -594,9 +552,6 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1qtfmur">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_113121y">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vwc25i">
@@ -640,9 +595,6 @@ else
         <inputEntry id="UnaryTests_0166v8o">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0o1g96n">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_1lhodvq">
           <text>"updateHearingDetails"</text>
         </outputEntry>
@@ -682,9 +634,6 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1rcb885">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_03vtu97">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1lx91v9">
@@ -728,9 +677,6 @@ else
         <inputEntry id="UnaryTests_0qmaw9q">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0z25x2r">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_1myacgq">
           <text>"ftaResponseOverdue"</text>
         </outputEntry>
@@ -772,9 +718,6 @@ else 28</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1trx88f">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0whjdt3">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1rfdf12">
@@ -824,9 +767,6 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         <inputEntry id="UnaryTests_16xc7bm">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0s87v7q">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_0thc4dd">
           <text>"processAudioVideoEvidence"</text>
         </outputEntry>
@@ -868,9 +808,6 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         <inputEntry id="UnaryTests_08x2oqa">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0t68fbz">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_1ye49mw">
           <text>"referredByAdminTcw"</text>
         </outputEntry>
@@ -910,10 +847,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1secqek">
-          <text>list contains([2,3,4,5,6], sessionCategory)</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_05ec2t9">
-          <text>&gt;= 2</text>
+          <text>contains(assignedCaseRoles,"tribunal-member-1")</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0etx6c8">
           <text>"prepareForHearingTribunalMember1"</text>
@@ -954,10 +888,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1o6m83d">
-          <text>list contains([3,6], sessionCategory)</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0vc48vw">
-          <text>&gt;= 3</text>
+          <text>contains(assignedCaseRoles,"tribunal-member-2")</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1bgelpk">
           <text>"prepareForHearingTribunalMember2"</text>
@@ -998,10 +929,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pprs34">
-          <text>list contains([2,3,4,5,6], sessionCategory)</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ammolr">
-          <text>&gt;=  4</text>
+          <text>contains(assignedCaseRoles,"tribunal-member-3")</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18chl2c">
           <text>"prepareForHearingTribunalMember3"</text>
