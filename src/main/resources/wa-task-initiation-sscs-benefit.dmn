@@ -1019,6 +1019,94 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"prepareForHearingTribunalMember"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0pulaw1">
+        <inputEntry id="UnaryTests_1d9zfw8">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cyfn68">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1civfhp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p3ouav">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07vjevr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rduamf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hodht6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oqenwk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dtnwyv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15fffje">
+          <text>"prepareHearingAppraiser1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t5bqyt">
+          <text>"Prepare for hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04jqch8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q9j1kr">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lms8t1">
+          <text>"prepareHearingAppraiser"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x5a02q">
+        <inputEntry id="UnaryTests_0p55rxv">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lbw8u2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cqzvbh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ku7z57">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b7x3uo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vwhsev">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nfqtb1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xmwsdi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yi60wj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wm1waf">
+          <text>"prepareHearingAppraiser2"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1434xvi">
+          <text>"Prepare for hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vd5e9j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s194ng">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hvzjve">
+          <text>"prepareHearingAppraiser"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
