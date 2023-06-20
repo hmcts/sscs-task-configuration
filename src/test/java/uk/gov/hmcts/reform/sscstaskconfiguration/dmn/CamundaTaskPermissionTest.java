@@ -150,6 +150,21 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "referredByAdminTcw",
                 "someCaseData",
             defaultLegal_OperationsPermissionsWithoutJudge()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember1",
+                "someCaseData",
+                defaultJudicalMember1Permissions()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember2",
+                "someCaseData",
+                defaultJudicalMember2Permissions()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember3",
+                "someCaseData",
+                defaultJudicalMember3Permissions()
             )
         );
     }
@@ -408,6 +423,69 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+    private static List<Map<String, Object>> defaultJudicalMember1Permissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-member-1",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 1,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", true
+            )
+        );
+    }
+    private static List<Map<String, Object>> defaultJudicalMember2Permissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-member-2",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 1,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", true
+            )
+        );
+    }
+    private static List<Map<String, Object>> defaultJudicalMember3Permissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-member-3",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 1,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", true
+            )
+        );
+    }
     @ParameterizedTest(name = "task type: {0} case data: {1}")
     @MethodSource("scenarioProvider")
     void given_null_or_empty_inputs_when_evaluate_dmn_it_returns_expected_rules(String taskType,
@@ -444,7 +522,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(27));
+        assertThat(logic.getRules().size(), is(30));
 
     }
 
