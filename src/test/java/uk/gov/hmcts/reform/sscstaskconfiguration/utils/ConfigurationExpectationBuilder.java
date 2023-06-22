@@ -35,7 +35,7 @@ public class ConfigurationExpectationBuilder {
         );
         builder.expectedValue("nextHearingId", "", true);
         builder.expectedValue("nextHearingDate", "", true);
-        builder.expectedValue("dueDateOrigin", now(), true);
+        builder.expectedValue("dueDateOrigin", now(), false);
         builder.expectedValue("dueDateNonWorkingCalendar", ENGLAND_AND_WALES_CALENDAR, true);
         builder.expectedValue("dueDateIntervalDays", "5", true);
         return builder;
