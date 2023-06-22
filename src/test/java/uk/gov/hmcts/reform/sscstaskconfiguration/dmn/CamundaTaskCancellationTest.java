@@ -16,10 +16,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_CANCELLATION_SSCS_BENEFIT;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.CancellationScenarioBuilder.event;
 
 class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
     @BeforeAll
@@ -28,38 +28,19 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     static Stream<Arguments> scenarioProvider() {
-
         return Stream.of(
-            Arguments.of(
-                null,
-                "nonCompliant",
-                null,
-                singletonList(
-                    Map.of(
-                        "action", "Cancel"
-                    )
-                )
-            ),
-            Arguments.of(
-                null,
-                "addHearing",
-                null,
-                singletonList(
-                    Map.of(
-                        "action", "Reconfigure"
-                    )
-                )
-            ),
-            Arguments.of(
-                null,
-                "caseUpdated",
-                null,
-                singletonList(
-                    Map.of(
-                        "action", "Reconfigure"
-                    )
-                )
-            )
+            event("nonCompliant").cancelAll().build(),
+            event("addHearing").reconfigure("Routine work").build(),
+            event("caseUpdated").reconfigure("Routine work").build(),
+            event("voidCase").cancel("reviewIncompleteAppeal").build(),
+            event("appealWithdrawn").cancel("reviewIncompleteAppeal").build(),
+            event("appealDormant").cancel("reviewIncompleteAppeal").build(),
+            event("confirmLapsed").cancel("reviewIncompleteAppeal").build(),
+            event("struckOut").cancel("reviewIncompleteAppeal").build(),
+            event("validSendToInterloc").cancel("reviewIncompleteAppeal").build(),
+            event("makeCaseUrgent").cancel("reviewIncompleteAppeal").build(),
+            event("readyToList").cancel("reviewIncompleteAppeal").build(),
+            event("decisionIssued").cancel("reviewIncompleteAppeal").build()
         );
     }
 
@@ -80,12 +61,10 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
-
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(2));
-
+        assertThat(logic.getRules().size(), is(3));
     }
 }
