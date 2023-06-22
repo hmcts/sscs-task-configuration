@@ -38,10 +38,35 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "nonCompliantCase",
                         "name", "Review non-compliant appeal",
-                        "group", "TCW",
                         "workingDaysAllowed", 2,
                         "processCategories", "Non-compliant appeal"
                         )
+                )
+            ),
+            Arguments.of(
+                "draftToIncompleteApplication",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "incompleteApplicationReceived",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
                 )
             )
         );
@@ -69,7 +94,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(1));
+        assertThat(logic.getRules().size(), is(3));
 
     }
 

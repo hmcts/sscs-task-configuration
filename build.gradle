@@ -3,10 +3,10 @@ plugins {
   id 'checkstyle'
   id 'pmd'
   id 'jacoco'
-  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-  id 'org.springframework.boot' version '2.4.12'
-  id 'com.github.ben-manes.versions' version '0.38.0'
-  id 'org.owasp.dependencycheck' version '6.1.6'
+  id 'io.spring.dependency-management' version '1.1.0'
+  id 'org.springframework.boot' version '2.7.10'
+  id 'com.github.ben-manes.versions' version '0.45.0'
+  id 'org.owasp.dependencycheck' version '8.0.2'
   id 'org.sonarqube' version '3.2.0'
   id 'info.solidsoft.pitest' version '1.5.2'
   id 'io.freefair.lombok' version '5.3.0'
@@ -56,7 +56,7 @@ sourceSets {
 }
 
 tasks.withType(JavaCompile) {
-  options.compilerArgs << "-Xlint:unchecked" << "-Werror"
+  options.compilerArgs << "-Xlint:unchecked"
 }
 
 tasks.withType(Test) {
@@ -124,8 +124,8 @@ jacocoTestCoverageVerification {
 jacocoTestReport {
   executionData(test, integration)
   reports {
-    xml.enabled = true
-    csv.enabled = false
+    xml.required = true
+    csv.required = false
     xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml")
   }
 }
@@ -134,8 +134,8 @@ pitest {
   junit5PluginVersion = '0.12'
   targetClasses = ['uk.gov.hmcts.reform.iataskconfiguration.*']
   excludedClasses = [
-    'uk.gov.hmcts.reform.iataskconfiguration.config.*',
-    'uk.gov.hmcts.reform.iataskconfiguration.Application'
+    'uk.gov.hmcts.reform.sscstaskconfiguration.config.*',
+    'uk.gov.hmcts.reform.sscstaskconfiguration.Application'
   ]
   threads = 10
   outputFormats = ['XML', 'HTML']
@@ -155,8 +155,8 @@ sonarqube {
     property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.destination.path}"
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build/reports/pitest"
-    property "sonar.exclusions", "src/main/java/uk/gov/hmcts/reform/iataskconfiguration/config/**," +
-      "src/main/java/uk/gov/hmcts/reform/iataskconfiguration/Application.java"
+    property "sonar.exclusions", "src/main/java/uk/gov/hmcts/reform/sscstaskconfiguration/config/**," +
+      "src/main/java/uk/gov/hmcts/reform/sscstaskconfiguration/Application.java"
   }
 }
 
@@ -187,14 +187,32 @@ dependencyCheck {
 
 dependencyManagement {
   dependencies {
+    //CVE-2022-25857
+    dependencySet(group: 'org.yaml', version: '1.33') {
+      entry 'snakeyaml'
+    }
     dependency group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.68'
     // CVE-2018-10237 - Unbounded memory allocation
-    dependencySet(group: 'com.google.guava', version: '30.1-jre') {
+    dependencySet(group: 'com.google.guava', version: '31.1-jre') {
       entry 'guava'
     }
 
     //CVE-2021-28170
     dependency group: 'org.glassfish', name: 'jakarta.el', version: '4.0.1'
+
+    //CVE-2021-29425
+    dependency group: 'commons-io', name: 'commons-io', version: '2.7'
+
+    //CVE-2021-42550
+    dependencySet(group: 'ch.qos.logback', version: '1.2.10') {
+      entry 'logback-classic'
+      entry 'logback-core'
+    }
+
+    // CVE-2022-42003, CVE-2022-42004
+    dependency group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.2'
+    dependency group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.14.2'
+    dependency group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.14.2'
 
   }
 }
@@ -208,13 +226,12 @@ repositories {
 def versions = [
   junit           : '5.7.2',
   junitPlatform   : '1.7.2',
-  reformLogging   : '5.1.5',
-  springfoxSwagger: '2.9.2',
+  reformLogging   : '5.1.7',
   camunda         : '7.15.0',
-  pitest          : '1.5.2',
+  pitest          : '1.11.3',
+  pitestPlugin    : '1.9.11',
   sonarPitest     : '0.5',
-  tomcat          : '9.0.54'
-
+  tomcat          : '9.0.73'
 ]
 
 ext.libraries = [
@@ -234,28 +251,22 @@ dependencies {
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json'
 
-  implementation group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
+  implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.14'
 
-  implementation group: 'com.github.hmcts.java-logging', name: 'java-logging', version: versions.reformLogging
-  implementation group: 'com.github.hmcts.java-logging', name: 'java-logging-appinsights', version: versions.reformLogging
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: versions.reformLogging
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging-appinsights', version: versions.reformLogging
 
-  implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.15.0'
-  implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: '2.15.0'
-
-  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: versions.tomcat
-  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
+  implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j
+  implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: versions.log4j
 
   implementation group: 'org.camunda.bpm', name: 'camunda-external-task-client', version: versions.camunda
 
-  annotationProcessor 'org.projectlombok:lombok:1.18.20'
-  compileOnly 'org.projectlombok:lombok:1.18.20'
+  implementation group: 'org.pitest', name: 'pitest', version:  versions.pitest
+  implementation group:'info.solidsoft.gradle.pitest', name: 'gradle-pitest-plugin', version: versions.pitestPlugin
+  implementation group:'org.codehaus.sonar-plugins', name:'sonar-pitest-plugin', version: versions.sonarPitest
 
-  testCompile group: 'org.pitest', name: 'pitest', version: versions.pitest
-  testCompile 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.5.2'
-
-  testCompile "org.junit.vintage:junit-vintage-engine:${versions.junit}"
-  testCompile group: 'org.codehaus.sonar-plugins', name: 'sonar-pitest-plugin', version: versions.sonarPitest
-  testImplementation libraries.junit5
+  testImplementation(platform('org.junit:junit-bom:5.9.2'))
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
   testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', {
     exclude group: 'junit', module: 'junit'
     exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -272,11 +283,9 @@ dependencies {
   functionalTestImplementation sourceSets.main.runtimeClasspath
 
   smokeTestImplementation sourceSets.main.runtimeClasspath
-
-
 }
 
-mainClassName = 'uk.gov.hmcts.reform.iataskconfiguration.Application'
+mainClassName = 'uk.gov.hmcts.reform.sscstaskconfiguration.Application'
 
 bootJar {
   getArchiveFileName().set(provider {
