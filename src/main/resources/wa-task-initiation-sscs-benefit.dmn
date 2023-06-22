@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
+    <informationRequirement id="InformationRequirement_0tjxocg">
+      <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" biodi:width="232" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
@@ -106,10 +109,124 @@ null</text>
       </rule>
     </decisionTable>
   </decision>
+  <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
+    <informationRequirement id="InformationRequirement_0tk6k3u">
+      <requiredDecision href="#Decision_1n3y86t" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_172aal0">
+      <input id="InputClause_1ivphcb" biodi:width="150">
+        <inputExpression id="LiteralExpression_1q5ra4z" typeRef="string" />
+      </input>
+      <output id="OutputClause_09u4yj0" label="date_defaults_1" name="date_defaults_1" typeRef="json" biodi:width="699" />
+      <rule id="DecisionRule_1hf309o">
+        <inputEntry id="UnaryTests_14er03w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lj2tyf">
+          <text>{
+  delayUntilOrigin: TODAY,
+  delayUtilNonWorkingCalendar: nonWorkingDayCalendar
+}</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1n3y86t" name="Non Working Days">
+    <decisionTable id="DecisionTable_06domdb" hitPolicy="FIRST" biodi:annotationsWidth="400">
+      <input id="InputClause_08bc456" label="isScottishCase" camunda:inputVariable="isScottishCase">
+        <inputExpression id="LiteralExpression_187cqdu" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.isScottishCase!=null) then
+            additionalData.Data.isScottishCase
+else
+null</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0jnhmid" label="processingVenue" camunda:inputVariable="processingVenue">
+        <inputExpression id="LiteralExpression_1j111ju" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.processingVenue!=null) then
+            additionalData.Data.processingVenue
+else
+null</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_16oeyw9" label="nonWorkingDayCalendar" name="nonWorkingDayCalendar" typeRef="string" biodi:width="1020" />
+      <rule id="DecisionRule_0fs7scb">
+        <inputEntry id="UnaryTests_0wfsts1">
+          <text>"No"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lkheq6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k547o3">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nuuzf6">
+        <inputEntry id="UnaryTests_0d5j63h">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15aug2u">
+          <text>"Dundee"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ry3nv1">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland-dundee.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0r79p18">
+        <inputEntry id="UnaryTests_1wipwas">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1roo56f">
+          <text>"Edinburgh"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tkdctg">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland-edinburgh.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hp6ifj">
+        <inputEntry id="UnaryTests_180p17v">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jop8zo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bukt9p">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19qqa57">
+        <inputEntry id="UnaryTests_169515v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_173qjzh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1veyac7">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="DMNDiagram_0b2rkcb">
       <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="wa-task-initiation-sscs-benefit">
         <dc:Bounds height="80" width="180" x="150" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0slvwmm" dmnElementRef="InformationRequirement_0tjxocg">
+        <di:waypoint x="450" y="120" />
+        <di:waypoint x="350" y="120" />
+        <di:waypoint x="330" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_155l404" dmnElementRef="sscs-task-initiation-date-calculation-defaults">
+        <dc:Bounds height="80" width="180" x="450" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1q6bx3v" dmnElementRef="InformationRequirement_0tk6k3u">
+        <di:waypoint x="740" y="120" />
+        <di:waypoint x="650" y="120" />
+        <di:waypoint x="630" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0s4z50s" dmnElementRef="Decision_1n3y86t">
+        <dc:Bounds height="80" width="180" x="740" y="80" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>

@@ -10,6 +10,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
+import uk.gov.hmcts.reform.sscstaskconfiguration.utils.CourtSpecificCalendars;
 
 import java.util.List;
 import java.util.Map;
@@ -83,6 +84,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
         inputVariables.putValue("additionalData", map);
+        inputVariables.putValue("TODAY", "2023-03-17");
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -98,4 +100,74 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     }
 
+    static Stream<Arguments> scenarioProviderDateDefaults() {
+        return Stream.of(
+            Arguments.of(
+                "2023-03-17",
+                Map.of("isScottishCase", "No"),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", "2023-03-17",
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR
+                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                "2023-03-17",
+                Map.of(),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", "2023-03-17",
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR
+                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                "2023-03-17",
+                Map.of("isScottishCase", "Yes",
+                       "processingVenue", "Dundee"),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", "2023-03-17",
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_DUNDEE
+                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                "2023-03-17",
+                Map.of("isScottishCase", "Yes",
+                       "processingVenue", "Edinburgh"),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", "2023-03-17",
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_EDINBURGH
+                        )
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest(name = "TODAY: {0} caseData: {1}")
+    @MethodSource("scenarioProviderDateDefaults")
+    void date_calculation_defaults_by_venue(String today,
+                                                      Map<String, Object> caseData,
+                                                      List<Map<String, String>> expectation) {
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("TODAY", today);
+        inputVariables.putValue("additionalData", Map.of("Data", caseData));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateRequiredDecision(
+            "sscs-task-initiation-date-calculation-defaults", inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
 }
