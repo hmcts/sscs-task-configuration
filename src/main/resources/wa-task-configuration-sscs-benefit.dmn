@@ -139,7 +139,7 @@ null</text>
           <text>"priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yq77of" expressionLanguage="feel">
-          <text>if(nextHearingDate!=null) then nextHearingDate else ""</text>
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then caseData.nextHearingDate else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05klryr">
           <text>true</text>
@@ -190,7 +190,7 @@ null</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_09hhurs">
-          <text>"[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoFromParty)"</text>
+          <text>"[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1g4fbsy">
           <text>true</text>
@@ -207,7 +207,7 @@ null</text>
           <text>"nextHearingId" </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jpfbdl" expressionLanguage="feel">
-          <text>if(nextHearingId!=null) then nextHearingId else ""</text>
+          <text>if(caseData!=null and caseData.nextHearingId!=null) then caseData.nextHearingId else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0u5nw0y">
           <text>true</text>
@@ -221,10 +221,10 @@ null</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kpzbii">
-          <text>"nextHearingDate" </text>
+          <text>"nextHearingDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ebksar" expressionLanguage="feel">
-          <text>if(nextHearingDate!=null) then nextHearingDate else ""</text>
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then caseData.nextHearingDate else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13eate1">
           <text>true</text>
@@ -244,7 +244,7 @@ null</text>
           <text>substring(string(now()),1,16)</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12wh31l">
-          <text>true</text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0csil93">

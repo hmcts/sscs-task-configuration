@@ -44,6 +44,37 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_13tyqnj">
+        <inputEntry id="UnaryTests_0zd4nd3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ctrd86">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"validSendToInterloc",
+"makeCaseUrgent",
+"readyToList",
+"decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0flofue">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vox3ud">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hvi0c2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tr86mi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1encbhf">
+          <text>"reviewIncompleteAppeal"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_06vo1lb">
         <inputEntry id="UnaryTests_0ivl1q1">
           <text></text>
@@ -64,7 +95,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0z2p5lv">
-          <text>"Routine work"</text>
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>
