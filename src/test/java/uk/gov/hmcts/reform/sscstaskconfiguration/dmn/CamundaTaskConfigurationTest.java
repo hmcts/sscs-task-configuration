@@ -1,5 +1,6 @@
 package uk.gov.hmcts.reform.sscstaskconfiguration.dmn;
 
+import lombok.extern.slf4j.Slf4j;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -13,6 +14,7 @@ import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 import uk.gov.hmcts.reform.sscstaskconfiguration.utils.CaseDataBuilder;
 import uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder;
 import uk.gov.hmcts.reform.sscstaskconfiguration.utils.CourtSpecificCalendars;
+import uk.gov.hmcts.reform.sscstaskconfiguration.utils.DateUtils;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -26,7 +28,97 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_SSCS_BENEFIT;
 
+@Slf4j
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
+
+    public static final String DEFAULT_TIME = "T00:00:00.000Z";
+
+    static Stream<Arguments> nextHearingScenarioProvider() {
+        return Stream.of(
+            // no hearings
+            Arguments.of(
+            "reviewIncompleteAppeal",
+            CaseDataBuilder.defaultCase()
+                .build(),
+            ConfigurationExpectationBuilder.defaultExpectations()
+                .build()
+            ),
+            // past hearing only
+            Arguments.of(
+                "reviewIncompleteAppeal",
+                CaseDataBuilder.defaultCase()
+                    .withHearing(CaseDataBuilder.createHearing("1234567", DateUtils.lastMonth()))
+                    .build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .build()
+            ),
+            // hearing today
+            Arguments.of(
+                "reviewIncompleteAppeal",
+                CaseDataBuilder.defaultCase()
+                    .withHearing(CaseDataBuilder.createHearing("1234567", DateUtils.today()))
+                    .build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
+                                   DateUtils.today() + DEFAULT_TIME,true)
+                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
+                                   "1234567",true)
+                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
+                                   DateUtils.today() + DEFAULT_TIME,true)
+                    .build()
+            ),
+            // one future hearing
+            Arguments.of(
+                "reviewIncompleteAppeal",
+                CaseDataBuilder.defaultCase()
+                    .withHearing(CaseDataBuilder.createHearing("1234567", DateUtils.tomorrow()))
+                    .build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
+                                   DateUtils.tomorrow() + DEFAULT_TIME,true)
+                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
+                                   "1234567",true)
+                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
+                                   DateUtils.tomorrow() + DEFAULT_TIME,true)
+                    .build()
+            ),
+            // future hearings wrong order
+            Arguments.of(
+                "reviewIncompleteAppeal",
+                CaseDataBuilder.defaultCase()
+                    .withHearings(List.of(
+                        CaseDataBuilder.createHearing("2222222", DateUtils.nextWeek()),
+                        CaseDataBuilder.createHearing("1111111", DateUtils.tomorrow())))
+                    .build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
+                                   DateUtils.tomorrow() + DEFAULT_TIME, true)
+                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
+                                   "1111111",true)
+                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
+                                   DateUtils.tomorrow() + DEFAULT_TIME,true)
+                    .build()
+            ),
+            // past and future hearing
+            Arguments.of(
+                "reviewIncompleteAppeal",
+                CaseDataBuilder.defaultCase()
+                    .withHearings(List.of(
+                        CaseDataBuilder.createHearing("1111111", DateUtils.lastWeek()),
+                        CaseDataBuilder.createHearing("2222222", DateUtils.nextWeek()),
+                        CaseDataBuilder.createHearing("3333333", DateUtils.nextMonth())))
+                    .build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
+                                   DateUtils.nextWeek() + DEFAULT_TIME,true)
+                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
+                                   "2222222",true)
+                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
+                                   DateUtils.nextWeek() + DEFAULT_TIME,true)
+                    .build()
+            )
+        );
+    }
 
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
@@ -38,12 +130,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewIncompleteAppeal",
                 CaseDataBuilder.defaultCase()
-                    .withNextHearing("1234567","2023-03-16")
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue("priorityDate", "2023-03-16", true)
-                    .expectedValue("nextHearingId", "1234567", true)
-                    .expectedValue("nextHearingDate", "2023-03-16", true)
                     .build()
             ),
             Arguments.of(
@@ -52,36 +140,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .isScottishCase("Yes")
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue("dueDateNonWorkingCalendar",
-                                   CourtSpecificCalendars.SCOTLAND_CALENDAR,true)
-                    .build()
-            ),
-            Arguments.of(
-                    "reviewIncompleteAppeal",
-                    CaseDataBuilder.defaultCase()
-                    .isScottishCase("Yes")
-                    .withRegionalProgressingCentre("123456", "GLASGOW")
-                    .withProcessingVenue("Edinburgh")
-                    .build(),
-                    ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue("location", "123456", true)
-                    .expectedValue("locationName", "GLASGOW", true)
-                    .expectedValue("dueDateNonWorkingCalendar",
-                                   CourtSpecificCalendars.SCOTLAND_CALENDAR_EDINBURGH, true)
-                    .build()
-            ),
-            Arguments.of(
-                "reviewIncompleteAppeal",
-                CaseDataBuilder.defaultCase()
-                    .isScottishCase("Yes")
-                    .withRegionalProgressingCentre("123456", "GLASGOW")
-                    .withProcessingVenue("Dundee")
-                    .build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue("location", "123456", true)
-                    .expectedValue("locationName", "GLASGOW", true)
-                    .expectedValue("dueDateNonWorkingCalendar",
-                                   CourtSpecificCalendars.SCOTLAND_CALENDAR_DUNDEE,true)
+                    .expectedValue("dueDateNonWorkingCalendar", ConfigurationExpectationBuilder.SCOTLAND_CALENDAR,true)
                     .build()
             )
         );
@@ -93,9 +152,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     @ParameterizedTest(name = "task type: {0} case data: {1}")
-    @MethodSource("scenarioProvider")
+    @MethodSource({"nextHearingScenarioProvider", "scenarioProvider"})
     void should_return_correct_configuration_values_for_scenario(
-            String taskType, Map<String, Object> caseData,
+            String taskType,
+            Map<String, Object> caseData,
             List<Map<String, Object>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskType", taskType);
@@ -112,8 +172,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getRules().size(), is(15));
     }
-
-
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
         assertThat(results.size(), is(expectation.size()));
@@ -184,4 +242,3 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 }
-

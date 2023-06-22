@@ -4,6 +4,9 @@
     <informationRequirement id="InformationRequirement_1t76wn6">
       <requiredDecision href="#sscs-task-configuration-non-working-days" />
     </informationRequirement>
+    <informationRequirement id="InformationRequirement_172js3g">
+      <requiredDecision href="#nextHearing" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
         <inputExpression id="LiteralExpression_0mra7c4" typeRef="string">
@@ -190,7 +193,7 @@ null</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_09hhurs">
-          <text>"[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoFromParty)"</text>
+          <text>"[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1g4fbsy">
           <text>true</text>
@@ -221,7 +224,7 @@ null</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kpzbii">
-          <text>"nextHearingDate" </text>
+          <text>"nextHearingDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ebksar" expressionLanguage="feel">
           <text>if(caseData!=null and caseData.nextHearingDate!=null) then caseData.nextHearingDate else ""</text>
@@ -244,7 +247,7 @@ null</text>
           <text>substring(string(now()),1,16)</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12wh31l">
-          <text>true</text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0csil93">
@@ -340,6 +343,54 @@ null</text>
           <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland.json"</text>
         </outputEntry>
       </rule>
+  </decisionTable>
+  <decision id="nextHearing" name="Next Hearing">
+    <informationRequirement id="InformationRequirement_17hutxa">
+      <requiredDecision href="#Decision_1ol51p5" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0je9i6y" hitPolicy="FIRST">
+      <input id="InputClause_08rbi4w" label="hearings" biodi:width="567" camunda:inputVariable="hearings">
+        <inputExpression id="LiteralExpression_1hby6gy" typeRef="">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0itajs4" name="nextHearingDate" typeRef="" biodi:width="347" />
+      <output id="OutputClause_0s62lpb" name="nextHearingId" typeRef="string" biodi:width="336" />
+      <rule id="DecisionRule_1aqhpa9">
+        <inputEntry id="UnaryTests_12eimss">
+          <text>hearings!=null and hearings[1]!=null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14pbdy7">
+          <text>hearings[1].value.hearingDate  + "T00:00:00.000Z"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05s34x8">
+          <text>hearings[1].value.hearingId</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1ol51p5" name="Get Current Hearings">
+    <decisionTable id="DecisionTable_1hyvz6f" hitPolicy="FIRST">
+      <input id="InputClause_0qzlz2v" label="CaseData" camunda:inputVariable="caseData">
+        <inputExpression id="LiteralExpression_0qco4do" typeRef="" />
+      </input>
+      <output id="OutputClause_1ma31u0" label="hearings" name="hearings" typeRef="" biodi:width="915" />
+      <rule id="DecisionRule_1pic1tv">
+        <inputEntry id="UnaryTests_0p8bwrk">
+          <text>caseData.hearings!=null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h2c0fc">
+          <text>sort(list: caseData.hearings[date(value.hearingDate)&gt;=today()], precedes: function(x,y) x.value.hearingDate &lt; y.value.hearingDate)</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00iip4f">
+        <inputEntry id="UnaryTests_0lubh2e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rgpn8m">
+          <text>null</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
@@ -352,8 +403,21 @@ null</text>
         <di:waypoint x="360" y="80" />
         <di:waypoint x="340" y="80" />
       </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_08tkxxo" dmnElementRef="sscs-task-configuration-non-working-days">
-        <dc:Bounds height="80" width="180" x="450" y="40" />
+      <dmndi:DMNShape id="DMNShape_06d4k2l" dmnElementRef="nextHearing">
+        <dc:Bounds height="80" width="180" x="470" y="40" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1yz1orq" dmnElementRef="InformationRequirement_172js3g">
+        <di:waypoint x="470" y="80" />
+        <di:waypoint x="360" y="80" />
+        <di:waypoint x="340" y="80" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_14ln0z5" dmnElementRef="InformationRequirement_17hutxa">
+        <di:waypoint x="780" y="80" />
+        <di:waypoint x="670" y="80" />
+        <di:waypoint x="650" y="80" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1mgaz02" dmnElementRef="Decision_1ol51p5">
+        <dc:Bounds height="80" width="180" x="780" y="40" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
