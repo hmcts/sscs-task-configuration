@@ -142,7 +142,7 @@ null</text>
           <text>"priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yq77of" expressionLanguage="feel">
-          <text>if(caseData!=null and caseData.nextHearingDate!=null) then caseData.nextHearingDate else ""</text>
+          <text>if(nextHearingDate!=null) then nextHearingDate else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05klryr">
           <text>true</text>
@@ -210,7 +210,7 @@ null</text>
           <text>"nextHearingId" </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jpfbdl" expressionLanguage="feel">
-          <text>if(caseData!=null and caseData.nextHearingId!=null) then caseData.nextHearingId else ""</text>
+          <text>if(nextHearingId!=null) then nextHearingId else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0u5nw0y">
           <text>true</text>
@@ -227,7 +227,7 @@ null</text>
           <text>"nextHearingDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ebksar" expressionLanguage="feel">
-          <text>if(caseData!=null and caseData.nextHearingDate!=null) then caseData.nextHearingDate else ""</text>
+          <text>if(nextHearingDate!=null) then nextHearingDate else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13eate1">
           <text>true</text>
@@ -298,7 +298,7 @@ null</text>
           <text>if(caseData!=null and caseData.processingVenue!=null) then caseData.processingVenue else null</text>
         </inputExpression>
       </input>
-      <output id="OutputClause_0c1hiz8" name="nonWorkingDayCalendar" typeRef="string" biodi:width="970" />
+      <output id="OutputClause_0c1hiz8" name="nonWorkingDayCalendar" typeRef="string" biodi:width="1098" />
       <rule id="DecisionRule_0mm2sbm">
         <inputEntry id="UnaryTests_19y9oib">
           <text>"No"</text>
@@ -307,7 +307,7 @@ null</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hta6gl">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_03nkaxj">
@@ -318,7 +318,7 @@ null</text>
           <text>"Dundee"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0x4hza9">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland-dundee.json"</text>
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-dundee.json"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_130cnxw">
@@ -329,7 +329,7 @@ null</text>
           <text>"Edinburgh"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0a68vda">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland-edinburgh.json"</text>
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-edinburgh.json"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ppo81q">
@@ -340,10 +340,11 @@ null</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0pqjgim">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland.json"</text>
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland.json"</text>
         </outputEntry>
       </rule>
-  </decisionTable>
+    </decisionTable>
+  </decision>
   <decision id="nextHearing" name="Next Hearing">
     <informationRequirement id="InformationRequirement_17hutxa">
       <requiredDecision href="#Decision_1ol51p5" />
@@ -399,10 +400,13 @@ null</text>
         <dc:Bounds height="80" width="180" x="160" y="40" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="DMNEdge_1vrh8rb" dmnElementRef="InformationRequirement_1t76wn6">
-        <di:waypoint x="450" y="80" />
-        <di:waypoint x="360" y="80" />
-        <di:waypoint x="340" y="80" />
+        <di:waypoint x="250" y="210" />
+        <di:waypoint x="250" y="140" />
+        <di:waypoint x="250" y="120" />
       </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1mgaz03" dmnElementRef="sscs-task-configuration-non-working-days">
+        <dc:Bounds height="80" width="180" x="160" y="210" />
+      </dmndi:DMNShape>
       <dmndi:DMNShape id="DMNShape_06d4k2l" dmnElementRef="nextHearing">
         <dc:Bounds height="80" width="180" x="470" y="40" />
       </dmndi:DMNShape>

@@ -124,7 +124,7 @@ null</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1lj2tyf">
           <text>{
-  delayUntilOrigin: TODAY,
+  delayUntilOrigin: today(),
   delayUtilNonWorkingCalendar: nonWorkingDayCalendar
 }</text>
         </outputEntry>
@@ -158,7 +158,7 @@ null</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0k547o3">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0nuuzf6">
@@ -169,7 +169,7 @@ null</text>
           <text>"Dundee"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ry3nv1">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland-dundee.json"</text>
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-dundee.json"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0r79p18">
@@ -180,7 +180,7 @@ null</text>
           <text>"Edinburgh"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1tkdctg">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland-edinburgh.json"</text>
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-edinburgh.json"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0hp6ifj">
@@ -191,7 +191,7 @@ null</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bukt9p">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-scotland.json"</text>
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland.json"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_19qqa57">
@@ -202,7 +202,7 @@ null</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1veyac7">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/master/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
         </outputEntry>
       </rule>
     </decisionTable>

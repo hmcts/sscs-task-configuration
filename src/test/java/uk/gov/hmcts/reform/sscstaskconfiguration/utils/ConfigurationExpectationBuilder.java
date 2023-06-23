@@ -24,9 +24,6 @@ public class ConfigurationExpectationBuilder {
     public static String DUE_DATE_ORIGIN = "dueDateOrigin";
     public static String DUE_DATE_NON_WORKING_CALENDAR = "dueDateNonWorkingCalendar";
     public static String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
-    public static String ENGLAND_AND_WALES_CALENDAR = "https://www.gov.uk/bank-holidays/england-and-wales.json";
-
-    public static String SCOTLAND_CALENDAR = "https://www.gov.uk/bank-holidays/scotland.json";
 
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
 
@@ -45,13 +42,13 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(MAJOR_PRIORITY, "5000", true);
         builder.expectedValue(
             DESCRIPTION,
-            "[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoFromParty)",
+            "[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)",
             true
         );
         builder.expectedValue(NEXT_HEARING_ID, "", true);
         builder.expectedValue(NEXT_HEARING_DATE, "", true);
-        builder.expectedValue(DUE_DATE_ORIGIN, now(), true);
-        builder.expectedValue(DUE_DATE_NON_WORKING_CALENDAR, ENGLAND_AND_WALES_CALENDAR, true);
+        builder.expectedValue(DUE_DATE_ORIGIN, now(), false);
+        builder.expectedValue(DUE_DATE_NON_WORKING_CALENDAR, CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR, true);
         builder.expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true);
         return builder;
     }

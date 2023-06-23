@@ -30,8 +30,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
             event("nonCompliant").cancelAll().build(),
-            event("addHearing").reconfigure("Routine work").build(),
-            event("caseUpdated").reconfigure("Routine work").build(),
+            event("addHearing").reconfigureAll().build(),
+            event("caseUpdated").reconfigureAll().build(),
             event("voidCase").cancel("reviewIncompleteAppeal").build(),
             event("appealWithdrawn").cancel("reviewIncompleteAppeal").build(),
             event("appealDormant").cancel("reviewIncompleteAppeal").build(),

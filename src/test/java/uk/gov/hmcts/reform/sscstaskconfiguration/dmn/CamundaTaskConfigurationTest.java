@@ -140,7 +140,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .isScottishCase("Yes")
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue("dueDateNonWorkingCalendar", ConfigurationExpectationBuilder.SCOTLAND_CALENDAR,true)
+                    .expectedValue("dueDateNonWorkingCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR,true)
                     .build()
             )
         );
