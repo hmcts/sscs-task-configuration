@@ -31,8 +31,6 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK
 @Slf4j
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
-    public static final String DEFAULT_TIME = "T00:00:00.000Z";
-
     static Stream<Arguments> nextHearingScenarioProvider() {
         return Stream.of(
             // no hearings
@@ -71,7 +69,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewIncompleteAppeal",
                 CaseDataBuilder.defaultCase()
-                    .withHearing(CaseDataBuilder.createHearing("1234567", DateUtils.git status()))
+                    .withHearing(CaseDataBuilder.createHearing("1234567", DateUtils.tomorrow()))
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
@@ -142,6 +140,28 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue("dueDateNonWorkingCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR,true)
                     .build()
+            ),
+            Arguments.of(
+                "reviewInformationRequested",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue("minorPriority", "300", true)
+                    .expectedValue("majorPriority", "3000", true)
+                    .expectedValue("description", "[Review Information Requested](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/interlocInformationReceived)",true)
+                    .expectedValue("dueDateIntervalDays", "3", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewFtaResponse",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue("minorPriority", "300", true)
+                    .expectedValue("majorPriority", "3000", true)
+                    .expectedValue("description", "[Review FTA Response](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)", true)
+                    .expectedValue("dueDateIntervalDays", "2", true)
+                    .build()
             )
         );
     }
@@ -170,7 +190,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(19));
+        assertThat(logic.getRules().size(), is(21));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

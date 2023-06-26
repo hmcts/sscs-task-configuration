@@ -101,8 +101,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal",
-"reviewInformationRequested"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -119,8 +118,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal",
-"reviewInformationRequested"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -174,7 +172,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"reviewInformationRequested"</text>
+          <text>"reviewInformationRequested","reviewFtaResponse"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -210,7 +208,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"reviewInformationRequested"</text>
+          <text>"reviewInformationRequested","reviewFtaResponse"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -253,6 +251,23 @@ null</text>
           <text>"[Review Information Requested](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x6to7m">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rt6nh7">
+        <inputEntry id="UnaryTests_1dsknmi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08bjsdv">
+          <text>"reviewFtaResponse"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k0e9b0">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12okm4q">
+          <text>"[Review FTA Response](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ehr5wt">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -357,6 +372,23 @@ null</text>
         <outputEntry id="LiteralExpression_0lu12o9">
           <text>true</text>
         </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dj6t85">
+        <inputEntry id="UnaryTests_1b6teoc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_035g0v3">
+          <text>"reviewFtaResponse"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hcibko">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tr6hlv">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xobr9s">
+          <text>true</text>
+				</outputEntry>
       </rule>
     </decisionTable>
   </decision>
