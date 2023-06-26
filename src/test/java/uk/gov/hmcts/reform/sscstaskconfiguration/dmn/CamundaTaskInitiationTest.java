@@ -171,6 +171,64 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "withDwp",
                 Map.of("Data", Map.of("dwpFurtherInfo", "No")),
                 List.of()
+            ),
+            Arguments.of(
+                "dwpSupplementaryResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocument",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", false)),
+                List.of()
+            ),
+            Arguments.of(
+                "attachScannedDocs",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocumentFurtherEvidence",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
             )
 
         );
@@ -197,7 +255,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(5));
+        assertThat(logic.getRules().size(),is(6));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

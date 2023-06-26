@@ -132,6 +132,29 @@
           <text>"reviewFtaResponse"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0z06aj3">
+        <inputEntry id="UnaryTests_1v1po3z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mu7wno">
+          <text>"cancelTranslations"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08f0c8i">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yoe6nk">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sppzz1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12u23lc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02vtu1j">
+          <text>"reviewBilingualDocument"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_06vo1lb">
         <inputEntry id="UnaryTests_0ivl1q1">
           <text></text>
