@@ -175,7 +175,65 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             event("sendToAdmin")
                 .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
-                .build()
+                .build(),
+            Arguments.of(
+                "dwpSupplementaryResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocument",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", false)),
+                List.of()
+            ),
+            Arguments.of(
+                "attachScannedDocs",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocumentFurtherEvidence",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "reviewBilingualDocument"
+                    )
+                )
+            )
         );
     }
 
