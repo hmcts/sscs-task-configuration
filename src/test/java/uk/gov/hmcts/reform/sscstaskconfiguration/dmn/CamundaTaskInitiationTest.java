@@ -10,7 +10,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
+import uk.gov.hmcts.reform.sscstaskconfiguration.utils.CourtSpecificCalendars;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -21,6 +23,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_SSCS_BENEFIT;
 
 class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
+
+    private static final LocalDate TODAY = LocalDate.now();
 
     @BeforeAll
     public static void initialization() {
@@ -82,6 +86,32 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "reviewInformationRequested"
                     )
                 )
+            ),
+            Arguments.of(
+                "draftToIncompleteApplication",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "incompleteApplicationReceived",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
             )
 
         );
@@ -110,7 +140,70 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getRules().size(), is(4));
-
     }
 
+    static Stream<Arguments> scenarioProviderDateDefaults() {
+        return Stream.of(
+            Arguments.of(
+                Map.of("isScottishCase", "No"),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", TODAY,
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR
+                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                Map.of(),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", TODAY,
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR
+                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                Map.of("isScottishCase", "Yes",
+                       "processingVenue", "Dundee"),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", TODAY,
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_DUNDEE
+                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                Map.of("isScottishCase", "Yes",
+                       "processingVenue", "Edinburgh"),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", TODAY,
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_EDINBURGH
+                        )
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest(name = "caseData: {1}")
+    @MethodSource("scenarioProviderDateDefaults")
+    void date_calculation_defaults_by_venue(Map<String, Object> caseData,
+                                                      List<Map<String, String>> expectation) {
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("additionalData", Map.of("Data", caseData));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateRequiredDecision(
+            "sscs-task-initiation-date-calculation-defaults", inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
 }

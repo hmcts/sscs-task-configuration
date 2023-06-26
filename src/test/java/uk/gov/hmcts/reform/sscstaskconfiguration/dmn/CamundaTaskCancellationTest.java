@@ -30,8 +30,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
             event("nonCompliant").cancelAll().build(),
-            event("addHearing").reconfigure("Routine work").build(),
-            event("caseUpdated").reconfigure("Routine work").build(),
+            event("addHearing").reconfigureAll().build(),
+            event("caseUpdated").reconfigureAll().build(),
             event("voidCase").cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested").build(),
             event("appealWithdrawn").cancel("reviewIncompleteAppeal")
@@ -68,12 +68,10 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
-
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
         assertThat(logic.getRules().size(), is(4));
-
     }
 }
