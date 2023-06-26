@@ -64,6 +64,18 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+
+      <rule id="DecisionRule_1ct4ng7">
+        <inputEntry id="UnaryTests_0a86tbb">
+          <text>"validSendToInterloc","interlocSendToTcw","interlocInformationReceived"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xpustk">
+          <text>"reviewAdminAction"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r044ge">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

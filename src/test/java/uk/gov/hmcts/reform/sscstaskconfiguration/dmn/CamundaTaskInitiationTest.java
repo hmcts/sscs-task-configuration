@@ -21,6 +21,7 @@ import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_SSCS_BENEFIT;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.InitiationScenarioBuilder.event;
 
 class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
@@ -172,6 +173,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("dwpFurtherInfo", "No")),
                 List.of()
             ),
+            event("sendToAdmin")
+                .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
+                .build(),
             Arguments.of(
                 "dwpSupplementaryResponse",
                 null,
@@ -230,7 +234,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             )
-
         );
     }
 
@@ -255,7 +258,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(),is(6));
+        assertThat(logic.getRules().size(), is(7));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

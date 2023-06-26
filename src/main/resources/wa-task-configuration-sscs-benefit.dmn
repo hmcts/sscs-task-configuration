@@ -101,7 +101,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -118,7 +118,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -172,7 +172,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -208,7 +208,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument"</text>
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -288,6 +288,25 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0386jr8">
+        <inputEntry id="UnaryTests_12p6zed">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gtxb6p">
+          <text>"reviewAdminAction"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_143igpw">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l4c9u4">
+          <text>"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
+"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Interloc Information Received](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15vmpq1">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -356,20 +375,20 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0vryjpz">
-        <inputEntry id="UnaryTests_1fy938w">
+      <rule id="DecisionRule_0g7hqay">
+        <inputEntry id="UnaryTests_1dn3u0n">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1dlxkjg">
-          <text>"reviewBilingualDocument"</text>
+        <inputEntry id="UnaryTests_109e9xp">
+          <text>"reviewBilingualDocument","reviewAdminAction"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1vmpg33">
+        <outputEntry id="LiteralExpression_0k2qbvw">
           <text>"dueDateIntervalDays"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1wp4c3a">
+        <outputEntry id="LiteralExpression_0hqc7cd">
           <text>10</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0c7f3mw">
+        <outputEntry id="LiteralExpression_1fdxatu">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -422,7 +441,7 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xobr9s">
           <text>true</text>
-				</outputEntry>
+        </outputEntry>
       </rule>
     </decisionTable>
   </decision>
