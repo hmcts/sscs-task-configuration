@@ -1,6 +1,6 @@
 package uk.gov.hmcts.reform.sscstaskconfiguration.utils;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class DateUtils {
@@ -10,27 +10,43 @@ public class DateUtils {
     private DateUtils() {
     }
 
-    public static String lastMonth() {
-        return LocalDateTime.now().minusMonths(1).format(dateFormat);
-    }
-
-    public static String lastWeek() {
-        return LocalDateTime.now().minusDays(7).format(dateFormat);
-    }
-
     public static String today() {
-        return LocalDateTime.now().format(dateFormat);
+        return LocalDate.now().format(dateFormat);
+    }
+
+    public static String today(int plusDays) {
+        return LocalDate.now().plusDays(plusDays).format(dateFormat);
     }
 
     public static String tomorrow() {
-        return LocalDateTime.now().plusDays(1).format(dateFormat);
+        return today(1);
+    }
+
+    public static String tomorrow(int plusDays) {
+        return today(1 + plusDays);
+    }
+
+    public static String lastWeek() {
+        return today(-7);
     }
 
     public static String nextWeek() {
-        return LocalDateTime.now().plusDays(7).format(dateFormat);
+        return today(7);
+    }
+
+    public static String nextWeek(int plusDays) {
+        return today(7 + plusDays);
+    }
+
+    public static String lastMonth() {
+        return LocalDate.now().minusMonths(1).format(dateFormat);
     }
 
     public static String nextMonth() {
-        return LocalDateTime.now().plusMonths(1).format(dateFormat);
+        return LocalDate.now().plusMonths(1).format(dateFormat);
+    }
+
+    public static String nextMonth(int plusDays) {
+        return LocalDate.now().plusMonths(1).plusDays(plusDays).format(dateFormat);
     }
 }

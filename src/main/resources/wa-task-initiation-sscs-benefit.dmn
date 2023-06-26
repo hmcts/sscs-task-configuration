@@ -5,7 +5,7 @@
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
     </informationRequirement>
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
-      <input id="Input_1" label="Event Id" biodi:width="232" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="278" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -105,6 +105,32 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02ekbax">
           <text>"Routine work"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02rz2kk">
+        <inputEntry id="UnaryTests_0rqm4u2">
+          <text>"requestInfoIncompleteApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lh9r0z">
+          <text>"withDwp"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nbt8pu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rw39zd">
+          <text>"reviewInformationRequested"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u6r5ub">
+          <text>"Review Information Requested"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bi0kgo">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_007uex6">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nj3ev8">
+          <text>"reviewInformationRequested"</text>
         </outputEntry>
       </rule>
     </decisionTable>

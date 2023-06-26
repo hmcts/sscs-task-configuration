@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static java.time.format.DateTimeFormatter.ISO_LOCAL_DATE;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -45,7 +44,47 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review non-compliant appeal",
                         "workingDaysAllowed", 2,
                         "processCategories", "Non-compliant appeal"
-                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                "draftToIncompleteApplication",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "incompleteApplicationReceived",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestInfoIncompleteApplication",
+                "withDwp",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewInformationRequested",
+                        "name", "Review Information Requested",
+                        "delayDuration", 2,
+                        "workingDaysAllowed", 3,
+                        "processCategories", "reviewInformationRequested"
+                    )
                 )
             ),
             Arguments.of(
@@ -74,6 +113,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             )
+
         );
     }
 
@@ -99,8 +139,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(3));
-
+        assertThat(logic.getRules().size(), is(4));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

@@ -13,7 +13,7 @@ public class ConfigurationExpectationBuilder {
     public static String CASE_MANAGEMENT_CATEGORY = "caseManagementCategory";
     public static String LOCATION = "location";
     public static String LOCATION_NAME = "locationName";
-    public static String WORK_TYPE = "work_type";
+    public static String WORK_TYPE = "workType";
     public static String ROLE_CATEGORY = "roleCategory";
     public static String PRIORITY_DATE = "priorityDate";
     public static String MINOR_PRIORITY = "minorPriority";

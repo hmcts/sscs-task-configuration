@@ -101,10 +101,11 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal"</text>
+          <text>"reviewIncompleteAppeal",
+"reviewInformationRequested"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
-          <text>"work_type"</text>
+          <text>"workType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16td79g">
           <text>"routine_work"</text>
@@ -118,7 +119,8 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal"</text>
+          <text>"reviewIncompleteAppeal",
+"reviewInformationRequested"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -131,7 +133,7 @@ null</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1loicg1">
-        <description>hearing date if available</description>
+        <description>Hearing date if available minus 10 days</description>
         <inputEntry id="UnaryTests_039jxa1">
           <text></text>
         </inputEntry>
@@ -142,18 +144,19 @@ null</text>
           <text>"priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yq77of" expressionLanguage="feel">
-          <text>if(nextHearingDate!=null) then nextHearingDate else ""</text>
+          <text>if(nextHearingDate!=null) then date(nextHearingDate) - duration("P10D")  else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05klryr">
           <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1u4vdqa">
+        <description>Default priorty</description>
         <inputEntry id="UnaryTests_00f1los">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text></text>
+          <text>"reviewIncompleteAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -165,12 +168,31 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1a8gebd">
+        <description>High priority if hearing data not available</description>
+        <inputEntry id="UnaryTests_1spe9nj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_168dkl4">
+          <text>"reviewInformationRequested"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s58bga">
+          <text>"minorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xxo6ds">
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 500 else 300</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m753dr">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0j08ox4">
+        <description>Default priorty</description>
         <inputEntry id="UnaryTests_01wd578">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text></text>
+          <text>"reviewIncompleteAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -179,6 +201,24 @@ null</text>
           <text>5000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0a9nh45">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18ijrs0">
+        <description>High priority if hearing data not available</description>
+        <inputEntry id="UnaryTests_1h85ecq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hvpmuj">
+          <text>"reviewInformationRequested"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vtnzdl">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_123h2cy">
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 5000 else 3000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0587fwj">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -196,6 +236,23 @@ null</text>
           <text>"[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1g4fbsy">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0t23nn3">
+        <inputEntry id="UnaryTests_0rr3o2i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15wzdbz">
+          <text>"reviewInformationRequested"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b20p45">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gtav7k">
+          <text>"[Review Information Requested](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x6to7m">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -284,6 +341,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1radi8u">
+        <inputEntry id="UnaryTests_00tkn3r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pw9fy3">
+          <text>"reviewInformationRequested"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hvbenp">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11pvr8w">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lu12o9">
+          <text>true</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-configuration-non-working-days" name="Non Working Days">
@@ -355,14 +429,14 @@ null</text>
           <text></text>
         </inputExpression>
       </input>
-      <output id="OutputClause_0itajs4" name="nextHearingDate" typeRef="" biodi:width="347" />
+      <output id="OutputClause_0itajs4" name="nextHearingDate" typeRef="string" biodi:width="347" />
       <output id="OutputClause_0s62lpb" name="nextHearingId" typeRef="string" biodi:width="336" />
       <rule id="DecisionRule_1aqhpa9">
         <inputEntry id="UnaryTests_12eimss">
           <text>hearings!=null and hearings[1]!=null</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14pbdy7">
-          <text>hearings[1].value.hearingDate  + "T00:00:00.000Z"</text>
+          <text>hearings[1].value.hearingDate</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05s34x8">
           <text>hearings[1].value.hearingId</text>

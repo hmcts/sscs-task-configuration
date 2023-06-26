@@ -60,26 +60,26 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
-                                   DateUtils.today() + DEFAULT_TIME,true)
+                                   DateUtils.today(-10),true)
                     .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
                                    "1234567",true)
                     .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
-                                   DateUtils.today() + DEFAULT_TIME,true)
+                                   DateUtils.today(),true)
                     .build()
             ),
             // one future hearing
             Arguments.of(
                 "reviewIncompleteAppeal",
                 CaseDataBuilder.defaultCase()
-                    .withHearing(CaseDataBuilder.createHearing("1234567", DateUtils.tomorrow()))
+                    .withHearing(CaseDataBuilder.createHearing("1234567", DateUtils.git status()))
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
-                                   DateUtils.tomorrow() + DEFAULT_TIME,true)
+                                   DateUtils.tomorrow(-10),true)
                     .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
                                    "1234567",true)
                     .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
-                                   DateUtils.tomorrow() + DEFAULT_TIME,true)
+                                   DateUtils.tomorrow(),true)
                     .build()
             ),
             // future hearings wrong order
@@ -92,11 +92,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
-                                   DateUtils.tomorrow() + DEFAULT_TIME, true)
+                                   DateUtils.tomorrow(-10), true)
                     .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
                                    "1111111",true)
                     .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
-                                   DateUtils.tomorrow() + DEFAULT_TIME,true)
+                                   DateUtils.tomorrow(),true)
                     .build()
             ),
             // past and future hearing
@@ -110,11 +110,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
-                                   DateUtils.nextWeek() + DEFAULT_TIME,true)
+                                   DateUtils.nextWeek(-10),true)
                     .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
                                    "2222222",true)
                     .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
-                                   DateUtils.nextWeek() + DEFAULT_TIME,true)
+                                   DateUtils.nextWeek(),true)
                     .build()
             )
         );
@@ -170,7 +170,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(15));
+        assertThat(logic.getRules().size(), is(19));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
@@ -179,10 +179,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             if ("dueDateOrigin".equals(expectation.get(index).get("name"))) {
                 assertEquals(
                     results.get(index).get("canReconfigure"),
-                    expectation.get(index).get("canReconfigure"));
+                    expectation.get(index).get("canReconfigure")
+                );
                 assertTrue(validNow(
                     LocalDateTime.parse(results.get(index).get("value").toString()),
-                    LocalDateTime.parse(expectation.get(index).get("value").toString())));
+                    LocalDateTime.parse(expectation.get(index).get("value").toString())
+                ));
             } else {
                 assertThat(results.get(index), is(expectation.get(index)));
             }

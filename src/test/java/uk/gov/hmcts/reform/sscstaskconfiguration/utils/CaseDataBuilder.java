@@ -50,7 +50,7 @@ public class CaseDataBuilder {
         caseData.put("processingVenue", processingVenue);
         return this;
     }
-  
+
     public CaseDataBuilder withHearing(Map<String,Object> hearing) {
         caseData.put("hearings", new ArrayList<>(List.of(hearing)));
         return this;
