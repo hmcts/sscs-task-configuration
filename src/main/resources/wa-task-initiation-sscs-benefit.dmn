@@ -949,7 +949,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_1374a99">
         <inputEntry id="UnaryTests_1vjycvj">
-          <text>"createBundle"</text>
+          <text>"createBundle","newCaseRolesAssigned</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0g9pspr">
           <text></text>
@@ -990,7 +990,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_0p1jzuc">
         <inputEntry id="UnaryTests_00t70zr">
-          <text>"createBundle"</text>
+          <text>"createBundle","newCaseRolesAssigned</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p9d6sd">
           <text></text>
