@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
+    <informationRequirement id="InformationRequirement_1t76wn6">
+      <requiredDecision href="#sscs-task-configuration-non-working-days" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_172js3g">
+      <requiredDecision href="#nextHearing" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
         <inputExpression id="LiteralExpression_0mra7c4" typeRef="string">
@@ -136,7 +142,7 @@ null</text>
           <text>"priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yq77of" expressionLanguage="feel">
-          <text>if(caseData!=null and caseData.nextHearingDate!=null) then date(caseData.nextHearingDate) - duration("P10D")  else ""</text>
+          <text>if(nextHearingDate!=null) then date(nextHearingDate) - duration("P10D")  else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05klryr">
           <text>true</text>
@@ -329,7 +335,7 @@ null</text>
           <text>"nextHearingId" </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jpfbdl" expressionLanguage="feel">
-          <text>if(caseData!=null and caseData.nextHearingId!=null) then caseData.nextHearingId else ""</text>
+          <text>if(nextHearingId!=null) then nextHearingId else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0u5nw0y">
           <text>true</text>
@@ -343,10 +349,10 @@ null</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kpzbii">
-          <text>"nextHearingDate" </text>
+          <text>"nextHearingDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ebksar" expressionLanguage="feel">
-          <text>if(caseData!=null and caseData.nextHearingDate!=null) then caseData.nextHearingDate else ""</text>
+          <text>if(nextHearingDate!=null) then nextHearingDate else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13eate1">
           <text>true</text>
@@ -366,7 +372,7 @@ null</text>
           <text>substring(string(now()),1,16)</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12wh31l">
-          <text>true</text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0csil93">
@@ -380,10 +386,26 @@ null</text>
           <text>"dueDateNonWorkingCalendar"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_131g892">
-          <text>if(caseData.isScottishCase="Yes") then "https://www.gov.uk/bank-holidays/scotland.json"
-else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
+          <text>nonWorkingDayCalendar</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06j1l34">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vryjpz">
+        <inputEntry id="UnaryTests_1fy938w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dlxkjg">
+          <text>"reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vmpg33">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wp4c3a">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c7f3mw">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -438,21 +460,112 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0vryjpz">
-        <inputEntry id="UnaryTests_1fy938w">
+    </decisionTable>
+  </decision>
+  <decision id="sscs-task-configuration-non-working-days" name="Non Working Days">
+    <decisionTable id="DecisionTable_19ggug0" hitPolicy="FIRST">
+      <input id="InputClause_1wj25b3" label="isScottishCase" camunda:inputVariable="isScottishCase">
+        <inputExpression id="LiteralExpression_0leh29i" typeRef="string">
+          <text>if(caseData!=null and caseData.isScottishCase!=null) then caseData.isScottishCase else "No"</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0zwrz49" label="processingVenue" camunda:inputVariable="processingVenue">
+        <inputExpression id="LiteralExpression_1ioqfw6" typeRef="string">
+          <text>if(caseData!=null and caseData.processingVenue!=null) then caseData.processingVenue else null</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0c1hiz8" name="nonWorkingDayCalendar" typeRef="string" biodi:width="1098" />
+      <rule id="DecisionRule_0mm2sbm">
+        <inputEntry id="UnaryTests_19y9oib">
+          <text>"No"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1plxypx">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1dlxkjg">
-          <text>"reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation"</text>
+        <outputEntry id="LiteralExpression_1hta6gl">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03nkaxj">
+        <inputEntry id="UnaryTests_1ly3nb8">
+          <text>"Yes"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1vmpg33">
-          <text>"dueDateIntervalDays"</text>
+        <inputEntry id="UnaryTests_1ysss6b">
+          <text>"Dundee"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0x4hza9">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-dundee.json"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1wp4c3a">
-          <text>10</text>
+      </rule>
+      <rule id="DecisionRule_130cnxw">
+        <inputEntry id="UnaryTests_074afnu">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xwiy14">
+          <text>"Edinburgh"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a68vda">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-edinburgh.json"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0c7f3mw">
-          <text>true</text>
+      </rule>
+      <rule id="DecisionRule_0ppo81q">
+        <inputEntry id="UnaryTests_09sdd9k">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h0rrc3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pqjgim">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland.json"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="nextHearing" name="Next Hearing">
+    <informationRequirement id="InformationRequirement_17hutxa">
+      <requiredDecision href="#Decision_1ol51p5" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0je9i6y" hitPolicy="FIRST">
+      <input id="InputClause_08rbi4w" label="hearings" biodi:width="567" camunda:inputVariable="hearings">
+        <inputExpression id="LiteralExpression_1hby6gy" typeRef="">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0itajs4" name="nextHearingDate" typeRef="string" biodi:width="347" />
+      <output id="OutputClause_0s62lpb" name="nextHearingId" typeRef="string" biodi:width="336" />
+      <rule id="DecisionRule_1aqhpa9">
+        <inputEntry id="UnaryTests_12eimss">
+          <text>hearings!=null and hearings[1]!=null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14pbdy7">
+          <text>hearings[1].value.hearingDate</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05s34x8">
+          <text>hearings[1].value.hearingId</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1ol51p5" name="Get Current Hearings">
+    <decisionTable id="DecisionTable_1hyvz6f" hitPolicy="FIRST">
+      <input id="InputClause_0qzlz2v" label="CaseData" camunda:inputVariable="caseData">
+        <inputExpression id="LiteralExpression_0qco4do" typeRef="" />
+      </input>
+      <output id="OutputClause_1ma31u0" label="hearings" name="hearings" typeRef="" biodi:width="915" />
+      <rule id="DecisionRule_1pic1tv">
+        <inputEntry id="UnaryTests_0p8bwrk">
+          <text>caseData.hearings!=null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h2c0fc">
+          <text>sort(list: caseData.hearings[date(value.hearingDate)&gt;=today()], precedes: function(x,y) x.value.hearingDate &lt; y.value.hearingDate)</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00iip4f">
+        <inputEntry id="UnaryTests_0lubh2e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rgpn8m">
+          <text>null</text>
         </outputEntry>
       </rule>
     </decisionTable>
@@ -461,6 +574,30 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
     <dmndi:DMNDiagram id="DMNDiagram_1ifewa3">
       <dmndi:DMNShape id="DMNShape_0ijg0or" dmnElementRef="wa-task-configuration-sscs-benefit">
         <dc:Bounds height="80" width="180" x="160" y="40" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1vrh8rb" dmnElementRef="InformationRequirement_1t76wn6">
+        <di:waypoint x="250" y="210" />
+        <di:waypoint x="250" y="140" />
+        <di:waypoint x="250" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1mgaz03" dmnElementRef="sscs-task-configuration-non-working-days">
+        <dc:Bounds height="80" width="180" x="160" y="210" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_06d4k2l" dmnElementRef="nextHearing">
+        <dc:Bounds height="80" width="180" x="470" y="40" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1yz1orq" dmnElementRef="InformationRequirement_172js3g">
+        <di:waypoint x="470" y="80" />
+        <di:waypoint x="360" y="80" />
+        <di:waypoint x="340" y="80" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_14ln0z5" dmnElementRef="InformationRequirement_17hutxa">
+        <di:waypoint x="780" y="80" />
+        <di:waypoint x="670" y="80" />
+        <di:waypoint x="650" y="80" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1mgaz02" dmnElementRef="Decision_1ol51p5">
+        <dc:Bounds height="80" width="180" x="780" y="40" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>

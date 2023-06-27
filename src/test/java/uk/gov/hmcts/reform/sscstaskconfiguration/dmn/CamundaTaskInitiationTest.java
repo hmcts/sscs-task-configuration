@@ -10,7 +10,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
+import uk.gov.hmcts.reform.sscstaskconfiguration.utils.CourtSpecificCalendars;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -22,6 +24,8 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.InitiationScenarioBuilder.event;
 
 class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
+
+    private static final LocalDate TODAY = LocalDate.now();
 
     @BeforeAll
     public static void initialization() {
@@ -41,6 +45,192 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review non-compliant appeal",
                         "workingDaysAllowed", 2,
                         "processCategories", "Non-compliant appeal"
+                    )
+                )
+            ),
+            Arguments.of(
+                "draftToIncompleteApplication",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "incompleteApplicationReceived",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestInfoIncompleteApplication",
+                "withDwp",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewInformationRequested",
+                        "name", "Review Information Requested",
+                        "delayDuration", 2,
+                        "workingDaysAllowed", 3,
+                        "processCategories", "reviewInformationRequested"
+                    )
+                )
+            ),
+            Arguments.of(
+                "draftToIncompleteApplication",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "incompleteApplicationReceived",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "draftToIncompleteApplication",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "incompleteApplicationReceived",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestInfoIncompleteApplication",
+                "withDwp",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewInformationRequested",
+                        "name", "Review Information Requested",
+                        "delayDuration", 2,
+                        "workingDaysAllowed", 3,
+                        "processCategories", "reviewInformationRequested"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                "withDwp",
+                Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewFtaResponse",
+                        "name", "Review FTA Response",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "reviewFtaResponse"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                "withDwp",
+                Map.of("Data", Map.of("dwpFurtherInfo", "No")),
+                List.of()
+            ),
+            event("sendToAdmin")
+                .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
+                .build(),
+            Arguments.of(
+                "dwpSupplementaryResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Translation Tasks"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocument",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Translation Tasks"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", false)),
+                List.of()
+            ),
+            Arguments.of(
+                "attachScannedDocs",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Translation Tasks"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocumentFurtherEvidence",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Translation Tasks"
                     )
                 )
             ),
@@ -182,11 +372,73 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
-
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getRules().size(), is(8));
-
     }
 
+    static Stream<Arguments> scenarioProviderDateDefaults() {
+        return Stream.of(
+            Arguments.of(
+                Map.of("isScottishCase", "No"),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", TODAY,
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR
+                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                Map.of(),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", TODAY,
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR
+                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                Map.of("isScottishCase", "Yes",
+                       "processingVenue", "Dundee"),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", TODAY,
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_DUNDEE
+                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                Map.of("isScottishCase", "Yes",
+                       "processingVenue", "Edinburgh"),
+                singletonList(
+                    Map.of(
+                        "date_defaults_1", Map.of(
+                            "delayUntilOrigin", TODAY,
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_EDINBURGH
+                        )
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest(name = "caseData: {1}")
+    @MethodSource("scenarioProviderDateDefaults")
+    void date_calculation_defaults_by_venue(Map<String, Object> caseData,
+                                                      List<Map<String, String>> expectation) {
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("additionalData", Map.of("Data", caseData));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateRequiredDecision(
+            "sscs-task-initiation-date-calculation-defaults", inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
 }

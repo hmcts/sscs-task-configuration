@@ -9,9 +9,21 @@ import java.util.Map;
 
 public class ConfigurationExpectationBuilder {
 
-    public static String ENGLAND_AND_WALES_CALENDAR = "https://www.gov.uk/bank-holidays/england-and-wales.json";
-
-    public static String SCOTLAND_CALENDAR = "https://www.gov.uk/bank-holidays/scotland.json";
+    public static String CASE_NAME = "caseName";
+    public static String CASE_MANAGEMENT_CATEGORY = "caseManagementCategory";
+    public static String LOCATION = "location";
+    public static String LOCATION_NAME = "locationName";
+    public static String WORK_TYPE = "workType";
+    public static String ROLE_CATEGORY = "roleCategory";
+    public static String PRIORITY_DATE = "priorityDate";
+    public static String MINOR_PRIORITY = "minorPriority";
+    public static String MAJOR_PRIORITY = "majorPriority";
+    public static String DESCRIPTION = "description";
+    public static String NEXT_HEARING_ID = "nextHearingId";
+    public static String NEXT_HEARING_DATE = "nextHearingDate";
+    public static String DUE_DATE_ORIGIN = "dueDateOrigin";
+    public static String DUE_DATE_NON_WORKING_CALENDAR = "dueDateNonWorkingCalendar";
+    public static String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
 
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
 
@@ -19,22 +31,25 @@ public class ConfigurationExpectationBuilder {
 
     public static ConfigurationExpectationBuilder defaultExpectations() {
         ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
-        builder.expectedValue("caseName", "Joe Blogs", true);
-        builder.expectedValue("caseManagementCategory", "Personal Independence Payment", true);
-        builder.expectedValue("location", "123456", true);
-        builder.expectedValue("locationName", "BRADFORD", true);
-        builder.expectedValue("workType", "routine_work", true);
-        builder.expectedValue("roleCategory", "CTSC", true);
-        builder.expectedValue("priorityDate", "", true);
-        builder.expectedValue("minorPriority", "500", true);
-        builder.expectedValue("majorPriority", "5000", true);
-        builder.expectedValue("description","[Request Information From Party](/case/SSCS/Benefit/"
-            + "${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)",true);
-        builder.expectedValue("nextHearingId", "", true);
-        builder.expectedValue("nextHearingDate", "", true);
-        builder.expectedValue("dueDateOrigin", now(), true);
-        builder.expectedValue("dueDateNonWorkingCalendar", ENGLAND_AND_WALES_CALENDAR, true);
-        builder.expectedValue("dueDateIntervalDays", "5", true);
+        builder.expectedValue(CASE_NAME, "Joe Blogs", true);
+        builder.expectedValue(CASE_MANAGEMENT_CATEGORY, "Personal Independence Payment", true);
+        builder.expectedValue(LOCATION, "123456", true);
+        builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
+        builder.expectedValue(WORK_TYPE, "routine_work", true);
+        builder.expectedValue(ROLE_CATEGORY, "CTSC", true);
+        builder.expectedValue(PRIORITY_DATE, "", true);
+        builder.expectedValue(MINOR_PRIORITY, "500", true);
+        builder.expectedValue(MAJOR_PRIORITY, "5000", true);
+        builder.expectedValue(
+            DESCRIPTION,
+            "[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)",
+            true
+        );
+        builder.expectedValue(NEXT_HEARING_ID, "", true);
+        builder.expectedValue(NEXT_HEARING_DATE, "", true);
+        builder.expectedValue(DUE_DATE_ORIGIN, now(), false);
+        builder.expectedValue(DUE_DATE_NON_WORKING_CALENDAR, CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR, true);
+        builder.expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true);
         return builder;
     }
 

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 import java.io.InputStream;
 import java.util.Map;
+import java.util.Optional;
 
 public abstract class DmnDecisionTableBaseUnitTest {
 
@@ -30,5 +31,15 @@ public abstract class DmnDecisionTableBaseUnitTest {
 
     public DmnDecisionTableResult evaluateDmnTable(Map<String, Object> variables) {
         return dmnEngine.evaluateDecisionTable(decision, variables);
+    }
+
+    public DmnDecisionTableResult evaluateRequiredDecision(String decisionTableId, Map<String, Object> variables) {
+        Optional<DmnDecision> requiredDecision = decision.getRequiredDecisions().stream()
+            .filter(d -> d.getKey().equals(decisionTableId))
+            .findFirst();
+        if (requiredDecision.isPresent()) {
+            return dmnEngine.evaluateDecisionTable(requiredDecision.get(), variables);
+        }
+        return null;
     }
 }
