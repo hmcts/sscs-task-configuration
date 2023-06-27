@@ -64,7 +64,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             event("decisionIssued")
                 .cancel("reviewIncompleteAppeal").build(),
             event("cancelTranslations")
-                .cancel("reviewBilingualDocument").build()
+                .cancel("Translation Tasks").build()
         );
     }
 

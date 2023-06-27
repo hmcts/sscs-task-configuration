@@ -55,21 +55,21 @@ public class ConfigurationExpectationBuilder {
 
     public List<Map<String,Object>> build() {
         return Arrays.asList(
-            expectations.get(CASE_NAME),
-            expectations.get(CASE_MANAGEMENT_CATEGORY),
-            expectations.get(LOCATION),
-            expectations.get(LOCATION_NAME),
-            expectations.get(WORK_TYPE),
-            expectations.get(ROLE_CATEGORY),
-            expectations.get(PRIORITY_DATE),
-            expectations.get(MINOR_PRIORITY),
-            expectations.get(MAJOR_PRIORITY),
-            expectations.get(DESCRIPTION),
-            expectations.get(NEXT_HEARING_ID),
-            expectations.get(NEXT_HEARING_DATE),
-            expectations.get(DUE_DATE_ORIGIN),
-            expectations.get(DUE_DATE_NON_WORKING_CALENDAR),
-            expectations.get(DUE_DATE_INTERVAL_DAYS)
+            expectations.get("caseName"),
+            expectations.get("caseManagementCategory"),
+            expectations.get("location"),
+            expectations.get("locationName"),
+            expectations.get("workType"),
+            expectations.get("roleCategory"),
+            expectations.get("priorityDate"),
+            expectations.get("minorPriority"),
+            expectations.get("majorPriority"),
+            expectations.get("description"),
+            expectations.get("nextHearingId"),
+            expectations.get("nextHearingDate"),
+            expectations.get("dueDateOrigin"),
+            expectations.get("dueDateNonWorkingCalendar"),
+            expectations.get("dueDateIntervalDays")
         );
     }
 

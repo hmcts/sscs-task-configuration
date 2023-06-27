@@ -64,7 +64,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-
       <rule id="DecisionRule_1ct4ng7">
         <inputEntry id="UnaryTests_0a86tbb">
           <text>"validSendToInterloc","interlocSendToTcw","interlocInformationReceived"</text>
@@ -73,6 +72,17 @@
           <text>"reviewAdminAction"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0r044ge">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15dt7j9">
+        <inputEntry id="UnaryTests_17sw41f">
+          <text>"actionFurtherEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17yfh8o">
+          <text>"issueOutstandingTranslation"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q66fiv">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
