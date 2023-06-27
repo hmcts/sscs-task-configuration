@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
   <decision id="wa-task-cancellation-sscs-benefit" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -17,6 +17,16 @@
           <text>state</text>
         </inputExpression>
       </input>
+      <input id="InputClause_0pq0jbh" label="Action Postponement Request" camunda:inputVariable="actionPostponementRequestSelected">
+        <inputExpression id="LiteralExpression_1difcr3" typeRef="string">
+          <text>if(additionalData != null
+    and additionalData.Data != null
+    and additionalData.Data.actionPostponementRequestSelected!= null) then
+    additionalData.Data.actionPostponementRequestSelected
+else
+     null</text>
+        </inputExpression>
+      </input>
       <output id="OutputClause_18zgoaj" label="Action" name="action" typeRef="string" />
       <output id="OutputClause_0tu8bqp" label="Warning Code" name="warningCode" typeRef="string" />
       <output id="OutputClause_1kfc3jv" label="Warning Text" name="warningText" typeRef="string" />
@@ -29,6 +39,9 @@
           <text>"nonCompliant"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1iy08tm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e1w9yi">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0t8415e">
@@ -62,6 +75,9 @@
         <inputEntry id="UnaryTests_0flofue">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0fjrp6s">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1vox3ud">
           <text>"Cancel"</text>
         </outputEntry>
@@ -89,6 +105,9 @@
 "readyToList"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bjzm1a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w179jo">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0jlts89">
@@ -119,6 +138,9 @@
         <inputEntry id="UnaryTests_1snvtwi">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_11v8bjz">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1b3n99x">
           <text>"Cancel"</text>
         </outputEntry>
@@ -142,6 +164,9 @@
         <inputEntry id="UnaryTests_08f0c8i">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0vbl1jd">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1yoe6nk">
           <text>"Cancel"</text>
         </outputEntry>
@@ -163,6 +188,9 @@
           <text>"addHearing","caseUpdated"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0n3igq2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q7cpn9">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1s4annp">
@@ -191,6 +219,9 @@
         <inputEntry id="UnaryTests_0yot6ht">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0z4q1ax">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_08tbnb3">
           <text>"Cancel"</text>
         </outputEntry>
@@ -215,6 +246,9 @@
 "struckOut"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1rdrdzn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yv14cd">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_19yjr1k">
@@ -242,6 +276,9 @@
         <inputEntry id="UnaryTests_0ob3xdx">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0p0mc5u">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0mzf96u">
           <text>"Cancel"</text>
         </outputEntry>
@@ -267,6 +304,9 @@
 "struckOut"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0qbs7tk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y9g3nf">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02onz7h">
@@ -298,6 +338,9 @@
         <inputEntry id="UnaryTests_1xms9yw">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1mb3h0k">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0i21zzg">
           <text>"Cancel"</text>
         </outputEntry>
@@ -323,6 +366,9 @@
 "struckOut"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1whrdfo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yjnscz">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_10cy77b">
@@ -351,6 +397,9 @@
 "issueFinalDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1555h1o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m5o9bm">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0zhnl9v">
@@ -384,6 +433,9 @@
         <inputEntry id="UnaryTests_0hp6ik1">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0cce2m6">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1sydhj4">
           <text>"Cancel"</text>
         </outputEntry>
@@ -411,6 +463,9 @@
 "decisionIssued"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0dzfngr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l5cebm">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bg9zlo">
@@ -442,6 +497,9 @@
         <inputEntry id="UnaryTests_0329ogi">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1ivtx9o">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1v82yak">
           <text>"Cancel"</text>
         </outputEntry>
@@ -471,6 +529,9 @@
         <inputEntry id="UnaryTests_1h2urun">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1uaociq">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_14nqnr9">
           <text>"Cancel"</text>
         </outputEntry>
@@ -482,6 +543,63 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0yv6s1u">
           <text>"prepareForHearingTribunalMember"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f0owwh">
+        <inputEntry id="UnaryTests_0ylsm4b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0981ho8">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision", "decisionIssued", "interlocReviewStateAmend"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ja0vag">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xtxbas">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09h2mvm">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vtjo8o">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bz4brr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0082zqo">
+          <text>"prepareHearingAppraiser"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0szl95z">
+        <inputEntry id="UnaryTests_1km0hfp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m6hop7">
+          <text>"actionPostponementRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jhkvj1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zs9dxp">
+          <text>"grant"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qfc3l0">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0koe6j6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15g1pme">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y709f2">
+          <text>"prepareHearingAppraiser"</text>
         </outputEntry>
       </rule>
     </decisionTable>

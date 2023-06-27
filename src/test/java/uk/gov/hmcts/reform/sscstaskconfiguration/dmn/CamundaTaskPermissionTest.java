@@ -165,6 +165,16 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "prepareForHearingTribunalMember3",
                 "someCaseData",
                 defaultJudicalMember3Permissions()
+            ),
+            Arguments.of(
+                "prepareHearingAppraiser1",
+                "someCaseData",
+            defaultAppraiserPermissions("appraiser-1")
+            ),
+            Arguments.of(
+                "prepareHearingAppraiser2",
+                "someCaseData",
+                defaultAppraiserPermissions("appraiser-2")
             )
         );
     }
@@ -486,6 +496,55 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+    private static List<Map<String, Object>> defaultAppraiserPermissions(String appraiserRole) {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", appraiserRole,
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 1,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "leadership-judge",
+                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign",
+                "assignmentPriority", 2,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "judge",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 3,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "medical",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 4,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "fee-paid-medical",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 5,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", false
+            )
+        );
+    }
     @ParameterizedTest(name = "task type: {0} case data: {1}")
     @MethodSource("scenarioProvider")
     void given_null_or_empty_inputs_when_evaluate_dmn_it_returns_expected_rules(String taskType,
@@ -522,7 +581,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(30));
+        assertThat(logic.getRules().size(), is(36));
 
     }
 

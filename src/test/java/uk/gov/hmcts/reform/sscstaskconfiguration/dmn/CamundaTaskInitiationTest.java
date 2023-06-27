@@ -527,13 +527,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "createBundle",
                 null,
                 Map.of("Data", Map.of(
-                    "assignedCaseRoles", Arrays.asList("tribunal-member-1"))),
+                    "assignedCaseRoles", Arrays.asList("tribunal-member-1","appraiser-1"))),
                 Arrays.asList(
                     Map.of(
                         "taskId", "prepareForHearingTribunalMember1",
                         "name", "Prepare for hearing",
                         "workingDaysAllowed", 2,
                         "processCategories", "prepareForHearingTribunalMember"
+                    ),
+                    Map.of(
+                        "taskId", "prepareHearingAppraiser1",
+                        "name", "Prepare for hearing",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "prepareHearingAppraiser"
                     )
                 )
             ),
@@ -541,13 +547,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "createBundle",
                 null,
                 Map.of("Data", Map.of(
-                    "assignedCaseRoles", Arrays.asList("tribunal-member-2"))),
+                    "assignedCaseRoles", Arrays.asList("tribunal-member-2","appraiser-2"))),
                 Arrays.asList(
                     Map.of(
                         "taskId", "prepareForHearingTribunalMember2",
                         "name", "Prepare for hearing",
                         "workingDaysAllowed", 2,
                         "processCategories", "prepareForHearingTribunalMember"
+                    ),
+                    Map.of(
+                        "taskId", "prepareHearingAppraiser2",
+                        "name", "Prepare for hearing",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "prepareHearingAppraiser"
                     )
                 )
             ),
@@ -596,7 +608,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(21));
+        assertThat(logic.getRules().size(), is(23));
 
     }
 
