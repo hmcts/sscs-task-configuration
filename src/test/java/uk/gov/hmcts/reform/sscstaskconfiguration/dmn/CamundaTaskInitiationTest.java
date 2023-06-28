@@ -89,14 +89,53 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "draftToIncompleteApplication",
+                "dwpSupplementaryResponse",
                 null,
                 null,
                 singletonList(
                     Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal",
-                        "workingDaysAllowed", 5,
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocument",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "attachScannedDocs",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocumentFurtherEvidence",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
                         "processCategories", "Routine work"
                     )
                 )
@@ -177,32 +216,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
                 .build(),
             Arguments.of(
-                "dwpSupplementaryResponse",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewBilingualDocument",
-                        "name", "Review Bi-Lingual Document",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "Translation Tasks"
-                    )
-                )
-            ),
-            Arguments.of(
-                "uploadDocument",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewBilingualDocument",
-                        "name", "Review Bi-Lingual Document",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "Translation Tasks"
-                    )
-                )
-            ),
-            Arguments.of(
                 "dwpUploadResponse",
                 null,
                 Map.of("Data", Map.of("languagePreferenceWelsh", false)),
@@ -212,12 +225,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "attachScannedDocs",
                 null,
                 Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "reviewBilingualDocument",
                         "name", "Review Bi-Lingual Document",
                         "workingDaysAllowed", 10,
                         "processCategories", "Translation Tasks"
+                    ),
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
                     )
                 )
             ),
@@ -225,12 +244,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "uploadDocumentFurtherEvidence",
                 null,
                 Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "reviewBilingualDocument",
                         "name", "Review Bi-Lingual Document",
                         "workingDaysAllowed", 10,
                         "processCategories", "Translation Tasks"
+                    ),
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
                     )
                 )
             ),
@@ -297,12 +322,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "dwpSupplementaryResponse",
                 null,
                 Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "reviewBilingualDocument",
                         "name", "Review Bi-Lingual Document",
                         "workingDaysAllowed", 10,
                         "processCategories", "Translation Tasks"
+                    ),
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
                     )
                 )
             ),
@@ -310,12 +341,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "uploadDocument",
                 null,
                 Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "reviewBilingualDocument",
                         "name", "Review Bi-Lingual Document",
                         "workingDaysAllowed", 10,
                         "processCategories", "Translation Tasks"
+                    ),
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
                     )
                 )
             ),
@@ -329,12 +366,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "attachScannedDocs",
                 null,
                 Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "reviewBilingualDocument",
                         "name", "Review Bi-Lingual Document",
                         "workingDaysAllowed", 10,
                         "processCategories", "Translation Tasks"
+                    ),
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Routine work"
                     )
                 )
             ),
@@ -342,6 +385,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document",
                                  10, "Translation Tasks")
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence",
+                                 10, "Routine work")
                 .build(),
             event("uploadWelshDocument")
                 .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
@@ -374,7 +419,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(8));
+        assertThat(logic.getRules().size(), is(9));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

@@ -27,19 +27,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_SSCS_BENEFIT;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.*;
 
 @Slf4j
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     public static final String YES = "Yes";
-    public static final String MINOR_PRIORITY = "minorPriority";
-    public static final String MAJOR_PRIORITY = "majorPriority";
-    public static final String DESCRIPTION = "description";
-    public static final String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
-    public static final String PRIORITY_DATE = "priorityDate";
-    public static final String NEXT_HEARING_ID = "nextHearingId";
-    public static final String NEXT_HEARING_DATE = "nextHearingDate";
-    public static final String DUE_DATE_NON_WORKING_CALENDAR = "dueDateNonWorkingCalendar";
 
     static Stream<Arguments> nextHearingScenarioProvider() {
         return Stream.of(
@@ -200,8 +193,16 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         + "[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)<br/>"
                         + "[Interloc Information Received](/case/SSCS/Benefit/${[CASE_REFERENCE]}"
                             + "/trigger/interlocInformationReceived)", true)
-                    .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "10", true)
-                    .build()
+                    .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "10", true).build()
+            ),
+            Arguments.of(
+                "actionUnprocessedCorrespondence",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(DESCRIPTION, "[Action Unprocessed Correspondence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionUnprocessedCorrespondence)", true)
+                    .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "10", true).build()
             )
         );
     }
@@ -230,7 +231,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(25));
+        assertThat(logic.getRules().size(), is(27));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

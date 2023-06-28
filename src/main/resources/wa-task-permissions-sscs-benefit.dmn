@@ -10,7 +10,7 @@ else
 "r1"</text>
         </inputExpression>
       </input>
-      <input id="Input_1" label="Case Data" camunda:inputVariable="case">
+      <input id="Input_1" label="Case Data" biodi:width="150" camunda:inputVariable="case">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -158,7 +158,7 @@ else
       <rule id="DecisionRule_19cn0u8">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1vcxbly">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication", "reviewFtaResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hxa6gg">
           <text></text>
@@ -209,10 +209,37 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0c3d5wr">
+        <description>Standard CTSC permission with CompleteOwn</description>
+        <inputEntry id="UnaryTests_0qvjw35">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09za0uf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_199bn0p">
+          <text>"Allocated-CTSC-Caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0phev3w">
+          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yphz7g">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bxxvr0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vj5ioq">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_150sn0l">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0e3o7rq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1kc55kf">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0e41w3x">
           <text></text>
@@ -239,7 +266,7 @@ else
       <rule id="DecisionRule_1wtxh4u">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_0pqcwnw">
-          <text>"reviewBilingualDocument"</text>
+          <text>"actionUnprocessedCorrespondence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pwxv75">
           <text></text>
@@ -248,7 +275,7 @@ else
           <text>"CTSC-Administrator"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dhvrmb">
-          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0u45a86">
           <text>"CTSC"</text>
@@ -263,10 +290,37 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0414giw">
+        <description>Standard CTSC permission with CompleteOwn</description>
+        <inputEntry id="UnaryTests_1397xmn">
+          <text>"reviewBilingualDocument"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pji0fw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kftsid">
+          <text>"CTSC-Administrator"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11tv2hj">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k7bfb4">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vpkqud">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0irw01b">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bl1ifu">
+          <text>false</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0q51lrq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_03ctmk1">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tw6aye">
           <text></text>
@@ -293,7 +347,7 @@ else
       <rule id="DecisionRule_1x6hqz8">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_0qh8zyy">
-          <text>"reviewBilingualDocument"</text>
+          <text>"reviewBilingualDocument","actionUnprocessedCorrespondence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0z6yehi">
           <text></text>
@@ -314,6 +368,84 @@ else
           <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11whir3">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1w4vbcb">
+        <inputEntry id="UnaryTests_1wys202">
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1svp3wg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1q6o4ha">
+          <text>"CTSC-Caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t4cseo">
+          <text>"Read","Own","Claim","Unclaim","Manage","Cancel","UnclaimAssign","CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_186yphk">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16k7c0i">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0704b5a">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jwpibd">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ifmb2o">
+        <inputEntry id="UnaryTests_0oy3y9s">
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m46jiq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_154828g">
+          <text>"CTSC-Administrator"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bx8mjo">
+          <text>"Read","Own","Claim","Unclaim","Manage","Cancel","UnclaimAssign","CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jg56wu">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qdnyv6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p037lz">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gpeu97">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17041zd">
+        <inputEntry id="UnaryTests_1rasako">
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04ehtmt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u1alq8">
+          <text>"CTSC-Team-Leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c7fhew">
+          <text>"Read","Own","Claim","Unclaim","Manage","UnclaimAssign","Assign","Unassign","Cancel","CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1o1xc3z">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mmmv0a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1037d8z">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10dk27c">
           <text>false</text>
         </outputEntry>
       </rule>
