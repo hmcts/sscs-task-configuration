@@ -101,7 +101,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -118,7 +118,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -154,7 +154,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -208,7 +208,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0epq85p">
-          <text>"reviewFtaDueDate"</text>
+          <text>"reviewFtaDueDate","reviewValidAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1653vwt">
           <text>"majorPriority"</text>
@@ -219,7 +219,7 @@ null</text>
         <outputEntry id="LiteralExpression_0zukoi1">
           <text>true</text>
         </outputEntry>
-      </rule>
+		  </rule>
       <rule id="DecisionRule_18ijrs0">
         <description>High priority if hearing data not available</description>
         <inputEntry id="UnaryTests_1h85ecq">
@@ -376,6 +376,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0q3doc2">
+        <inputEntry id="UnaryTests_1gybgbw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gjlb0g">
+          <text>"reviewValidAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1m55a59">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f53jur">
+          <text>"[Review Valid Appeal](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewValidAppeal)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tou6l9">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -483,7 +500,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1swv4p3">
-          <text>"reviewIncompleteAppeal"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ndgnkl">
           <text>"dueDateIntervalDays"</text>

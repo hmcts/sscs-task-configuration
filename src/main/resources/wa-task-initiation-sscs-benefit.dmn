@@ -334,6 +334,35 @@ else 0</text>
           <text>"reviewFtaDueDate"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ru3w7f">
+        <inputEntry id="UnaryTests_1xo57u6">
+          <text>"validAppealCreated"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kt1u0j">
+          <text>"validAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07mrjzx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01jgvo4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_132d9b7">
+          <text>"reviewValidAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0omk3t0">
+          <text>"Review Valid Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jsyluq">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0exrqrc">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1obxfvo">
+          <text>"reviewValidAppeal"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
@@ -431,7 +460,7 @@ null</text>
         <outputEntry id="LiteralExpression_1veyac7">
           <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
         </outputEntry>
-      </rule>
+      </rule>      
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
