@@ -42,7 +42,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument"),
             eventAutoCompletesTasks("actionFurtherEvidence","issueOutstandingTranslation"),
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal"),
-            eventAutoCompletesTasks("updateListingRequirement","reviewListingError")
+            eventAutoCompletesTasks("updateListingRequirement","reviewListingError"),
+            eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail")
         );
     }
 
@@ -60,7 +61,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(11));
+        assertThat(logic.getRules().size(), is(12));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {

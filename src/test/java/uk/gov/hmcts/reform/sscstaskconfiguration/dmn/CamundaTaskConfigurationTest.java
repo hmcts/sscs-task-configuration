@@ -239,6 +239,17 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         + "/${[CASE_REFERENCE]}/trigger/reviewListingError)", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .build()
+            ),
+            Arguments.of(
+                "reviewRoboticFail",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "6000", true)
+                    .expectedValue(DESCRIPTION, "[Re-sends the case to GAPS 2](/case/SSCS/Benefit"
+                        + "/${[CASE_REFERENCE]}/trigger/resendCaseToGAPS2)", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
+                    .build()
             )
         );
     }
@@ -267,7 +278,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(31));
+        assertThat(logic.getRules().size(), is(32));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

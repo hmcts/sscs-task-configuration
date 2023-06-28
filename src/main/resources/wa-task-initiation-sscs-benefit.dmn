@@ -4,6 +4,9 @@
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
     </informationRequirement>
+    <informationRequirement id="InformationRequirement_15q89yx">
+      <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" biodi:width="278" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
@@ -392,6 +395,35 @@ else 0</text>
           <text>"reviewListingError"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1kl09vx">
+        <inputEntry id="UnaryTests_0lsf1d5">
+          <text>"sendToRoboticsError"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pcqkc6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17n9y4u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iskgzf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qjeqqv">
+          <text>"reviewRoboticFail"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0scm98h">
+          <text>"Review Robotic Fail"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fbve2e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dbypcj">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e4k1cx">
+          <text> "reviewRoboticFail"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
@@ -497,11 +529,6 @@ null</text>
       <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="wa-task-initiation-sscs-benefit">
         <dc:Bounds height="80" width="180" x="150" y="80" />
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_0slvwmm" dmnElementRef="InformationRequirement_0tjxocg">
-        <di:waypoint x="450" y="120" />
-        <di:waypoint x="350" y="120" />
-        <di:waypoint x="330" y="120" />
-      </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_155l404" dmnElementRef="sscs-task-initiation-date-calculation-defaults">
         <dc:Bounds height="80" width="180" x="450" y="80" />
       </dmndi:DMNShape>
@@ -513,6 +540,11 @@ null</text>
       <dmndi:DMNShape id="DMNShape_0s4z50s" dmnElementRef="Decision_1n3y86t">
         <dc:Bounds height="80" width="180" x="740" y="80" />
       </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_14da4uj" dmnElementRef="InformationRequirement_15q89yx">
+        <di:waypoint x="450" y="120" />
+        <di:waypoint x="350" y="120" />
+        <di:waypoint x="330" y="120" />
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
