@@ -424,10 +424,42 @@ else 0</text>
           <text> "reviewRoboticFail"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0m3ft60">
+        <inputEntry id="UnaryTests_1wru0hw">
+          <text>"directionDueToday"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s0uqeg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eda9os">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bh8fmt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02ma9kd">
+          <text>"reviewBfDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i35tkf">
+          <text>"Review BF Date"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17qexd4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pi8gz7">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i8s31y">
+          <text>"reviewBfDate"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
     <informationRequirement id="InformationRequirement_0tk6k3u">
+      <requiredDecision href="#Decision_1n3y86t" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0tx6qya">
       <requiredDecision href="#Decision_1n3y86t" />
     </informationRequirement>
     <decisionTable id="DecisionTable_172aal0">
@@ -532,11 +564,6 @@ null</text>
       <dmndi:DMNShape id="DMNShape_155l404" dmnElementRef="sscs-task-initiation-date-calculation-defaults">
         <dc:Bounds height="80" width="180" x="450" y="80" />
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_1q6bx3v" dmnElementRef="InformationRequirement_0tk6k3u">
-        <di:waypoint x="740" y="120" />
-        <di:waypoint x="650" y="120" />
-        <di:waypoint x="630" y="120" />
-      </dmndi:DMNEdge>
       <dmndi:DMNShape id="DMNShape_0s4z50s" dmnElementRef="Decision_1n3y86t">
         <dc:Bounds height="80" width="180" x="740" y="80" />
       </dmndi:DMNShape>
@@ -544,6 +571,11 @@ null</text>
         <di:waypoint x="450" y="120" />
         <di:waypoint x="350" y="120" />
         <di:waypoint x="330" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1tvyl7t" dmnElementRef="InformationRequirement_0tx6qya">
+        <di:waypoint x="740" y="120" />
+        <di:waypoint x="650" y="120" />
+        <di:waypoint x="630" y="120" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>

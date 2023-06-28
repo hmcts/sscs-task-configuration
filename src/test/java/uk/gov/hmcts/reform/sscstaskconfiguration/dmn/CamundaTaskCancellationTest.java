@@ -69,10 +69,12 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewListingError")
                 .cancel("reviewRoboticFail").build(),
             event("validSendToInterloc")
-                .cancel("reviewIncompleteAppeal").build(),
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewBfDate").build(),
             event("makeCaseUrgent")
                 .cancel("reviewIncompleteAppeal")
-                .cancel("reviewInformationRequested").build(),
+                .cancel("reviewInformationRequested")
+                .cancel("reviewBfDate").build(),
             event("readyToList")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -81,7 +83,9 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             event("decisionIssued")
                 .cancel("reviewIncompleteAppeal").build(),
             event("cancelTranslations")
-                .cancel("Translation Tasks").build()
+                .cancel("Translation Tasks").build(),
+            event("interlocSendToTcw")
+                .cancel("reviewBfDate").build()
         );
     }
 
@@ -106,6 +110,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(10));
+        assertThat(logic.getRules().size(), is(11));
     }
 }
