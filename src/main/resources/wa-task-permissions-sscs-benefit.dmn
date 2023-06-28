@@ -449,6 +449,84 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0lrmqi3">
+        <inputEntry id="UnaryTests_0hmsc8n">
+          <text>"allocateCaseRolesAndCreateBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sl4o03">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ln511n">
+          <text>"Allocated-Admin-Caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l8wwtb">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wk9gh3">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1viisa9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vtw4cm">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14bk9bj">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nbw4ui">
+        <inputEntry id="UnaryTests_1al4cv3">
+          <text>"allocateCaseRolesAndCreateBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rnjky3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w43s0t">
+          <text>"Regional-Centre-Admin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c115hi">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gm4ohh">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r42uds">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p4ahuy">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0by2sf4">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_006yjl7">
+        <inputEntry id="UnaryTests_0y6uyce">
+          <text>"allocateCaseRolesAndCreateBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ill48g">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hiqkp6">
+          <text>"Regional-Centre-Team-Leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02yd424">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uilwp5">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1alam9l">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ezplcc">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06o8am9">
+          <text>false</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
