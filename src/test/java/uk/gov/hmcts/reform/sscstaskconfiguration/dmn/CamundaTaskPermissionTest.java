@@ -67,6 +67,16 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "issueOutstandingTranslation",
                 "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewAdminAction",
+                "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "actionUnprocessedCorrespondence",
+                "someCaseData",
                 List.of(
                     Map.of(
                         "name", "case-allocator",
@@ -100,16 +110,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "autoAssignable", false
                     )
                 )
-            ),
-            Arguments.of(
-                "reviewAdminAction",
-                "someCaseData",
-                defaultCtscPermissions()
-            ),
-            Arguments.of(
-                "actionUnprocessedCorrespondence",
-                "someCaseData",
-                defaultCtscPermissions()
             )
         );
     }
@@ -222,7 +222,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(13));
+        assertThat(logic.getRules().size(), is(16));
 
     }
 

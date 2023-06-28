@@ -184,7 +184,7 @@
           <text>"reviewFtaResponse"</text>
         </outputEntry>
       </rule>
-       <rule id="DecisionRule_00z0ypi">
+      <rule id="DecisionRule_00z0ypi">
         <inputEntry id="UnaryTests_0b3cbrp">
           <text>"sendToAdmin"</text>
         </inputEntry>
@@ -194,7 +194,7 @@
         <inputEntry id="UnaryTests_1rdsw6q">
           <text></text>
         </inputEntry>
-         <inputEntry id="UnaryTests_3rdtw8a">
+        <inputEntry id="UnaryTests_3rdtw8a">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1dvy239">
@@ -313,7 +313,7 @@
       <input id="InputClause_1ivphcb" biodi:width="150">
         <inputExpression id="LiteralExpression_1q5ra4z" typeRef="string" />
       </input>
-      <output id="OutputClause_09u4yj0" label="date_defaults_1" name="date_defaults_1" typeRef="json" biodi:width="699" />
+      <output id="OutputClause_09u4yj0" label="date_defaults_1" name="date_defaults_1" typeRef="" biodi:width="699" />
       <rule id="DecisionRule_1hf309o">
         <inputEntry id="UnaryTests_14er03w">
           <text></text>
@@ -400,7 +400,7 @@ null</text>
         <outputEntry id="LiteralExpression_1veyac7">
           <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
         </outputEntry>
-      </rule>      
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
