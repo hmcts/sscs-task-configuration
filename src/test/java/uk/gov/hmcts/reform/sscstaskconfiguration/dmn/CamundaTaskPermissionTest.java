@@ -109,6 +109,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "roleCategory", "CTSC",
                         "autoAssignable", false
                     )
+                ),
+                Arguments.of(
+                    "reviewFtaDueDate",
+                    "someCaseData",
+                    defaultCtscPermissions()
                 )
             )
         );

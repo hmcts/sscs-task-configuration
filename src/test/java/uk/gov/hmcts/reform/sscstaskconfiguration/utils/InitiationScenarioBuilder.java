@@ -49,7 +49,22 @@ public class InitiationScenarioBuilder {
         return this;
     }
 
+    public InitiationScenarioBuilder initiativesTaskWithDelay(String taskId,
+                                                              String name,
+                                                              int delayDuration,
+                                                              int workingDaysAllowed) {
+        results.add(Map.of(
+            "taskId", taskId,
+            "name", name,
+            "delayDuration", delayDuration,
+            "workingDaysAllowed", workingDaysAllowed,
+            "processCategories", taskId
+        ));
+        return this;
+    }
+
     public Arguments build() {
         return Arguments.of(event, state, Map.of("Data", caseData), results);
     }
+
 }
