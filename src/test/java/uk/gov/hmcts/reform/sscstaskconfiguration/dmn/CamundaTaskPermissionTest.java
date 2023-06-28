@@ -125,7 +125,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewValidAppeal",
                 "someCaseData",
                 defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewListingError",
+                "someCaseData",
+                defaultCtscPermissions()
             )
+
         );
     }
 

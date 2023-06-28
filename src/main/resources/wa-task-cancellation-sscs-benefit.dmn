@@ -205,6 +205,32 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1jh2t6x">
+        <inputEntry id="UnaryTests_04fpg51">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04exn1g">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yot6ht">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08tbnb3">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ewehe6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19u7kzk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1239y4l">
+          <text> "reviewValidAppeal"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_07adoje">
         <inputEntry id="UnaryTests_01iq1oe">
           <text></text>
@@ -228,7 +254,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bf4ozj">
-          <text> "reviewValidAppeal"</text>
+          <text> "reviewListingError"</text>
         </outputEntry>
       </rule>
     </decisionTable>

@@ -413,6 +413,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "reviewValidAppeal"
                     )
                 )
+            ),
+            Arguments.of(
+                "readyToList",
+                "listingError",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewListingError",
+                        "name", "Review Listing Error",
+                        "workingDaysAllowed", 3,
+                        "processCategories", "reviewListingError"
+                    )
+                )
             )
         );
     }
@@ -438,7 +451,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(11));
+        assertThat(logic.getRules().size(), is(12));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
