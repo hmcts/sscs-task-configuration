@@ -121,7 +121,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bax4so">
-          <text>"allocateCaseRolesAndCreateBundle"</text>
+          <text>"allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_152y5tj">
           <text>"workType"</text>
@@ -138,7 +138,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -208,7 +208,8 @@ null</text>
         <inputEntry id="UnaryTests_1spe9nj">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_168dkl4"> <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle"</text>
+        <inputEntry id="UnaryTests_168dkl4">
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -261,7 +262,8 @@ null</text>
         <inputEntry id="UnaryTests_1h85ecq">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0hvpmuj"> <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle"</text>
+        <inputEntry id="UnaryTests_0hvpmuj">
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -496,6 +498,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1r9jbbf">
+        <inputEntry id="UnaryTests_0op41m0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08xrfox">
+          <text>"reviewOutstandingDraftDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0udkpno">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a7jom4">
+          <text>"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gk2hcd">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -569,7 +588,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dlxkjg">
-          <text>"reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation"</text>
+          <text>"reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vmpg33">
           <text>"dueDateIntervalDays"</text>
@@ -581,29 +600,12 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_06w5m65">
-        <inputEntry id="UnaryTests_129pg5m">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0oty722">
-          <text>"actionUnprocessedCorrespondence"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1dk6n8z">
-          <text>"dueDateIntervalDays"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0lra6gz">
-          <text>10</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16kzkpy">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0v3ob2a">
         <inputEntry id="UnaryTests_0zacm9e">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1swv4p3">
-          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ndgnkl">
           <text>"dueDateIntervalDays"</text>
