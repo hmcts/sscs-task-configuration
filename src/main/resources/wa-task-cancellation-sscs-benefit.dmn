@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-cancellation-sscs-benefit" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -182,29 +182,6 @@
           <text>"Translation Tasks"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_06vo1lb">
-        <inputEntry id="UnaryTests_0ivl1q1">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_101t4lj">
-          <text>"addHearing","caseUpdated"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0n3igq2">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1s4annp">
-          <text>"Reconfigure"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1xfko4d">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1k3u9hw">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0z2p5lv">
-          <text></text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1jh2t6x">
         <inputEntry id="UnaryTests_04fpg51">
           <text></text>
@@ -362,6 +339,29 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_16qatwq">
           <text>"reviewOutstandingDraftDecision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06vo1lb">
+        <inputEntry id="UnaryTests_0ivl1q1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_101t4lj">
+          <text>"addHearing","caseUpdated"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n3igq2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s4annp">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xfko4d">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k3u9hw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z2p5lv">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>

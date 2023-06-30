@@ -109,12 +109,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "roleCategory", "CTSC",
                         "autoAssignable", false
                     )
-                ),
-                Arguments.of(
-                    "reviewFtaDueDate",
-                    "someCaseData",
-                    defaultCtscPermissions()
                 )
+            ),
+            Arguments.of(
+                "reviewFtaDueDate",
+                "someCaseData",
+                defaultCtscPermissions()
             ),
             Arguments.of(
                 "reviewBilingualDocument",
@@ -225,6 +225,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             )
         );
     }
+
     private static List<Map<String, Object>> defaultCtscPermissionsWithCompleteOwn() {
         return List.of(
             Map.of(

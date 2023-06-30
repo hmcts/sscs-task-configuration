@@ -26,7 +26,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
     void task_type_entries_have_correct_format() {
         VariableMap inputVariables = new VariableMapImpl();
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-        for(Map<String,Object> taskType : dmnDecisionTableResult.getResultList()) {
+        for (Map<String,Object> taskType : dmnDecisionTableResult.getResultList()) {
             assertThat((String) taskType.get("taskTypeId"), matchesPattern("^[a-z][A-Za-z0-9]*$"));
             assertThat((String) taskType.get("taskTypeName"), matchesPattern("[A-Z]*$|^[A-Z][A-Za-z \\-]*[A-Za-z]$"));
         }
