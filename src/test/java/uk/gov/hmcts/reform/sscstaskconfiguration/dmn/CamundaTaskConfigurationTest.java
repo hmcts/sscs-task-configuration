@@ -146,8 +146,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewInformationRequested",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "300", true)
-                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue(DESCRIPTION, "[Review Information Requested](/case/SSCS/Benefit/"
                         + "${[CASE_REFERENCE]}/trigger/interlocInformationReceived)",true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
@@ -205,8 +205,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION, "[Action Unprocessed Correspondence](/case/SSCS/Benefit"
-                        + "/${[CASE_REFERENCE]}/trigger/actionUnprocessedCorrespondence)", true)
+                    .expectedValue(DESCRIPTION, "[Action Further Evidence](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/actionFurtherEvidence)", true)
                     .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "10", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .build()
