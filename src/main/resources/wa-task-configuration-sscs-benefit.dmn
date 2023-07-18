@@ -40,7 +40,7 @@ null</text>
           <text>"caseName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1rfnlqn">
-          <text>caseData.caseNamePublic</text>
+          <text>if(caseData!=null and caseData.caseNamePublic !=null) then caseData.caseNamePublic else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1s03bv2">
           <text>true</text>
