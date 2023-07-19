@@ -27,7 +27,7 @@ null</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Name" name="name" typeRef="string" biodi:width="214" />
-      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803" />
+      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="545" />
       <output id="OutputClause_0a7y3b4" label="Can Reconfigure?" name="canReconfigure" typeRef="boolean" />
       <rule id="DecisionRule_0v043ob">
         <inputEntry id="UnaryTests_1l01q3m">
@@ -75,7 +75,7 @@ null</text>
           <text>"location"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jb6taf">
-          <text>if(caseData!=null and caseData.regionalProcessingCenter!=null) then caseData.regionalProcessingCenter.epimsId else ""</text>
+          <text>if(caseData!=null and caseData.regionalProcessingCenter!=null and caseData.regionalProcessingCenter.epimsId!=null) then caseData.regionalProcessingCenter.epimsId else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0t0wpwg">
           <text>true</text>
