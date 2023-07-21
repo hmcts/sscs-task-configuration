@@ -245,7 +245,7 @@ else
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1a2n5d2">
-          <text>"CTSC-Administrator"</text>
+          <text>"CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1754hp2">
           <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
@@ -272,7 +272,7 @@ else
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_154p6dw">
-          <text>"CTSC-Administrator"</text>
+          <text>"CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dhvrmb">
           <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
@@ -299,7 +299,7 @@ else
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0kftsid">
-          <text>"CTSC-Administrator"</text>
+          <text>"CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11tv2hj">
           <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn"</text>
@@ -405,7 +405,7 @@ else
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_154828g">
-          <text>"CTSC-Administrator"</text>
+          <text>"CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bx8mjo">
           <text>"Read","Own","Claim","Unclaim","Manage","Cancel","UnclaimAssign","CompleteOwn"</text>
