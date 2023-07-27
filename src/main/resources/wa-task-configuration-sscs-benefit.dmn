@@ -215,7 +215,7 @@ null</text>
           <text>"minorPriority"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xxo6ds">
-          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 500 else 300</text>
+          <text>300</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0m753dr">
           <text>true</text>
@@ -251,7 +251,7 @@ null</text>
           <text>"majorPriority"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1al9tsm">
-          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 5000 else 6000</text>
+          <text>6000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zukoi1">
           <text>true</text>
@@ -269,7 +269,7 @@ null</text>
           <text>"majorPriority"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_123h2cy">
-          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 5000 else 3000</text>
+          <text>3000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0587fwj">
           <text>true</text>
@@ -320,7 +320,7 @@ null</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12okm4q">
-          <text>"[Review FTA Response](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)"</text>
+          <text>"[Response reviewed](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ehr5wt">
           <text>true</text>
@@ -390,7 +390,7 @@ null</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0slkx69">
-          <text>"[Action Unprocessed Correspondence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionUnprocessedCorrespondence)"</text>
+          <text>"[Action further evidence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionFurtherEvidence)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kviqys">
           <text>true</text>

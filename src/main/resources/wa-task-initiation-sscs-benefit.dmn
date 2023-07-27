@@ -44,36 +44,6 @@
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="955" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="208" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="273" />
-      <rule id="DecisionRule_1k8i9hn">
-        <description>This event is automatically set in the backend to be sent to the TCW</description>
-        <inputEntry id="UnaryTests_0h7w1r5">
-          <text>"nonCompliant"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_04h5jg8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1wvprxb">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_186kf4g">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1f3k7q8">
-          <text>"nonCompliantCase"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0el1oa6">
-          <text>"Review non-compliant appeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_133o9s1">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ukwua4">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0mhv54f">
-          <text>"Non-compliant appeal"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1xca00x">
         <inputEntry id="UnaryTests_0m0pdx9">
           <text>"draftToIncompleteApplication", "incompleteApplicationReceived"</text>
@@ -137,7 +107,7 @@
           <text>"requestInfoIncompleteApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lh9r0z">
-          <text>"withDwp"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0eauflk">
           <text></text>
@@ -152,7 +122,7 @@
           <text>"Review Information Requested"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bi0kgo">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_007uex6">
           <text>3</text>
@@ -614,7 +584,7 @@ null</text>
         <outputEntry id="LiteralExpression_1veyac7">
           <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
         </outputEntry>
-      </rule>      
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

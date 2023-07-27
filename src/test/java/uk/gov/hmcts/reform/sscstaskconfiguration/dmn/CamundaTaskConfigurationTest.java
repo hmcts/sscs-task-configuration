@@ -159,7 +159,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION, "[Review FTA Response](/case/SSCS/Benefit/"
+                    .expectedValue(DESCRIPTION, "[Response reviewed](/case/SSCS/Benefit/"
                         + "${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
@@ -205,8 +205,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION, "[Action Unprocessed Correspondence](/case/SSCS/Benefit"
-                        + "/${[CASE_REFERENCE]}/trigger/actionUnprocessedCorrespondence)", true)
+                    .expectedValue(DESCRIPTION, "[Action further evidence](/case/SSCS/Benefit"
+                        + "/${[CASE_REFERENCE]}/trigger/actionFurtherEvidence)", true)
                     .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "10", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .build()

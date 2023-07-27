@@ -37,19 +37,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         return Stream.of(
             Arguments.of(
-                "nonCompliant",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "nonCompliantCase",
-                        "name", "Review non-compliant appeal",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "Non-compliant appeal"
-                    )
-                )
-            ),
-            Arguments.of(
                 "draftToIncompleteApplication",
                 null,
                 null,
@@ -77,13 +64,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "requestInfoIncompleteApplication",
-                "withDwp",
+                null,
                 null,
                 singletonList(
                     Map.of(
                         "taskId", "reviewInformationRequested",
                         "name", "Review Information Requested",
-                        "delayDuration", 2,
                         "workingDaysAllowed", 3,
                         "processCategories", "reviewInformationRequested"
                     )
@@ -181,20 +167,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "requestInfoIncompleteApplication",
-                "withDwp",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInformationRequested",
-                        "name", "Review Information Requested",
-                        "delayDuration", 2,
-                        "workingDaysAllowed", 3,
-                        "processCategories", "reviewInformationRequested"
-                    )
-                )
-            ),
-            Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
                 Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
@@ -283,20 +255,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
                         "processCategories", "Routine work"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestInfoIncompleteApplication",
-                "withDwp",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInformationRequested",
-                        "name", "Review Information Requested",
-                        "delayDuration", 2,
-                        "workingDaysAllowed", 3,
-                        "processCategories", "reviewInformationRequested"
                     )
                 )
             ),
@@ -503,7 +461,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(16));
+        assertThat(logic.getRules().size(), is(15));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
