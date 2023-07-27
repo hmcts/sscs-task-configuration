@@ -105,21 +105,21 @@ public class Permissions {
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             Map.of(
-                "name", "Allocated-Admin-Caseworker",
+                "name", "allocated-admin-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
                 "assignmentPriority", 1,
                 "roleCategory", "ADMIN",
                 "autoAssignable", true
             ),
             Map.of(
-                "name", "Regional-Centre-Admin",
+                "name", "regional-centre-admin",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
                 "assignmentPriority", 2,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             ),
             Map.of(
-                "name", "Regional-Centre-Team-Leader",
+                "name", "regional-centre-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
                 "assignmentPriority", 3,
                 "roleCategory", "ADMIN",
