@@ -9,16 +9,23 @@
   </suppress>
   <suppress>
     <notes><![CDATA[
-   file name: jackson-core-2.14.1.jar
+   file name: jackson-core-2.14.2.jar
    ]]></notes>
     <packageUrl regex="true">^pkg:maven/com\.fasterxml\.jackson\.core/jackson\-core@.*$</packageUrl>
     <cve>CVE-2022-45688</cve>
   </suppress>
   <suppress>
     <notes><![CDATA[
+   file name: jackson-databind-2.14.2.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/com\.fasterxml\.jackson\.core/jackson\-databind@.*$</packageUrl>
+    <cve>CVE-2023-35116</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
    file name: spring-web-5.3.26.jar
    ]]></notes>
-    <packageUrl regex="true">^pkg:maven/org\.springframework/spring\-web@5.3.26$</packageUrl>
+    <packageUrl regex="true">^pkg:maven/org\.springframework/spring\-web@5.3.29$</packageUrl>
     <cve>CVE-2016-1000027</cve>
   </suppress>
   <suppress>
@@ -27,5 +34,12 @@
    ]]></notes>
     <packageUrl regex="true">^pkg:maven/org\.springframework/spring\-.*@5.3.26$</packageUrl>
     <cve>CVE-2023-20863</cve>
+  </suppress>
+  <suppress>
+    <notes><![CDATA[
+   file name: guava-31.1-jre.jar
+   ]]></notes>
+    <packageUrl regex="true">^pkg:maven/com\.google\.guava/guava@31.1-jre$</packageUrl>
+    <cve>CVE-2023-2976</cve>
   </suppress>
 </suppressions>
