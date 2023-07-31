@@ -32,7 +32,7 @@ else
           <text>"case-allocator"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0sv8j8m">
-          <text>"Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
+          <text>"Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ccignx">
           <text></text>
@@ -59,7 +59,7 @@ else
           <text>"task-supervisor"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gda35a">
-          <text>"Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
+          <text>"Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0uxj36c">
           <text></text>
