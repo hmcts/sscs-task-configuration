@@ -286,7 +286,7 @@ null</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_09hhurs">
-          <text>"[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)"</text>
+          <text>"[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestForInformation)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1g4fbsy">
           <text>true</text>

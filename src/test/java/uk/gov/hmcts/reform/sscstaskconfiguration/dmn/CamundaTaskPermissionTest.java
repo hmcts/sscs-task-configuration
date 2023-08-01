@@ -39,12 +39,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "name", "case-allocator",
-                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                         "autoAssignable", false
                     ),
                     Map.of(
                         "name", "task-supervisor",
-                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                         "autoAssignable", false
                     )
                 )
@@ -80,12 +80,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "name", "case-allocator",
-                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                         "autoAssignable", false
                     ),
                     Map.of(
                         "name", "task-supervisor",
-                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                         "autoAssignable", false
                     ),
                     Map.of(
@@ -158,12 +158,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         return List.of(
             Map.of(
                 "name", "case-allocator",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "task-supervisor",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                 "autoAssignable", false
             ),
             Map.of(
@@ -194,12 +194,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         return List.of(
             Map.of(
                 "name", "case-allocator",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "task-supervisor",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                 "autoAssignable", false
             ),
             Map.of(
@@ -230,12 +230,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         return List.of(
             Map.of(
                 "name", "case-allocator",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "task-supervisor",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                 "autoAssignable", false
             ),
             Map.of(
