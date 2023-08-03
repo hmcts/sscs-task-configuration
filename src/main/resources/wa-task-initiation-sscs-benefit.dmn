@@ -70,7 +70,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1y54qlr">
-          <text>"Routine work"</text>
+          <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0fw59xg">
@@ -104,7 +104,7 @@
       </rule>
       <rule id="DecisionRule_02rz2kk">
         <inputEntry id="UnaryTests_0rqm4u2">
-          <text>"requestInfoIncompleteApplication"</text>
+          <text>"requestForInformation"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lh9r0z">
           <text></text>
@@ -276,7 +276,7 @@
           <text>10</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1l3zbqn">
-          <text>"Routine work"</text>
+          <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_15u0n7b">

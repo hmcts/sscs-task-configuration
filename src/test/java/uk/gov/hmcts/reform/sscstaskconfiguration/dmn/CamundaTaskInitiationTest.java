@@ -45,7 +45,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -58,12 +58,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
             Arguments.of(
-                "requestInfoIncompleteApplication",
+                "requestForInformation",
                 null,
                 null,
                 singletonList(
@@ -84,7 +84,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -97,7 +97,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -110,7 +110,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -123,7 +123,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -136,7 +136,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -149,7 +149,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -162,7 +162,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -209,7 +209,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -228,7 +228,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -241,7 +241,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -254,7 +254,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -292,7 +292,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -311,7 +311,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -336,7 +336,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -345,7 +345,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document",
                                  10, "Translation Tasks")
                 .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence",
-                                 10, "Routine work")
+                                 10, "actionUnprocessedCorrespondence")
                 .build(),
             event("uploadWelshDocument")
                 .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
