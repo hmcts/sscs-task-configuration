@@ -319,6 +319,37 @@
           <text>"reviewOutstandingDraftDecision"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0aqvykm">
+        <inputEntry id="UnaryTests_1eh15au">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vti5ug">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"validSendToInterloc",
+"makeCaseUrgent",
+"readyToList",
+"decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03psygx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a836rx">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p3qi9t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dqzhlr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1642yy5">
+          <text>"contactParties"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_06vo1lb">
         <inputEntry id="UnaryTests_0ivl1q1">
           <text></text>

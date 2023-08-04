@@ -103,8 +103,7 @@ null</text>
         <inputEntry id="UnaryTests_0ooc4t2">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate"</text>
+        <inputEntry id="UnaryTests_1j3y284">          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -155,7 +154,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0dd312o">
-          <text>"allocateCaseRolesAndCreateBundle"</text>
+          <text>"allocateCaseRolesAndCreateBundle","contactParties"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02ykby3">
           <text>"roleCategory"</text>
@@ -221,6 +220,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1uixk45">
+        <inputEntry id="UnaryTests_15j669q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fkxhel">
+          <text>"contactParties"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tnvwwr">
+          <text>"minorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mj8lhz">
+          <text>100</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yhgvie">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0j08ox4">
         <description>Default priorty</description>
         <inputEntry id="UnaryTests_01wd578">
@@ -272,6 +288,23 @@ null</text>
           <text>3000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0587fwj">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jbhr3j">
+        <inputEntry id="UnaryTests_0tn8bm4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_024rpcl">
+          <text>"contactParties"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14j8b6m">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hritym">
+          <text>1000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_118ixaz">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -649,6 +682,23 @@ null</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xobr9s">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y7rfmo">
+        <inputEntry id="UnaryTests_0hbo4py">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wgpkdb">
+          <text>"contactParties"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0h8uqik">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sa0xhh">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uvaig6">
           <text>true</text>
         </outputEntry>
       </rule>

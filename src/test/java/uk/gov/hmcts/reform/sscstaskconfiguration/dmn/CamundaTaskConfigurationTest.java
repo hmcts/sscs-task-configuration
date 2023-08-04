@@ -27,11 +27,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_SSCS_BENEFIT;
-import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DESCRIPTION;
-import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS;
-import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DUE_DATE_NON_WORKING_CALENDAR;
-import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.MAJOR_PRIORITY;
-import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.MINOR_PRIORITY;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.*;
 
 @Slf4j
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
@@ -43,9 +39,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             // no hearings
             Arguments.of(
             "reviewIncompleteAppeal",
-            CaseDataBuilder.defaultCase()
-                .build(),
+            CaseDataBuilder.defaultCase().build(),
             ConfigurationExpectationBuilder.defaultExpectations()
+                .expectedValue(DESCRIPTION, eventLink("Request Information From Party", "requestForInformation"), true)
                 .build()
             ),
             // past hearing only
@@ -55,6 +51,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .withHearing(CaseDataBuilder.createHearing("1234567", DateUtils.lastMonth()))
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(DESCRIPTION, eventLink("Request Information From Party", "requestForInformation"), true)
                     .build()
             ),
             // hearing today
@@ -64,12 +61,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .withHearing(CaseDataBuilder.createHearing("1234567", DateUtils.today()))
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
-                                   DateUtils.today(-10),true)
-                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
-                                   "1234567",true)
-                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
-                                   DateUtils.today(),true)
+                    .expectedValue(PRIORITY_DATE, DateUtils.today(-10),true)
+                    .expectedValue(NEXT_HEARING_ID,"1234567",true)
+                    .expectedValue(NEXT_HEARING_DATE, DateUtils.today(),true)
+                    .expectedValue(DESCRIPTION, eventLink("Request Information From Party", "requestForInformation"), true)
                     .build()
             ),
             // one future hearing
@@ -79,12 +74,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .withHearing(CaseDataBuilder.createHearing("1234567", DateUtils.tomorrow()))
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
-                                   DateUtils.tomorrow(-10),true)
-                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
-                                   "1234567",true)
-                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
-                                   DateUtils.tomorrow(),true)
+                    .expectedValue(PRIORITY_DATE, DateUtils.tomorrow(-10),true)
+                    .expectedValue(NEXT_HEARING_ID, "1234567",true)
+                    .expectedValue(NEXT_HEARING_DATE, DateUtils.tomorrow(),true)
+                    .expectedValue(DESCRIPTION, eventLink("Request Information From Party", "requestForInformation"), true)
                     .build()
             ),
             // future hearings wrong order
@@ -96,12 +89,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         CaseDataBuilder.createHearing("1111111", DateUtils.tomorrow())))
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
-                                   DateUtils.tomorrow(-10), true)
-                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
-                                   "1111111",true)
-                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
-                                   DateUtils.tomorrow(),true)
+                    .expectedValue(PRIORITY_DATE, DateUtils.tomorrow(-10), true)
+                    .expectedValue(NEXT_HEARING_ID, "1111111",true)
+                    .expectedValue(NEXT_HEARING_DATE, DateUtils.tomorrow(),true)
+                    .expectedValue(DESCRIPTION, eventLink("Request Information From Party", "requestForInformation"), true)
                     .build()
             ),
             // past and future hearing
@@ -114,12 +105,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         CaseDataBuilder.createHearing("3333333", DateUtils.nextMonth())))
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(ConfigurationExpectationBuilder.PRIORITY_DATE,
-                                   DateUtils.nextWeek(-10),true)
-                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_ID,
-                                   "2222222",true)
-                    .expectedValue(ConfigurationExpectationBuilder.NEXT_HEARING_DATE,
-                                   DateUtils.nextWeek(),true)
+                    .expectedValue(PRIORITY_DATE, DateUtils.nextWeek(-10),true)
+                    .expectedValue(NEXT_HEARING_ID, "2222222",true)
+                    .expectedValue(NEXT_HEARING_DATE, DateUtils.nextWeek(),true)
+                    .expectedValue(DESCRIPTION, eventLink(
+                        "Request Information From Party",
+                        "requestForInformation"), true)
                     .build()
             )
         );
@@ -130,7 +121,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewIncompleteAppeal",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations().build()
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(DESCRIPTION, eventLink(
+                        "Request Information From Party",
+                        "requestForInformation"), true)
+                    .build()
             ),
             Arguments.of(
                "reviewIncompleteAppeal",
@@ -138,6 +133,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .isScottishCase(YES)
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(DESCRIPTION, eventLink(
+                        "Request Information From Party",
+                        "requestForInformation"), true)
                     .expectedValue(DUE_DATE_NON_WORKING_CALENDAR,
                                    CourtSpecificCalendars.SCOTLAND_CALENDAR, true)
                     .build()
@@ -192,11 +190,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION,
-                        "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)<br/>"
-                        + "[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)<br/>"
-                        + "[Interloc Information Received](/case/SSCS/Benefit/${[CASE_REFERENCE]}"
-                            + "/trigger/interlocInformationReceived)", true)
+                    .expectedValue(DESCRIPTION, buildDescription(
+                        eventLink("Send to Judge", "validSendToInterloc"),
+                        eventLink("Send to TCW", "interlocSendToTcw"),
+                        eventLink("Interloc Information Received", "interlocInformationReceived")), true)
                     .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "10", true).build()
             ),
             Arguments.of(
@@ -239,10 +236,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION,"[Update Listing Requirements](/case/SSCS/Benefit/"
-                        + "${[CASE_REFERENCE]}/trigger/updateListingRequirements)<br/>"
-                        + "[Review Listing Error](/case/SSCS/Benefit/"
-                        + "${[CASE_REFERENCE]}/trigger/reviewListingError)", true)
+                    .expectedValue(DESCRIPTION, buildDescription(
+                        eventLink("Update Listing Requirements", "updateListingRequirements"),
+                            eventLink("Review Listing Error", "reviewListingError")), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .build()
             ),
@@ -274,8 +270,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION, "[Create a bundle in the case](/case/SSCS/Benefit"
-                        + "/${[CASE_REFERENCE]}/trigger/createBundle)", true)
+                    .expectedValue(DESCRIPTION, eventLink("Create a bundle in the case","createBundle"), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .expectedValue("workType", "hearing_work", true)
                     .expectedValue("roleCategory", "ADMIN", true)
@@ -288,9 +283,18 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue("workType", "hearing_work", true)
-                    .expectedValue(DESCRIPTION, "[Send to Judge](/case/SSCS/Benefit"
-                        + "/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)", true)
+                    .expectedValue(DESCRIPTION, eventLink("Send to Judge","tcwReferToJudge"), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
+                    .build()
+            ),
+            Arguments.of(
+                "contactParties",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "ADMIN", true)
+                    .expectedValue(MINOR_PRIORITY, "100", true)
+                    .expectedValue(MAJOR_PRIORITY, "1000", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .build()
             )
         );
@@ -320,7 +324,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(36));
+        assertThat(logic.getRules().size(), is(39));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
