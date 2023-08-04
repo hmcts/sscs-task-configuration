@@ -29,7 +29,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
 
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
-            event("nonCompliant").cancelAll().build(),
             event("addHearing").reconfigureAll().build(),
             event("caseUpdated").reconfigureAll().build(),
             event("voidCase")
@@ -100,6 +99,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("contactParties").build(),
             event("decisionIssued")
                 .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
                 .cancel("contactParties").build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks").build(),
@@ -133,6 +133,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(14));
+        assertThat(logic.getRules().size(), is(13));
     }
 }

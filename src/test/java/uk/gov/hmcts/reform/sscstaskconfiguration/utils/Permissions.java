@@ -7,12 +7,12 @@ public class Permissions {
 
     public static Map<String,Object> DEFAULT_CASE_ALLOCATOR_PERMISSIONS = Map.of(
         "name", "case-allocator",
-        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+        "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
         "autoAssignable", false
     );
     public static Map<String,Object> DEFAULT_TASK_SUPERVISOR_PERMISSIONS = Map.of(
         "name", "task-supervisor",
-        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+        "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
         "autoAssignable", false
     );
 
@@ -21,21 +21,21 @@ public class Permissions {
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             Map.of(
-                "name", "Allocated-CTSC-Caseworker",
+                "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
                 "assignmentPriority", 1,
                 "roleCategory", "CTSC",
                 "autoAssignable", true
             ),
             Map.of(
-                "name", "CTSC-Administrator",
+                "name", "ctsc",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
                 "assignmentPriority", 2,
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             ),
             Map.of(
-                "name", "CTSC-Team-Leader",
+                "name", "ctsc-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
                 "assignmentPriority", 3,
                 "roleCategory", "CTSC",
@@ -49,21 +49,21 @@ public class Permissions {
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             Map.of(
-                "name", "Allocated-Admin-Caseworker",
+                "name", "allocated-admin-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
                 "assignmentPriority", 1,
                 "roleCategory", "ADMIN",
                 "autoAssignable", true
             ),
             Map.of(
-                "name", "Regional-Centre-Admin",
+                "name", "regional-centre-admin",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
                 "assignmentPriority", 2,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             ),
             Map.of(
-                "name", "Regional-Centre-Team-Leader",
+                "name", "regional-centre-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
                 "assignmentPriority", 3,
                 "roleCategory", "ADMIN",
@@ -77,21 +77,21 @@ public class Permissions {
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             Map.of(
-                "name", "Allocated-CTSC-Caseworker",
+                "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
                 "assignmentPriority", 1,
                 "roleCategory", "CTSC",
                 "autoAssignable", true
             ),
             Map.of(
-                "name", "CTSC-Administrator",
+                "name", "ctsc",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
                 "assignmentPriority", 2,
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             ),
             Map.of(
-                "name", "CTSC-Team-Leader",
+                "name", "ctsc-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
                 "assignmentPriority", 3,
                 "roleCategory", "CTSC",

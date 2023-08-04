@@ -37,19 +37,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         return Stream.of(
             Arguments.of(
-                "nonCompliant",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "nonCompliantCase",
-                        "name", "Review non-compliant appeal",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "Non-compliant appeal"
-                    )
-                )
-            ),
-            Arguments.of(
                 "draftToIncompleteApplication",
                 null,
                 null,
@@ -58,7 +45,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -71,19 +58,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
             Arguments.of(
-                "requestInfoIncompleteApplication",
-                "withDwp",
+                "requestForInformation",
+                null,
                 null,
                 singletonList(
                     Map.of(
                         "taskId", "reviewInformationRequested",
                         "name", "Review Information Requested",
-                        "delayDuration", 2,
                         "workingDaysAllowed", 3,
                         "processCategories", "reviewInformationRequested"
                     )
@@ -98,7 +84,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -111,7 +97,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -124,7 +110,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -137,7 +123,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -150,7 +136,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -163,7 +149,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -176,21 +162,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestInfoIncompleteApplication",
-                "withDwp",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInformationRequested",
-                        "name", "Review Information Requested",
-                        "delayDuration", 2,
-                        "workingDaysAllowed", 3,
-                        "processCategories", "reviewInformationRequested"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -237,7 +209,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -256,7 +228,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -269,7 +241,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -282,21 +254,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewIncompleteAppeal",
                         "name", "Review Incomplete Appeal",
                         "workingDaysAllowed", 5,
-                        "processCategories", "Routine work"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestInfoIncompleteApplication",
-                "withDwp",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInformationRequested",
-                        "name", "Review Information Requested",
-                        "delayDuration", 2,
-                        "workingDaysAllowed", 3,
-                        "processCategories", "reviewInformationRequested"
+                        "processCategories", "reviewIncompleteAppeal"
                     )
                 )
             ),
@@ -334,7 +292,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -353,7 +311,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -378,7 +336,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "actionUnprocessedCorrespondence",
                         "name", "Action Unprocessed Correspondence",
                         "workingDaysAllowed", 10,
-                        "processCategories", "Routine work"
+                        "processCategories", "actionUnprocessedCorrespondence"
                     )
                 )
             ),
@@ -387,7 +345,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document",
                                  10, "Translation Tasks")
                 .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence",
-                                 10, "Routine work")
+                                 10, "actionUnprocessedCorrespondence")
                 .build(),
             event("uploadWelshDocument")
                 .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
@@ -510,7 +468,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(17));
+        assertThat(logic.getRules().size(), is(16));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
