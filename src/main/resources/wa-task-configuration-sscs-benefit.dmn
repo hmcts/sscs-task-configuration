@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <informationRequirement id="InformationRequirement_1t76wn6">
       <requiredDecision href="#sscs-task-configuration-non-working-days" />
@@ -133,12 +133,29 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_16basof">
+        <inputEntry id="UnaryTests_0b77bb4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vrw7w2">
+          <text>"shareRefusedDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0roxdgo">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1s8plsm">
+          <text>"post_hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o8wzv3">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0460vvp">
         <inputEntry id="UnaryTests_0pa4ux4">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","shareRefusedDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -191,7 +208,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","reviewBfDate","shareRefusedDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -245,7 +262,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0epq85p">
-          <text>"reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail"</text>
+          <text>"reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","shareRefusedDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1653vwt">
           <text>"majorPriority"</text>
@@ -649,6 +666,23 @@ null</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xobr9s">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0g3wc86">
+        <inputEntry id="UnaryTests_0akn19h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y0cr1v">
+          <text>"shareRefusedDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s71k06">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0coimng">
+          <text>20</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1859c36">
           <text>true</text>
         </outputEntry>
       </rule>
