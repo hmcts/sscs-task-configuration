@@ -430,6 +430,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0q3doc2">
+        <inputEntry id="UnaryTests_1gybgbw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gjlb0g">
+          <text>"reviewValidAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1m55a59">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f53jur">
+          <text>"[Welsh - Upload Translated Doc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/uploadWelshDocument)&lt;br/&gt;" + "[Cancel Translation](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/cancelTranslations)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tou6l9">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0w6ramv">
         <inputEntry id="UnaryTests_0i769ig">
           <text></text>
