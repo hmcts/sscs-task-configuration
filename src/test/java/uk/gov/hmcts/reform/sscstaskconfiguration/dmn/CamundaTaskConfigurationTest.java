@@ -241,8 +241,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
-                    .expectedValue(DESCRIPTION, "[Review Valid Appeal](/case/SSCS/Benefit"
-                        + "/${[CASE_REFERENCE]}/trigger/reviewValidAppeal)", true)
+                    .expectedValue(DESCRIPTION,
+                        "[Welsh - Upload Translated Doc]"
+                            + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/uploadWelshDocument)<br/>"
+                            + "[Cancel Translation]"
+                            + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/cancelTranslations)", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .build()
             ),
