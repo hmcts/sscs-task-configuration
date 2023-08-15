@@ -5,6 +5,10 @@ import java.util.Map;
 
 public class Permissions {
 
+    private Permissions() {
+        // Hide Utility Class Constructor
+    }
+
     public static Map<String,Object> DEFAULT_CASE_ALLOCATOR_PERMISSIONS = Map.of(
         "name", "case-allocator",
         "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
