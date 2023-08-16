@@ -140,6 +140,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "contactParties",
                 "someCaseData",
                 Permissions.defaultAdminCaseWorkerPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "reviewStatementofReasonsApplication",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
             )
         );
     }

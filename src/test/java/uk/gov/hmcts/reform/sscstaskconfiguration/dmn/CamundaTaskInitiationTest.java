@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -443,6 +444,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("actionPostponementRequest")
                 .withCaseData("daysToHearing", 6)
                 .initiativesTask("contactParties", "Contact Parties", 1)
+                .build(),
+            event("sORRequest")
+                .withCaseData("sscsHearingRecordings", emptyList())
+                .initiativesTask("reviewStatementofReasonsApplication", "Review Statement of Reasons Application", 2)
                 .build()
         );
     }
@@ -468,7 +473,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(16));
+        assertThat(logic.getRules().size(), is(17));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
