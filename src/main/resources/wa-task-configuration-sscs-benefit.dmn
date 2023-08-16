@@ -133,12 +133,29 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0zmxy4p">
+        <inputEntry id="UnaryTests_1ag93va">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j4fsmh">
+          <text>"reviewStatementofReasonsApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pimx2r">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1asur35">
+          <text>"post_hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dc09xx">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0460vvp">
         <inputEntry id="UnaryTests_0pa4ux4">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","reviewStatementofReasonsApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -191,7 +208,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewInformationRequested"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewInformationRequested","reviewStatementofReasonsApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -244,7 +261,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewBfDate","reviewInformationRequested"</text>
+          <text>"reviewIncompleteAppeal","reviewBfDate","reviewInformationRequested","reviewStatementofReasonsApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -533,6 +550,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1pixsqa">
+        <inputEntry id="UnaryTests_0lfy8nn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19i1p1r">
+          <text>"reviewStatementofReasonsApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_028yach">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11mntrm">
+          <text>"[Send to Interloc - Review statement of reasons application](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03s4gv2">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -657,7 +691,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewStatementofReasonsApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>
