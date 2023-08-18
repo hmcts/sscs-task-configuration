@@ -445,7 +445,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("daysToHearing", 6)
                 .initiativesTask("contactParties", "Contact Parties", 1)
                 .build(),
-            event("sORRequest")
+            eventWithState("sORRequest", "postHearing")
                 .withCaseData("sscsHearingRecordings", emptyList())
                 .initiativesTask("reviewStatementofReasonsApplication", "Review Statement of Reasons Application", 2)
                 .build()
