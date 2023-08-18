@@ -34,10 +34,12 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
         return Stream.of(
             eventAutoCompletesTasks("requestForInformation","reviewIncompleteAppeal"),
             eventAutoCompletesTasks("interlocInformationReceived", "reviewInformationRequested", "reviewAdminAction"),
-            eventAutoCompletesTasks("validSendToInterloc", Map.of("interlocReferralReason", "reviewStatementOfReasonsApplication"),
-                                    "reviewInformationRequested", "reviewAdminAction", "reviewStatementofReasonsApplication"),
-            eventAutoCompletesTasks("interlocSendToTcw",
-                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate"),
+            eventAutoCompletesTasks("validSendToInterloc",
+                                    Map.of("interlocReferralReason", "reviewStatementOfReasonsApplication"),
+                                    "reviewInformationRequested", "reviewAdminAction",
+                                    "reviewStatementofReasonsApplication"),
+            eventAutoCompletesTasks("interlocSendToTcw", "reviewInformationRequested", "reviewAdminAction",
+                                    "reviewFtaDueDate"),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse"),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument"),
             eventAutoCompletesTasks("actionFurtherEvidence","issueOutstandingTranslation"),
@@ -50,7 +52,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
-    void given_event_ids_should_evaluate_dmn(String eventId, Map<String, Map<String, Object>> map, List<Map<String, String>> expectation) {
+    void given_event_ids_should_evaluate_dmn(String eventId, Map<String, Map<String, Object>> map,
+                                             List<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("additionalData", map);
