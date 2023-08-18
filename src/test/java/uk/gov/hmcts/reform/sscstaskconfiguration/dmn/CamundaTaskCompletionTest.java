@@ -53,7 +53,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
-    void given_event_ids_should_evaluate_dmn(String eventId, Map<String, Map<String, Object>> map, List<Map<String, String>> expectation) {
+    void given_event_ids_should_evaluate_dmn(String eventId, Map<String, Map<String, Object>> map,
+                                             List<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("additionalData", map);
@@ -74,6 +75,13 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
+    public static Arguments eventAutoCompletesTasks(String event, Map<String, Object> caseData, String... tasks) {
+        return Arguments.of(event,
+                            Map.of("Data", caseData),
+                            Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toList())
+        );
+    }
+
     private static Map outputMap(String taskId) {
         if (taskId != null) return Map.of(
             "taskType", taskId,
@@ -81,16 +89,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
         );
         return Map.of(
             "completionMode", "Auto"
-        );
-    }
-
-    public static Arguments eventAutoCompletesTasks(String event, Map<String, Object> caseData, String... tasks) {
-        return Arguments.of(event,
-                            Map.of("Data", caseData),
-                            Arrays.stream(tasks).map(t -> Map.of(
-                                "taskType", t,
-                                "completionMode", "Auto"
-                            )).collect(Collectors.toList())
         );
     }
 }
