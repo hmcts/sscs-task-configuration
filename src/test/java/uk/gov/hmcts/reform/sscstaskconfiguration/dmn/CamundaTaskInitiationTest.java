@@ -436,6 +436,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "reviewOutstandingDraftDecision"
                     )
                 )
+            ),
+            Arguments.of(
+                "refuse",
+                "appealDormant",
+                Map.of("Data", Map.of("action", "refuse")),
+                singletonList(
+                    Map.of(
+                        "taskId", "shareRefusedDecision",
+                        "name", "Share Refused Decision",
+                        "workingDaysAllowed", 3,
+                        "processCategories", "shareRefusedDecision"
+                    )
+                )
             )
         );
     }
@@ -461,7 +474,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(15));
+        assertThat(logic.getRules().size(), is(16));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

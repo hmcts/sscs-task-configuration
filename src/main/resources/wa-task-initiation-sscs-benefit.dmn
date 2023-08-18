@@ -39,6 +39,15 @@
             null</text>
         </inputExpression>
       </input>
+      <input id="InputClause_0kj1wq9" label="Action">
+        <inputExpression id="LiteralExpression_08ew3uo" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.action
+            != null) then
+            additionalData.Data.action
+            else
+            null</text>
+        </inputExpression>
+      </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="955" />
@@ -55,6 +64,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1l6xrs4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10y6j98">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_16rjk56">
@@ -86,6 +98,9 @@
         <inputEntry id="UnaryTests_0m44hra">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1lelwqe">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_01zq61j">
           <text>"referredToInterlocJudge"</text>
         </outputEntry>
@@ -113,6 +128,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1x6e0h1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g1nm8y">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1rw39zd">
@@ -144,6 +162,9 @@
         <inputEntry id="UnaryTests_06twvx4">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_04s4hlh">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_14npkzr">
           <text>"reviewFtaResponse"</text>
         </outputEntry>
@@ -171,6 +192,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_3rdtw8a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mi3zdc">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1dvy239">
@@ -205,6 +229,9 @@
         <inputEntry id="UnaryTests_0tq8m1x">
           <text>true</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1dwlojf">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_020molb">
           <text>"reviewBilingualDocument"</text>
         </outputEntry>
@@ -232,6 +259,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1fnsevb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y7ytxo">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_13f3ypf">
@@ -263,6 +293,9 @@
         <inputEntry id="UnaryTests_1f8s4vb">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1rh73om">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_169r5qy">
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
@@ -290,6 +323,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0kt8czx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dtm20x">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_017dwto">
@@ -323,6 +359,9 @@ else 0</text>
         <inputEntry id="UnaryTests_01jgvo4">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1m1zyxv">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_132d9b7">
           <text>"reviewValidAppeal"</text>
         </outputEntry>
@@ -350,6 +389,9 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xhmuxk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lryjs0">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0iajs67">
@@ -381,6 +423,9 @@ else 0</text>
         <inputEntry id="UnaryTests_0iskgzf">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0j3viox">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1qjeqqv">
           <text>"reviewRoboticFail"</text>
         </outputEntry>
@@ -408,6 +453,9 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bh8fmt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02up2is">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02ma9kd">
@@ -439,6 +487,9 @@ else 0</text>
         <inputEntry id="UnaryTests_1ualttb">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1dr5lf9">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0fjsi2c">
           <text>"allocateCaseRolesAndCreateBundle"</text>
         </outputEntry>
@@ -468,6 +519,9 @@ else 0</text>
         <inputEntry id="UnaryTests_1tznkmo">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0b5sli7">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1vwc25i">
           <text>"reviewOutstandingDraftDecision"</text>
         </outputEntry>
@@ -486,16 +540,19 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_1yqfmj4">
         <inputEntry id="UnaryTests_0h7v21c">
-          <text></text>
+          <text>"refuse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1wu2785">
-          <text></text>
+          <text>"appealDormant","postHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_14mxmng">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0brvef4">
           <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jtijm7">
+          <text>"refuse"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_16h4m4x">
           <text>"shareRefusedDecision"</text>

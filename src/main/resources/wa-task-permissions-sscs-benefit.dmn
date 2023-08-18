@@ -212,7 +212,7 @@ else
       <rule id="DecisionRule_0414giw">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_1397xmn">
-          <text>"reviewBilingualDocument"</text>
+          <text>"reviewBilingualDocument","shareRefusedDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pji0fw">
           <text></text>
@@ -344,7 +344,7 @@ else
       </rule>
       <rule id="DecisionRule_17041zd">
         <inputEntry id="UnaryTests_1rasako">
-          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence","shareRefusedDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_04ehtmt">
           <text></text>
