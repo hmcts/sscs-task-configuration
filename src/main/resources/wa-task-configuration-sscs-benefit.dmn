@@ -138,7 +138,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j4fsmh">
-          <text>"reviewStatementofReasonsApplication"</text>
+          <text>"reviewStatementofReasonsApplication", "reviewLibertytoApplyApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0pimx2r">
           <text>"workType"</text>
@@ -184,6 +184,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0h9orul">
+        <inputEntry id="UnaryTests_0bv3yr6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19ayvus">
+          <text>"reviewLibertytoApplyApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wd2svu">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lbdyv1">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fl01pp">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1loicg1">
         <description>Hearing date if available minus 10 days</description>
         <inputEntry id="UnaryTests_039jxa1">
@@ -208,7 +225,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewStatementofReasonsApplication"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -261,7 +278,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewBfDate","reviewStatementofReasonsApplication"</text>
+          <text>"reviewIncompleteAppeal","reviewBfDate","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -708,7 +725,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewStatementofReasonsApplication"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewStatementofReasonsApplication","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>

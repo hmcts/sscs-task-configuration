@@ -214,6 +214,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0q0u897">
+        <inputEntry id="UnaryTests_1jeb37i">
+          <text>"libertyToApplyGranted","libertyToApplyRefused","directionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k9od2o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w5c3km">
+          <text>"reviewLibertytoApplyApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09vl3y4">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

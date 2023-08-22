@@ -524,6 +524,58 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0c4l3oz">
+        <inputEntry id="UnaryTests_1mx7gln">
+          <text>"reviewLibertytoApplyApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wedstj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11hw33i">
+          <text>"post-hearing-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ktpaub">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0heum6h">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1paczue">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s8a4ss">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02t9zz7">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bdyymm">
+        <inputEntry id="UnaryTests_0k7teac">
+          <text>"reviewLibertytoApplyApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u92cwp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o054rl">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jhcqah">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zj2n8i">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04abbvd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lpc3jm">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t7crdp">
+          <text>false</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
