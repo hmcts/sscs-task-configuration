@@ -543,7 +543,7 @@ else 0</text>
           <text>"refuse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1wu2785">
-          <text>"appealDormant","postHearing"</text>
+          <text>"dormantAppealState","postHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_14mxmng">
           <text></text>

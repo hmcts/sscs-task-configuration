@@ -439,7 +439,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "refuse",
-                "appealDormant",
+                "dormantAppealState",
                 Map.of("Data", Map.of("action", "refuse")),
                 singletonList(
                     Map.of(

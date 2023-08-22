@@ -16,7 +16,7 @@ else
         </inputExpression>
       </input>
       <output id="Output_1" label="Name" name="name" typeRef="string" biodi:width="220" />
-      <output id="OutputClause_1mzxe7i" label="Value" name="value" typeRef="string" biodi:width="615" />
+      <output id="OutputClause_1mzxe7i" label="Value" name="value" typeRef="string" biodi:width="759" />
       <output id="OutputClause_05whhwf" label="RoleCategory" name="roleCategory" typeRef="string" />
       <output id="OutputClause_16bocer" label="Authorisations" name="authorisations" typeRef="string" />
       <output id="OutputClause_1n914lw" label="Assignment Priority" name="assignmentPriority" typeRef="integer" />
@@ -32,7 +32,7 @@ else
           <text>"case-allocator"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0sv8j8m">
-          <text>"Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
+          <text>"Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ccignx">
           <text></text>
@@ -59,7 +59,7 @@ else
           <text>"task-supervisor"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gda35a">
-          <text>"Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
+          <text>"Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0uxj36c">
           <text></text>
@@ -301,7 +301,7 @@ else
           <text>"ctsc-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1t4cseo">
-          <text>"Read","Own","Claim","Unclaim","Manage","Cancel","UnclaimAssign","CompleteOwn"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_186yphk">
           <text>"CTSC"</text>
@@ -327,7 +327,7 @@ else
           <text>"ctsc"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bx8mjo">
-          <text>"Read","Own","Claim","Unclaim","Manage","Cancel","UnclaimAssign","CompleteOwn"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jg56wu">
           <text>"CTSC"</text>
@@ -344,7 +344,7 @@ else
       </rule>
       <rule id="DecisionRule_17041zd">
         <inputEntry id="UnaryTests_1rasako">
-          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence","shareRefusedDecision"</text>
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence","shareRefusedDecision","shareRefusedDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_04ehtmt">
           <text></text>
@@ -353,7 +353,7 @@ else
           <text>"ctsc-team-leader"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c7fhew">
-          <text>"Read","Own","Claim","Unclaim","Manage","UnclaimAssign","Assign","Unassign","Cancel","CompleteOwn"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1o1xc3z">
           <text>"CTSC"</text>
