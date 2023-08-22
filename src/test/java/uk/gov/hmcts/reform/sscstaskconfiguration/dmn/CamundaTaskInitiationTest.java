@@ -456,6 +456,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application", 2)
                 .build(),
             eventWithState("actionFurtherEvidence", "dormantAppealState")
+                .withCaseData("scannedDocumentTypes", List.of("libertyToApplyApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
                 .initiativesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application", 2)
                 .build()
         );
