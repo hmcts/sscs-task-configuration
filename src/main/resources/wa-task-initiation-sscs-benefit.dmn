@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
-      <input id="Input_1" label="Event Id" biodi:width="150" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="157" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -54,6 +54,36 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mhv54f">
           <text>"Non-compliant appeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_183kx83">
+        <description>Creates a "Review FTA validity challenge" and assigns to TCWs when "Challenge validity" event is submitted</description>
+        <inputEntry id="UnaryTests_17qhvzx">
+          <text>"dwpChallengeValidity"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o3awla">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iqg9fp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bhvp8e">
+          <text>"ftaChallengeValidity"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nv5ccv">
+          <text>"Review FTA validity challenge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pm4o6a">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07yjsfg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hml806">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zpdkq7">
+          <text>"Validity"</text>
         </outputEntry>
       </rule>
     </decisionTable>
