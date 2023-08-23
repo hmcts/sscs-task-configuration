@@ -228,6 +228,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_14z53k0">
+        <inputEntry id="UnaryTests_1minbnb">
+          <text>"correctionGranted","correctionRefused"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n8dkl2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ug82et">
+          <text>"reviewCorrectionApplicationJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_113sx9a">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -138,7 +138,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j4fsmh">
-          <text>"reviewStatementofReasonsApplication", "reviewLibertytoApplyApplication"</text>
+          <text>"reviewStatementofReasonsApplication", "reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0pimx2r">
           <text>"workType"</text>
@@ -189,7 +189,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_19ayvus">
-          <text>"reviewLibertytoApplyApplication"</text>
+          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wd2svu">
           <text>"roleCategory"</text>
@@ -225,7 +225,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -278,7 +278,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewBfDate","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication"</text>
+          <text>"reviewIncompleteAppeal","reviewBfDate","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -725,7 +725,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewStatementofReasonsApplication","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewStatementofReasonsApplication","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>

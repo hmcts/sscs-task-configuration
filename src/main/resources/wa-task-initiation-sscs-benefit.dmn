@@ -818,7 +818,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jt2012">
-          <text>hearingRecordingCount = 0</text>
+          <text>0</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1qnj542">
           <text></text>
@@ -865,7 +865,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1v711e1">
-          <text>interlocReferralReason = "reviewStatementOfReasonsApplication"</text>
+          <text>"reviewStatementOfReasonsApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08j8uyc">
           <text></text>
@@ -928,6 +928,94 @@ else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04f92eo">
           <text>"reviewLibertytoApplyApplication"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02o8ulc">
+        <inputEntry id="UnaryTests_1uzj2iz">
+          <text>"validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fr7x94">
+          <text>"postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m22ikb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fcbeq0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nhse8v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04zd3td">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gbf2r9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w9bpes">
+          <text>"reviewCorrectionApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ri8agh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h7xtwp">
+          <text>"reviewCorrectionApplicationJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0js876f">
+          <text>"Review Correction Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o57gi3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04unxmc">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1000cmv">
+          <text>"reviewCorrectionApplicationJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fca6pz">
+        <inputEntry id="UnaryTests_1vuk4zs">
+          <text>"actionFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qw3pf4">
+          <text>"postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u8njyu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_143keyk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09d8h7t">
+          <text>contains(scannedDocumentTypes, "correctionApplication")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wceh6b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tejx7d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wwn21j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cnzff5">
+          <text>"sendToInterlocReviewByJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03g4u6v">
+          <text>"reviewCorrectionApplicationJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rrt7ut">
+          <text>"Review Correction Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0l32avw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m0m5zu">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08uhqf5">
+          <text>"reviewCorrectionApplicationJudge"</text>
         </outputEntry>
       </rule>
     </decisionTable>

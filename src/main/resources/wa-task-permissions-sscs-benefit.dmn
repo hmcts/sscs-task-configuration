@@ -526,7 +526,7 @@ else
       </rule>
       <rule id="DecisionRule_0c4l3oz">
         <inputEntry id="UnaryTests_1mx7gln">
-          <text>"reviewLibertytoApplyApplication"</text>
+          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1wedstj">
           <text></text>
@@ -552,7 +552,7 @@ else
       </rule>
       <rule id="DecisionRule_1bdyymm">
         <inputEntry id="UnaryTests_0k7teac">
-          <text>"reviewLibertytoApplyApplication"</text>
+          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0u92cwp">
           <text></text>
