@@ -97,17 +97,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1lpw5y0">
-        <inputEntry id="UnaryTests_05raz0j">
-          <text>"uploadWelshDocument","cancelTranslations"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1l4fulw">
-          <text>"reviewValidAppeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1cwq0lt">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0m5vzzi">
         <inputEntry id="UnaryTests_1u0vf36">
           <text>"updateListingRequirement","readyToList"</text>
