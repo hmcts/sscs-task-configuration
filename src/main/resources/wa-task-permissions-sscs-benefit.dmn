@@ -157,7 +157,7 @@ else
       </rule>
       <rule id="DecisionRule_0nasu18">
         <inputEntry id="UnaryTests_16558sm">
-          <text>"reviewConfidentialityRequest"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_04qt2zh">
           <text></text>
@@ -183,8 +183,7 @@ else
       </rule>
       <rule id="DecisionRule_19cn0u8">
         <description>Standard CTSC permission</description>
-        <inputEntry id="UnaryTests_1vcxbly">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+        <inputEntry id="UnaryTests_1vcxbly">  <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hxa6gg">
           <text></text>
@@ -264,8 +263,7 @@ else
       </rule>
       <rule id="DecisionRule_0e3j7rq">
         <description>Standard CTSC permission</description>
-        <inputEntry id="UnaryTests_1kh84kf">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+        <inputEntry id="UnaryTests_1kh84kf"> <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0e41w3x">
           <text></text>
@@ -345,8 +343,7 @@ else
       </rule>
       <rule id="DecisionRule_0q51lrq">
         <description>Standard CTSC permission</description>
-        <inputEntry id="UnaryTests_03ctmk1">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+        <inputEntry id="UnaryTests_03ctmk1"><text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tw6aye">
           <text></text>
@@ -399,7 +396,7 @@ else
       </rule>
       <rule id="DecisionRule_11w1a99">
         <inputEntry id="UnaryTests_04reol6">
-          <text>"reviewConfidentialityRequest"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw32vm">
           <text></text>
@@ -425,7 +422,7 @@ else
       </rule>
       <rule id="DecisionRule_1gd7pun">
         <inputEntry id="UnaryTests_0horaye">
-          <text>"reviewConfidentialityRequest"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1rep4ng">
           <text></text>
@@ -451,7 +448,7 @@ else
       </rule>
       <rule id="DecisionRule_1a3ndv4">
         <inputEntry id="UnaryTests_0i1ce54">
-          <text>"reviewConfidentialityRequest"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yl9r0u">
           <text></text>

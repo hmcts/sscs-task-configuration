@@ -411,6 +411,38 @@ else 0</text>
           <text>"reviewConfidentialityRequest"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0q7nlyl">
+        <inputEntry id="UnaryTests_0c5dy7a">
+          <text>"actionFurtherEvidence","uploadWelshDocument","manageWelshDocuments"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17modb4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ibv1lx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ysxodc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fmohr6">
+          <text>contains(scannedDocumentTypes, "reinstatementRequest")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nqc08a">
+          <text>"reviewReinstatementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zl5g26">
+          <text>"Review Reinstatement Request"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p8eg5k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_181nlyb">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ui842j">
+          <text>"reviewReinstatementRequestJudge"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0ru3w7f">
         <inputEntry id="UnaryTests_1xo57u6">
           <text>"validAppealCreated"</text>

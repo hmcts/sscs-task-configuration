@@ -97,14 +97,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 defaultCtscPermissions()
             ),
             Arguments.of(
-                "reviewBilingualDocument",
-                "someCaseData",
-                defaultCtscPermissionsWithCompleteOwn()
-            ),
-            Arguments.of(
                 "issueOutstandingTranslation",
                 "someCaseData",
                 defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewBilingualDocument",
+                "someCaseData",
+                defaultCtscPermissionsWithCompleteOwn()
             ),
             Arguments.of(
                 "reviewAdminAction",
@@ -115,23 +115,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewFtaDueDate",
                 "someCaseData",
                 defaultCtscPermissions()
-            ),
-            Arguments.of(
-                "reviewFtaDueDate",
-                "someCaseData",
-                defaultCtscPermissions()
-            ),
-            Arguments.of(
-                "reviewConfidentialityRequest",
-                "someCaseData",
-                List.of(
-                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
-                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
-                )
             ),
             Arguments.of(
                 "actionUnprocessedCorrespondence",
@@ -171,11 +154,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "reviewFtaDueDate",
-                "someCaseData",
-                defaultCtscPermissions()
-            ),
-            Arguments.of(
                 "reviewValidAppeal",
                 "someCaseData",
                 defaultCtscPermissions()
@@ -189,6 +167,16 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewRoboticFail",
                 "someCaseData",
                 defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewConfidentialityRequest",
+                "someCaseData",
+                defaultPermissionsJudgesReviewTasks()
+            ),
+            Arguments.of(
+                "reviewReinstatementRequestJudge",
+                "someCaseData",
+                defaultPermissionsJudgesReviewTasks()
             ),
             Arguments.of(
                 "reviewBfDate",
@@ -313,6 +301,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             )
+        );
+    }
+
+    private static List<Map<String, Object>> defaultPermissionsJudgesReviewTasks() {
+        return List.of(
+            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
+            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
         );
     }
 

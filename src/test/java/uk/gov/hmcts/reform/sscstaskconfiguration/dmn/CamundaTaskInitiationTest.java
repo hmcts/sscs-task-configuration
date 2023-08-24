@@ -34,7 +34,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     static Stream<Arguments> scenarioProvider() {
-
         return Stream.of(
             Arguments.of(
                 "nonCompliant",
@@ -213,6 +212,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of("Data", Map.of("dwpFurtherInfo", "No")),
                 List.of()
             ),
+            Arguments.of(
+                "dwpSupplementaryResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Translation Tasks"
+                    ),
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "actionUnprocessedCorrespondence"
+                    )
+                )
+            ),
             event("sendToAdmin")
                 .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
                 .build(),
@@ -370,16 +388,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence",
                                  10)
                 .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
+                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
+                .build(),
             event("uploadWelshDocument")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
                 .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
                                  10, "Translation Tasks")
+                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
                 .build(),
-            event("sendToAdmin")
-                .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
-                .build(),
-            eventWithState("appealCreated", "withFta")
-                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
-                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
+                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
                 .build(),
             Arguments.of(
                 "validAppealCreated",
@@ -598,7 +619,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(17));
+        assertThat(logic.getRules().size(), is(18));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
