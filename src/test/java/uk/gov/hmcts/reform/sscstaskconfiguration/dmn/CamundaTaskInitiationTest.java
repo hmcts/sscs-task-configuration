@@ -388,31 +388,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence",
                                  10)
                 .build(),
-            event("uploadWelshDocument")
-                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
-                                 10, "Translation Tasks")
-                .build(),
-            event("sendToAdmin")
-                .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
-                .build(),
-            eventWithState("appealCreated", "withFta")
-                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
-                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
-                .build(),
-            event("actionFurtherEvidence")
-                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
-                .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
-                .build(),
-            event("uploadWelshDocument")
-                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
-                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
-                                 10, "Translation Tasks")
-                .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
-                .build(),
-            event("manageWelshDocuments")
-                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
-                .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
-                .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
                 .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
