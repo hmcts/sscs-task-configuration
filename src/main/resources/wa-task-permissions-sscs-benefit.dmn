@@ -32,7 +32,7 @@ else
           <text>"case-allocator"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0sv8j8m">
-          <text>"Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
+          <text>"Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ccignx">
           <text></text>
@@ -59,7 +59,7 @@ else
           <text>"task-supervisor"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gda35a">
-          <text>"Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
+          <text>"Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0uxj36c">
           <text></text>
@@ -155,6 +155,32 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0nasu18">
+        <inputEntry id="UnaryTests_16558sm">
+          <text>"reviewConfidentialityRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04qt2zh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i3xmqg">
+          <text>"tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y2xefk">
+          <text>"Read,Execute,Unclaim"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yfqk4e">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pi24cy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wx5jgo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c8jv3l">
+          <text>false</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_19cn0u8">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1vcxbly">
@@ -209,9 +235,9 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0c3d5wr">
-        <description>Standard CTSC permission with CompleteOwn</description>
-        <inputEntry id="UnaryTests_0qvjw35">
+      <rule id="DecisionRule_0e3o7rq">
+        <description>Standard CTSC permission</description>
+        <inputEntry id="UnaryTests_1kc55kf">
           <text>"actionUnprocessedCorrespondence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09za0uf">
@@ -236,9 +262,9 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0e3o7rq">
+      <rule id="DecisionRule_0e3j7rq">
         <description>Standard CTSC permission</description>
-        <inputEntry id="UnaryTests_1kc55kf">
+        <inputEntry id="UnaryTests_1kh84kf">
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0e41w3x">
@@ -263,8 +289,35 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1wtxh4u">
+      <rule id="DecisionRule_1ixi90a">
         <description>Standard CTSC permission with CompleteOwn</description>
+        <inputEntry id="UnaryTests_070qpxe">
+          <text>"reviewBilingualDocument"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mtnbmi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1iw20zy">
+          <text>"CTSC-Administrator"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tf7pwc">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ifhafp">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14t6yao">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00j65u2">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1558221">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wtxh4u">
+        <description>Standard CTSC permission with Cancel and CompleteOwn</description>
         <inputEntry id="UnaryTests_0pqcwnw">
           <text>"actionUnprocessedCorrespondence"</text>
         </inputEntry>
@@ -287,33 +340,6 @@ else
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kk50cn">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0414giw">
-        <description>Standard CTSC permission with CompleteOwn</description>
-        <inputEntry id="UnaryTests_1397xmn">
-          <text>"reviewBilingualDocument"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0pji0fw">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0kftsid">
-          <text>"CTSC-Administrator"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_11tv2hj">
-          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1k7bfb4">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0vpkqud">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0irw01b">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0bl1ifu">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -368,6 +394,84 @@ else
           <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11whir3">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11w1a99">
+        <inputEntry id="UnaryTests_04reol6">
+          <text>"reviewConfidentialityRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sw32vm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qu12mi">
+          <text>"interloc-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xqvypw">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00t5lwl">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qru41l">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v3mfp7">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18icg6r">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gd7pun">
+        <inputEntry id="UnaryTests_0horaye">
+          <text>"reviewConfidentialityRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rep4ng">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tygxbs">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_150vvos">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qiwznf">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1clm721">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bb2pcl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dlzhuy">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1a3ndv4">
+        <inputEntry id="UnaryTests_0i1ce54">
+          <text>"reviewConfidentialityRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yl9r0u">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04yjtib">
+          <text>"fee-paid-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hkkhsu">
+          <text>"Read,Own,Claim,Unclaim"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z7vq9r">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dx42o1">
+          <text>368</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16haa1h">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15hg7hf">
           <text>false</text>
         </outputEntry>
       </rule>

@@ -32,12 +32,6 @@ public class CaseDataBuilder {
         return this;
     }
 
-    public CaseDataBuilder withNextHearing(String hearingId, String hearingDate) {
-        caseData.put("nextHearingId", hearingId);
-        caseData.put("nextHearingDate", hearingDate);
-        return this;
-    }
-
     public CaseDataBuilder withRegionalProgressingCentre(String id, String name) {
         caseData.put("regionalProcessingCenter", Map.of(
             "name", name,

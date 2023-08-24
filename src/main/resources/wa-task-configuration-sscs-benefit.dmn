@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
-    <informationRequirement id="InformationRequirement_1t76wn6">
-      <requiredDecision href="#sscs-task-configuration-non-working-days" />
-    </informationRequirement>
     <informationRequirement id="InformationRequirement_172js3g">
       <requiredDecision href="#nextHearing" />
     </informationRequirement>
@@ -116,6 +113,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1lvz2py">
+        <inputEntry id="UnaryTests_0grdkbd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a9atyt">
+          <text>"reviewConfidentialityRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xklqhp">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n1ugbr">
+          <text>"pre_hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c8uu42">
+					<text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_17ycln9">
         <inputEntry id="UnaryTests_0t7w2jf">
           <text></text>
@@ -137,8 +151,7 @@ null</text>
         <inputEntry id="UnaryTests_0pa4ux4">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+        <inputEntry id="UnaryTests_14syl1g"> <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -147,6 +160,23 @@ null</text>
           <text>"CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02omkc8">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i2nhzv">
+        <inputEntry id="UnaryTests_05olspb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lqa97e">
+          <text>"reviewConfidentialityRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ga9m4z">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uzw2y1">
+          <text>"Judicial"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lymbb3">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -191,7 +221,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest","reviewValidAppeal","reviewRoboticFail","reviewBfDate"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -227,7 +257,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest","reviewBfDate"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -584,23 +614,6 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0vryjpz">
-        <inputEntry id="UnaryTests_1fy938w">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1dlxkjg">
-          <text>"reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1vmpg33">
-          <text>"dueDateIntervalDays"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1wp4c3a">
-          <text>10</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0c7f3mw">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0v3ob2a">
         <inputEntry id="UnaryTests_0zacm9e">
           <text></text>
@@ -640,7 +653,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>
@@ -649,6 +662,23 @@ null</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xobr9s">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vryjpz">
+        <inputEntry id="UnaryTests_1fy938w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dlxkjg">
+          <text>"reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vmpg33">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wp4c3a">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c7f3mw">
           <text>true</text>
         </outputEntry>
       </rule>

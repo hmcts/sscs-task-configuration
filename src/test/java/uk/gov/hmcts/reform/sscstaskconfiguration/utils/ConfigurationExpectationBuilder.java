@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ConfigurationExpectationBuilder {
 
@@ -25,6 +26,12 @@ public class ConfigurationExpectationBuilder {
     public static String DUE_DATE_NON_WORKING_CALENDAR = "dueDateNonWorkingCalendar";
     public static String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
 
+    private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
+        CASE_NAME,CASE_MANAGEMENT_CATEGORY,LOCATION,LOCATION_NAME,WORK_TYPE,ROLE_CATEGORY,
+        PRIORITY_DATE, MINOR_PRIORITY, MAJOR_PRIORITY, DESCRIPTION, NEXT_HEARING_ID, NEXT_HEARING_DATE,
+        DUE_DATE_ORIGIN, DUE_DATE_NON_WORKING_CALENDAR, DUE_DATE_INTERVAL_DAYS
+    );
+
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
 
     private Map<String,Map<String,Object>> expectations = new HashMap<>();
@@ -40,10 +47,6 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(PRIORITY_DATE, "", true);
         builder.expectedValue(MINOR_PRIORITY, "500", true);
         builder.expectedValue(MAJOR_PRIORITY, "5000", true);
-        builder.expectedValue(DESCRIPTION,"[Request Information From Party](/case/SSCS/Benefit/"
-                + "${[CASE_REFERENCE]}/trigger/requestInfoIncompleteApplication)",
-            true
-        );
         builder.expectedValue(NEXT_HEARING_ID, "", true);
         builder.expectedValue(NEXT_HEARING_DATE, "", true);
         builder.expectedValue(DUE_DATE_ORIGIN, now(), false);
@@ -52,24 +55,19 @@ public class ConfigurationExpectationBuilder {
         return builder;
     }
 
+    public static String eventLink(String description, String eventId) {
+        return String.format("[%s](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/%s)", description, eventId);
+    }
+
+    public static String buildDescription(String... lines) {
+        return Arrays.stream(lines).collect(Collectors.joining("<br/>"));
+    }
+
     public List<Map<String,Object>> build() {
-        return Arrays.asList(
-            expectations.get("caseName"),
-            expectations.get("caseManagementCategory"),
-            expectations.get("location"),
-            expectations.get("locationName"),
-            expectations.get("workType"),
-            expectations.get("roleCategory"),
-            expectations.get("priorityDate"),
-            expectations.get("minorPriority"),
-            expectations.get("majorPriority"),
-            expectations.get("description"),
-            expectations.get("nextHearingId"),
-            expectations.get("nextHearingDate"),
-            expectations.get("dueDateOrigin"),
-            expectations.get("dueDateNonWorkingCalendar"),
-            expectations.get("dueDateIntervalDays")
-        );
+        return EXPECTED_PROPERTIES.stream()
+            .filter(p -> expectations.containsKey(p))
+            .map(p -> expectations.get(p))
+            .collect(Collectors.toList());
     }
 
     public ConfigurationExpectationBuilder expectedValue(String name, Object value, boolean canReconfigure) {
