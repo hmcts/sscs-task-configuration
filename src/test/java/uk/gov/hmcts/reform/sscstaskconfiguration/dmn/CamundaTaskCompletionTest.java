@@ -46,14 +46,17 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("sendToAdmin","reviewConfidentialityRequest", "reviewReinstatementRequestJudge"),
             eventAutoCompletesTasks("directionIssued","reviewConfidentialityRequest", "reviewReinstatementRequestJudge"),
             eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest"),
-            eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest", "reviewReinstatementRequestJudge")
+            eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest", "reviewReinstatementRequestJudge"),
+            eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal"),
+            eventAutoCompletesTasks("updateListingRequirement","reviewListingError"),
+            eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail"),
+            eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle")
         );
     }
 
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
     void given_event_ids_should_evaluate_dmn(String eventId, List<Map<String, String>> expectation) {
-
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
 
@@ -63,11 +66,9 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
-
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(10));
-
+        assertThat(logic.getRules().size(), is(16));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {

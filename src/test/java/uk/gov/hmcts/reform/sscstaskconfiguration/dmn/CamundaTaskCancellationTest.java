@@ -38,39 +38,63 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewReinstatementRequestJudge").build(),
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("reviewRoboticFail")
+                .cancel("allocateCaseRolesAndCreateBundle")
+                .cancel("reviewOutstandingDraftDecision").build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewReinstatementRequestJudge").build(),
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("reviewRoboticFail")
+                .cancel("allocateCaseRolesAndCreateBundle")
+                .cancel("reviewOutstandingDraftDecision").build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewReinstatementRequestJudge").build(),
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("reviewRoboticFail")
+                .cancel("allocateCaseRolesAndCreateBundle")
+                .cancel("reviewOutstandingDraftDecision").build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewReinstatementRequestJudge").build(),
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("allocateCaseRolesAndCreateBundle")
+                .cancel("reviewOutstandingDraftDecision").build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
-                .cancel("reviewReinstatementRequestJudge").build(),
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("reviewRoboticFail")
+                .cancel("allocateCaseRolesAndCreateBundle")
+                .cancel("reviewOutstandingDraftDecision").build(),
             event("validSendToInterloc")
-                .cancel("reviewIncompleteAppeal").build(),
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewBfDate").build(),
             event("makeCaseUrgent")
                 .cancel("reviewIncompleteAppeal")
-                .cancel("reviewInformationRequested").build(),
+                .cancel("reviewInformationRequested")
+                .cancel("reviewBfDate").build(),
             event("readyToList")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -82,8 +106,13 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewReinstatementRequestJudge").build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks").build(),
+            event("interlocSendToTcw")
+                .cancel("reviewBfDate").build(),
             event("issueFinalDecision")
-                .cancel("reviewReinstatementRequestJudge").build()
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewOutstandingDraftDecision").build(),
+            event("issueAdjournmentNotice")
+                .cancel("reviewOutstandingDraftDecision").build()
         );
     }
 
@@ -104,12 +133,10 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
-
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(9));
-
+        assertThat(logic.getRules().size(), is(15));
     }
 }
