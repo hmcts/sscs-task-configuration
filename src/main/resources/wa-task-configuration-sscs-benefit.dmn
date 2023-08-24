@@ -138,7 +138,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j4fsmh">
-          <text>"reviewStatementofReasonsApplication", "reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
+          <text>"reviewStatementofReasonsApplication", "reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0pimx2r">
           <text>"workType"</text>
@@ -189,7 +189,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_19ayvus">
-          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
+          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wd2svu">
           <text>"roleCategory"</text>
@@ -225,7 +225,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -278,7 +278,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewBfDate","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
+          <text>"reviewIncompleteAppeal","reviewBfDate","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -666,6 +666,23 @@ null</text>
           <text>nonWorkingDayCalendar</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06j1l34">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1367vk5">
+        <inputEntry id="UnaryTests_0xsg83y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n0zye2">
+          <text>"writeStatementofReason"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wu8g4n">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ridiqr">
+          <text>28</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0izkehl">
           <text>true</text>
         </outputEntry>
       </rule>

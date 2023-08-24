@@ -189,6 +189,35 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "autoAssignable", false
                     )
                 )
+            ),
+            Arguments.of(
+                "writeStatementofReason",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Map.of(
+                        "name", "hearing-judge",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                        "assignmentPriority", 1,
+                        "roleCategory", "JUDICIAL",
+                        "autoAssignable", true
+                    ),
+                    Map.of(
+                        "name", "judge",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                        "assignmentPriority", 2,
+                        "roleCategory", "JUDICIAL",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "fee-paid-judge",
+                        "value", "Read,Own,Claim,Unclaim",
+                        "assignmentPriority", 3,
+                        "roleCategory", "JUDICIAL",
+                        "autoAssignable", false
+                    )
+                )
             )
         );
     }
@@ -229,7 +258,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(21));
+        assertThat(logic.getRules().size(), is(23));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

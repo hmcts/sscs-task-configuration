@@ -242,6 +242,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1evr7ae">
+        <inputEntry id="UnaryTests_1izcb0y">
+          <text>"sORWrite"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yqeo0e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jopy2y">
+          <text>"writeStatementofReason"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eugo1i">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

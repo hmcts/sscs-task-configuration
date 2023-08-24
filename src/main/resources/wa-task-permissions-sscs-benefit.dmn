@@ -550,9 +550,35 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1adys52">
+        <inputEntry id="UnaryTests_0y44beb">
+          <text>"writeStatementofReason"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l1mife">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vjcrsl">
+          <text>"hearing-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0axyxzk">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d59g07">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_051bgv2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_173wjbs">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wtw19c">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1bdyymm">
         <inputEntry id="UnaryTests_0k7teac">
-          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge"</text>
+          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0u92cwp">
           <text></text>
@@ -573,6 +599,32 @@ else
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0t7crdp">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17a4lft">
+        <inputEntry id="UnaryTests_10thjiq">
+          <text>"writeStatementofReason"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xv0jlb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vohhh5">
+          <text>"fee-paid-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g0tije">
+          <text>"Read,Own,Claim,Unclaim"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vcchrv">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kjhmn1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lfexph">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sn45ao">
           <text>false</text>
         </outputEntry>
       </rule>
