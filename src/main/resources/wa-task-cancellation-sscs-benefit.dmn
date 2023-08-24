@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-cancellation-sscs-benefit" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -7,7 +7,7 @@
           <text>fromState</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0ain215" label="Event">
+      <input id="InputClause_0ain215" label="Event" biodi:width="237">
         <inputExpression id="LiteralExpression_0h2l2zj" typeRef="string">
           <text>event</text>
         </inputExpression>
@@ -21,26 +21,355 @@
       <output id="OutputClause_0tu8bqp" label="Warning Code" name="warningCode" typeRef="string" />
       <output id="OutputClause_1kfc3jv" label="Warning Text" name="warningText" typeRef="string" />
       <output id="OutputClause_0dqzted" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="277" />
-      <rule id="DecisionRule_0w82l1w">
-        <inputEntry id="UnaryTests_1nfllzy">
+      <rule id="DecisionRule_13tyqnj">
+        <inputEntry id="UnaryTests_0zd4nd3">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0a7tgdv">
-          <text>"nonCompliant"</text>
+        <inputEntry id="UnaryTests_0ctrd86">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"validSendToInterloc",
+"makeCaseUrgent",
+"readyToList",
+"decisionIssued"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1iy08tm">
+        <inputEntry id="UnaryTests_0flofue">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0t8415e">
+        <outputEntry id="LiteralExpression_1vox3ud">
           <text>"Cancel"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0c65k96">
+        <outputEntry id="LiteralExpression_1hvi0c2">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0fivyma">
+        <outputEntry id="LiteralExpression_1tr86mi">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0zmhw8j">
+        <outputEntry id="LiteralExpression_1encbhf">
+          <text>"reviewIncompleteAppeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01khg43">
+        <inputEntry id="UnaryTests_1kryeuw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0334dsw">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"makeCaseUrgent",
+"readyToList",
+"decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bjzm1a">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jlts89">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yyfcxh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qcft7w">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eehncr">
+          <text>"reviewInformationRequested"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ctfolu">
+        <inputEntry id="UnaryTests_1gdbh3i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cz71n2">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"readyToList"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1snvtwi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1b3n99x">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ctddic">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12ygzai">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bpimbx">
+          <text>"reviewFtaResponse"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08ygl8s">
+        <inputEntry id="UnaryTests_1dqsse9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17129al">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"struckOut",
+"readyToList"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eji6eu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0p86xn0">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08j2tip">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19rup5v">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0teg9tb">
+          <text>"reviewFtaDueDate"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0z06aj3">
+        <inputEntry id="UnaryTests_1v1po3z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mu7wno">
+          <text>"cancelTranslations"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08f0c8i">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yoe6nk">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sppzz1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12u23lc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02vtu1j">
+          <text>"Translation Tasks"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jh2t6x">
+        <inputEntry id="UnaryTests_04fpg51">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04exn1g">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yot6ht">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08tbnb3">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ewehe6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19u7kzk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1239y4l">
+          <text> "reviewValidAppeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07adoje">
+        <inputEntry id="UnaryTests_01iq1oe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06jmrz0">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rdrdzn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19yjr1k">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nuitwc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t0lkao">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bf4ozj">
+          <text> "reviewListingError"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_14tgkh8">
+        <inputEntry id="UnaryTests_00da1wb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0skithl">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lawtex">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_048wqqf">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10g0dqa">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wg0ze6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0u6h5zt">
+          <text>"reviewRoboticFail"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1uz93kr">
+        <inputEntry id="UnaryTests_0wxxzrq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18did1k">
+          <text>"validSendToInterloc",
+"interlocSendToTcw",
+"makeCaseUrgent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ob3xdx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mzf96u">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fghzrf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_170s1h0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0othboe">
+          <text>"reviewBfDate"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nu2ldm">
+        <inputEntry id="UnaryTests_0693ik2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hibi91">
+          <text>"voidCase",
+"appealWithdrawn",
+"confirmLapsed",
+"appealDormant",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qbs7tk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02onz7h">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17teidj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_077poyt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wjxsx8">
+          <text>"allocateCaseRolesAndCreateBundle"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kel1yh">
+        <inputEntry id="UnaryTests_1k5ul82">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kelakn">
+          <text>"issueFinalDecision",
+"issueAdjournmentNotice",
+"voidCase",
+"appealWithdrawn",
+"confirmLapsed",
+"appealDormant",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xms9yw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i21zzg">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q3ya2s">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tt0yyv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16qatwq">
+          <text>"reviewOutstandingDraftDecision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0aqvykm">
+        <inputEntry id="UnaryTests_1eh15au">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vti5ug">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"validSendToInterloc",
+"makeCaseUrgent",
+"readyToList",
+"decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03psygx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a836rx">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p3qi9t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dqzhlr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1642yy5">
+          <text>"contactParties"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06vo1lb">
+        <inputEntry id="UnaryTests_0ivl1q1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_101t4lj">
+          <text>"addHearing","caseUpdated"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n3igq2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s4annp">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xfko4d">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k3u9hw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z2p5lv">
           <text></text>
         </outputEntry>
       </rule>
