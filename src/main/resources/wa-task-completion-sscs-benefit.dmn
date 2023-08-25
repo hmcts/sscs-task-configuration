@@ -130,6 +130,28 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_01x3h36">
+        <inputEntry id="UnaryTests_1xu4p9e">
+          <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","abateCase","struckOut","writeFinalDecision","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04ztqxb">
+          <text>"ftaNotProvidedAppointeeDetailsJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10134wu">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09a8hin">
+        <inputEntry id="UnaryTests_0gz5z87">
+          <text>"actionPostponementRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07txeqa">
+          <text>"reviewPostponementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jf2q76">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

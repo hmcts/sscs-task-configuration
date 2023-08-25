@@ -39,7 +39,9 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
                 .cancel("reviewReinstatementRequestJudge")
-                .cancel("reviewPheRequestJudge").build(),
+                .cancel("reviewPheRequestJudge")
+                .cancel("ftaNotProvidedAppointeeDetailsJudge")
+                .cancel("reviewPostponementRequestJudge").build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -47,7 +49,9 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
                 .cancel("reviewReinstatementRequestJudge")
-                .cancel("reviewPheRequestJudge").build(),
+                .cancel("reviewPheRequestJudge")
+                .cancel("ftaNotProvidedAppointeeDetailsJudge")
+                .cancel("reviewPostponementRequestJudge").build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -55,14 +59,18 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
                 .cancel("reviewReinstatementRequestJudge")
-                .cancel("reviewPheRequestJudge").build(),
+                .cancel("reviewPheRequestJudge")
+                .cancel("ftaNotProvidedAppointeeDetailsJudge")
+                .cancel("reviewPostponementRequestJudge").build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewConfidentialityRequest")
                 .cancel("reviewReinstatementRequestJudge")
-                .cancel("reviewPheRequestJudge").build(),
+                .cancel("reviewPheRequestJudge")
+                .cancel("ftaNotProvidedAppointeeDetailsJudge")
+                .cancel("reviewPostponementRequestJudge").build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -70,7 +78,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
                 .cancel("reviewReinstatementRequestJudge")
-                .cancel("reviewPheRequestJudge").build(),
+                .cancel("reviewPheRequestJudge")
+                .cancel("reviewPostponementRequestJudge").build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal").build(),
             event("makeCaseUrgent")
@@ -85,12 +94,17 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewConfidentialityRequest")
                 .cancel("reviewReinstatementRequestJudge")
-                .cancel("reviewPheRequestJudge").build(),
+                .cancel("reviewPheRequestJudge")
+                .cancel("reviewPostponementRequestJudge").build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks").build(),
             event("issueFinalDecision")
                 .cancel("reviewReinstatementRequestJudge")
-                .cancel("reviewPheRequestJudge").build()
+                .cancel("reviewPheRequestJudge")
+                .cancel("ftaNotProvidedAppointeeDetailsJudge")
+                .cancel("reviewPostponementRequestJudge").build(),
+            event("actionPostponementRequest")
+                .cancel("reviewPostponementRequestJudge").build()
         );
     }
 
@@ -116,7 +130,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(10));
+        assertThat(logic.getRules().size(), is(12));
 
     }
 }

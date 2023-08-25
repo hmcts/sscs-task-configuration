@@ -135,6 +135,16 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewPheRequestJudge",
                 "someCaseData",
                 defaultPermissionsJudgesTasks()
+            ),
+            Arguments.of(
+                "reviewPheRequestJudge",
+                "someCaseData",
+                defaultPermissionsJudgesTasks()
+            ),
+            Arguments.of(
+                "reviewPostponementRequestJudge",
+                "someCaseData",
+                defaultPermissionsHearingJudgesTasks()
             )
         );
     }
@@ -222,6 +232,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
+    private static List<Map<String, Object>> defaultPermissionsHearingJudgesTasks() {
+        return List.of(
+            permission("case-allocator","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+        );
+    }
+
     private static List<Map<String, Object>> defaultPermissionsJudgesReviewTasks() {
         return List.of(
             permission("case-allocator","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
@@ -269,7 +290,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(17));
+        assertThat(logic.getRules().size(), is(18));
 
     }
 

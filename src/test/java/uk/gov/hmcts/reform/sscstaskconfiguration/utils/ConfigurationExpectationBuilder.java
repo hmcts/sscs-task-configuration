@@ -42,6 +42,25 @@ public class ConfigurationExpectationBuilder {
         return builder;
     }
 
+    public static ConfigurationExpectationBuilder defaultJudicialTaskExpectations() {
+        ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
+        builder.expectedValue("caseName", "Joe Blogs", true);
+        builder.expectedValue("caseManagementCategory", "Personal Independence Payment", true);
+        builder.expectedValue("location", "123456", true);
+        builder.expectedValue("locationName", "BRADFORD", true);
+        builder.expectedValue("workType", "pre_hearing", true);
+        builder.expectedValue("roleCategory", "Judicial", true);
+        builder.expectedValue("priorityDate", "", true);
+        builder.expectedValue("minorPriority", "500", true);
+        builder.expectedValue("majorPriority", "5000", true);
+        builder.expectedValue("nextHearingId", "", true);
+        builder.expectedValue("nextHearingDate", "", true);
+        builder.expectedValue("dueDateOrigin", now(), true);
+        builder.expectedValue("dueDateNonWorkingCalendar", ENGLAND_AND_WALES_CALENDAR, true);
+        builder.expectedValue("dueDateIntervalDays", "2", true);
+        return builder;
+    }
+
     public List<Map<String,Object>> build() {
         return EXPECTED_PROPERTIES.stream()
             .filter(p -> expectations.containsKey(p))
