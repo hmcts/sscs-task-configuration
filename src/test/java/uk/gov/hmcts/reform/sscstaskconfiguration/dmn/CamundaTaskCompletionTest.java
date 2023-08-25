@@ -34,19 +34,27 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
         return Stream.of(
             eventAutoCompletesTasks("nonCompliant","reviewTheAppeal"),
             eventAutoCompletesTasks("requestInfoIncompleteApplication","reviewIncompleteAppeal"),
-            eventAutoCompletesTasks("interlocInformationReceived", "reviewInformationRequested", "reviewAdminAction"),
-            eventAutoCompletesTasks("validSendToInterloc", "reviewInformationRequested", "reviewAdminAction",
+            eventAutoCompletesTasks("interlocInformationReceived",
+                                    "reviewInformationRequested", "reviewAdminAction"),
+            eventAutoCompletesTasks("validSendToInterloc",
+                                    "reviewInformationRequested", "reviewAdminAction",
                                     "reviewConfidentialityRequest", "reviewReinstatementRequestJudge"),
             eventAutoCompletesTasks("interlocSendToTcw",
-                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate", "reviewReinstatementRequestJudge"),
+                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate",
+                                    "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge"),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse"),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument"),
             eventAutoCompletesTasks("actionFurtherEvidence","issueOutstandingTranslation"),
             eventAutoCompletesTasks("reviewConfidentialityRequest","reviewConfidentialityRequest"),
-            eventAutoCompletesTasks("sendToAdmin","reviewConfidentialityRequest", "reviewReinstatementRequestJudge"),
-            eventAutoCompletesTasks("directionIssued","reviewConfidentialityRequest", "reviewReinstatementRequestJudge"),
+            eventAutoCompletesTasks("sendToAdmin",
+                                    "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
+                                    "reviewReinstatementRequestJudge"),
+            eventAutoCompletesTasks("directionIssued",
+                                    "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
+                                    "reviewReinstatementRequestJudge"),
             eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest"),
-            eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest", "reviewReinstatementRequestJudge"),
+            eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
+                                    "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge"),
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal"),
             eventAutoCompletesTasks("updateListingRequirement","reviewListingError"),
             eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail"),
@@ -68,7 +76,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(16));
+        assertThat(logic.getRules().size(), is(17));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {

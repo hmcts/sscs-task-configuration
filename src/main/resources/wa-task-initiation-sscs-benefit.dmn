@@ -411,6 +411,70 @@ else 0</text>
           <text>"reviewConfidentialityRequest"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_01u2n93">
+        <inputEntry id="UnaryTests_1mblit3">
+          <text>"actionFurtherEvidence", "uploadWelshDocument", "manageWelshDocuments"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oco2zm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x3w2bn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01p52hw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lmecib">
+          <text>contains(scannedDocumentTypes, "urgentHearingRequest")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10e5vtm">
+          <text>"reviewUrgentHearingRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19za63c">
+          <text>"Review Urgent Hearing Request"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w6xtwo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02o93tw">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0piys88">
+          <text>"reviewUrgentHearingRequest"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i2ylj4">
+        <inputEntry id="UnaryTests_160qir5">
+          <text>"makeCaseUrgent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s90idv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qtkg4r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0id5v4r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1artp2w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jd1uny">
+          <text>"reviewUrgentHearingRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0daj3rg">
+          <text>"Review Urgent Hearing Request"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s6gub4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n8lwod">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07mh446">
+          <text>"reviewUrgentHearingRequest"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0q7nlyl">
         <inputEntry id="UnaryTests_0c5dy7a">
           <text>"actionFurtherEvidence","uploadWelshDocument","manageWelshDocuments"</text>

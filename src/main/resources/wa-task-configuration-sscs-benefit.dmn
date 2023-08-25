@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
-    <informationRequirement id="InformationRequirement_172js3g">
-      <requiredDecision href="#nextHearing" />
-    </informationRequirement>
-    <informationRequirement id="InformationRequirement_05ef9lu">
+    <informationRequirement id="InformationRequirement_0l9qrru">
       <requiredDecision href="#sscs-task-configuration-non-working-days" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1dxss8x">
+      <requiredDecision href="#nextHearing" />
     </informationRequirement>
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -100,7 +100,8 @@ null</text>
         <inputEntry id="UnaryTests_0ooc4t2">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1j3y284">      <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate"</text>
+        <inputEntry id="UnaryTests_1j3y284">
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wqk11i">
           <text>"workType"</text>
@@ -117,7 +118,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a9atyt">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xklqhp">
           <text>"workType"</text>
@@ -126,7 +127,7 @@ null</text>
           <text>"pre_hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c8uu42">
-					<text>true</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_17ycln9">
@@ -150,7 +151,8 @@ null</text>
         <inputEntry id="UnaryTests_0pa4ux4">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_14syl1g"> <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+        <inputEntry id="UnaryTests_14syl1g">
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -167,7 +169,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lqa97e">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ga9m4z">
           <text>"roleCategory"</text>
@@ -232,12 +234,30 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_08pr8ok">
+        <inputEntry id="UnaryTests_0s4kgb0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ymggmb">
+          <text>"reviewUrgentHearingRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n43g1v">
+          <text>"minorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0my7u45">
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 500 else 100</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wbmf6w">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1a8gebd">
         <description>High priority if hearing data not available</description>
         <inputEntry id="UnaryTests_1spe9nj">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_168dkl4"> <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
+        <inputEntry id="UnaryTests_168dkl4">
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -267,6 +287,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1h4aasr">
+        <inputEntry id="UnaryTests_10aosjo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pk8oi8">
+          <text>"reviewUrgentHearingRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zms8im">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00sjgj4">
+          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 5000 else 1000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r7i123">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0l03bs7">
         <description>Low priority if hearing data not available</description>
         <inputEntry id="UnaryTests_0fj4f9h">
@@ -290,7 +327,8 @@ null</text>
         <inputEntry id="UnaryTests_1h85ecq">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0hvpmuj"> <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
+        <inputEntry id="UnaryTests_0hvpmuj">
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -650,7 +688,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>
@@ -741,7 +779,7 @@ null</text>
     </decisionTable>
   </decision>
   <decision id="nextHearing" name="Next Hearing">
-    <informationRequirement id="InformationRequirement_17hutxa">
+    <informationRequirement id="InformationRequirement_01gi19r">
       <requiredDecision href="#Decision_1ol51p5" />
     </informationRequirement>
     <decisionTable id="DecisionTable_0je9i6y" hitPolicy="FIRST">
@@ -800,23 +838,23 @@ null</text>
       <dmndi:DMNShape id="DMNShape_06d4k2l" dmnElementRef="nextHearing">
         <dc:Bounds height="80" width="180" x="470" y="40" />
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_1yz1orq" dmnElementRef="InformationRequirement_172js3g">
-        <di:waypoint x="470" y="80" />
-        <di:waypoint x="360" y="80" />
-        <di:waypoint x="340" y="80" />
+      <dmndi:DMNShape id="DMNShape_1mgaz02" dmnElementRef="Decision_1ol51p5">
+        <dc:Bounds height="80" width="180" x="780" y="40" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_04wmhsp" dmnElementRef="InformationRequirement_0l9qrru">
+        <di:waypoint x="250" y="210" />
+        <di:waypoint x="250" y="140" />
+        <di:waypoint x="250" y="120" />
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="DMNEdge_14ln0z5" dmnElementRef="InformationRequirement_17hutxa">
+      <dmndi:DMNEdge id="DMNEdge_0c45t2v" dmnElementRef="InformationRequirement_01gi19r">
         <di:waypoint x="780" y="80" />
         <di:waypoint x="670" y="80" />
         <di:waypoint x="650" y="80" />
       </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_1mgaz02" dmnElementRef="Decision_1ol51p5">
-        <dc:Bounds height="80" width="180" x="780" y="40" />
-      </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_1c2ddij" dmnElementRef="InformationRequirement_05ef9lu">
-        <di:waypoint x="250" y="210" />
-        <di:waypoint x="250" y="140" />
-        <di:waypoint x="250" y="120" />
+      <dmndi:DMNEdge id="DMNEdge_07tfpla" dmnElementRef="InformationRequirement_1dxss8x">
+        <di:waypoint x="470" y="80" />
+        <di:waypoint x="360" y="80" />
+        <di:waypoint x="340" y="80" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>

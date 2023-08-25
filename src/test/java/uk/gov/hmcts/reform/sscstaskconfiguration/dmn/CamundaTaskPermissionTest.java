@@ -97,6 +97,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 defaultCtscPermissions()
             ),
             Arguments.of(
+                "reviewUrgentHearingRequest",
+                "someCaseData",
+                defaultPermissionsJudgesReviewTasks()
+            ),
+            Arguments.of(
                 "issueOutstandingTranslation",
                 "someCaseData",
                 defaultCtscPermissions()
@@ -352,7 +357,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
         assertThat(logic.getRules().size(), is(23));
-
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

@@ -119,6 +119,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_13mpsdg">
+        <inputEntry id="UnaryTests_026kh17">
+          <text>"sendToAdmin","directionIssued","interlocSendToTcw","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vv49sj">
+          <text>"reviewUrgentHearingRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xqwphy">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0jhk8zs">
         <inputEntry id="UnaryTests_0h9gol5">
           <text>"sendToAdmin","directionIssued","interlocSendToTcw","validSendToInterloc","interlocReviewStateAmend"</text>
