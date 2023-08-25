@@ -141,6 +141,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_06cjegh">
+        <inputEntry id="UnaryTests_0pmifvh">
+          <text>"issueFinalDecision", "issueAdjournmentNotice"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0p3o4at">
+          <text>"writeDecisionJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c2kgom">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -601,6 +601,46 @@ else 0</text>
           <text>"prepareForHearingJudge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0cpmj2d">
+        <inputEntry id="UnaryTests_1hsovn9">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1afwgju">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0whqvjt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lcddc3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_004g32l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17towmy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00j4hrq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_001d0qn">
+          <text>"writeDecisionJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zusnzz">
+          <text>"Write Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nak2ut">
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.nextHearingDate!= null and additionalData.Data.nextHearingDate!= "")
+	then (date(additionalData.Data.nextHearingDate) - today()).days
+else 0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n742fz">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ebouor">
+          <text>"writeDecisionJudge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
