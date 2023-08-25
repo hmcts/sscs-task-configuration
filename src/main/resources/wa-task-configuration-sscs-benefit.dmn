@@ -118,7 +118,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a9atyt">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest"</text>
+          <text>"reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xklqhp">
           <text>"workType"</text>
@@ -127,6 +127,23 @@ null</text>
           <text>"pre_hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c8uu42">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1r9c9cq">
+        <inputEntry id="UnaryTests_0tgrjk7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qfyny7">
+          <text>"prepareForHearingJudge", "writeDecisionJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pg0z8u">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1morv5f">
+          <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04whdu7">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -169,7 +186,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lqa97e">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","referredByTcwPreHearing","prepareForHearingJudge","writeDecisionJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ga9m4z">
           <text>"roleCategory"</text>
@@ -222,7 +239,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewReinstatementRequestJudge"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -239,7 +256,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ymggmb">
-          <text>"reviewUrgentHearingRequest"</text>
+          <text>"reviewUrgentHearingRequest", "writeDecisionJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1n43g1v">
           <text>"minorPriority"</text>
@@ -275,7 +292,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest","reviewBfDate","reviewReinstatementRequestJudge"</text>
+          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest","reviewBfDate","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -292,7 +309,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pk8oi8">
-          <text>"reviewUrgentHearingRequest"</text>
+          <text>"reviewUrgentHearingRequest", "writeDecisionJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0zms8im">
           <text>"majorPriority"</text>
@@ -688,7 +705,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest", "referredByTcwPreHearing", "prepareForHearingJudge", "writeDecisionJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>

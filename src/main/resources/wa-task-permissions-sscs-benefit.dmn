@@ -183,8 +183,7 @@ else
       </rule>
       <rule id="DecisionRule_19cn0u8">
         <description>Standard CTSC permission</description>
-        <inputEntry id="UnaryTests_1vcxbly">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+        <inputEntry id="UnaryTests_1vcxbly">        <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hxa6gg">
           <text></text>
@@ -264,8 +263,7 @@ else
       </rule>
       <rule id="DecisionRule_0e3j7rq">
         <description>Standard CTSC permission</description>
-        <inputEntry id="UnaryTests_1kh84kf">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+        <inputEntry id="UnaryTests_1kh84kf"><text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0e41w3x">
           <text></text>
@@ -345,8 +343,7 @@ else
       </rule>
       <rule id="DecisionRule_0q51lrq">
         <description>Standard CTSC permission</description>
-        <inputEntry id="UnaryTests_03ctmk1">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+        <inputEntry id="UnaryTests_03ctmk1"><text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tw6aye">
           <text></text>
@@ -423,6 +420,32 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1f61zlf">
+        <inputEntry id="UnaryTests_05a7znm">
+          <text>"referredByTcwPreHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kjokwp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1aop768">
+          <text>"interloc-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ogsjbj">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jelxza">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s5cvsi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19nwam2">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ws7fch">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1gd7pun">
         <inputEntry id="UnaryTests_0horaye">
           <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest"</text>
@@ -449,6 +472,32 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_01s46gl">
+        <inputEntry id="UnaryTests_1nn2r2v">
+          <text>"referredByTcwPreHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tb6bfa">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_076lcse">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a7yz69">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1srelxt">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t3zdz4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lryxtw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q73daa">
+          <text>false</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1a3ndv4">
         <inputEntry id="UnaryTests_0i1ce54">
           <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest"</text>
@@ -472,6 +521,162 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15hg7hf">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1k9n8b0">
+        <inputEntry id="UnaryTests_0j7mtyf">
+          <text>"referredByTcwPreHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dek92d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jotbnv">
+          <text>"fee-paid-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qyaikq">
+          <text>"Read,Own,Claim,Unclaim"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bwd4v2">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_135ah1t">
+          <text>"00"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b920in">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yijm4l">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mwh9xm">
+        <inputEntry id="UnaryTests_0yxatz8">
+          <text>"prepareForHearingJudge", "writeDecisionJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pc43zs">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_190xdpy">
+          <text>"hearing-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03q5xvg">
+          <text>"Read,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nwah6k">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dff7m3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17bi68x">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_196de5m">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1eh8py1">
+        <inputEntry id="UnaryTests_17ynj09">
+          <text>"prepareForHearingJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05kn4pi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12m70ly">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wo4e4q">
+          <text>"Read,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ascwu5">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fw24bq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mjr362">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zwzier">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lzvos6">
+        <inputEntry id="UnaryTests_0o6w2sc">
+          <text>"prepareForHearingJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v3ta0p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xsoe7w">
+          <text>"fee-paid-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12r7ov9">
+          <text>"Read,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v668ph">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16rbmkc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qejmsg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05zv1de">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rflc29">
+        <inputEntry id="UnaryTests_0ziy5h4">
+          <text>"writeDecisionJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b22bhz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o3xbwv">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bl19kv">
+          <text>"Read,Own,Claim"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07wj62n">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12n8oj6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mpguea">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_167uthz">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vsp161">
+        <inputEntry id="UnaryTests_07r0ktf">
+          <text>"writeDecisionJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dllrry">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0m7k49v">
+          <text>"fee-paid-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16vcg7m">
+          <text>"Read,Own,Claim"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10msg0i">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1985d39">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0okx6ky">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gu3ptd">
           <text>false</text>
         </outputEntry>
       </rule>

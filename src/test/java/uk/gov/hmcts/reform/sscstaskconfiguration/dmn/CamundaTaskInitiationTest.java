@@ -611,6 +611,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("makeCaseUrgent")
                 .initiativesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request", 2)
+                .build(),
+            event("tcwReferToJudge")
+                .withCaseData("workType", "preHearingWork")
+                .initiativesTask("referredByTcwPreHearing", "Referred By TCW", 2)
+                .build(),
+            event("createBundle")
+                .withCaseData("panel", Map.of("assignedTo", "panel member 1"))
+                .withCaseData("nextHearingDate", LocalDate.now().plusDays(7).toString())
+                .initiativesTask("prepareForHearingJudge", "Prepare For Hearing", 2)
+                .initiativesTaskWithDelay("writeDecisionJudge", "Write Decision", 7,2)
                 .build()
         );
     }
@@ -636,7 +646,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(20));
+        assertThat(logic.getRules().size(), is(23));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

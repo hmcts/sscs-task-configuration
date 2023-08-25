@@ -12,9 +12,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -41,20 +39,26 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "reviewConfidentialityRequest", "reviewReinstatementRequestJudge"),
             eventAutoCompletesTasks("interlocSendToTcw",
                                     "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate",
-                                    "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge"),
+                                    "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge", "referredByTcwPreHearing"),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse"),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument"),
             eventAutoCompletesTasks("actionFurtherEvidence","issueOutstandingTranslation"),
             eventAutoCompletesTasks("reviewConfidentialityRequest","reviewConfidentialityRequest"),
+            eventAutoCompletesTasks("decisionIssued", "referredByTcwPreHearing"),
+            eventAutoCompletesTasks("struckOut", "referredByTcwPreHearing"),
+            eventAutoCompletesTasks("writeFinalDecision", "referredByTcwPreHearing", "prepareForHearingJudge"),
+            eventAutoCompletesTasks("adjournCase", "prepareForHearingJudge"),
+            eventAutoCompletesTasks("issueAdjournmentNotice", "writeDecisionJudge"),
             eventAutoCompletesTasks("sendToAdmin",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
-                                    "reviewReinstatementRequestJudge"),
+                                    "reviewReinstatementRequestJudge", "referredByTcwPreHearing"),
             eventAutoCompletesTasks("directionIssued",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
-                                    "reviewReinstatementRequestJudge"),
-            eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest"),
+                                    "reviewReinstatementRequestJudge", "referredByTcwPreHearing"),
+            eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest", "writeDecisionJudge"),
             eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
-                                    "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge"),
+                                    "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
+                                    "referredByTcwPreHearing"),
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal"),
             eventAutoCompletesTasks("updateListingRequirement","reviewListingError"),
             eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail"),
@@ -64,26 +68,26 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
-    void given_event_ids_should_evaluate_dmn(String eventId, List<Map<String, String>> expectation) {
+    void given_event_ids_should_evaluate_dmn(String eventId, Set<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        MatcherAssert.assertThat(new HashSet<Map<String,Object>>(dmnDecisionTableResult.getResultList()), is(expectation));
     }
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(17));
+        assertThat(logic.getRules().size(), is(20));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
         return Arguments.of(event, Arrays.stream(tasks).map(t -> Map.of(
                 "taskType", t,
                 "completionMode", "Auto"
-            )).collect(Collectors.toList())
+            )).collect(Collectors.toSet())
         );
     }
 }
