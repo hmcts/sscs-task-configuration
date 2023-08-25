@@ -258,7 +258,7 @@
       </rule>
       <rule id="DecisionRule_1aykb81">
         <inputEntry id="UnaryTests_0vs0k3d">
-          <text>"sORExtendTime","sORRefused","sORIssueDirections"</text>
+          <text>"sORExtendTime","sORRefused","directionIssued"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ln8wp4">
           <text></text>

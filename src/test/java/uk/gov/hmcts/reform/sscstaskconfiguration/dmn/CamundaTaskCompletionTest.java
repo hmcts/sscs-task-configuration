@@ -49,13 +49,12 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle"),
             eventAutoCompletesTasks("libertyToApplyGranted","reviewLibertytoApplyApplication"),
             eventAutoCompletesTasks("libertyToApplyRefused","reviewLibertytoApplyApplication"),
-            eventAutoCompletesTasks("directionIssued","reviewLibertytoApplyApplication"),
+            eventAutoCompletesTasks("directionIssued","reviewLibertytoApplyApplication", "reviewStatementofReasons"),
             eventAutoCompletesTasks("correctionGranted","reviewCorrectionApplicationJudge"),
             eventAutoCompletesTasks("correctionRefused","reviewCorrectionApplicationJudge"),
             eventAutoCompletesTasks("sORWrite","writeStatementofReason"),
             eventAutoCompletesTasks("sORExtendTime","reviewStatementofReasons"),
-            eventAutoCompletesTasks("sORRefused","reviewStatementofReasons"),
-            eventAutoCompletesTasks("sORIssueDirections","reviewStatementofReasons")
+            eventAutoCompletesTasks("sORRefused","reviewStatementofReasons")
         );
     }
 
