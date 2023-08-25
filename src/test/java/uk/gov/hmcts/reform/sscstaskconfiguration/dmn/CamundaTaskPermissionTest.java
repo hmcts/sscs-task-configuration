@@ -76,12 +76,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "name", "case-allocator",
-                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                         "autoAssignable", false
                     ),
                     Map.of(
                         "name", "task-supervisor",
-                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                         "autoAssignable", false
                     )
                 )
@@ -97,14 +97,19 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 defaultCtscPermissions()
             ),
             Arguments.of(
-                "reviewBilingualDocument",
+                "reviewUrgentHearingRequest",
                 "someCaseData",
-                defaultCtscPermissionsWithCompleteOwn()
+                defaultPermissionsJudgesReviewTasks()
             ),
             Arguments.of(
                 "issueOutstandingTranslation",
                 "someCaseData",
                 defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewBilingualDocument",
+                "someCaseData",
+                defaultCtscPermissionsWithCompleteOwn()
             ),
             Arguments.of(
                 "reviewAdminAction",
@@ -117,33 +122,117 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 defaultCtscPermissions()
             ),
             Arguments.of(
-                "reviewFtaDueDate",
+                "actionUnprocessedCorrespondence",
+                "someCaseData",
+                List.of(
+                    Map.of(
+                        "name", "case-allocator",
+                        "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "task-supervisor",
+                        "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "Allocated-CTSC-Caseworker",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "assignmentPriority", 1,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", true
+                    ),
+                    Map.of(
+                        "name", "CTSC-Administrator",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "assignmentPriority", 2,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "CTSC-Team-Leader",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
+                        "assignmentPriority", 3,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", false
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewValidAppeal",
+                "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewListingError",
+                "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewRoboticFail",
                 "someCaseData",
                 defaultCtscPermissions()
             ),
             Arguments.of(
                 "reviewConfidentialityRequest",
                 "someCaseData",
-                List.of(
-                    permission("case-allocator","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
-                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
-                )
+                defaultPermissionsJudgesReviewTasks()
             ),
             Arguments.of(
-                "reviewUrgentHearingRequest",
+                "reviewReinstatementRequestJudge",
                 "someCaseData",
-                List.of(
-                    permission("case-allocator","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
-                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
-                )
+                defaultPermissionsJudgesReviewTasks()
+            ),
+            Arguments.of(
+                "reviewBfDate",
+                "someCaseData",
+                defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "allocateCaseRolesAndCreateBundle",
+                "someCaseData",
+                defaultAdminCaseWorkerPermissions()
+            ),
+            Arguments.of(
+                "reviewOutstandingDraftDecision",
+                "someCaseData",
+                defaultCtscPermissions()
+            )
+        );
+    }
+
+    private static List<Map<String, Object>> defaultAdminCaseWorkerPermissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Allocated-Admin-Caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 1,
+                "roleCategory", "ADMIN",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "Regional-Centre-Admin",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 2,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "Regional-Centre-Team-Leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
+                "assignmentPriority", 3,
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
             )
         );
     }
@@ -152,12 +241,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         return List.of(
             Map.of(
                 "name", "case-allocator",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "task-supervisor",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                 "autoAssignable", false
             ),
             Map.of(
@@ -188,12 +277,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         return List.of(
             Map.of(
                 "name", "case-allocator",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "task-supervisor",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
                 "autoAssignable", false
             ),
             Map.of(
@@ -217,6 +306,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             )
+        );
+    }
+
+    private static List<Map<String, Object>> defaultPermissionsJudgesReviewTasks() {
+        return List.of(
+            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
+            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
         );
     }
 
@@ -256,8 +356,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(15));
-
+        assertThat(logic.getRules().size(), is(23));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
