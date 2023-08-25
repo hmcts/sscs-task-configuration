@@ -214,8 +214,39 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "name", "fee-paid-judge",
                         "value", "Read,Own,Claim,Unclaim",
                         "assignmentPriority", 3,
+                        "authorisations", "368",
                         "roleCategory", "JUDICIAL",
                         "autoAssignable", false
+                    )
+                ),
+                Arguments.of(
+                    "reviewStatementofReasons",
+                    "someCaseData",
+                    List.of(
+                        Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                        Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                        Map.of(
+                            "name", "hearing-judge",
+                            "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                            "assignmentPriority", 1,
+                            "roleCategory", "JUDICIAL",
+                            "autoAssignable", true
+                        ),
+                        Map.of(
+                            "name", "judge",
+                            "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                            "assignmentPriority", 2,
+                            "roleCategory", "JUDICIAL",
+                            "autoAssignable", false
+                        ),
+                        Map.of(
+                            "name", "fee-paid-judge",
+                            "value", "Read,Own,Claim,Unclaim",
+                            "assignmentPriority", 3,
+                            "authorisations", "368",
+                            "roleCategory", "JUDICIAL",
+                            "autoAssignable", false
+                        )
                     )
                 )
             )

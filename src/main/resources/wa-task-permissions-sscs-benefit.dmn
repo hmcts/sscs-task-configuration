@@ -552,7 +552,7 @@ else
       </rule>
       <rule id="DecisionRule_1adys52">
         <inputEntry id="UnaryTests_0y44beb">
-          <text>"writeStatementofReason"</text>
+          <text>"writeStatementofReason","reviewStatementofReasons"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1l1mife">
           <text></text>
@@ -578,7 +578,7 @@ else
       </rule>
       <rule id="DecisionRule_1bdyymm">
         <inputEntry id="UnaryTests_0k7teac">
-          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason"</text>
+          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0u92cwp">
           <text></text>
@@ -604,7 +604,7 @@ else
       </rule>
       <rule id="DecisionRule_17a4lft">
         <inputEntry id="UnaryTests_10thjiq">
-          <text>"writeStatementofReason"</text>
+          <text>"writeStatementofReason","reviewStatementofReasons"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xv0jlb">
           <text></text>
@@ -619,7 +619,7 @@ else
           <text>"JUDICIAL"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kjhmn1">
-          <text></text>
+          <text>368</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lfexph">
           <text>3</text>

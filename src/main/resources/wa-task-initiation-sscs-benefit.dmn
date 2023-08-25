@@ -98,6 +98,9 @@
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.issueFinalDecisionDate
             != null) then
             additionalData.Data.issueFinalDecisionDate
+            else if(additionalData != null and additionalData.Data != null and additionalData.Data.issueInterlocDecisionDate
+            != null) then
+            additionalData.Data.issueInterlocDecisionDate
             else
             false</text>
         </inputExpression>
@@ -1360,6 +1363,106 @@ else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13a8u10">
           <text>"writeStatementofReason"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1uksy3l">
+        <inputEntry id="UnaryTests_1pbbn6k">
+          <text>"validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yhtios">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lm7obe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bml9oj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rthukd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o2fh40">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jbmf2n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wct0fh">
+          <text>"reviewStatementOfReasonsApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05rg6rf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13c5teh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vqqvyp">
+          <text>today() &gt; date(issueDecisionDate) + duration("P1M")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1f5l4ui">
+          <text>"reviewStatementofReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15hegvo">
+          <text>"Review Statement of Reasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06bify7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kwhnkg">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t7ueq4">
+          <text>"reviewStatementofReasons"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1txh3n8">
+        <inputEntry id="UnaryTests_14wxm42">
+          <text>"actionFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g4d8u7">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wu9h4u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_136za0f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t1x4aw">
+          <text>contains(scannedDocumentTypes, "statementOfReasonsApplication")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jcvyja">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qto6zb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h8ux9c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ri773j">
+          <text>"sendToInterlocReviewByJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1izsjtv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nrer5s">
+          <text>today() &gt; date(issueDecisionDate) + duration("P1M")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_190dzaj">
+          <text>"reviewStatementofReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p0l3qm">
+          <text>"Review Statement of Reasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11j3igo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e8z0g6">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1prv3xu">
+          <text>"reviewStatementofReasons"</text>
         </outputEntry>
       </rule>
     </decisionTable>

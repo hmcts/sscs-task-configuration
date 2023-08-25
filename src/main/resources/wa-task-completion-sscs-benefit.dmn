@@ -256,6 +256,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1aykb81">
+        <inputEntry id="UnaryTests_0vs0k3d">
+          <text>"sORExtendTime","sORRefused","sORIssueDirections"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ln8wp4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nfra51">
+          <text>"reviewStatementofReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14vj8wq">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
