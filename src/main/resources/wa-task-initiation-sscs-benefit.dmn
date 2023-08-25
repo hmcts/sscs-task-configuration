@@ -16,7 +16,7 @@
         <inputExpression id="LiteralExpression_0nsfl92" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.dwpFurtherInfo
             != null) then
-            additionalData.Data.dwpFurtherInfo 
+            additionalData.Data.dwpFurtherInfo
             else
             null</text>
         </inputExpression>
@@ -48,6 +48,17 @@
             null</text>
         </inputExpression>
       </input>
+      <input id="InputClause_0nv3rbi" label="Panel Count" camunda:inputVariable="panel">
+        <inputExpression id="LiteralExpression_06t3lp9" typeRef="integer">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.panel
+            != null) then
+            ((if additionalData.Data.panel.assignedTo != null then 1 else 0) +
+             (if additionalData.Data.panel.medicalMember != null then 1 else 0) +
+             (if additionalData.Data.panel.disabilityQualifiedMember != null then 1 else 0))
+            else
+            0</text>
+        </inputExpression>
+      </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="955" />
@@ -71,6 +82,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0fisv2g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19ivsqi">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1f3k7q8">
@@ -108,6 +122,9 @@
         <inputEntry id="UnaryTests_09zgab4">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0nlz6t0">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_16rjk56">
           <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
@@ -141,6 +158,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1a34c3p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00zrdjl">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_01zq61j">
@@ -178,6 +198,9 @@
         <inputEntry id="UnaryTests_1gvdjmq">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0lb83gk">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1rw39zd">
           <text>"reviewInformationRequested"</text>
         </outputEntry>
@@ -211,6 +234,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0od4zqh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ywajp7">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14npkzr">
@@ -250,6 +276,9 @@
         <inputEntry id="UnaryTests_10sps96">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1xrzplz">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_020molb">
           <text>"reviewBilingualDocument"</text>
         </outputEntry>
@@ -283,6 +312,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1qiux8t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zh3nkr">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_13f3ypf">
@@ -320,6 +352,9 @@
         <inputEntry id="UnaryTests_0mag8mf">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_14rwccl">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1dvy239">
           <text>"reviewAdminAction"</text>
         </outputEntry>
@@ -353,6 +388,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0eja9e9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_035amk1">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_017dwto">
@@ -392,6 +430,9 @@ else 0</text>
         <inputEntry id="UnaryTests_1yk3ftd">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1eow47o">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_03lalib">
           <text>"reviewConfidentialityRequest"</text>
         </outputEntry>
@@ -425,6 +466,9 @@ else 0</text>
           <text>contains(scannedDocumentTypes, "urgentHearingRequest")</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0vhcrzn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_102axfx">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_10e5vtm">
@@ -462,6 +506,9 @@ else 0</text>
         <inputEntry id="UnaryTests_0wsg96d">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1i9t0zb">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0jd1uny">
           <text>"reviewUrgentHearingRequest"</text>
         </outputEntry>
@@ -497,6 +544,9 @@ else 0</text>
         <inputEntry id="UnaryTests_11bt77z">
           <text>"preHearingWork"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1duy01o">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0wid6ky">
           <text>"referredByTcwPreHearing"</text>
         </outputEntry>
@@ -511,6 +561,84 @@ else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06674q7">
           <text>"referredByTcwPreHearing"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0z8zz9l">
+        <inputEntry id="UnaryTests_0b3x5ea">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ugm5mi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tddls7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13h5mh1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tahfd6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1408nv3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_155a37m">
+          <text>&gt;=1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1agbokz">
+          <text>"prepareForHearingJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wrgkw3">
+          <text>"Prepare For Hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qswlj2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_025ewjz">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j7ec70">
+          <text>"prepareForHearingJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cpmj2d">
+        <inputEntry id="UnaryTests_1hsovn9">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1afwgju">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0whqvjt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lcddc3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_004g32l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17towmy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00j4hrq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_001d0qn">
+          <text>"writeDecisionJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zusnzz">
+          <text>"Write Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nak2ut">
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.nextHearingDate!= null and additionalData.Data.nextHearingDate!= "")
+	then (date(additionalData.Data.nextHearingDate) - today()).days
+else 0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n742fz">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ebouor">
+          <text>"writeDecisionJudge"</text>
         </outputEntry>
       </rule>
     </decisionTable>

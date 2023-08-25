@@ -124,6 +124,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1r9c9cq">
+        <inputEntry id="UnaryTests_0tgrjk7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qfyny7">
+          <text>"prepareForHearingJudge", "writeDecisionJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pg0z8u">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1morv5f">
+          <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04whdu7">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0460vvp">
         <inputEntry id="UnaryTests_0pa4ux4">
           <text></text>
@@ -146,7 +163,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lqa97e">
-          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing"</text>
+          <text>"reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "prepareForHearingJudge", "writeDecisionJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ga9m4z">
           <text>"roleCategory"</text>
@@ -182,7 +199,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest", "referredByTcwPreHearing"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest", "referredByTcwPreHearing", "prepareForHearingJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -199,7 +216,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ymggmb">
-          <text>"reviewUrgentHearingRequest"</text>
+          <text>"reviewUrgentHearingRequest", "writeDecisionJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1n43g1v">
           <text>"minorPriority"</text>
@@ -235,7 +252,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest", "referredByTcwPreHearing"</text>
+          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest", "referredByTcwPreHearing", "prepareForHearingJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -252,7 +269,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pk8oi8">
-          <text>"reviewUrgentHearingRequest"</text>
+          <text>"reviewUrgentHearingRequest", "writeDecisionJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0zms8im">
           <text>"majorPriority"</text>
@@ -529,7 +546,7 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest", "reviewUrgentHearingRequest", "referredByTcwPreHearing", "prepareForHearingJudge", "writeDecisionJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>
