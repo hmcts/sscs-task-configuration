@@ -141,6 +141,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_09a8hin">
+        <inputEntry id="UnaryTests_0gz5z87">
+          <text>"actionPostponementRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07txeqa">
+          <text>"reviewPostponementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jf2q76">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

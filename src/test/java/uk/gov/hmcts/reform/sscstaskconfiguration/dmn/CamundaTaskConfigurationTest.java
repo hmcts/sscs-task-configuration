@@ -161,6 +161,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "ftaNotProvidedAppointeeDetailsJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultJudicialTaskExpectations().build()
+            ),
+            Arguments.of(
+                "reviewPostponementRequestJudge",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultJudicialTaskExpectations().build()
             )
         );
     }
