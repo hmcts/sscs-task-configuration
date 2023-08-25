@@ -11,6 +11,7 @@ public class CancellationScenarioBuilder {
 
     private String event;
     private Map<String,Object> caseData = new HashMap<>();
+
     private List<Map<String,String>> results = new ArrayList<>();
 
     private CancellationScenarioBuilder(String event) {

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
+    <informationRequirement id="InformationRequirement_0tjxocg">
+      <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_15q89yx">
+      <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_01znqtr">
+      <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" biodi:width="278" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
@@ -138,7 +147,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1y54qlr">
-          <text>"Routine work"</text>
+          <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0fw59xg">
@@ -176,7 +185,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02ekbax">
-          <text>"Routine work"</text>
+          <text>"referredToInterlocJudge"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_02rz2kk">
@@ -257,7 +266,8 @@
       </rule>
       <rule id="DecisionRule_0ayetr8">
         <inputEntry id="UnaryTests_06b2evz">
-          <text>"dwpSupplementaryResponse", "uploadDocument",
+          <text>"dwpSupplementaryResponse",
+"uploadDocument",
 "attachScannedDocs",
 "uploadDocumentFurtherEvidence"</text>
         </inputEntry>
@@ -369,6 +379,44 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_00vxeom">
           <text>"reviewAdminAction"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rfp02v">
+        <inputEntry id="UnaryTests_0q0aptw">
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lkxm5v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08ea8kt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f8s4vb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_5d5h5hd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f8ht6b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_5dgh7hd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_169r5qy">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0prhktc">
+          <text>"Action Unprocessed Correspondence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wru75o">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bgwvi2">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l3zbqn">
+          <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_15u0n7b">
@@ -641,6 +689,373 @@ else 0</text>
           <text>"writeDecisionJudge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0q7nlyl">
+        <inputEntry id="UnaryTests_0c5dy7a">
+          <text>"actionFurtherEvidence","uploadWelshDocument","manageWelshDocuments"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17modb4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ibv1lx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ysxodc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fmohr6">
+          <text>contains(scannedDocumentTypes, "reinstatementRequest")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1htr5lx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yhyu8c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nqc08a">
+          <text>"reviewReinstatementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zl5g26">
+          <text>"Review Reinstatement Request"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p8eg5k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_181nlyb">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ui842j">
+          <text>"reviewReinstatementRequestJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ru3w7f">
+        <inputEntry id="UnaryTests_1xo57u6">
+          <text>"validAppealCreated"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kt1u0j">
+          <text>"validAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07mrjzx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01jgvo4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01hrdo4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07hdvo4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01hfh84">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_132d9b7">
+          <text>"reviewValidAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0omk3t0">
+          <text>"Review Valid Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jsyluq">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0exrqrc">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1obxfvo">
+          <text>"reviewValidAppeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1j3chr7">
+        <inputEntry id="UnaryTests_1y13f9l">
+          <text>"readyToList","listingError"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fgz2uh">
+          <text>"listingError"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ov3f7v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xhmuxk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xhmrhs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xh6gsk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sgy7fs">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0iajs67">
+          <text>"reviewListingError"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tml8j0">
+          <text>"Review Listing Error"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o2expb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_107bt8v">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03n06hh">
+          <text>"reviewListingError"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kl09vx">
+        <inputEntry id="UnaryTests_0lsf1d5">
+          <text>"sendToRoboticsError"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pcqkc6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17n9y4u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iskgzf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xykgzf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d4dgzf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hd7gzf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qjeqqv">
+          <text>"reviewRoboticFail"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0scm98h">
+          <text>"Review Robotic Fail"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fbve2e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dbypcj">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e4k1cx">
+          <text> "reviewRoboticFail"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0m3ft60">
+        <inputEntry id="UnaryTests_1wru0hw">
+          <text>"directionDueToday"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s0uqeg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eda9os">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bh8fmt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bh8gtx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bh85gs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hd6gtx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02ma9kd">
+          <text>"reviewBfDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i35tkf">
+          <text>"Review BF Date"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17qexd4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pi8gz7">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i8s31y">
+          <text>"reviewBfDate"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p4mccj">
+        <inputEntry id="UnaryTests_0rbvkw2">
+          <text>"prepareForHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mo20gw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0awqtic">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ualttb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_6ualyfb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16hfttb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_6ufu7fb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fjsi2c">
+          <text>"allocateCaseRolesAndCreateBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vxicos">
+          <text>"Allocate Case Roles and Create Bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t0m0vy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18yp8dc">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0km2j5l">
+          <text>"allocateCaseRolesAndCreateBundle"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f5w4c4">
+        <inputEntry id="UnaryTests_0qiv0kj">
+          <text>"hearingToday"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1krl7rh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mkgvjz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tznkmo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hfdfnk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hfddyh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fyjfnk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vwc25i">
+          <text>"reviewOutstandingDraftDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0h47uws">
+          <text>"Review Outstanding Draft Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vx78sp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0psa5ku">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n2xei6">
+          <text>"reviewOutstandingDraftDecision"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
+    <informationRequirement id="InformationRequirement_0tk6k3u">
+      <requiredDecision href="#Decision_1n3y86t" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_0tx6qya">
+      <requiredDecision href="#Decision_1n3y86t" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_172aal0">
+      <input id="InputClause_1ivphcb" biodi:width="150">
+        <inputExpression id="LiteralExpression_1q5ra4z" typeRef="string" />
+      </input>
+      <output id="OutputClause_09u4yj0" label="date_defaults_1" name="date_defaults_1" typeRef="" biodi:width="699" />
+      <rule id="DecisionRule_1hf309o">
+        <inputEntry id="UnaryTests_14er03w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lj2tyf">
+          <text>{
+  delayUntilOrigin: today(),
+  delayUtilNonWorkingCalendar: nonWorkingDayCalendar
+}</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1n3y86t" name="Non Working Days">
+    <decisionTable id="DecisionTable_06domdb" hitPolicy="FIRST" biodi:annotationsWidth="400">
+      <input id="InputClause_08bc456" label="isScottishCase" camunda:inputVariable="isScottishCase">
+        <inputExpression id="LiteralExpression_187cqdu" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.isScottishCase!=null) then
+            additionalData.Data.isScottishCase
+else
+null</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0jnhmid" label="processingVenue" camunda:inputVariable="processingVenue">
+        <inputExpression id="LiteralExpression_1j111ju" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.processingVenue!=null) then
+            additionalData.Data.processingVenue
+else
+null</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_16oeyw9" label="nonWorkingDayCalendar" name="nonWorkingDayCalendar" typeRef="string" biodi:width="1020" />
+      <rule id="DecisionRule_0fs7scb">
+        <inputEntry id="UnaryTests_0wfsts1">
+          <text>"No"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lkheq6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k547o3">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nuuzf6">
+        <inputEntry id="UnaryTests_0d5j63h">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15aug2u">
+          <text>"Dundee"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ry3nv1">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-dundee.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0r79p18">
+        <inputEntry id="UnaryTests_1wipwas">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1roo56f">
+          <text>"Edinburgh"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tkdctg">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-edinburgh.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hp6ifj">
+        <inputEntry id="UnaryTests_180p17v">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jop8zo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bukt9p">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19qqa57">
+        <inputEntry id="UnaryTests_169515v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_173qjzh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1veyac7">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
@@ -648,6 +1063,22 @@ else 0</text>
       <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="wa-task-initiation-sscs-benefit">
         <dc:Bounds height="80" width="180" x="150" y="80" />
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_155l404" dmnElementRef="sscs-task-initiation-date-calculation-defaults">
+        <dc:Bounds height="80" width="180" x="450" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0s4z50s" dmnElementRef="Decision_1n3y86t">
+        <dc:Bounds height="80" width="180" x="740" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1tvyl7t" dmnElementRef="InformationRequirement_0tx6qya">
+        <di:waypoint x="740" y="120" />
+        <di:waypoint x="650" y="120" />
+        <di:waypoint x="630" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_16exzs4" dmnElementRef="InformationRequirement_01znqtr">
+        <di:waypoint x="450" y="120" />
+        <di:waypoint x="350" y="120" />
+        <di:waypoint x="330" y="120" />
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>
