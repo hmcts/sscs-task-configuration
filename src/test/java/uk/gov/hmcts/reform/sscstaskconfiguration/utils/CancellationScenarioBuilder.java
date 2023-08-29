@@ -2,14 +2,14 @@ package uk.gov.hmcts.reform.sscstaskconfiguration.utils;
 
 import org.junit.jupiter.params.provider.Arguments;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CancellationScenarioBuilder {
 
     private String event;
-    private List<Map<String,String>> results = new ArrayList<>();
+    private Map<String,Object> caseData = new HashMap<>();
+
+    private Set<Map<String,String>> results = new HashSet<>();
 
     private CancellationScenarioBuilder(String event) {
         this.event = event;
@@ -17,6 +17,11 @@ public class CancellationScenarioBuilder {
 
     public static CancellationScenarioBuilder event(String event) {
         return new CancellationScenarioBuilder(event);
+    }
+
+    public CancellationScenarioBuilder withCaseData(String key, Object value) {
+        caseData.put(key, value);
+        return this;
     }
 
     public CancellationScenarioBuilder cancel(String processCategories) {
@@ -54,6 +59,7 @@ public class CancellationScenarioBuilder {
             null,
             event,
             null,
+            Map.of("Data", caseData),
             results
         );
     }

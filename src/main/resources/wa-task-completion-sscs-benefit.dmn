@@ -86,6 +86,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1rc2nda">
+        <inputEntry id="UnaryTests_1weothi">
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i6kswh">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a2gpy5">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_14ekhb1">
         <inputEntry id="UnaryTests_096dkp4">
           <text>"interlocSendToTcw"</text>
@@ -105,6 +116,50 @@
           <text>"reviewConfidentialityRequest"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0awtpm3">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13mpsdg">
+        <inputEntry id="UnaryTests_026kh17">
+          <text>"sendToAdmin","directionIssued","interlocSendToTcw","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vv49sj">
+          <text>"reviewUrgentHearingRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xqwphy">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x0txqj">
+        <inputEntry id="UnaryTests_0hahiek">
+          <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","struckOut","writeFinalDecision","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zmgmrb">
+          <text>"referredByTcwPreHearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1iwmx55">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c7drc9">
+        <inputEntry id="UnaryTests_163abpd">
+          <text>"writeFinalDecision","adjournCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05vgtr9">
+          <text>"prepareForHearingJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00sts3f">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06cjegh">
+        <inputEntry id="UnaryTests_0pmifvh">
+          <text>"issueFinalDecision", "issueAdjournmentNotice"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0p3o4at">
+          <text>"writeDecisionJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c2kgom">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -149,6 +204,61 @@
           <text>"reviewPostponementRequestJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jf2q76">
+          	<text>"Auto"</text>
+          </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lpw5y0">
+        <inputEntry id="UnaryTests_05raz0j">
+          <text>"uploadWelshDocument","cancelTranslations"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l4fulw">
+          <text>"reviewValidAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cwq0lt">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0m5vzzi">
+        <inputEntry id="UnaryTests_1u0vf36">
+          <text>"updateListingRequirement","readyToList"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pm4iv8">
+          <text>"reviewListingError"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zwws2c">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1k5b0ls">
+        <inputEntry id="UnaryTests_1v2uymb">
+          <text>"resendCaseToGAPS2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qpjrsg">
+          <text>"reviewRoboticFail"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qofg43">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08sk3dx">
+        <inputEntry id="UnaryTests_03cf0cj">
+          <text>"amendDueDate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a6qx53">
+          <text>"reviewBfDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16ux66o">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xhkcil">
+        <inputEntry id="UnaryTests_1qzsk8a">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14xiepf">
+          <text>"allocateCaseRolesAndCreateBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16gzm5k">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
