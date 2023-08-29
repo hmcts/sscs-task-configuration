@@ -217,6 +217,16 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 defaultPermissionsJudgesReviewTasks()
             ),
             Arguments.of(
+                "reviewPheRequestJudge",
+                "someCaseData",
+                defaultPermissionsJudgesTasks()
+            ),
+            Arguments.of(
+                "reviewPostponementRequestJudge",
+                "someCaseData",
+                defaultPermissionsHearingJudgesTasks()
+            ),
+            Arguments.of(
                 "reviewBfDate",
                 "someCaseData",
                 defaultCtscPermissions()
@@ -231,6 +241,28 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "someCaseData",
                 defaultCtscPermissions()
             )
+        );
+    }
+
+    private static List<Map<String, Object>> defaultPermissionsJudgesTasks() {
+        return List.of(
+            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+        );
+    }
+
+    private static List<Map<String, Object>> defaultPermissionsHearingJudgesTasks() {
+        return List.of(
+            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
         );
     }
 
@@ -389,7 +421,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(31));
+        assertThat(logic.getRules().size(), is(34));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

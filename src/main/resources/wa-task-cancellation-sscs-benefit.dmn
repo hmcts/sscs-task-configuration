@@ -402,6 +402,101 @@
           <text>"reviewReinstatementRequestJudge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_17gkhmc">
+        <inputEntry id="UnaryTests_07n5vyu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hntzw6">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision",
+"decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zn1d9u">
+          <text></text>
+        </inputEntry>
+				<inputEntry id="UnaryTests_0zr6k9u">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ckrdi0">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00h9xqp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0piu1ni">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hde770">
+          <text>"reviewPheRequestJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_109ovnc">
+        <inputEntry id="UnaryTests_1dg6oka">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19uo2qv">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"issueFinalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09jtb2q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06h7d2q">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xy6qu5">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ue0otl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_172kv6s">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ca92as">
+          <text>"ftaNotProvidedAppointeeDetailsJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00622z5">
+        <inputEntry id="UnaryTests_1646usm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_042gx9w">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision",
+"decisionIssued",
+"actionPostponementRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fe9021">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_5h7d5kh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1913jqm">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pdqpe1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b4wx5h">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ex3eru">
+          <text>"reviewPostponementRequestJudge"</text>
+				</outputEntry>
+      </rule>
       <rule id="DecisionRule_1jh2t6x">
         <inputEntry id="UnaryTests_04fpg51">
           <text></text>

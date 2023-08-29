@@ -141,59 +141,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "incompleteApplicationReceived",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "draftToIncompleteApplication",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "incompleteApplicationReceived",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestInfoIncompleteApplication",
-                "withDwp",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInformationRequested",
-                        "name", "Review Information Requested",
-                        "delayDuration", 2,
-                        "workingDaysAllowed", 3,
-                        "processCategories", "reviewInformationRequested"
-                    )
-                )
-            ),
-            Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
                 Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
@@ -213,132 +160,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 List.of()
             ),
             Arguments.of(
-                "dwpSupplementaryResponse",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewBilingualDocument",
-                        "name", "Review Bi-Lingual Document",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "Translation Tasks"
-                    ),
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
-            event("sendToAdmin")
-                .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
-                .build(),
-            Arguments.of(
-                "dwpUploadResponse",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", false)),
-                List.of()
-            ),
-            Arguments.of(
-                "attachScannedDocs",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewBilingualDocument",
-                        "name", "Review Bi-Lingual Document",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "Translation Tasks"
-                    ),
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
-            Arguments.of(
-                "uploadDocumentFurtherEvidence",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewBilingualDocument",
-                        "name", "Review Bi-Lingual Document",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "Translation Tasks"
-                    ),
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
-            Arguments.of(
-                "draftToIncompleteApplication",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "incompleteApplicationReceived",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestInfoIncompleteApplication",
-                "withDwp",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInformationRequested",
-                        "name", "Review Information Requested",
-                        "delayDuration", 2,
-                        "workingDaysAllowed", 3,
-                        "processCategories", "reviewInformationRequested"
-                    )
-                )
-            ),
-            Arguments.of(
-                "dwpUploadResponse",
-                "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewFtaResponse",
-                        "name", "Review FTA Response",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "reviewFtaResponse"
-                    )
-                )
-            ),
-            Arguments.of(
-                "dwpUploadResponse",
-                "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "No")),
-                List.of()
-            ),
-            Arguments.of(
-                "dwpSupplementaryResponse",
+                "uploadDocument",
                 null,
                 Map.of("Data", Map.of("languagePreferenceWelsh", true)),
                 List.of(
@@ -482,46 +304,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "draftToIncompleteApplication",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "incompleteApplicationReceived",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestInfoIncompleteApplication",
-                "withDwp",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInformationRequested",
-                        "name", "Review Information Requested",
-                        "delayDuration", 2,
-                        "workingDaysAllowed", 3,
-                        "processCategories", "reviewInformationRequested"
-                    )
-                )
-            ),
-            Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
                 Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
@@ -533,12 +315,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "reviewFtaResponse"
                     )
                 )
-            ),
-            Arguments.of(
-                "dwpUploadResponse",
-                "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "No")),
-                List.of()
             ),
             event("dwpSupplementaryResponse")
                 .withCaseData("languagePreferenceWelsh", true)
@@ -552,19 +328,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                  10, "Translation Tasks")
                 .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
                 .build(),
-            Arguments.of(
-                "dwpUploadResponse",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", false)),
-                List.of()
-            ),
             event("attachScannedDocs")
-                .withCaseData("languagePreferenceWelsh", true)
-                .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document",
-                                 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
-                .build(),
-            event("uploadDocumentFurtherEvidence")
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document",
                                  10, "Translation Tasks")
@@ -594,6 +358,32 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("manageWelshDocuments")
                 .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
                 .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
+                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
+                .build(),
+            event("uploadWelshDocument")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
+                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
+                                 10, "Translation Tasks")
+                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
+                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
+                .build(),
+            event("dwpUploadResponse")
+                .withCaseData("workType", "phme")
+                .initiativesTask("reviewPheRequestJudge", "Review PHE Request", 2)
+                .build(),
+            event("updateNotListable")
+                .withCaseData("action", "reviewByJudge")
+                .initiativesTask("ftaNotProvidedAppointeeDetailsJudge", "FTA not Provided Appointee Details", 2)
+                .build(),
+            event("actionPostponementRequest")
+                .withCaseData("action", "sendToJudge")
+                .initiativesTask("reviewPostponementRequestJudge", "Review Postponement Request", 2)
                 .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
@@ -646,7 +436,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(23));
+        assertThat(logic.getRules().size(), is(26));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

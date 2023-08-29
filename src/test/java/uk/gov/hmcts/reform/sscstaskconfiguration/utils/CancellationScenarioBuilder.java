@@ -2,17 +2,14 @@ package uk.gov.hmcts.reform.sscstaskconfiguration.utils;
 
 import org.junit.jupiter.params.provider.Arguments;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CancellationScenarioBuilder {
 
     private String event;
     private Map<String,Object> caseData = new HashMap<>();
 
-    private List<Map<String,String>> results = new ArrayList<>();
+    private Set<Map<String,String>> results = new HashSet<>();
 
     private CancellationScenarioBuilder(String event) {
         this.event = event;

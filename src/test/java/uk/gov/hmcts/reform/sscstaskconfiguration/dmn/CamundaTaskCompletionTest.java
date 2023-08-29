@@ -11,8 +11,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -39,25 +41,36 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "reviewConfidentialityRequest", "reviewReinstatementRequestJudge"),
             eventAutoCompletesTasks("interlocSendToTcw",
                                     "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate",
-                                    "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge", "referredByTcwPreHearing"),
+                                    "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
+                                    "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge"),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse"),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument"),
             eventAutoCompletesTasks("actionFurtherEvidence","issueOutstandingTranslation"),
             eventAutoCompletesTasks("reviewConfidentialityRequest","reviewConfidentialityRequest"),
-            eventAutoCompletesTasks("decisionIssued", "referredByTcwPreHearing"),
-            eventAutoCompletesTasks("struckOut", "referredByTcwPreHearing"),
-            eventAutoCompletesTasks("writeFinalDecision", "referredByTcwPreHearing", "prepareForHearingJudge"),
+            eventAutoCompletesTasks("reviewPhmeRequest","reviewPheRequestJudge"),
+            eventAutoCompletesTasks("decisionIssued",
+                                    "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge"),
+            eventAutoCompletesTasks("struckOut",
+                                    "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge"),
+            eventAutoCompletesTasks("abateCase","ftaNotProvidedAppointeeDetailsJudge"),
+            eventAutoCompletesTasks("writeFinalDecision",
+                                    "referredByTcwPreHearing", "prepareForHearingJudge",
+                                    "ftaNotProvidedAppointeeDetailsJudge"),
+            eventAutoCompletesTasks("actionPostponementRequest","reviewPostponementRequestJudge"),
             eventAutoCompletesTasks("adjournCase", "prepareForHearingJudge"),
             eventAutoCompletesTasks("issueAdjournmentNotice", "writeDecisionJudge"),
             eventAutoCompletesTasks("sendToAdmin",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
-                                    "reviewReinstatementRequestJudge", "referredByTcwPreHearing"),
+                                    "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
+                                    "ftaNotProvidedAppointeeDetailsJudge"),
             eventAutoCompletesTasks("directionIssued",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
-                                    "reviewReinstatementRequestJudge", "referredByTcwPreHearing"),
+                                    "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
+                                    "ftaNotProvidedAppointeeDetailsJudge"),
             eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest", "writeDecisionJudge"),
             eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
+                                    "reviewPheRequestJudge", "ftaNotProvidedAppointeeDetailsJudge",
                                     "referredByTcwPreHearing"),
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal"),
             eventAutoCompletesTasks("updateListingRequirement","reviewListingError"),
@@ -80,7 +93,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(20));
+        assertThat(logic.getRules().size(), is(23));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {

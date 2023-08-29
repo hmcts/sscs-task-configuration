@@ -55,6 +55,25 @@ public class ConfigurationExpectationBuilder {
         return builder;
     }
 
+    public static ConfigurationExpectationBuilder defaultJudicialTaskExpectations() {
+        ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
+        builder.expectedValue(CASE_NAME, "Joe Blogs", true);
+        builder.expectedValue(CASE_MANAGEMENT_CATEGORY, "Personal Independence Payment", true);
+        builder.expectedValue(LOCATION, "123456", true);
+        builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
+        builder.expectedValue(WORK_TYPE, "pre_hearing", true);
+        builder.expectedValue(ROLE_CATEGORY, "Judicial", true);
+        builder.expectedValue(PRIORITY_DATE, "", true);
+        builder.expectedValue(MINOR_PRIORITY, "500", true);
+        builder.expectedValue(MAJOR_PRIORITY, "5000", true);
+        builder.expectedValue(NEXT_HEARING_ID, "", true);
+        builder.expectedValue(NEXT_HEARING_DATE, "", true);
+        builder.expectedValue(DUE_DATE_ORIGIN, now(), false);
+        builder.expectedValue(DUE_DATE_NON_WORKING_CALENDAR, CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR, true);
+        builder.expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true);
+        return builder;
+    }
+
     public static String eventLink(String description, String eventId) {
         return String.format("[%s](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/%s)", description, eventId);
     }

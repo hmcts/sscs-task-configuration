@@ -12,8 +12,10 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -38,11 +40,14 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge")
+                .cancel("ftaNotProvidedAppointeeDetailsJudge")
+                .cancel("reviewPostponementRequestJudge")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("referredByTcwPreHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
-                .cancel("reviewReinstatementRequestJudge")
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
                 .cancel("reviewRoboticFail")
@@ -55,6 +60,10 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge")
+                .cancel("ftaNotProvidedAppointeeDetailsJudge")
+                .cancel("reviewPostponementRequestJudge")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("referredByTcwPreHearing")
                 .cancel("prepareForHearingJudge")
@@ -72,6 +81,10 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge")
+                .cancel("ftaNotProvidedAppointeeDetailsJudge")
+                .cancel("reviewPostponementRequestJudge")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("referredByTcwPreHearing")
                 .cancel("prepareForHearingJudge")
@@ -88,6 +101,10 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewConfidentialityRequest")
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge")
+                .cancel("ftaNotProvidedAppointeeDetailsJudge")
+                .cancel("reviewPostponementRequestJudge")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("referredByTcwPreHearing")
                 .cancel("prepareForHearingJudge")
@@ -102,6 +119,9 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
                 .cancel("reviewConfidentialityRequest")
+                .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge")
+                .cancel("reviewPostponementRequestJudge")
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
@@ -135,6 +155,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
                 .cancel("reviewReinstatementRequestJudge")
+                .cancel("reviewPheRequestJudge")
+                .cancel("reviewPostponementRequestJudge")
                 .build(),
             event("issueFinalDecision")
                 .cancel("reviewUrgentHearingRequest")
@@ -143,6 +165,9 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("writeDecisionJudge")
                 .cancel("reviewReinstatementRequestJudge")
                 .cancel("reviewOutstandingDraftDecision")
+                .cancel("reviewPheRequestJudge")
+                .cancel("ftaNotProvidedAppointeeDetailsJudge")
+                .cancel("reviewPostponementRequestJudge")
                 .build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks")
@@ -152,7 +177,11 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("writeDecisionJudge")
                 .build(),
             event("actionPostponementRequest")
+                .cancel("reviewPostponementRequestJudge")
+                .build(),
+            event("actionPostponementRequest")
                 .withCaseData("actionPostponementRequestSelected", "grant")
+                .cancel("reviewPostponementRequestJudge")
                 .cancel("prepareForHearingJudge")
                 .build(),
             event("cancelTranslations")
@@ -173,7 +202,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                                                       String eventId,
                                                       String state,
                                                       Map<String, Object> map,
-                                                      List<Map<String, String>> expectation) {
+                                                      Set<Map<String, String>> expectation) {
 
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("fromState", fromState);
@@ -181,7 +210,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("state", state);
         inputVariables.putValue("additionalData", map);
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        MatcherAssert.assertThat(new HashSet<Map<String,Object>>(dmnDecisionTableResult.getResultList()), is(expectation));
     }
 
     @Test
@@ -190,6 +219,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(4));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(20));
+        assertThat(logic.getRules().size(), is(23));
     }
 }
