@@ -157,7 +157,7 @@ else
       </rule>
       <rule id="DecisionRule_0nasu18">
         <inputEntry id="UnaryTests_16558sm">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredToInterlocJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_04qt2zh">
           <text></text>
@@ -399,7 +399,7 @@ else
       </rule>
       <rule id="DecisionRule_1l7sw0j">
         <inputEntry id="UnaryTests_0ct3egt">
-          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredByTcwPreHearing"</text>
+          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredByTcwPreHearing","referredToInterlocJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ri0myh">
           <text></text>
@@ -477,7 +477,7 @@ else
       </rule>
       <rule id="DecisionRule_0kumsrg">
         <inputEntry id="UnaryTests_1nrlamk">
-          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition"</text>
+          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gpzj1d">
           <text></text>
@@ -529,7 +529,7 @@ else
       </rule>
       <rule id="DecisionRule_1a3ndv4">
         <inputEntry id="UnaryTests_0i1ce54">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yl9r0u">
           <text></text>

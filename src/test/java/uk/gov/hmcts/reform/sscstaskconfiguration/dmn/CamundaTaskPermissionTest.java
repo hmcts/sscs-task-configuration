@@ -268,6 +268,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
                     permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
                 )
+            ),
+            Arguments.of(
+                "referredToInterlocJudge",
+                "someCaseData",
+                defaultPermissionsJudgesTasks()
             )
         );
     }
