@@ -418,7 +418,7 @@
         <inputEntry id="UnaryTests_0zn1d9u">
           <text></text>
         </inputEntry>
-				<inputEntry id="UnaryTests_0zr6k9u">
+        <inputEntry id="UnaryTests_0zr6k9u">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ckrdi0">
@@ -495,7 +495,7 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0ex3eru">
           <text>"reviewPostponementRequestJudge"</text>
-				</outputEntry>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1jh2t6x">
         <inputEntry id="UnaryTests_04fpg51">
@@ -672,6 +672,32 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_16qatwq">
           <text>"reviewOutstandingDraftDecision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m5p2iq">
+        <inputEntry id="UnaryTests_0qc7582">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uxsrik">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p6aaii">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ix9eks">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qa2mht">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17uu8da">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_097jqo0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mi9wte">
+          <text>"referredByAdminJudgePreHearing"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06vo1lb">
