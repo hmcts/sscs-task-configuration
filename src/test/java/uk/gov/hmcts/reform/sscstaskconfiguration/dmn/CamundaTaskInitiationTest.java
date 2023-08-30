@@ -504,6 +504,30 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
                 .withCaseData("issueInterlocDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
                 .initiativesTask("reviewStatementofReasons", "Review Statement of Reasons", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewPermissionToAppealApplication")
+                .initiativesTask("referredToInterlocJudge", "Referred to interloc",
+                                 2, "Routine work")
+                .initiativesTask("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewPermissionToAppealApplication")
+                .withCaseData("otherParties", List.of("other party 1"))
+                .initiativesTask("referredToInterlocJudge", "Referred to interloc",
+                                 2, "Routine work")
+                .initiativesTaskWithDelay("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 21, 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("permissionToAppealApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .initiativesTask("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("permissionToAppealApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .withCaseData("jointParty", "Yes")
+                .initiativesTaskWithDelay("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 21, 2)
                 .build()
         );
     }
@@ -529,7 +553,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(27));
+        assertThat(logic.getRules().size(), is(31));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

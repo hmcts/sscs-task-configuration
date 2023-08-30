@@ -16,6 +16,15 @@
             null</text>
         </inputExpression>
       </input>
+      <input id="InputClause_02zxlx7" label="Post Hearing Review Type">
+        <inputExpression id="LiteralExpression_1g6tfsa" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.postHearingReviewType
+            != null) then
+            additionalData.Data.postHearingReviewType
+            else
+            null</text>
+        </inputExpression>
+      </input>
       <output id="Output_1" label="Task Type" name="taskType" typeRef="string" biodi:width="282" />
       <output id="OutputClause_1mldd9e" label="Completion Mode" name="completionMode" typeRef="string" />
       <rule id="DecisionRule_0qzqi5e">
@@ -23,6 +32,9 @@
           <text>"requestForInformation"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_07oe1cm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o6q3jb">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_09is3bq">
@@ -39,6 +51,9 @@
         <inputEntry id="UnaryTests_0fgrhcd">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0avffb1">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1tsx1xn">
           <text>"reviewInformationRequested"</text>
         </outputEntry>
@@ -51,6 +66,9 @@
           <text>"hmctsResponseReviewed"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_14i94vo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h1vbwa">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_12md732">
@@ -67,6 +85,9 @@
         <inputEntry id="UnaryTests_1n345rk">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1r1h51k">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0itk20i">
           <text>"reviewBilingualDocument"</text>
         </outputEntry>
@@ -79,6 +100,9 @@
           <text>"validSendToInterloc","interlocSendToTcw","interlocInformationReceived"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0zb8aws">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q87f4n">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0xpustk">
@@ -95,6 +119,9 @@
         <inputEntry id="UnaryTests_17oagmz">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_10jsc1a">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_17yfh8o">
           <text>"issueOutstandingTranslation"</text>
         </outputEntry>
@@ -107,6 +134,9 @@
           <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0cx14q1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0owlt0n">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0i6kswh">
@@ -123,6 +153,9 @@
         <inputEntry id="UnaryTests_1lcnzjp">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1gzj364">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1vm1eoh">
           <text>"reviewFtaDueDate"</text>
         </outputEntry>
@@ -135,6 +168,9 @@
           <text>"uploadWelshDocument","cancelTranslations"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10ukfqm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rny5jm">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1l4fulw">
@@ -151,6 +187,9 @@
         <inputEntry id="UnaryTests_16kqprt">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0qn5rhy">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0pm4iv8">
           <text>"reviewListingError"</text>
         </outputEntry>
@@ -163,6 +202,9 @@
           <text>"resendCaseToGAPS2"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0rwtcf8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lypl2f">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qpjrsg">
@@ -179,6 +221,9 @@
         <inputEntry id="UnaryTests_0p6fu75">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_09yk5tm">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0a6qx53">
           <text>"reviewBfDate"</text>
         </outputEntry>
@@ -191,6 +236,9 @@
           <text>"createBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1lcmpbu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09ir5u4">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14xiepf">
@@ -207,6 +255,9 @@
         <inputEntry id="UnaryTests_14zrqa0">
           <text>interlocReferralReason = "reviewStatementOfReasonsApplication"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_07uugdc">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_06k2gs9">
           <text>"reviewStatementofReasonsApplication"</text>
         </outputEntry>
@@ -219,6 +270,9 @@
           <text>"libertyToApplyGranted","libertyToApplyRefused","directionIssued"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1k9od2o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p8hbqb">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1w5c3km">
@@ -235,6 +289,9 @@
         <inputEntry id="UnaryTests_0n8dkl2">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0ktpzzx">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1ug82et">
           <text>"reviewCorrectionApplicationJudge"</text>
         </outputEntry>
@@ -247,6 +304,9 @@
           <text>"sORWrite"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yqeo0e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bkku30">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1jopy2y">
@@ -263,10 +323,47 @@
         <inputEntry id="UnaryTests_1ln8wp4">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1dubyu1">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0nfra51">
           <text>"reviewStatementofReasons"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14vj8wq">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bgqggf">
+        <inputEntry id="UnaryTests_1tntg4r">
+          <text>"permissionToAppealGranted","permissionToAppealRefused","directionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08tmebs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03xj6qx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19v9iwz">
+          <text>"reviewPermissiontoAppealApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17zabte">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06x3kez">
+        <inputEntry id="UnaryTests_0d6xd6i">
+          <text>"postHearingReview"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_084vrkl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e3uypd">
+          <text>"setAside"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mnnp1h">
+          <text>"reviewPermissiontoAppealApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wp6maj">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
