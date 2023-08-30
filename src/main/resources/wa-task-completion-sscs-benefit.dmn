@@ -367,6 +367,23 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_12makfo">
+        <inputEntry id="UnaryTests_1a9xr47">
+          <text>"directionIssued","sendToAdmin"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f7cl6f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t30zgi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i8ugta">
+          <text>"reviewRemittedDecisionandProvideListingDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mh069o">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

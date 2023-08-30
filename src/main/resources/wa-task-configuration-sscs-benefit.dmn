@@ -138,7 +138,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j4fsmh">
-          <text>"reviewStatementofReasonsApplication", "reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication"</text>
+          <text>"reviewStatementofReasonsApplication", "reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0pimx2r">
           <text>"workType"</text>
@@ -189,7 +189,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_19ayvus">
-          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication"</text>
+          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wd2svu">
           <text>"roleCategory"</text>
@@ -243,7 +243,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","reviewRemittedDecisionandProvideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -314,7 +314,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","reviewRemittedDecisionandProvideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -742,7 +742,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewStatementofReasonsApplication","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewStatementofReasons","reviewPermissiontoAppealApplication"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewStatementofReasonsApplication","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>

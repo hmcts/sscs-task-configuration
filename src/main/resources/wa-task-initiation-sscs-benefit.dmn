@@ -1770,6 +1770,59 @@ else 0</text>
           <text>"reviewPermissiontoAppealApplication"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0rraboo">
+        <inputEntry id="UnaryTests_1rfa3t2">
+          <text>"validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nm0ksw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_022lc40">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a85xzi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0651e8p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xcc10d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_013q16n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1un6bf4">
+          <text>"reviewUpperTribunalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_162b6uz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1obc7yw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19nk1tl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nrh9bt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x3lr8i">
+          <text>"reviewRemittedDecisionandProvideListingDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r405d3">
+          <text>"Review Remitted Decision and Provide Listing Directions"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v1fsn1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t8fq1k">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03rmwau">
+          <text>"reviewRemittedDecisionandProvideListingDirections"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
