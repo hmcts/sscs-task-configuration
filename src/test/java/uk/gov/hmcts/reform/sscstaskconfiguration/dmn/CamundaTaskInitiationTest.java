@@ -328,11 +328,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "updateHearingDetails"
                     )
                 )
-            ),
+           ),
             Arguments.of(
                 "correctionRequested",
                 "dormantAppealState",
-                "postHearing",
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "reviewCorrectionApplcationAdmin",
@@ -345,13 +345,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "actionFurtherEvidence",
                 "dormantAppealState",
-                "postHearing",
+                Map.of("Data", Map.of("scannedDocumentTypes", "correctionApplication")),
                 singletonList(
                     Map.of(
                         "taskId", "reviewCorrectionApplcationAdmin",
                         "name", "Review Correction Application",
                         "workingDaysAllowed", 3,
                         "processCategories", "reviewCorrectionApplcationAdmin"
+                    )
+                )
+            ),
+            Arguments.of(
+                "remitToFirstTierTribunal",
+                "dormantAppealState",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "shareRemittedDecision",
+                        "name", "Allocate Judge And Share Remitted Decision",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "shareRemittedDecision"
                     )
                 )
             )
@@ -380,7 +393,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(15));
+        assertThat(logic.getRules().size(), is(16));
 
     }
 

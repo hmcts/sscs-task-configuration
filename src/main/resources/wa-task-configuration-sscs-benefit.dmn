@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -129,16 +129,16 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j02414">
-          <text>"reviewCorrectionApplcationAdmin"</text>
+          <text>"reviewCorrectionApplcationAdmin","shareRemittedDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_08l6xdr">
           <text>"workType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dow8s8">
-          <text>"post_hearing_work"</text>
+          <text>"post_hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16rx1iu">
-          <text></text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0460vvp">
@@ -146,7 +146,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal","reviewListingError","reviewBfDate","reviewOutstandingDraftDecision","reviewCorrectionApplcationAdmin"</text>
+          <text>"reviewIncompleteAppeal","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewValidAppeal","reviewListingError","reviewBfDate","reviewOutstandingDraftDecision","reviewCorrectionApplcationAdmin","shareRemittedDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -199,7 +199,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","shareRemittedDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -253,7 +253,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1er22bd">
-          <text>"reviewValidAppeal"</text>
+          <text>"reviewValidAppeal","shareRemittedDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15rpj6m">
           <text>"majorPriority"</text>
@@ -570,6 +570,23 @@ else "https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xobr9s">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19usv03">
+        <inputEntry id="UnaryTests_1hipivt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15n82t5">
+          <text>"shareRemittedDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03u1q62">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wmrsoo">
+          <text>20</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ckput7">
           <text>true</text>
         </outputEntry>
       </rule>

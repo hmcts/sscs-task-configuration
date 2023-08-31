@@ -97,6 +97,43 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "shareRemittedDecision",
+                "someCaseData",
+                List.of(
+                    Map.of(
+                        "name", "case-allocator",
+                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "task-supervisor",
+                        "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "Allocated-CTSC-Caseworker",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                        "assignmentPriority", 1,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", true
+                    ),
+                    Map.of(
+                        "name", "CTSC-Administrator",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                        "assignmentPriority", 2,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "CTSC-Team-Leader",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete",
+                        "assignmentPriority", 3,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", false
+                    )
+                )
+            ),
+            Arguments.of(
                 "reviewBilingualDocument",
                 "someCaseData",
                 defaultCtscPermissionsWithCompleteOwn()
@@ -366,7 +403,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(22));
+        assertThat(logic.getRules().size(), is(23));
 
     }
 
