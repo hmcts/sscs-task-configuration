@@ -155,6 +155,33 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0upe1nh">
+        <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
+        <inputEntry id="UnaryTests_0jkzk59">
+          <text>"reviewPostHearingNoticeforListingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yru9vk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v0b3zm">
+          <text>"allocated-ctsc-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dgnged">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jp9k8a">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fvr8c9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ydb5rw">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q0qzf6">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0e3o7rq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1kc55kf">
@@ -233,6 +260,33 @@ else
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bl1ifu">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03s2ycj">
+        <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
+        <inputEntry id="UnaryTests_0ulu04u">
+          <text>"reviewPostHearingNoticeforListingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17euiz2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05gw6xc">
+          <text>"ctsc"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12cemt8">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19meuhv">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l4wcfe">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eawhy7">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t9z6t4">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -365,6 +419,32 @@ else
           <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_10dk27c">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d9tw8h">
+        <inputEntry id="UnaryTests_166j1fl">
+          <text>"reviewPostHearingNoticeforListingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vri279">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0v5zx9q">
+          <text>"ctsc-team-leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0efrc8u">
+          <text>"Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08nkj1z">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_093kykj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h6rbbt">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kcs0vk">
           <text>false</text>
         </outputEntry>
       </rule>

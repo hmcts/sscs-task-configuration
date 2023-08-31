@@ -291,6 +291,35 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                                 "autoAssignable", false
                             )
                         )
+                    ),
+                    Arguments.of(
+                        "reviewPostHearingNoticeforListingRequirements",
+                        "someCaseData",
+                        List.of(
+                            Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                            Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                            Map.of(
+                                "name", "allocated-ctsc-caseworker",
+                                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn",
+                                "assignmentPriority", 1,
+                                "roleCategory", "CTSC",
+                                "autoAssignable", true
+                            ),
+                            Map.of(
+                                "name", "ctsc",
+                                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn",
+                                "assignmentPriority", 2,
+                                "roleCategory", "CTSC",
+                                "autoAssignable", false
+                            ),
+                            Map.of(
+                                "name", "ctsc-team-leader",
+                                "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete",
+                                "assignmentPriority", 3,
+                                "roleCategory", "CTSC",
+                                "autoAssignable", false
+                            )
+                        )
                     )
                 )
             )
@@ -333,7 +362,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(23));
+        assertThat(logic.getRules().size(), is(26));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
