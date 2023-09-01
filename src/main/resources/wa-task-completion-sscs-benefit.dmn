@@ -9,20 +9,9 @@
       </input>
       <output id="Output_1" label="Task Type" name="taskType" typeRef="string" biodi:width="282" />
       <output id="OutputClause_1mldd9e" label="Completion Mode" name="completionMode" typeRef="string" />
-      <rule id="DecisionRule_12eenty">
-        <inputEntry id="UnaryTests_17cg7de">
-          <text>"nonCompliant"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1lk4wxe">
-          <text>"reviewTheAppeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ap1s9l">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0qzqi5e">
         <inputEntry id="UnaryTests_1xelfx0">
-          <text>"requestInfoIncompleteApplication"</text>
+          <text>"requestForInformation"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_09is3bq">
           <text>"reviewIncompleteAppeal"</text>

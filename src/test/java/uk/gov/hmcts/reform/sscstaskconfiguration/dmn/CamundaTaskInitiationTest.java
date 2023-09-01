@@ -36,19 +36,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
             Arguments.of(
-                "nonCompliant",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "nonCompliantCase",
-                        "name", "Review non-compliant appeal",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "Non-compliant appeal"
-                    )
-                )
-            ),
-            Arguments.of(
                 "draftToIncompleteApplication",
                 null,
                 null,
@@ -75,14 +62,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "requestInfoIncompleteApplication",
-                "withDwp",
+                "requestForInformation",
+                null,
                 null,
                 singletonList(
                     Map.of(
                         "taskId", "reviewInformationRequested",
                         "name", "Review Information Requested",
-                        "delayDuration", 2,
                         "workingDaysAllowed", 3,
                         "processCategories", "reviewInformationRequested"
                     )
@@ -291,19 +277,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "hearingToday",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewOutstandingDraftDecision",
-                        "name", "Review Outstanding Draft Decision",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewOutstandingDraftDecision"
-                    )
-                )
-            ),
-            Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
                 Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
@@ -410,7 +383,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("panel", Map.of("assignedTo", "panel member 1"))
                 .withCaseData("nextHearingDate", LocalDate.now().plusDays(7).toString())
                 .initiativesTask("prepareForHearingJudge", "Prepare For Hearing", 2)
-                .initiativesTaskWithDelay("writeDecisionJudge", "Write Decision", 7,2)
+                .build(),
+            event("hearingToday")
+                .initiativesTask("writeDecisionJudge", "Write Decision", 2)
+                .initiativesTask("reviewOutstandingDraftDecision", "Review Outstanding Draft Decision", 5)
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("workType", "preHearingWork")
@@ -430,6 +406,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("action", "reviewByJudge")
                 .withCaseData("interlocReferralReason", "Other")
                 .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2)
+                .build(),
+            event("actionPostponementRequest")
+                .withCaseData("daysToHearing", 14)
+                .build(),
+            event("actionPostponementRequest")
+                .withCaseData("daysToHearing", 6)
+                .initiativesTask("contactParties", "Contact Parties", 1)
                 .build()
         );
     }
