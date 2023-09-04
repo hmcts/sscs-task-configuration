@@ -29,7 +29,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
 
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
-            event("nonCompliant").cancelAll().build(),
             event("addHearing").reconfigureAll().build(),
             event("caseUpdated").reconfigureAll().build(),
             event("voidCase")
@@ -41,7 +40,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewListingError")
                 .cancel("reviewRoboticFail")
                 .cancel("allocateCaseRolesAndCreateBundle")
-                .cancel("reviewOutstandingDraftDecision").build(),
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("contactParties").build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -51,7 +51,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewListingError")
                 .cancel("reviewRoboticFail")
                 .cancel("allocateCaseRolesAndCreateBundle")
-                .cancel("reviewOutstandingDraftDecision").build(),
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("contactParties").build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -61,13 +62,15 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewListingError")
                 .cancel("reviewRoboticFail")
                 .cancel("allocateCaseRolesAndCreateBundle")
-                .cancel("reviewOutstandingDraftDecision").build(),
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("contactParties").build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("allocateCaseRolesAndCreateBundle")
-                .cancel("reviewOutstandingDraftDecision").build(),
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("contactParties").build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
@@ -77,21 +80,27 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewListingError")
                 .cancel("reviewRoboticFail")
                 .cancel("allocateCaseRolesAndCreateBundle")
-                .cancel("reviewOutstandingDraftDecision").build(),
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("contactParties").build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
-                .cancel("reviewBfDate").build(),
+                .cancel("reviewBfDate")
+                .cancel("contactParties").build(),
             event("makeCaseUrgent")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
-                .cancel("reviewBfDate").build(),
+                .cancel("reviewBfDate")
+                .cancel("contactParties").build(),
             event("readyToList")
                 .cancel("reviewIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
-                .cancel("reviewFtaDueDate").build(),
+                .cancel("reviewFtaDueDate")
+                .cancel("contactParties").build(),
             event("decisionIssued")
-                .cancel("reviewIncompleteAppeal").build(),
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("contactParties").build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks").build(),
             event("interlocSendToTcw")

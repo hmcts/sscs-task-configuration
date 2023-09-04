@@ -32,8 +32,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
 
         return Stream.of(
-            eventAutoCompletesTasks("nonCompliant","reviewTheAppeal"),
-            eventAutoCompletesTasks("requestInfoIncompleteApplication","reviewIncompleteAppeal"),
+            eventAutoCompletesTasks("requestForInformation","reviewIncompleteAppeal"),
             eventAutoCompletesTasks("interlocInformationReceived", "reviewInformationRequested", "reviewAdminAction"),
             eventAutoCompletesTasks("validSendToInterloc", "reviewInformationRequested", "reviewAdminAction"),
             eventAutoCompletesTasks("interlocSendToTcw",
@@ -62,7 +61,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(14));
+        assertThat(logic.getRules().size(), is(12));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {

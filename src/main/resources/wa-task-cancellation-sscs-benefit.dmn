@@ -21,29 +21,6 @@
       <output id="OutputClause_0tu8bqp" label="Warning Code" name="warningCode" typeRef="string" />
       <output id="OutputClause_1kfc3jv" label="Warning Text" name="warningText" typeRef="string" />
       <output id="OutputClause_0dqzted" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="277" />
-      <rule id="DecisionRule_0w82l1w">
-        <inputEntry id="UnaryTests_1nfllzy">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0a7tgdv">
-          <text>"nonCompliant"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1iy08tm">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0t8415e">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0c65k96">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0fivyma">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zmhw8j">
-          <text></text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_13tyqnj">
         <inputEntry id="UnaryTests_0zd4nd3">
           <text></text>
@@ -86,7 +63,8 @@
 "confirmLapsed",
 "struckOut",
 "makeCaseUrgent",
-"readyToList"</text>
+"readyToList",
+"decisionIssued"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bjzm1a">
           <text></text>
@@ -339,6 +317,37 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_16qatwq">
           <text>"reviewOutstandingDraftDecision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0aqvykm">
+        <inputEntry id="UnaryTests_1eh15au">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vti5ug">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"validSendToInterloc",
+"makeCaseUrgent",
+"readyToList",
+"decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03psygx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a836rx">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p3qi9t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dqzhlr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1642yy5">
+          <text>"contactParties"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06vo1lb">
