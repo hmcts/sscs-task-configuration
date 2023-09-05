@@ -77,7 +77,7 @@
       </rule>
       <rule id="DecisionRule_1rc2nda">
         <inputEntry id="UnaryTests_1weothi">
-          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+          <text>"actionFurtherEvidence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0i6kswh">
           <text>"actionUnprocessedCorrespondence"</text>
