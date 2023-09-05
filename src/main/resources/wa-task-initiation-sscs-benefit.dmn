@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -25,7 +25,7 @@
         <inputExpression id="LiteralExpression_0nsfl92" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.dwpFurtherInfo
             != null) then
-            additionalData.Data.dwpFurtherInfo 
+            additionalData.Data.dwpFurtherInfo
             else
             null</text>
         </inputExpression>
@@ -568,6 +568,38 @@ else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ofelk7">
           <text>"contactParties"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cqjnxv">
+        <inputEntry id="UnaryTests_1g677e6">
+          <text>"permissionToAppealRequest","libertyToApplyRequest","setAsideRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ebdul4">
+          <text>"appealDormant","postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bdffj6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ex8xyb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pfq087">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16yl0m2">
+          <text>"reviewApplicationAndAllocateJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0puznxm">
+          <text>"Review Application And Allocate Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gw47mw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0l9isgm">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_074u8ag">
+          <text>"reviewApplicationAndAllocateJudge"</text>
         </outputEntry>
       </rule>
     </decisionTable>

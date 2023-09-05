@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <informationRequirement id="InformationRequirement_1t76wn6">
       <requiredDecision href="#sscs-task-configuration-non-working-days" />
@@ -133,12 +133,29 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1dxfll9">
+        <inputEntry id="UnaryTests_0kdyhuw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14ykfmj">
+          <text>"reviewApplicationAndAllocateJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ap06fl">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jzkztt">
+          <text>"post_hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bbtk4c">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0460vvp">
         <inputEntry id="UnaryTests_0pa4ux4">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","reviewApplicationAndAllocateJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -209,7 +226,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","reviewApplicationAndAllocateJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -280,7 +297,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
+          <text>"reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","reviewApplicationAndAllocateJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -623,7 +640,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pw9fy3">
-          <text>"reviewInformationRequested","reviewListingError","reviewRoboticFail","allocateCaseRolesAndCreateBundle"</text>
+          <text>"reviewInformationRequested","reviewListingError","reviewRoboticFail","allocateCaseRolesAndCreateBundle","reviewApplicationAndAllocateJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0hvbenp">
           <text>"dueDateIntervalDays"</text>

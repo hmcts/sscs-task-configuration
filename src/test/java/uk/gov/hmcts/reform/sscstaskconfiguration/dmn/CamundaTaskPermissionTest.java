@@ -140,6 +140,35 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "contactParties",
                 "someCaseData",
                 Permissions.defaultAdminCaseWorkerPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "reviewApplicationAndAllocateJudge",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Map.of(
+                        "name", "allocated-ctsc-caseworker",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn,CompleteOwn",
+                        "assignmentPriority", 1,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", true
+                    ),
+                    Map.of(
+                        "name", "ctsc",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn,CompleteOwn",
+                        "assignmentPriority", 2,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "ctsc-team-leader",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,CancelOwn,CompleteOwn",
+                        "assignmentPriority", 3,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", false
+                    )
+                )
             )
         );
     }
@@ -180,7 +209,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(19));
+        assertThat(logic.getRules().size(), is(22));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

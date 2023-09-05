@@ -310,6 +310,16 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "1000", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
                     .build()
+            ),
+            Arguments.of(
+                "reviewApplicationAndAllocateJudge",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "CTSC", true)
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
+                    .build()
             )
         );
     }
