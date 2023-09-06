@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
   <decision id="wa-task-completion-sscs-benefit" name="Task completion DMN">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="614">
@@ -20,6 +20,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0vc8cda">
+        <inputEntry id="UnaryTests_1cdjjv1">
+          <text>"requestForInformation"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0x3fh6i">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04dlz5z">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_19hzqdb">
         <inputEntry id="UnaryTests_1i3a9vf">
           <text>"interlocInformationReceived","validSendToInterloc","interlocSendToTcw"</text>
@@ -28,6 +39,17 @@
           <text>"reviewInformationRequested"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03cwskq">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yylr7v">
+        <inputEntry id="UnaryTests_1yx182u">
+          <text>"interlocInformationReceived","validSendToInterloc","interlocSendToTcw"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rvp4ks">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10u559g">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -42,6 +64,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0fohoqa">
+        <inputEntry id="UnaryTests_0l9vthy">
+          <text>"hmctsResponseReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k4yvac">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0thrwrr">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0dezc03">
         <inputEntry id="UnaryTests_0debqtq">
           <text>"requestTranslationFromWLU"</text>
@@ -53,6 +86,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1dlek9r">
+        <inputEntry id="UnaryTests_0h4e789">
+          <text>"requestTranslationFromWLU"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0985lg4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03b8iu0">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1ct4ng7">
         <inputEntry id="UnaryTests_0a86tbb">
           <text>"validSendToInterloc","interlocSendToTcw","interlocInformationReceived"</text>
@@ -61,6 +105,17 @@
           <text>"reviewAdminAction"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0r044ge">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ynss0l">
+        <inputEntry id="UnaryTests_0g4nip9">
+          <text>"validSendToInterloc","interlocSendToTcw","interlocInformationReceived"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jkycx0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hhijko">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -86,6 +141,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0c8riy2">
+        <inputEntry id="UnaryTests_1cucs3o">
+          <text>"actionFurtherEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w740y7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cjd9o7">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_14ekhb1">
         <inputEntry id="UnaryTests_096dkp4">
           <text>"interlocSendToTcw"</text>
@@ -94,6 +160,17 @@
           <text>"reviewFtaDueDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19lpr3x">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p97swn">
+        <inputEntry id="UnaryTests_08wnzqq">
+          <text>"interlocSendToTcw"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1oyrcxi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15nkpd2">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -108,6 +185,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1k3vlox">
+        <inputEntry id="UnaryTests_1a2rlhr">
+          <text>"updateListingRequirement","readyToList"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wum9ur">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y6af8b">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1k5b0ls">
         <inputEntry id="UnaryTests_1v2uymb">
           <text>"resendCaseToGAPS2"</text>
@@ -116,6 +204,17 @@
           <text>"reviewRoboticFail"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qofg43">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06qgxgy">
+        <inputEntry id="UnaryTests_16pmwyc">
+          <text>"resendCaseToGAPS2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vfj44t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vqcg9a">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -130,6 +229,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0jnsig7">
+        <inputEntry id="UnaryTests_0o0eil4">
+          <text>"amendDueDate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17vglmq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_069qf6a">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1xhkcil">
         <inputEntry id="UnaryTests_1qzsk8a">
           <text>"createBundle"</text>
@@ -138,6 +248,17 @@
           <text>"allocateCaseRolesAndCreateBundle"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16gzm5k">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rmjvgi">
+        <inputEntry id="UnaryTests_1hr3w9x">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02xaug9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06awaj8">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
