@@ -24,6 +24,8 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK
 
 class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
+    private static final String BLANK = null;
+
     @BeforeAll
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_COMPLETION_SSCS_BENEFIT;
@@ -32,18 +34,20 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
 
         return Stream.of(
-            eventAutoCompletesTasks("requestForInformation","reviewIncompleteAppeal"),
-            eventAutoCompletesTasks("interlocInformationReceived", "reviewInformationRequested", "reviewAdminAction"),
-            eventAutoCompletesTasks("validSendToInterloc", "reviewInformationRequested", "reviewAdminAction"),
+            eventAutoCompletesTasks("requestForInformation","reviewIncompleteAppeal", BLANK),
+            eventAutoCompletesTasks("interlocInformationReceived",
+                                    "reviewInformationRequested", "reviewAdminAction", BLANK),
+            eventAutoCompletesTasks("validSendToInterloc",
+                                    "reviewInformationRequested", "reviewAdminAction", BLANK),
             eventAutoCompletesTasks("interlocSendToTcw",
-                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate"),
-            eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse"),
-            eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument"),
-            eventAutoCompletesTasks("actionFurtherEvidence","issueOutstandingTranslation","actionUnprocessedCorrespondence"),
-            eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal"),
-            eventAutoCompletesTasks("updateListingRequirement","reviewListingError"),
-            eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail"),
-            eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle")
+                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate", BLANK),
+            eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse", BLANK),
+            eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument", BLANK),
+            eventAutoCompletesTasks("actionFurtherEvidence",
+                                    "issueOutstandingTranslation","actionUnprocessedCorrespondence", BLANK),
+            eventAutoCompletesTasks("updateListingRequirement","reviewListingError", BLANK),
+            eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail", BLANK),
+            eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK)
         );
     }
 
@@ -61,14 +65,21 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(12));
+        assertThat(logic.getRules().size(), is(13));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
-        return Arguments.of(event, Arrays.stream(tasks).map(t -> Map.of(
-                "taskType", t,
-                "completionMode", "Auto"
-            )).collect(Collectors.toList())
+        return Arguments.of(event, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toList())
+        );
+    }
+
+    private static Map outputMap(String taskId) {
+        if(taskId!=null) return Map.of(
+            "taskType", taskId,
+            "completionMode", "Auto"
+        );
+        return Map.of(
+            "completionMode", "Auto"
         );
     }
 }
