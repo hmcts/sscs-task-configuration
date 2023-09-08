@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-permissions-sscs-benefit" name="Permissions DMN">
     <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
       <input id="InputClause_12crj6e" label="Task Type" biodi:width="565" camunda:inputVariable="taskType">
@@ -155,33 +155,6 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0mifiik">
-        <description></description>
-        <inputEntry id="UnaryTests_1447oyq">
-          <text>"reviewApplicationAndAllocateJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ai7gtc">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_14ws3yl">
-          <text>"allocated-ctsc-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ri8osk">
-          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn,CompleteOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09iqxob">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1wend9c">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_193gg0y">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ekr0gm">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0e3o7rq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1kc55kf">
@@ -233,33 +206,6 @@ else
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kk50cn">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_11y66la">
-        <description></description>
-        <inputEntry id="UnaryTests_0fq4rl3">
-          <text>"reviewApplicationAndAllocateJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1m7x9a4">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1tydc2x">
-          <text>"ctsc"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0incj68">
-          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn,CompleteOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1iddxf7">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0x3oc21">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0mbnyg9">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1w2l6w0">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -419,32 +365,6 @@ else
           <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_10dk27c">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0wne43g">
-        <inputEntry id="UnaryTests_1ik8u2b">
-          <text>"reviewApplicationAndAllocateJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0oltbd4">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_186z6d3">
-          <text>"ctsc-team-leader"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1wuuwkj">
-          <text>"Read,Own,Claim,Unclaim,Manage,Assign,Unassign,CancelOwn,CompleteOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0a4l28x">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0kql1hc">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ji52ay">
-          <text>3</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15giywh">
           <text>false</text>
         </outputEntry>
       </rule>
