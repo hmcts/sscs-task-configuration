@@ -200,17 +200,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1rmjvgi">
-        <inputEntry id="UnaryTests_1hr3w9x">
-          <text>"createBundle","requestForInformation","interlocInformationReceived","validSendToInterloc","interlocSendToTcw","hmctsResponseReviewed","requestTranslationFromWLU","validSendToInterloc","interlocSendToTcw","interlocInformationReceived","actionFurtherEvidence","interlocSendToTcw","updateListingRequirement","readyToList","resendCaseToGAPS2","amendDueDate"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_02xaug9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_06awaj8">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0tc6nc9">
         <inputEntry id="UnaryTests_1jcg1aj">
           <text>"validSendToInterloc"</text>
@@ -222,6 +211,20 @@
           <text>"reviewStatementofReasonsApplication"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wktsyr">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02s0bw5">
+        <inputEntry id="UnaryTests_0mlu75v">
+          <text>"createBundle","requestForInformation","interlocInformationReceived","validSendToInterloc","interlocSendToTcw","hmctsResponseReviewed","requestTranslationFromWLU","validSendToInterloc","interlocSendToTcw","interlocInformationReceived","actionFurtherEvidence","interlocSendToTcw","updateListingRequirement","readyToList","resendCaseToGAPS2","amendDueDate"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uidqa4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dwh7f2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e8zpjr">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
