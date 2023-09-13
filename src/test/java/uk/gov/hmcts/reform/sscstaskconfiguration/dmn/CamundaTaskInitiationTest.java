@@ -169,7 +169,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
+                Map.of("Data", Map.of("dwpFurtherInfo", true)),
                 singletonList(
                     Map.of(
                         "taskId", "reviewFtaResponse",
@@ -182,7 +182,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "No")),
+                Map.of("Data", Map.of("dwpFurtherInfo", false)),
                 List.of()
             ),
             event("sendToAdmin")
@@ -261,7 +261,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
+                Map.of("Data", Map.of("dwpFurtherInfo", true)),
                 singletonList(
                     Map.of(
                         "taskId", "reviewFtaResponse",
@@ -274,7 +274,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "No")),
+                Map.of("Data", Map.of("dwpFurtherInfo", false)),
                 List.of()
             ),
             Arguments.of(

@@ -22,7 +22,7 @@
         </inputExpression>
       </input>
       <input id="InputClause_09qqpx6" label="DWP Further Info" camunda:inputVariable="dwpFurtherInfo">
-        <inputExpression id="LiteralExpression_0nsfl92" typeRef="string">
+        <inputExpression id="LiteralExpression_0nsfl92" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.dwpFurtherInfo
             != null) then
             additionalData.Data.dwpFurtherInfo 
@@ -157,7 +157,7 @@
           <text>"withDwp"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0bql2sl">
-          <text>"Yes"</text>
+          <text>true</text>
         </inputEntry>
         <inputEntry id="UnaryTests_06twvx4">
           <text></text>
