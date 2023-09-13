@@ -168,7 +168,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "dwpUploadResponse",
-                "withDwp",
+                null,
                 Map.of("Data", Map.of("dwpFurtherInfo", true)),
                 singletonList(
                     Map.of(
@@ -181,7 +181,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "dwpUploadResponse",
-                "withDwp",
+                null,
                 Map.of("Data", Map.of("dwpFurtherInfo", false)),
                 List.of()
             ),
