@@ -480,7 +480,8 @@
           <text>"voidCase",
 "appealWithdrawn",
 "appealDormant",
-"struckOut"</text>
+"struckOut",
+"sentToDwp"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yot6ht">
           <text></text>

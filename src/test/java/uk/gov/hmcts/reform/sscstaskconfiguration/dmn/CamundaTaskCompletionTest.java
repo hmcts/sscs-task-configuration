@@ -24,6 +24,8 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK
 
 class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
+    private static final String BLANK = null;
+
     @BeforeAll
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_COMPLETION_SSCS_BENEFIT;
@@ -32,22 +34,22 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
 
         return Stream.of(
-            eventAutoCompletesTasks("requestForInformation","reviewIncompleteAppeal"),
+            eventAutoCompletesTasks("requestForInformation","reviewIncompleteAppeal", BLANK),
             eventAutoCompletesTasks("interlocInformationReceived",
-                                    "reviewInformationRequested", "reviewAdminAction"),
+                                    "reviewInformationRequested", "reviewAdminAction", BLANK),
             eventAutoCompletesTasks("validSendToInterloc",
                                     "reviewInformationRequested", "reviewAdminAction",
                                     "reviewConfidentialityRequest", "reviewReinstatementRequestJudge",
-                                    "referredToInterlocJudge"),
-            eventAutoCompletesTasks("requestForInformation","reviewIncompleteAppeal"),
+                                    "referredToInterlocJudge", BLANK),
             eventAutoCompletesTasks("interlocSendToTcw",
                                     "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
-                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge"),
-            eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse"),
-            eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument"),
-            eventAutoCompletesTasks("actionFurtherEvidence","issueOutstandingTranslation"),
+                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge", BLANK),
+            eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse", BLANK),
+            eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument", BLANK),
+            eventAutoCompletesTasks("actionFurtherEvidence",
+                                    "issueOutstandingTranslation","actionUnprocessedCorrespondence", BLANK),
             eventAutoCompletesTasks("reviewConfidentialityRequest","reviewConfidentialityRequest"),
             eventAutoCompletesTasks("reviewPhmeRequest","reviewPheRequestJudge"),
             eventAutoCompletesTasks("decisionIssued",
@@ -80,9 +82,9 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "referredByTcwPreHearing", "referredByAdminJudgePreHearing",
                                     "referredToInterlocJudge"),
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal"),
-            eventAutoCompletesTasks("updateListingRequirement","reviewListingError"),
-            eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail"),
-            eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle"),
+            eventAutoCompletesTasks("updateListingRequirement","reviewListingError", BLANK),
+            eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail", BLANK),
+            eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK),
             eventAutoCompletesTasks("confirmPanelComposition", "confirmPanelComposition")
         );
     }
@@ -101,14 +103,21 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(25));
+        assertThat(logic.getRules().size(), is(26));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
-        return Arguments.of(event, Arrays.stream(tasks).map(t -> Map.of(
-                "taskType", t,
-                "completionMode", "Auto"
-            )).collect(Collectors.toSet())
+        return Arguments.of(event, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
+        );
+    }
+
+    private static Map outputMap(String taskId) {
+        if(taskId!=null) return Map.of(
+            "taskType", taskId,
+            "completionMode", "Auto"
+        );
+        return Map.of(
+            "completionMode", "Auto"
         );
     }
 }

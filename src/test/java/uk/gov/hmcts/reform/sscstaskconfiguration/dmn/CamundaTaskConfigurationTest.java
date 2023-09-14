@@ -161,8 +161,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewInformationRequested",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "300", true)
-                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue(DESCRIPTION, "[Review Information Requested](/case/SSCS/Benefit/"
                         + "${[CASE_REFERENCE]}/trigger/interlocInformationReceived)",true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
@@ -219,7 +219,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION, "[Action further evidence](/case/SSCS/Benefit"
+                    .expectedValue(DESCRIPTION, "[Action Further Evidence](/case/SSCS/Benefit"
                         + "/${[CASE_REFERENCE]}/trigger/actionFurtherEvidence)", true)
                     .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "10", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
@@ -317,7 +317,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(DESCRIPTION, buildDescription(
                         eventLink("Update Listing Requirements", "updateListingRequirements"),
-                            eventLink("Review Listing Error", "reviewListingError")), true)
+                            eventLink("Ready to list", "readyToList")), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .build()
             ),
@@ -443,7 +443,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(43));
+        assertThat(logic.getRules().size(), is(42));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

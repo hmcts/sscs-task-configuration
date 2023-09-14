@@ -24,8 +24,8 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_09qqpx6" label="DWP Further Info" biodi:width="150" camunda:inputVariable="dwpFurtherInfo">
-        <inputExpression id="LiteralExpression_0nsfl92" typeRef="string">
+      <input id="InputClause_09qqpx6" label="DWP Further Info" camunda:inputVariable="dwpFurtherInfo">
+        <inputExpression id="LiteralExpression_0nsfl92" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.dwpFurtherInfo
             != null) then
             additionalData.Data.dwpFurtherInfo
@@ -217,10 +217,10 @@
           <text>"dwpUploadResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nspqgr">
-          <text>"withDwp"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0bql2sl">
-          <text>"Yes"</text>
+          <text>true</text>
         </inputEntry>
         <inputEntry id="UnaryTests_06twvx4">
           <text></text>
@@ -1058,7 +1058,7 @@ else 0</text>
           <text>"Review Valid Appeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jsyluq">
-          <text>3</text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0exrqrc">
           <text>5</text>

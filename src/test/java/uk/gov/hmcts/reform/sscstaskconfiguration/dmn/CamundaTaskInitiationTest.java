@@ -127,9 +127,140 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "incompleteApplicationReceived",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "reviewIncompleteAppeal"
+                    )
+                )
+            ),
+            Arguments.of(
+                "draftToIncompleteApplication",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "reviewIncompleteAppeal"
+                    )
+                )
+            ),
+            Arguments.of(
+                "incompleteApplicationReceived",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "reviewIncompleteAppeal"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                null,
+                Map.of("Data", Map.of("dwpFurtherInfo", true)),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewFtaResponse",
+                        "name", "Review FTA Response",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "reviewFtaResponse"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpUploadResponse",
+                null,
+                Map.of("Data", Map.of("dwpFurtherInfo", false)),
+                List.of()
+            ),
+            event("sendToAdmin")
+                .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
+                .build(),
+            Arguments.of(
+                "dwpUploadResponse",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", false)),
+                List.of()
+            ),
+            Arguments.of(
+                "attachScannedDocs",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Translation Tasks"
+                    ),
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "actionUnprocessedCorrespondence"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadDocumentFurtherEvidence",
+                null,
+                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewBilingualDocument",
+                        "name", "Review Bi-Lingual Document",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "Translation Tasks"
+                    ),
+                    Map.of(
+                        "taskId", "actionUnprocessedCorrespondence",
+                        "name", "Action Unprocessed Correspondence",
+                        "workingDaysAllowed", 10,
+                        "processCategories", "actionUnprocessedCorrespondence"
+                    )
+                )
+            ),
+            Arguments.of(
+                "draftToIncompleteApplication",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "reviewIncompleteAppeal"
+                    )
+                )
+            ),
+            Arguments.of(
+                "incompleteApplicationReceived",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewIncompleteAppeal",
+                        "name", "Review Incomplete Appeal",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "reviewIncompleteAppeal"
+                    )
+                )
+            ),
+            Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
+                Map.of("Data", Map.of("dwpFurtherInfo", true)),
                 singletonList(
                     Map.of(
                         "taskId", "reviewFtaResponse",
@@ -142,7 +273,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "dwpUploadResponse",
                 "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "No")),
+                Map.of("Data", Map.of("dwpFurtherInfo", false)),
                 List.of()
             ),
             Arguments.of(
@@ -218,7 +349,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewValidAppeal",
                         "name", "Review Valid Appeal",
-                        "delayDuration", 3,
+                        "delayDuration", 1,
                         "workingDaysAllowed", 5,
                         "processCategories", "reviewValidAppeal"
                     )
@@ -273,19 +404,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Allocate Case Roles and Create Bundle",
                         "workingDaysAllowed", 3,
                         "processCategories", "allocateCaseRolesAndCreateBundle"
-                    )
-                )
-            ),
-            Arguments.of(
-                "dwpUploadResponse",
-                "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", "Yes")),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewFtaResponse",
-                        "name", "Review FTA Response",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "reviewFtaResponse"
                     )
                 )
             ),

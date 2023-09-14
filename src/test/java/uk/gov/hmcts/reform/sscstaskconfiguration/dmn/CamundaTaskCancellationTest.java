@@ -219,6 +219,9 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("issueAdjournmentNotice")
                 .cancel("reviewOutstandingDraftDecision")
+                .build(),
+            event("sentToDwp")
+                .cancel("reviewValidAppeal")
                 .build()
         );
     }
