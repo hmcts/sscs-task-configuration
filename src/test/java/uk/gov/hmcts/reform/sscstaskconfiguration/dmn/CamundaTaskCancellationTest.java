@@ -179,6 +179,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("writeDecisionJudge")
                 .cancel("reviewReinstatementRequestJudge")
                 .cancel("reviewPheRequestJudge")
+                .cancel("ftaNotProvidedAppointeeDetailsJudge")
                 .cancel("reviewPostponementRequestJudge")
                 .cancel("contactParties")
                 .build(),

@@ -418,7 +418,8 @@
 "appealWithdrawn",
 "appealDormant",
 "confirmLapsed",
-"issueFinalDecision"</text>
+"issueFinalDecision",
+"decisionIssued"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09jtb2q">
           <text></text>
