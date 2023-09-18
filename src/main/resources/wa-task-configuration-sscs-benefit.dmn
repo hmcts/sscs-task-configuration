@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <informationRequirement id="InformationRequirement_0l9qrru">
       <requiredDecision href="#sscs-task-configuration-non-working-days" />
@@ -251,23 +251,6 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_08pr8ok">
-        <inputEntry id="UnaryTests_0s4kgb0">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ymggmb">
-          <text>"reviewUrgentHearingRequest", "writeDecisionJudge", "reviewPostponementRequestJudge"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1n43g1v">
-          <text>"minorPriority"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0my7u45">
-          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 500 else 100</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0wbmf6w">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1a8gebd">
         <description>High priority if hearing data not available</description>
         <inputEntry id="UnaryTests_1spe9nj">
@@ -291,7 +274,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1fkxhel">
-          <text>"contactParties"</text>
+          <text>"contactParties", "reviewUrgentHearingRequest", "writeDecisionJudge", "reviewPostponementRequestJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1tnvwwr">
           <text>"minorPriority"</text>
@@ -318,23 +301,6 @@ null</text>
           <text>5000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0a9nh45">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1h4aasr">
-        <inputEntry id="UnaryTests_10aosjo">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0pk8oi8">
-          <text>"reviewUrgentHearingRequest", "writeDecisionJudge", "reviewPostponementRequestJudge"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0zms8im">
-          <text>"majorPriority"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_00sjgj4">
-          <text>if(caseData!=null and caseData.nextHearingDate!=null) then 5000 else 1000</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1r7i123">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -379,7 +345,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_024rpcl">
-          <text>"contactParties"</text>
+          <text>"contactParties", "reviewUrgentHearingRequest", "writeDecisionJudge", "reviewPostponementRequestJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14j8b6m">
           <text>"majorPriority"</text>
