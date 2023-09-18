@@ -287,7 +287,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewPostponementRequestJudge",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultJudicialTaskExpectations().build()
+                ConfigurationExpectationBuilder.defaultJudicialTaskExpectations()
+                    .expectedValue(MINOR_PRIORITY, "100", true)
+                    .expectedValue(MAJOR_PRIORITY, "1000", true)
+                    .build()
             ),
             Arguments.of(
                 "prepareForHearingJudge",
