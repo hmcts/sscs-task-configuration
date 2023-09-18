@@ -465,7 +465,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
                 .build(),
             event("dwpUploadResponse")
-                .withCaseData("workType", "phme")
+                .withCaseData("dwpEditedEvidenceReason", "phme")
                 .initiativesTask("reviewPheRequestJudge", "Review PHE Request", 2)
                 .build(),
             event("updateNotListable")
