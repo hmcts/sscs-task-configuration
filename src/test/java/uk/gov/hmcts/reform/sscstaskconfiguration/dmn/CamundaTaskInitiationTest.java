@@ -465,7 +465,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
                 .build(),
             event("dwpUploadResponse")
-                .withCaseData("workType", "phme")
+                .withCaseData("dwpEditedEvidenceReason", "phme")
                 .initiativesTask("reviewPheRequestJudge", "Review PHE Request", 2)
                 .build(),
             event("updateNotListable")
@@ -508,8 +508,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("workType", "preHearingWork")
-                .withCaseData("selectWhoReviewsCase", "reviewByJudge")
+                .withCaseData("action", "reviewByJudge")
                 .initiativesTask("referredByAdminJudgePreHearing", "Referred By Admin", 2)
+                .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2)
                 .build(),
             event("dwpUploadResponse")
                 .withCaseData("benefitCode", "026")
