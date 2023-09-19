@@ -1,3 +1,4 @@
+
 package uk.gov.hmcts.reform.sscstaskconfiguration.dmn;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
@@ -47,7 +48,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "issueOutstandingTranslation","actionUnprocessedCorrespondence", BLANK),
             eventAutoCompletesTasks("updateListingRequirement","reviewListingError", BLANK),
             eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail", BLANK),
-            eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK)
+            eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK),
+            eventAutoCompletesTasks("adminSendToInterlocutoryReviewState","reviewApplicationAndAllocateJudge")
         );
     }
 
@@ -65,7 +67,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(13));
+        assertThat(logic.getRules().size(), is(14));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {

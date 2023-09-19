@@ -152,6 +152,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1afohlh">
+        <inputEntry id="UnaryTests_1p1sncn">
+          <text>"adminSendToInterlocutoryReviewState"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pp7mqt">
+          <text>"reviewApplicationAndAllocateJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cicj8r">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
