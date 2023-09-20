@@ -201,4 +201,14 @@ public class Permissions {
             permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
         );
     }
+
+    public static List<Map<String, Object>> defaultPermissionsTcwTasks() {
+        return List.of(
+            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
+            permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
+            permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
+        );
+    }
 }

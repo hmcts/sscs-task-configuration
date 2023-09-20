@@ -24,7 +24,7 @@ null</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Name" name="name" typeRef="string" biodi:width="214" />
-      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="545" />
+      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803" />
       <output id="OutputClause_0a7y3b4" label="Can Reconfigure?" name="canReconfigure" typeRef="boolean" />
       <rule id="DecisionRule_0v043ob">
         <inputEntry id="UnaryTests_1l01q3m">
@@ -118,7 +118,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a9atyt">
-          <text>"reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge"</text>
+          <text>"reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xklqhp">
           <text>"workType"</text>
@@ -135,7 +135,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0qfyny7">
-          <text>"prepareForHearingJudge", "writeDecisionJudge"</text>
+          <text>"prepareForHearingJudge","writeDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1pg0z8u">
           <text>"workType"</text>
@@ -144,23 +144,6 @@ null</text>
           <text>"hearing_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04whdu7">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_17ycln9">
-        <inputEntry id="UnaryTests_0t7w2jf">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1bax4so">
-          <text>"allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_152y5tj">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_10g7rvi">
-          <text>"hearing_work"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1gdykjs">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -215,6 +198,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0dxd0r6">
+        <inputEntry id="UnaryTests_0csutp5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tuha5h">
+          <text>"reviewFtaValidityChallenge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o7b9tn">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1iltu24">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02eqxa9">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1loicg1">
         <description>Hearing date if available minus 10 days</description>
         <inputEntry id="UnaryTests_039jxa1">
@@ -239,7 +239,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -292,7 +292,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge"</text>
+          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -564,6 +564,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0dsvccj">
+        <inputEntry id="UnaryTests_0lij37k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bg98p0">
+          <text>"reviewFtaValidityChallenge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1t78g7k">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0utz277">
+          <text>"[Ability to amend interloc review state flag](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" + "[Send an interlocutory decision notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" + "[Send a directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" + "[Return the case to an admin with a note](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" + "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wemmqd">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -671,7 +688,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest", "referredByTcwPreHearing", "prepareForHearingJudge", "writeDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest", "referredByTcwPreHearing", "prepareForHearingJudge", "writeDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>

@@ -1519,6 +1519,56 @@ else "Referred to interloc"</text>
           <text>"contactParties"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0xvltnd">
+        <inputEntry id="UnaryTests_0p24cl9">
+          <text>"dwpChallengeValidity"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bd35cr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dbizsk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mqc0uz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l8oa74">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nbu89t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qa6sop">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wd4zg9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gi32te">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06sv25a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jj1xjs">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0djpei7">
+          <text>"reviewFtaValidityChallenge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0auo5e3">
+          <text>"Review FTA validity challenge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02n7qz2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0paof4z">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15rc6bo">
+          <text>"reviewFtaValidityChallenge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">

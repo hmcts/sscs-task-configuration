@@ -54,7 +54,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("reviewPhmeRequest","reviewPheRequestJudge"),
             eventAutoCompletesTasks("decisionIssued",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
-                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge"),
+                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge",
+                                    "reviewFtaValidityChallenge"),
             eventAutoCompletesTasks("struckOut",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
                                     "referredByAdminJudgePreHearing"),
@@ -69,23 +70,24 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
                                     "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing",
-                                    "referredToInterlocJudge"),
+                                    "referredToInterlocJudge", "reviewFtaValidityChallenge"),
             eventAutoCompletesTasks("directionIssued",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
                                     "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing",
-                                    "referredToInterlocJudge"),
+                                    "referredToInterlocJudge", "reviewFtaValidityChallenge"),
             eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest", "writeDecisionJudge"),
             eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
                                     "reviewPheRequestJudge", "ftaNotProvidedAppointeeDetailsJudge",
                                     "referredByTcwPreHearing", "referredByAdminJudgePreHearing",
-                                    "referredToInterlocJudge"),
+                                    "referredToInterlocJudge", "reviewFtaValidityChallenge"),
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal"),
             eventAutoCompletesTasks("updateListingRequirement","reviewListingError", BLANK),
             eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail", BLANK),
             eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK),
-            eventAutoCompletesTasks("confirmPanelComposition", "confirmPanelComposition")
+            eventAutoCompletesTasks("confirmPanelComposition", "confirmPanelComposition"),
+            eventAutoCompletesTasks("tcwReferToJudge", "reviewFtaValidityChallenge")
         );
     }
 
@@ -103,7 +105,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(26));
+        assertThat(logic.getRules().size(), is(27));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {

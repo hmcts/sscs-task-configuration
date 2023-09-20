@@ -56,6 +56,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("confirmPanelComposition")
                 .cancel("referredToInterlocJudge")
                 .cancel("contactParties")
+                .cancel("reviewFtaValidityChallenge")
                 .build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
@@ -81,6 +82,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("confirmPanelComposition")
                 .cancel("referredToInterlocJudge")
                 .cancel("contactParties")
+                .cancel("reviewFtaValidityChallenge")
                 .build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
@@ -106,6 +108,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("confirmPanelComposition")
                 .cancel("referredToInterlocJudge")
                 .cancel("contactParties")
+                .cancel("reviewFtaValidityChallenge")
                 .build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
@@ -127,6 +130,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("confirmPanelComposition")
                 .cancel("referredToInterlocJudge")
                 .cancel("contactParties")
+                .cancel("reviewFtaValidityChallenge")
                 .build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
@@ -150,6 +154,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("confirmPanelComposition")
                 .cancel("referredToInterlocJudge")
                 .cancel("contactParties")
+                .cancel("reviewFtaValidityChallenge")
                 .build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
@@ -196,6 +201,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminJudgePreHearing")
                 .cancel("confirmPanelComposition")
                 .cancel("referredToInterlocJudge")
+                .cancel("reviewFtaValidityChallenge")
                 .build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks")
@@ -250,6 +256,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(4));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(26));
+        assertThat(logic.getRules().size(), is(27));
     }
 }

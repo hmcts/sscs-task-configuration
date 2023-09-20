@@ -284,6 +284,17 @@
         	<text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_02lgh7b">
+        <inputEntry id="UnaryTests_1xugwk8">
+          <text>"directionIssued","decisionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18l0pb4">
+          <text>"reviewFtaValidityChallenge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00nsdkc">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1rmjvgi">
         <inputEntry id="UnaryTests_1hr3w9x">
           <text>"createBundle","requestForInformation","interlocInformationReceived","validSendToInterloc","interlocSendToTcw","hmctsResponseReviewed","requestTranslationFromWLU","validSendToInterloc","interlocSendToTcw","interlocInformationReceived","actionFurtherEvidence","interlocSendToTcw","updateListingRequirement","readyToList","resendCaseToGAPS2","amendDueDate"</text>
