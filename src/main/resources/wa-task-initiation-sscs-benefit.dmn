@@ -1417,6 +1417,56 @@ else 0</text>
           <text>"confirmPanelComposition"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_12bahez">
+        <inputEntry id="UnaryTests_1ar0mg4">
+          <text>"dwpRequestTimeExtension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06dgc4o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1flgz6z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1czzjvh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xqsrgi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rnkotu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15azk0m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ojjkfj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qbw6rp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13qv429">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rrjlta">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h14vdq">
+          <text>"ftaRequestTimeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04zbdeg">
+          <text>"Request FTA Time Extension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00j07el">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04ohiay">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09ff9uu">
+          <text>"ftaRequestTimeExtension"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1h2cmt5">
         <inputEntry id="UnaryTests_092u3py">
           <text>"validSendToInterloc","hmctsResponseReviewed"</text>

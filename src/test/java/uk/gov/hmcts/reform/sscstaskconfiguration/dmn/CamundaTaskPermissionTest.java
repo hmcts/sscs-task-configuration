@@ -232,42 +232,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewFtaValidityChallenge",
                 "someCaseData",
                 Permissions.defaultPermissionsTcwTasks()
-            )
-        );
-    }
-
-    private static List<Map<String, Object>> defaultLegal_OperationsPermissions() {
-        return List.of(
-            Map.of(
-                "name", "case-allocator",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
-                "autoAssignable", false
             ),
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Own,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "Allocated-Tribunal-Caseworker",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
-                "assignmentPriority", 1,
-                "roleCategory", "LEGAL_OPERATIONS",
-                "autoAssignable", true
-            ),
-            Map.of(
-                "name", "TCW",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
-                "assignmentPriority", 2,
-                "roleCategory", "LEGAL_OPERATIONS",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "judge",
-                "value", "Read,Execute,Unclaim,UnclaimAssign",
-                "assignmentPriority", 3,
-                "roleCategory", "LEGAL_OPERATIONS",
-                "autoAssignable", false
+            Arguments.of(
+                "ftaRequestTimeExtension",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
             )
         );
     }

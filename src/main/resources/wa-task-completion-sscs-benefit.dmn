@@ -306,6 +306,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0lt5pkw">
+        <inputEntry id="UnaryTests_06u067e">
+          <text>"directionIssued", "interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f3kpco">
+          <text>"ftaRequestTimeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mqa699">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
