@@ -691,7 +691,7 @@ else
           <text>"ctsc-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1t4cseo">
-          <text>"Read","Own","Claim","Unclaim","Manage","Cancel","UnclaimAssign","CompleteOwn"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_186yphk">
           <text>"CTSC"</text>
@@ -717,7 +717,7 @@ else
           <text>"ctsc"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bx8mjo">
-          <text>"Read","Own","Claim","Unclaim","Manage","Cancel","UnclaimAssign","CompleteOwn"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jg56wu">
           <text>"CTSC"</text>
@@ -743,7 +743,7 @@ else
           <text>"ctsc-team-leader"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c7fhew">
-          <text>"Read","Own","Claim","Unclaim","Manage","UnclaimAssign","Assign","Unassign","Cancel","CompleteOwn"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1o1xc3z">
           <text>"CTSC"</text>
