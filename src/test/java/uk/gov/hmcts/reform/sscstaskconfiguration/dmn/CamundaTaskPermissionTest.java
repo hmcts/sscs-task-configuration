@@ -252,6 +252,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "prepareForHearingTribunalMember3",
                 "someCaseData",
                 Permissions.defaultJudicalMember3Permissions()
+            ),
+            Arguments.of(
+                "reviewPostponementRequestTCW",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
             )
         );
     }

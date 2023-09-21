@@ -317,6 +317,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_02gfi26">
+        <inputEntry id="UnaryTests_1auas9w">
+          <text>"actionPostponementRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qrgxw9">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gd9fno">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

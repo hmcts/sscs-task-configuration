@@ -883,6 +883,32 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_04zyc6o">
+        <inputEntry id="UnaryTests_1n5gzbk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n6wuu3">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision", "decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dqiwwa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15jf6kx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09jbaac">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0udn8h8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02uckz4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f59igk">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
