@@ -237,6 +237,21 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "ftaRequestTimeExtension",
                 "someCaseData",
                 Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember1",
+                "someCaseData",
+                Permissions.defaultJudicalMember1Permissions()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember2",
+                "someCaseData",
+                Permissions.defaultJudicalMember2Permissions()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember3",
+                "someCaseData",
+                Permissions.defaultJudicalMember3Permissions()
             )
         );
     }
@@ -277,7 +292,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(34));
+        assertThat(logic.getRules().size(), is(37));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

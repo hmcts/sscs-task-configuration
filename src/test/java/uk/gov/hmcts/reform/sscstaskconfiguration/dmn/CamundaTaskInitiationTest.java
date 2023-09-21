@@ -1,5 +1,6 @@
 package uk.gov.hmcts.reform.sscstaskconfiguration.dmn;
 
+import java.util.Arrays;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -548,6 +549,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("dwpRequestTimeExtension")
                 .initiativesTask("ftaRequestTimeExtension", "Request FTA Time Extension", 2)
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-1", "tribunal-member-2", "tribunal-member-3"))
+                .initiativesTask("prepareForHearingTribunalMember1", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .initiativesTask("prepareForHearingTribunalMember2", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .initiativesTask("prepareForHearingTribunalMember3", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-1"))
+                .initiativesTask("prepareForHearingTribunalMember1", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-2"))
+                .initiativesTask("prepareForHearingTribunalMember2", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-3"))
+                .initiativesTask("prepareForHearingTribunalMember3", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
                 .build()
         );
     }
@@ -573,7 +594,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(30));
+        assertThat(logic.getRules().size(), is(33));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

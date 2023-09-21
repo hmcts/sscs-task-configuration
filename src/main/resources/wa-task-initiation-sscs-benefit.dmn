@@ -107,6 +107,15 @@
             null</text>
         </inputExpression>
       </input>
+      <input id="InputClause_0r5g41z" label="Assigned Case Roles" camunda:inputVariable="assignedCaseRoles">
+        <inputExpression id="LiteralExpression_089qqoy" typeRef="string">
+          <text>if(additionalData != null
+    and additionalData.Data != null
+    and additionalData.Data.assignedCaseRoles!= null) then additionalData.Data.assignedCaseRoles
+else
+     []</text>
+        </inputExpression>
+      </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="193" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="955" />
@@ -144,6 +153,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0w6768h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n3ty0e">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_16rjk56">
@@ -196,6 +208,9 @@
         <inputEntry id="UnaryTests_14ueih1">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_14h6xjs">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1rw39zd">
           <text>"reviewInformationRequested"</text>
         </outputEntry>
@@ -244,6 +259,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_19n5aeu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lu6ya5">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14npkzr">
@@ -299,6 +317,9 @@
         <inputEntry id="UnaryTests_0bhi7br">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1pf893m">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_020molb">
           <text>"reviewBilingualDocument"</text>
         </outputEntry>
@@ -347,6 +368,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_16z2io6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07rt9mk">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_13f3ypf">
@@ -399,6 +423,9 @@
         <inputEntry id="UnaryTests_0p2yog6">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_14fafrg">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1dvy239">
           <text>"reviewAdminAction"</text>
         </outputEntry>
@@ -449,6 +476,9 @@
         <inputEntry>
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1e864dc">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_169r5qy">
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
@@ -497,6 +527,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a1vkhl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0phd8eo">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_017dwto">
@@ -551,6 +584,9 @@ else 0</text>
         <inputEntry id="UnaryTests_1onknd0">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_088rgmf">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_03lalib">
           <text>"reviewConfidentialityRequest"</text>
         </outputEntry>
@@ -599,6 +635,9 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a0b3i4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01fgtnd">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_10e5vtm">
@@ -651,6 +690,9 @@ else 0</text>
         <inputEntry id="UnaryTests_1o29wy6">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0dww9ye">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0jd1uny">
           <text>"reviewUrgentHearingRequest"</text>
         </outputEntry>
@@ -699,6 +741,9 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1k8fybn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n67z1i">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wid6ky">
@@ -751,6 +796,9 @@ else 0</text>
         <inputEntry>
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1uc7cpk">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1agbokz">
           <text>"prepareForHearingJudge"</text>
         </outputEntry>
@@ -799,6 +847,9 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s2pqmi">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_001d0qn">
@@ -851,6 +902,9 @@ else 0</text>
         <inputEntry>
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_05nmx8q">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0nqc08a">
           <text>"reviewReinstatementRequestJudge"</text>
         </outputEntry>
@@ -899,6 +953,9 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13giti4">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1mzuv9t">
@@ -951,6 +1008,9 @@ else 0</text>
         <inputEntry>
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0ptbzc0">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0icv41k">
           <text>"ftaNotProvidedAppointeeDetailsJudge"</text>
         </outputEntry>
@@ -999,6 +1059,9 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ne6860">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vexkc3">
@@ -1051,6 +1114,9 @@ else 0</text>
         <inputEntry id="UnaryTests_0afwax1">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1dkha1j">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_132d9b7">
           <text>"reviewValidAppeal"</text>
         </outputEntry>
@@ -1099,6 +1165,9 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_07iyies">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eujsmw">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0iajs67">
@@ -1151,6 +1220,9 @@ else 0</text>
         <inputEntry id="UnaryTests_1j7bw3s">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_09rm80b">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1qjeqqv">
           <text>"reviewRoboticFail"</text>
         </outputEntry>
@@ -1199,6 +1271,9 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0iph4i7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y22jgl">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02ma9kd">
@@ -1251,6 +1326,9 @@ else 0</text>
         <inputEntry id="UnaryTests_0z99z0v">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0dzy281">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0fjsi2c">
           <text>"allocateCaseRolesAndCreateBundle"</text>
         </outputEntry>
@@ -1299,6 +1377,9 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_08po97r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eg283f">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vwc25i">
@@ -1351,6 +1432,9 @@ else 0</text>
         <inputEntry id="UnaryTests_1n7f4x2">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0sjiru3">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0e5hu9o">
           <text>"referredByAdminJudgePreHearing"</text>
         </outputEntry>
@@ -1399,6 +1483,9 @@ else 0</text>
           <text>"022", "023", "024", "025", "026", "028"</text>
         </inputEntry>
         <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wo0o6s">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0sv8mz9">
@@ -1451,6 +1538,9 @@ else 0</text>
         <inputEntry id="UnaryTests_1rrjlta">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0unqbjl">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1h14vdq">
           <text>"ftaRequestTimeExtension"</text>
         </outputEntry>
@@ -1499,6 +1589,9 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ppx3h3">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1msshde">
@@ -1553,6 +1646,9 @@ else "Referred to interloc"</text>
         <inputEntry>
           <text>&lt;7</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_04nqj5v">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_146pcno">
           <text>"contactParties"</text>
         </outputEntry>
@@ -1603,6 +1699,9 @@ else "Referred to interloc"</text>
         <inputEntry id="UnaryTests_1jj1xjs">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0llfv3a">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0djpei7">
           <text>"reviewFtaValidityChallenge"</text>
         </outputEntry>
@@ -1617,6 +1716,165 @@ else "Referred to interloc"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15rc6bo">
           <text>"reviewFtaValidityChallenge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19ubzpc">
+        <inputEntry id="UnaryTests_0pcmti3">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08j068n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13cfthu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kh1y1x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m3m41d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hz7ivx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05suebk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ne1bwx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jcjmhl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lfy0l6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15rr2sr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1secqek">
+          <text>contains(assignedCaseRoles,"tribunal-member-1")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0etx6c8">
+          <text>"prepareForHearingTribunalMember1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j52ham">
+          <text>"Prepare for hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11yrb9y">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z3824c">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03sf0fc">
+          <text>"prepareForHearingTribunalMember"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1aqar24">
+        <inputEntry id="UnaryTests_113k0ip">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f8vabj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05h77ie">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y22lc4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ebwwdr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tzi7mf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m0mgc4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yxx1oh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c0rl9y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e4zhkb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lecoo4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o6m83d">
+          <text>contains(assignedCaseRoles,"tribunal-member-2")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bgelpk">
+          <text>"prepareForHearingTribunalMember2"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0he5fab">
+          <text>"Prepare for hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1exguq2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1my20nm">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0verrf5">
+          <text>"prepareForHearingTribunalMember"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ouzima">
+        <inputEntry id="UnaryTests_000r511">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03lhhd8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f74t0x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nauz1x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eayym9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_026g2og">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jmmrem">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nkzq0a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kf23qo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yt1271">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03i9mzf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pprs34">
+          <text>contains(assignedCaseRoles,"tribunal-member-3")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18chl2c">
+          <text>"prepareForHearingTribunalMember3"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_070s54a">
+          <text>"Prepare for hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g4dru1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nrq1t3">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cqw8o2">
+          <text>"prepareForHearingTribunalMember"</text>
         </outputEntry>
       </rule>
     </decisionTable>

@@ -58,6 +58,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("contactParties")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaRequestTimeExtension")
+                .cancel("prepareForHearingTribunalMember")
                 .build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
@@ -85,6 +86,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("contactParties")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaRequestTimeExtension")
+                .cancel("prepareForHearingTribunalMember")
                 .build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
@@ -112,6 +114,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("contactParties")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaRequestTimeExtension")
+                .cancel("prepareForHearingTribunalMember")
                 .build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
@@ -135,6 +138,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("contactParties")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaRequestTimeExtension")
+                .cancel("prepareForHearingTribunalMember")
                 .build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
@@ -160,6 +164,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("contactParties")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaRequestTimeExtension")
+                .cancel("prepareForHearingTribunalMember")
                 .build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
@@ -193,6 +198,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewPostponementRequestJudge")
                 .cancel("contactParties")
                 .cancel("ftaRequestTimeExtension")
+                .cancel("prepareForHearingTribunalMember")
                 .build(),
             event("issueFinalDecision")
                 .cancel("reviewUrgentHearingRequest")
@@ -209,6 +215,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredToInterlocJudge")
                 .cancel("reviewFtaValidityChallenge")
                 .cancel("ftaRequestTimeExtension")
+                .cancel("prepareForHearingTribunalMember")
                 .build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks")
@@ -216,6 +223,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             event("interlocReviewStateAmend")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
+                .cancel("prepareForHearingTribunalMember")
                 .build(),
             event("actionPostponementRequest")
                 .cancel("reviewPostponementRequestJudge")
@@ -233,6 +241,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("issueAdjournmentNotice")
                 .cancel("reviewOutstandingDraftDecision")
+                .cancel("prepareForHearingTribunalMember")
                 .build(),
             event("sentToDwp")
                 .cancel("reviewValidAppeal")
@@ -263,6 +272,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(4));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(28));
+        assertThat(logic.getRules().size(), is(29));
     }
 }

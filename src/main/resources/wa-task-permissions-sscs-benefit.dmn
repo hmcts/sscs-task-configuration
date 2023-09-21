@@ -914,6 +914,84 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1vn802s">
+        <inputEntry id="UnaryTests_10hpxbu">
+          <text>"prepareForHearingTribunalMember1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1njk0ka">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0v3d7fd">
+          <text>"tribunal-member-1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12n1igy">
+          <text>"Read,Own,Manage,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05iid1e">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nkgz2p">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jhyj0t">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i1fdjc">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xvq834">
+        <inputEntry id="UnaryTests_0f2543g">
+          <text>"prepareForHearingTribunalMember2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c8zgza">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i2n4um">
+          <text>"tribunal-member-2"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b0uijh">
+          <text>"Read,Own,Manage,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wxb0ie">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hwfccb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16e3t56">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vbk9ty">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_119geop">
+        <inputEntry id="UnaryTests_1fsuhcp">
+          <text>"prepareForHearingTribunalMember3"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xlutds">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0niq2ap">
+          <text>"tribunal-member-3"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03bnukz">
+          <text>"Read,Own,Manage,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sg0la7">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07zp3v4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09bnstv">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y75ei2">
+          <text>true</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

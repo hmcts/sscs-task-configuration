@@ -211,4 +211,68 @@ public class Permissions {
             permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
         );
     }
+
+    public static List<Map<String, Object>> defaultJudicalMember1Permissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-member-1",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 1,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", true
+            )
+        );
+    }
+    public static List<Map<String, Object>> defaultJudicalMember2Permissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-member-2",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 1,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", true
+            )
+        );
+    }
+    public static List<Map<String, Object>> defaultJudicalMember3Permissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-member-3",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 1,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", true
+            )
+        );
+    }
 }
