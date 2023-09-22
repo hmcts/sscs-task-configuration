@@ -2498,6 +2498,68 @@ else 28</text>
           <text>"referredByJudge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0izsiel">
+        <inputEntry id="UnaryTests_1iocrf4">
+          <text>"uploadDocument",
+"dwpSupplementaryResponse",
+"dwpUploadResponse",
+"uploadFurtherEvidence",
+"uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xnd59b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02717ei">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18jhoaz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p63fuz">
+          <text>contains(scannedDocumentTypes, "audioDocument") or
+
+contains(scannedDocumentTypes, "videoDocument")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01ekncm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_112e6r4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wbhu80">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gx874f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lphme0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14oka0w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03z8rz8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jzqyyq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0thc4dd">
+          <text>"processAudioVideoEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e61nq2">
+          <text>"Process audio/video evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1me6nkd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02rizf3">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f5z2di">
+          <text>"processAudioVideoEvidence"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">

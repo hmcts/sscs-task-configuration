@@ -100,6 +100,32 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_06vhuu1">
+        <inputEntry id="UnaryTests_1aw0amr">
+          <text>"processAudioVideoEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03ps3fr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_032t5w5">
+          <text>"allocated-tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yl6rez">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wybdh1">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mxymkt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n4bj68">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15ae3yy">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0nasu18">
         <inputEntry id="UnaryTests_16558sm">
           <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredToInterlocJudge"</text>
@@ -149,6 +175,32 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ynens1">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x257ks">
+        <inputEntry id="UnaryTests_0u72mj5">
+          <text>"processAudioVideoEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l1tn3l">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dzd1s3">
+          <text>"tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c8zj71">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j5t2uw">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c5zowx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05bhgg4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gacber">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -656,7 +708,7 @@ else
       </rule>
       <rule id="DecisionRule_1s95xyj">
         <inputEntry id="UnaryTests_09qjakp">
-          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue"</text>
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1g67b76">
           <text></text>

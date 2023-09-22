@@ -618,6 +618,29 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("interlocSendToTcw")
                 .initiativesTask("referredByJudge", "Referred By Judge", 2)
+                .build(),
+            event("uploadDocument")
+                .withCaseData("scannedDocumentTypes", List.of("audioDocument"))
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("dwpSupplementaryResponse")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument", "audioDocument"))
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("dwpUploadResponse")
+                .withCaseData("scannedDocumentTypes", List.of("audioDocument", "other"))
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("uploadFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument"))
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("uploadDocumentFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument"))
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
                 .build()
         );
     }
@@ -643,7 +666,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(42));
+        assertThat(logic.getRules().size(), is(43));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
