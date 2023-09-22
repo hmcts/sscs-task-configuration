@@ -969,6 +969,32 @@
           <text>"ftaResponseOverdue"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0v7kc5d">
+        <inputEntry id="UnaryTests_0j9411e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qdul2v">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision", "decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16v9ymu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0riiegx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xkphu3">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0447tna">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yah1l8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18vhcoh">
+          <text>"referredByJudge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

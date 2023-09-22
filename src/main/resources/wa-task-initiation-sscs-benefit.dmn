@@ -2386,6 +2386,118 @@ else 28</text>
           <text>"ftaResponseOverdue"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0dclo6o">
+        <inputEntry id="UnaryTests_14jlk0v">
+          <text>"interlocSendToTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_073353x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_128lqis">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mc67np">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jxcqj4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ooewdb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08zaipy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gthmms">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16sgtkl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l6iukj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nc9hhd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10oz4ar">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ih2orf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e6rssy">
+          <text>"referredByJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1901u5r">
+          <text>"Referred By Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jyc9ke">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0racdtz">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dpuocn">
+          <text>"referredByJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rbhnq1">
+        <inputEntry id="UnaryTests_1f3psdw">
+          <text>"validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c95xig">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cbscnt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p4ot7m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pk4dfq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ax679j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nixudg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xgdnz0">
+          <text>"reviewByTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yijhtg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12b9mul">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06f60i9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w4t4et">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14yvu3d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01cvrfq">
+          <text>"referredByJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07c1td9">
+          <text>"Referred By Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d5eb63">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r8m4f3">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07kn0h4">
+          <text>"referredByJudge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">

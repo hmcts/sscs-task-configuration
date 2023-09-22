@@ -574,6 +574,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("action", "reviewByTcw")
                 .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
                 .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
+                .initiativesTask("referredByJudge", "Referred By Judge", 2)
                 .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
@@ -597,6 +598,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("interlocReferralReason", "complexCase")
                 .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
                 .initiativesTask("referredToInterlocTCW", "Referred to interloc - Complex Case", 2)
+                .initiativesTask("referredByJudge", "Referred By Judge", 2)
                 .build(),
             event("nonCompliantSendToInterloc")
                 .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
@@ -613,6 +615,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("directionTypeDl", Map.of("value", Map.of("code", "grantExtension")))
                 .initiativesTask("reviewBfDate", "Review BF Date", 5)
                 .initiativesTask("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 2)
+                .build(),
+            event("interlocSendToTcw")
+                .initiativesTask("referredByJudge", "Referred By Judge", 2)
                 .build()
         );
     }
@@ -638,7 +643,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(40));
+        assertThat(logic.getRules().size(), is(42));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

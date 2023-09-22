@@ -62,6 +62,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewPostponementRequestTCW")
                 .cancel("referredToInterlocTCW")
                 .cancel("ftaResponseOverdue")
+                .cancel("referredByJudge")
                 .build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
@@ -93,6 +94,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewPostponementRequestTCW")
                 .cancel("referredToInterlocTCW")
                 .cancel("ftaResponseOverdue")
+                .cancel("referredByJudge")
                 .build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
@@ -124,6 +126,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewPostponementRequestTCW")
                 .cancel("referredToInterlocTCW")
                 .cancel("ftaResponseOverdue")
+                .cancel("referredByJudge")
                 .build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
@@ -151,6 +154,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewPostponementRequestTCW")
                 .cancel("referredToInterlocTCW")
                 .cancel("ftaResponseOverdue")
+                .cancel("referredByJudge")
                 .build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
@@ -180,6 +184,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewPostponementRequestTCW")
                 .cancel("referredToInterlocTCW")
                 .cancel("ftaResponseOverdue")
+                .cancel("referredByJudge")
                 .build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
@@ -216,6 +221,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareForHearingTribunalMember")
                 .cancel("reviewPostponementRequestTCW")
                 .cancel("ftaResponseOverdue")
+                .cancel("referredByJudge")
                 .build(),
             event("issueFinalDecision")
                 .cancel("reviewUrgentHearingRequest")
@@ -236,6 +242,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewPostponementRequestTCW")
                 .cancel("referredToInterlocTCW")
                 .cancel("ftaResponseOverdue")
+                .cancel("referredByJudge")
                 .build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks")
@@ -298,6 +305,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(4));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(32));
+        assertThat(logic.getRules().size(), is(33));
     }
 }

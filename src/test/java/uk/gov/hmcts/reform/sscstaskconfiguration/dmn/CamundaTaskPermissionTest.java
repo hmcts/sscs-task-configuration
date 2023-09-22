@@ -267,6 +267,16 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "ftaResponseOverdue",
                 "someCaseData",
                 Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "referredByJudge",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS")
+                )
             )
         );
     }
