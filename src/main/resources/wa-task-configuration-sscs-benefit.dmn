@@ -118,7 +118,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a9atyt">
-          <text>"reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW"</text>
+          <text>"reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xklqhp">
           <text>"workType"</text>
@@ -186,7 +186,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1k28xtv">
-          <text>"ftaRequestTimeExtension","reviewFtaValidityChallenge","reviewPostponementRequestTCW", "referredToInterlocTCW"</text>
+          <text>"ftaRequestTimeExtension","reviewFtaValidityChallenge","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0fq2vj2">
           <text>"roleCategory"</text>
@@ -239,7 +239,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3", "referredToInterlocTCW"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3", "referredToInterlocTCW","ftaResponseOverdue"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -292,7 +292,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3", "referredToInterlocTCW"</text>
+          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3", "referredToInterlocTCW","ftaResponseOverdue"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -632,6 +632,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_00unrm0">
+        <inputEntry id="UnaryTests_1uxmktv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aaggxj">
+          <text>"ftaResponseOverdue"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00vjhf0">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g7yg46">
+          <text>"[Ability to amend interloc review state flag](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" + "[Send an interlocutory decision notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0okoudw">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>
@@ -739,7 +756,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest", "referredByTcwPreHearing", "prepareForHearingJudge", "writeDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3", "reviewPostponementRequestTCW", "referredToInterlocTCW"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest", "referredByTcwPreHearing", "prepareForHearingJudge", "writeDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3", "reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>
