@@ -76,7 +76,7 @@ else
       </rule>
       <rule id="DecisionRule_1sd16za">
         <inputEntry id="UnaryTests_1fox3or">
-          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW"</text>
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xijtde">
           <text></text>
@@ -128,7 +128,7 @@ else
       </rule>
       <rule id="DecisionRule_1tsnr6z">
         <inputEntry id="UnaryTests_1e15x6b">
-          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW"</text>
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW","referredToInterlocTCW"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jcandy">
           <text></text>
@@ -656,7 +656,7 @@ else
       </rule>
       <rule id="DecisionRule_1s95xyj">
         <inputEntry id="UnaryTests_09qjakp">
-          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW"</text>
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW","referredToInterlocTCW"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1g67b76">
           <text></text>

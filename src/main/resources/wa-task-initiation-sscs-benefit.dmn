@@ -2036,6 +2036,116 @@ else "Referred to interloc"</text>
           <text>"reviewPostponementRequestTCW"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_12nywat">
+        <inputEntry id="UnaryTests_1l5ws5l">
+          <text>"hmctsResponseReviewed", "validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08iceto">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ygjiio">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rg51sa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nlzt2s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11hhsge">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02yp93t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0juzcpc">
+          <text>"reviewByTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_111py3e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uhcznw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l3n0o8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13royp5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pjusdl">
+          <text>"referredToInterlocTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mh47dl">
+          <text>if(interlocReferralReasonLabel!=null) then
+  "Referred to interloc - " + interlocReferralReasonLabel
+else "Referred to interloc"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19gb45e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qm4uri">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wz99nr">
+          <text>"referredToInterlocTCW"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xr14za">
+        <inputEntry id="UnaryTests_1lxt545">
+          <text>"nonCompliantSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c2gv9n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eib6q4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aemv7r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gex52w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fhf2om">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16safd4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1li1q9q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08kc211">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08dh5f0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l0wvae">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n78mxk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1q7ni75">
+          <text>"referredToInterlocTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yyx2hs">
+          <text>if(interlocReferralReasonLabel!=null) then
+  "Referred to interloc - " + interlocReferralReasonLabel
+else "Referred to interloc"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sihcyc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mg0r8y">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fozup4">
+          <text>"referredToInterlocTCW"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">

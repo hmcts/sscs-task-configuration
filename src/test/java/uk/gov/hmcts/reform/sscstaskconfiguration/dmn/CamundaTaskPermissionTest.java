@@ -257,6 +257,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewPostponementRequestTCW",
                 "someCaseData",
                 Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "referredToInterlocTCW",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
             )
         );
     }
