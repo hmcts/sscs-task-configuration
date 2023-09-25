@@ -64,6 +64,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("ftaResponseOverdue")
                 .cancel("referredByJudge")
                 .cancel("processAudioVideoEvidence")
+                .cancel("reviewNonCompliantAppeal")
                 .build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
@@ -97,6 +98,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("ftaResponseOverdue")
                 .cancel("referredByJudge")
                 .cancel("processAudioVideoEvidence")
+                .cancel("reviewNonCompliantAppeal")
                 .build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
@@ -130,6 +132,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("ftaResponseOverdue")
                 .cancel("referredByJudge")
                 .cancel("processAudioVideoEvidence")
+                .cancel("reviewNonCompliantAppeal")
                 .build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
@@ -159,6 +162,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("ftaResponseOverdue")
                 .cancel("referredByJudge")
                 .cancel("processAudioVideoEvidence")
+                .cancel("reviewNonCompliantAppeal")
                 .build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
@@ -228,6 +232,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("ftaResponseOverdue")
                 .cancel("referredByJudge")
                 .cancel("processAudioVideoEvidence")
+                .cancel("reviewNonCompliantAppeal")
                 .build(),
             event("issueFinalDecision")
                 .cancel("reviewUrgentHearingRequest")
@@ -250,6 +255,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("ftaResponseOverdue")
                 .cancel("referredByJudge")
                 .cancel("processAudioVideoEvidence")
+                .cancel("reviewNonCompliantAppeal")
                 .build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks")
@@ -312,6 +318,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(4));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(34));
+        assertThat(logic.getRules().size(), is(35));
     }
 }

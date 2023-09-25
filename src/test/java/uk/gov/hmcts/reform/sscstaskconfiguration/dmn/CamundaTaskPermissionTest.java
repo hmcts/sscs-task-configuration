@@ -288,6 +288,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "LEGAL_OPERATIONS"),
                     permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
                 )
+            ),
+            Arguments.of(
+                "reviewNonCompliantAppeal",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
             )
         );
     }

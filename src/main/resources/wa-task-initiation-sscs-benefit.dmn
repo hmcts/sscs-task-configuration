@@ -2560,6 +2560,62 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"processAudioVideoEvidence"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_04prib8">
+        <inputEntry id="UnaryTests_0qzu9x7">
+          <text>"draftToNonCompliant", "nonCompliant"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01qgr5x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gvg7q0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ysqo5r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hw51xz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15dsare">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gusj8j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u467oz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lzb5j6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_104v5w9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0181ewu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d8jqdj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q5mym6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rir3je">
+          <text>"reviewNonCompliantAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pylme3">
+          <text>"Review Non Compliant Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1own7vg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x0n4ss">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rwg4t8">
+          <text>"reviewNonCompliantAppeal"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
