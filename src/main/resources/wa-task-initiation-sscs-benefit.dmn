@@ -314,7 +314,7 @@
       </rule>
       <rule id="DecisionRule_15u0n7b">
         <inputEntry id="UnaryTests_0xg9m4u">
-          <text>"appealCreated"</text>
+          <text>"sentToDwp"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1a07zej">
           <text>"withFta"</text>
