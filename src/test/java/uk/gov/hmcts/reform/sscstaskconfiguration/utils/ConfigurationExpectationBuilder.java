@@ -25,11 +25,12 @@ public class ConfigurationExpectationBuilder {
     public static String DUE_DATE_ORIGIN = "dueDateOrigin";
     public static String DUE_DATE_NON_WORKING_CALENDAR = "dueDateNonWorkingCalendar";
     public static String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
+    public static String DUE_DATE_NON_WORKING_DAYS_OF_WEEK = "dueDateNonWorkingDaysOfWeek";
 
     private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
         "caseName","caseManagementCategory","location","locationName","workType","roleCategory",
         "priorityDate","minorPriority","majorPriority","description","nextHearingId","nextHearingDate",
-        "dueDateOrigin","dueDateNonWorkingCalendar","dueDateIntervalDays"
+        "dueDateOrigin","dueDateNonWorkingCalendar","dueDateIntervalDays", "dueDateNonWorkingDaysOfWeek"
     );
 
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
@@ -52,6 +53,7 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(DUE_DATE_ORIGIN, now(), false);
         builder.expectedValue(DUE_DATE_NON_WORKING_CALENDAR, CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR, true);
         builder.expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true);
+        builder.expectedValue(DUE_DATE_NON_WORKING_DAYS_OF_WEEK, "SATURDAY,SUNDAY", true);
         return builder;
     }
 
