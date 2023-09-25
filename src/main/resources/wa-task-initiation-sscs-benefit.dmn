@@ -2616,6 +2616,62 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"reviewNonCompliantAppeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ll4w3c">
+        <inputEntry id="UnaryTests_14y6ofr">
+          <text>"updateNotListable"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xea34m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0msggxd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0poyl7w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0srvd5b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qdpjwp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0td076s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hxxiq4">
+          <text>"reviewByTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17fjbgd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ktrm2j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07k4v91">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y0b40o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zw8wn8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o1wgo1">
+          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b5pfvl">
+          <text>"FTA Not Provided Appointee Details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wew9hd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dzvpor">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1et9ujn">
+          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">

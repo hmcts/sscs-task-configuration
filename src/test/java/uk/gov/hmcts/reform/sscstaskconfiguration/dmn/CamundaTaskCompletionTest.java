@@ -45,7 +45,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
-                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge", BLANK),
+                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge",
+                                    "ftaNotProvidedAppointeeDetailsTcw", BLANK),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse", BLANK),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument", BLANK),
             eventAutoCompletesTasks("actionFurtherEvidence",
@@ -55,7 +56,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("decisionIssued",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
                                     "referredByAdminJudgePreHearing", "referredToInterlocJudge",
-                                    "reviewFtaValidityChallenge", "referredToInterlocTCW", "reviewNonCompliantAppeal"),
+                                    "reviewFtaValidityChallenge", "referredToInterlocTCW", "reviewNonCompliantAppeal",
+                                    "ftaNotProvidedAppointeeDetailsTcw"),
             eventAutoCompletesTasks("struckOut",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
                                     "referredByAdminJudgePreHearing", "reviewNonCompliantAppeal"),
@@ -72,14 +74,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
                                     "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing",
                                     "referredToInterlocJudge", "reviewFtaValidityChallenge",
-                                    "referredToInterlocTCW", "referredByJudge", "reviewNonCompliantAppeal"),
+                                    "referredToInterlocTCW", "referredByJudge", "reviewNonCompliantAppeal",
+                                    "ftaNotProvidedAppointeeDetailsTcw"),
             eventAutoCompletesTasks("directionIssued",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
                                     "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing",
                                     "referredToInterlocJudge", "reviewFtaValidityChallenge",
                                     "ftaRequestTimeExtension", "referredToInterlocTCW",
-                                    "ftaResponseOverdue", "referredByJudge", "reviewNonCompliantAppeal"),
+                                    "ftaResponseOverdue", "referredByJudge", "reviewNonCompliantAppeal",
+                                    "ftaNotProvidedAppointeeDetailsTcw"),
             eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest", "writeDecisionJudge"),
             eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
@@ -88,14 +92,14 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "referredToInterlocJudge", "reviewFtaValidityChallenge",
                                     "ftaRequestTimeExtension", "referredToInterlocTCW",
                                     "ftaResponseOverdue", "referredByJudge", "processAudioVideoEvidence",
-                                    "reviewNonCompliantAppeal"),
+                                    "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw"),
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal"),
             eventAutoCompletesTasks("updateListingRequirement","reviewListingError", BLANK),
             eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail", BLANK),
             eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK),
             eventAutoCompletesTasks("confirmPanelComposition", "confirmPanelComposition"),
             eventAutoCompletesTasks("tcwReferToJudge", "reviewFtaValidityChallenge", "referredToInterlocTCW",
-                                    "referredByJudge", "reviewNonCompliantAppeal"),
+                                    "referredByJudge", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw"),
             eventAutoCompletesTasks("processAudioVideo", "processAudioVideoEvidence")
         );
     }
@@ -114,7 +118,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(34));
+        assertThat(logic.getRules().size(), is(35));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {

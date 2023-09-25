@@ -383,6 +383,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1meshgl">
+        <inputEntry id="UnaryTests_15uj4l7">
+          <text>"decisionIssued", "directionIssued", "sendToAdmin", "tcwReferToJudge", "interlocSendToTcw", "interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_145d1i8">
+          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10w32s8">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

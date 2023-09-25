@@ -1053,6 +1053,32 @@
           <text>"reviewNonCompliantAppeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_11srkbt">
+        <inputEntry id="UnaryTests_0g6f4h1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_077v2lk">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision", "decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15n1ifd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tdjw0w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fosn8o">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rrwsai">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wg0ztq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lk7qaz">
+          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
