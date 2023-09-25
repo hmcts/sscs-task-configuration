@@ -2672,6 +2672,62 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1k39hp1">
+        <inputEntry id="UnaryTests_0w85zhv">
+          <text>"validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wgbd32">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_062puu9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15zox7p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ffivji">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x1q0ho">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zy5b4c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rnihjg">
+          <text>"reviewByTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08cqpbr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0myy5b2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tlyazx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kbgdp0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0frtfqs">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dnecm6">
+          <text>"referredByAdminTcw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j46fas">
+          <text>"Referred by Admin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_018gzs1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nf90dv">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19b8gpk">
+          <text>"referredByAdminTcw"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">

@@ -76,7 +76,7 @@ else
       </rule>
       <rule id="DecisionRule_1sd16za">
         <inputEntry id="UnaryTests_1fox3or">
-          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","referredByJudge", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw"</text>
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","referredByJudge", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xijtde">
           <text></text>
@@ -154,7 +154,7 @@ else
       </rule>
       <rule id="DecisionRule_1tsnr6z">
         <inputEntry id="UnaryTests_1e15x6b">
-          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","referredByJudge", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw"</text>
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","referredByJudge", "reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jcandy">
           <text></text>

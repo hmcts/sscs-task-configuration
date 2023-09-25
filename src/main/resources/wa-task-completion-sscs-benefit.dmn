@@ -394,6 +394,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0w3ybmp">
+        <inputEntry id="UnaryTests_1kvf47h">
+          <text>"directionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12i3gfs">
+          <text>"referredByAdminTcw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_154uph7">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

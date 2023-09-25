@@ -1079,6 +1079,38 @@
           <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0o7s149">
+        <inputEntry id="UnaryTests_0dfca3w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15l4qu4">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision",
+"decisionIssued"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0329ogi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a3gu27">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v82yak">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07uvm56">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bisl4h">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_096u66o">
+          <text>"referredByAdminTcw"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
