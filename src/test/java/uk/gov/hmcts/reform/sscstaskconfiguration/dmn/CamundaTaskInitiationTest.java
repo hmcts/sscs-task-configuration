@@ -354,7 +354,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("sendToAdmin")
                 .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
                 .build(),
-            eventWithState("sentToDwp", "withFta")
+            eventWithState("sentToDwp", "withDwp")
                 .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
                 .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
                 .build(),
