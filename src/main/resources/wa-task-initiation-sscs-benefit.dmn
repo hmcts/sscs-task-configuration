@@ -250,7 +250,7 @@ else
           <text>"dwpUploadResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nspqgr">
-          <text></text>
+          <text>"withDwp"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0bql2sl">
           <text>true</text>
@@ -533,7 +533,7 @@ else
           <text>"appealCreated"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1a07zej">
-          <text>"withFta"</text>
+          <text>"withDwp"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0mplnrd">
           <text></text>

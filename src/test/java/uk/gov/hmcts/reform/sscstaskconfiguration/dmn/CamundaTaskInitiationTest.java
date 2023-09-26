@@ -168,7 +168,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "dwpUploadResponse",
-                null,
+                "withDwp",
                 Map.of("Data", Map.of("dwpFurtherInfo", true)),
                 singletonList(
                     Map.of(
@@ -446,7 +446,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("sendToAdmin")
                 .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
                 .build(),
-            eventWithState("appealCreated", "withFta")
+            eventWithState("appealCreated", "withDwp")
                 .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
                 .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
                 .build(),
