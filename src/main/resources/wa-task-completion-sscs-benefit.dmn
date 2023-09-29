@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.9.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-completion-sscs-benefit" name="Task completion DMN">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="613">
@@ -193,8 +193,8 @@
           <text>"reviewPostponementRequestJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jf2q76">
-          	<text>"Auto"</text>
-          </outputEntry>
+          <text>"Auto"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1lpw5y0">
         <inputEntry id="UnaryTests_05raz0j">
@@ -281,12 +281,12 @@
           <text>"referredToInterlocJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lylz5u">
-        	<text>"Auto"</text>
+          <text>"Auto"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1rmjvgi">
         <inputEntry id="UnaryTests_1hr3w9x">
-          <text>"createBundle","requestForInformation","interlocInformationReceived","validSendToInterloc","interlocSendToTcw","hmctsResponseReviewed","requestTranslationFromWLU","validSendToInterloc","interlocSendToTcw","interlocInformationReceived","actionFurtherEvidence","interlocSendToTcw","updateListingRequirement","readyToList","resendCaseToGAPS2","amendDueDate"</text>
+          <text>"abateCase","actionFurtherEvidence","actionPostponementRequest","adjournCase","amendDueDate","cancelTranslations","confirmPanelComposition","createBundle","decisionIssued","directionIssued","hmctsResponseReviewed","interlocInformationReceived","interlocReviewStateAmend","interlocSendToTcw","issueAdjournmentNotice","issueFinalDecision","readyToList","requestForInformation","requestTranslationFromWLU","resendCaseToGAPS2","reviewConfidentialityRequest","reviewPhmeRequest","sendToAdmin","struckOut","updateListingRequirement","uploadWelshDocument","validSendToInterloc","writeFinalDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02xaug9">
           <text></text>
