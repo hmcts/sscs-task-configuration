@@ -38,9 +38,11 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("interlocInformationReceived",
                                     "reviewInformationRequested", "reviewAdminAction", BLANK),
             eventAutoCompletesTasks("validSendToInterloc",
+                                    Map.of("interlocReferralReason", "reviewStatementOfReasonsApplication"),
                                     "reviewInformationRequested", "reviewAdminAction",
                                     "reviewConfidentialityRequest", "reviewReinstatementRequestJudge",
-                                    "referredToInterlocJudge", "referredToInterlocTCW", BLANK),
+                                    "referredToInterlocJudge", "referredToInterlocTCW",
+                                    "reviewStatementofReasonsApplication", BLANK),
             eventAutoCompletesTasks("interlocSendToTcw",
                                     "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
@@ -75,7 +77,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing",
                                     "referredToInterlocJudge", "reviewFtaValidityChallenge",
                                     "referredToInterlocTCW", "referredByJudge", "reviewNonCompliantAppeal",
-                                    "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw"),
+                                    "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw",
+                                    "reviewRemittedDecisionandProvideListingDirections"),
             eventAutoCompletesTasks("directionIssued",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
@@ -83,7 +86,9 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "referredToInterlocJudge", "reviewFtaValidityChallenge",
                                     "ftaRequestTimeExtension", "referredToInterlocTCW",
                                     "ftaResponseOverdue", "referredByJudge", "reviewNonCompliantAppeal",
-                                    "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw"),
+                                    "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw",
+                                    "reviewLibertytoApplyApplication", "reviewStatementofReasons",
+                                    "reviewPermissiontoAppealApplication", "reviewRemittedDecisionandProvideListingDirections"),
             eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest", "writeDecisionJudge"),
             eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
@@ -102,15 +107,28 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("tcwReferToJudge", "reviewFtaValidityChallenge", "referredToInterlocTCW",
                                     "referredByJudge", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw",
                                     "referredByAdminTcw"),
-            eventAutoCompletesTasks("processAudioVideo", "processAudioVideoEvidence")
+            eventAutoCompletesTasks("processAudioVideo", "processAudioVideoEvidence"),
+            eventAutoCompletesTasks("libertyToApplyGranted","reviewLibertytoApplyApplication"),
+            eventAutoCompletesTasks("libertyToApplyRefused","reviewLibertytoApplyApplication"),
+            eventAutoCompletesTasks("correctionGranted","reviewCorrectionApplicationJudge"),
+            eventAutoCompletesTasks("correctionRefused","reviewCorrectionApplicationJudge"),
+            eventAutoCompletesTasks("sORWrite","writeStatementofReason"),
+            eventAutoCompletesTasks("sORExtendTime","reviewStatementofReasons"),
+            eventAutoCompletesTasks("sORRefused","reviewStatementofReasons"),
+            eventAutoCompletesTasks("permissionToAppealGranted","reviewPermissiontoAppealApplication"),
+            eventAutoCompletesTasks("permissionToAppealRefused","reviewPermissiontoAppealApplication"),
+            eventAutoCompletesTasks("postHearingReview",
+                                    Map.of("postHearingReviewType", "setAside"),
+                                    "reviewPermissiontoAppealApplication")
         );
     }
 
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
-    void given_event_ids_should_evaluate_dmn(String eventId, Set<Map<String, String>> expectation) {
+    void given_event_ids_should_evaluate_dmn(String eventId, Map<String, Map<String, Object>> map, Set<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("additionalData", map);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
         MatcherAssert.assertThat(new HashSet<Map<String,Object>>(dmnDecisionTableResult.getResultList()), is(expectation));
@@ -120,11 +138,18 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(36));
+        assertThat(logic.getRules().size(), is(44));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
-        return Arguments.of(event, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
+        return Arguments.of(event, null, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
+        );
+    }
+
+    public static Arguments eventAutoCompletesTasks(String event, Map<String, Object> caseData, String... tasks) {
+        return Arguments.of(event,
+                            Map.of("Data", caseData),
+                            Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
         );
     }
 

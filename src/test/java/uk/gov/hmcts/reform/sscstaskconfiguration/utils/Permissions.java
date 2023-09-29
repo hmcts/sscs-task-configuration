@@ -36,6 +36,16 @@ public class Permissions {
         );
     }
 
+    public static Map<String, Object> permission(String role, String value, String roleCategory, int assignmentPriority, boolean autoAssignable) {
+        return Map.of(
+            "name", role,
+            "value", value,
+            "roleCategory", roleCategory,
+            "assignmentPriority", assignmentPriority,
+            "autoAssignable", true
+        );
+    }
+
     public static Map<String, Object> permission(String role, String value, String roleCategory, String authorisations) {
         return Map.of(
             "name", role,
@@ -209,6 +219,15 @@ public class Permissions {
             permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
             permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
             permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
+        );
+    }
+
+    public static List<Map<String, Object>> defaultPermissionsPostHearingTasks() {
+        return List.of(
+            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+            permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1)
         );
     }
 

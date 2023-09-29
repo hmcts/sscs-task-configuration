@@ -207,7 +207,7 @@ else
       <rule id="DecisionRule_19cn0u8">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1vcxbly">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","reviewFtaDueDate","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","reviewFtaDueDate","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","reviewStatementofReasonsApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hxa6gg">
           <text></text>
@@ -285,10 +285,37 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_06439sc">
+        <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
+        <inputEntry id="UnaryTests_1uojej9">
+          <text>"reviewPostHearingNoticeforListingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p2b6fz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ryvdoc">
+          <text>"allocated-ctsc-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a6wsb0">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hnqkjf">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tb8913">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p4qzdc">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0he2xnz">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0e3j7rq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1kh84kf">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","reviewStatementofReasonsApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0e41w3x">
           <text></text>
@@ -366,10 +393,37 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0n0jktj">
+        <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
+        <inputEntry id="UnaryTests_02vbxbe">
+          <text>"reviewPostHearingNoticeforListingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0us0gct">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_020ssoe">
+          <text>"ctsc"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b4l210">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1enkdj9">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07n15jo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nbnipf">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_179xwwj">
+          <text>false</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0q51lrq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_03ctmk1">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","reviewFtaDueDate","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","reviewFtaDueDate","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","reviewStatementofReasonsApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tw6aye">
           <text></text>
@@ -474,7 +528,7 @@ else
       </rule>
       <rule id="DecisionRule_1f84zth">
         <inputEntry id="UnaryTests_05h8znr">
-          <text>"reviewPostponementRequestJudge"</text>
+          <text>"reviewPostponementRequestJudge","writeStatementofReason","reviewStatementofReasons"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1avmryt">
           <text></text>
@@ -500,7 +554,7 @@ else
       </rule>
       <rule id="DecisionRule_0kumsrg">
         <inputEntry id="UnaryTests_1nrlamk">
-          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge"</text>
+          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge", "reviewLibertytoApplyApplication", "reviewCorrectionApplicationJudge", "writeStatementofReason", "reviewStatementofReasons", "reviewPermissiontoAppealApplication", "reviewRemittedDecisionandProvideListingDirections"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gpzj1d">
           <text></text>
@@ -552,7 +606,7 @@ else
       </rule>
       <rule id="DecisionRule_1a3ndv4">
         <inputEntry id="UnaryTests_0i1ce54">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","writeStatementofReason","reviewStatementofReasons"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yl9r0u">
           <text></text>
@@ -810,6 +864,32 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0gez68d">
+        <inputEntry id="UnaryTests_0dzvpba">
+          <text>"reviewPostHearingNoticeforListingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wbw98v">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16ut9fb">
+          <text>"ctsc-team-leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01256i9">
+          <text>"Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mk8olo">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hqm0es">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17i4u86">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vf4gf1">
+          <text>false</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0lrmqi3">
         <inputEntry id="UnaryTests_0hmsc8n">
           <text>"allocateCaseRolesAndCreateBundle"</text>
@@ -1041,6 +1121,32 @@ else
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1y75ei2">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c4l3oz">
+        <inputEntry id="UnaryTests_1mx7gln">
+          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wedstj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11hw33i">
+          <text>"post-hearing-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ktpaub">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0heum6h">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1paczue">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s8a4ss">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02t9zz7">
           <text>true</text>
         </outputEntry>
       </rule>

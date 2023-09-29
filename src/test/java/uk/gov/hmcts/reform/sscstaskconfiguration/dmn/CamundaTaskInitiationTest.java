@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -653,6 +654,92 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("updateNotListable")
                 .withCaseData("action", "reviewByTcw")
                 .initiativesTask("ftaNotProvidedAppointeeDetailsTcw", "FTA Not Provided Appointee Details", 2)
+                .build(),
+            eventWithState("sORRequest", "postHearing")
+                .withCaseData("sscsHearingRecordings", emptyList())
+                .initiativesTask("reviewStatementofReasonsApplication", "Review Statement of Reasons Application", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewLibertyToApplyApplication")
+                .initiativesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application", 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "dormantAppealState")
+                .withCaseData("scannedDocumentTypes", List.of("libertyToApplyApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .initiativesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewCorrectionApplication")
+                .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewStatementOfReasonsApplication")
+                .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
+                .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
+                .build(),
+            eventWithState("setAsideRefused", "postHearing")
+                .withCaseData("setAside", Map.of("requestStatementOfReasons", true))
+                .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
+                .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("statementOfReasonsApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .withCaseData("issueInterlocDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
+                .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
+                .build(),
+            eventWithState("sORExtendTime", "postHearing")
+                .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewStatementOfReasonsApplication")
+                .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
+                .initiativesTask("reviewStatementofReasons", "Review Statement of Reasons", 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("statementOfReasonsApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .withCaseData("issueInterlocDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
+                .initiativesTask("reviewStatementofReasons", "Review Statement of Reasons", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewPermissionToAppealApplication")
+                .initiativesTask("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewPermissionToAppealApplication")
+                .withCaseData("otherParties", List.of("other party 1"))
+                .initiativesTaskWithDelay("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 21, 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("permissionToAppealApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .initiativesTask("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("permissionToAppealApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .withCaseData("jointParty", "Yes")
+                .initiativesTaskWithDelay("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 21, 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("interlocReferralReason", "reviewUpperTribunalDecision")
+                .initiativesTask("reviewRemittedDecisionandProvideListingDirections", "Review Remitted Decision and Provide Listing Directions", 2)
+                .build(),
+            eventWithState("setAsideGranted", "postHearing")
+                .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
+                .build(),
+            eventWithState("libertyToApplyGranted", "postHearing")
+                .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
+                .build(),
+            eventWithState("postHearingReview", "postHearing")
+                .withCaseData("postHearingReviewType", "setAside")
+                .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
                 .build()
         );
     }
@@ -678,7 +765,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(46));
+        assertThat(logic.getRules().size(), is(64));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

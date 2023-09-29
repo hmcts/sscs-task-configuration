@@ -631,6 +631,81 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue("workType", "routine_work", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
+            ),
+            Arguments.of(
+                "reviewStatementofReasonsApplication",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DESCRIPTION, "[Send to Interloc - Review statement of reasons application]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}"
+                        + "/trigger/validSendToInterloc)", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewLibertytoApplyApplication",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewCorrectionApplicationJudge",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "writeStatementofReason",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "28", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewStatementofReasons",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewPermissiontoAppealApplication",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewRemittedDecisionandProvideListingDirections",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewPostHearingNoticeforListingRequirements",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
+                    .build()
             )
         );
     }
@@ -659,7 +734,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(50));
+        assertThat(logic.getRules().size(), is(53));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

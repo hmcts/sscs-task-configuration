@@ -308,6 +308,68 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
                     permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS")
                 )
+            ),
+            Arguments.of(
+                "reviewStatementofReasonsApplication",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewLibertytoApplyApplication",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
+            ),
+            Arguments.of(
+                "reviewCorrectionApplicationJudge",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
+            ),
+            Arguments.of(
+                "writeStatementofReason",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                ),
+                Arguments.of(
+                    "reviewStatementofReasons",
+                    "someCaseData",
+                    List.of(
+                        Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                        Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                        permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                        permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                        permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    ),
+                    Arguments.of(
+                        "reviewPermissiontoAppealApplication",
+                        "someCaseData",
+                        List.of(
+                            Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                            Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                            permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                            permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 2, false)
+                        )
+                    ),
+                    Arguments.of(
+                        "reviewRemittedDecisionandProvideListingDirections",
+                        "someCaseData",
+                        List.of(
+                            Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                            Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                            permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                            permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 2, false)
+                        )
+                    ),
+                    Arguments.of(
+                        "reviewPostHearingNoticeforListingRequirements",
+                        "someCaseData",
+                        Permissions.defaultCtscPermissions()
+                    )
+                )
             )
         );
     }
@@ -348,7 +410,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(39));
+        assertThat(logic.getRules().size(), is(43));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
