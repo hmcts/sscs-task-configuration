@@ -60,6 +60,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0vf8opq">
+        <inputEntry id="UnaryTests_0fkxfqx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pnm0ej">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15rspxn">
+          <text>"region"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dj7rx7">
+          <text>if(caseData!=null and caseData.caseManagementLocation!=null and caseData.caseManagementLocation.region!=null) then caseData.caseManagementLocation.region else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1radtvn">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_12vbz7t">
         <description>Location Id</description>
         <inputEntry id="UnaryTests_0y9tp78">

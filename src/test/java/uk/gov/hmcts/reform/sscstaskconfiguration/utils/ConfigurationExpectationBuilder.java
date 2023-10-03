@@ -12,6 +12,7 @@ public class ConfigurationExpectationBuilder {
 
     public static String CASE_NAME = "caseName";
     public static String CASE_MANAGEMENT_CATEGORY = "caseManagementCategory";
+    public static String REGION = "region";
     public static String LOCATION = "location";
     public static String LOCATION_NAME = "locationName";
     public static String WORK_TYPE = "workType";
@@ -27,7 +28,7 @@ public class ConfigurationExpectationBuilder {
     public static String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
 
     private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
-        CASE_NAME,CASE_MANAGEMENT_CATEGORY,LOCATION,LOCATION_NAME,WORK_TYPE,ROLE_CATEGORY,
+        CASE_NAME,CASE_MANAGEMENT_CATEGORY,REGION,LOCATION,LOCATION_NAME,WORK_TYPE,ROLE_CATEGORY,
         PRIORITY_DATE, MINOR_PRIORITY, MAJOR_PRIORITY, DESCRIPTION, NEXT_HEARING_ID, NEXT_HEARING_DATE,
         DUE_DATE_ORIGIN, DUE_DATE_NON_WORKING_CALENDAR, DUE_DATE_INTERVAL_DAYS
     );
@@ -40,6 +41,7 @@ public class ConfigurationExpectationBuilder {
         ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
         builder.expectedValue(CASE_NAME, "Joe Blogs", true);
         builder.expectedValue(CASE_MANAGEMENT_CATEGORY, "Personal Independence Payment", true);
+        builder.expectedValue(REGION, "4", true);
         builder.expectedValue(LOCATION, "123456", true);
         builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
         builder.expectedValue(WORK_TYPE, "routine_work", true);
@@ -59,6 +61,7 @@ public class ConfigurationExpectationBuilder {
         ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
         builder.expectedValue(CASE_NAME, "Joe Blogs", true);
         builder.expectedValue(CASE_MANAGEMENT_CATEGORY, "Personal Independence Payment", true);
+        builder.expectedValue(REGION, "4", true);
         builder.expectedValue(LOCATION, "123456", true);
         builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
         builder.expectedValue(WORK_TYPE, "pre_hearing", true);

@@ -21,6 +21,9 @@ public class CaseDataBuilder {
             "name", "BRADFORD",
             "epimsId", "123456"
         ));
+        caseData.put("caseManagementLocation", Map.of(
+            "region", "4"
+        ));
         caseData.put("caseManagementCategory", Map.of(
             "value", Map.of("label", "Personal Independence Payment")
         ));
