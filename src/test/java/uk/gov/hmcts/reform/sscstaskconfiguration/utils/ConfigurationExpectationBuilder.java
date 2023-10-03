@@ -26,11 +26,12 @@ public class ConfigurationExpectationBuilder {
     public static String DUE_DATE_ORIGIN = "dueDateOrigin";
     public static String DUE_DATE_NON_WORKING_CALENDAR = "dueDateNonWorkingCalendar";
     public static String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
+    public static String DUE_DATE_NON_WORKING_DAYS_OF_WEEK = "dueDateNonWorkingDaysOfWeek";
 
     private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
         CASE_NAME,CASE_MANAGEMENT_CATEGORY,REGION,LOCATION,LOCATION_NAME,WORK_TYPE,ROLE_CATEGORY,
         PRIORITY_DATE, MINOR_PRIORITY, MAJOR_PRIORITY, DESCRIPTION, NEXT_HEARING_ID, NEXT_HEARING_DATE,
-        DUE_DATE_ORIGIN, DUE_DATE_NON_WORKING_CALENDAR, DUE_DATE_INTERVAL_DAYS
+        DUE_DATE_ORIGIN, DUE_DATE_NON_WORKING_CALENDAR, DUE_DATE_INTERVAL_DAYS, DUE_DATE_NON_WORKING_DAYS_OF_WEEK
     );
 
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
@@ -54,6 +55,7 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(DUE_DATE_ORIGIN, now(), false);
         builder.expectedValue(DUE_DATE_NON_WORKING_CALENDAR, CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR, true);
         builder.expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true);
+        builder.expectedValue(DUE_DATE_NON_WORKING_DAYS_OF_WEEK, "SATURDAY,SUNDAY", true);
         return builder;
     }
 
@@ -74,6 +76,7 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(DUE_DATE_ORIGIN, now(), false);
         builder.expectedValue(DUE_DATE_NON_WORKING_CALENDAR, CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR, true);
         builder.expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true);
+        builder.expectedValue(DUE_DATE_NON_WORKING_DAYS_OF_WEEK, "SATURDAY,SUNDAY", true);
         return builder;
     }
 
