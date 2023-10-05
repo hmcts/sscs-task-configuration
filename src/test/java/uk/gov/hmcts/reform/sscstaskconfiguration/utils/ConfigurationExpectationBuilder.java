@@ -10,6 +10,11 @@ import java.util.stream.Collectors;
 
 public class ConfigurationExpectationBuilder {
 
+    public static String ROUTINE_WORK = "routine_work";
+    public static String PRE_HEARING_WORK = "pre_hearing_work";
+    public static String HEARING_WORK = "hearing_work";
+    public static String POST_HEARING_WORK = "post_hearing_work";
+
     public static String CASE_NAME = "caseName";
     public static String CASE_MANAGEMENT_CATEGORY = "caseManagementCategory";
     public static String REGION = "region";
@@ -45,7 +50,7 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(REGION, "4", true);
         builder.expectedValue(LOCATION, "123456", true);
         builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
-        builder.expectedValue(WORK_TYPE, "routine_work", true);
+        builder.expectedValue(WORK_TYPE, ROUTINE_WORK, true);
         builder.expectedValue(ROLE_CATEGORY, "CTSC", true);
         builder.expectedValue(PRIORITY_DATE, "", true);
         builder.expectedValue(MINOR_PRIORITY, "500", true);
@@ -66,7 +71,7 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(REGION, "4", true);
         builder.expectedValue(LOCATION, "123456", true);
         builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
-        builder.expectedValue(WORK_TYPE, "pre_hearing", true);
+        builder.expectedValue(WORK_TYPE, PRE_HEARING_WORK, true);
         builder.expectedValue(ROLE_CATEGORY, "JUDICIAL", true);
         builder.expectedValue(PRIORITY_DATE, "", true);
         builder.expectedValue(MINOR_PRIORITY, "500", true);

@@ -30,10 +30,12 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DESCRIPTION;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DUE_DATE_NON_WORKING_CALENDAR;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.HEARING_WORK;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.MAJOR_PRIORITY;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.MINOR_PRIORITY;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.NEXT_HEARING_ID;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.NEXT_HEARING_DATE;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.PRE_HEARING_WORK;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.PRIORITY_DATE;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.ROLE_CATEGORY;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.WORK_TYPE;
@@ -242,7 +244,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue(WORK_TYPE, "pre_hearing", true)
+                    .expectedValue(WORK_TYPE, PRE_HEARING_WORK, true)
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
@@ -253,7 +255,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "100", true)
                     .expectedValue(MAJOR_PRIORITY, "1000", true)
-                    .expectedValue(WORK_TYPE, "pre_hearing", true)
+                    .expectedValue(WORK_TYPE, PRE_HEARING_WORK, true)
                     .expectedValue(ROLE_CATEGORY,"JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
@@ -264,7 +266,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     ConfigurationExpectationBuilder.defaultExpectations()
                         .expectedValue(MINOR_PRIORITY, "500", true)
                         .expectedValue(MAJOR_PRIORITY, "5000", true)
-                        .expectedValue(WORK_TYPE, "pre_hearing", true)
+                        .expectedValue(WORK_TYPE, PRE_HEARING_WORK, true)
                         .expectedValue(ROLE_CATEGORY,"JUDICIAL", true)
                         .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                         .build()
@@ -298,7 +300,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     ConfigurationExpectationBuilder.defaultExpectations()
                         .expectedValue(MINOR_PRIORITY, "500", true)
                         .expectedValue(MAJOR_PRIORITY, "5000", true)
-                        .expectedValue(WORK_TYPE, "hearing_work", true)
+                        .expectedValue(WORK_TYPE, HEARING_WORK, true)
                         .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                         .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                         .build()
@@ -354,7 +356,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "100", true)
                     .expectedValue(MAJOR_PRIORITY, "1000", true)
-                    .expectedValue(WORK_TYPE, "hearing_work", true)
+                    .expectedValue(WORK_TYPE, HEARING_WORK, true)
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
@@ -367,8 +369,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(DESCRIPTION, eventLink("Create a bundle in the case","createBundle"), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
-                    .expectedValue("workType", "hearing_work", true)
-                    .expectedValue("roleCategory", "ADMIN", true)
+                    .expectedValue(WORK_TYPE, HEARING_WORK, true)
+                    .expectedValue(ROLE_CATEGORY, "ADMIN", true)
                     .build()
             ),
             Arguments.of(
@@ -377,7 +379,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue("workType", "hearing_work", true)
+                    .expectedValue(WORK_TYPE, HEARING_WORK, true)
                     .expectedValue(DESCRIPTION, eventLink("Send to Judge","tcwReferToJudge"), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .build()
@@ -388,7 +390,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue(WORK_TYPE, "pre_hearing", true)
+                    .expectedValue(WORK_TYPE, PRE_HEARING_WORK, true)
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
@@ -399,7 +401,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue(WORK_TYPE, "pre_hearing", true)
+                    .expectedValue(WORK_TYPE, PRE_HEARING_WORK, true)
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
