@@ -365,7 +365,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION, eventLink("Create a bundle in the case","createBundle"), true)
+                    .expectedValue(DESCRIPTION, eventLink("Create Bundle","createBundle"), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .expectedValue("workType", "hearing_work", true)
                     .expectedValue("roleCategory", "ADMIN", true)
