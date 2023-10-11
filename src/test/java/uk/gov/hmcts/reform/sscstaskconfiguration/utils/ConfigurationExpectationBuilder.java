@@ -77,10 +77,6 @@ public class ConfigurationExpectationBuilder {
         return builder;
     }
 
-    public static String eventLink(String description, String eventId) {
-        return String.format("[%s](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/%s)", description, eventId);
-    }
-
     public static String buildDescription(String... lines) {
         return Arrays.stream(lines).collect(Collectors.joining("<br/>"));
     }
