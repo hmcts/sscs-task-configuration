@@ -229,6 +229,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 Permissions.defaultAdminCaseWorkerPermissionsWithCompleteOwn()
             ),
             Arguments.of(
+                "reviewCorrectionApplicationAdmin",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "CTSC", 1),
+                    permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "CTSC", 2, false),
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC", 3,false)
+                )
+            ),
+            Arguments.of(
                 "reviewFtaValidityChallenge",
                 "someCaseData",
                 Permissions.defaultPermissionsTcwTasks()
@@ -410,7 +421,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(43));
+        assertThat(logic.getRules().size(), is(44));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

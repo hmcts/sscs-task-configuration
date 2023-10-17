@@ -486,6 +486,23 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_110uo8i">
+        <inputEntry id="UnaryTests_1pzqclz">
+          <text>"adminActionCorrection","adminCorrectionBody"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y6hkdej">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y6hsej">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tcuno2">
+          <text>"reviewCorrectionApplicationAdmin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xjivlo">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0lt5pkw">
         <inputEntry id="UnaryTests_06u067e">
           <text>"directionIssued", "interlocReviewStateAmend"</text>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.11.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -1653,7 +1653,7 @@ else 0</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0j3fzgi">
           <text></text>
-        </inputEntry>
+        </inputEntry>       
         <outputEntry id="LiteralExpression_132d9b7">
           <text>"reviewValidAppeal"</text>
         </outputEntry>
@@ -2440,6 +2440,160 @@ else "Referred to interloc"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ofelk7">
           <text>"contactParties"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10tok59">
+        <inputEntry id="UnaryTests_14xvmpr">
+          <text>"correctionRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iboa7e">
+          <text>"dormant","postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w7rkay">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12hsnog">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cj6m66">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x2g3ew">
+          <text>"postHearingWork"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04mjjem">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b833au">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_023qbu4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_047w8n9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p66c0f">
+          <text></text>
+        </inputEntry>
+        <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry>
+          <text></text>
+        </inputEntry>
+        <inputEntry>
+          <text></text>
+        </inputEntry>        
+        <outputEntry id="LiteralExpression_05l3w5x">
+          <text>"reviewCorrectionApplicationAdmin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19kbk6x">
+          <text>"Review Correction Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fdd8eu">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18ikf3e">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ue1zx1">
+          <text>"reviewCorrectionApplicationAdmin"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1k5110b">
+        <inputEntry id="UnaryTests_1yqfnlm">
+          <text>"actionFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0re1e5g">
+          <text>"dormant","postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j18fmb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07av2sj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nslhp6">
+          <text>contains(scannedDocumentTypes, "correctionApplication")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n4631n">
+          <text>"postHearingWork"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z5b26m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tr4s3w">
+          <text>"adminActionCorrection"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v95nl6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0del5z9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04duqad">
+          <text></text>
+        </inputEntry>
+        <inputEntry>
+          <text></text>
+        </inputEntry> 
+        <inputEntry>
+          <text></text>
+        </inputEntry> 
+        <inputEntry>
+          <text></text>
+        </inputEntry> 
+        <inputEntry>
+          <text></text>
+        </inputEntry> 
+        <inputEntry>
+          <text></text>
+        </inputEntry> 
+        <inputEntry>
+          <text></text>
+        </inputEntry> 
+        <inputEntry>
+          <text></text>
+        </inputEntry> 
+        <inputEntry>
+          <text></text>
+        </inputEntry> 
+        <inputEntry>
+          <text></text>
+        </inputEntry> 
+        <outputEntry id="LiteralExpression_1lkpw9g">
+          <text>"reviewCorrectionApplicationAdmin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0funzvt">
+          <text>"Review Correction Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hi88e8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n32f8s">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r9lh8g">
+          <text>"reviewCorrectionApplicationAdmin"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0xvltnd">

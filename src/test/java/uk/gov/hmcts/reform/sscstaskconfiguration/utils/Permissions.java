@@ -42,7 +42,7 @@ public class Permissions {
             "value", value,
             "roleCategory", roleCategory,
             "assignmentPriority", assignmentPriority,
-            "autoAssignable", true
+            "autoAssignable", autoAssignable
         );
     }
 
