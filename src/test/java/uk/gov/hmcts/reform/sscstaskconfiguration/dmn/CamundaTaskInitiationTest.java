@@ -1,5 +1,6 @@
 package uk.gov.hmcts.reform.sscstaskconfiguration.dmn;
 
+import java.util.Arrays;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -167,7 +169,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "dwpUploadResponse",
-                null,
+                "withDwp",
                 Map.of("Data", Map.of("dwpFurtherInfo", true)),
                 singletonList(
                     Map.of(
@@ -175,6 +177,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review FTA Response",
                         "workingDaysAllowed", 2,
                         "processCategories", "reviewFtaResponse"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpChallengeValidity",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewFtaValidityChallenge",
+                        "name", "Review FTA validity challenge",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "reviewFtaValidityChallenge"
                     )
                 )
             ),
@@ -432,7 +447,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("sendToAdmin")
                 .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
                 .build(),
-            eventWithState("appealCreated", "withFta")
+            eventWithState("appealCreated", "withDwp")
                 .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
                 .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
                 .build(),
@@ -542,6 +557,202 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("workType", "postHearingWork")
                 .withCaseData("action", "adminActionCorrection")
                 .initiativesTask("reviewCorrectionApplicationAdmin", "Review Correction Application", 3)
+                .build(),
+            event("dwpRequestTimeExtension")
+                .initiativesTask("ftaRequestTimeExtension", "Request FTA Time Extension", 2)
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-1", "tribunal-member-2", "tribunal-member-3"))
+                .initiativesTask("prepareForHearingTribunalMember1", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .initiativesTask("prepareForHearingTribunalMember2", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .initiativesTask("prepareForHearingTribunalMember3", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-1"))
+                .initiativesTask("prepareForHearingTribunalMember1", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-2"))
+                .initiativesTask("prepareForHearingTribunalMember2", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-3"))
+                .initiativesTask("prepareForHearingTribunalMember3", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByTcw")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
+                .initiativesTask("referredByJudge", "Referred By Judge", 2)
+                .initiativesTask("referredByAdminTcw", "Referred by Admin", 2)
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("uploadWelshDocument")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
+                                 10, "Translation Tasks")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("postponementRequest")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByTcw")
+                .withCaseData("interlocReferralReason", "complexCase")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .initiativesTask("referredToInterlocTCW", "Referred to interloc - Complex Case", 2)
+                .initiativesTask("referredByJudge", "Referred By Judge", 2)
+                .initiativesTask("referredByAdminTcw", "Referred by Admin", 2)
+                .build(),
+            event("nonCompliantSendToInterloc")
+                .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
+                .build(),
+            event("sendToDwp")
+                .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "childSupport")))
+                .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 42, 2)
+                .build(),
+            event("sendToDwp")
+                .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "PIP")))
+                .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 28, 2)
+                .build(),
+            event("directionDueToday")
+                .withCaseData("directionTypeDl", Map.of("value", Map.of("code", "grantExtension")))
+                .initiativesTask("reviewBfDate", "Review BF Date", 5)
+                .initiativesTask("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 2)
+                .build(),
+            event("interlocSendToTcw")
+                .initiativesTask("referredByJudge", "Referred By Judge", 2)
+                .build(),
+            event("uploadDocument")
+                .withCaseData("scannedDocumentTypes", List.of("audioDocument"))
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("dwpSupplementaryResponse")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument", "audioDocument"))
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("dwpUploadResponse")
+                .withCaseData("scannedDocumentTypes", List.of("audioDocument", "other"))
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("uploadFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument"))
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("uploadDocumentFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument"))
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("nonCompliant")
+                .initiativesTask("reviewNonCompliantAppeal", "Review Non Compliant Appeal", 2)
+                .build(),
+            event("draftToNonCompliant")
+                .initiativesTask("reviewNonCompliantAppeal", "Review Non Compliant Appeal", 2)
+                .build(),
+            event("updateNotListable")
+                .withCaseData("action", "reviewByTcw")
+                .initiativesTask("ftaNotProvidedAppointeeDetailsTcw", "FTA Not Provided Appointee Details", 2)
+                .build(),
+            eventWithState("sORRequest", "postHearing")
+                .withCaseData("sscsHearingRecordings", emptyList())
+                .initiativesTask("reviewStatementofReasonsApplication", "Review Statement of Reasons Application", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewLibertyToApplyApplication")
+                .initiativesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application", 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "dormantAppealState")
+                .withCaseData("scannedDocumentTypes", List.of("libertyToApplyApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .initiativesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewCorrectionApplication")
+                .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
+                .build(),
+            eventWithState("adminActionCorrection", "postHearing")
+                .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewStatementOfReasonsApplication")
+                .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
+                .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
+                .build(),
+            eventWithState("setAsideRefused", "postHearing")
+                .withCaseData("setAside", Map.of("requestStatementOfReasons", true))
+                .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
+                .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("statementOfReasonsApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .withCaseData("issueInterlocDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
+                .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
+                .build(),
+            eventWithState("sORExtendTime", "postHearing")
+                .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewStatementOfReasonsApplication")
+                .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
+                .initiativesTask("reviewStatementofReasons", "Review Statement of Reasons", 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("statementOfReasonsApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .withCaseData("issueInterlocDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
+                .initiativesTask("reviewStatementofReasons", "Review Statement of Reasons", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewPermissionToAppealApplication")
+                .initiativesTask("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewPermissionToAppealApplication")
+                .withCaseData("otherParties", List.of("other party 1"))
+                .initiativesTaskWithDelay("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 21, 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("permissionToAppealApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .initiativesTask("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 2)
+                .build(),
+            eventWithState("actionFurtherEvidence", "postHearing")
+                .withCaseData("scannedDocumentTypes", List.of("permissionToAppealApplication"))
+                .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
+                .withCaseData("jointParty", "Yes")
+                .initiativesTaskWithDelay("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 21, 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("interlocReferralReason", "reviewUpperTribunalDecision")
+                .initiativesTask("reviewRemittedDecisionandProvideListingDirections", "Review Remitted Decision and Provide Listing Directions", 2)
+                .build(),
+            eventWithState("setAsideGranted", "postHearing")
+                .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
+                .build(),
+            eventWithState("libertyToApplyGranted", "postHearing")
+                .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
+                .build(),
+            eventWithState("postHearingReview", "postHearing")
+                .withCaseData("postHearingReviewType", "setAside")
+                .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
                 .build()
         );
     }
@@ -567,7 +778,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(30));
+        assertThat(logic.getRules().size(), is(67));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

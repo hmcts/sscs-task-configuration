@@ -38,14 +38,17 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("interlocInformationReceived",
                                     "reviewInformationRequested", "reviewAdminAction", BLANK),
             eventAutoCompletesTasks("validSendToInterloc",
+                                    Map.of("interlocReferralReason", "reviewStatementOfReasonsApplication"),
                                     "reviewInformationRequested", "reviewAdminAction",
                                     "reviewConfidentialityRequest", "reviewReinstatementRequestJudge",
-                                    "referredToInterlocJudge", BLANK),
+                                    "referredToInterlocJudge", "referredToInterlocTCW",
+                                    "reviewStatementofReasonsApplication", BLANK),
             eventAutoCompletesTasks("interlocSendToTcw",
                                     "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
-                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge", BLANK),
+                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge",
+                                    "ftaNotProvidedAppointeeDetailsTcw", BLANK),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse", BLANK),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument", BLANK),
             eventAutoCompletesTasks("actionFurtherEvidence",
@@ -54,48 +57,80 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("reviewPhmeRequest","reviewPheRequestJudge"),
             eventAutoCompletesTasks("decisionIssued",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
-                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge"),
+                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge",
+                                    "reviewFtaValidityChallenge", "referredToInterlocTCW", "reviewNonCompliantAppeal",
+                                    "ftaNotProvidedAppointeeDetailsTcw"),
             eventAutoCompletesTasks("struckOut",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
-                                    "referredByAdminJudgePreHearing"),
+                                    "referredByAdminJudgePreHearing", "reviewNonCompliantAppeal"),
             eventAutoCompletesTasks("abateCase","ftaNotProvidedAppointeeDetailsJudge"),
             eventAutoCompletesTasks("writeFinalDecision",
                                     "referredByTcwPreHearing", "prepareForHearingJudge",
                                     "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing"),
-            eventAutoCompletesTasks("actionPostponementRequest","reviewPostponementRequestJudge"),
+            eventAutoCompletesTasks("actionPostponementRequest","reviewPostponementRequestJudge",
+                                    "reviewPostponementRequestTCW"),
             eventAutoCompletesTasks("adjournCase", "prepareForHearingJudge"),
             eventAutoCompletesTasks("issueAdjournmentNotice", "writeDecisionJudge"),
             eventAutoCompletesTasks("sendToAdmin",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
                                     "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing",
-                                    "referredToInterlocJudge"),
+                                    "referredToInterlocJudge", "reviewFtaValidityChallenge",
+                                    "referredToInterlocTCW", "referredByJudge", "reviewNonCompliantAppeal",
+                                    "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw",
+                                    "reviewRemittedDecisionandProvideListingDirections"),
             eventAutoCompletesTasks("directionIssued",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
                                     "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing",
-                                    "referredToInterlocJudge"),
+                                    "referredToInterlocJudge", "reviewFtaValidityChallenge",
+                                    "ftaRequestTimeExtension", "referredToInterlocTCW",
+                                    "ftaResponseOverdue", "referredByJudge", "reviewNonCompliantAppeal",
+                                    "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw",
+                                    "reviewLibertytoApplyApplication", "reviewStatementofReasons",
+                                    "reviewPermissiontoAppealApplication", "reviewRemittedDecisionandProvideListingDirections"),
             eventAutoCompletesTasks("issueFinalDecision","reviewConfidentialityRequest", "writeDecisionJudge"),
             eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
                                     "reviewPheRequestJudge", "ftaNotProvidedAppointeeDetailsJudge",
                                     "referredByTcwPreHearing", "referredByAdminJudgePreHearing",
-                                    "referredToInterlocJudge"),
+                                    "referredToInterlocJudge", "reviewFtaValidityChallenge",
+                                    "ftaRequestTimeExtension", "referredToInterlocTCW",
+                                    "ftaResponseOverdue", "referredByJudge", "processAudioVideoEvidence",
+                                    "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw",
+                                    "referredByAdminTcw"),
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal"),
             eventAutoCompletesTasks("updateListingRequirement","reviewListingError", BLANK),
             eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail", BLANK),
             eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK),
             eventAutoCompletesTasks("confirmPanelComposition", "confirmPanelComposition"),
             eventAutoCompletesTasks("adminActionCorrection", "reviewCorrectionApplicationAdmin"),
-            eventAutoCompletesTasks("adminCorrectionBody", "reviewCorrectionApplicationAdmin")
+            eventAutoCompletesTasks("adminCorrectionBody", "reviewCorrectionApplicationAdmin"),
+            eventAutoCompletesTasks("tcwReferToJudge", "reviewFtaValidityChallenge", "referredToInterlocTCW",
+                                    "referredByJudge", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw",
+                                    "referredByAdminTcw"),
+            eventAutoCompletesTasks("processAudioVideo", "processAudioVideoEvidence"),
+            eventAutoCompletesTasks("libertyToApplyGranted","reviewLibertytoApplyApplication"),
+            eventAutoCompletesTasks("libertyToApplyRefused","reviewLibertytoApplyApplication"),
+            eventAutoCompletesTasks("correctionGranted","reviewCorrectionApplicationJudge"),
+            eventAutoCompletesTasks("correctionRefused","reviewCorrectionApplicationJudge"),
+            eventAutoCompletesTasks("sORWrite","writeStatementofReason"),
+            eventAutoCompletesTasks("sORExtendTime","reviewStatementofReasons"),
+            eventAutoCompletesTasks("sORRefused","reviewStatementofReasons"),
+            eventAutoCompletesTasks("permissionToAppealGranted","reviewPermissiontoAppealApplication"),
+            eventAutoCompletesTasks("permissionToAppealRefused","reviewPermissiontoAppealApplication"),
+            eventAutoCompletesTasks("postHearingReview",
+                                    Map.of("postHearingReviewType", "setAside"),
+                                    "reviewPermissiontoAppealApplication")
         );
     }
 
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
-    void given_event_ids_should_evaluate_dmn(String eventId, Set<Map<String, String>> expectation) {
+    void given_event_ids_should_evaluate_dmn(String eventId, Map<String, Map<String, Object>> map, Set<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("additionalData", map);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
         MatcherAssert.assertThat(new HashSet<Map<String,Object>>(dmnDecisionTableResult.getResultList()), is(expectation));
@@ -105,11 +140,18 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(27));
+        assertThat(logic.getRules().size(), is(45));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
-        return Arguments.of(event, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
+        return Arguments.of(event, null, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
+        );
+    }
+
+    public static Arguments eventAutoCompletesTasks(String event, Map<String, Object> caseData, String... tasks) {
+        return Arguments.of(event,
+                            Map.of("Data", caseData),
+                            Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
         );
     }
 

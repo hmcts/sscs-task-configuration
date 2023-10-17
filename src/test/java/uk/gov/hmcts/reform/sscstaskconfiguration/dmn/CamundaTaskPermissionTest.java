@@ -235,8 +235,151 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
                     permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "CTSC", 1),
-                    permission("ctsc-administrator","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "CTSC"),
-                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC")
+                    permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "CTSC", 2, false),
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC", 3,false)
+                )
+            ),
+            Arguments.of(
+                "reviewFtaValidityChallenge",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "ftaRequestTimeExtension",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember1",
+                "someCaseData",
+                Permissions.defaultJudicalMember1Permissions()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember2",
+                "someCaseData",
+                Permissions.defaultJudicalMember2Permissions()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember3",
+                "someCaseData",
+                Permissions.defaultJudicalMember3Permissions()
+            ),
+            Arguments.of(
+                "reviewPostponementRequestTCW",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "referredToInterlocTCW",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "ftaResponseOverdue",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "referredByJudge",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS")
+                )
+            ),
+            Arguments.of(
+                "processAudioVideoEvidence",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "LEGAL_OPERATIONS", 1),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "LEGAL_OPERATIONS"),
+                    permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "reviewNonCompliantAppeal",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "ftaNotProvidedAppointeeDetailsTcw",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "referredByAdminTcw",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS")
+                )
+            ),
+            Arguments.of(
+                "reviewStatementofReasonsApplication",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewLibertytoApplyApplication",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
+            ),
+            Arguments.of(
+                "reviewCorrectionApplicationJudge",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
+            ),
+            Arguments.of(
+                "writeStatementofReason",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                ),
+                Arguments.of(
+                    "reviewStatementofReasons",
+                    "someCaseData",
+                    List.of(
+                        Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                        Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                        permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                        permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                        permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    ),
+                    Arguments.of(
+                        "reviewPermissiontoAppealApplication",
+                        "someCaseData",
+                        List.of(
+                            Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                            Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                            permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                            permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 2, false)
+                        )
+                    ),
+                    Arguments.of(
+                        "reviewRemittedDecisionandProvideListingDirections",
+                        "someCaseData",
+                        List.of(
+                            Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                            Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                            permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                            permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 2, false)
+                        )
+                    ),
+                    Arguments.of(
+                        "reviewPostHearingNoticeforListingRequirements",
+                        "someCaseData",
+                        Permissions.defaultCtscPermissions()
+                    )
                 )
             )
         );
@@ -278,7 +421,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(34));
+        assertThat(logic.getRules().size(), is(44));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

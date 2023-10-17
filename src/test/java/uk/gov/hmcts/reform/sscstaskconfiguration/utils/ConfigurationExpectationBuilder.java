@@ -62,7 +62,7 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(LOCATION, "123456", true);
         builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
         builder.expectedValue(WORK_TYPE, "pre_hearing", true);
-        builder.expectedValue(ROLE_CATEGORY, "Judicial", true);
+        builder.expectedValue(ROLE_CATEGORY, "JUDICIAL", true);
         builder.expectedValue(PRIORITY_DATE, "", true);
         builder.expectedValue(MINOR_PRIORITY, "500", true);
         builder.expectedValue(MAJOR_PRIORITY, "5000", true);

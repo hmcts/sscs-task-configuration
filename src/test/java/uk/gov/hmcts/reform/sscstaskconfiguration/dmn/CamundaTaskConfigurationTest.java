@@ -243,7 +243,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue(WORK_TYPE, "pre_hearing", true)
-                    .expectedValue(ROLE_CATEGORY, "Judicial", true)
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
@@ -254,7 +254,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "100", true)
                     .expectedValue(MAJOR_PRIORITY, "1000", true)
                     .expectedValue(WORK_TYPE, "pre_hearing", true)
-                    .expectedValue(ROLE_CATEGORY, "Judicial", true)
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
@@ -265,7 +265,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         .expectedValue(MINOR_PRIORITY, "500", true)
                         .expectedValue(MAJOR_PRIORITY, "5000", true)
                         .expectedValue(WORK_TYPE, "pre_hearing", true)
-                        .expectedValue(ROLE_CATEGORY, "Judicial", true)
+                        .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                         .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                         .build()
             ),
@@ -299,7 +299,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         .expectedValue(MINOR_PRIORITY, "500", true)
                         .expectedValue(MAJOR_PRIORITY, "5000", true)
                         .expectedValue(WORK_TYPE, "hearing_work", true)
-                        .expectedValue(ROLE_CATEGORY, "Judicial", true)
+                        .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                         .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                         .build()
                 ),
@@ -355,7 +355,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "100", true)
                     .expectedValue(MAJOR_PRIORITY, "1000", true)
                     .expectedValue(WORK_TYPE, "hearing_work", true)
-                    .expectedValue(ROLE_CATEGORY, "Judicial", true)
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
@@ -389,7 +389,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue(WORK_TYPE, "pre_hearing", true)
-                    .expectedValue(ROLE_CATEGORY, "Judicial", true)
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
@@ -400,7 +400,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue(WORK_TYPE, "pre_hearing", true)
-                    .expectedValue(ROLE_CATEGORY, "Judicial", true)
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
@@ -420,6 +420,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
+
                 "reviewCorrectionApplicationAdmin",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
@@ -432,6 +433,294 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         + "/${[CASE_REFERENCE]}/trigger/adminActionCorrection)<br/>"
                         + "[Correction Sent to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}"
                         + "/trigger/adminCorrectionBody)", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewFtaValidityChallenge",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(DESCRIPTION, "[Ability to amend interloc review state flag](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)<br/>"
+                        + "[Send an interlocutory decision notice](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/decisionIssued)<br/>"
+                        + "[Send a directions notice](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/directionIssued)<br/>"
+                        + "[Return the case to an admin with a note](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/sendToAdmin)<br/>"
+                        + "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)", true)
+                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue("workType", "pre_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "ftaRequestTimeExtension",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(DESCRIPTION, "[Send a directions notice]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)<br/>"
+                        + "[Ability to amend interloc review state flag]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)", true)
+                    .expectedValue(WORK_TYPE, "pre_hearing", true)
+                    .expectedValue(ROLE_CATEGORY, "LEGAL_OPERATIONS", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember1",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue("workType", "hearing_work", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember2",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue("workType", "hearing_work", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember3",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue("roleCategory", "JUDICIAL", true)
+                    .expectedValue("workType", "hearing_work", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewPostponementRequestTCW",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "100", true)
+                    .expectedValue(MAJOR_PRIORITY, "1000", true)
+                    .expectedValue(DESCRIPTION, "[Action Postponement Request]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionPostponementRequest)", true)
+                    .expectedValue(WORK_TYPE, "pre_hearing", true)
+                    .expectedValue(ROLE_CATEGORY, "LEGAL_OPERATIONS", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "referredToInterlocTCW",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(DESCRIPTION, "[Send a directions notice]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)<br/>"
+                        + "[Send an interlocutory decision notice]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)<br/>"
+                        + "[Return the case to an admin with a note]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)<br/>"
+                        + "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)<br/>"
+                        + "[Send a case to a judge for review]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)<br/>"
+                        + "[Ability to amend interloc review state flag]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)", true)
+                    .expectedValue(WORK_TYPE, "pre_hearing", true)
+                    .expectedValue(ROLE_CATEGORY, "LEGAL_OPERATIONS", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "ftaResponseOverdue",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(DESCRIPTION, "[Ability to amend interloc review state flag](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)<br/>"
+                        + "[Send an interlocutory decision notice](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/decisionIssued)", true)
+                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue("workType", "pre_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "referredByJudge",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(DESCRIPTION, "[Send a directions notice]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)<br/>" +
+                        "[Return the case to an admin with a note]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)<br/>"
+                        + "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)<br/>"
+                        + "[Ability to amend interloc review state flag]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)", true)
+                    .expectedValue(WORK_TYPE, "routine_work", true)
+                    .expectedValue(ROLE_CATEGORY, "LEGAL_OPERATIONS", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "processAudioVideoEvidence",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(DESCRIPTION, "[Ability to amend interloc review state flag](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)<br/>"
+                        + "[Issue a direction notice based on audio and video evidence](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/processAudioVideo)", true)
+                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue("workType", "pre_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewNonCompliantAppeal",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(DESCRIPTION, "[Send a directions notice]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)<br/>"
+                        + "[Send an interlocutory decision notice]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)<br/>"
+                        + "[Return the case to an admin with a note]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)<br/>"
+                        + "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)<br/>"
+                        + "[Strike out due to no response]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/struckOut)<br/>"
+                        + "[Ability to amend interloc review state flag]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)", true)
+                    .expectedValue(WORK_TYPE, "pre_hearing", true)
+                    .expectedValue(ROLE_CATEGORY, "LEGAL_OPERATIONS", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "ftaNotProvidedAppointeeDetailsTcw",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(DESCRIPTION, "[Send a directions notice]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)<br/>"
+                        + "[Send an interlocutory decision notice]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)<br/>"
+                        + "[Return the case to an admin with a note]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)<br/>"
+                        + "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)<br/>"
+                        + "[Send case to TCW]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)<br/>"
+                        + "[Ability to amend interloc review state flag]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)", true)
+                    .expectedValue(WORK_TYPE, "pre_hearing", true)
+                    .expectedValue(ROLE_CATEGORY, "LEGAL_OPERATIONS", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "referredByAdminTcw",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "500", true)
+                    .expectedValue(MAJOR_PRIORITY, "5000", true)
+                    .expectedValue(DESCRIPTION, "[Ability to amend interloc review state flag](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)<br/>"
+                        + "[Send a directions notice](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/directionIssued)<br/>"
+                        + "[Return the case to an admin with a note](/case/SSCS/Benefit/"
+                        + "${[CASE_REFERENCE]}/trigger/sendToAdmin)<br/>"
+                        + "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)", true)
+                    .expectedValue("roleCategory", "LEGAL_OPERATIONS", true)
+                    .expectedValue("workType", "routine_work", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewStatementofReasonsApplication",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DESCRIPTION, "[Send to Interloc - Review statement of reasons application]"
+                        + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}"
+                        + "/trigger/validSendToInterloc)", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewLibertytoApplyApplication",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewCorrectionApplicationJudge",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "writeStatementofReason",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "28", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewStatementofReasons",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewPermissiontoAppealApplication",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewRemittedDecisionandProvideListingDirections",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewPostHearingNoticeforListingRequirements",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .build()
             )
         );
@@ -461,7 +750,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(42));
+        assertThat(logic.getRules().size(), is(55));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
@@ -525,7 +814,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @MethodSource("scenarioProviderCourtSpecificCalendars")
     void use_correct_court_specific_calendar_for_venue(Map<String, Object> caseData,
                                             List<Map<String, String>> expectation) {
-
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("caseData", caseData);
 
