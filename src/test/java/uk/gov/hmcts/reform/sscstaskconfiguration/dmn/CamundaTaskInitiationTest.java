@@ -512,8 +512,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("referredByTcwPreHearing", "Referred By TCW", 2)
                 .build(),
             event("createBundle")
-                .withCaseData("panel", Map.of("assignedTo", "panel member 1"))
-                .withCaseData("nextHearingDate", LocalDate.now().plusDays(7).toString())
+                .withCaseData("assignedCaseRoles", Arrays.asList("hearing-judge"))
                 .initiativesTask("prepareForHearingJudge", "Prepare For Hearing", 2)
                 .build(),
             event("hearingToday")
