@@ -580,7 +580,7 @@ else
       </rule>
       <rule id="DecisionRule_0kumsrg">
         <inputEntry id="UnaryTests_1nrlamk">
-          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge", "reviewLibertytoApplyApplication", "reviewCorrectionApplicationJudge", "writeStatementofReason", "reviewStatementofReasons", "reviewPermissiontoAppealApplication", "reviewRemittedDecisionandProvideListingDirections"</text>
+          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gpzj1d">
           <text></text>
@@ -1152,7 +1152,7 @@ else
       </rule>
       <rule id="DecisionRule_0c4l3oz">
         <inputEntry id="UnaryTests_1mx7gln">
-          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections"</text>
+          <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1wedstj">
           <text></text>

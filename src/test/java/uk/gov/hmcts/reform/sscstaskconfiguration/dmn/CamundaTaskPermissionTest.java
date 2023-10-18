@@ -344,43 +344,44 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
                     permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
                     permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
-                ),
-                Arguments.of(
-                    "reviewStatementofReasons",
-                    "someCaseData",
-                    List.of(
-                        Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
-                        Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
-                        permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                        permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                        permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
-                    ),
-                    Arguments.of(
-                        "reviewPermissiontoAppealApplication",
-                        "someCaseData",
-                        List.of(
-                            Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
-                            Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
-                            permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                            permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 2, false)
-                        )
-                    ),
-                    Arguments.of(
-                        "reviewRemittedDecisionandProvideListingDirections",
-                        "someCaseData",
-                        List.of(
-                            Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
-                            Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
-                            permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                            permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 2, false)
-                        )
-                    ),
-                    Arguments.of(
-                        "reviewPostHearingNoticeforListingRequirements",
-                        "someCaseData",
-                        Permissions.defaultCtscPermissions()
-                    )
                 )
+            ),
+            Arguments.of(
+                "reviewStatementofReasons",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                )
+            ),
+            Arguments.of(
+                "reviewPermissiontoAppealApplication",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
+            ),
+            Arguments.of(
+                "reviewRemittedDecisionandProvideListingDirections",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
+            ),
+            Arguments.of(
+                "reviewPostHearingNoticeforListingRequirements",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    permission("allocated-ctsc-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1),
+                    permission("ctsc", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC",2,false),
+                    permission("ctsc-team-leader", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete", "CTSC", 3, false)
+                )
+            ),
+            Arguments.of(
+                "reviewSetAsideApplication",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
             )
         );
     }

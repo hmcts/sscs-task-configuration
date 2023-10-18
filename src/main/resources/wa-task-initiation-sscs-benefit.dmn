@@ -19,7 +19,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0gxli97" label="Post event state" biodi:width="150" camunda:inputVariable="postEventState">
+      <input id="InputClause_0gxli97" label="Post event state" biodi:width="164" camunda:inputVariable="postEventState">
         <inputExpression id="LiteralExpression_0dijl5x" typeRef="string">
           <text></text>
         </inputExpression>
@@ -5378,6 +5378,314 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0o0xaj2">
           <text>"reviewPostHearingNoticeforListingRequirements"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rdt0w4">
+        <inputEntry id="UnaryTests_1hhgdw2">
+          <text>"validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ujn2aa">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16ml8cb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_128prq6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uhsxhv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dmm5sa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vgt0r2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01898oa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k2cnkl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nbj2nf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vevjqg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tw8gm9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hu1a71">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bcj9tn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iqrwnh">
+          <text>"reviewSetAsideApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a12ypz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q1fthe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10dvwtr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vnvikj">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kb1j4w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_127zvhh">
+          <text>"reviewSetAsideApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k8xj9y">
+          <text>"Review Set Aside Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06017zy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07jvp7q">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p8q879">
+          <text>"reviewSetAsideApplication"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yh98x8">
+        <inputEntry id="UnaryTests_095kb71">
+          <text>"validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03u9kv4">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r1baw0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_016ey2q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r7euhc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qf9enr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0msmhsd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wb13r2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10ammpi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tv32et">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10ytmiu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ij3k3v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hcsl63">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15c2y2r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ur0ulm">
+          <text>"reviewSetAsideApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_177h5c5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05seme3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aci4gr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14pzxax">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z45s6o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jwfsnp">
+          <text>"reviewSetAsideApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e1s00k">
+          <text>"Review Set Aside Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hpwjmw">
+          <text>21</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04su6sk">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qzp9bg">
+          <text>"reviewSetAsideApplication"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cz1ocb">
+        <inputEntry id="UnaryTests_188bssu">
+          <text>"actionFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rx7mxy">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h2sc4z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0047m5n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j72rqw">
+          <text>contains(scannedDocumentTypes, "setAsideApplication")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a8pgqw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dvabmr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bwj7eo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h98aw2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k6kgcg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kf21kt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lrtv66">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ws6axt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g5zwpe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c8hyst">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yrxxdq">
+          <text>"sendToInterlocReviewByJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nlti1s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ho4lpi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15m3tqy">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mh79v1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ltezwc">
+          <text>"reviewSetAsideApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z9po8z">
+          <text>"Review Set Aside Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wayvw1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dolykw">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10qarv1">
+          <text>"reviewSetAsideApplication"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tiakrc">
+        <inputEntry id="UnaryTests_0dkoy8v">
+          <text>"actionFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w2cixv">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qp5iw0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g3z8rk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10vn4b1">
+          <text>contains(scannedDocumentTypes, "setAsideApplication")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_021l8zu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dmfnr6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0568t4d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kst74g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_074q345">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17kcd56">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_137p9m0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eams37">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_145rsi4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uwu7t5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07kg335">
+          <text>"sendToInterlocReviewByJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hf6yqt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mtvmyh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1110cr0">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xvnto6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1au2nwf">
+          <text>"reviewSetAsideApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15m95ro">
+          <text>"Review Set Aside Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bzpmft">
+          <text>21</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gzehmd">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g1nrfw">
+          <text>"reviewSetAsideApplication"</text>
         </outputEntry>
       </rule>
     </decisionTable>
