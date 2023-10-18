@@ -363,7 +363,7 @@
       </rule>
       <rule id="DecisionRule_08k72xy">
         <inputEntry id="UnaryTests_0tro0ja">
-          <text>"decisionIssued", "directionIssued", "sendToAdmin", "tcwReferToJudge", "struckOut", "interlocReviewStateAmend"</text>
+          <text>"decisionIssued","directionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1y6ek22">
           <text>"reviewNonCompliantAppeal"</text>
@@ -374,7 +374,7 @@
       </rule>
       <rule id="DecisionRule_1meshgl">
         <inputEntry id="UnaryTests_15uj4l7">
-          <text>"decisionIssued", "directionIssued", "sendToAdmin", "tcwReferToJudge", "struckOut", "interlocReviewStateAmend"</text>
+          <text>"decisionIssued","directionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_145d1i8">
           <text>"ftaNotProvidedAppointeeDetailsTcw"</text>

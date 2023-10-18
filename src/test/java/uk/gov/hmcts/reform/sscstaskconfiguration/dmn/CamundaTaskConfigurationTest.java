@@ -554,7 +554,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         EventLink.DECISION_ISSUED,
                         EventLink.SEND_TO_ADMIN,
                         EventLink.TCW_REFER_TO_JUDGE,
-                        EventLink.STRUCK_OUT,
                         EventLink.INTERLOC_REVIEW_STATE_AMEND), true)
                     .expectedValue(WORK_TYPE, "pre_hearing", true)
                     .expectedValue(ROLE_CATEGORY, "LEGAL_OPERATIONS", true)
@@ -572,7 +571,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         EventLink.DECISION_ISSUED,
                         EventLink.SEND_TO_ADMIN,
                         EventLink.TCW_REFER_TO_JUDGE,
-                        EventLink.STRUCK_OUT,
                         EventLink.INTERLOC_REVIEW_STATE_AMEND), true)
                     .expectedValue(WORK_TYPE, "pre_hearing", true)
                     .expectedValue(ROLE_CATEGORY, "LEGAL_OPERATIONS", true)

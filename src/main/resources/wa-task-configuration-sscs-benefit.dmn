@@ -730,7 +730,6 @@ null</text>
 "[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
 "[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
 "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)&lt;br/&gt;" +
-"[Strike out case](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/struckOut)&lt;br/&gt;" +
 "[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1lpozva">
@@ -752,7 +751,6 @@ null</text>
 "[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
 "[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
 "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)&lt;br/&gt;" +
-"[Strike out case](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/struckOut)&lt;br/&gt;" +
 "[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kd45ij">
