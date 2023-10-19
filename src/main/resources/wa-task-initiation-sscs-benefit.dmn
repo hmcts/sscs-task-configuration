@@ -5688,6 +5688,83 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"reviewSetAsideApplication"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1hklqkl">
+        <inputEntry id="UnaryTests_1adxuio">
+          <text>"remitFromUT"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ruecu9">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00k4ecx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1owmv8p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0esu8rn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hm02ys">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z4adnu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lt3259">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10vfn89">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xs8atr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hogxr2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b5qpcs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gnk332">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d72v3w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w6l4z3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17ue220">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lwxafa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hnql71">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wh3wp9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xhj98i">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1q8c2ma">
+          <text>"shareRemittedDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xe5gel">
+          <text>"Allocate Judge and Share Remitted Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01nmu8l">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_094r0pc">
+          <text>20</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qr34hf">
+          <text>"shareRemittedDecision"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">

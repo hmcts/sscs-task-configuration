@@ -234,7 +234,7 @@ else
       <rule id="DecisionRule_0tnerzn">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_1p95dss">
-          <text>"reviewBilingualDocument","reviewValidAppeal"</text>
+          <text>"reviewBilingualDocument","reviewValidAppeal","shareRemittedDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sfltx1">
           <text></text>
@@ -342,7 +342,7 @@ else
       <rule id="DecisionRule_1ixi90a">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_070qpxe">
-          <text>"reviewBilingualDocument","reviewValidAppeal"</text>
+          <text>"reviewBilingualDocument","reviewValidAppeal","shareRemittedDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1mtnbmi">
           <text></text>
@@ -449,7 +449,7 @@ else
       </rule>
       <rule id="DecisionRule_0z1t4ev">
         <inputEntry id="UnaryTests_0hn5txp">
-          <text>"reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewCorrectionApplicationAdmin","shareRemittedDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0mhs9zz">
           <text></text>
