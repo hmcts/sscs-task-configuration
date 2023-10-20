@@ -351,9 +351,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                  10, "Translation Tasks")
                 .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
                 .build(),
-            event("manageWelshDocuments")
-                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
-                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
+            eventWithState("sentToDwp", "withDwp")
+                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
+                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
                 .build(),
             Arguments.of(
                 "validAppealCreated",
@@ -446,7 +446,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("sendToAdmin")
                 .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
                 .build(),
-            eventWithState("appealCreated", "withDwp")
+            eventWithState("sentToDwp", "withDwp")
                 .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
                 .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
                 .build(),

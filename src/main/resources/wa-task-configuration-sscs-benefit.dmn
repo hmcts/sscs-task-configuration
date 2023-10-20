@@ -930,6 +930,23 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_09ue0fg">
+        <inputEntry id="UnaryTests_15w7f1l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v94hg1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vmruc4">
+          <text>"dueDateNonWorkingDaysOfWeek"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08fmxsz">
+          <text>"SATURDAY,SUNDAY"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fqv75m">
+          <text>true</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-configuration-non-working-days" name="Non Working Days">
