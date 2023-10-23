@@ -398,6 +398,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "shareRemadeDecision",
                 "someCaseData",
                 Permissions.defaultCtscPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "shareRefusedDecision",
+                "someCaseData",
+                Permissions.defaultCtscPermissionsWithCompleteOwn()
             )
         );
     }
