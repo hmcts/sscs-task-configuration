@@ -2728,6 +2728,62 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"referredByAdminTcw"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_076p6jp">
+        <inputEntry id="UnaryTests_0ar4gpf">
+          <text>"hearingToday"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f8cvrk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17s98nm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i8m2kq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m0zmjy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ikum61">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00ync9j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qnm36l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n66xg6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rjjnw5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_172mq28">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_024e8pw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uis7qf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bm3d25">
+          <text>"updateHearingDetails"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f4q89s">
+          <text>"Update Hearing Details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d2srbf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uzw4lg">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n5m18b">
+          <text>"updateHearingDetails"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">

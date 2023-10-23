@@ -71,14 +71,12 @@ public class Permissions {
             Map.of(
                 "name", "ctsc",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
-                "assignmentPriority", 2,
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "ctsc-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
-                "assignmentPriority", 3,
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             )
@@ -99,14 +97,12 @@ public class Permissions {
             Map.of(
                 "name", "regional-centre-admin",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
-                "assignmentPriority", 2,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "regional-centre-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
-                "assignmentPriority", 3,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             )
@@ -127,14 +123,12 @@ public class Permissions {
             Map.of(
                 "name", "ctsc",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
-                "assignmentPriority", 2,
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "ctsc-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
-                "assignmentPriority", 3,
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             )
@@ -155,14 +149,12 @@ public class Permissions {
             Map.of(
                 "name", "regional-centre-admin",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
-                "assignmentPriority", 2,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "regional-centre-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
-                "assignmentPriority", 3,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             )
