@@ -288,7 +288,7 @@ else
       <rule id="DecisionRule_06439sc">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_1uojej9">
-          <text>"reviewPostHearingNoticeforListingRequirements"</text>
+          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p2b6fz">
           <text></text>
@@ -396,7 +396,7 @@ else
       <rule id="DecisionRule_0n0jktj">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_02vbxbe">
-          <text>"reviewPostHearingNoticeforListingRequirements"</text>
+          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0us0gct">
           <text></text>
@@ -913,6 +913,32 @@ else
           <text>3</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vf4gf1">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0sbwxuc">
+        <inputEntry id="UnaryTests_1klhc1w">
+          <text>"reviewApplicationandAllocateJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mwnrcc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1eb6830">
+          <text>"ctsc-team-leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fwucut">
+          <text>"Read,Own,Claim,Unclaim,Manage,Assign,Unassign,CancelOwn,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ldgiy7">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bkpxp5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fr4rcf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wzvzdx">
           <text>false</text>
         </outputEntry>
       </rule>
