@@ -393,6 +393,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 2, false),
                     permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC", 3,false)
                 )
+            ),
+            Arguments.of(
+                "shareRemadeDecision",
+                "someCaseData",
+                Permissions.defaultCtscPermissionsWithCompleteOwn()
             )
         );
     }
