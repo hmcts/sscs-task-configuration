@@ -775,7 +775,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("otherParties", List.of("other party 1"))
                 .initiativesTaskWithDelay("reviewSetAsideApplication", "Review Set Aside Application", 21,2)
                 .build(),
-            eventWithState("remitFromUT", "dormantAppealState")
+            eventWithState("sendToFirstTier", "dormantAppealState")
+                .withCaseData("action", "remitted")
                 .initiativesTask("shareRemittedDecision", "Allocate Judge and Share Remitted Decision", 20)
                 .build(),
             eventWithState("sendToFirstTier", "dormantAppealState")
@@ -785,6 +786,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             eventWithState("sendToFirstTier", "dormantAppealState")
                 .withCaseData("action", "refuse")
                 .initiativesTask("shareRefusedDecision", "Share Refused Decision", 20)
+                .build(),
+            eventWithState("postHearingRequest", "dormantAppealState")
+                .withCaseData("action", "setAside")
+                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge", 3)
+                .build(),
+            eventWithState("postHearingRequest", "dormantAppealState")
+                .withCaseData("action", "statementOfReasons")
+                .withCaseData("dateOfDecision", TODAY.minusDays(21))
+                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge", 3)
+                .build(),
+            eventWithState("postHearingRequest", "dormantAppealState")
+                .withCaseData("action", "statementOfReasons")
+                .withCaseData("dateOfDecision", TODAY.minusDays(60))
                 .build()
         );
     }
@@ -810,7 +824,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(74));
+        assertThat(logic.getRules().size(), is(76));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

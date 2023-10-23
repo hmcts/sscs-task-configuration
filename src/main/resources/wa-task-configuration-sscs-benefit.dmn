@@ -152,7 +152,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j4fsmh">
-          <text>"reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewPostHearingNoticeforListingRequirements","reviewCorrectionApplicationJudge","reviewCorrectionApplicationAdmin","reviewSetAsideApplication","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision"</text>
+          <text>"reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewPostHearingNoticeforListingRequirements","reviewCorrectionApplicationJudge","reviewCorrectionApplicationAdmin","reviewSetAsideApplication","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","reviewApplicationandAllocateJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0pimx2r">
           <text>"workType"</text>
@@ -169,7 +169,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","reviewStatementofReasonsApplication","reviewPostHearingNoticeforListingRequirements","reviewCorrectionApplicationAdmin","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","reviewStatementofReasonsApplication","reviewPostHearingNoticeforListingRequirements","reviewCorrectionApplicationAdmin","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","reviewApplicationandAllocateJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -274,7 +274,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","reviewRemittedDecisionandProvideListingDirections","reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","reviewRemittedDecisionandProvideListingDirections","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s58bga">
           <text>"minorPriority"</text>
@@ -345,7 +345,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","reviewRemittedDecisionandProvideListingDirections","reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","reviewRemittedDecisionandProvideListingDirections","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vtnzdl">
           <text>"majorPriority"</text>
@@ -875,7 +875,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pw9fy3">
-          <text>"reviewInformationRequested","reviewListingError","reviewRoboticFail","allocateCaseRolesAndCreateBundle","reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewInformationRequested","reviewListingError","reviewRoboticFail","allocateCaseRolesAndCreateBundle","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0hvbenp">
           <text>"dueDateIntervalDays"</text>
