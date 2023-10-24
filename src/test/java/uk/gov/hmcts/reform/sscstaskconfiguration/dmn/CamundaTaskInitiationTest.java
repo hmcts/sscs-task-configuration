@@ -351,10 +351,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                  10, "Translation Tasks")
                 .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
                 .build(),
-            eventWithState("sentToDwp", "withDwp")
-                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
-                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
-                .build(),
             Arguments.of(
                 "validAppealCreated",
                 "validAppeal",
@@ -445,10 +441,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("sendToAdmin")
                 .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
-                .build(),
-            eventWithState("sentToDwp", "withDwp")
-                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
-                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
                 .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
@@ -605,12 +597,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("nonCompliantSendToInterloc")
                 .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
                 .build(),
-            event("sendToDwp")
+            event("sentToDwp")
                 .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "childSupport")))
                 .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 42, 2)
                 .build(),
-            event("sendToDwp")
+            eventWithState("sentToDwp", "withDwp")
+                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
+                .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "childSupport")))
+                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
+                .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 42, 2)
+                .build(),
+            eventWithState("sentToDwp", "withDwp")
+                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
                 .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "PIP")))
+                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
                 .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 28, 2)
                 .build(),
             event("directionDueToday")

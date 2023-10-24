@@ -2274,7 +2274,7 @@ else "Referred to interloc"</text>
       </rule>
       <rule id="DecisionRule_1gev23w">
         <inputEntry id="UnaryTests_18vz1bi">
-          <text>"sendToDwp"</text>
+          <text>"sentToDwp"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lunws2">
           <text></text>
