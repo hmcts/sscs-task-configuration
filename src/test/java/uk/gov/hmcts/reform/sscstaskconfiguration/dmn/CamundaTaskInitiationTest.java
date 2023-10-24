@@ -572,7 +572,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("action", "reviewByTcw")
-                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
                 .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
                 .initiativesTask("referredByJudge", "Referred By Judge", 2)
                 .initiativesTask("referredByAdminTcw", "Referred by Admin", 2)
@@ -595,9 +594,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
                 .build(),
             event("validSendToInterloc")
+                .withCaseData("action", "postponementRequestInterlocSendToTcw")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("validSendToInterloc")
                 .withCaseData("action", "reviewByTcw")
                 .withCaseData("interlocReferralReason", "complexCase")
-                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
                 .initiativesTask("referredToInterlocTCW", "Referred to interloc - Complex Case", 2)
                 .initiativesTask("referredByJudge", "Referred By Judge", 2)
                 .initiativesTask("referredByAdminTcw", "Referred by Admin", 2)
