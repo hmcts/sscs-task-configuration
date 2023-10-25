@@ -506,8 +506,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue(DESCRIPTION, buildDescription(
-                        EventLink.INTERLOC_REVIEW_STATE_AMEND,
-                        EventLink.DECISION_ISSUED), true)
+                        EventLink.DIRECTION_ISSUED,
+                        EventLink.INTERLOC_REVIEW_STATE_AMEND), true)
                     .expectedValue(ROLE_CATEGORY, "LEGAL_OPERATIONS", true)
                     .expectedValue(WORK_TYPE, "pre_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
