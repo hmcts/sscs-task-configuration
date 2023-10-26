@@ -67,6 +67,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewNonCompliantAppeal")
                 .cancel("ftaNotProvidedAppointeeDetailsTcw")
                 .cancel("referredByAdminTcw")
+                .cancel("referredByAdminJudgePostHearing")
                 .build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
@@ -103,6 +104,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewNonCompliantAppeal")
                 .cancel("ftaNotProvidedAppointeeDetailsTcw")
                 .cancel("referredByAdminTcw")
+                .cancel("referredByAdminJudgePostHearing")
                 .build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
@@ -139,6 +141,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewNonCompliantAppeal")
                 .cancel("ftaNotProvidedAppointeeDetailsTcw")
                 .cancel("referredByAdminTcw")
+                .cancel("referredByAdminJudgePostHearing")
                 .build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
@@ -171,6 +174,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewNonCompliantAppeal")
                 .cancel("ftaNotProvidedAppointeeDetailsTcw")
                 .cancel("referredByAdminTcw")
+                .cancel("referredByAdminJudgePostHearing")
                 .build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
@@ -205,6 +209,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("ftaNotProvidedAppointeeDetailsTcw")
                 .cancel("referredByAdminTcw")
                 .cancel("reviewNonCompliantAppeal")
+                .cancel("referredByAdminJudgePostHearing")
                 .build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
@@ -271,6 +276,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewNonCompliantAppeal")
                 .cancel("ftaNotProvidedAppointeeDetailsTcw")
                 .cancel("referredByAdminTcw")
+                .cancel("referredByAdminJudgePostHearing")
                 .build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks")
@@ -333,6 +339,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(4));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(37));
+        assertThat(logic.getRules().size(), is(38));
     }
 }

@@ -425,6 +425,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     permission("hearing-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN"),
                     permission("hearing-centre-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn", "ADMIN")
                 )
+            ),
+            Arguments.of(
+                "referredByAdminJudgePostHearing",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                )
             )
         );
     }
