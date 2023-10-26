@@ -204,6 +204,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("processAudioVideoEvidence")
                 .cancel("ftaNotProvidedAppointeeDetailsTcw")
                 .cancel("referredByAdminTcw")
+                .cancel("reviewNonCompliantAppeal")
                 .build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")

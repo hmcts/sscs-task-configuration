@@ -333,7 +333,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vegbm7">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nl1jle">
           <text>false</text>
@@ -360,7 +360,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00j65u2">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1558221">
           <text>false</text>
@@ -387,7 +387,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jx62i2">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kk50cn">
           <text>false</text>
@@ -414,7 +414,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1nbnipf">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_179xwwj">
           <text>false</text>
@@ -441,7 +441,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1uqvsq2">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hx1bvy">
           <text>false</text>
@@ -467,7 +467,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_09yswsr">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gaa7sh">
           <text>false</text>
@@ -494,7 +494,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00lhskk">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11whir3">
           <text>false</text>
@@ -858,7 +858,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0p037lz">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gpeu97">
           <text>false</text>
@@ -884,7 +884,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1037d8z">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_10dk27c">
           <text>false</text>
@@ -910,7 +910,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17i4u86">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vf4gf1">
           <text>false</text>
@@ -970,7 +970,7 @@ else
       </rule>
       <rule id="DecisionRule_0l2268u">
         <inputEntry id="UnaryTests_1wn3ski">
-          <text>"contactParties"</text>
+          <text>"contactParties","updateHearingDetails"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_03pd4fp">
           <text></text>
@@ -1014,7 +1014,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0p4ahuy">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0by2sf4">
           <text>false</text>
@@ -1022,7 +1022,7 @@ else
       </rule>
       <rule id="DecisionRule_0sv1xc9">
         <inputEntry id="UnaryTests_05gv7ni">
-          <text>"contactParties"</text>
+          <text>"contactParties","updateHearingDetails"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1yvmfbl">
           <text></text>
@@ -1040,7 +1040,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cnbfjz">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0aqdiu5">
           <text>false</text>
@@ -1066,9 +1066,35 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ezplcc">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06o8am9">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rsqzpv">
+        <inputEntry id="UnaryTests_12dxdz0">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h7ozk1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0shumjo">
+          <text>"regional-centre-team-leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01ujyu5">
+          <text>"Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09zsquk">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11h5b2q">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1duth4h">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12jxya0">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -1092,7 +1118,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zkwh6z">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0flmdxh">
           <text>false</text>
@@ -1200,6 +1226,58 @@ else
         </outputEntry>
         <outputEntry id="LiteralExpression_02t9zz7">
           <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iinszr">
+        <inputEntry id="UnaryTests_1fq2xpo">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x3obvs">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mmppde">
+          <text>"hearing-centre-admin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04f7x2t">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h1bnfo">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mpjbqh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dhnjdi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06e43co">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sljxc6">
+        <inputEntry id="UnaryTests_08ecwik">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ne64jw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1r03j7j">
+          <text>"hearing-centre-team-leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00svikv">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s4vpoc">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ho67mt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mwhv6k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d3l9b8">
+          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>

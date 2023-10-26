@@ -469,23 +469,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1rmjvgi">
-        <inputEntry id="UnaryTests_1hr3w9x">
-          <text>"createBundle","requestForInformation","interlocInformationReceived","validSendToInterloc","interlocSendToTcw","hmctsResponseReviewed","requestTranslationFromWLU","validSendToInterloc","interlocSendToTcw","interlocInformationReceived","actionFurtherEvidence","interlocSendToTcw","updateListingRequirement","readyToList","resendCaseToGAPS2","amendDueDate"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0y1gdej">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0difk42">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_02xaug9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_06awaj8">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_110uo8i">
         <inputEntry id="UnaryTests_1pzqclz">
           <text>"adminActionCorrection","adminCorrectionBody"</text>
@@ -607,7 +590,7 @@
       </rule>
       <rule id="DecisionRule_08k72xy">
         <inputEntry id="UnaryTests_0tro0ja">
-          <text>"decisionIssued", "directionIssued", "sendToAdmin", "tcwReferToJudge", "struckOut", "interlocReviewStateAmend"</text>
+          <text>"decisionIssued","directionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wx16r5">
           <text></text>
@@ -624,7 +607,7 @@
       </rule>
       <rule id="DecisionRule_1meshgl">
         <inputEntry id="UnaryTests_15uj4l7">
-          <text>"decisionIssued", "directionIssued", "sendToAdmin", "tcwReferToJudge", "interlocSendToTcw", "interlocReviewStateAmend"</text>
+          <text>"decisionIssued","directionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_04gmhc8">
           <text></text>
@@ -806,6 +789,23 @@
           <text>"reviewSetAsideApplication"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0firjlf">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_2rmkvgk">
+        <inputEntry id="UnaryTests_1ht7wfx">
+          <text>"abateCase","actionFurtherEvidence","actionPostponementRequest","adjournCase","adminActionCorrection","adminCorrectionBody","amendDueDate","cancelTranslations","confirmPanelComposition","correctionGranted","correctionRefused","createBundle","decisionIssued","directionIssued","hmctsResponseReviewed","interlocInformationReceived","interlocReviewStateAmend","interlocSendToTcw","issueAdjournmentNotice","issueFinalDecision","libertyToApplyGranted","libertyToApplyRefused","permissionToAppealGranted","permissionToAppealRefused","postHearingReview","processAudioVideo","readyToList","requestForInformation","requestTranslationFromWLU","resendCaseToGAPS2","reviewConfidentialityRequest","reviewPhmeRequest","sendToAdmin","setAsideGranted","setAsideIssueDirections","setAsideRefused","setAsideRefusedSOR","sORExtendTime","sORRefused","sORWrite","struckOut","tcwReferToJudge","updateListingRequirement","uploadWelshDocument","validSendToInterloc","writeFinalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h99x83">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18qhue2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02yaug9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06jwaj8">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

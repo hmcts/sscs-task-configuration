@@ -12,6 +12,7 @@ public class ConfigurationExpectationBuilder {
 
     public static String CASE_NAME = "caseName";
     public static String CASE_MANAGEMENT_CATEGORY = "caseManagementCategory";
+    public static String REGION = "region";
     public static String LOCATION = "location";
     public static String LOCATION_NAME = "locationName";
     public static String WORK_TYPE = "workType";
@@ -25,11 +26,12 @@ public class ConfigurationExpectationBuilder {
     public static String DUE_DATE_ORIGIN = "dueDateOrigin";
     public static String DUE_DATE_NON_WORKING_CALENDAR = "dueDateNonWorkingCalendar";
     public static String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
+    public static String DUE_DATE_NON_WORKING_DAYS_OF_WEEK = "dueDateNonWorkingDaysOfWeek";
 
     private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
-        CASE_NAME,CASE_MANAGEMENT_CATEGORY,LOCATION,LOCATION_NAME,WORK_TYPE,ROLE_CATEGORY,
+        CASE_NAME,CASE_MANAGEMENT_CATEGORY,REGION,LOCATION,LOCATION_NAME,WORK_TYPE,ROLE_CATEGORY,
         PRIORITY_DATE, MINOR_PRIORITY, MAJOR_PRIORITY, DESCRIPTION, NEXT_HEARING_ID, NEXT_HEARING_DATE,
-        DUE_DATE_ORIGIN, DUE_DATE_NON_WORKING_CALENDAR, DUE_DATE_INTERVAL_DAYS
+        DUE_DATE_ORIGIN, DUE_DATE_NON_WORKING_CALENDAR, DUE_DATE_INTERVAL_DAYS, DUE_DATE_NON_WORKING_DAYS_OF_WEEK
     );
 
     private static DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
@@ -40,6 +42,7 @@ public class ConfigurationExpectationBuilder {
         ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
         builder.expectedValue(CASE_NAME, "Joe Blogs", true);
         builder.expectedValue(CASE_MANAGEMENT_CATEGORY, "Personal Independence Payment", true);
+        builder.expectedValue(REGION, "4", true);
         builder.expectedValue(LOCATION, "123456", true);
         builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
         builder.expectedValue(WORK_TYPE, "routine_work", true);
@@ -52,6 +55,7 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(DUE_DATE_ORIGIN, now(), false);
         builder.expectedValue(DUE_DATE_NON_WORKING_CALENDAR, CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR, true);
         builder.expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true);
+        builder.expectedValue(DUE_DATE_NON_WORKING_DAYS_OF_WEEK, "SATURDAY,SUNDAY", true);
         return builder;
     }
 
@@ -59,6 +63,7 @@ public class ConfigurationExpectationBuilder {
         ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
         builder.expectedValue(CASE_NAME, "Joe Blogs", true);
         builder.expectedValue(CASE_MANAGEMENT_CATEGORY, "Personal Independence Payment", true);
+        builder.expectedValue(REGION, "4", true);
         builder.expectedValue(LOCATION, "123456", true);
         builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
         builder.expectedValue(WORK_TYPE, "pre_hearing", true);
@@ -71,11 +76,8 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(DUE_DATE_ORIGIN, now(), false);
         builder.expectedValue(DUE_DATE_NON_WORKING_CALENDAR, CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR, true);
         builder.expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true);
+        builder.expectedValue(DUE_DATE_NON_WORKING_DAYS_OF_WEEK, "SATURDAY,SUNDAY", true);
         return builder;
-    }
-
-    public static String eventLink(String description, String eventId) {
-        return String.format("[%s](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/%s)", description, eventId);
     }
 
     public static String buildDescription(String... lines) {

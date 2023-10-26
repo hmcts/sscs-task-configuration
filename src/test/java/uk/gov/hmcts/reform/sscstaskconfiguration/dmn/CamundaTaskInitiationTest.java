@@ -352,10 +352,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                  10, "Translation Tasks")
                 .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
                 .build(),
-            event("manageWelshDocuments")
-                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
-                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
-                .build(),
             Arguments.of(
                 "validAppealCreated",
                 "validAppeal",
@@ -447,10 +443,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("sendToAdmin")
                 .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
                 .build(),
-            eventWithState("appealCreated", "withDwp")
-                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
-                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
-                .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
                 .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
@@ -513,19 +505,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("referredByTcwPreHearing", "Referred By TCW", 2)
                 .build(),
             event("createBundle")
-                .withCaseData("panel", Map.of("assignedTo", "panel member 1"))
-                .withCaseData("nextHearingDate", LocalDate.now().plusDays(7).toString())
+                .withCaseData("assignedCaseRoles", Arrays.asList("hearing-judge"))
                 .initiativesTask("prepareForHearingJudge", "Prepare For Hearing", 2)
                 .build(),
             event("hearingToday")
                 .initiativesTask("writeDecisionJudge", "Write Decision", 2)
                 .initiativesTask("reviewOutstandingDraftDecision", "Review Outstanding Draft Decision", 5)
+                .initiativesTask("updateHearingDetails", "Update Hearing Details", 5)
                 .build(),
             event("validSendToInterloc")
-                .withCaseData("workType", "preHearingWork")
                 .withCaseData("action", "reviewByJudge")
-                .initiativesTask("referredByAdminJudgePreHearing", "Referred By Admin", 2)
                 .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByJudge")
+                .withCaseData("workType", "preHearingWork")
+                .withCaseData("interlocReferralReason", "adviceOnHowToProceed")
+                .initiativesTask("referredByAdminJudgePreHearing", "Referred By Admin", 2)
                 .build(),
             event("dwpUploadResponse")
                 .withCaseData("benefitCode", "026")
@@ -583,9 +579,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("action", "reviewByTcw")
-                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
                 .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
-                .initiativesTask("referredByJudge", "Referred By Judge", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "postponementRequestInterlocSendToTcw")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByTcw")
+                .withCaseData("interlocReferralReason", "adviceOnHowToProceed")
                 .initiativesTask("referredByAdminTcw", "Referred by Admin", 2)
                 .build(),
             event("actionFurtherEvidence")
@@ -608,20 +610,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("validSendToInterloc")
                 .withCaseData("action", "reviewByTcw")
                 .withCaseData("interlocReferralReason", "complexCase")
-                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
                 .initiativesTask("referredToInterlocTCW", "Referred to interloc - Complex Case", 2)
-                .initiativesTask("referredByJudge", "Referred By Judge", 2)
-                .initiativesTask("referredByAdminTcw", "Referred by Admin", 2)
                 .build(),
             event("nonCompliantSendToInterloc")
                 .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
                 .build(),
-            event("sendToDwp")
+            event("sentToDwp")
                 .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "childSupport")))
                 .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 42, 2)
                 .build(),
-            event("sendToDwp")
+            eventWithState("sentToDwp", "withDwp")
+                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
+                .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "childSupport")))
+                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
+                .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 42, 2)
+                .build(),
+            eventWithState("sentToDwp", "withDwp")
+                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
                 .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "PIP")))
+                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
                 .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 28, 2)
                 .build(),
             event("directionDueToday")
@@ -824,7 +831,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(76));
+        assertThat(logic.getRules().size(), is(78));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
