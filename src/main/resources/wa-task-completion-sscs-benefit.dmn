@@ -792,6 +792,23 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1q4lpqw">
+        <inputEntry id="UnaryTests_0wlc6za">
+          <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","struckOut","writeFinalDecision","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14s638p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oth24t">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17klv4p">
+          <text>"referredByAdminJudgePostHearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02diar5">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_2rmkvgk">
         <inputEntry id="UnaryTests_1ht7wfx">
           <text>"abateCase","actionFurtherEvidence","actionPostponementRequest","adjournCase","adminActionCorrection","adminCorrectionBody","amendDueDate","cancelTranslations","confirmPanelComposition","correctionGranted","correctionRefused","createBundle","decisionIssued","directionIssued","hmctsResponseReviewed","interlocInformationReceived","interlocReviewStateAmend","interlocSendToTcw","issueAdjournmentNotice","issueFinalDecision","libertyToApplyGranted","libertyToApplyRefused","permissionToAppealGranted","permissionToAppealRefused","postHearingReview","processAudioVideo","readyToList","requestForInformation","requestTranslationFromWLU","resendCaseToGAPS2","reviewConfidentialityRequest","reviewPhmeRequest","sendToAdmin","setAsideGranted","setAsideIssueDirections","setAsideRefused","setAsideRefusedSOR","sORExtendTime","sORRefused","sORWrite","struckOut","tcwReferToJudge","updateListingRequirement","uploadWelshDocument","validSendToInterloc","writeFinalDecision"</text>

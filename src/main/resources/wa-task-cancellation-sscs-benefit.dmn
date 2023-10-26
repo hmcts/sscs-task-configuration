@@ -1111,6 +1111,32 @@
           <text>"referredByAdminTcw"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_101lock">
+        <inputEntry id="UnaryTests_00gf3nj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12scj8n">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0llzap5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_042h0u3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13xwyot">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1il7h5r">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p6bddq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ho4uwj">
+          <text>"referredByAdminJudgePostHearing"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -6477,6 +6477,86 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"updateHearingDetails"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0amucn3">
+        <inputEntry id="UnaryTests_0e95g5y">
+          <text>"validSendToInterloc"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xdbazl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0694b8q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sxilnw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uh38f3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10hqrxz">
+          <text>"postHearingWork"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qqlvu0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mbps34">
+          <text>"reviewByJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d8980t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15rz0et">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vfs828">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1twr0ze">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y24mws">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12u5c3c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v2pyjj">
+          <text>"adviceOnHowToProceed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ty4z7w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rc6khh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03iot2x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05xs62a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gjwdk5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zmn0g1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01rgjb2">
+          <text>"referredByAdminJudgePostHearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lpp9h9">
+          <text>"Referred By Admin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nz88vw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0usvrd8">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01iwfrc">
+          <text>"referredByAdminJudgePostHearing"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
