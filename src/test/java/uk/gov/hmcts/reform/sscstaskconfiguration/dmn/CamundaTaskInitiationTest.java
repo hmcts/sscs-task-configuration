@@ -545,12 +545,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("contactParties", "Contact Parties", 1)
                 .build(),
             eventWithState("correctionRequest","postHearing")
-                .withCaseData("workType", "postHearingWork")
                 .initiativesTask("reviewCorrectionApplicationAdmin", "Review Correction Application", 3)
                 .build(),
             eventWithState("actionFurtherEvidence","dormant")
                 .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
-                .withCaseData("workType", "postHearingWork")
                 .withCaseData("action", "adminActionCorrection")
                 .initiativesTask("reviewCorrectionApplicationAdmin", "Review Correction Application", 3)
                 .build(),
