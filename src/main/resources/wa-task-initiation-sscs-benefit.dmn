@@ -6557,6 +6557,86 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"referredByAdminJudgePostHearing"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_16o0u04">
+        <inputEntry id="UnaryTests_0dodufv">
+          <text>"tcwReferToJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a6jqzf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bzely6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z9ae5a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ts2wks">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jxt5cb">
+          <text>"postHearingWork"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wkm0z4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pyae9a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v3q9o1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0avazgm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qvk3ty">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o0av3l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s2ymtw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cu2w2p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15thcha">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13yvbyn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c8u6m3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_108tea1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_070stvo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fov380">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m0dscp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k423r4">
+          <text>"referredByTcwPostHearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qeudke">
+          <text>"Referred By TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17zvwob">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ka9byx">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1onesd2">
+          <text>"referredByTcwPostHearing"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
