@@ -45,7 +45,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
-                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge", BLANK),
+                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge",
+                                    "referredByAdminJudgePostHearing", "referredByTcwPostHearing", BLANK),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse", BLANK),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument", BLANK),
             eventAutoCompletesTasks("actionFurtherEvidence",
@@ -56,14 +57,17 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
                                     "referredByAdminJudgePreHearing", "referredToInterlocJudge",
                                     "reviewFtaValidityChallenge", "referredToInterlocTCW", "reviewNonCompliantAppeal",
-                                    "ftaNotProvidedAppointeeDetailsTcw", BLANK),
+                                    "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminJudgePostHearing",
+                                    "referredByTcwPostHearing", BLANK),
             eventAutoCompletesTasks("struckOut",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
-                                    "referredByAdminJudgePreHearing", BLANK),
+                                    "referredByAdminJudgePreHearing", "referredByAdminJudgePostHearing",
+                                    "referredByTcwPostHearing", BLANK),
             eventAutoCompletesTasks("abateCase","ftaNotProvidedAppointeeDetailsJudge", BLANK),
             eventAutoCompletesTasks("writeFinalDecision",
                                     "referredByTcwPreHearing", "prepareForHearingJudge",
-                                    "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing", BLANK),
+                                    "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing",
+                                    "referredByAdminJudgePostHearing", "referredByTcwPostHearing", BLANK),
             eventAutoCompletesTasks("actionPostponementRequest","reviewPostponementRequestJudge",
                                     "reviewPostponementRequestTCW", BLANK),
             eventAutoCompletesTasks("adjournCase", "prepareForHearingJudge", BLANK),
@@ -74,7 +78,9 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing",
                                     "referredToInterlocJudge", "reviewFtaValidityChallenge",
                                     "referredToInterlocTCW", "referredByJudge", "reviewNonCompliantAppeal",
-                                    "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw", BLANK),
+                                    "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw",
+                                    "reviewRemittedDecisionandProvideListingDirections",
+                                    "referredByAdminJudgePostHearing", "referredByTcwPostHearing", BLANK),
             eventAutoCompletesTasks("directionIssued",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
@@ -82,7 +88,11 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "referredToInterlocJudge", "reviewFtaValidityChallenge",
                                     "ftaRequestTimeExtension", "referredToInterlocTCW",
                                     "ftaResponseOverdue", "referredByJudge", "reviewNonCompliantAppeal",
-                                    "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw", BLANK),
+                                    "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw",
+                                    "reviewLibertytoApplyApplication", "reviewStatementofReasons",
+                                    "reviewPermissiontoAppealApplication",
+                                    "reviewRemittedDecisionandProvideListingDirections",
+                                    "referredByAdminJudgePostHearing", "referredByTcwPostHearing", BLANK),
             eventAutoCompletesTasks("issueFinalDecision",
                                     "reviewConfidentialityRequest", "writeDecisionJudge", BLANK),
             eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
@@ -93,24 +103,44 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "ftaRequestTimeExtension", "referredToInterlocTCW",
                                     "ftaResponseOverdue", "referredByJudge", "processAudioVideoEvidence",
                                     "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw",
-                                    "referredByAdminTcw", BLANK),
+                                    "referredByAdminTcw", "referredByAdminJudgePostHearing",
+                                    "referredByTcwPostHearing", BLANK),
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal", BLANK),
             eventAutoCompletesTasks("updateListingRequirement","reviewListingError", BLANK),
             eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail", BLANK),
             eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK),
             eventAutoCompletesTasks("confirmPanelComposition", "confirmPanelComposition", BLANK),
+            eventAutoCompletesTasks("adminActionCorrection", "reviewCorrectionApplicationAdmin", BLANK),
+            eventAutoCompletesTasks("adminCorrectionBody", "reviewCorrectionApplicationAdmin", BLANK),
             eventAutoCompletesTasks("tcwReferToJudge", "reviewFtaValidityChallenge", "referredToInterlocTCW",
                                     "referredByJudge", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw",
                                     "referredByAdminTcw", BLANK),
-            eventAutoCompletesTasks("processAudioVideo", "processAudioVideoEvidence", BLANK)
+            eventAutoCompletesTasks("processAudioVideo", "processAudioVideoEvidence", BLANK),
+            eventAutoCompletesTasks("libertyToApplyGranted","reviewLibertytoApplyApplication", BLANK),
+            eventAutoCompletesTasks("libertyToApplyRefused","reviewLibertytoApplyApplication", BLANK),
+            eventAutoCompletesTasks("correctionGranted","reviewCorrectionApplicationJudge", BLANK),
+            eventAutoCompletesTasks("correctionRefused","reviewCorrectionApplicationJudge", BLANK),
+            eventAutoCompletesTasks("sORWrite","writeStatementofReason", BLANK),
+            eventAutoCompletesTasks("sORExtendTime","reviewStatementofReasons", BLANK),
+            eventAutoCompletesTasks("sORRefused","reviewStatementofReasons", BLANK),
+            eventAutoCompletesTasks("permissionToAppealGranted","reviewPermissiontoAppealApplication", BLANK),
+            eventAutoCompletesTasks("permissionToAppealRefused","reviewPermissiontoAppealApplication", BLANK),
+            eventAutoCompletesTasks("postHearingReview",
+                                    Map.of("postHearingReviewType", "setAside"),
+                                    "reviewPermissiontoAppealApplication", BLANK),
+            eventAutoCompletesTasks("setAsideGranted","reviewSetAsideApplication", BLANK),
+            eventAutoCompletesTasks("setAsideRefused","reviewSetAsideApplication", BLANK),
+            eventAutoCompletesTasks("setAsideRefusedSOR","reviewSetAsideApplication", BLANK),
+            eventAutoCompletesTasks("setAsideIssueDirections","reviewSetAsideApplication", BLANK)
         );
     }
 
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
-    void given_event_ids_should_evaluate_dmn(String eventId, Set<Map<String, String>> expectation) {
+    void given_event_ids_should_evaluate_dmn(String eventId, Map<String, Map<String, Object>> map, Set<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("additionalData", map);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
         MatcherAssert.assertThat(new HashSet<Map<String,Object>>(dmnDecisionTableResult.getResultList()), is(expectation));
@@ -120,11 +150,18 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(36));
+        assertThat(logic.getRules().size(), is(48));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
-        return Arguments.of(event, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
+        return Arguments.of(event, null, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
+        );
+    }
+
+    public static Arguments eventAutoCompletesTasks(String event, Map<String, Object> caseData, String... tasks) {
+        return Arguments.of(event,
+                            Map.of("Data", caseData),
+                            Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
         );
     }
 
