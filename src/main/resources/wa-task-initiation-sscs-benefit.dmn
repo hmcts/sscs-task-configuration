@@ -904,7 +904,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_01u2n93">
         <inputEntry id="UnaryTests_1mblit3">
-          <text>"actionFurtherEvidence", "uploadWelshDocument", "manageWelshDocuments"</text>
+          <text>"manageWelshDocuments"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1oco2zm">
           <text></text>
