@@ -288,7 +288,7 @@ else
       <rule id="DecisionRule_06439sc">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_1uojej9">
-          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge"</text>
+          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p2b6fz">
           <text></text>
@@ -396,7 +396,7 @@ else
       <rule id="DecisionRule_0n0jktj">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_02vbxbe">
-          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge"</text>
+          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0us0gct">
           <text></text>
@@ -918,7 +918,7 @@ else
       </rule>
       <rule id="DecisionRule_0sbwxuc">
         <inputEntry id="UnaryTests_1klhc1w">
-          <text>"reviewApplicationandAllocateJudge"</text>
+          <text>"reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0mwnrcc">
           <text></text>
