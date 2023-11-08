@@ -414,6 +414,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "reviewLateStatementofReasonsApplicationAndAllocateJudge",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1),
+                    permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,Assign,Unassign,CancelOwn,CompleteOwn", "CTSC")
+                )
+            ),
+            Arguments.of(
                 "updateHearingDetails",
                 "someCaseData",
                 List.of(

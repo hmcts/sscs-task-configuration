@@ -197,11 +197,11 @@ else
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_1tdbf1b" label="Date of Decision" camunda:inputVariable="dateOfDecision">
+      <input id="InputClause_1tdbf1b" label="Final Decision Issued Date" camunda:inputVariable="finalDecisionIssuedDate">
         <inputExpression id="LiteralExpression_1mpx893" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.dateOfDecision
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.finalDecisionIssuedDate
             != null) then
-            additionalData.Data.dateOfDecision
+            additionalData.Data.finalDecisionIssuedDate
             else
             null</text>
         </inputExpression>
@@ -6319,7 +6319,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_1a0vc32">
         <inputEntry id="UnaryTests_1r24n8t">
-          <text>"postHearingRequest"</text>
+          <text>"sORRequest"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1u1xf4f">
           <text>"dormantAppealState", "postHearing"</text>
@@ -6340,7 +6340,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1685ski">
-          <text>"statementOfReasons"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bvc0iu">
           <text></text>
@@ -6379,7 +6379,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0045rle">
-          <text>today() &lt;= date(dateOfDecision) + duration("P1M")</text>
+          <text>today() &lt;= date(finalDecisionIssuedDate) + duration("P1M")</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0xoevvb">
           <text>"reviewApplicationandAllocateJudge"</text>
@@ -6395,6 +6395,86 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1o4yske">
           <text>"reviewApplicationandAllocateJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yqahxq">
+        <inputEntry id="UnaryTests_13f8zt4">
+          <text>"sORRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zs09az">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mfyac5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14b6wuj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ahsery">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yc5wtg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r08tvd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h4npd0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tg1gcy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bu9srb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aliyzb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0efjo49">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01tznta">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d5pgx4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jd88u6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q8f2um">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hkjgvl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13sqf5p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00mmx7u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i8r14s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19qm9o2">
+          <text>today() &gt; date(finalDecisionIssuedDate) + duration("P1M")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lmulws">
+          <text>"reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mmh8ub">
+          <text>"Review Late SOR Application and Allocate Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j8t800">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j12bzw">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_037jcoq">
+          <text>"reviewStatementofReasonsApplication"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_076p6jp">
