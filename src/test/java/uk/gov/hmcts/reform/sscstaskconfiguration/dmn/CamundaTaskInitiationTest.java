@@ -546,6 +546,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             eventWithState("correctionRequest","postHearing")
                 .initiativesTask("reviewCorrectionApplicationAdmin", "Review Correction Application", 3)
+                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge", 3)
                 .build(),
             eventWithState("actionFurtherEvidence","dormant")
                 .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
@@ -717,13 +718,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             eventWithState("validSendToInterloc", "postHearing")
                 .withCaseData("interlocReferralReason", "reviewStatementOfReasonsApplication")
                 .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
-                .initiativesTask("reviewStatementofReasons", "Review Statement of Reasons", 2)
+                .initiativesTask("reviewLateStatementofReasonsApplication", "Review Late SOR Application", 2)
                 .build(),
             eventWithState("actionFurtherEvidence", "postHearing")
                 .withCaseData("scannedDocumentTypes", List.of("statementOfReasonsApplication"))
                 .withCaseData("furtherEvidenceAction", "sendToInterlocReviewByJudge")
                 .withCaseData("issueInterlocDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
-                .initiativesTask("reviewStatementofReasons", "Review Statement of Reasons", 2)
+                .initiativesTask("reviewLateStatementofReasonsApplication", "Review Late SOR Application", 2)
                 .build(),
             eventWithState("validSendToInterloc", "postHearing")
                 .withCaseData("interlocReferralReason", "reviewPermissionToAppealApplication")
@@ -759,7 +760,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("postHearingReviewType", "setAside")
                 .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
                 .build(),
-
             eventWithState("validSendToInterloc", "dormantAppealState")
                 .withCaseData("interlocReferralReason", "reviewSetAsideApplication")
                 .initiativesTask("reviewSetAsideApplication", "Review Set Aside Application", 2)
@@ -781,19 +781,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTaskWithDelay("reviewSetAsideApplication", "Review Set Aside Application", 21,2)
                 .build(),
             eventWithState("sendToFirstTier", "dormantAppealState")
-                .withCaseData("action", "remitted")
+                .withCaseData("sendToFirstTier", Map.of("action", "remitted"))
                 .initiativesTask("shareRemittedDecision", "Allocate Judge and Share Remitted Decision", 20)
                 .build(),
             eventWithState("sendToFirstTier", "dormantAppealState")
-                .withCaseData("action", "remade")
+                .withCaseData("sendToFirstTier", Map.of("action", "remade"))
                 .initiativesTask("shareRemadeDecision", "Share Remade Decision", 20)
                 .build(),
             eventWithState("sendToFirstTier", "dormantAppealState")
-                .withCaseData("action", "refuse")
+                .withCaseData("sendToFirstTier", Map.of("action", "refuse"))
                 .initiativesTask("shareRefusedDecision", "Share Refused Decision", 20)
                 .build(),
-            eventWithState("postHearingRequest", "dormantAppealState")
-                .withCaseData("action", "setAside")
+            eventWithState("libertyToApplyRequest", "dormantAppealState")
+                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge", 3)
+                .build(),
+            eventWithState("permissionToAppealRequest", "dormantAppealState")
+                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge", 3)
+                .build(),
+            eventWithState("setAsideRequest", "dormantAppealState")
                 .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge", 3)
                 .build(),
             eventWithState("sORRequest", "dormantAppealState")
