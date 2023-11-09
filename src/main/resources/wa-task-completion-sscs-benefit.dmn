@@ -99,7 +99,7 @@
       </rule>
       <rule id="DecisionRule_1f54r9s">
         <inputEntry id="UnaryTests_134fjvk">
-          <text>"reviewConfidentialityRequest","sendToAdmin","directionIssued","validSendToInterloc","issueFinalDecision","interlocReviewStateAmend"</text>
+          <text>"reviewConfidentialityRequest","sendToAdmin","directionIssued","interlocSendToTcw","issueFinalDecision","decisionIssued","interlocReviewStateAmend"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ebaydg">
           <text>"reviewConfidentialityRequest"</text>
