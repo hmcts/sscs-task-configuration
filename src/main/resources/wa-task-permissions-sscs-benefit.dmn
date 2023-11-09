@@ -654,32 +654,6 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0vd7ci7">
-        <inputEntry id="UnaryTests_0pmrne8">
-          <text>"prepareForHearingJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1vyzwoo">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1lttnh9">
-          <text>"fee-paid-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0b3ea9b">
-          <text>"Read,Own"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_01hbvkk">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0oii0q6">
-          <text>368</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1lb49b7">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1p1rukh">
-          <text>false</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0rflc29">
         <inputEntry id="UnaryTests_0ziy5h4">
           <text>"writeDecisionJudge"</text>
