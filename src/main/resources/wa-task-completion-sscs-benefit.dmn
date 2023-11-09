@@ -99,7 +99,7 @@
       </rule>
       <rule id="DecisionRule_1f54r9s">
         <inputEntry id="UnaryTests_134fjvk">
-          <text>"reviewConfidentialityRequest","sendToAdmin","directionIssued","validSendToInterloc","issueFinalDecision","interlocReviewStateAmend"</text>
+          <text>"reviewConfidentialityRequest","sendToAdmin","directionIssued","interlocSendToTcw","issueFinalDecision","decisionIssued","interlocReviewStateAmend"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ebaydg">
           <text>"reviewConfidentialityRequest"</text>
@@ -284,9 +284,119 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_02lgh7b">
+        <inputEntry id="UnaryTests_1xugwk8">
+          <text>"directionIssued","decisionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18l0pb4">
+          <text>"reviewFtaValidityChallenge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00nsdkc">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lt5pkw">
+        <inputEntry id="UnaryTests_06u067e">
+          <text>"directionIssued", "interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f3kpco">
+          <text>"ftaRequestTimeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mqa699">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02gfi26">
+        <inputEntry id="UnaryTests_1auas9w">
+          <text>"actionPostponementRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qrgxw9">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gd9fno">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1t3yql6">
+        <inputEntry id="UnaryTests_0rt1kce">
+          <text>"decisionIssued","directionIssued","sendToAdmin", "tcwReferToJudge", "validSendToInterloc", "interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0og7mld">
+          <text>"referredToInterlocTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10mqze2">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nc8wby">
+        <inputEntry id="UnaryTests_1diy2b3">
+          <text>"directionIssued","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_158ieji">
+          <text>"ftaResponseOverdue"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v999ae">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0m3uv5l">
+        <inputEntry id="UnaryTests_1q7ue5c">
+          <text>"directionIssued", "sendToAdmin", "tcwReferToJudge", "interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1df3via">
+          <text>"referredByJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19vfuis">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1403cc6">
+        <inputEntry id="UnaryTests_0v4ydbb">
+          <text>"processAudioVideo","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0obriqc">
+          <text>"processAudioVideoEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kfsnfk">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08k72xy">
+        <inputEntry id="UnaryTests_0tro0ja">
+          <text>"decisionIssued","directionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1y6ek22">
+          <text>"reviewNonCompliantAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03stwv3">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1meshgl">
+        <inputEntry id="UnaryTests_15uj4l7">
+          <text>"decisionIssued","directionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_145d1i8">
+          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10w32s8">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w3ybmp">
+        <inputEntry id="UnaryTests_1kvf47h">
+          <text>"directionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12i3gfs">
+          <text>"referredByAdminTcw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_154uph7">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1rmjvgi">
         <inputEntry id="UnaryTests_1hr3w9x">
-          <text>"abateCase","actionFurtherEvidence","actionPostponementRequest","adjournCase","amendDueDate","cancelTranslations","confirmPanelComposition","createBundle","decisionIssued","directionIssued","hmctsResponseReviewed","interlocInformationReceived","interlocReviewStateAmend","interlocSendToTcw","issueAdjournmentNotice","issueFinalDecision","readyToList","requestForInformation","requestTranslationFromWLU","resendCaseToGAPS2","reviewConfidentialityRequest","reviewPhmeRequest","sendToAdmin","struckOut","updateListingRequirement","uploadWelshDocument","validSendToInterloc","writeFinalDecision"</text>
+          <text>"abateCase","actionFurtherEvidence","actionPostponementRequest","adjournCase","amendDueDate","cancelTranslations","confirmPanelComposition","createBundle","decisionIssued","directionIssued","hmctsResponseReviewed","interlocInformationReceived","interlocReviewStateAmend","interlocSendToTcw","issueAdjournmentNotice","issueFinalDecision","readyToList","requestForInformation","requestTranslationFromWLU","resendCaseToGAPS2","reviewConfidentialityRequest","reviewPhmeRequest","sendToAdmin","struckOut","updateListingRequirement","uploadWelshDocument","validSendToInterloc","writeFinalDecision","tcwReferToJudge","processAudioVideo"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02xaug9">
           <text></text>

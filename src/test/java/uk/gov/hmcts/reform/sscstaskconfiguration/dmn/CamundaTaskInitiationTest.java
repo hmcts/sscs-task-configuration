@@ -1,5 +1,6 @@
 package uk.gov.hmcts.reform.sscstaskconfiguration.dmn;
 
+import java.util.Arrays;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -167,7 +168,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "dwpUploadResponse",
-                null,
+                "withDwp",
                 Map.of("Data", Map.of("dwpFurtherInfo", true)),
                 singletonList(
                     Map.of(
@@ -175,6 +176,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review FTA Response",
                         "workingDaysAllowed", 2,
                         "processCategories", "reviewFtaResponse"
+                    )
+                )
+            ),
+            Arguments.of(
+                "dwpChallengeValidity",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewFtaValidityChallenge",
+                        "name", "Review FTA validity challenge",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "reviewFtaValidityChallenge"
                     )
                 )
             ),
@@ -337,10 +351,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                  10, "Translation Tasks")
                 .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
                 .build(),
-            eventWithState("sentToDwp", "withDwp")
-                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
-                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
-                .build(),
             Arguments.of(
                 "validAppealCreated",
                 "validAppeal",
@@ -429,6 +439,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
                                  10, "Translation Tasks")
                 .build(),
+            event("sendToAdmin")
+                .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
+                .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
                 .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
@@ -469,16 +482,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("action", "sendToJudge")
                 .initiativesTask("reviewPostponementRequestJudge", "Review Postponement Request", 2)
                 .build(),
-            event("actionFurtherEvidence")
-                .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
-                .initiativesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request", 2)
-                .build(),
-            event("uploadWelshDocument")
-                .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
-                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
-                                 10, "Translation Tasks")
-                .initiativesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request", 2)
-                .build(),
             event("manageWelshDocuments")
                 .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
                 .initiativesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request", 2)
@@ -491,19 +494,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("referredByTcwPreHearing", "Referred By TCW", 2)
                 .build(),
             event("createBundle")
-                .withCaseData("panel", Map.of("assignedTo", "panel member 1"))
-                .withCaseData("nextHearingDate", LocalDate.now().plusDays(7).toString())
+                .withCaseData("assignedCaseRoles", Arrays.asList("hearing-judge"))
                 .initiativesTask("prepareForHearingJudge", "Prepare For Hearing", 2)
                 .build(),
             event("hearingToday")
                 .initiativesTask("writeDecisionJudge", "Write Decision", 2)
                 .initiativesTask("reviewOutstandingDraftDecision", "Review Outstanding Draft Decision", 5)
+                .initiativesTask("updateHearingDetails", "Update Hearing Details", 5)
                 .build(),
             event("validSendToInterloc")
-                .withCaseData("workType", "preHearingWork")
                 .withCaseData("action", "reviewByJudge")
-                .initiativesTask("referredByAdminJudgePreHearing", "Referred By Admin", 2)
                 .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByJudge")
+                .withCaseData("workType", "preHearingWork")
+                .withCaseData("interlocReferralReason", "adviceOnHowToProceed")
+                .initiativesTask("referredByAdminJudgePreHearing", "Referred By Admin", 2)
                 .build(),
             event("dwpUploadResponse")
                 .withCaseData("benefitCode", "026")
@@ -525,6 +532,124 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("actionPostponementRequest")
                 .withCaseData("daysToHearing", 6)
                 .initiativesTask("contactParties", "Contact Parties", 1)
+                .build(),
+            event("dwpRequestTimeExtension")
+                .initiativesTask("ftaRequestTimeExtension", "Request FTA Time Extension", 2)
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-1", "tribunal-member-2", "tribunal-member-3"))
+                .initiativesTask("prepareForHearingTribunalMember1", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .initiativesTask("prepareForHearingTribunalMember2", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .initiativesTask("prepareForHearingTribunalMember3", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-1"))
+                .initiativesTask("prepareForHearingTribunalMember1", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-2"))
+                .initiativesTask("prepareForHearingTribunalMember2", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-3"))
+                .initiativesTask("prepareForHearingTribunalMember3", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByTcw")
+                .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "postponementRequestInterlocSendToTcw")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByTcw")
+                .withCaseData("interlocReferralReason", "adviceOnHowToProceed")
+                .initiativesTask("referredByAdminTcw", "Referred by Admin", 2)
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("uploadWelshDocument")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
+                                 10, "Translation Tasks")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("postponementRequest")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByTcw")
+                .withCaseData("interlocReferralReason", "complexCase")
+                .initiativesTask("referredToInterlocTCW", "Referred to interloc - Complex Case", 2)
+                .build(),
+            event("nonCompliantSendToInterloc")
+                .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
+                .build(),
+            event("sentToDwp")
+                .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "childSupport")))
+                .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 42, 2)
+                .build(),
+            eventWithState("sentToDwp", "withDwp")
+                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
+                .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "childSupport")))
+                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
+                .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 42, 2)
+                .build(),
+            eventWithState("sentToDwp", "withDwp")
+                .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
+                .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "PIP")))
+                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date", 7, 2)
+                .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 28, 2)
+                .build(),
+            event("directionDueToday")
+                .withCaseData("directionTypeDl", Map.of("value", Map.of("code", "grantExtension")))
+                .initiativesTask("reviewBfDate", "Review BF Date", 5)
+                .initiativesTask("ftaResponseOverdue", "Referred to Interloc - FTA response overdue", 2)
+                .build(),
+            event("interlocSendToTcw")
+                .initiativesTask("referredByJudge", "Referred By Judge", 2)
+                .build(),
+            event("uploadDocument")
+                .withCaseData("scannedDocumentTypes", List.of("audioDocument"))
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("dwpSupplementaryResponse")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument", "audioDocument"))
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("dwpUploadResponse")
+                .withCaseData("scannedDocumentTypes", List.of("audioDocument", "other"))
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("uploadFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument"))
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("uploadDocumentFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument"))
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence", 2)
+                .build(),
+            event("nonCompliant")
+                .initiativesTask("reviewNonCompliantAppeal", "Review Non Compliant Appeal", 2)
+                .build(),
+            event("draftToNonCompliant")
+                .initiativesTask("reviewNonCompliantAppeal", "Review Non Compliant Appeal", 2)
+                .build(),
+            event("updateNotListable")
+                .withCaseData("action", "reviewByTcw")
+                .initiativesTask("ftaNotProvidedAppointeeDetailsTcw", "FTA Not Provided Appointee Details", 2)
                 .build()
         );
     }
@@ -550,7 +675,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(28));
+        assertThat(logic.getRules().size(), is(48));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

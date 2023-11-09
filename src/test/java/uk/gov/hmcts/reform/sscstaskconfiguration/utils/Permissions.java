@@ -71,14 +71,12 @@ public class Permissions {
             Map.of(
                 "name", "ctsc",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
-                "assignmentPriority", 2,
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "ctsc-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
-                "assignmentPriority", 3,
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             )
@@ -99,14 +97,12 @@ public class Permissions {
             Map.of(
                 "name", "regional-centre-admin",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
-                "assignmentPriority", 2,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "regional-centre-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
-                "assignmentPriority", 3,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             )
@@ -127,14 +123,12 @@ public class Permissions {
             Map.of(
                 "name", "ctsc",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
-                "assignmentPriority", 2,
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "ctsc-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
-                "assignmentPriority", 3,
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             )
@@ -155,14 +149,12 @@ public class Permissions {
             Map.of(
                 "name", "regional-centre-admin",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
-                "assignmentPriority", 2,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "regional-centre-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
-                "assignmentPriority", 3,
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             )
@@ -199,6 +191,80 @@ public class Permissions {
             permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
             permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
             permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+        );
+    }
+
+    public static List<Map<String, Object>> defaultPermissionsTcwTasks() {
+        return List.of(
+            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
+            permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
+            permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
+        );
+    }
+
+    public static List<Map<String, Object>> defaultJudicalMember1Permissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-member-1",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 1,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", true
+            )
+        );
+    }
+    public static List<Map<String, Object>> defaultJudicalMember2Permissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-member-2",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 1,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", true
+            )
+        );
+    }
+    public static List<Map<String, Object>> defaultJudicalMember3Permissions() {
+        return List.of(
+            Map.of(
+                "name", "case-allocator",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-member-3",
+                "value", "Read,Own,Manage,Complete",
+                "assignmentPriority", 1,
+                "roleCategory", "JUDICIAL",
+                "autoAssignable", true
+            )
         );
     }
 }

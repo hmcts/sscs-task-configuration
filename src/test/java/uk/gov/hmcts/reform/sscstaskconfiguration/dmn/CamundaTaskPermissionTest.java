@@ -127,14 +127,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "name", "ctsc",
                         "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
-                        "assignmentPriority", 2,
                         "roleCategory", "CTSC",
                         "autoAssignable", false
                     ),
                     Map.of(
                         "name", "ctsc-team-leader",
                         "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
-                        "assignmentPriority", 3,
                         "roleCategory", "CTSC",
                         "autoAssignable", false
                     )
@@ -227,6 +225,100 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "contactParties",
                 "someCaseData",
                 Permissions.defaultAdminCaseWorkerPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "reviewFtaValidityChallenge",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "ftaRequestTimeExtension",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember1",
+                "someCaseData",
+                Permissions.defaultJudicalMember1Permissions()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember2",
+                "someCaseData",
+                Permissions.defaultJudicalMember2Permissions()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember3",
+                "someCaseData",
+                Permissions.defaultJudicalMember3Permissions()
+            ),
+            Arguments.of(
+                "reviewPostponementRequestTCW",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "referredToInterlocTCW",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "ftaResponseOverdue",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "referredByJudge",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS")
+                )
+            ),
+            Arguments.of(
+                "processAudioVideoEvidence",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "LEGAL_OPERATIONS", 1),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "LEGAL_OPERATIONS"),
+                    permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "reviewNonCompliantAppeal",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "ftaNotProvidedAppointeeDetailsTcw",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "referredByAdminTcw",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS")
+                )
+            ),
+            Arguments.of(
+                "updateHearingDetails",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    permission("allocated-admin-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN", 1),
+                    permission("regional-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN"),
+                    permission("regional-centre-team-leader","Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete", "ADMIN"),
+                    permission("hearing-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN"),
+                    permission("hearing-centre-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn", "ADMIN")
+                )
             )
         );
     }
@@ -267,7 +359,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(31));
+        assertThat(logic.getRules().size(), is(42));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

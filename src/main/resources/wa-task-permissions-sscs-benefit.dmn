@@ -74,6 +74,58 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1sd16za">
+        <inputEntry id="UnaryTests_1fox3or">
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","referredByJudge", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xijtde">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17n9s76">
+          <text>"allocated-tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04dval7">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_192rsvd">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vwm4e0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1agspgb">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c46r8q">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06vhuu1">
+        <inputEntry id="UnaryTests_1aw0amr">
+          <text>"processAudioVideoEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03ps3fr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_032t5w5">
+          <text>"allocated-tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yl6rez">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wybdh1">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mxymkt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n4bj68">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15ae3yy">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0nasu18">
         <inputEntry id="UnaryTests_16558sm">
           <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredToInterlocJudge"</text>
@@ -97,6 +149,58 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c8jv3l">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tsnr6z">
+        <inputEntry id="UnaryTests_1e15x6b">
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","referredByJudge", "reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jcandy">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rgmvzt">
+          <text>"tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00pvpu8">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r8tudn">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eq77lt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dxfc5z">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ynens1">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x257ks">
+        <inputEntry id="UnaryTests_0u72mj5">
+          <text>"processAudioVideoEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l1tn3l">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dzd1s3">
+          <text>"tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c8zj71">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j5t2uw">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c5zowx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05bhgg4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gacber">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -202,7 +306,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vegbm7">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nl1jle">
           <text>false</text>
@@ -229,7 +333,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00j65u2">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1558221">
           <text>false</text>
@@ -256,7 +360,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jx62i2">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kk50cn">
           <text>false</text>
@@ -283,7 +387,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1uqvsq2">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hx1bvy">
           <text>false</text>
@@ -310,7 +414,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00lhskk">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11whir3">
           <text>false</text>
@@ -602,6 +706,32 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1s95xyj">
+        <inputEntry id="UnaryTests_09qjakp">
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g67b76">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dj88j8">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ccf0fq">
+          <text>"Read,Execute,Unclaim,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14nstnv">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_079f7f6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wrt8yx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01vonrc">
+          <text>false</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1w4vbcb">
         <inputEntry id="UnaryTests_1wys202">
           <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
@@ -613,7 +743,7 @@ else
           <text>"ctsc-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1t4cseo">
-          <text>"Read","Own","Claim","Unclaim","Manage","Cancel","UnclaimAssign","CompleteOwn"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_186yphk">
           <text>"CTSC"</text>
@@ -639,7 +769,7 @@ else
           <text>"ctsc"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bx8mjo">
-          <text>"Read","Own","Claim","Unclaim","Manage","Cancel","UnclaimAssign","CompleteOwn"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jg56wu">
           <text>"CTSC"</text>
@@ -648,7 +778,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0p037lz">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gpeu97">
           <text>false</text>
@@ -665,7 +795,7 @@ else
           <text>"ctsc-team-leader"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c7fhew">
-          <text>"Read","Own","Claim","Unclaim","Manage","UnclaimAssign","Assign","Unassign","Cancel","CompleteOwn"</text>
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1o1xc3z">
           <text>"CTSC"</text>
@@ -674,7 +804,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1037d8z">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_10dk27c">
           <text>false</text>
@@ -708,7 +838,7 @@ else
       </rule>
       <rule id="DecisionRule_0l2268u">
         <inputEntry id="UnaryTests_1wn3ski">
-          <text>"contactParties"</text>
+          <text>"contactParties","updateHearingDetails"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_03pd4fp">
           <text></text>
@@ -752,7 +882,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0p4ahuy">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0by2sf4">
           <text>false</text>
@@ -760,7 +890,7 @@ else
       </rule>
       <rule id="DecisionRule_0sv1xc9">
         <inputEntry id="UnaryTests_05gv7ni">
-          <text>"contactParties"</text>
+          <text>"contactParties","updateHearingDetails"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1yvmfbl">
           <text></text>
@@ -778,7 +908,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cnbfjz">
-          <text>2</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0aqdiu5">
           <text>false</text>
@@ -804,9 +934,35 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ezplcc">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06o8am9">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rsqzpv">
+        <inputEntry id="UnaryTests_12dxdz0">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h7ozk1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0shumjo">
+          <text>"regional-centre-team-leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01ujyu5">
+          <text>"Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09zsquk">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11h5b2q">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1duth4h">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12jxya0">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -830,9 +986,139 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zkwh6z">
-          <text>3</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0flmdxh">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vn802s">
+        <inputEntry id="UnaryTests_10hpxbu">
+          <text>"prepareForHearingTribunalMember1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1njk0ka">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0v3d7fd">
+          <text>"tribunal-member-1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12n1igy">
+          <text>"Read,Own,Manage,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05iid1e">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nkgz2p">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jhyj0t">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i1fdjc">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xvq834">
+        <inputEntry id="UnaryTests_0f2543g">
+          <text>"prepareForHearingTribunalMember2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c8zgza">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i2n4um">
+          <text>"tribunal-member-2"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b0uijh">
+          <text>"Read,Own,Manage,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wxb0ie">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hwfccb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16e3t56">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vbk9ty">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_119geop">
+        <inputEntry id="UnaryTests_1fsuhcp">
+          <text>"prepareForHearingTribunalMember3"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xlutds">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0niq2ap">
+          <text>"tribunal-member-3"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03bnukz">
+          <text>"Read,Own,Manage,Complete"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sg0la7">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07zp3v4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09bnstv">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y75ei2">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iinszr">
+        <inputEntry id="UnaryTests_1fq2xpo">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x3obvs">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mmppde">
+          <text>"hearing-centre-admin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04f7x2t">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h1bnfo">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mpjbqh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dhnjdi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06e43co">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sljxc6">
+        <inputEntry id="UnaryTests_08ecwik">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ne64jw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1r03j7j">
+          <text>"hearing-centre-team-leader"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00svikv">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s4vpoc">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ho67mt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mwhv6k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d3l9b8">
           <text>false</text>
         </outputEntry>
       </rule>
