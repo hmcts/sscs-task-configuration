@@ -4,20 +4,21 @@ plugins {
   id 'pmd'
   id 'jacoco'
   id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-  id 'org.springframework.boot' version '2.4.12'
-  id 'com.github.ben-manes.versions' version '0.38.0'
+  id 'org.springframework.boot' version '2.7.15'
+  id 'com.github.ben-manes.versions' version '0.46.0'
   id 'org.owasp.dependencycheck' version '8.3.1'
   id 'org.sonarqube' version '3.2.0'
-  id 'info.solidsoft.pitest' version '1.5.2'
-  id 'io.freefair.lombok' version '5.3.0'
+  id 'info.solidsoft.pitest' version '1.9.11'
+  id 'io.freefair.lombok' version '6.2.0'
 }
 
 group = 'uk.gov.hmcts.reform'
 version = '0.0.1'
 
-allprojects {
-  sourceCompatibility = '11'
-  targetCompatibility = '11'
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
 }
 
 lombok {
@@ -53,6 +54,14 @@ sourceSets {
     }
     resources.srcDir file('src/smokeTest/resources')
   }
+}
+
+processFunctionalTestResources {
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+processIntegrationTestResources {
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 tasks.withType(JavaCompile) {
@@ -132,10 +141,10 @@ jacocoTestReport {
 
 pitest {
   junit5PluginVersion = '0.12'
-  targetClasses = ['uk.gov.hmcts.reform.iataskconfiguration.*']
+  targetClasses = ['uk.gov.hmcts.reform.sscstaskconfiguration.*']
   excludedClasses = [
-    'uk.gov.hmcts.reform.iataskconfiguration.config.*',
-    'uk.gov.hmcts.reform.iataskconfiguration.Application'
+    'uk.gov.hmcts.reform.sscstaskconfiguration.config.*',
+    'uk.gov.hmcts.reform.sscstaskconfiguration.Application'
   ]
   threads = 10
   outputFormats = ['XML', 'HTML']
@@ -208,10 +217,10 @@ repositories {
 def versions = [
   junit           : '5.7.2',
   junitPlatform   : '1.7.2',
-  reformLogging   : '5.1.5',
+  reformLogging   : '5.1.7',
   springfoxSwagger: '2.9.2',
   camunda         : '7.15.0',
-  pitest          : '1.5.2',
+  pitest          : '1.9.11',
   sonarPitest     : '0.5',
   tomcat          : '9.0.54'
 
@@ -236,8 +245,8 @@ dependencies {
 
   implementation group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
 
-  implementation group: 'com.github.hmcts.java-logging', name: 'java-logging', version: versions.reformLogging
-  implementation group: 'com.github.hmcts.java-logging', name: 'java-logging-appinsights', version: versions.reformLogging
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: versions.reformLogging
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging-appinsights', version: versions.reformLogging
 
   implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.15.0'
   implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: '2.15.0'
@@ -250,11 +259,11 @@ dependencies {
   annotationProcessor 'org.projectlombok:lombok:1.18.20'
   compileOnly 'org.projectlombok:lombok:1.18.20'
 
-  testCompile group: 'org.pitest', name: 'pitest', version: versions.pitest
-  testCompile 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.5.2'
+  implementation group: 'org.pitest', name: 'pitest', version: '1.14.2'
+  implementation 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.9.11'
 
-  testCompile "org.junit.vintage:junit-vintage-engine:${versions.junit}"
-  testCompile group: 'org.codehaus.sonar-plugins', name: 'sonar-pitest-plugin', version: versions.sonarPitest
+  testImplementation "org.junit.vintage:junit-vintage-engine:${versions.junit}"
+  testImplementation group: 'org.codehaus.sonar-plugins', name: 'sonar-pitest-plugin', version: versions.sonarPitest
   testImplementation libraries.junit5
   testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', {
     exclude group: 'junit', module: 'junit'
