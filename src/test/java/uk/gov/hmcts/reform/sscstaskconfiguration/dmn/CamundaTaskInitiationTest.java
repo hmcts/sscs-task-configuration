@@ -789,7 +789,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("shareRemadeDecision", "Share Remade Decision", 20)
                 .build(),
             eventWithState("sendToFirstTier", "dormantAppealState")
-                .withCaseData("sendToFirstTier", Map.of("action", "refuse"))
+                .withCaseData("sendToFirstTier", Map.of("action", "refused"))
                 .initiativesTask("shareRefusedDecision", "Share Refused Decision", 20)
                 .build(),
             eventWithState("libertyToApplyRequest", "dormantAppealState")

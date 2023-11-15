@@ -6450,7 +6450,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_03dys03">
-          <text>"refuse"</text>
+          <text>"refused"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xybyso">
           <text>"shareRefusedDecision"</text>

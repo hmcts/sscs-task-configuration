@@ -409,7 +409,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
                 "reviewCorrectionApplicationAdmin",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
@@ -612,7 +612,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewStatementofReasonsApplication",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue("workType", "post_hearing", true)
                     .expectedValue(DESCRIPTION, "[Send to Interloc - Review statement of reasons application]"
                         + "(/case/SSCS/Benefit/${[CASE_REFERENCE]}"
@@ -623,7 +623,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewLibertytoApplyApplication",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue("workType", "post_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
@@ -632,7 +632,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewCorrectionApplicationJudge",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue("workType", "post_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
@@ -641,7 +641,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "writeStatementofReason",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue("workType", "post_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "28", true)
@@ -650,7 +650,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewStatementofReasons",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue("workType", "post_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
@@ -659,7 +659,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewPermissiontoAppealApplication",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue("workType", "post_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
@@ -668,7 +668,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewRemittedDecisionandProvideListingDirections",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue("workType", "post_hearing", true)
                     .expectedValue(MINOR_PRIORITY, "300", true)
@@ -679,7 +679,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewPostHearingNoticeforListingRequirements",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue("workType", "post_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .build()
@@ -687,7 +687,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewSetAsideApplication",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultJudicialTaskExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
@@ -695,7 +696,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "shareRemittedDecision",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "20", true)
@@ -704,7 +705,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "shareRemadeDecision",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
@@ -715,7 +716,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "shareRefusedDecision",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
@@ -726,7 +727,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewApplicationandAllocateJudge",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
@@ -748,7 +749,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "referredByAdminJudgePostHearing",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
@@ -759,7 +760,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "referredByTcwPostHearing",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "5000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
@@ -770,7 +771,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewLateStatementofReasonsApplicationAndAllocateJudge",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
