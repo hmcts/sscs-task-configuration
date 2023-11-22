@@ -6224,7 +6224,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"sendToFirstTier"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ruecu9">
-          <text>"dormantAppealState", "postHearing"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_00k4ecx">
           <text></text>
