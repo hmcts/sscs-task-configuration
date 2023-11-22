@@ -627,7 +627,8 @@ null</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05dqza1">
-          <text>"[Admin - action correction](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/adminActionCorrection)&lt;br/&gt;" + "[Correction Sent to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/adminCorrectionBody)"</text>
+          <text>"[Admin - action correction](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/adminActionCorrection)&lt;br/&gt;" +
+"[Body Correction By Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/adminCorrectionBody)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fy33w3">
           <text>true</text>

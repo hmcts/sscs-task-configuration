@@ -415,10 +415,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(WORK_TYPE, "post_hearing", true)
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
-                    .expectedValue(DESCRIPTION, "[Admin - action correction](/case/SSCS/Benefit"
-                        + "/${[CASE_REFERENCE]}/trigger/adminActionCorrection)<br/>"
-                        + "[Correction Sent to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}"
-                        + "/trigger/adminCorrectionBody)", true)
+                    .expectedValue(DESCRIPTION, buildDescription(
+                            EventLink.eventLink("Admin - action correction","adminActionCorrection"),
+                            EventLink.eventLink("Body Correction By Judge","adminCorrectionBody")
+                        ), true)
                     .build()
             ),
             Arguments.of(
