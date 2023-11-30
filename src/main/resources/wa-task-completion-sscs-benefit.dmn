@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-completion-sscs-benefit" name="Task completion DMN">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="613">
         <inputExpression id="LiteralExpression_1ngg489" typeRef="string">
           <text>eventId</text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_1235m5r" label="Interloc Referral Reason" camunda:inputVariable="interlocReferralReason">
-        <inputExpression id="LiteralExpression_0g1m28q" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.interlocReferralReason
-            != null) then
-            additionalData.Data.interlocReferralReason
-            else
-            null</text>
         </inputExpression>
       </input>
       <input id="InputClause_02zxlx7" label="Post Hearing Review Type">
@@ -31,9 +22,6 @@
         <inputEntry id="UnaryTests_1xelfx0">
           <text>"requestForInformation"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0t70kv4">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_12t6api">
           <text></text>
         </inputEntry>
@@ -47,9 +35,6 @@
       <rule id="DecisionRule_19hzqdb">
         <inputEntry id="UnaryTests_1i3a9vf">
           <text>"interlocInformationReceived","validSendToInterloc","interlocSendToTcw"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1jjg3pe">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_02ey055">
           <text></text>
@@ -65,9 +50,6 @@
         <inputEntry id="UnaryTests_1kt3e2j">
           <text>"hmctsResponseReviewed"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0tfpfuu">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_0y08veo">
           <text></text>
         </inputEntry>
@@ -81,9 +63,6 @@
       <rule id="DecisionRule_0dezc03">
         <inputEntry id="UnaryTests_0debqtq">
           <text>"requestTranslationFromWLU"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1htgrr9">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0m4a3jq">
           <text></text>
@@ -99,9 +78,6 @@
         <inputEntry id="UnaryTests_0a86tbb">
           <text>"validSendToInterloc","interlocSendToTcw","interlocInformationReceived"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1kl6l9e">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_0yibpiy">
           <text></text>
         </inputEntry>
@@ -115,9 +91,6 @@
       <rule id="DecisionRule_15dt7j9">
         <inputEntry id="UnaryTests_17sw41f">
           <text>"actionFurtherEvidence"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0bpz9f0">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0s3u281">
           <text></text>
@@ -133,9 +106,6 @@
         <inputEntry id="UnaryTests_1weothi">
           <text>"actionFurtherEvidence"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0lx6sss">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_1rk1gwy">
           <text></text>
         </inputEntry>
@@ -149,9 +119,6 @@
       <rule id="DecisionRule_14ekhb1">
         <inputEntry id="UnaryTests_096dkp4">
           <text>"interlocSendToTcw"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1yv89k2">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xcas6h">
           <text></text>
@@ -167,9 +134,6 @@
         <inputEntry id="UnaryTests_134fjvk">
           <text>"reviewConfidentialityRequest","sendToAdmin","directionIssued","validSendToInterloc","issueFinalDecision","interlocReviewStateAmend"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_04nnnk8">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_0xxb2ni">
           <text></text>
         </inputEntry>
@@ -183,9 +147,6 @@
       <rule id="DecisionRule_13mpsdg">
         <inputEntry id="UnaryTests_026kh17">
           <text>"sendToAdmin","directionIssued","interlocSendToTcw","interlocReviewStateAmend"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0hz92g6">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0967uyg">
           <text></text>
@@ -201,9 +162,6 @@
         <inputEntry id="UnaryTests_0hahiek">
           <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","struckOut","writeFinalDecision","interlocReviewStateAmend"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_163r63f">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_126blz5">
           <text></text>
         </inputEntry>
@@ -217,9 +175,6 @@
       <rule id="DecisionRule_0c7drc9">
         <inputEntry id="UnaryTests_163abpd">
           <text>"writeFinalDecision","adjournCase"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1v4mth1">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0fd8lan">
           <text></text>
@@ -235,9 +190,6 @@
         <inputEntry id="UnaryTests_0pmifvh">
           <text>"issueFinalDecision", "issueAdjournmentNotice"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1dmyzg2">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_137dd1x">
           <text></text>
         </inputEntry>
@@ -251,9 +203,6 @@
       <rule id="DecisionRule_0jhk8zs">
         <inputEntry id="UnaryTests_0h9gol5">
           <text>"sendToAdmin","directionIssued","interlocSendToTcw","validSendToInterloc","interlocReviewStateAmend"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0hno56w">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bqj36l">
           <text></text>
@@ -269,9 +218,6 @@
         <inputEntry id="UnaryTests_16nn4kn">
           <text>"reviewPhmeRequest","interlocReviewStateAmend"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_15v1365">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_0jpxfkw">
           <text></text>
         </inputEntry>
@@ -285,9 +231,6 @@
       <rule id="DecisionRule_01x3h36">
         <inputEntry id="UnaryTests_1xu4p9e">
           <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","abateCase","struckOut","writeFinalDecision","interlocReviewStateAmend"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_189cwae">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ukdtmh">
           <text></text>
@@ -303,9 +246,6 @@
         <inputEntry id="UnaryTests_0gz5z87">
           <text>"actionPostponementRequest"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1g36tib">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_0baxett">
           <text></text>
         </inputEntry>
@@ -319,9 +259,6 @@
       <rule id="DecisionRule_1lpw5y0">
         <inputEntry id="UnaryTests_05raz0j">
           <text>"uploadWelshDocument","cancelTranslations"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_09tn12f">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0rn3fgv">
           <text></text>
@@ -337,9 +274,6 @@
         <inputEntry id="UnaryTests_1u0vf36">
           <text>"updateListingRequirement","readyToList"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0x7q9rb">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_1ja4kv7">
           <text></text>
         </inputEntry>
@@ -353,9 +287,6 @@
       <rule id="DecisionRule_1k5b0ls">
         <inputEntry id="UnaryTests_1v2uymb">
           <text>"resendCaseToGAPS2"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1tkutxg">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1rs6ri9">
           <text></text>
@@ -371,9 +302,6 @@
         <inputEntry id="UnaryTests_03cf0cj">
           <text>"amendDueDate"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0wnhrli">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_1vslkwh">
           <text></text>
         </inputEntry>
@@ -387,9 +315,6 @@
       <rule id="DecisionRule_1xhkcil">
         <inputEntry id="UnaryTests_1qzsk8a">
           <text>"createBundle"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1wfmwoo">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_17g0c39">
           <text></text>
@@ -405,9 +330,6 @@
         <inputEntry id="UnaryTests_0sv5k79">
           <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","struckOut","writeFinalDecision","interlocReviewStateAmend"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1dfzx9h">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_1f2d2dk">
           <text></text>
         </inputEntry>
@@ -421,9 +343,6 @@
       <rule id="DecisionRule_00edb2e">
         <inputEntry id="UnaryTests_0jnjl5c">
           <text>"confirmPanelComposition"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1qi02d4">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0z9pof1">
           <text></text>
@@ -439,9 +358,6 @@
         <inputEntry id="UnaryTests_0c9z391">
           <text>"directionIssued","decisionIssued","sendToAdmin","interlocSendToTcw","validSendToInterloc","interlocReviewStateAmend"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_10yl387">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_0rk0xgj">
           <text></text>
         </inputEntry>
@@ -455,9 +371,6 @@
       <rule id="DecisionRule_02lgh7b">
         <inputEntry id="UnaryTests_1xugwk8">
           <text>"directionIssued","decisionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0u8lxia">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1567rmm">
           <text></text>
@@ -473,9 +386,6 @@
         <inputEntry id="UnaryTests_1pzqclz">
           <text>"adminActionCorrection","adminCorrectionBody"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0y6hkdej">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_0y6hsej">
           <text></text>
         </inputEntry>
@@ -489,9 +399,6 @@
       <rule id="DecisionRule_0lt5pkw">
         <inputEntry id="UnaryTests_06u067e">
           <text>"directionIssued", "interlocReviewStateAmend"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ly7997">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1wp3n2w">
           <text></text>
@@ -507,9 +414,6 @@
         <inputEntry id="UnaryTests_1auas9w">
           <text>"actionPostponementRequest"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_103a2jx">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_11i6r5p">
           <text></text>
         </inputEntry>
@@ -523,9 +427,6 @@
       <rule id="DecisionRule_1t3yql6">
         <inputEntry id="UnaryTests_0rt1kce">
           <text>"decisionIssued","directionIssued","sendToAdmin", "tcwReferToJudge", "validSendToInterloc", "interlocReviewStateAmend"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_185s5tk">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_02lv04b">
           <text></text>
@@ -541,9 +442,6 @@
         <inputEntry id="UnaryTests_1diy2b3">
           <text>"directionIssued","interlocReviewStateAmend"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1ypiixe">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_09qro8r">
           <text></text>
         </inputEntry>
@@ -557,9 +455,6 @@
       <rule id="DecisionRule_0m3uv5l">
         <inputEntry id="UnaryTests_1q7ue5c">
           <text>"directionIssued", "sendToAdmin", "tcwReferToJudge", "interlocReviewStateAmend"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1lsf0gv">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_13r2f6l">
           <text></text>
@@ -575,9 +470,6 @@
         <inputEntry id="UnaryTests_0v4ydbb">
           <text>"processAudioVideo","interlocReviewStateAmend"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1b583wr">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_0azxt99">
           <text></text>
         </inputEntry>
@@ -591,9 +483,6 @@
       <rule id="DecisionRule_08k72xy">
         <inputEntry id="UnaryTests_0tro0ja">
           <text>"decisionIssued","directionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0wx16r5">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0u6a13z">
           <text></text>
@@ -609,9 +498,6 @@
         <inputEntry id="UnaryTests_15uj4l7">
           <text>"decisionIssued","directionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_04gmhc8">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_18at4u5">
           <text></text>
         </inputEntry>
@@ -626,9 +512,6 @@
         <inputEntry id="UnaryTests_1kvf47h">
           <text>"directionIssued","sendToAdmin","tcwReferToJudge","interlocReviewStateAmend"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0bnniue">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_1drunh2">
           <text></text>
         </inputEntry>
@@ -639,29 +522,9 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0tc6nc9">
-        <inputEntry id="UnaryTests_1jcg1aj">
-          <text>"validSendToInterloc"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_14zrqa0">
-          <text>"reviewStatementOfReasonsApplication"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_07uugdc">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_06k2gs9">
-          <text>"reviewStatementofReasonsApplication"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0wktsyr">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0q0u897">
         <inputEntry id="UnaryTests_1jeb37i">
           <text>"libertyToApplyGranted","libertyToApplyRefused","directionIssued"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1k9od2o">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p8hbqb">
           <text></text>
@@ -677,9 +540,6 @@
         <inputEntry id="UnaryTests_1minbnb">
           <text>"correctionGranted","correctionRefused"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0n8dkl2">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_0ktpzzx">
           <text></text>
         </inputEntry>
@@ -693,9 +553,6 @@
       <rule id="DecisionRule_1evr7ae">
         <inputEntry id="UnaryTests_1izcb0y">
           <text>"sORWrite"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0yqeo0e">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bkku30">
           <text></text>
@@ -711,9 +568,6 @@
         <inputEntry id="UnaryTests_0vs0k3d">
           <text>"sORExtendTime","sORRefused","directionIssued","setAsideGranted"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1ln8wp4">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_1dubyu1">
           <text></text>
         </inputEntry>
@@ -727,9 +581,6 @@
       <rule id="DecisionRule_1bgqggf">
         <inputEntry id="UnaryTests_1tntg4r">
           <text>"permissionToAppealGranted","permissionToAppealRefused","directionIssued"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_08tmebs">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_03xj6qx">
           <text></text>
@@ -745,9 +596,6 @@
         <inputEntry id="UnaryTests_0d6xd6i">
           <text>"postHearingReview"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_084vrkl">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_1e3uypd">
           <text>"setAside"</text>
         </inputEntry>
@@ -761,9 +609,6 @@
       <rule id="DecisionRule_12makfo">
         <inputEntry id="UnaryTests_1a9xr47">
           <text>"directionIssued","sendToAdmin"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0f7cl6f">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0t30zgi">
           <text></text>
@@ -779,9 +624,6 @@
         <inputEntry id="UnaryTests_0fav0lw">
           <text>"setAsideGranted","setAsideRefused","setAsideRefusedSOR","setAsideIssueDirections"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0099x73">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_15qheu2">
           <text></text>
         </inputEntry>
@@ -795,9 +637,6 @@
       <rule id="DecisionRule_1q4lpqw">
         <inputEntry id="UnaryTests_0wlc6za">
           <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","struckOut","writeFinalDecision","interlocReviewStateAmend"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_14s638p">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1oth24t">
           <text></text>
@@ -813,9 +652,6 @@
         <inputEntry id="UnaryTests_08ju9hi">
           <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","struckOut","writeFinalDecision","interlocReviewStateAmend"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1nl40zs">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_01dgizp">
           <text></text>
         </inputEntry>
@@ -829,9 +665,6 @@
       <rule id="DecisionRule_2rmkvgk">
         <inputEntry id="UnaryTests_1ht7wfx">
           <text>"abateCase","actionFurtherEvidence","actionPostponementRequest","adjournCase","adminActionCorrection","adminCorrectionBody","amendDueDate","cancelTranslations","confirmPanelComposition","correctionGranted","correctionRefused","createBundle","decisionIssued","directionIssued","hmctsResponseReviewed","interlocInformationReceived","interlocReviewStateAmend","interlocSendToTcw","issueAdjournmentNotice","issueFinalDecision","libertyToApplyGranted","libertyToApplyRefused","permissionToAppealGranted","permissionToAppealRefused","postHearingReview","processAudioVideo","readyToList","requestForInformation","requestTranslationFromWLU","resendCaseToGAPS2","reviewConfidentialityRequest","reviewPhmeRequest","sendToAdmin","setAsideGranted","setAsideIssueDirections","setAsideRefused","setAsideRefusedSOR","sORExtendTime","sORRefused","sORWrite","struckOut","tcwReferToJudge","updateListingRequirement","uploadWelshDocument","validSendToInterloc","writeFinalDecision"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0h99x83">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_18qhue2">
           <text></text>

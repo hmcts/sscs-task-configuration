@@ -627,8 +627,7 @@ null</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05dqza1">
-          <text>"[Admin - action correction](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/adminActionCorrection)&lt;br/&gt;" +
-"[Body Correction By Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/adminCorrectionBody)"</text>
+          <text>"[Admin - action correction](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/adminActionCorrection)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fy33w3">
           <text>true</text>
@@ -843,6 +842,23 @@ null</text>
           <text>"[Send to Interloc - Late Statement of Reasons Application](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1w78sad">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ms0uck">
+        <inputEntry id="UnaryTests_16g2uc5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16vxx4t">
+          <text>"reviewApplicationandAllocateJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bgtscu">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fy32oq">
+          <text>"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0snbcy7">
           <text>true</text>
         </outputEntry>
       </rule>

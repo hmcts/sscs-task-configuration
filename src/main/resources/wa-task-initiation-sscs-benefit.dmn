@@ -146,11 +146,12 @@ else
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_1dqcewl" label="Further Evidence Action" camunda:inputVariable="furtherEvidenceAction">
+      <input id="InputClause_1dqcewl" label="Further Evidence Action" biodi:width="302" camunda:inputVariable="furtherEvidenceAction">
         <inputExpression id="LiteralExpression_1mxhj01" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.furtherEvidenceAction
-            != null) then
-            additionalData.Data.furtherEvidenceAction
+          <text>if(additionalData != null and additionalData.Data != null 
+  and additionalData.Data.furtherEvidenceAction != null
+  and additionalData.Data.furtherEvidenceAction.value != null) then
+            additionalData.Data.furtherEvidenceAction.value.code
             else
             null</text>
         </inputExpression>
@@ -2719,95 +2720,12 @@ else "Referred to interloc"</text>
           <text>"contactParties"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_10tok59">
-        <inputEntry id="UnaryTests_14xvmpr">
-          <text>"correctionRequest"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1iboa7e">
-          <text>"dormant","postHearing"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0w7rkay">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_12hsnog">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0cj6m66">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0x2g3ew">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_04mjjem">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1b833au">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_023qbu4">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_047w8n9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1p66c0f">
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0xb7bm5">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_114u3uu">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_05l3w5x">
-          <text>"reviewCorrectionApplicationAdmin"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19kbk6x">
-          <text>"Review Correction Application"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1fdd8eu">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_18ikf3e">
-          <text>3</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ue1zx1">
-          <text>"reviewCorrectionApplicationAdmin"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1k5110b">
         <inputEntry id="UnaryTests_1yqfnlm">
           <text>"actionFurtherEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0re1e5g">
-          <text>"dormant","postHearing"</text>
+          <text>"dormantAppealState","postHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0j18fmb">
           <text></text>
@@ -2825,7 +2743,7 @@ else "Referred to interloc"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tr4s3w">
-          <text>"adminActionCorrection"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0v95nl6">
           <text></text>
@@ -2849,7 +2767,7 @@ else "Referred to interloc"</text>
           <text></text>
         </inputEntry>
         <inputEntry>
-          <text></text>
+          <text>"adminActionCorrection"</text>
         </inputEntry>
         <inputEntry>
           <text></text>

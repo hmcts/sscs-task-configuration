@@ -120,6 +120,10 @@ public class ConfigurationExpectationBuilder {
         return this;
     }
 
+    public static Map dynamicListValue(String code) {
+        return Map.of("value", Map.of("code", code));
+    }
+
     public static String now() {
         return LocalDateTime.now().format(dateTimeFormat);
     }
