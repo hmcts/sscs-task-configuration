@@ -502,7 +502,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request", 2)
                 .build(),
             event("tcwReferToJudge")
-                .withCaseData("workType", "preHearingWork")
+                .withCaseData("workType", "pre")
                 .initiativesTask("referredByTcwPreHearing", "Referred By TCW", 2)
                 .build(),
             event("createBundle")
@@ -520,7 +520,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("action", "reviewByJudge")
-                .withCaseData("workType", "preHearingWork")
+                .withCaseData("workType", "pre")
                 .withCaseData("interlocReferralReason", "adviceOnHowToProceed")
                 .initiativesTask("referredByAdminJudgePreHearing", "Referred By Admin", 2)
                 .build(),
@@ -697,7 +697,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
                 .build(),
             eventWithState("validSendToInterloc", "postHearing")
-                .withCaseData("interlocReferralReason", "reviewStatementOfReasonsApplication")
+                .withCaseData("interlocReferralReason", "statementOfReasonsApplication")
                 .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
                 .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
                 .build(),
@@ -716,7 +716,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
                 .build(),
             eventWithState("validSendToInterloc", "postHearing")
-                .withCaseData("interlocReferralReason", "reviewStatementOfReasonsApplication")
+                .withCaseData("interlocReferralReason", "lateStatementOfReasonsApplication")
                 .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
                 .initiativesTask("reviewLateStatementofReasonsApplication", "Review Late SOR Application", 2)
                 .build(),
@@ -749,9 +749,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("validSendToInterloc")
                 .withCaseData("interlocReferralReason", "reviewUpperTribunalDecision")
                 .initiativesTask("reviewRemittedDecisionandProvideListingDirections", "Review Remitted Decision and Provide Listing Directions", 2)
-                .build(),
-            eventWithState("setAsideGranted", "postHearing")
-                .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
                 .build(),
             eventWithState("libertyToApplyGranted", "postHearing")
                 .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
@@ -802,23 +799,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge", 3)
                 .build(),
             eventWithState("sORRequest", "dormantAppealState")
-                .withCaseData("finalDecisionIssuedDate", TODAY.minusDays(21))
+                .withCaseData("issueFinalDecisionDate", TODAY.minusDays(21))
                 .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge", 3)
                 .build(),
             eventWithState("sORRequest", "dormantAppealState")
-                .withCaseData("finalDecisionIssuedDate", TODAY.minusDays(45))
+                .withCaseData("issueFinalDecisionDate", TODAY.minusDays(45))
                 .initiativesTask("reviewLateStatementofReasonsApplicationAndAllocateJudge",
                                  "Review Late SOR Application and Allocate Judge", 2,
                                  "reviewStatementofReasonsApplication")
                 .build(),
             event("validSendToInterloc")
-                .withCaseData("workType", "postHearingWork")
+                .withCaseData("workType", "post")
                 .withCaseData("action", "reviewByJudge")
                 .withCaseData("interlocReferralReason", "adviceOnHowToProceed")
                 .initiativesTask("referredByAdminJudgePostHearing", "Referred By Admin", 2)
                 .build(),
             event("tcwReferToJudge")
-                .withCaseData("workType", "postHearingWork")
+                .withCaseData("workType", "post")
                 .initiativesTask("referredByTcwPostHearing", "Referred By TCW", 2)
                 .build()
         );

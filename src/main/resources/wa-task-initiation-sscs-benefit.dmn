@@ -137,7 +137,7 @@ else
             0</text>
         </inputExpression>
       </input>
-      <input id="InputClause_1nh2a8e" label="Interloc Referral Reason" camunda:inputVariable="interlocReferralReason">
+      <input id="InputClause_1nh2a8e" label="Interloc Referral Reason" biodi:width="242" camunda:inputVariable="interlocReferralReason">
         <inputExpression id="LiteralExpression_051qyac" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.interlocReferralReason
             != null) then
@@ -165,16 +165,19 @@ else
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0f41h85" label="Issue Decision Date" camunda:inputVariable="issueDecisionDate">
-        <inputExpression id="LiteralExpression_1kjzf93" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.issueFinalDecisionDate
-            != null) then
-            additionalData.Data.issueFinalDecisionDate
-            else if(additionalData != null and additionalData.Data != null and additionalData.Data.issueInterlocDecisionDate
-            != null) then
-            additionalData.Data.issueInterlocDecisionDate
-            else
-            false</text>
+      <input id="InputClause_0f41h85" label="Decision Dates" camunda:inputVariable="decisionDates">
+        <inputExpression id="LiteralExpression_1kjzf93" typeRef="">
+          <text>if(additionalData != null and additionalData.Data != null) then
+  if(additionalData.Data.issueFinalDecisionDate!=null) then
+    if(additionalData.Data.issueInterlocDecisionDate!=null) then
+      [additionalData.Data.issueFinalDecisionDate, additionalData.Data.issueInterlocDecisionDate]
+    else
+      [additionalData.Data.issueFinalDecisionDate]
+
+  else if(additionalData.Data.issueInterlocDecisionDate!=null) then
+    [additionalData.Data.issueInterlocDecisionDate]
+  else null
+else null</text>
         </inputExpression>
       </input>
       <input id="InputClause_0cpi3hc" label="Additional Parties" camunda:inputVariable="additionalParties">
@@ -198,11 +201,11 @@ else
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_1tdbf1b" label="Final Decision Issued Date" camunda:inputVariable="finalDecisionIssuedDate">
+      <input id="InputClause_1tdbf1b" label="Issue Final Decision Date" camunda:inputVariable="issueFinalDecisionDate">
         <inputExpression id="LiteralExpression_1mpx893" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.finalDecisionIssuedDate
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.issueFinalDecisionDate
             != null) then
-            additionalData.Data.finalDecisionIssuedDate
+            additionalData.Data.issueFinalDecisionDate
             else
             null</text>
         </inputExpression>
@@ -1156,7 +1159,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_11bt77z">
-          <text>"preHearingWork"</text>
+          <text>"pre"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0aw34hq">
           <text></text>
@@ -2235,7 +2238,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_040icwe">
-          <text>"preHearingWork"</text>
+          <text>"pre"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1a3fyz8">
           <text></text>
@@ -4770,7 +4773,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wiq6m4">
-          <text>"reviewStatementOfReasonsApplication"</text>
+          <text>"statementOfReasonsApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0sw43ge">
           <text></text>
@@ -4779,7 +4782,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1uk9a78">
-          <text>today() &lt;= date(issueDecisionDate) + duration("P1M")</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lv6tgu">
           <text></text>
@@ -4862,7 +4865,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>true</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0txvjfp">
-          <text>today() &lt;= date(issueDecisionDate) + duration("P1M")</text>
+          <text>some d in decisionDates satisfies (d != null and today() &lt;= date(d) + duration("P1M"))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_129bfwh">
           <text></text>
@@ -4945,7 +4948,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0oc2e7z">
-          <text>today() &lt;= date(issueDecisionDate) + duration("P1M")</text>
+          <text>some d in decisionDates satisfies (d != null and today() &lt;= date(d) + duration("P1M"))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09re4zh">
           <text></text>
@@ -5102,7 +5105,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0kmofy7">
-          <text>"reviewStatementOfReasonsApplication"</text>
+          <text>"lateStatementOfReasonsApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_14wxyix">
           <text></text>
@@ -5111,7 +5114,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1f77mw2">
-          <text>today() &gt; date(issueDecisionDate) + duration("P1M")</text>
+          <text>some d in decisionDates satisfies (d != null and today() &gt; date(d) + duration("P1M"))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gcy0gn">
           <text></text>
@@ -5194,7 +5197,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1um8ymd">
-          <text>today() &gt; date(issueDecisionDate) + duration("P1M")</text>
+          <text>some d in decisionDates satisfies (d != null and today() &gt; date(d) + duration("P1M"))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_04a0o5s">
           <text></text>
@@ -5639,86 +5642,86 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"reviewRemittedDecisionandProvideListingDirections"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1pe0z20">
-        <inputEntry id="UnaryTests_055xsst">
-          <text>"setAsideGranted","libertyToApplyGranted"</text>
+      <rule id="DecisionRule_0i34c9j">
+        <inputEntry id="UnaryTests_15ns3oq">
+          <text>"libertyToApplyGranted"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_11sw8sg">
+        <inputEntry id="UnaryTests_1iwv1bv">
           <text>"postHearing"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_06n8i08">
+        <inputEntry id="UnaryTests_1ibdncn">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1ogocpo">
+        <inputEntry id="UnaryTests_12gr6x8">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0iij7wh">
+        <inputEntry id="UnaryTests_03l8lf3">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1if3heg">
+        <inputEntry id="UnaryTests_038k5ez">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0vfmxgw">
+        <inputEntry id="UnaryTests_1g74b68">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_16upyso">
+        <inputEntry id="UnaryTests_1q3fniz">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0k6qej8">
+        <inputEntry id="UnaryTests_1du1v22">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0ygh8gg">
+        <inputEntry id="UnaryTests_1hlfbib">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0hwbffv">
+        <inputEntry id="UnaryTests_07l14db">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_05fqk70">
+        <inputEntry id="UnaryTests_0igaqbi">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0p2b6f6">
+        <inputEntry id="UnaryTests_1vb5ntz">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_00lgpxd">
+        <inputEntry id="UnaryTests_17u2m0n">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_11uj1y4">
+        <inputEntry id="UnaryTests_15tyqao">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0sa5qs3">
+        <inputEntry id="UnaryTests_04jmz3y">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1jt2012">
+        <inputEntry id="UnaryTests_1p9n4i1">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_00yop49">
+        <inputEntry id="UnaryTests_1tjeswq">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0jzoksb">
+        <inputEntry id="UnaryTests_0k7dw5c">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1evo88t">
+        <inputEntry id="UnaryTests_1l1m88i">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0wbgbi4">
+        <inputEntry id="UnaryTests_1x3i5om">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_00ywvg5">
+        <inputEntry id="UnaryTests_03v3jky">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_066g664">
+        <outputEntry id="LiteralExpression_00ej75d">
           <text>"reviewPostHearingNoticeforListingRequirements"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1atj3sy">
+        <outputEntry id="LiteralExpression_1h68mhy">
           <text>"Review Post Hearing Notice for Listing Requirements"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_04qq8jw">
+        <outputEntry id="LiteralExpression_1fsvoh2">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0dh4bfz">
+        <outputEntry id="LiteralExpression_0nd4ktx">
           <text>10</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1htfpul">
+        <outputEntry id="LiteralExpression_0c9nomc">
           <text>"reviewPostHearingNoticeforListingRequirements"</text>
         </outputEntry>
       </rule>
@@ -6534,7 +6537,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0045rle">
-          <text>today() &lt;= date(finalDecisionIssuedDate) + duration("P1M")</text>
+          <text>today() &lt;= date(issueFinalDecisionDate) + duration("P1M")</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ry42e7">
           <text></text>
@@ -6617,7 +6620,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_19qm9o2">
-          <text>today() &gt; date(finalDecisionIssuedDate) + duration("P1M")</text>
+          <text>today() &gt; date(issueFinalDecisionDate) + duration("P1M")</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1fusoho">
           <text></text>
@@ -6738,7 +6741,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10hqrxz">
-          <text>"postHearingWork"</text>
+          <text>"post"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1qqlvu0">
           <text></text>
@@ -6821,7 +6824,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jxt5cb">
-          <text>"postHearingWork"</text>
+          <text>"post"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1wkm0z4">
           <text></text>
