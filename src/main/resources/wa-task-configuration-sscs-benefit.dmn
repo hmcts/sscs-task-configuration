@@ -811,23 +811,6 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1pixsqa">
-        <inputEntry id="UnaryTests_0lfy8nn">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_19i1p1r">
-          <text>"reviewStatementofReasonsApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_028yach">
-          <text>"description"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_11mntrm">
-          <text>"[Send to Interloc - Review statement of reasons application](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_03s4gv2">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0oygxjb">
         <inputEntry id="UnaryTests_0wqzome">
           <text></text>
