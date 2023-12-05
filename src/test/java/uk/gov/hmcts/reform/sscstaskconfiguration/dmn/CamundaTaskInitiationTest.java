@@ -516,6 +516,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("action", "reviewByJudge")
+                .withCaseData("interlocReferralReason", "N/A")
                 .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2)
                 .build(),
             event("validSendToInterloc")

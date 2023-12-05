@@ -137,7 +137,7 @@ else
             0</text>
         </inputExpression>
       </input>
-      <input id="InputClause_1nh2a8e" label="Interloc Referral Reason" biodi:width="242" camunda:inputVariable="interlocReferralReason">
+      <input id="InputClause_1nh2a8e" label="Interloc Referral Reason" biodi:width="267" camunda:inputVariable="interlocReferralReason">
         <inputExpression id="LiteralExpression_051qyac" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.interlocReferralReason
             != null) then
@@ -2599,7 +2599,17 @@ else "Referred to interloc"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0c417un">
-          <text>not("adviceOnHowToProceed")</text>
+          <text>not(list contains([
+"adviceOnHowToProceed",
+"reviewCorrectionRequest",
+"reviewSetAsideApplication",
+"reviewCorrectionApplication",
+"statementOfReasonsApplication",
+"lateStatementOfReasonsApplication",
+"reviewPermissionToAppealApplication",
+"reviewLibertyToApplyApplication",
+"reviewUpperTribunalDecision"],
+interlocReferralReason))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0f17ihn">
           <text></text>
