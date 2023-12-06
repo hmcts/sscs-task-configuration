@@ -176,8 +176,8 @@ else
 
   else if(additionalData.Data.issueInterlocDecisionDate!=null) then
     [additionalData.Data.issueInterlocDecisionDate]
-  else null
-else null</text>
+  else []
+else []</text>
         </inputExpression>
       </input>
       <input id="InputClause_0cpi3hc" label="Additional Parties" camunda:inputVariable="additionalParties">
