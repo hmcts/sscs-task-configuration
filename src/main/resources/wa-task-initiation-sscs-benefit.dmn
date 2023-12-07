@@ -5124,7 +5124,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1f77mw2">
-          <text>some d in decisionDates satisfies (d != null and today() &gt; date(d) + duration("P1M"))</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gcy0gn">
           <text></text>
