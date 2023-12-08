@@ -685,16 +685,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
                 .initiativesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application", 2)
                 .build(),
-            eventWithState("validSendToInterloc", "postHearing")
+            event("validSendToInterloc")
                 .withCaseData("interlocReferralReason", "reviewCorrectionApplication")
                 .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
                 .build(),
-            eventWithState("actionFurtherEvidence", "postHearing")
+            event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
                 .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
                 .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
                 .build(),
-            eventWithState("adminActionCorrection", "postHearing")
+            event("adminActionCorrection")
                 .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
                 .build(),
             eventWithState("validSendToInterloc", "postHearing")
@@ -751,7 +751,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("interlocReferralReason", "reviewUpperTribunalDecision")
                 .initiativesTask("reviewRemittedDecisionandProvideListingDirections", "Review Remitted Decision and Provide Listing Directions", 2)
                 .build(),
-            eventWithState("libertyToApplyGranted", "postHearing")
+            event("libertyToApplyGranted")
                 .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
                 .build(),
             eventWithState("postHearingReview", "postHearing")
