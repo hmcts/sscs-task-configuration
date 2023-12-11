@@ -481,7 +481,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("ftaNotProvidedAppointeeDetailsJudge", "FTA not Provided Appointee Details", 2)
                 .build(),
             event("actionPostponementRequest")
-                .withCaseData("action", "sendToJudge")
+                .withCaseData("action", "reviewByJudge")
                 .initiativesTask("reviewPostponementRequestJudge", "Review Postponement Request", 2)
                 .build(),
             event("actionFurtherEvidence")
