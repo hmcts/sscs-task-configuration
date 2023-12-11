@@ -1663,7 +1663,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry>
-          <text>"sendToJudge"</text>
+          <text>"reviewByJudge"</text>
         </inputEntry>
         <inputEntry>
           <text></text>
