@@ -754,8 +754,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("libertyToApplyGranted")
                 .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
                 .build(),
-            eventWithState("postHearingReview", "postHearing")
-                .withCaseData("postHearingReviewType", "setAside")
+            event("reviewAndSetAside")
                 .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements", 10)
                 .build(),
             eventWithState("validSendToInterloc", "dormantAppealState")
