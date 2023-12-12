@@ -895,7 +895,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_1pvhwr6">
         <inputEntry id="UnaryTests_1edj3t5">
-          <text>"actionFurtherEvidence","uploadWelshDocument","manageWelshDocuments"</text>
+          <text>"actionFurtherEvidence","manageWelshDocuments"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1mxdaje">
           <text></text>
@@ -978,7 +978,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_01u2n93">
         <inputEntry id="UnaryTests_1mblit3">
-          <text>"actionFurtherEvidence", "uploadWelshDocument", "manageWelshDocuments"</text>
+          <text>"actionFurtherEvidence", "manageWelshDocuments"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1oco2zm">
           <text></text>
@@ -1393,7 +1393,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_0q7nlyl">
         <inputEntry id="UnaryTests_0c5dy7a">
-          <text>"actionFurtherEvidence","uploadWelshDocument","manageWelshDocuments"</text>
+          <text>"actionFurtherEvidence","manageWelshDocuments"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_17modb4">
           <text></text>
@@ -3150,7 +3150,7 @@ else "Referred to interloc"</text>
       </rule>
       <rule id="DecisionRule_1ipe0he">
         <inputEntry id="UnaryTests_19epj3f">
-          <text>"actionFurtherEvidence", "uploadWelshDocument", "manageWelshDocuments"</text>
+          <text>"actionFurtherEvidence", "manageWelshDocuments"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1u4wvpw">
           <text></text>
