@@ -28,4 +28,7 @@ public interface EventLink {
     static String eventLink(String description, String eventId) {
         return String.format("[%s](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/%s)", description, eventId);
     }
+    static String caseLink(String description, String tab) {
+        return String.format("[%s](/case/SSCS/Benefit/${[CASE_REFERENCE]}#%s)", description, tab);
+    }
 }

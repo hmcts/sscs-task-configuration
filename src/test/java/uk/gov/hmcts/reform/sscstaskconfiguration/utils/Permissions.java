@@ -101,6 +101,16 @@ public class Permissions {
         permission("tribunal-member-2", "Read", "JUDICIAL");
     public static Map<String,Object> TRIBUNAL_MEMBER_3_READ_PERMISSIONS =
         permission("tribunal-member-3", "Read", "JUDICIAL");
+    public static Map<String,Object> APPRAISER_1_READ_PERMISSIONS =
+        permission("appraiser-1", "Read", "JUDICIAL");
+    public static Map<String,Object> APPRAISER_2_READ_PERMISSIONS =
+        permission("appraiser-2", "Read", "JUDICIAL");
+    public static Map<String,Object> MEDICAL_READ_PERMISSIONS =
+        permission("medical", "Read", "JUDICIAL");
+    public static Map<String,Object> FEE_PAID_MEDICAL_READ_PERMISSIONS =
+        permission("fee-paid-medical", "Read", "JUDICIAL");
+    public static Map<String,Object> LEADERSHIP_JUDGE_READ_PERMISSIONS =
+        permission("leadership-judge", "Read", "JUDICIAL");
 
     public static List<Map<String, Object>> defaultCtscPermissions() {
         return List.of(
@@ -139,7 +149,12 @@ public class Permissions {
             HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
-            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -179,7 +194,12 @@ public class Permissions {
             HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
-            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -220,7 +240,12 @@ public class Permissions {
             HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
-            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -260,7 +285,12 @@ public class Permissions {
             HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
-            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -284,7 +314,12 @@ public class Permissions {
             HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
-            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -308,7 +343,12 @@ public class Permissions {
             HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
-            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -332,7 +372,12 @@ public class Permissions {
             HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
-            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -356,7 +401,12 @@ public class Permissions {
             HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
-            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -380,7 +430,12 @@ public class Permissions {
             HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
             TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
-            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -410,7 +465,12 @@ public class Permissions {
                 "autoAssignable", true
             ),
             TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
-            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
     public static List<Map<String, Object>> defaultJudicalMember2Permissions() {
@@ -439,7 +499,12 @@ public class Permissions {
                 "roleCategory", "JUDICIAL",
                 "autoAssignable", true
             ),
-            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
     public static List<Map<String, Object>> defaultJudicalMember3Permissions() {
@@ -468,7 +533,12 @@ public class Permissions {
                 "assignmentPriority", 1,
                 "roleCategory", "JUDICIAL",
                 "autoAssignable", true
-            )
+            ),
+            APPRAISER_1_READ_PERMISSIONS,
+            APPRAISER_2_READ_PERMISSIONS,
+            MEDICAL_READ_PERMISSIONS,
+            FEE_PAID_MEDICAL_READ_PERMISSIONS,
+            LEADERSHIP_JUDGE_READ_PERMISSIONS
         );
     }
 }

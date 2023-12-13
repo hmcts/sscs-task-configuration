@@ -1163,6 +1163,65 @@
           <text>"referredByTcwPostHearing"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_03ks9y1">
+        <inputEntry id="UnaryTests_0lj4qbh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j7496o">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision",
+"decisionIssued",
+"interlocReviewStateAmend"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z0lgcj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g2v4d7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bcywx7">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nmd4gr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ipxa0z">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_120jiu4">
+          <text>"prepareHearingAppraiser"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12gwjkm">
+        <inputEntry id="UnaryTests_17qod6j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a9m2qc">
+          <text>"actionPostponementRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fswz81">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qr88fz">
+          <text>"grant"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ev4q01">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1km2ier">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qzqh0n">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c7iwty">
+          <text>"prepareHearingAppraiser"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

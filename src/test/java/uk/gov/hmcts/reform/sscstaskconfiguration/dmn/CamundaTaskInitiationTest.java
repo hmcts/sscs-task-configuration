@@ -554,10 +554,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("ftaRequestTimeExtension", "Request FTA Time Extension", 2)
                 .build(),
             event("createBundle")
-                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-1", "tribunal-member-2", "tribunal-member-3"))
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-1", "tribunal-member-2", "tribunal-member-3", "appraiser-1", "appraiser-2"))
                 .initiativesTask("prepareForHearingTribunalMember1", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
                 .initiativesTask("prepareForHearingTribunalMember2", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
                 .initiativesTask("prepareForHearingTribunalMember3", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .initiativesTask("prepareHearingAppraiser1", "Prepare for hearing", 2, "prepareHearingAppraiser")
+                .initiativesTask("prepareHearingAppraiser2", "Prepare for hearing", 2, "prepareHearingAppraiser")
                 .build(),
             event("createBundle")
                 .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-1"))
@@ -570,6 +572,14 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("createBundle")
                 .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-3"))
                 .initiativesTask("prepareForHearingTribunalMember3", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("appraiser-1"))
+                .initiativesTask("prepareHearingAppraiser1", "Prepare for hearing", 2, "prepareHearingAppraiser")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("appraiser-2"))
+                .initiativesTask("prepareHearingAppraiser2", "Prepare for hearing", 2, "prepareHearingAppraiser")
                 .build(),
             event("createBundle")
                 .build(),
@@ -837,7 +847,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(80));
+        assertThat(logic.getRules().size(), is(82));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
