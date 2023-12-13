@@ -628,6 +628,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .expectedValue(MINOR_PRIORITY, "100", true)
+                    .expectedValue(MAJOR_PRIORITY, "1000", true)
                     .expectedValue("workType", "post_hearing", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
