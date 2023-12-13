@@ -524,7 +524,7 @@
       </rule>
       <rule id="DecisionRule_0q0u897">
         <inputEntry id="UnaryTests_1jeb37i">
-          <text>"libertyToApplyGranted","libertyToApplyRefused","directionIssued"</text>
+          <text>"libertyToApplyGranted","libertyToApplyRefused","directionIssued","sendToAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p8hbqb">
           <text></text>
@@ -538,7 +538,7 @@
       </rule>
       <rule id="DecisionRule_14z53k0">
         <inputEntry id="UnaryTests_1minbnb">
-          <text>"correctionGranted","correctionRefused","issueFinalDecision","directionIssued",</text>
+          <text>"correctionGranted","correctionRefused","issueFinalDecision","directionIssued","sendToAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ktpzzx">
           <text></text>
@@ -566,7 +566,7 @@
       </rule>
       <rule id="DecisionRule_1aykb81">
         <inputEntry id="UnaryTests_0vs0k3d">
-          <text>"sORExtendTime","sORRefused","directionIssued","setAsideGranted"</text>
+          <text>"sORExtendTime","sORRefused","directionIssued","sendToAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dubyu1">
           <text></text>
@@ -580,7 +580,7 @@
       </rule>
       <rule id="DecisionRule_1bgqggf">
         <inputEntry id="UnaryTests_1tntg4r">
-          <text>"permissionToAppealGranted","permissionToAppealRefused","directionIssued","sendToAdmin"</text>
+          <text>"permissionToAppealGranted","permissionToAppealRefused","sORWrite","directionIssued","sendToAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_03xj6qx">
           <text></text>
@@ -622,7 +622,7 @@
       </rule>
       <rule id="DecisionRule_0i8ce0s">
         <inputEntry id="UnaryTests_0fav0lw">
-          <text>"setAsideGranted","setAsideRefused","setAsideRefusedSOR","setAsideIssueDirections"</text>
+          <text>"setAsideGranted","setAsideRefused","directionIssued","sendToAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_15qheu2">
           <text></text>
