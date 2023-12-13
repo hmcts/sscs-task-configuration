@@ -244,6 +244,7 @@ public class Permissions {
             )
         );
     }
+
     public static List<Map<String, Object>> defaultJudicalMember2Permissions() {
         return List.of(
             Map.of(
@@ -265,6 +266,7 @@ public class Permissions {
             )
         );
     }
+
     public static List<Map<String, Object>> defaultJudicalMember3Permissions() {
         return List.of(
             Map.of(

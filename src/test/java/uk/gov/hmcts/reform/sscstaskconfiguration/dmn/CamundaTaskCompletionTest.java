@@ -11,6 +11,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
@@ -168,10 +169,12 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     }
 
     private static Map outputMap(String taskId) {
-        if(taskId!=null) return Map.of(
-            "taskType", taskId,
-            "completionMode", "Auto"
-        );
+        if (taskId != null) {
+            return Map.of(
+                "taskType", taskId,
+                "completionMode", "Auto"
+            );
+        }
         return Map.of(
             "completionMode", "Auto"
         );
