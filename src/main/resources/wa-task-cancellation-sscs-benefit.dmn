@@ -1044,6 +1044,75 @@
           <text>"prepareHearingAppraiser"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1cmt04r">
+        <inputEntry id="UnaryTests_1ndohsv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03c40wj">
+          <text>"postponementGranted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wygiws">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wam72u">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02zsjov">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_149oovy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09xw3kt">
+          <text>"prepareForHearingJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09ljf69">
+        <inputEntry id="UnaryTests_1p16ypj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kh91wt">
+          <text>"postponementGranted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yknq78">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0663htq">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qnz9yk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lra3yj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ihzvwp">
+          <text>"prepareForHearingTribunalMember"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i3r2lk">
+        <inputEntry id="UnaryTests_0eosv6b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05h8cqn">
+          <text>"postponementGranted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1es5etq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dtxk2y">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15016nw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q3xs32">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jpi0hh">
+          <text>"prepareHearingAppraiser"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
