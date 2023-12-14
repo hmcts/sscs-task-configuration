@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
   <decision id="wa-task-types-sscs-benefit" name="Task Types DMN">
     <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
       <input id="Input_1">
@@ -146,10 +146,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_13v6qma">
-          <text>"createBundleAndAllocateCaseRoles"</text>
+          <text>"allocateCaseRolesAndCreateBundle"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16jb3jz">
-          <text>"Create Bundle and Allocate Case Roles"</text>
+          <text>"Allocate Case Roles and Create Bundle"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0nsoz5z">
@@ -212,7 +212,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s0rl48">
-          <text>"processAudioVideoEvidenceTcw"</text>
+          <text>"processAudioVideoEvidence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1pznl80">
           <text>"Process Audio Video Evidence"</text>
@@ -248,7 +248,7 @@
           <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07kjo1g">
-          <text>"FTA Not Provided Appointee Details"</text>
+          <text>"FTA Not Provided Appointee Details (TCW)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1qfxjh6">
@@ -259,7 +259,7 @@
           <text>"ftaNotProvidedAppointeeDetailsJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zrz4rl">
-          <text>"FTA Not Provided Appointee Details"</text>
+          <text>"FTA Not Provided Appointee Details (Judge)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1rft3gn">
@@ -273,37 +273,26 @@
           <text>"Review FTA Validity Challenge"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0csfdqo">
-        <inputEntry id="UnaryTests_1qnvsqn">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1vx33ox">
-          <text>"reviewFtaTimeExtensionRequest"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_08dfldy">
-          <text>"Review FTA Time Extension Request"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0tov9qm">
-        <inputEntry id="UnaryTests_001uori">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1mkuh07">
-          <text>"referredToInterlocFtaResponseOverdue"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1133k7h">
-          <text>"Referred To Interloc FTA Response Overdue"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0hbs1k4">
         <inputEntry id="UnaryTests_006lgp3">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0a5auo0">
-          <text>"referredByTcw"</text>
+          <text>"referredByTcwPreHearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05kxoa5">
-          <text>"Referred By TCW"</text>
+          <text>"Referred By TCW (Pre-hearing)"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yd8qzy">
+        <inputEntry id="UnaryTests_0rehswi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a9wofp">
+          <text>"referredByTcwPostHearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ehm4zq">
+          <text>"Referred By TCW (Post-hearing)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1jd1j13">
@@ -322,10 +311,21 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0tiv5t9">
-          <text>"referredByAdminJudge"</text>
+          <text>"referredByAdminJudgePreHearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_01m5tjq">
-          <text>"Referred By Admin"</text>
+          <text>"Referred By Admin (Pre-hearing)"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ug1sfu">
+        <inputEntry id="UnaryTests_08ur3yu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pv693c">
+          <text>"referredByAdminJudgePostHearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0efu0kh">
+          <text>"Referred By Admin (Posthearing)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1vevsnc">
@@ -336,7 +336,7 @@
           <text>"referredByAdminTcw"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_044ry03">
-          <text>"Referred By Admin"</text>
+          <text>"Referred By Admin (TCW)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_13e4i5k">
@@ -347,7 +347,7 @@
           <text>"reviewPostponementRequestJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00gvzh9">
-          <text>"Review Postponement Request"</text>
+          <text>"Review Postponement Request (Judge)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_05kxzjm">
@@ -355,10 +355,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0irdzwi">
-          <text>"reviewPostponementRequestTcw"</text>
+          <text>"reviewPostponementRequestTCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zzb4ge">
-          <text>"Review Postponement Request"</text>
+          <text>"Review Postponement Request (TCW)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1tk40p4">
@@ -369,7 +369,7 @@
           <text>"referredToInterlocJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0aldsiz">
-          <text>"Referred to Interloc"</text>
+          <text>"Referred to Interloc (Judge)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ajc3wx">
@@ -380,7 +380,7 @@
           <text>"referredToInterlocTCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tuwy4r">
-          <text>"Referred to Interloc"</text>
+          <text>"Referred to Interloc (TCW)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0g9eayt">
@@ -402,7 +402,7 @@
           <text>"prepareForHearingJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j74arb">
-          <text>"Prepare For Hearing"</text>
+          <text>"Prepare For Hearing (Judge)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_03jpy50">
@@ -410,10 +410,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0izwjxn">
-          <text>"prepareForHearingPanelMember1"</text>
+          <text>"prepareForHearingTribunalMember1"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1j6ub12">
-          <text>"Prepare For Hearing"</text>
+          <text>"Prepare For Hearing (Tribunal Memeber 1)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ezxk7o">
@@ -421,10 +421,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0fl9y07">
-          <text>"prepareForHearingPanelMember2"</text>
+          <text>"prepareForHearingTribunalMember2"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0129nke">
-          <text>"Prepare For Hearing"</text>
+          <text>"Prepare For Hearing (Tribunal Memeber 2)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ai4yx3">
@@ -432,10 +432,32 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1t6xucf">
-          <text>"prepareForHearingPanelMember3"</text>
+          <text>"prepareForHearingTribunalMember3"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gadg5y">
-          <text>"Prepare For Hearing"</text>
+          <text>"Prepare For Hearing (Tribunal Memeber 3)"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mtvvvp">
+        <inputEntry id="UnaryTests_1qunqi6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1afr5qs">
+          <text>"prepareHearingAppraiser1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lwjnm9">
+          <text>"Prepare For Hearing (Appraiser 1)"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f35skp">
+        <inputEntry id="UnaryTests_1ngnmod">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_027tha1">
+          <text>"prepareHearingAppraiser2"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fwe81k">
+          <text>"Prepare For Hearing (Appraiser 2)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ny8aci">
@@ -449,37 +471,15 @@
           <text>"Write Decision"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_10j4y6p">
-        <inputEntry id="UnaryTests_1c2uocq">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ofmhcq">
-          <text>"issueFinalDecisionJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0lcbs0w">
-          <text>"Issue Final Decision"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0psvrnf">
-        <inputEntry id="UnaryTests_12alq9z">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0t2guvq">
-          <text>"issueAdjournmentNoticeJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1n733h4">
-          <text>"Issue Adjournment Notice"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1yc60tp">
         <inputEntry id="UnaryTests_1u5l3ga">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_112lflg">
-          <text>"reviewCorrectionApplcationAdmin"</text>
+          <text>"reviewCorrectionApplicationAdmin"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1we628x">
-          <text>"Review Correction Application"</text>
+          <text>"Review Correction Application (Admin)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0blvhhn">
@@ -490,7 +490,7 @@
           <text>"reviewCorrectionApplicationJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1s2a1i7">
-          <text>"Review Correction Application"</text>
+          <text>"Review Correction Application (Judge)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_04uatuz">
@@ -515,28 +515,6 @@
           <text>"Write Statement of Reason"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1s6eh54">
-        <inputEntry id="UnaryTests_0qze1xe">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1nuv35i">
-          <text>"reviewStatementofReasons"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1j5mjbq">
-          <text>"Review Statement of Reasons"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ysxp41">
-        <inputEntry id="UnaryTests_0qb907h">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0l8m3z1">
-          <text>"reviewDirectionsforStatementofReasons"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1tn1bti">
-          <text>"Review Directions for Statement of Reasons"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_02d8diq">
         <inputEntry id="UnaryTests_0xhx1a8">
           <text></text>
@@ -546,28 +524,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0g7ql48">
           <text>"Review Set Aside Application"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ihrpqn">
-        <inputEntry id="UnaryTests_1rfkw5n">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0wm2njk">
-          <text>"reviewDirectionsforSetAsideApplication"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vk8c45">
-          <text>"Review Directions for Set Aside Application"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0u4ovlm">
-        <inputEntry id="UnaryTests_1250rw1">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_07fictq">
-          <text>"reviewSetAsideDecisionNoticeforListingRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_03rsqv7">
-          <text>"Review Set Aside Decision Notice for Listing Requirements"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1627gdf">
@@ -581,28 +537,6 @@
           <text>"Review Permission to Appeal Application"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1hh8vua">
-        <inputEntry id="UnaryTests_07iuer3">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0tsqgve">
-          <text>"reviewDirectionforPermissiontoAppealApplication"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0qayt8g">
-          <text>"Review Direction for Permission to Appeal Application"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_10ocjry">
-        <inputEntry id="UnaryTests_1f2gi30">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1xl3lkt">
-          <text>"reviewPermissiontoAppealDecisionNoticeforListingRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_18mjuov">
-          <text>"Review Permission to Appeal Decision Notice for Listing Requirements"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_178tuxx">
         <inputEntry id="UnaryTests_0z4d4uj">
           <text></text>
@@ -612,28 +546,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0z5fum6">
           <text>"Review Liberty to Apply Application"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1bqtt7v">
-        <inputEntry id="UnaryTests_0umeg8g">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0cfa7is">
-          <text>"reviewDirectionforLibertytoApplyApplication"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0nffcsq">
-          <text>"Review Direction for Liberty to Apply Application"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0i7d0h9">
-        <inputEntry id="UnaryTests_1i9p95v">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1xmghwc">
-          <text>"reviewLibertytoApplyDecisionNoticeforListingRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ivmr8w">
-          <text>"Review Liberty to Apply Decision Notice for Listing Requirements"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ipditk">
@@ -689,6 +601,83 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_18x1a09">
           <text>"Review Correction Application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02r3s1c">
+        <inputEntry id="UnaryTests_1cveo44">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vuvz2j">
+          <text>"contactParties"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tckkpq">
+          <text>"Contact Parties"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tqguti">
+        <inputEntry id="UnaryTests_14waj4w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fmbt97">
+          <text>"ftaResponseOverdue"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lomhnl">
+          <text>"Referred to Interloc - FTA response overdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04dyd7k">
+        <inputEntry id="UnaryTests_03c6tvh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qfgryb">
+          <text>"reviewLateStatementofReasonsApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r0v4mv">
+          <text>"Review Application and Allocate Judge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1put3z8">
+        <inputEntry id="UnaryTests_029ibvq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09rsrgu">
+          <text>"reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c5s14y">
+          <text>"Review Late SOR Application and Allocate Judge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04dh5nl">
+        <inputEntry id="UnaryTests_156j2gl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pdki1h">
+          <text>"ftaRequestTimeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gt2ezo">
+          <text>"Request FTA Time Extension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vdinki">
+        <inputEntry id="UnaryTests_1atto5j">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a17gqu">
+          <text>"reviewPostHearingNoticeforListingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lqhhw9">
+          <text>"Review Post Hearing Notice for Listing Requirements"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pue10z">
+        <inputEntry id="UnaryTests_064gjbl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05r842y">
+          <text>"reviewApplicationandAllocateJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dpamew">
+          <text>"Review Application and Allocate Judge"</text>
         </outputEntry>
       </rule>
     </decisionTable>

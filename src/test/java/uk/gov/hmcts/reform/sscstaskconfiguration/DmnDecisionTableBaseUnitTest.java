@@ -8,8 +8,10 @@ import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.io.InputStream;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_SSCS_BENEFIT;
 
@@ -46,13 +48,15 @@ public abstract class DmnDecisionTableBaseUnitTest {
         return null;
     }
 
-    public void getAllTaskIds() {
+    public Set<String> getAllTaskIds() {
+        Set<String> taskIds = new HashSet<>();
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         InputStream inputStream = contextClassLoader.getResourceAsStream(WA_TASK_INITIATION_SSCS_BENEFIT.getFileName());
         decision = dmnEngine.parseDecision(WA_TASK_INITIATION_SSCS_BENEFIT.getKey(), inputStream);
 
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        logic.getRules().forEach(r -> System.out.println(r.getConclusions().get(0).getExpression()));
+        logic.getRules().forEach(r -> taskIds.add(r.getConclusions().get(0).getExpression()));
+        return taskIds;
     }
 
 }
