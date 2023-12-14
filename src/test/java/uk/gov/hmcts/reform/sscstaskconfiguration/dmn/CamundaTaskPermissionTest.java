@@ -782,6 +782,36 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "reviewLateStatementofReasonsApplication",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368"),
+                    permission("post-hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+                    Permissions.APPRAISER_1_READ_PERMISSIONS,
+                    Permissions.APPRAISER_2_READ_PERMISSIONS,
+                    Permissions.MEDICAL_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_MEDICAL_READ_PERMISSIONS,
+                    Permissions.LEADERSHIP_JUDGE_READ_PERMISSIONS
+                )
+            ),
+            Arguments.of(
                 "updateHearingDetails",
                 "someCaseData",
                 List.of(
