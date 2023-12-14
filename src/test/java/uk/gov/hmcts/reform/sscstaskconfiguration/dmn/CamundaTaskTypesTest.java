@@ -9,11 +9,14 @@ import org.junit.jupiter.api.Test;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.matchesPattern;
+import static org.junit.Assert.assertTrue;
 
 class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
 
@@ -33,11 +36,26 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
     }
 
     @Test
+    void includes_all_tasks() {
+        DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
+
+        Set<String> taskTypeIds = new HashSet<>();
+        logic.getRules().forEach(r -> taskTypeIds.add(r.getConclusions().get(0).getExpression()));
+
+        Set<String> taskIds = getAllTaskIds();
+        taskIds.stream().filter(id -> !taskTypeIds.contains(id)).forEach(id -> System.out.println(id));
+        System.out.println("Extras");
+        taskTypeIds.stream().filter(id -> !taskIds.contains(id)).forEach(id -> System.out.println(id));
+
+        assertThat(logic.getRules().size(), is(taskIds.size()));
+    }
+
+    @Test
     void check_dmn_changed() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(62));
+        assertThat(logic.getRules().size(), is(64));
     }
 }
