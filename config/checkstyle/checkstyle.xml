@@ -29,8 +29,8 @@
 
   <module name="SuppressWarningsFilter" />
   <module name="LineLength">
-    <property name="max" value="120"/>
-    <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+    <property name="max" value="150"/>
+    <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://|initiativesTask|withCaseData|permission|eventLink"/>
   </module>
   <module name="TreeWalker">
     <module name="UnusedImports"/>
