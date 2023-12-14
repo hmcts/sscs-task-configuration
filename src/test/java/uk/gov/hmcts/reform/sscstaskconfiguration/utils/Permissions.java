@@ -413,6 +413,7 @@ public class Permissions {
             TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
+
     public static List<Map<String, Object>> defaultJudicalMember2Permissions() {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
@@ -442,6 +443,7 @@ public class Permissions {
             TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
+
     public static List<Map<String, Object>> defaultJudicalMember3Permissions() {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
