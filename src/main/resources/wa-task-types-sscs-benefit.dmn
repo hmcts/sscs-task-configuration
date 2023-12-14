@@ -273,28 +273,6 @@
           <text>"Review FTA Validity Challenge"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0csfdqo">
-        <inputEntry id="UnaryTests_1qnvsqn">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1vx33ox">
-          <text>"reviewFtaTimeExtensionRequest"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_08dfldy">
-          <text>"Review FTA Time Extension Request"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0tov9qm">
-        <inputEntry id="UnaryTests_001uori">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1mkuh07">
-          <text>"referredToInterlocFtaResponseOverdue"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1133k7h">
-          <text>"Referred To Interloc FTA Response Overdue"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0hbs1k4">
         <inputEntry id="UnaryTests_006lgp3">
           <text></text>
@@ -303,7 +281,7 @@
           <text>"referredByTcwPreHearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05kxoa5">
-          <text>"Referred By TCW (Pre-hearing"</text>
+          <text>"Referred By TCW (Pre-hearing)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1yd8qzy">
@@ -548,17 +526,6 @@
           <text>"Review Set Aside Application"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0u4ovlm">
-        <inputEntry id="UnaryTests_1250rw1">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_07fictq">
-          <text>"reviewSetAsideDecisionNoticeforListingRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_03rsqv7">
-          <text>"Review Set Aside Decision Notice for Listing Requirements"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1627gdf">
         <inputEntry id="UnaryTests_1ycl0hz">
           <text></text>
@@ -579,28 +546,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0z5fum6">
           <text>"Review Liberty to Apply Application"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1bqtt7v">
-        <inputEntry id="UnaryTests_0umeg8g">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0cfa7is">
-          <text>"reviewDirectionforLibertytoApplyApplication"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0nffcsq">
-          <text>"Review Direction for Liberty to Apply Application"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0i7d0h9">
-        <inputEntry id="UnaryTests_1i9p95v">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1xmghwc">
-          <text>"reviewLibertytoApplyDecisionNoticeforListingRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ivmr8w">
-          <text>"Review Liberty to Apply Decision Notice for Listing Requirements"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ipditk">
@@ -732,7 +677,7 @@
           <text>"reviewApplicationandAllocateJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dpamew">
-          <text>"Review Application and Allocate Judge"s</text>
+          <text>"Review Application and Allocate Judge"</text>
         </outputEntry>
       </rule>
     </decisionTable>
