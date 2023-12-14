@@ -13,7 +13,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -69,6 +68,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminTcw")
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("referredByTcwPostHearing")
+                .cancel("prepareHearingAppraiser")
                 .build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
@@ -107,6 +107,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminTcw")
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("referredByTcwPostHearing")
+                .cancel("prepareHearingAppraiser")
                 .build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
@@ -145,6 +146,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminTcw")
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("referredByTcwPostHearing")
+                .cancel("prepareHearingAppraiser")
                 .build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
@@ -179,6 +181,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminTcw")
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("referredByTcwPostHearing")
+                .cancel("prepareHearingAppraiser")
                 .build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
@@ -214,6 +217,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminTcw")
                 .cancel("reviewNonCompliantAppeal")
                 .cancel("referredByAdminJudgePostHearing")
+                .cancel("prepareHearingAppraiser")
                 .build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
@@ -256,6 +260,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("ftaNotProvidedAppointeeDetailsTcw")
                 .cancel("referredByAdminTcw")
                 .cancel("referredByTcwPostHearing")
+                .cancel("prepareHearingAppraiser")
                 .build(),
             event("issueFinalDecision")
                 .cancel("reviewUrgentHearingRequest")
@@ -283,6 +288,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminTcw")
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("referredByTcwPostHearing")
+                .cancel("prepareHearingAppraiser")
                 .build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks")
@@ -291,14 +297,10 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
                 .cancel("prepareForHearingTribunalMember")
+                .cancel("prepareHearingAppraiser")
                 .build(),
             event("actionPostponementRequest")
                 .cancel("reviewPostponementRequestJudge")
-                .build(),
-            event("actionPostponementRequest")
-                .withCaseData("actionPostponementRequestSelected", "grant")
-                .cancel("reviewPostponementRequestJudge")
-                .cancel("prepareForHearingJudge")
                 .build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks")
@@ -318,6 +320,11 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("adminSendTorRsponseReceived")
                 .cancel("ftaResponseOverdue")
+                .build(),
+            event("postponementGranted")
+                .cancel("prepareForHearingJudge")
+                .cancel("prepareForHearingTribunalMember")
+                .cancel("prepareHearingAppraiser")
                 .build()
         );
     }
@@ -343,8 +350,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(4));
+        assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(39));
+        assertThat(logic.getRules().size(), is(42));
     }
 }

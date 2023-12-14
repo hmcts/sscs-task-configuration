@@ -11,6 +11,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
@@ -80,7 +81,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "referredToInterlocTCW", "referredByJudge", "reviewNonCompliantAppeal",
                                     "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw",
                                     "reviewRemittedDecisionandProvideListingDirections",
-                                    "referredByAdminJudgePostHearing", "referredByTcwPostHearing", BLANK),
+                                    "referredByAdminJudgePostHearing", "referredByTcwPostHearing",
+                                    "reviewLibertytoApplyApplication", "reviewLateStatementofReasonsApplication",
+                                    "reviewSetAsideApplication", "reviewPermissiontoAppealApplication",
+                                    "reviewCorrectionApplicationJudge", BLANK),
             eventAutoCompletesTasks("directionIssued",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
@@ -90,11 +94,13 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "ftaResponseOverdue", "referredByJudge", "reviewNonCompliantAppeal",
                                     "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw",
                                     "reviewLibertytoApplyApplication", "reviewLateStatementofReasonsApplication",
-                                    "reviewPermissiontoAppealApplication",
+                                    "reviewPermissiontoAppealApplication", "reviewSetAsideApplication",
                                     "reviewRemittedDecisionandProvideListingDirections",
-                                    "referredByAdminJudgePostHearing", "referredByTcwPostHearing", BLANK),
+                                    "reviewCorrectionApplicationJudge", "referredByAdminJudgePostHearing",
+                                    "referredByTcwPostHearing", BLANK),
             eventAutoCompletesTasks("issueFinalDecision",
-                                    "reviewConfidentialityRequest", "writeDecisionJudge", BLANK),
+                                    "reviewConfidentialityRequest", "writeDecisionJudge",
+                                    "reviewCorrectionApplicationJudge", BLANK),
             eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
                                     "reviewPheRequestJudge", "ftaNotProvidedAppointeeDetailsJudge",
@@ -111,28 +117,17 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK),
             eventAutoCompletesTasks("confirmPanelComposition", "confirmPanelComposition", BLANK),
             eventAutoCompletesTasks("adminActionCorrection", "reviewCorrectionApplicationAdmin", BLANK),
-            eventAutoCompletesTasks("adminCorrectionBody", "reviewCorrectionApplicationAdmin", BLANK),
             eventAutoCompletesTasks("tcwReferToJudge", "reviewFtaValidityChallenge", "referredToInterlocTCW",
                                     "referredByJudge", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw",
                                     "referredByAdminTcw", BLANK),
             eventAutoCompletesTasks("processAudioVideo", "processAudioVideoEvidence", BLANK),
-            eventAutoCompletesTasks("libertyToApplyGranted","reviewLibertytoApplyApplication", BLANK),
-            eventAutoCompletesTasks("libertyToApplyRefused","reviewLibertytoApplyApplication", BLANK),
-            eventAutoCompletesTasks("correctionGranted","reviewCorrectionApplicationJudge", BLANK),
-            eventAutoCompletesTasks("correctionRefused","reviewCorrectionApplicationJudge", BLANK),
-            eventAutoCompletesTasks("sORWrite","writeStatementofReason", BLANK),
-            eventAutoCompletesTasks("sORExtendTime","reviewLateStatementofReasonsApplication", BLANK),
-            eventAutoCompletesTasks("sORRefused","reviewLateStatementofReasonsApplication", BLANK),
-            eventAutoCompletesTasks("permissionToAppealGranted","reviewPermissiontoAppealApplication", BLANK),
-            eventAutoCompletesTasks("permissionToAppealRefused","reviewPermissiontoAppealApplication", BLANK),
+            eventAutoCompletesTasks("sORWrite",
+                                    "writeStatementofReason", "reviewPermissiontoAppealApplication",
+                                    BLANK),
             eventAutoCompletesTasks("postHearingReview",
-                                    Map.of("postHearingReviewType", "setAside"),
-                                    "reviewPermissiontoAppealApplication", BLANK),
-            eventAutoCompletesTasks("setAsideGranted","reviewSetAsideApplication",
-                                    "reviewLateStatementofReasonsApplication", BLANK),
-            eventAutoCompletesTasks("setAsideRefused","reviewSetAsideApplication", BLANK),
-            eventAutoCompletesTasks("setAsideRefusedSOR","reviewSetAsideApplication", BLANK),
-            eventAutoCompletesTasks("setAsideIssueDirections","reviewSetAsideApplication", BLANK)
+                                    "reviewLibertytoApplyApplication", "reviewCorrectionApplicationJudge",
+                                    "reviewLateStatementofReasonsApplication", "reviewPermissiontoAppealApplication",
+                                    "reviewSetAsideApplication", BLANK)
         );
     }
 
@@ -151,7 +146,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(47));
+        assertThat(logic.getRules().size(), is(46));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
@@ -167,10 +162,12 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     }
 
     private static Map outputMap(String taskId) {
-        if(taskId!=null) return Map.of(
-            "taskType", taskId,
-            "completionMode", "Auto"
-        );
+        if (taskId != null) {
+            return Map.of(
+                "taskType", taskId,
+                "completionMode", "Auto"
+            );
+        }
         return Map.of(
             "completionMode", "Auto"
         );

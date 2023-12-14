@@ -6900,6 +6900,172 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"referredByTcwPostHearing"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ughwhb">
+        <inputEntry id="UnaryTests_0a8o0fg">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_016h7ua">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00q74ua">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iaxquq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15oc975">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nejs72">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f1xwro">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gcq8k4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k7rw47">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ft15bk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fy2m7l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h7ybe9">
+          <text>contains(assignedCaseRoles,"appraiser-1")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d7cuez">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15e1dsk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_098fdnx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bldscm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lis70f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14h5u5u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08c79xe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jrnwc9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ses2xp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p0n4my">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lfwmoo">
+          <text>"prepareHearingAppraiser1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w8lb9v">
+          <text>"Prepare for hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y3p2n0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xdj61v">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_061dos7">
+          <text>"prepareHearingAppraiser"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qs71y6">
+        <inputEntry id="UnaryTests_09ezx1j">
+          <text>"createBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16bhsz3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04lusha">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0coleah">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e32tik">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06lxziy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17tflri">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wr3jty">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1otjnb6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jneabu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uh90bn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0htlfcf">
+          <text>contains(assignedCaseRoles,"appraiser-2")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ht6nno">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0agyszf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qhrd5r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ver33o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15zbwj8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07x9h32">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d0go5h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18newaq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07sqx3h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ij8ru8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rvx5p3">
+          <text>"prepareHearingAppraiser2"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x4hzn7">
+          <text>"Prepare for hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dkf59s">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04hoznn">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w9py2u">
+          <text>"prepareHearingAppraiser"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
