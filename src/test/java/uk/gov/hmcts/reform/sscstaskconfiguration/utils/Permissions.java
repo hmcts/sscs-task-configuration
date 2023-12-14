@@ -67,10 +67,47 @@ public class Permissions {
         "autoAssignable", false
     );
 
+    public static Map<String,Object> CTSC_READ_PERMISSIONS =
+        permission("ctsc", "Read", "CTSC");
+    public static Map<String,Object> CTSC_TEAM_LEADER_READ_PERMISSIONS =
+        permission("ctsc-team-leader", "Read", "CTSC");
+    public static Map<String,Object> ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS =
+        permission("allocated-tribunal-caseworker", "Read", "LEGAL_OPERATIONS");
+    public static Map<String,Object> TRIBUNAL_CASEWORKER_READ_PERMISSIONS =
+        permission("tribunal-caseworker", "Read", "LEGAL_OPERATIONS");
+    public static Map<String,Object> INTERLOC_JUDGE_READ_PERMISSIONS =
+        permission("interloc-judge", "Read", "JUDICIAL");
+    public static Map<String,Object> HEARING_JUDGE_READ_PERMISSIONS =
+        permission("hearing-judge", "Read", "JUDICIAL");
+    public static Map<String,Object> JUDGE_READ_PERMISSIONS =
+        permission("judge", "Read", "JUDICIAL");
+    public static Map<String,Object> FEE_PAID_JUDGE_READ_PERMISSIONS =
+        permission("fee-paid-judge", "Read", "JUDICIAL");
+    public static Map<String,Object> POST_HEARING_JUDGE_READ_PERMISSIONS =
+        permission("post-hearing-judge", "Read", "JUDICIAL");
+    public static Map<String,Object> ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS =
+        permission("allocated-admin-caseworker", "Read", "ADMIN");
+    public static Map<String,Object> REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS =
+        permission("regional-centre-admin", "Read", "ADMIN");
+    public static Map<String,Object> REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS =
+        permission("regional-centre-team-leader", "Read", "ADMIN");
+    public static Map<String,Object> HEARING_CENTRE_ADMIN_READ_PERMISSIONS =
+        permission("hearing-centre-admin", "Read", "ADMIN");
+    public static Map<String,Object> HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS =
+        permission("hearing-centre-team-leader", "Read", "ADMIN");
+    public static Map<String,Object> TRIBUNAL_MEMBER_1_READ_PERMISSIONS =
+        permission("tribunal-member-1", "Read", "JUDICIAL");
+    public static Map<String,Object> TRIBUNAL_MEMBER_2_READ_PERMISSIONS =
+        permission("tribunal-member-2", "Read", "JUDICIAL");
+    public static Map<String,Object> TRIBUNAL_MEMBER_3_READ_PERMISSIONS =
+        permission("tribunal-member-3", "Read", "JUDICIAL");
+
     public static List<Map<String, Object>> defaultCtscPermissions() {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             Map.of(
                 "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
@@ -89,7 +126,20 @@ public class Permissions {
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
                 "roleCategory", "CTSC",
                 "autoAssignable", false
-            )
+            ),
+            INTERLOC_JUDGE_READ_PERMISSIONS,
+            HEARING_JUDGE_READ_PERMISSIONS,
+            JUDGE_READ_PERMISSIONS,
+            FEE_PAID_JUDGE_READ_PERMISSIONS,
+            POST_HEARING_JUDGE_READ_PERMISSIONS,
+            ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+            REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+            REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
 
@@ -97,6 +147,15 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            CTSC_READ_PERMISSIONS,
+            CTSC_TEAM_LEADER_READ_PERMISSIONS,
+            INTERLOC_JUDGE_READ_PERMISSIONS,
+            HEARING_JUDGE_READ_PERMISSIONS,
+            JUDGE_READ_PERMISSIONS,
+            FEE_PAID_JUDGE_READ_PERMISSIONS,
+            POST_HEARING_JUDGE_READ_PERMISSIONS,
             Map.of(
                 "name", "allocated-admin-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
@@ -115,7 +174,12 @@ public class Permissions {
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
-            )
+            ),
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
 
@@ -123,6 +187,8 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             Map.of(
                 "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
@@ -141,7 +207,20 @@ public class Permissions {
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
                 "roleCategory", "CTSC",
                 "autoAssignable", false
-            )
+            ),
+            INTERLOC_JUDGE_READ_PERMISSIONS,
+            HEARING_JUDGE_READ_PERMISSIONS,
+            JUDGE_READ_PERMISSIONS,
+            FEE_PAID_JUDGE_READ_PERMISSIONS,
+            POST_HEARING_JUDGE_READ_PERMISSIONS,
+            ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+            REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+            REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
 
@@ -149,6 +228,15 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            CTSC_READ_PERMISSIONS,
+            CTSC_TEAM_LEADER_READ_PERMISSIONS,
+            INTERLOC_JUDGE_READ_PERMISSIONS,
+            HEARING_JUDGE_READ_PERMISSIONS,
+            JUDGE_READ_PERMISSIONS,
+            FEE_PAID_JUDGE_READ_PERMISSIONS,
+            POST_HEARING_JUDGE_READ_PERMISSIONS,
             Map.of(
                 "name", "allocated-admin-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
@@ -167,118 +255,215 @@ public class Permissions {
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
-            )
+            ),
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
 
     public static List<Map<String, Object>> defaultPermissionsJudgesTasks() {
         return List.of(
-            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+            DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            CTSC_READ_PERMISSIONS,
+            CTSC_TEAM_LEADER_READ_PERMISSIONS,
             permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+            HEARING_JUDGE_READ_PERMISSIONS,
             permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-            permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL","368")
+            permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL","368"),
+            POST_HEARING_JUDGE_READ_PERMISSIONS,
+            ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+            REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+            REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
 
     public static List<Map<String, Object>> defaultPermissionsHearingJudgesTasks() {
         return List.of(
-            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+            DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            CTSC_READ_PERMISSIONS,
+            CTSC_TEAM_LEADER_READ_PERMISSIONS,
+            INTERLOC_JUDGE_READ_PERMISSIONS,
             permission("hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
             permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368"),
+            POST_HEARING_JUDGE_READ_PERMISSIONS,
+            ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+            REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+            REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
 
     public static List<Map<String, Object>> defaultPermissionsJudgesReviewTasks() {
         return List.of(
-            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+            DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            CTSC_READ_PERMISSIONS,
+            CTSC_TEAM_LEADER_READ_PERMISSIONS,
             permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
+            HEARING_JUDGE_READ_PERMISSIONS,
             permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
-            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368"),
+            POST_HEARING_JUDGE_READ_PERMISSIONS,
+            ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+            REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+            REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
 
     public static List<Map<String, Object>> defaultPermissionsTcwTasks() {
         return List.of(
-            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+            DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
             permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
-            permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
+            CTSC_READ_PERMISSIONS,
+            CTSC_TEAM_LEADER_READ_PERMISSIONS,
+            INTERLOC_JUDGE_READ_PERMISSIONS,
+            HEARING_JUDGE_READ_PERMISSIONS,
+            permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL"),
+            FEE_PAID_JUDGE_READ_PERMISSIONS,
+            POST_HEARING_JUDGE_READ_PERMISSIONS,
+            ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+            REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+            REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
 
     public static List<Map<String, Object>> defaultPermissionsPostHearingTasks() {
         return List.of(
-            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+            DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            CTSC_READ_PERMISSIONS,
+            CTSC_TEAM_LEADER_READ_PERMISSIONS,
+            INTERLOC_JUDGE_READ_PERMISSIONS,
+            HEARING_JUDGE_READ_PERMISSIONS,
             permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-            permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1)
+            FEE_PAID_JUDGE_READ_PERMISSIONS,
+            permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+            ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+            REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+            REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
 
     public static List<Map<String, Object>> defaultJudicalMember1Permissions() {
         return List.of(
-            Map.of(
-                "name", "case-allocator",
-                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
-                "autoAssignable", false
-            ),
+            DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+            DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            CTSC_READ_PERMISSIONS,
+            CTSC_TEAM_LEADER_READ_PERMISSIONS,
+            INTERLOC_JUDGE_READ_PERMISSIONS,
+            HEARING_JUDGE_READ_PERMISSIONS,
+            JUDGE_READ_PERMISSIONS,
+            FEE_PAID_JUDGE_READ_PERMISSIONS,
+            POST_HEARING_JUDGE_READ_PERMISSIONS,
+            ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+            REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+            REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
             Map.of(
                 "name", "tribunal-member-1",
                 "value", "Read,Own,Manage,Complete",
                 "assignmentPriority", 1,
                 "roleCategory", "JUDICIAL",
                 "autoAssignable", true
-            )
+            ),
+            TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
 
     public static List<Map<String, Object>> defaultJudicalMember2Permissions() {
         return List.of(
-            Map.of(
-                "name", "case-allocator",
-                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
-                "autoAssignable", false
-            ),
+            DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+            DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            CTSC_READ_PERMISSIONS,
+            CTSC_TEAM_LEADER_READ_PERMISSIONS,
+            INTERLOC_JUDGE_READ_PERMISSIONS,
+            HEARING_JUDGE_READ_PERMISSIONS,
+            JUDGE_READ_PERMISSIONS,
+            FEE_PAID_JUDGE_READ_PERMISSIONS,
+            POST_HEARING_JUDGE_READ_PERMISSIONS,
+            ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+            REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+            REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
             Map.of(
                 "name", "tribunal-member-2",
                 "value", "Read,Own,Manage,Complete",
                 "assignmentPriority", 1,
                 "roleCategory", "JUDICIAL",
                 "autoAssignable", true
-            )
+            ),
+            TRIBUNAL_MEMBER_3_READ_PERMISSIONS
         );
     }
 
     public static List<Map<String, Object>> defaultJudicalMember3Permissions() {
         return List.of(
-            Map.of(
-                "name", "case-allocator",
-                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
-                "autoAssignable", false
-            ),
+            DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+            DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            CTSC_READ_PERMISSIONS,
+            CTSC_TEAM_LEADER_READ_PERMISSIONS,
+            INTERLOC_JUDGE_READ_PERMISSIONS,
+            HEARING_JUDGE_READ_PERMISSIONS,
+            JUDGE_READ_PERMISSIONS,
+            FEE_PAID_JUDGE_READ_PERMISSIONS,
+            POST_HEARING_JUDGE_READ_PERMISSIONS,
+            ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+            REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+            REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+            HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+            TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
             Map.of(
                 "name", "tribunal-member-3",
                 "value", "Read,Own,Manage,Complete",

@@ -77,33 +77,75 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "referredByTcwPreHearing",
                 "someCaseData",
                 List.of(
-                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
                     permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368"),
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
                 "prepareForHearingJudge",
                 "someCaseData",
                 List.of(
-                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
                     permission("hearing-judge","Read,Own", "JUDICIAL", 1),
                     permission("judge","Read,Own", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own", "JUDICIAL")
+                    permission("fee-paid-judge","Read,Own", "JUDICIAL"),
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
                 "writeDecisionJudge",
                 "someCaseData",
                 List.of(
-                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
                     permission("hearing-judge","Read,Own", "JUDICIAL", 1),
                     permission("judge","Read,Own,Claim", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim", "JUDICIAL")
+                    permission("fee-paid-judge","Read,Own,Claim", "JUDICIAL"),
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -117,6 +159,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
                     Map.of(
                         "name", "allocated-ctsc-caseworker",
                         "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
@@ -135,7 +179,20 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
                         "roleCategory", "CTSC",
                         "autoAssignable", false
-                    )
+                    ),
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -172,11 +229,25 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewPostponementRequestJudge",
                 "someCaseData",
                 List.of(
-                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
                     permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
                     permission("hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -198,22 +269,50 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "referredByAdminJudgePreHearing",
                 "someCaseData",
                 List.of(
-                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
                     permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368"),
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
                 "confirmPanelComposition",
                 "someCaseData",
                 List.of(
-                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
                     permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368"),
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -230,11 +329,26 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewCorrectionApplicationAdmin",
                 "someCaseData",
                 List.of(
-                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1),
                     permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
-                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC")
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC"),
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -281,21 +395,50 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "referredByJudge",
                 "someCaseData",
                 List.of(
-                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
                     permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
-                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS")
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
                 "processAudioVideoEvidence",
                 "someCaseData",
                 List.of(
-                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
                     permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "LEGAL_OPERATIONS", 1),
                     permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "LEGAL_OPERATIONS"),
-                    permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL"),
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -312,10 +455,25 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "referredByAdminTcw",
                 "someCaseData",
                 List.of(
-                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
-                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
                     permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
-                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS")
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -324,9 +482,24 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1),
                     permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
-                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC")
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC"),
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -337,10 +510,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewCorrectionApplicationJudge",
                 "someCaseData",
-                List.of(
-                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
-                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS
-                )
+                Permissions.defaultPermissionsPostHearingTasks()
             ),
             Arguments.of(
                 "writeStatementofReason",
@@ -348,9 +518,23 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
                     permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
                     permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368"),
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -359,9 +543,23 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
                     permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
                     permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368"),
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -380,9 +578,24 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
                     permission("allocated-ctsc-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1),
                     permission("ctsc", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
-                    permission("ctsc-team-leader", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete", "CTSC")
+                    permission("ctsc-team-leader", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete", "CTSC"),
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -396,9 +609,24 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1),
                     permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
-                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC")
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC"),
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -417,9 +645,24 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1),
                     permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
-                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,Assign,Unassign,CancelOwn,CompleteOwn", "CTSC")
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,Assign,Unassign,CancelOwn,CompleteOwn", "CTSC"),
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -428,9 +671,24 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1),
                     permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
-                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,Assign,Unassign,CancelOwn,CompleteOwn", "CTSC")
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,Assign,Unassign,CancelOwn,CompleteOwn", "CTSC"),
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -439,11 +697,23 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
                     permission("allocated-admin-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN", 1),
                     permission("regional-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN"),
                     permission("regional-centre-team-leader","Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete", "ADMIN"),
                     permission("hearing-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN"),
-                    permission("hearing-centre-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn", "ADMIN")
+                    permission("hearing-centre-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn", "ADMIN"),
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -452,9 +722,23 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
                     permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368"),
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -463,9 +747,23 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
                     permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368"),
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS
                 )
             )
         );
@@ -507,7 +805,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(48));
+        assertThat(logic.getRules().size(), is(62));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

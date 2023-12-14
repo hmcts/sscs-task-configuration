@@ -895,7 +895,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_1pvhwr6">
         <inputEntry id="UnaryTests_1edj3t5">
-          <text>"actionFurtherEvidence","uploadWelshDocument","manageWelshDocuments"</text>
+          <text>"actionFurtherEvidence","manageWelshDocuments"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1mxdaje">
           <text></text>
@@ -978,7 +978,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_01u2n93">
         <inputEntry id="UnaryTests_1mblit3">
-          <text>"actionFurtherEvidence", "uploadWelshDocument", "manageWelshDocuments"</text>
+          <text>"actionFurtherEvidence", "manageWelshDocuments"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1oco2zm">
           <text></text>
@@ -1393,7 +1393,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_0q7nlyl">
         <inputEntry id="UnaryTests_0c5dy7a">
-          <text>"actionFurtherEvidence","uploadWelshDocument","manageWelshDocuments"</text>
+          <text>"actionFurtherEvidence","manageWelshDocuments"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_17modb4">
           <text></text>
@@ -1663,7 +1663,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry>
-          <text>"sendToJudge"</text>
+          <text>"reviewByJudge"</text>
         </inputEntry>
         <inputEntry>
           <text></text>
@@ -3150,7 +3150,7 @@ else "Referred to interloc"</text>
       </rule>
       <rule id="DecisionRule_1ipe0he">
         <inputEntry id="UnaryTests_19epj3f">
-          <text>"actionFurtherEvidence", "uploadWelshDocument", "manageWelshDocuments"</text>
+          <text>"actionFurtherEvidence", "manageWelshDocuments"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1u4wvpw">
           <text></text>
@@ -4495,7 +4495,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"validSendToInterloc"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_00r7908">
-          <text>"postHearing"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1qbdj93">
           <text></text>
@@ -4578,7 +4578,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"actionFurtherEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hcf7xc">
-          <text>"postHearing"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_16ujdag">
           <text></text>
@@ -4661,7 +4661,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"adminActionCorrection"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1qw9i14">
-          <text>"postHearing"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xmqxq6">
           <text></text>
@@ -5657,7 +5657,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"libertyToApplyGranted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1iwv1bv">
-          <text>"postHearing"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ibdncn">
           <text></text>
@@ -5737,10 +5737,10 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_0luha43">
         <inputEntry id="UnaryTests_0yw2h9x">
-          <text>"postHearingReview"</text>
+          <text>"reviewAndSetAside"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1g8qhzg">
-          <text>"postHearing"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1opr3rz">
           <text></text>
@@ -5794,7 +5794,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hb6a0s">
-          <text>"setAside"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1h3l363">
           <text></text>
