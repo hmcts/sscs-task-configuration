@@ -707,7 +707,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
                 .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
                 .build(),
-            eventWithState("setAsideRefused", "postHearing")
+            eventWithState("setAsideRefusedSOR", "postHearing")
                 .withCaseData("setAside", Map.of("requestStatementOfReasons", true))
                 .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
                 .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
