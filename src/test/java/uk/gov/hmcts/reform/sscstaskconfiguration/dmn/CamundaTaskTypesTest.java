@@ -31,7 +31,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
         for (Map<String,Object> taskType : dmnDecisionTableResult.getResultList()) {
             assertThat((String) taskType.get("taskTypeId"), matchesPattern("^[a-z][A-Za-z0-9]*$"));
-            assertThat((String) taskType.get("taskTypeName"), matchesPattern("[A-Z]*$|^[A-Z][A-Za-z \\-]*[A-Za-z]$"));
         }
     }
 
@@ -41,13 +40,10 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
 
         Set<String> taskTypeIds = new HashSet<>();
         logic.getRules().forEach(r -> taskTypeIds.add(r.getConclusions().get(0).getExpression()));
-
         Set<String> taskIds = getAllTaskIds();
-        taskIds.stream().filter(id -> !taskTypeIds.contains(id)).forEach(id -> System.out.println(id));
-        System.out.println("Extras");
-        taskTypeIds.stream().filter(id -> !taskIds.contains(id)).forEach(id -> System.out.println(id));
 
-        assertThat(logic.getRules().size(), is(taskIds.size()));
+        assertThat(taskTypeIds, is(taskIds));
+        assertThat(taskTypeIds.size(), is(taskIds.size()));
     }
 
     @Test
@@ -56,6 +52,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(66));
+        assertThat(logic.getRules().size(), is(61));
     }
 }

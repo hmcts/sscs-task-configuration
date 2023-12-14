@@ -314,7 +314,7 @@
           <text>"referredByAdminJudgePreHearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_01m5tjq">
-          <text>"Referred By Admin (Pre-hearing) (Judge)"</text>
+          <text>"Referred By Admin (Pre-hearing)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ug1sfu">
@@ -325,7 +325,7 @@
           <text>"referredByAdminJudgePostHearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0efu0kh">
-          <text>"Referred By Admin (Posthearing) (Judge)"</text>
+          <text>"Referred By Admin (Posthearing)"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1vevsnc">
