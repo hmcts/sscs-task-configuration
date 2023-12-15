@@ -121,7 +121,7 @@
       </rule>
       <rule id="DecisionRule_0x0txqj">
         <inputEntry id="UnaryTests_0hahiek">
-          <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","struckOut","writeFinalDecision","interlocReviewStateAmend"</text>
+          <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","writeFinalDecision","interlocReviewStateAmend"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0zmgmrb">
           <text>"referredByTcwPreHearing"</text>
@@ -495,7 +495,7 @@
       </rule>
       <rule id="DecisionRule_0x0p42z">
         <inputEntry id="UnaryTests_08ju9hi">
-          <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","struckOut","writeFinalDecision","interlocReviewStateAmend"</text>
+          <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","writeFinalDecision","interlocReviewStateAmend"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_08j2e7u">
           <text>"referredByTcwPostHearing"</text>
