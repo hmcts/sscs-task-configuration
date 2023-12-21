@@ -13,6 +13,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
+import uk.gov.hmcts.reform.sscstaskconfiguration.utils.Permissions;
 
 import java.util.List;
 import java.util.Map;
@@ -37,45 +38,108 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "someTaskType",
                 "someCaseData",
                 List.of(
-                    Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
-                        "autoAssignable", false
-                    )
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS
                 )
             ),
             Arguments.of(
-                "null",
+                "reviewIncompleteAppeal",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewInformationRequested",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewBilingualDocument",
+                "someCaseData",
+                Permissions.defaultCtscPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "issueOutstandingTranslation",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewAdminAction",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "actionUnprocessedCorrespondence",
                 "someCaseData",
                 List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
                     Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
+                        "name", "allocated-ctsc-caseworker",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "assignmentPriority", 1,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", true
+                    ),
+                    Map.of(
+                        "name", "ctsc",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "assignmentPriority", 2,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "ctsc-team-leader",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
+                        "assignmentPriority", 3,
+                        "roleCategory", "CTSC",
                         "autoAssignable", false
                     )
                 )
             ),
             Arguments.of(
-                "someTaskType",
-                "null",
-                List.of(
-                    Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
-                        "autoAssignable", false
-                    )
-                )
+                "reviewFtaDueDate",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
             ),
             Arguments.of(
-                "someTaskType",
-                "{}",
-                List.of(
-                    Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
-                        "autoAssignable", false
-                    )
-                )
+                "reviewBilingualDocument",
+                "someCaseData",
+                Permissions.defaultCtscPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "reviewValidAppeal",
+                "someCaseData",
+                Permissions.defaultCtscPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "reviewListingError",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewRoboticFail",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewBfDate",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "allocateCaseRolesAndCreateBundle",
+                "someCaseData",
+                Permissions.defaultAdminCaseWorkerPermissions()
+            ),
+            Arguments.of(
+                "reviewOutstandingDraftDecision",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "contactParties",
+                "someCaseData",
+                Permissions.defaultAdminCaseWorkerPermissionsWithCompleteOwn()
             )
         );
     }
@@ -116,8 +180,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(4));
-
+        assertThat(logic.getRules().size(), is(19));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

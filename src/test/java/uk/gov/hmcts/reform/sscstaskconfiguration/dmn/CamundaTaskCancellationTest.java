@@ -16,10 +16,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_CANCELLATION_SSCS_BENEFIT;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.CancellationScenarioBuilder.event;
 
 class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
     @BeforeAll
@@ -28,18 +28,89 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     static Stream<Arguments> scenarioProvider() {
-
         return Stream.of(
-            Arguments.of(
-                null,
-                "nonCompliant",
-                null,
-                singletonList(
-                    Map.of(
-                        "action", "Cancel"
-                    )
-                )
-            )
+            event("addHearing").reconfigureAll().build(),
+            event("caseUpdated").reconfigureAll().build(),
+            event("voidCase")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse")
+                .cancel("reviewFtaDueDate")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("reviewRoboticFail")
+                .cancel("allocateCaseRolesAndCreateBundle")
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("contactParties").build(),
+            event("appealWithdrawn")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse")
+                .cancel("reviewFtaDueDate")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("reviewRoboticFail")
+                .cancel("allocateCaseRolesAndCreateBundle")
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("contactParties").build(),
+            event("appealDormant")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse")
+                .cancel("reviewFtaDueDate")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("reviewRoboticFail")
+                .cancel("allocateCaseRolesAndCreateBundle")
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("contactParties").build(),
+            event("confirmLapsed")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse")
+                .cancel("allocateCaseRolesAndCreateBundle")
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("contactParties").build(),
+            event("struckOut")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse")
+                .cancel("reviewFtaDueDate")
+                .cancel("reviewValidAppeal")
+                .cancel("reviewListingError")
+                .cancel("reviewRoboticFail")
+                .cancel("allocateCaseRolesAndCreateBundle")
+                .cancel("reviewOutstandingDraftDecision")
+                .cancel("contactParties").build(),
+            event("validSendToInterloc")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewBfDate")
+                .cancel("contactParties").build(),
+            event("makeCaseUrgent")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewBfDate")
+                .cancel("contactParties").build(),
+            event("readyToList")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("reviewFtaResponse")
+                .cancel("reviewFtaDueDate")
+                .cancel("contactParties").build(),
+            event("decisionIssued")
+                .cancel("reviewIncompleteAppeal")
+                .cancel("reviewInformationRequested")
+                .cancel("contactParties").build(),
+            event("cancelTranslations")
+                .cancel("Translation Tasks").build(),
+            event("interlocSendToTcw")
+                .cancel("reviewBfDate").build(),
+            event("issueFinalDecision")
+                .cancel("reviewOutstandingDraftDecision").build(),
+            event("issueAdjournmentNotice")
+                .cancel("reviewOutstandingDraftDecision").build(),
+            event("sentToDwp")
+                .cancel("reviewValidAppeal").build()
         );
     }
 
@@ -60,12 +131,10 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
-
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(1));
-
+        assertThat(logic.getRules().size(), is(13));
     }
 }

@@ -12,16 +12,19 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_COMPLETION_SSCS_BENEFIT;
 
 class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
+
+    private static final String BLANK = null;
 
     @BeforeAll
     public static void initialization() {
@@ -31,22 +34,26 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
 
         return Stream.of(
-            Arguments.of(
-                "nonCompliant",
-                asList(
-                    Map.of(
-                        "taskType", "reviewTheAppeal",
-                        "completionMode", "Auto"
-                    )
-                )
-            )
+            eventAutoCompletesTasks("requestForInformation","reviewIncompleteAppeal", BLANK),
+            eventAutoCompletesTasks("interlocInformationReceived",
+                                    "reviewInformationRequested", "reviewAdminAction", BLANK),
+            eventAutoCompletesTasks("validSendToInterloc",
+                                    "reviewInformationRequested", "reviewAdminAction", BLANK),
+            eventAutoCompletesTasks("interlocSendToTcw",
+                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate", BLANK),
+            eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse", BLANK),
+            eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument", BLANK),
+            eventAutoCompletesTasks("actionFurtherEvidence",
+                                    "issueOutstandingTranslation","actionUnprocessedCorrespondence", BLANK),
+            eventAutoCompletesTasks("updateListingRequirement","reviewListingError", BLANK),
+            eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail", BLANK),
+            eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK)
         );
     }
 
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
     void given_event_ids_should_evaluate_dmn(String eventId, List<Map<String, String>> expectation) {
-
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
 
@@ -56,12 +63,23 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
-
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(1));
-
+        assertThat(logic.getRules().size(), is(13));
     }
 
+    public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
+        return Arguments.of(event, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toList())
+        );
+    }
 
+    private static Map outputMap(String taskId) {
+        if(taskId!=null) return Map.of(
+            "taskType", taskId,
+            "completionMode", "Auto"
+        );
+        return Map.of(
+            "completionMode", "Auto"
+        );
+    }
 }
