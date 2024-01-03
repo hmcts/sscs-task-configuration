@@ -168,7 +168,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION, EventLink.HMCTS_RESPNSE_REVIEWED, true)
+                    .expectedValue(DESCRIPTION, EventLink.HMCTS_RESPONSE_REVIEWED, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
@@ -221,7 +221,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "500", true)
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
-                    .expectedValue(DESCRIPTION, EventLink.INTERLOC_SEND_TO_TCW, true)
+                    .expectedValue(DESCRIPTION, EventLink.HMCTS_RESPONSE_REVIEWED, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
