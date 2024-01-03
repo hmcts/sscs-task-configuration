@@ -233,25 +233,9 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
                     Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
                     Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
-                    Map.of(
-                        "name", "allocated-ctsc-caseworker",
-                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
-                        "assignmentPriority", 1,
-                        "roleCategory", "CTSC",
-                        "autoAssignable", true
-                    ),
-                    Map.of(
-                        "name", "ctsc",
-                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
-                        "roleCategory", "CTSC",
-                        "autoAssignable", false
-                    ),
-                    Map.of(
-                        "name", "ctsc-team-leader",
-                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete",
-                        "roleCategory", "CTSC",
-                        "autoAssignable", false
-                    ),
+                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1, true),
+                    permission("ctsc", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
+                    permission("ctsc-team-leader", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC"),
                     Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
                     Permissions.HEARING_JUDGE_READ_PERMISSIONS,
                     Permissions.JUDGE_READ_PERMISSIONS,
