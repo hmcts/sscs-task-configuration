@@ -228,7 +228,49 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewRoboticFail",
                 "someCaseData",
-                Permissions.defaultCtscPermissions()
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Map.of(
+                        "name", "allocated-ctsc-caseworker",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                        "assignmentPriority", 1,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", true
+                    ),
+                    Map.of(
+                        "name", "ctsc",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                        "roleCategory", "CTSC",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "ctsc-team-leader",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete",
+                        "roleCategory", "CTSC",
+                        "autoAssignable", false
+                    ),
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.ALLOCATED_ADMIN_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.REGIONAL_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+                    Permissions.APPRAISER_1_READ_PERMISSIONS,
+                    Permissions.APPRAISER_2_READ_PERMISSIONS,
+                    Permissions.MEDICAL_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_MEDICAL_READ_PERMISSIONS,
+                    Permissions.LEADERSHIP_JUDGE_READ_PERMISSIONS
+                )
             ),
             Arguments.of(
                 "reviewConfidentialityRequest",
