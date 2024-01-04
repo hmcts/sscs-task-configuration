@@ -12,7 +12,7 @@ public interface EventLink {
     static final String TCW_REFER_TO_JUDGE = eventLink("Send to Judge","tcwReferToJudge");
     static final String INTERLOC_SEND_TO_TCW = eventLink("Send case to TCW", "interlocSendToTcw");
     static final String REQUEST_FOR_INFORMATION = eventLink("Request Information From Party", "requestForInformation");
-    static final String HMCTS_RESPNSE_REVIEWED = eventLink("Response reviewed", "hmctsResponseReviewed");
+    static final String HMCTS_RESPONSE_REVIEWED = eventLink("Response reviewed", "hmctsResponseReviewed");
     static final String REQUEST_TRANSLATION_FROM_WLU = eventLink("Request translation from WLU", "requestTranslationFromWLU");
     static final String UPDATE_LISTING_REQUIREMENTS = eventLink("Update Listing Requirements", "updateListingRequirements");
     static final String READY_TO_LIST = eventLink("Ready to list", "readyToList");
@@ -28,6 +28,7 @@ public interface EventLink {
     static String eventLink(String description, String eventId) {
         return String.format("[%s](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/%s)", description, eventId);
     }
+
     static String caseLink(String description, String tab) {
         return String.format("[%s](/case/SSCS/Benefit/${[CASE_REFERENCE]}#%s)", description, tab);
     }

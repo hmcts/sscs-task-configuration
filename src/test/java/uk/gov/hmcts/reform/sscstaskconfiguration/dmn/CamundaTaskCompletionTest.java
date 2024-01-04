@@ -43,12 +43,12 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "reviewConfidentialityRequest", "reviewReinstatementRequestJudge",
                                     "referredToInterlocJudge", "referredToInterlocTCW", "reviewBfDate", BLANK),
             eventAutoCompletesTasks("interlocSendToTcw",
-                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate",
+                                    "reviewInformationRequested", "reviewAdminAction",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
                                     "referredByAdminJudgePreHearing", "referredToInterlocJudge", "reviewBfDate",
                                     "referredByAdminJudgePostHearing", "referredByTcwPostHearing", BLANK),
-            eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse", BLANK),
+            eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse", "reviewFtaDueDate", BLANK),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument", BLANK),
             eventAutoCompletesTasks("actionFurtherEvidence",
                                     "issueOutstandingTranslation","actionUnprocessedCorrespondence", BLANK),
@@ -113,7 +113,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal", BLANK),
             eventAutoCompletesTasks("amendDueDate", "reviewBfDate", BLANK),
             eventAutoCompletesTasks("updateListingRequirement","reviewListingError", BLANK),
-            eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail", BLANK),
             eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK),
             eventAutoCompletesTasks("confirmPanelComposition", "confirmPanelComposition", BLANK),
             eventAutoCompletesTasks("adminActionCorrection", "reviewCorrectionApplicationAdmin", BLANK),
@@ -146,7 +145,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(46));
+        assertThat(logic.getRules().size(), is(45));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {

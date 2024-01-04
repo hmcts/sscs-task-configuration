@@ -88,7 +88,7 @@
       </rule>
       <rule id="DecisionRule_14ekhb1">
         <inputEntry id="UnaryTests_096dkp4">
-          <text>"interlocSendToTcw"</text>
+          <text>"hmctsResponseReviewed"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vm1eoh">
           <text>"reviewFtaDueDate"</text>
@@ -215,17 +215,6 @@
           <text>"reviewListingError"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zwws2c">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1k5b0ls">
-        <inputEntry id="UnaryTests_1v2uymb">
-          <text>"resendCaseToGAPS2"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1qpjrsg">
-          <text>"reviewRoboticFail"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0qofg43">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
