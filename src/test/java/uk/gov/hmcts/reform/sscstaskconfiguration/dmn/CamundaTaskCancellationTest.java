@@ -221,7 +221,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
-                .cancel("reviewBfDate")
                 .cancel("contactParties")
                 .build(),
             event("makeCaseUrgent")
@@ -304,9 +303,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("cancelTranslations")
                 .cancel("Translation Tasks")
-                .build(),
-            event("interlocSendToTcw")
-                .cancel("reviewBfDate")
                 .build(),
             event("issueAdjournmentNotice")
                 .cancel("reviewOutstandingDraftDecision")

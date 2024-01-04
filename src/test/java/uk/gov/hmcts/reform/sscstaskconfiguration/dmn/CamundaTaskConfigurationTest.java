@@ -333,6 +333,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .expectedValue(DESCRIPTION, EventLink.AMEND_DUE_DATE, true)
+                    .expectedValue(DESCRIPTION, buildDescription(
+                        EventLink.VALID_SEND_TO_INTERLOC,
+                        EventLink.INTERLOC_SEND_TO_TCW,
+                        EventLink.AMEND_DUE_DATE), true)
                     .build()
             ),
             Arguments.of(
