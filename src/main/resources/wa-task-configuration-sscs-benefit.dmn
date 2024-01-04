@@ -523,7 +523,7 @@ null</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_098mpbp">
-          <text>"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)"</text>
+          <text>"[Response reviewed](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ef73m6">
           <text>true</text>
