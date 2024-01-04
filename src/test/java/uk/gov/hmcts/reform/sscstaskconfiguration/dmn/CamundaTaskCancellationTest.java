@@ -325,6 +325,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareForHearingJudge")
                 .cancel("prepareForHearingTribunalMember")
                 .cancel("prepareHearingAppraiser")
+                .cancel("allocateCaseRolesAndCreateBundle")
                 .build()
         );
     }
