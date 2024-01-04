@@ -181,12 +181,29 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_03umoya">
+        <inputEntry id="UnaryTests_1l734ga">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aecnsw">
+          <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessCTSC"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11iwtl8">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1px76z5">
+          <text>"access-requests"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10gby2y">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0460vvp">
         <inputEntry id="UnaryTests_0pa4ux4">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","reviewStatementofReasonsApplication","reviewPostHearingNoticeforListingRequirements","reviewCorrectionApplicationAdmin","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","reviewStatementofReasonsApplication","reviewPostHearingNoticeforListingRequirements","reviewCorrectionApplicationAdmin","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewSpecificAccessCTSC"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gex6d1">
           <text>"roleCategory"</text>
@@ -203,7 +220,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lqa97e">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","referredByTcwPreHearing","prepareForHearingJudge","writeDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplication","prepareHearingAppraiser1","prepareHearingAppraiser2"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","referredByTcwPreHearing","prepareForHearingJudge","writeDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplication","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestJudiciary"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ga9m4z">
           <text>"roleCategory"</text>
@@ -220,7 +237,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1k28xtv">
-          <text>"ftaRequestTimeExtension","reviewFtaValidityChallenge","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw"</text>
+          <text>"ftaRequestTimeExtension","reviewFtaValidityChallenge","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw","reviewSpecificAccessRequestLegalOps"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0fq2vj2">
           <text>"roleCategory"</text>
@@ -237,7 +254,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0dd312o">
-          <text>"allocateCaseRolesAndCreateBundle","contactParties","updateHearingDetails"</text>
+          <text>"allocateCaseRolesAndCreateBundle","contactParties","updateHearingDetails","reviewSpecificAccessRequestAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02ykby3">
           <text>"roleCategory"</text>
@@ -273,7 +290,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hov4g1">
-          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewPostHearingNoticeforListingRequirements","reviewSetAsideApplication","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","referredByAdminJudgePostHearing","referredByTcwPostHearing","prepareHearingAppraiser1","prepareHearingAppraiser2"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewPostHearingNoticeforListingRequirements","reviewSetAsideApplication","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","referredByAdminJudgePostHearing","referredByTcwPostHearing","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessCTSC"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ek1jdy">
           <text>"minorPriority"</text>
@@ -326,7 +343,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jpwpai">
-          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewPostHearingNoticeforListingRequirements","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","prepareHearingAppraiser1","prepareHearingAppraiser2"</text>
+          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewPostHearingNoticeforListingRequirements","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessCTSC"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ic56e1">
           <text>"majorPriority"</text>
@@ -969,7 +986,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","referredByTcwPreHearing","prepareForHearingJudge","writeDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","reviewStatementofReasonsApplication","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication","prepareHearingAppraiser1","prepareHearingAppraiser2"</text>
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","referredByTcwPreHearing","prepareForHearingJudge","writeDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","reviewStatementofReasonsApplication","reviewStatementofReasonsApplication","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessCTSC"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hcibko">
           <text>"dueDateIntervalDays"</text>

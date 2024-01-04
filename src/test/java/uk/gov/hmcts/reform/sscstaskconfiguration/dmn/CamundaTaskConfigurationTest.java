@@ -40,6 +40,7 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpec
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.WORK_TYPE;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.buildDescription;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.caseLink;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.eventLink;
 
 @Slf4j
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
@@ -811,6 +812,34 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestJudiciary",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectationsSpecificAccess()
+                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestLegalOps",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectationsSpecificAccess()
+                    .expectedValue(ROLE_CATEGORY, "LEGAL_OPERATIONS", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestAdmin",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectationsSpecificAccess()
+                    .expectedValue(ROLE_CATEGORY, "ADMIN", true)
+                    .build()
+            ),
+            Arguments.of(
+                "reviewSpecificAccessCTSC",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectationsSpecificAccess()
+                    .expectedValue(ROLE_CATEGORY, "CTSC", true)
+                    .build()
             )
         );
     }
@@ -839,7 +868,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(59));
+        assertThat(logic.getRules().size(), is(60));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
