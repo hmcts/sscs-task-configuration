@@ -487,9 +487,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_18did1k">
-          <text>"validSendToInterloc",
-"interlocSendToTcw",
-"makeCaseUrgent"</text>
+          <text>"makeCaseUrgent"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ob3xdx">
           <text></text>

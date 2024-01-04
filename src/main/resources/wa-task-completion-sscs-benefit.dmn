@@ -220,7 +220,7 @@
       </rule>
       <rule id="DecisionRule_08sk3dx">
         <inputEntry id="UnaryTests_03cf0cj">
-          <text>"amendDueDate"</text>
+          <text>"amendDueDate","interlocSendToTcw","validSendToInterloc"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0a6qx53">
           <text>"reviewBfDate"</text>
