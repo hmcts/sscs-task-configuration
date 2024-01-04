@@ -261,6 +261,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminTcw")
                 .cancel("referredByTcwPostHearing")
                 .cancel("prepareHearingAppraiser")
+                .cancel("reviewFtaValidityChallenge")
                 .build(),
             event("issueFinalDecision")
                 .cancel("reviewUrgentHearingRequest")
@@ -325,6 +326,9 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareForHearingJudge")
                 .cancel("prepareForHearingTribunalMember")
                 .cancel("prepareHearingAppraiser")
+                .build(),
+            event("dwpUploadResponse")
+                .cancel("reviewFtaDueDate")
                 .build()
         );
     }
