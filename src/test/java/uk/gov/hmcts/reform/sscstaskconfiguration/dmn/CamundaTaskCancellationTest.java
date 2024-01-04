@@ -261,6 +261,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminTcw")
                 .cancel("referredByTcwPostHearing")
                 .cancel("prepareHearingAppraiser")
+                .cancel("reviewFtaValidityChallenge")
                 .build(),
             event("issueFinalDecision")
                 .cancel("reviewUrgentHearingRequest")
@@ -325,6 +326,10 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareForHearingJudge")
                 .cancel("prepareForHearingTribunalMember")
                 .cancel("prepareHearingAppraiser")
+                .cancel("allocateCaseRolesAndCreateBundle")
+                .build(),
+            event("dwpUploadResponse")
+                .cancel("reviewFtaDueDate")
                 .build()
         );
     }
@@ -352,6 +357,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(42));
+        assertThat(logic.getRules().size(), is(43));
     }
 }

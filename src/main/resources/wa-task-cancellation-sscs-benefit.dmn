@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.18.0">
   <decision id="wa-task-cancellation-sscs-benefit" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -119,7 +119,8 @@
 "appealWithdrawn",
 "appealDormant",
 "struckOut",
-"readyToList"</text>
+"readyToList",
+"dwpUploadResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1eji6eu">
           <text></text>
@@ -193,7 +194,13 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_17eybg7">
-          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision", "decisionIssued"</text>
+          <text>"voidCase",
+          "appealWithdrawn",
+          "appealDormant",
+          "confirmLapsed",
+          "struckOut",
+          "issueFinalDecision",
+          "decisionIssued"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1qi0eq8">
           <text></text>
@@ -666,12 +673,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1l8i9ho">
-          <text>"voidCase",
-"appealWithdrawn",
-"appealDormant",
-"confirmLapsed",
-"struckOut",
-"issueFinalDecision"</text>
+          <text>"voidCase","appealWithdrawn","appealDormant","confirmLapsed","struckOut","issueFinalDecision","decisionIssued"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wxkffl">
           <text></text>
@@ -1113,6 +1115,29 @@
           <text>"prepareHearingAppraiser"</text>
         </outputEntry>
       </rule>
+        <rule id="DecisionRule_1i3r2lm">
+          <inputEntry id="UnaryTests_0eosv6j">
+            <text></text>
+          </inputEntry>
+          <inputEntry id="UnaryTests_05h8cqk">
+            <text>"postponementGranted"</text>
+          </inputEntry>
+          <inputEntry id="UnaryTests_1es5etl">
+            <text></text>
+          </inputEntry>
+          <outputEntry id="LiteralExpression_1dtxk2u">
+            <text>"Cancel"</text>
+          </outputEntry>
+          <outputEntry id="LiteralExpression_15016ni">
+            <text></text>
+          </outputEntry>
+          <outputEntry id="LiteralExpression_1q3xs33">
+            <text></text>
+          </outputEntry>
+          <outputEntry id="LiteralExpression_0jpi0hl">
+            <text>"allocateCaseRolesAndCreateBundle"</text>
+          </outputEntry>
+        </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

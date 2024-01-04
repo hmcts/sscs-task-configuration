@@ -79,6 +79,25 @@ public class ConfigurationExpectationBuilder {
         return builder;
     }
 
+    public static ConfigurationExpectationBuilder defaultExpectationsSpecificAccess() {
+        ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
+        builder.expectedValue(CASE_NAME, "Joe Blogs", true);
+        builder.expectedValue(CASE_MANAGEMENT_CATEGORY, "Personal Independence Payment", true);
+        builder.expectedValue(REGION, "4", true);
+        builder.expectedValue(LOCATION, "123456", true);
+        builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
+        builder.expectedValue(WORK_TYPE, "access-requests", true);
+        builder.expectedValue(MINOR_PRIORITY, "500", true);
+        builder.expectedValue(MAJOR_PRIORITY, "5000", true);
+        builder.expectedValue(NEXT_HEARING_ID, "", true);
+        builder.expectedValue(NEXT_HEARING_DATE, "", true);
+        builder.expectedValue(DUE_DATE_ORIGIN, now(), false);
+        builder.expectedValue(DUE_DATE_NON_WORKING_CALENDAR, CourtSpecificCalendars.ENGLAND_AND_WALES_CALENDAR, true);
+        builder.expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true);
+        builder.expectedValue(DUE_DATE_NON_WORKING_DAYS_OF_WEEK, "SATURDAY,SUNDAY", true);
+        return builder;
+    }
+
     public static ConfigurationExpectationBuilder defaultJudicialTaskExpectations() {
         ConfigurationExpectationBuilder builder = new ConfigurationExpectationBuilder();
         builder.expectedValue(CASE_NAME, "Joe Blogs", true);
