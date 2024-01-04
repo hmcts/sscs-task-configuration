@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -1227,7 +1227,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_0z8zz9l">
         <inputEntry id="UnaryTests_0b3x5ea">
-          <text>"createBundle"</text>
+          <text>"createBundle","newCaseRolesAssigned"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ugm5mi">
           <text></text>
@@ -2901,7 +2901,7 @@ else "Referred to interloc"</text>
       </rule>
       <rule id="DecisionRule_19ubzpc">
         <inputEntry id="UnaryTests_0pcmti3">
-          <text>"createBundle"</text>
+          <text>"createBundle","newCaseRolesAssigned"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08j068n">
           <text></text>
@@ -2984,7 +2984,7 @@ else "Referred to interloc"</text>
       </rule>
       <rule id="DecisionRule_1aqar24">
         <inputEntry id="UnaryTests_113k0ip">
-          <text>"createBundle"</text>
+          <text>"createBundle","newCaseRolesAssigned"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1f8vabj">
           <text></text>
@@ -3067,7 +3067,7 @@ else "Referred to interloc"</text>
       </rule>
       <rule id="DecisionRule_0ouzima">
         <inputEntry id="UnaryTests_000r511">
-          <text>"createBundle"</text>
+          <text>"createBundle","newCaseRolesAssigned"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_03lhhd8">
           <text></text>
@@ -6902,7 +6902,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_1ughwhb">
         <inputEntry id="UnaryTests_0a8o0fg">
-          <text>"createBundle"</text>
+          <text>"createBundle","newCaseRolesAssigned"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_016h7ua">
           <text></text>
@@ -6985,7 +6985,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_1qs71y6">
         <inputEntry id="UnaryTests_09ezx1j">
-          <text>"createBundle"</text>
+          <text>"createBundle","newCaseRolesAssigned"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_16bhsz3">
           <text></text>

@@ -119,7 +119,8 @@
 "appealWithdrawn",
 "appealDormant",
 "struckOut",
-"readyToList"</text>
+"readyToList",
+"dwpUploadResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1eji6eu">
           <text></text>
@@ -193,7 +194,13 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_17eybg7">
-          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "issueFinalDecision", "decisionIssued"</text>
+          <text>"voidCase",
+          "appealWithdrawn",
+          "appealDormant",
+          "confirmLapsed",
+          "struckOut",
+          "issueFinalDecision",
+          "decisionIssued"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1qi0eq8">
           <text></text>
@@ -666,12 +673,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1l8i9ho">
-          <text>"voidCase",
-"appealWithdrawn",
-"appealDormant",
-"confirmLapsed",
-"struckOut",
-"issueFinalDecision"</text>
+          <text>"voidCase","appealWithdrawn","appealDormant","confirmLapsed","struckOut","issueFinalDecision","decisionIssued"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wxkffl">
           <text></text>

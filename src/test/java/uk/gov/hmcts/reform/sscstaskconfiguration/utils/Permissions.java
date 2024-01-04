@@ -46,6 +46,15 @@ public class Permissions {
         );
     }
 
+    public static Map<String, Object> permission(String role, String value, String roleCategory, boolean autoAssignable) {
+        return Map.of(
+            "name", role,
+            "value", value,
+            "roleCategory", roleCategory,
+            "autoAssignable", autoAssignable
+        );
+    }
+
     public static Map<String, Object> permission(String role, String value, String roleCategory, String authorisations) {
         return Map.of(
             "name", role,
@@ -75,6 +84,8 @@ public class Permissions {
         permission("allocated-tribunal-caseworker", "Read", "LEGAL_OPERATIONS");
     public static Map<String,Object> TRIBUNAL_CASEWORKER_READ_PERMISSIONS =
         permission("tribunal-caseworker", "Read", "LEGAL_OPERATIONS");
+    public static Map<String,Object> SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS =
+        permission("senior-legal-caseworker", "Read", "LEGAL_OPERATIONS");
     public static Map<String,Object> INTERLOC_JUDGE_READ_PERMISSIONS =
         permission("interloc-judge", "Read", "JUDICIAL");
     public static Map<String,Object> HEARING_JUDGE_READ_PERMISSIONS =
@@ -111,6 +122,10 @@ public class Permissions {
         permission("fee-paid-medical", "Read", "JUDICIAL");
     public static Map<String,Object> LEADERSHIP_JUDGE_READ_PERMISSIONS =
         permission("leadership-judge", "Read", "JUDICIAL");
+    public static Map<String,Object> SENIOR_JUDGE_READ_PERMISSIONS =
+        permission("senior-judge", "Read", "JUDICIAL");
+
+
 
     public static List<Map<String, Object>> defaultCtscPermissions() {
         return List.of(
@@ -118,6 +133,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             Map.of(
                 "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
@@ -154,7 +170,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -164,6 +181,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             CTSC_READ_PERMISSIONS,
             CTSC_TEAM_LEADER_READ_PERMISSIONS,
             INTERLOC_JUDGE_READ_PERMISSIONS,
@@ -199,7 +217,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -209,6 +228,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             Map.of(
                 "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
@@ -245,7 +265,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -255,6 +276,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             CTSC_READ_PERMISSIONS,
             CTSC_TEAM_LEADER_READ_PERMISSIONS,
             INTERLOC_JUDGE_READ_PERMISSIONS,
@@ -290,7 +312,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -300,6 +323,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             CTSC_READ_PERMISSIONS,
             CTSC_TEAM_LEADER_READ_PERMISSIONS,
             permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
@@ -319,7 +343,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -329,6 +354,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             CTSC_READ_PERMISSIONS,
             CTSC_TEAM_LEADER_READ_PERMISSIONS,
             INTERLOC_JUDGE_READ_PERMISSIONS,
@@ -348,7 +374,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -358,6 +385,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             CTSC_READ_PERMISSIONS,
             CTSC_TEAM_LEADER_READ_PERMISSIONS,
             permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
@@ -377,7 +405,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -387,6 +416,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
             permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             CTSC_READ_PERMISSIONS,
             CTSC_TEAM_LEADER_READ_PERMISSIONS,
             INTERLOC_JUDGE_READ_PERMISSIONS,
@@ -406,7 +436,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -416,6 +447,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             CTSC_READ_PERMISSIONS,
             CTSC_TEAM_LEADER_READ_PERMISSIONS,
             INTERLOC_JUDGE_READ_PERMISSIONS,
@@ -435,7 +467,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -445,6 +478,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             CTSC_READ_PERMISSIONS,
             CTSC_TEAM_LEADER_READ_PERMISSIONS,
             INTERLOC_JUDGE_READ_PERMISSIONS,
@@ -470,7 +504,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -480,6 +515,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             CTSC_READ_PERMISSIONS,
             CTSC_TEAM_LEADER_READ_PERMISSIONS,
             INTERLOC_JUDGE_READ_PERMISSIONS,
@@ -505,7 +541,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 
@@ -515,6 +552,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
             TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+            SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
             CTSC_READ_PERMISSIONS,
             CTSC_TEAM_LEADER_READ_PERMISSIONS,
             INTERLOC_JUDGE_READ_PERMISSIONS,
@@ -540,7 +578,8 @@ public class Permissions {
             APPRAISER_2_READ_PERMISSIONS,
             MEDICAL_READ_PERMISSIONS,
             FEE_PAID_MEDICAL_READ_PERMISSIONS,
-            LEADERSHIP_JUDGE_READ_PERMISSIONS
+            LEADERSHIP_JUDGE_READ_PERMISSIONS,
+            SENIOR_JUDGE_READ_PERMISSIONS
         );
     }
 }
