@@ -581,6 +581,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("assignedCaseRoles", Arrays.asList("appraiser-2"))
                 .initiativesTask("prepareHearingAppraiser2", "Prepare for hearing", 2, "prepareHearingAppraiser")
                 .build(),
+            event("newCaseRolesAssigned")
+                .withCaseData("assignedCaseRoles", Arrays.asList("hearing-judge",
+                    "tribunal-member-1", "tribunal-member-2", "tribunal-member-3", "appraiser-1", "appraiser-2"))
+                .initiativesTask("prepareForHearingJudge", "Prepare For Hearing", 2)
+                .initiativesTask("prepareForHearingTribunalMember1", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .initiativesTask("prepareForHearingTribunalMember2", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .initiativesTask("prepareForHearingTribunalMember3", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
+                .initiativesTask("prepareHearingAppraiser1", "Prepare for hearing", 2, "prepareHearingAppraiser")
+                .initiativesTask("prepareHearingAppraiser2", "Prepare for hearing", 2, "prepareHearingAppraiser")
+                .build(),
             event("createBundle")
                 .build(),
             event("validSendToInterloc")
