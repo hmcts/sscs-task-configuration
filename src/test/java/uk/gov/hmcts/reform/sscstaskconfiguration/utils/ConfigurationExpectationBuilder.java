@@ -86,7 +86,7 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(REGION, "4", true);
         builder.expectedValue(LOCATION, "123456", true);
         builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
-        builder.expectedValue(WORK_TYPE, "access-requests", true);
+        builder.expectedValue(WORK_TYPE, "access_requests", true);
         builder.expectedValue(MINOR_PRIORITY, "500", true);
         builder.expectedValue(MAJOR_PRIORITY, "5000", true);
         builder.expectedValue(NEXT_HEARING_ID, "", true);
