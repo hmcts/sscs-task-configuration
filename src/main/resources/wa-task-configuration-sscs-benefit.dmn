@@ -881,6 +881,27 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_02qktzz">
+        <inputEntry id="UnaryTests_1y6ukih">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19v8r99">
+          <text>"reviewSpecificAccessRequestJudiciary",
+"reviewSpecificAccessRequestLegalOps",
+"reviewSpecificAccessRequestAdmin",
+"reviewSpecificAccessRequestCTSC"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hecwvu">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fzk1cz">
+          <text>if (taskAttributes != null and taskAttributes.taskId != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskId + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
+else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13eeaor">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0i5m72y">
         <inputEntry id="UnaryTests_1htx15c">
           <text></text>

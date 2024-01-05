@@ -39,8 +39,8 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpec
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.ROLE_CATEGORY;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.WORK_TYPE;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.buildDescription;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.link;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.caseLink;
-import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.eventLink;
 
 @Slf4j
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
@@ -816,7 +816,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
-            ),
+            )
+        );
+    }
+
+    static Stream<Arguments> reviewSpecificAccessRequestScenarioProvider() {
+        return Stream.of(
             Arguments.of(
                 "reviewSpecificAccessRequestJudiciary",
                 CaseDataBuilder.defaultCase().build(),
@@ -862,6 +867,26 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskType", taskType);
         inputVariables.putValue("caseData", caseData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        resultsMatch(dmnDecisionTableResult.getResultList(), expectation);
+    }
+
+    @ParameterizedTest(name = "task type: {0} case data: {1}")
+    @MethodSource({"reviewSpecificAccessRequestScenarioProvider"})
+    void should_return_correct_configuration_values_for_specific_access_requests(
+        String taskType,
+        Map<String, Object> caseData,
+        List<Map<String, Object>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("taskType", taskType);
+        inputVariables.putValue("caseData", caseData);
+        inputVariables.putValue("taskAttributes", Map.of(
+            "taskType", taskType,
+            "taskId", "taskId",
+            "roleAssignmentId", "roleAssignmentId"
+        ));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
