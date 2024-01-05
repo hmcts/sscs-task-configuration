@@ -1161,7 +1161,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "reviewSpecificAccessCTSC",
+                "reviewSpecificAccessRequestCTSC",
                 "someCaseData",
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,

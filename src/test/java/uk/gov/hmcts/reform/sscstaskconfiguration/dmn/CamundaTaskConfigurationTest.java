@@ -839,7 +839,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-                "reviewSpecificAccessCTSC",
+                "reviewSpecificAccessRequestCTSC",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectationsSpecificAccess()
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
