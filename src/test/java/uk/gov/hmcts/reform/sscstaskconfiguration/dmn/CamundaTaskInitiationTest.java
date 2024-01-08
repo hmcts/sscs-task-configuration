@@ -695,18 +695,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("interlocReferralReason", "reviewLibertyToApplyApplication")
                 .initiativesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application", 2)
                 .build(),
-            eventWithState("actionFurtherEvidence", "dormantAppealState")
-                .withCaseData("scannedDocumentTypes", List.of("libertyToApplyApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .initiativesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application", 2)
-                .build(),
             event("validSendToInterloc")
                 .withCaseData("interlocReferralReason", "reviewCorrectionApplication")
-                .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
-                .build(),
-            event("actionFurtherEvidence")
-                .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
                 .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
                 .build(),
             event("adminActionCorrection")
@@ -721,24 +711,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
                 .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
                 .build(),
-            eventWithState("actionFurtherEvidence", "postHearing")
-                .withCaseData("scannedDocumentTypes", List.of("statementOfReasonsApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .withCaseData("issueInterlocDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
-                .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
-                .build(),
             eventWithState("sORExtendTime", "postHearing")
                 .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
                 .build(),
             eventWithState("validSendToInterloc", "postHearing")
                 .withCaseData("interlocReferralReason", "lateStatementOfReasonsApplication")
                 .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
-                .initiativesTask("reviewLateStatementofReasonsApplication", "Review Late SOR Application", 2)
-                .build(),
-            eventWithState("actionFurtherEvidence", "postHearing")
-                .withCaseData("scannedDocumentTypes", List.of("statementOfReasonsApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .withCaseData("issueInterlocDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
                 .initiativesTask("reviewLateStatementofReasonsApplication", "Review Late SOR Application", 2)
                 .build(),
             eventWithState("validSendToInterloc", "postHearing")
@@ -748,17 +726,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             eventWithState("validSendToInterloc", "postHearing")
                 .withCaseData("interlocReferralReason", "reviewPermissionToAppealApplication")
                 .withCaseData("otherParties", List.of("other party 1"))
-                .initiativesTaskWithDelay("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 21, 2)
-                .build(),
-            eventWithState("actionFurtherEvidence", "postHearing")
-                .withCaseData("scannedDocumentTypes", List.of("permissionToAppealApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .initiativesTask("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 2)
-                .build(),
-            eventWithState("actionFurtherEvidence", "postHearing")
-                .withCaseData("scannedDocumentTypes", List.of("permissionToAppealApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .withCaseData("jointParty", "Yes")
                 .initiativesTaskWithDelay("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 21, 2)
                 .build(),
             event("validSendToInterloc")
@@ -779,17 +746,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("interlocReferralReason", "reviewSetAsideApplication")
                 .withCaseData("jointParty", "Yes")
                 .initiativesTaskWithDelay("reviewSetAsideApplication", "Review Set Aside Application", 21, 2)
-                .build(),
-            eventWithState("actionFurtherEvidence", "postHearing")
-                .withCaseData("scannedDocumentTypes", List.of("setAsideApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .initiativesTask("reviewSetAsideApplication", "Review Set Aside Application", 2)
-                .build(),
-            eventWithState("actionFurtherEvidence", "dormantAppealState")
-                .withCaseData("scannedDocumentTypes", List.of("setAsideApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .withCaseData("otherParties", List.of("other party 1"))
-                .initiativesTaskWithDelay("reviewSetAsideApplication", "Review Set Aside Application", 21,2)
                 .build(),
             event("sendToFirstTier")
                 .withCaseData("sendToFirstTier", Map.of("action", "remitted"))
