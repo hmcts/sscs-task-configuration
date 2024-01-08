@@ -148,7 +148,7 @@ else
       </input>
       <input id="InputClause_1dqcewl" label="Further Evidence Action" biodi:width="302" camunda:inputVariable="furtherEvidenceAction">
         <inputExpression id="LiteralExpression_1mxhj01" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null 
+          <text>if(additionalData != null and additionalData.Data != null
   and additionalData.Data.furtherEvidenceAction != null
   and additionalData.Data.furtherEvidenceAction.value != null) then
             additionalData.Data.furtherEvidenceAction.value.code
