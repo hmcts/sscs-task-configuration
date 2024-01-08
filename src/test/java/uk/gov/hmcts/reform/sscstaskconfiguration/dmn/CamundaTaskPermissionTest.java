@@ -326,7 +326,34 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewOutstandingDraftDecision",
                 "someCaseData",
-                Permissions.defaultCtscPermissions()
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.ALLOCATED_TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.SENIOR_LEGAL_CASEWORKER_READ_PERMISSIONS,
+                    Permissions.CTSC_READ_PERMISSIONS,
+                    Permissions.CTSC_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.INTERLOC_JUDGE_READ_PERMISSIONS,
+                    Permissions.HEARING_JUDGE_READ_PERMISSIONS,
+                    Permissions.JUDGE_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_JUDGE_READ_PERMISSIONS,
+                    Permissions.POST_HEARING_JUDGE_READ_PERMISSIONS,
+                    permission("allocated-admin-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "ADMIN", 1, true),
+                    permission("regional-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "ADMIN"),
+                    permission("regional-centre-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel", "ADMIN"),
+                    Permissions.HEARING_CENTRE_ADMIN_READ_PERMISSIONS,
+                    Permissions.HEARING_CENTRE_TEAM_LEADER_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_1_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_2_READ_PERMISSIONS,
+                    Permissions.TRIBUNAL_MEMBER_3_READ_PERMISSIONS,
+                    Permissions.APPRAISER_1_READ_PERMISSIONS,
+                    Permissions.APPRAISER_2_READ_PERMISSIONS,
+                    Permissions.MEDICAL_READ_PERMISSIONS,
+                    Permissions.FEE_PAID_MEDICAL_READ_PERMISSIONS,
+                    Permissions.LEADERSHIP_JUDGE_READ_PERMISSIONS,
+                    Permissions.SENIOR_JUDGE_READ_PERMISSIONS
+                )
             ),
             Arguments.of(
                 "referredByAdminJudgePreHearing",
@@ -1134,7 +1161,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "reviewSpecificAccessCTSC",
+                "reviewSpecificAccessRequestCTSC",
                 "someCaseData",
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,

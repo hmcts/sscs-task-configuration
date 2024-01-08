@@ -86,9 +86,12 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(REGION, "4", true);
         builder.expectedValue(LOCATION, "123456", true);
         builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
-        builder.expectedValue(WORK_TYPE, "access-requests", true);
+        builder.expectedValue(WORK_TYPE, "access_requests", true);
         builder.expectedValue(MINOR_PRIORITY, "500", true);
         builder.expectedValue(MAJOR_PRIORITY, "5000", true);
+        builder.expectedValue(DESCRIPTION, link(
+            "Review Access Request",
+            "/role-access/taskId/assignment/roleAssignmentId/specific-access"), true);
         builder.expectedValue(NEXT_HEARING_ID, "", true);
         builder.expectedValue(NEXT_HEARING_DATE, "", true);
         builder.expectedValue(DUE_DATE_ORIGIN, now(), false);
@@ -141,6 +144,10 @@ public class ConfigurationExpectationBuilder {
 
     public static Map dynamicListValue(String code) {
         return Map.of("value", Map.of("code", code));
+    }
+
+    public static String link(String description, String link) {
+        return String.format("[%s](%s)", description, link);
     }
 
     public static String now() {
