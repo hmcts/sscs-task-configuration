@@ -39,7 +39,6 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpec
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.ROLE_CATEGORY;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.WORK_TYPE;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.buildDescription;
-import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.link;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.caseLink;
 
 @Slf4j
@@ -512,18 +511,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-                "updateHearingDetailsRequired",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue(DESCRIPTION, caseLink("Hearing tab","hearings"), true)
-                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
-                    .expectedValue(WORK_TYPE, "hearing_work", true)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
-                    .build()
-            ),
-            Arguments.of(
                 "reviewPostponementRequestTCW",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
@@ -780,6 +767,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(ROLE_CATEGORY, "ADMIN", true)
+                    .expectedValue(DESCRIPTION, caseLink("Hearing tab","hearings"), true)
                     .expectedValue(WORK_TYPE, "hearing_work", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
                     .build()
@@ -909,7 +897,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(61));
+        assertThat(logic.getRules().size(), is(62));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
