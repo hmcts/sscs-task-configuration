@@ -40,7 +40,6 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpec
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.WORK_TYPE;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.buildDescription;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.caseLink;
-import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.eventLink;
 
 @Slf4j
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {

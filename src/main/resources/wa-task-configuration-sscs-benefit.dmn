@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.18.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <informationRequirement id="InformationRequirement_0l9qrru">
       <requiredDecision href="#sscs-task-configuration-non-working-days" />
@@ -876,6 +876,23 @@ null</text>
           <text>"[View hearing bundle](/case/SSCS/Benefit/${[CASE_REFERENCE]}#Documents)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13g7hmr">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fbsict">
+        <inputEntry id="UnaryTests_0oclwsd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gzkbl3">
+          <text>"updateHearingDetailsRequired"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12l2wls">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cayzlq">
+          <text>"[Hearing tab](/case/SSCS/Benefit/${[CASE_REFERENCE]}/hearings)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1crjbmw">
           <text>true</text>
         </outputEntry>
       </rule>
