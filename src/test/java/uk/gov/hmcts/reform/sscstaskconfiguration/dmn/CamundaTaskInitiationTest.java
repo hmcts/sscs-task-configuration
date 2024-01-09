@@ -797,9 +797,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application",2)
                 .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge",3)
                 .build(),
-            eventWithState("actionFurtherEvidence", "dormantAppealState")
+            eventWithState("postHearingRequest", "dormantAppealState")
                 .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
-                .withCaseData("interlocReferralReason", "reviewCorrectionApplication")
+                .withCaseData("action", "correction")
                 .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge",3)
                 .build(),
             event("sendToFirstTier")
