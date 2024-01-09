@@ -83,7 +83,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "referredByAdminJudgePostHearing", "referredByTcwPostHearing",
                                     "reviewLibertytoApplyApplication", "reviewLateStatementofReasonsApplication",
                                     "reviewSetAsideApplication", "reviewPermissiontoAppealApplication",
-                                    "reviewCorrectionApplicationJudge", BLANK),
+                                    "reviewCorrectionApplicationJudge", "provideListingDirections", BLANK),
             eventAutoCompletesTasks("directionIssued",
                                     "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
                                     "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
@@ -96,7 +96,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "reviewPermissiontoAppealApplication", "reviewSetAsideApplication",
                                     "reviewRemittedDecisionandProvideListingDirections",
                                     "reviewCorrectionApplicationJudge", "referredByAdminJudgePostHearing",
-                                    "referredByTcwPostHearing", BLANK),
+                                    "referredByTcwPostHearing", "provideListingDirections", BLANK),
             eventAutoCompletesTasks("issueFinalDecision",
                                     "reviewConfidentialityRequest", "writeDecisionJudge",
                                     "reviewCorrectionApplicationJudge", BLANK),
@@ -126,7 +126,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("postHearingReview",
                                     "reviewLibertytoApplyApplication", "reviewCorrectionApplicationJudge",
                                     "reviewLateStatementofReasonsApplication", "reviewPermissiontoAppealApplication",
-                                    "reviewSetAsideApplication", BLANK)
+                                    "reviewSetAsideApplication", BLANK),
+            eventAutoCompletesTasks("addNote", "provideListingDirections")
         );
     }
 

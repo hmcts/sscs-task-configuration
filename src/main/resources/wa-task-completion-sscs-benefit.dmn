@@ -506,7 +506,7 @@
       </rule>
       <rule id="DecisionRule_0wjjv0x">
         <inputEntry id="UnaryTests_040p4ho">
-          <text>"Issue Directions","Add a Note","Send to Admin"</text>
+          <text>"directionIssued","addNote","sendToAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14ph5b5">
           <text>"provideListingDirections"</text>
