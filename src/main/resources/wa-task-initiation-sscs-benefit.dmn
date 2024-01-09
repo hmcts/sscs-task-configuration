@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -2514,7 +2514,8 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_04naptx">
-          <text></text>
+          <text>not(list contains(["reviewPostponementRequest","confirmPanelCompositionAndListingDirections"],
+interlocReferralReason))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08ur582">
           <text></text>
@@ -2600,6 +2601,8 @@ else "Referred to interloc"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0c417un">
           <text>not(list contains([
+"reviewPostponementRequest",
+"confirmPanelCompositionAndListingDirections",
 "adviceOnHowToProceed",
 "reviewCorrectionRequest",
 "reviewSetAsideApplication",
@@ -3358,7 +3361,8 @@ else "Referred to interloc"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1vob6jk">
-          <text></text>
+          <text>not(list contains(["reviewPostponementRequest","confirmPanelCompositionAndListingDirections"],
+interlocReferralReason))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1vskm8k">
           <text></text>
@@ -3441,7 +3445,8 @@ else "Referred to interloc"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0m6l9wa">
-          <text></text>
+          <text>not(list contains(["reviewPostponementRequest","confirmPanelCompositionAndListingDirections"],
+interlocReferralReason))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pd5b5w">
           <text></text>
@@ -3526,7 +3531,8 @@ else "Referred to interloc"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_13y1mm0">
-          <text>not("adviceOnHowToProceed")</text>
+          <text>not(list contains(["reviewPostponementRequest","confirmPanelCompositionAndListingDirections", "adviceOnHowToProceed"],
+interlocReferralReason))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xe4ft1">
           <text></text>
@@ -3611,7 +3617,8 @@ else "Referred to interloc"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gj9m4k">
-          <text></text>
+          <text>not(list contains(["reviewPostponementRequest","confirmPanelCompositionAndListingDirections"],
+interlocReferralReason))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_13che4o">
           <text></text>
