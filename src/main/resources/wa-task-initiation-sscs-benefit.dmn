@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -2306,7 +2306,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_0xagec0">
         <inputEntry id="UnaryTests_17bjq20">
-          <text>"dwpUploadResponse"</text>
+          <text>"hmctsResponseReviewed"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0q8sx1p">
           <text></text>
@@ -2327,13 +2327,13 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ymuvrl">
-          <text></text>
+          <text>"reviewByJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_13papzv">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1b3z5d3">
-          <text>"022", "023", "024", "025", "026", "028"</text>
+          <text></text>
         </inputEntry>
         <inputEntry>
           <text></text>
@@ -2348,7 +2348,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1inor5y">
-          <text></text>
+          <text>"confirmPanelCompositionAndListingDirections"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0o3rmvw">
           <text></text>
