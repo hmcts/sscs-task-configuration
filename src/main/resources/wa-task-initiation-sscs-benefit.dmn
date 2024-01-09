@@ -4249,6 +4249,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_14qtv8h">
+        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_036kg0d">
           <text>"sORRequest"</text>
         </inputEntry>
@@ -4830,6 +4831,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0qujved">
+        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_0vohvwb">
           <text>"validSendToInterloc"</text>
         </inputEntry>
@@ -5162,6 +5164,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0i34c9j">
+        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_15ns3oq">
           <text>"libertyToApplyGranted"</text>
         </inputEntry>
@@ -5245,6 +5248,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0luha43">
+        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_0yw2h9x">
           <text>"reviewAndSetAside"</text>
         </inputEntry>
@@ -5494,6 +5498,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1hklqkl">
+        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_1adxuio">
           <text>"sendToFirstTier"</text>
         </inputEntry>
@@ -5660,6 +5665,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0srpxtk">
+        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_0vrd1mv">
           <text>"sendToFirstTier"</text>
         </inputEntry>
@@ -5743,6 +5749,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0h423xq">
+        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_179xtru">
           <text>"libertyToApplyRequest",
 "permissionToAppealRequest",
@@ -5829,6 +5836,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1a0vc32">
+        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_1r24n8t">
           <text>"sORRequest"</text>
         </inputEntry>
@@ -5912,6 +5920,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1yqahxq">
+        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_13f8zt4">
           <text>"sORRequest"</text>
         </inputEntry>
