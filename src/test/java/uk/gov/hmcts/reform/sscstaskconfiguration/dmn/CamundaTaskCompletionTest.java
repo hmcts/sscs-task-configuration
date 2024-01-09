@@ -138,29 +138,29 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("additionalData", map);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-        MatcherAssert.assertThat(new HashSet<Map<String,Object>>(dmnDecisionTableResult.getResultList()), is(expectation));
+        MatcherAssert.assertThat(new HashSet<>(dmnDecisionTableResult.getResultList()), is(expectation));
     }
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(45));
+        assertThat(logic.getRules().size(), is(46));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
-        return Arguments.of(event, null, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
+        return Arguments.of(event, null, Arrays.stream(tasks).map(CamundaTaskCompletionTest::outputMap).collect(Collectors.toSet())
         );
     }
 
     public static Arguments eventAutoCompletesTasks(String event, Map<String, Object> caseData, String... tasks) {
         return Arguments.of(event,
                             Map.of("Data", caseData),
-                            Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
+                            Arrays.stream(tasks).map(CamundaTaskCompletionTest::outputMap).collect(Collectors.toSet())
         );
     }
 
-    private static Map outputMap(String taskId) {
+    private static Map<?, ?> outputMap(String taskId) {
         if (taskId != null) {
             return Map.of(
                 "taskType", taskId,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.18.0">
   <decision id="wa-task-permissions-sscs-benefit" name="Permissions DMN">
     <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
       <input id="InputClause_12crj6e" label="Task Type" biodi:width="722" camunda:inputVariable="taskType">
@@ -2136,6 +2136,84 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_09xmx8a">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1287d0o">
+        <inputEntry id="UnaryTests_1fvuk4a">
+          <text>"provideListingDirections"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xtuxb1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15gxl2h">
+          <text>"interloc-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1usy1bh">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bberum">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oavw42">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vnmp8d">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15uhu56">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01pb7h3">
+        <inputEntry id="UnaryTests_1u87sft">
+          <text>"provideListingDirections"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g31ito">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xji4q8">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bwzojf">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0afijgy">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zggeq0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02ig7fe">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06yaqg4">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19zeppt">
+        <inputEntry id="UnaryTests_18c6crs">
+          <text>"provideListingDirections"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0itm7ho">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02gunes">
+          <text>"fee-paid-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0555nhh">
+          <text>"Read,Own,Claim,Unclaim"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05mc4p7">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1614747">
+          <text>368</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1er6bor">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08iywpx">
           <text>false</text>
         </outputEntry>
       </rule>

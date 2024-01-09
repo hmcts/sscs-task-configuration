@@ -1113,29 +1113,57 @@
           <text>"prepareHearingAppraiser"</text>
         </outputEntry>
       </rule>
-        <rule id="DecisionRule_1i3r2lm">
-          <inputEntry id="UnaryTests_0eosv6j">
-            <text></text>
-          </inputEntry>
-          <inputEntry id="UnaryTests_05h8cqk">
-            <text>"postponementGranted"</text>
-          </inputEntry>
-          <inputEntry id="UnaryTests_1es5etl">
-            <text></text>
-          </inputEntry>
-          <outputEntry id="LiteralExpression_1dtxk2u">
-            <text>"Cancel"</text>
-          </outputEntry>
-          <outputEntry id="LiteralExpression_15016ni">
-            <text></text>
-          </outputEntry>
-          <outputEntry id="LiteralExpression_1q3xs33">
-            <text></text>
-          </outputEntry>
-          <outputEntry id="LiteralExpression_0jpi0hl">
-            <text>"allocateCaseRolesAndCreateBundle"</text>
-          </outputEntry>
-        </rule>
+      <rule id="DecisionRule_1i3r2lm">
+        <inputEntry id="UnaryTests_0eosv6j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05h8cqk">
+          <text>"postponementGranted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1es5etl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dtxk2u">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15016ni">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q3xs33">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jpi0hl">
+          <text>"allocateCaseRolesAndCreateBundle"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13egs1r">
+        <inputEntry id="UnaryTests_1jx2n97">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_199w4l9">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jnhvp8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l7dxih">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11nd2ut">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pvzf7d">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09w03yo">
+          <text>"provideListingDirections"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
