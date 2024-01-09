@@ -6487,7 +6487,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_198hkbe">
         <inputEntry id="UnaryTests_1ue2a9c">
-          <text>"correctionRequest"</text>
+          <text>"actionFurtherEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1n7poad">
           <text>"dormantAppealState", "postHearing"</text>
@@ -6570,7 +6570,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_0epccij">
         <inputEntry id="UnaryTests_1y0us2k">
-          <text>"correctionRequest"</text>
+          <text>"actionFurtherEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0m2edtd">
           <text>"dormantAppealState", "postHearing"</text>
