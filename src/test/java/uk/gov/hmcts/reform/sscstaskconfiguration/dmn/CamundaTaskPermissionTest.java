@@ -520,8 +520,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
-                    permission("leadership-judge", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "JUDICIAL", true),
-                    permission("senior-judge", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "JUDICIAL", true)
+                    permission("specific-access-approver-judiciary", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -530,7 +529,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
-                    permission("senior-legal-caseworker", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "LEGAL_OPERATIONS", true)
+                    permission("specific-access-approver-legal-ops", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "LEGAL_OPERATIONS")
                 )
             ),
             Arguments.of(
@@ -539,8 +538,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
-                    permission("regional-centre-team-leader", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "ADMIN", true),
-                    permission("hearing-centre-team-leader", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "ADMIN", true)
+                    permission("specific-access-approver-admin", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "ADMIN")
                 )
             ),
             Arguments.of(
@@ -549,7 +547,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
-                    permission("ctsc-team-leader", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "CTSC", true)
+                    permission("specific-access-approver-ctsc", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "CTSC")
                 )
             )
         );
@@ -591,7 +589,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(57));
+        assertThat(logic.getRules().size(), is(55));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
