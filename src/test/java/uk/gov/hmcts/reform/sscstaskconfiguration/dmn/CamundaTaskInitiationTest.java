@@ -751,7 +751,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             eventWithState("actionFurtherEvidence", "dormantAppealState")
                 .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
                 .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                //.initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application",2)
                 .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge",3)
                 .build(),
             eventWithState("postHearingRequest", "dormantAppealState")
