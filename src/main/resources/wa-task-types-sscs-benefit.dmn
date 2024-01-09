@@ -494,7 +494,6 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_04uatuz">
-        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_0alu7px">
           <text></text>
         </inputEntry>
@@ -550,7 +549,6 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ipditk">
-        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_1irlupc">
           <text></text>
         </inputEntry>
@@ -584,7 +582,6 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0nefwt8">
-        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_0r11l64">
           <text></text>
         </inputEntry>
@@ -629,7 +626,6 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_04dyd7k">
-        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_03c6tvh">
           <text></text>
         </inputEntry>
@@ -641,7 +637,6 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1put3z8">
-        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_029ibvq">
           <text></text>
         </inputEntry>
@@ -664,7 +659,6 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1vdinki">
-        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_1atto5j">
           <text></text>
         </inputEntry>
@@ -676,7 +670,6 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1pue10z">
-        <description>Manual Completion</description>
         <inputEntry id="UnaryTests_064gjbl">
           <text></text>
         </inputEntry>
