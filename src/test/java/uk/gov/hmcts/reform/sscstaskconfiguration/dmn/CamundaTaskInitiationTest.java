@@ -421,7 +421,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("dwpSupplementaryResponse")
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document",
-                             10, "Translation Tasks")
+                                 10, "Translation Tasks")
                 .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
                 .build(),
             event("uploadDocument")
@@ -583,7 +583,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("newCaseRolesAssigned")
                 .withCaseData("assignedCaseRoles", Arrays.asList("hearing-judge",
-                    "tribunal-member-1", "tribunal-member-2", "tribunal-member-3", "appraiser-1", "appraiser-2"))
+                                                                 "tribunal-member-1", "tribunal-member-2", "tribunal-member-3",
+                                                                 "appraiser-1", "appraiser-2"))
                 .initiativesTask("prepareForHearingJudge", "Prepare For Hearing", 2)
                 .initiativesTask("prepareForHearingTribunalMember1", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
                 .initiativesTask("prepareForHearingTribunalMember2", "Prepare for hearing", 2, "prepareForHearingTribunalMember")
@@ -695,18 +696,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("interlocReferralReason", "reviewLibertyToApplyApplication")
                 .initiativesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application", 2)
                 .build(),
-            eventWithState("actionFurtherEvidence", "dormantAppealState")
-                .withCaseData("scannedDocumentTypes", List.of("libertyToApplyApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .initiativesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application", 2)
-                .build(),
             event("validSendToInterloc")
                 .withCaseData("interlocReferralReason", "reviewCorrectionApplication")
-                .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
-                .build(),
-            event("actionFurtherEvidence")
-                .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
                 .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application", 2)
                 .build(),
             event("adminActionCorrection")
@@ -721,24 +712,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
                 .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
                 .build(),
-            eventWithState("actionFurtherEvidence", "postHearing")
-                .withCaseData("scannedDocumentTypes", List.of("statementOfReasonsApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .withCaseData("issueInterlocDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
-                .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
-                .build(),
             eventWithState("sORExtendTime", "postHearing")
                 .initiativesTask("writeStatementofReason", "Write Statement of Reason", 28)
                 .build(),
             eventWithState("validSendToInterloc", "postHearing")
                 .withCaseData("interlocReferralReason", "lateStatementOfReasonsApplication")
                 .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
-                .initiativesTask("reviewLateStatementofReasonsApplication", "Review Late SOR Application", 2)
-                .build(),
-            eventWithState("actionFurtherEvidence", "postHearing")
-                .withCaseData("scannedDocumentTypes", List.of("statementOfReasonsApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .withCaseData("issueInterlocDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
                 .initiativesTask("reviewLateStatementofReasonsApplication", "Review Late SOR Application", 2)
                 .build(),
             eventWithState("validSendToInterloc", "postHearing")
@@ -748,17 +727,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             eventWithState("validSendToInterloc", "postHearing")
                 .withCaseData("interlocReferralReason", "reviewPermissionToAppealApplication")
                 .withCaseData("otherParties", List.of("other party 1"))
-                .initiativesTaskWithDelay("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 21, 2)
-                .build(),
-            eventWithState("actionFurtherEvidence", "postHearing")
-                .withCaseData("scannedDocumentTypes", List.of("permissionToAppealApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .initiativesTask("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 2)
-                .build(),
-            eventWithState("actionFurtherEvidence", "postHearing")
-                .withCaseData("scannedDocumentTypes", List.of("permissionToAppealApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .withCaseData("jointParty", "Yes")
                 .initiativesTaskWithDelay("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application", 21, 2)
                 .build(),
             event("validSendToInterloc")
@@ -780,21 +748,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("jointParty", "Yes")
                 .initiativesTaskWithDelay("reviewSetAsideApplication", "Review Set Aside Application", 21, 2)
                 .build(),
-            eventWithState("actionFurtherEvidence", "postHearing")
-                .withCaseData("scannedDocumentTypes", List.of("setAsideApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .initiativesTask("reviewSetAsideApplication", "Review Set Aside Application", 2)
-                .build(),
-            eventWithState("actionFurtherEvidence", "dormantAppealState")
-                .withCaseData("scannedDocumentTypes", List.of("setAsideApplication"))
-                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .withCaseData("otherParties", List.of("other party 1"))
-                .initiativesTaskWithDelay("reviewSetAsideApplication", "Review Set Aside Application", 21,2)
-                .build(),
             eventWithState("actionFurtherEvidence", "dormantAppealState")
                 .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
                 .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application",2)
+                //.initiativesTask("reviewCorrectionApplicationJudge", "Review Correction Application",2)
                 .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge",3)
                 .build(),
             eventWithState("postHearingRequest", "dormantAppealState")
@@ -842,6 +799,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("tcwReferToJudge")
                 .withCaseData("workType", "post")
                 .initiativesTask("referredByTcwPostHearing", "Referred By TCW", 2)
+                .build(),
+            event("hmctsResponseReviewed")
+                .withCaseData("interlocReferralReason", "timeExtension")
+                .withCaseData("action", "reviewByJudge")
+                .initiativesTask("referredToInterlocJudge", "Referred to interloc - Time extension", 2)
+                .build(),
+            event("hmctsResponseReviewed")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByJudge")
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByJudge")
+                .build(),
+            event("nonCompliantSendToInterloc")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
                 .build()
         );
     }
@@ -867,7 +840,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(84));
+        assertThat(logic.getRules().size(), is(76));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
@@ -924,7 +897,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest(name = "caseData: {1}")
     @MethodSource("scenarioProviderDateDefaults")
     void date_calculation_defaults_by_venue(Map<String, Object> caseData,
-                                                      List<Map<String, String>> expectation) {
+                                            List<Map<String, String>> expectation) {
 
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("additionalData", Map.of("Data", caseData));
