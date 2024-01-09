@@ -6038,6 +6038,172 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"reviewApplicationandAllocateJudge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_198hkbe">
+        <inputEntry id="UnaryTests_1ue2a9c">
+          <text>"actionFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n7poad">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19i7udf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09n47es">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h1x3sh">
+          <text>contains(scannedDocumentTypes, "correctionApplication")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vaxme6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0707skp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_008o13v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lhrl8b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wl0r2a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17kubg4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xxhnm2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1la1dnu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09n11qv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01fbd0w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0unt2dn">
+          <text>"sendToInterlocReviewByJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wnhg9w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tt3l4h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fr119b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ajowph">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xwmly0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15pw5xj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0htz7do">
+          <text>"reviewApplicationandAllocateJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qyqekx">
+          <text>"Review Application and Allocate Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1664rz0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02tb885">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ldtvy1">
+          <text>"reviewApplicationandAllocateJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0epccij">
+        <inputEntry id="UnaryTests_1y0us2k">
+          <text>"postHearingRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m2edtd">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12bl5iy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ao1x06">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jfw4dv">
+          <text>contains(scannedDocumentTypes, "correctionApplication")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sxxx7o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1549z9f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nrjef9">
+          <text>"correction"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0av29wk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xc4yap">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hna4yz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1me0h6j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jfef2s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qbq08o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wh92vg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yezcad">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dqcd0p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_142tx64">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h0ykr5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1knvbmq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y08muh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06aiwuw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rbip1f">
+          <text>"reviewApplicationandAllocateJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qegt8g">
+          <text>"Review Application and Allocate Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1s28qmg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nz2q80">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ktti3j">
+          <text>"reviewApplicationandAllocateJudge"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1a0vc32">
         <inputEntry id="UnaryTests_1r24n8t">
           <text>"sORRequest"</text>
