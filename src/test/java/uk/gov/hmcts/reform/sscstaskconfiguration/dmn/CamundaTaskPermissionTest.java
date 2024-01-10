@@ -180,9 +180,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
-                    permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn", "LEGAL_OPERATIONS", 1, true),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn", "LEGAL_OPERATIONS"),
                     permission("hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
+                    permission("judge","Read,Execute,Unclaim,UnclaimAssign,CancelOwn", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -277,7 +278,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewPostponementRequestTCW",
                 "someCaseData",
-                Permissions.defaultPermissionsTcwTasks()
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn", "LEGAL_OPERATIONS", 1, true),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn", "LEGAL_OPERATIONS"),
+                    permission("judge","Read,Execute,Unclaim,UnclaimAssign,CancelOwn", "JUDICIAL")
+                )
             ),
             Arguments.of(
                 "referredToInterlocTCW",
@@ -589,7 +596,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(55));
+        assertThat(logic.getRules().size(), is(58));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
