@@ -2390,7 +2390,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_0xagec0">
         <inputEntry id="UnaryTests_17bjq20">
-          <text>"dwpUploadResponse"</text>
+          <text>"hmctsResponseReviewed"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0q8sx1p">
           <text></text>
@@ -2411,13 +2411,13 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ymuvrl">
-          <text></text>
+          <text>"reviewByJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_13papzv">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1b3z5d3">
-          <text>"022", "023", "024", "025", "026", "028"</text>
+          <text></text>
         </inputEntry>
         <inputEntry>
           <text></text>
@@ -2432,7 +2432,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1inor5y">
-          <text></text>
+          <text>"confirmPanelCompositionAndListingDirections"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0o3rmvw">
           <text></text>

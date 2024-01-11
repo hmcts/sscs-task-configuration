@@ -277,7 +277,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewPostponementRequestTCW",
                 "someCaseData",
-                Permissions.defaultPermissionsTcwTasks()
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn", "LEGAL_OPERATIONS", 1, true),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn", "LEGAL_OPERATIONS"),
+                    permission("judge","Read,Execute,Unclaim,UnclaimAssign,CancelOwn", "JUDICIAL")
+                )
             ),
             Arguments.of(
                 "referredToInterlocTCW",

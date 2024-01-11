@@ -76,7 +76,7 @@ else
       </rule>
       <rule id="DecisionRule_1sd16za">
         <inputEntry id="UnaryTests_1fox3or">
-          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","referredByJudge", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw"</text>
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","referredToInterlocTCW","ftaResponseOverdue","referredByJudge", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xijtde">
           <text></text>
@@ -97,6 +97,32 @@ else
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c46r8q">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fp3ql9">
+        <inputEntry id="UnaryTests_04zu2za">
+          <text>"reviewPostponementRequestTCW"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xafkgh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tc7upc">
+          <text>"allocated-tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09v8jzv">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05zr64k">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06jug0u">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1anwum4">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03b95jf">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -154,7 +180,7 @@ else
       </rule>
       <rule id="DecisionRule_1tsnr6z">
         <inputEntry id="UnaryTests_1e15x6b">
-          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","referredByJudge", "reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw"</text>
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","referredToInterlocTCW","ftaResponseOverdue","referredByJudge", "reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jcandy">
           <text></text>
@@ -175,6 +201,32 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ynens1">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1a4tisr">
+        <inputEntry id="UnaryTests_1q0sbcv">
+          <text>"reviewPostponementRequestTCW"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nliuaw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1r0zx7d">
+          <text>"tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h9u0e5">
+          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qmgvgl">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19h1c0g">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12l6t0k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nxeomn">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -736,7 +788,7 @@ else
       </rule>
       <rule id="DecisionRule_1s95xyj">
         <inputEntry id="UnaryTests_09qjakp">
-          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw"</text>
+          <text>"reviewFtaValidityChallenge","ftaRequestTimeExtension","referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1g67b76">
           <text></text>
@@ -809,6 +861,32 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dlzhuy">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13myayu">
+        <inputEntry id="UnaryTests_0fqxoca">
+          <text>"reviewPostponementRequestTCW"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ge6tyu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yemzqs">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k04coj">
+          <text>"Read,Execute,Unclaim,UnclaimAssign,CancelOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fjd4yh">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ed4og2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oefnuw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09vq1z2">
           <text>false</text>
         </outputEntry>
       </rule>

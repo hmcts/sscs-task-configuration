@@ -45,6 +45,7 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.caseLink
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     public static final String YES = "Yes";
+    private static final String MANUAL_COMPLETION = "Manual Completion";
 
     static Stream<Arguments> nextHearingScenarioProvider() {
         return Stream.of(
@@ -639,6 +640,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DESCRIPTION, MANUAL_COMPLETION, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
@@ -705,6 +707,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue("workType", "post_hearing", true)
+                    .expectedValue(DESCRIPTION, MANUAL_COMPLETION, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .build()
             ),
@@ -723,6 +726,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
+                    .expectedValue(DESCRIPTION, MANUAL_COMPLETION, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "20", true)
                     .build()
             ),
@@ -734,6 +738,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
+                    .expectedValue(DESCRIPTION, MANUAL_COMPLETION, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "20", true)
                     .build()
             ),
@@ -745,6 +750,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
+                    .expectedValue(DESCRIPTION, MANUAL_COMPLETION, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "20", true)
                     .build()
             ),
@@ -756,8 +762,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
+                    .expectedValue(DESCRIPTION, buildDescription(
+                        EventLink.VALID_SEND_TO_INTERLOC, MANUAL_COMPLETION), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
-                    .expectedValue(DESCRIPTION, EventLink.VALID_SEND_TO_INTERLOC, true)
                     .build()
             ),
             Arguments.of(
@@ -802,7 +809,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
-                    .expectedValue(DESCRIPTION, EventLink.SEND_TO_INTERLOC_LATE_SOR_APPLICATION, true)
+                    .expectedValue(DESCRIPTION, buildDescription(
+                        EventLink.SEND_TO_INTERLOC_LATE_SOR_APPLICATION, MANUAL_COMPLETION), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
@@ -909,7 +917,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(62));
+        assertThat(logic.getRules().size(), is(63));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

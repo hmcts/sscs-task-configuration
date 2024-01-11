@@ -300,10 +300,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("Translation Tasks")
                 .build(),
             event("interlocReviewStateAmend")
-                .cancel("prepareForHearingJudge")
-                .cancel("writeDecisionJudge")
-                .cancel("prepareForHearingTribunalMember")
-                .cancel("prepareHearingAppraiser")
                 .build(),
             event("actionPostponementRequest")
                 .cancel("reviewPostponementRequestJudge")
