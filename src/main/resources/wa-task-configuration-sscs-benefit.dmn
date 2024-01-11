@@ -930,12 +930,12 @@ else ""</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1e8dkiv">
-          <text>"[Review confidentiality request](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewConfidentialityRequest)&lt;br/&gt;)" +
+          <text>"[Review confidentiality request](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewConfidentialityRequest)&lt;br/&gt;" +
 "[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
 "[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
-"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
 "[Issue final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueFinalDecision)&lt;br/&gt;" +
-"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;"</text>
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0rbnd3t">
           <text>true</text>
@@ -953,7 +953,7 @@ else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ijfcw7">
           <text>"[Review PHE request](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewPhmeRequest)&lt;br/&gt;" +
-          [Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;"</text>
+          "[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0quzstr">
           <text>true</text>
@@ -974,11 +974,11 @@ else ""</text>
 "[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
 "[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
 "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)&lt;br/&gt;" +
-"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
-"[Strike out](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/judgeDecisionStrikeout)&lt;br/&gt;" +
+"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Strike out case](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/struckOut)&lt;br/&gt;" +
 "[Abate case](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/abateCase)&lt;br/&gt;" +
 "[Write final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/writeFinalDecision)&lt;br/&gt;" +
-"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;"</text>
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tasnau">
           <text>true</text>
@@ -998,9 +998,9 @@ else ""</text>
           <text>"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
 "[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
 "[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
-"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
 "[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
-"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;"</text>
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13w4oj9">
           <text>true</text>
@@ -1017,27 +1017,9 @@ else ""</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ermvvn">
-          <text>"[Confirm Panel Composition](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/confirmPanelComposition)&lt;br/&gt;"</text>
+          <text>"[Confirm Panel Composition](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/confirmPanelComposition)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0smidig">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0lfcdmz">
-        <inputEntry id="UnaryTests_1sz5pao">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ozeq2d">
-          <text>"writeDecisionJudge"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0kz8bi8">
-          <text>"description"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1foi64k">
-          <text>"[Issue final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueFinalDecision)&lt;br/&gt;" +
-"[Issue adjournment notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueAdjournmentNotice)&lt;br/&gt;"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_18wqr0a">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -1055,26 +1037,9 @@ else ""</text>
           <text>"[Issue final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueFinalDecision)&lt;br/&gt;" +
 "[Review Post Hearing App](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/postHearingReview)&lt;br/&gt;" +
 "[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
-"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;"</text>
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1lmncgl">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0rqexl0">
-        <inputEntry id="UnaryTests_1kqrrps">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_03lym0s">
-          <text>"writeStatementofReason"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1feir9o">
-          <text>"description"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1hljabv">
-          <text>"[Write SOR](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sORWrite)&lt;br/&gt;"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1gaub0e">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -1091,8 +1056,7 @@ else ""</text>
         <outputEntry id="LiteralExpression_1e2g3gc">
           <text>"[Review Post Hearing App](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/postHearingReview)&lt;br/&gt;" +
 "[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
-"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
-"[Write SOR](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sORWrite)&lt;br/&gt;"</text>
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13pheo6">
           <text>true</text>
@@ -1110,7 +1074,7 @@ else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0s49jeu">
           <text>"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
-"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;"</text>
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1tqqw5i">
           <text>true</text>
@@ -1127,9 +1091,47 @@ else ""</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11ovzr9">
-          <text></text>
+          <text>"[Review Post Hearing App](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/postHearingReview)&lt;br/&gt;" +
+"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Write SOR](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sORWrite)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zuko7w">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lfcdmz">
+        <inputEntry id="UnaryTests_1sz5pao">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ozeq2d">
+          <text>"writeDecisionJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kz8bi8">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1foi64k">
+          <text>"[Issue final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueFinalDecision)&lt;br/&gt;" +
+          "[Issue adjournment notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueAdjournmentNotice)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18wqr0a">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rqexl0">
+        <inputEntry id="UnaryTests_1kqrrps">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03lym0s">
+          <text>"writeStatementofReason"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1feir9o">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hljabv">
+          <text>"[Write SOR](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sORWrite)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gaub0e">
           <text>true</text>
         </outputEntry>
       </rule>
