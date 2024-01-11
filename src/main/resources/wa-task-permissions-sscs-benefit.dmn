@@ -102,7 +102,7 @@ else
       </rule>
       <rule id="DecisionRule_1fp3ql9">
         <inputEntry id="UnaryTests_04zu2za">
-          <text>"reviewPostponementRequestJudge","reviewPostponementRequestTCW"</text>
+          <text>"reviewPostponementRequestTCW"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xafkgh">
           <text></text>
@@ -154,7 +154,7 @@ else
       </rule>
       <rule id="DecisionRule_0nasu18">
         <inputEntry id="UnaryTests_16558sm">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredToInterlocJudge"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredToInterlocJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_04qt2zh">
           <text></text>
@@ -206,7 +206,7 @@ else
       </rule>
       <rule id="DecisionRule_1a4tisr">
         <inputEntry id="UnaryTests_1q0sbcv">
-          <text>"reviewPostponementRequestJudge","reviewPostponementRequestTCW"</text>
+          <text>"reviewPostponementRequestTCW"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nliuaw">
           <text></text>
@@ -814,7 +814,7 @@ else
       </rule>
       <rule id="DecisionRule_0kumsrg">
         <inputEntry id="UnaryTests_1nrlamk">
-          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplication"</text>
+          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gpzj1d">
           <text></text>
@@ -866,7 +866,7 @@ else
       </rule>
       <rule id="DecisionRule_13myayu">
         <inputEntry id="UnaryTests_0fqxoca">
-          <text>"reviewPostponementRequestJudge","reviewPostponementRequestTCW"</text>
+          <text>"reviewPostponementRequestTCW"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ge6tyu">
           <text></text>
