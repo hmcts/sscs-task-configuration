@@ -45,6 +45,7 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.caseLink
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     public static final String YES = "Yes";
+    private static final String MANUAL_COMPLETION = "Manual Completion";
 
     static Stream<Arguments> nextHearingScenarioProvider() {
         return Stream.of(
@@ -696,7 +697,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "reviewStatementofReasonsApplication",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
-                    .expectedValue(WORK_TYPE, "post_hearing", true)
+                    .expectedValue(WORK_TYPE", "post_hearing", true)
+                    .expectedValue(DESCRIPTION, MANUAL_COMPLETION, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
@@ -777,6 +779,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(WORK_TYPE, "post_hearing", true)
+                    .expectedValue(DESCRIPTION, MANUAL_COMPLETION, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .build()
             ),
@@ -798,6 +801,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
+                    .expectedValue(DESCRIPTION, MANUAL_COMPLETION, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "20", true)
                     .build()
             ),
@@ -809,6 +813,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
+                    .expectedValue(DESCRIPTION, MANUAL_COMPLETION, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "20", true)
                     .build()
             ),
@@ -820,6 +825,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "6000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
+                    .expectedValue(DESCRIPTION, MANUAL_COMPLETION, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "20", true)
                     .build()
             ),
@@ -841,8 +847,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                                                                  EventLink.INTERLOC_REVIEW_STATE_AMEND), true)
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
+                    .expectedValue(DESCRIPTION, buildDescription(
+                        EventLink.VALID_SEND_TO_INTERLOC, MANUAL_COMPLETION), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
-                    .expectedValue(DESCRIPTION, EventLink.VALID_SEND_TO_INTERLOC, true)
                     .build()
             ),
             Arguments.of(
@@ -906,7 +913,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(WORK_TYPE, "post_hearing", true)
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
-                    .expectedValue(DESCRIPTION, EventLink.SEND_TO_INTERLOC_LATE_SOR_APPLICATION, true)
+                    .expectedValue(DESCRIPTION, buildDescription(
+                        EventLink.SEND_TO_INTERLOC_LATE_SOR_APPLICATION, MANUAL_COMPLETION), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
