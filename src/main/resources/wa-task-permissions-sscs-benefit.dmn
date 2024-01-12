@@ -632,7 +632,7 @@ else
       </rule>
       <rule id="DecisionRule_1l7sw0j">
         <inputEntry id="UnaryTests_0ct3egt">
-          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredByTcwPreHearing","referredToInterlocJudge","referredByAdminJudgePostHearing","referredByTcwPostHearing"</text>
+          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredByTcwPreHearing","referredToInterlocJudge","referredByAdminJudgePostHearing","referredByTcwPostHearing","provideListingDirections"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ri0myh">
           <text></text>
@@ -814,7 +814,7 @@ else
       </rule>
       <rule id="DecisionRule_0kumsrg">
         <inputEntry id="UnaryTests_1nrlamk">
-          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplication"</text>
+          <text>"reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplication","provideListingDirections"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0gpzj1d">
           <text></text>
@@ -944,7 +944,7 @@ else
       </rule>
       <rule id="DecisionRule_1a3ndv4">
         <inputEntry id="UnaryTests_0i1ce54">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","writeStatementofReason","reviewStatementofReasons","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplication"</text>
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","writeStatementofReason","reviewStatementofReasons","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplication","provideListingDirections"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yl9r0u">
           <text></text>
@@ -1537,84 +1537,6 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j1dcjk">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1287d0o">
-        <inputEntry id="UnaryTests_1fvuk4a">
-          <text>"provideListingDirections"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0xtuxb1">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_15gxl2h">
-          <text>"interloc-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1usy1bh">
-          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1bberum">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0oavw42">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vnmp8d">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15uhu56">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_01pb7h3">
-        <inputEntry id="UnaryTests_1u87sft">
-          <text>"provideListingDirections"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1g31ito">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1xji4q8">
-          <text>"judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0bwzojf">
-          <text>"Read,Own,Claim,Unclaim,Manage,UnclaimAssign"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0afijgy">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zggeq0">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_02ig7fe">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_06yaqg4">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_19zeppt">
-        <inputEntry id="UnaryTests_18c6crs">
-          <text>"provideListingDirections"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0itm7ho">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_02gunes">
-          <text>"fee-paid-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0555nhh">
-          <text>"Read,Own,Claim,Unclaim"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05mc4p7">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1614747">
-          <text>368</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1er6bor">
-          <text>3</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_08iywpx">
           <text>false</text>
         </outputEntry>
       </rule>

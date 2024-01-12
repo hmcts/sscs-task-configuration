@@ -65,17 +65,6 @@ public class Permissions {
         );
     }
 
-    public static Map<String, Object> permission(String role, String value, String roleCategory, String authorisations, int assignmentPriority, boolean autoAssignable) {
-        return Map.of(
-            "name", role,
-            "value", value,
-            "roleCategory", roleCategory,
-            "assignmentPriority", assignmentPriority,
-            "authorisations", authorisations,
-            "autoAssignable", autoAssignable
-        );
-    }
-
     public static Map<String,Object> DEFAULT_CASE_ALLOCATOR_PERMISSIONS = Map.of(
         "name", "case-allocator",
         "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
