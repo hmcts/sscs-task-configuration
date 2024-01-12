@@ -25,6 +25,16 @@ public interface EventLink {
     static final String SEND_TO_INTERLOC_LATE_SOR_APPLICATION = eventLink("Send to Interloc - Late Statement of Reasons Application", "validSendToInterloc");
     static final String ADMIN_ACTION_CORRECTION = eventLink("Admin - action correction","adminActionCorrection");
     String ADD_A_NOTE = eventLink("Add a note","addNote");
+    String REVIEW_CONFIDENTIALITY_REQUEST = eventLink("Review confidentiality request","reviewConfidentialityRequest");
+    String ISSUE_FINAL_DECISION = eventLink("Issue final decision","issueFinalDecision");
+    String SEND_TO_JUDGE = eventLink("Send to Judge","tcwReferToJudge");
+    String ABATE_CASE = eventLink("Abate case", "abateCase");
+    String WRITE_FINAL_DECISION = eventLink("Write final decision", "writeFinalDecision");
+    String REVIEW_PHE_REQUEST = eventLink("Review PHE request", "reviewPhmeRequest");
+    String ISSUE_ADJOURNMENT_NOTICE = eventLink("Issue adjournment notice", "issueAdjournmentNotice");
+    String CONFIRM_PANEL_COMPOSITION = eventLink("Confirm Panel Composition", "confirmPanelComposition");
+    String REVIEW_PH_APP = eventLink("Review Post Hearing App", "postHearingReview");
+    String WRITE_SOR = eventLink("Write SOR", "sORWrite");
 
     static String eventLink(String description, String eventId) {
         return String.format("[%s](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/%s)", description, eventId);
