@@ -24,6 +24,7 @@ public interface EventLink {
     static final String STRUCK_OUT = eventLink("Strike out case","struckOut");
     static final String SEND_TO_INTERLOC_LATE_SOR_APPLICATION = eventLink("Send to Interloc - Late Statement of Reasons Application", "validSendToInterloc");
     static final String ADMIN_ACTION_CORRECTION = eventLink("Admin - action correction","adminActionCorrection");
+    String ADD_A_NOTE = eventLink("Add a note","addNote");
     String REVIEW_CONFIDENTIALITY_REQUEST = eventLink("Review confidentiality request","reviewConfidentialityRequest");
     String ISSUE_FINAL_DECISION = eventLink("Issue final decision","issueFinalDecision");
     String SEND_TO_JUDGE = eventLink("Send to Judge","tcwReferToJudge");

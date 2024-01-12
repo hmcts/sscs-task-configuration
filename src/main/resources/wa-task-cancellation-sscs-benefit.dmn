@@ -1136,6 +1136,34 @@
           <text>"allocateCaseRolesAndCreateBundle"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_13egs1r">
+        <inputEntry id="UnaryTests_1jx2n97">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_199w4l9">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut",
+"issueFinalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jnhvp8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l7dxih">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11nd2ut">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pvzf7d">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09w03yo">
+          <text>"provideListingDirections"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

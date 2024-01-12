@@ -42,10 +42,10 @@ public abstract class DmnDecisionTableBaseUnitTest {
         Optional<DmnDecision> requiredDecision = decision.getRequiredDecisions().stream()
             .filter(d -> d.getKey().equals(decisionTableId))
             .findFirst();
-        if (requiredDecision.isPresent()) {
-            return dmnEngine.evaluateDecisionTable(requiredDecision.get(), variables);
-        }
-        return null;
+        return requiredDecision.map(dmnDecision -> dmnEngine.evaluateDecisionTable(
+            dmnDecision,
+            variables
+        )).orElse(null);
     }
 
     public Set<String> getAllTaskIds() {

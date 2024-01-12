@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.18.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -6573,6 +6573,89 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0w9py2u">
           <text>"prepareHearingAppraiser"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_041gtan">
+        <inputEntry id="UnaryTests_1yylrut">
+          <text>"hmctsResponseReviewed"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w3kb1l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01yj77n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12u8mru">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cqdzk5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a2vi86">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pun24y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07g4etj">
+          <text>"reviewByJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12sj95o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h9m4tg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o3swoo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uqi15l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00eybqh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14qfu5i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tpnyyc">
+          <text>"confirmPanelCompositionAndListingDirections"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mbgc1s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00wsnel">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c5qp9a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0axnj5e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fvl1y2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o50xir">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0weqn7f">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sf5glh">
+          <text>"provideListingDirections"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12ama5d">
+          <text>"Provide Listing Directions"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13n69ew">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_100bpb1">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p9xs4x">
+          <text>"provideListingDirections"</text>
         </outputEntry>
       </rule>
     </decisionTable>
