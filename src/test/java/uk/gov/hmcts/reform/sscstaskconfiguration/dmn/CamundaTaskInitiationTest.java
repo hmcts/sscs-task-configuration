@@ -522,7 +522,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("referredByAdminJudgePreHearing", "Referred By Admin", 2)
                 .build(),
             event("hmctsResponseReviewed")
-                .withCaseData("action", "reviewByJudge")
+                .withCaseData("action", dynamicListValue("reviewByJudge"))
                 .withCaseData("interlocReferralReason", "confirmPanelCompositionAndListingDirections")
                 .initiativesTask("confirmPanelComposition", "Confirm Panel Composition", 2)
                 .initiativesTask("provideListingDirections", "Provide Listing Directions", 2)
@@ -598,6 +598,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("validSendToInterloc")
                 .withCaseData("action", "reviewByTcw")
                 .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
+                .build(),
+            event("hmctsResponseReviewed")
+                .withCaseData("action", dynamicListValue("reviewByTcw"))
+                .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
+                .build(),
+            event("hmctsResponseReviewed")
+                .withCaseData("action", dynamicListValue("reviewByTcw"))
+                .withCaseData("interlocReferralReason", "timeExtension")
+                .initiativesTask("referredToInterlocTCW", "Referred to interloc - Time extension", 2)
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("action", "postponementRequestInterlocSendToTcw")
@@ -802,12 +811,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("hmctsResponseReviewed")
                 .withCaseData("interlocReferralReason", "timeExtension")
-                .withCaseData("action", "reviewByJudge")
+                .withCaseData("action", dynamicListValue("reviewByJudge"))
                 .initiativesTask("referredToInterlocJudge", "Referred to interloc - Time extension", 2)
                 .build(),
             event("hmctsResponseReviewed")
                 .withCaseData("interlocReferralReason", "reviewPostponementRequest")
-                .withCaseData("action", "reviewByJudge")
+                .withCaseData("action", dynamicListValue("reviewByJudge"))
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("interlocReferralReason", "reviewPostponementRequest")
