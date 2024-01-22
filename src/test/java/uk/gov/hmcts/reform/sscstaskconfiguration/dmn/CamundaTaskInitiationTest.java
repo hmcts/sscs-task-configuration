@@ -601,12 +601,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("hmctsResponseReviewed")
                 .withCaseData("action", dynamicListValue("reviewByTcw"))
-                .initiativesTask("referredToInterlocTCW", "Referred to interloc", 2)
+                .initiativesTask("referredToInterlocTCW", "Referred to interloc - LO", 2)
                 .build(),
             event("hmctsResponseReviewed")
                 .withCaseData("action", dynamicListValue("reviewByTcw"))
                 .withCaseData("interlocReferralReason", "timeExtension")
-                .initiativesTask("referredToInterlocTCW", "Referred to interloc - Time extension", 2)
+                .initiativesTask("referredToInterlocTCW", "Referred to interloc - Time extension - LO", 2)
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("action", "postponementRequestInterlocSendToTcw")
