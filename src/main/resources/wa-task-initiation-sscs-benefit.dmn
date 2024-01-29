@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -137,7 +137,7 @@ else
             0</text>
         </inputExpression>
       </input>
-      <input id="InputClause_1nh2a8e" label="Interloc Referral Reason" biodi:width="267" camunda:inputVariable="interlocReferralReason">
+      <input id="InputClause_1nh2a8e" label="Interloc Referral Reason" biodi:width="321" camunda:inputVariable="interlocReferralReason">
         <inputExpression id="LiteralExpression_051qyac" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.interlocReferralReason
             != null) then
@@ -2705,7 +2705,9 @@ else "Referred to interloc - Judge"</text>
 "lateStatementOfReasonsApplication",
 "reviewPermissionToAppealApplication",
 "reviewLibertyToApplyApplication",
-"reviewUpperTribunalDecision"],
+"reviewUpperTribunalDecision",
+"reviewReinstatementRequest",
+"reviewConfidentialityRequest"],
 interlocReferralReason))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0f17ihn">
