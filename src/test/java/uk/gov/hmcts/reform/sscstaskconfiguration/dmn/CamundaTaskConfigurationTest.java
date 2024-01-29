@@ -843,7 +843,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
                     .expectedValue(DESCRIPTION, buildDescription(
-                        EventLink.VALID_SEND_TO_INTERLOC, MANUAL_COMPLETION), true)
+                        MANUAL_COMPLETION, EventLink.VALID_SEND_TO_INTERLOC), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .build()
             ),
@@ -905,7 +905,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(WORK_TYPE, "post_hearing", true)
                     .expectedValue(ROLE_CATEGORY, "CTSC", true)
                     .expectedValue(DESCRIPTION, buildDescription(
-                        EventLink.SEND_TO_INTERLOC_LATE_SOR_APPLICATION, MANUAL_COMPLETION), true)
+                        MANUAL_COMPLETION, EventLink.SEND_TO_INTERLOC_LATE_SOR_APPLICATION), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
