@@ -903,20 +903,20 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1th0c2g">
-        <inputEntry id="UnaryTests_1smziz8">
+      <rule id="DecisionRule_12081oy">
+        <inputEntry id="UnaryTests_1xi7znu">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0azmfe2">
-          <text>"prepareHearingAppraiser1","prepareHearingAppraiser2","prepareForHearingJudge"</text>
+        <inputEntry id="UnaryTests_13ey9ji">
+          <text>"prepareForHearingJudge","prepareHearingAppraiser1","prepareHearingAppraiser2","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0ddcvp6">
+        <outputEntry id="LiteralExpression_1xuqwh2">
           <text>"description"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1ki359y">
-          <text>"[View hearing bundle](/case/SSCS/Benefit/${[CASE_REFERENCE]}#Documents)"</text>
+        <outputEntry id="LiteralExpression_0oyvrej">
+          <text>"[View hearing bundle](/case/SSCS/Benefit/${[CASE_REFERENCE]}#Bundles)"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_13g7hmr">
+        <outputEntry id="LiteralExpression_114rok7">
           <text>true</text>
         </outputEntry>
       </rule>
