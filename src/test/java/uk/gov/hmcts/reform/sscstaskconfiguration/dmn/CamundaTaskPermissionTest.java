@@ -196,17 +196,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 Permissions.defaultAdminCaseWorkerPermissions()
             ),
             Arguments.of(
-                "reviewOutstandingDraftDecision",
-                "someCaseData",
-                List.of(
-                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
-                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
-                    permission("allocated-admin-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "ADMIN", 1, true),
-                    permission("regional-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "ADMIN"),
-                    permission("regional-centre-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel", "ADMIN")
-                )
-            ),
-            Arguments.of(
                 "referredByAdminJudgePreHearing",
                 "someCaseData",
                 List.of(
