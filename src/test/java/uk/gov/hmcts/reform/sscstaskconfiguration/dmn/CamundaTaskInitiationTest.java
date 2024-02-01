@@ -763,7 +763,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC",3)
                 .build(),
             eventWithState("postHearingRequest", "dormantAppealState")
-                .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
                 .withCaseData("action", "correction")
                 .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC",3)
                 .build(),

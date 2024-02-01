@@ -6054,7 +6054,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jfw4dv">
-          <text>contains(scannedDocumentTypes, "correctionApplication")</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0sxxx7o">
           <text></text>
