@@ -852,40 +852,6 @@ null</text>
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0oygxjb">
-        <inputEntry id="UnaryTests_0wqzome">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_18pt0nk">
-          <text>"reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_03fttel">
-          <text>"description"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1nd35xk">
-          <text>"Manual Completion&lt;br/&gt;[Send to Interloc - Late Statement of Reasons Application](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1w78sad">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ms0uck">
-        <inputEntry id="UnaryTests_16g2uc5">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_16vxx4t">
-          <text>"reviewApplicationandAllocateJudge"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0bgtscu">
-          <text>"description"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1fy32oq">
-          <text>"Manual Completion&lt;br/&gt;[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0snbcy7">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_12081oy">
         <inputEntry id="UnaryTests_1xi7znu">
           <text></text>
@@ -1137,8 +1103,7 @@ else ""</text>
         <outputEntry id="LiteralExpression_11ovzr9">
           <text>"[Review Post Hearing App](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/postHearingReview)&lt;br/&gt;" +
 "[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
-"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
-"[Write SOR](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sORWrite)"</text>
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zuko7w">
           <text>true</text>
@@ -1184,7 +1149,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0zuzqwl">
-          <text>"reviewStatementofReasonsApplication","reviewPostHearingNoticeforListingRequirements","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision"</text>
+          <text>"reviewStatementofReasonsApplication","reviewPostHearingNoticeforListingRequirements","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_10iyh5h">
           <text>"description"</text>
