@@ -326,7 +326,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "reviewStatementofReasonsApplication",
+                "uploadHearingRecordingSORCTSC",
                 "someCaseData",
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,

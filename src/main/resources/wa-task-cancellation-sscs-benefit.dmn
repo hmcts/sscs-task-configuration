@@ -1135,6 +1135,29 @@
           <text>"provideListingDirections"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0rgpph1">
+        <inputEntry id="UnaryTests_1gazbe0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04fm7lu">
+          <text>"sORRefused"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hv1s95">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14ei545">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0k1zo52">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18pzijo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xcm64r">
+          <text>"uploadHearingRecordingSORCTSC"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

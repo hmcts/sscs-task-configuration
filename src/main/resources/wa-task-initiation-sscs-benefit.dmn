@@ -4389,10 +4389,10 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1xv5j01">
-          <text>"reviewStatementofReasonsApplication"</text>
+          <text>"uploadHearingRecordingSORCTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wjf5xs">
-          <text>"Review Statement of Reasons Application - CTSC"</text>
+          <text>"Upload Hearing Recording: SOR - CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nez522">
           <text></text>
@@ -4401,7 +4401,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mjkpq2">
-          <text>"reviewStatementofReasonsApplication"</text>
+          <text>"uploadHearingRecordingSORCTSC"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1f13xny">

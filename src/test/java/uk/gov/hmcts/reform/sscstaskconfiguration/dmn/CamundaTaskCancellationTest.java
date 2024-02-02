@@ -321,6 +321,9 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("dwpUploadResponse")
                 .cancel("reviewFtaDueDate")
+                .build(),
+            event("sORRefused")
+                .cancel("uploadHearingRecordingSORCTSC")
                 .build()
         );
     }
@@ -348,6 +351,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(43));
+        assertThat(logic.getRules().size(), is(44));
     }
 }

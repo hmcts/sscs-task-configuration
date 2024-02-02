@@ -699,7 +699,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             eventWithState("sORRequest", "postHearing")
                 .withCaseData("sscsHearingRecordings", emptyList())
-                .initiativesTask("reviewStatementofReasonsApplication", "Review Statement of Reasons Application - CTSC", 2)
+                .initiativesTask("uploadHearingRecordingSORCTSC", "Upload Hearing Recording: SOR - CTSC", 2)
                 .build(),
             eventWithState("validSendToInterloc", "postHearing")
                 .withCaseData("interlocReferralReason", "reviewLibertyToApplyApplication")
