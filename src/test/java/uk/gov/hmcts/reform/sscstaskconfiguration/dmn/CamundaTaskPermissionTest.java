@@ -313,36 +313,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 Permissions.defaultAdminCaseWorkerPermissions()
             ),
             Arguments.of(
-                "reviewOutstandingDraftDecision",
-                "someCaseData",
-                List.of(
-                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
-                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
-                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
-                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
-                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
-                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
-                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
-                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
-                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
-                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
-                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
-                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
-                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
-                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
-                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
-                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
-                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
-                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
-                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
-                    permission("allocated-admin-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "ADMIN", 1, true),
-                    permission("regional-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "ADMIN"),
-                    permission("regional-centre-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel", "ADMIN")
-                )
-            ),
-            Arguments.of(
                 "referredByAdminJudgePreHearing",
                 "someCaseData",
                 List.of(
@@ -610,7 +580,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "reviewStatementofReasonsApplication",
+                "uploadHearingRecordingSORCTSC",
                 "someCaseData",
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,

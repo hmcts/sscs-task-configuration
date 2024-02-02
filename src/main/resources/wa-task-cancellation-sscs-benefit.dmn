@@ -532,35 +532,6 @@
           <text>"allocateCaseRolesAndCreateBundle"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1kel1yh">
-        <inputEntry id="UnaryTests_1k5ul82">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0kelakn">
-          <text>"issueFinalDecision",
-"issueAdjournmentNotice",
-"voidCase",
-"appealWithdrawn",
-"confirmLapsed",
-"appealDormant",
-"struckOut"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1xms9yw">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0i21zzg">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0q3ya2s">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0tt0yyv">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16qatwq">
-          <text>"reviewOutstandingDraftDecision"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1m5p2iq">
         <inputEntry id="UnaryTests_0qc7582">
           <text></text>
@@ -1162,6 +1133,29 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_09w03yo">
           <text>"provideListingDirections"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rgpph1">
+        <inputEntry id="UnaryTests_1gazbe0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04fm7lu">
+          <text>"sORRefused"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hv1s95">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14ei545">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0k1zo52">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18pzijo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xcm64r">
+          <text>"uploadHearingRecordingSORCTSC"</text>
         </outputEntry>
       </rule>
     </decisionTable>
