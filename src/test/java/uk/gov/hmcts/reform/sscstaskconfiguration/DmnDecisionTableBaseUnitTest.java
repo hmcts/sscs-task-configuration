@@ -52,7 +52,7 @@ public abstract class DmnDecisionTableBaseUnitTest {
         Set<String> taskIds = new HashSet<>();
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         InputStream inputStream = contextClassLoader.getResourceAsStream(WA_TASK_INITIATION_SSCS_BENEFIT.getFileName());
-        decision = dmnEngine.parseDecision(WA_TASK_INITIATION_SSCS_BENEFIT.getKey(), inputStream);
+        DmnDecision decision = dmnEngine.parseDecision(WA_TASK_INITIATION_SSCS_BENEFIT.getKey(), inputStream);
 
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         logic.getRules().forEach(r -> taskIds.add(r.getConclusions().get(0).getExpression()));

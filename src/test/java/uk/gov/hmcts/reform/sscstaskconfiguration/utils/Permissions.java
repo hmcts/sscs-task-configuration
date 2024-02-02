@@ -75,11 +75,163 @@ public class Permissions {
         "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
         "autoAssignable", false
     );
+    public static final Map<String, Object> DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS = Map.of(
+        "name", "allocated-tribunal-caseworker",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "LEGAL_OPERATIONS"
+    );
+    public static final Map<String, Object> DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS = Map.of(
+        "name", "tribunal-caseworker",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "LEGAL_OPERATIONS"
+    );
+    public static final Map<String, Object> DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS = Map.of(
+        "name", "allocated-ctsc-caseworker",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "CTSC"
+    );
+    public static final Map<String, Object> DEFAULT_CTSC_PERMISSIONS = Map.of(
+        "name", "ctsc",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "CTSC"
+    );
+    public static final Map<String, Object> DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS = Map.of(
+        "name", "ctsc-team-leader",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "CTSC"
+    );
+    public static final Map<String, Object> DEFAULT_INTERLOC_JUDGE_PERMISSIONS = Map.of(
+        "name", "interloc-judge",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_HEARING_JUDGE_PERMISSIONS = Map.of(
+        "name", "hearing-judge",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_JUDGE_PERMISSIONS = Map.of(
+        "name", "judge",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_POST_HEARING_JUDGE_PERMISSIONS = Map.of(
+        "name", "post-hearing-judge",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS = Map.of(
+        "name", "allocated-admin-caseworker",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "ADMIN"
+    );
+    public static final Map<String, Object> DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS = Map.of(
+        "name", "regional-centre-admin",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "ADMIN"
+    );
+    public static final Map<String, Object> DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS = Map.of(
+        "name", "regional-centre-team-leader",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "ADMIN"
+    );
+    public static final Map<String, Object> DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS = Map.of(
+        "name", "hearing-centre-admin",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "ADMIN"
+    );
+    public static final Map<String, Object> DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS = Map.of(
+        "name", "hearing-centre-team-leader",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "ADMIN"
+    );
+
+    public static final Map<String, Object> DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS = Map.of(
+        "name", "tribunal-member-1",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS = Map.of(
+        "name", "tribunal-member-2",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS = Map.of(
+        "name", "tribunal-member-3",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_APPRAISER_1_PERMISSIONS = Map.of(
+        "name", "appraiser-1",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_APPRAISER_2_PERMISSIONS = Map.of(
+        "name", "appraiser-2",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_MEDICAL_PERMISSIONS = Map.of(
+        "name", "medical",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS = Map.of(
+        "name", "fee-paid-medical",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS = Map.of(
+        "name", "leadership-judge",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
 
     public static List<Map<String, Object>> defaultCtscPermissions() {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+            DEFAULT_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             Map.of(
                 "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
@@ -106,6 +258,25 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+            DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+            DEFAULT_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             Map.of(
                 "name", "allocated-admin-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
@@ -132,6 +303,25 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+            DEFAULT_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             Map.of(
                 "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
@@ -158,6 +348,25 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+            DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+            DEFAULT_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             Map.of(
                 "name", "allocated-admin-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
@@ -184,6 +393,25 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+            DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+            DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
             permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
             permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
@@ -195,6 +423,25 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+            DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+            DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
             permission("hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
             permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
@@ -206,6 +453,25 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+            DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+            DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
             permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
             permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
@@ -217,6 +483,25 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+            DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+            DEFAULT_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
             permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
             permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
@@ -227,6 +512,26 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+            DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+            DEFAULT_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
             permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1)
         );
@@ -236,6 +541,27 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+            DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+            DEFAULT_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             Map.of(
                 "name", "tribunal-member-1",
                 "value", "Read,Own,Manage,Complete",
@@ -250,6 +576,27 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+            DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+            DEFAULT_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             Map.of(
                 "name", "tribunal-member-2",
                 "value", "Read,Own,Manage,Complete",
@@ -264,6 +611,27 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+            DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+            DEFAULT_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+            DEFAULT_APPRAISER_1_PERMISSIONS,
+            DEFAULT_APPRAISER_2_PERMISSIONS,
+            DEFAULT_MEDICAL_PERMISSIONS,
+            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             Map.of(
                 "name", "tribunal-member-3",
                 "value", "Read,Own,Manage,Complete",
