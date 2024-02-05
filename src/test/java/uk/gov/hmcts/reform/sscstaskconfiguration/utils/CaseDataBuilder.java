@@ -17,10 +17,8 @@ public class CaseDataBuilder {
         Map<String,Object> caseData = new HashMap<>();
         caseData.put("caseNamePublic", "Joe Blogs");
         caseData.put("isScottishCase", "No");
-        caseData.put("regionalProcessingCenter", Map.of(
-            "name", "BRADFORD",
-            "epimsId", "123456"
-        ));
+        caseData.put("processingVenueEpimsId", "239985");
+        caseData.put("processingVenue", "Ashford");
         caseData.put("caseManagementLocation", Map.of(
             "region", "4"
         ));
@@ -32,19 +30,6 @@ public class CaseDataBuilder {
 
     public CaseDataBuilder isScottishCase(String value) {
         caseData.put("isScottishCase", value);
-        return this;
-    }
-
-    public CaseDataBuilder withRegionalProgressingCentre(String id, String name) {
-        caseData.put("regionalProcessingCenter", Map.of(
-            "name", name,
-            "epimsId", id
-        ));
-        return this;
-    }
-
-    public CaseDataBuilder withProcessingVenue(String processingVenue) {
-        caseData.put("processingVenue", processingVenue);
         return this;
     }
 
