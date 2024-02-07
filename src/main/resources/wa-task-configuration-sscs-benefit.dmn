@@ -89,7 +89,7 @@ null</text>
           <text>"location"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jb6taf">
-          <text>if(caseData!=null and caseData.processingVenueEpimsId!=null) then caseData.processingVenueEpimsId else ""</text>
+          <text>if(caseData!=null and caseData.regionalProcessingCenter!=null and caseData.regionalProcessingCenter.epimsId!=null) then caseData.regionalProcessingCenter.epimsId else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0t0wpwg">
           <text>true</text>
@@ -107,7 +107,7 @@ null</text>
           <text>"locationName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0efrhlm">
-          <text>if(caseData!=null and caseData.processingVenue!=null) then caseData.processingVenue else ""</text>
+          <text>if(caseData!=null and caseData.regionalProcessingCenter!=null and caseData.processingVenue!=null) then caseData.regionalProcessingCenter.name + " / " + caseData.processingVenue else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1n6uzb4">
           <text>true</text>
