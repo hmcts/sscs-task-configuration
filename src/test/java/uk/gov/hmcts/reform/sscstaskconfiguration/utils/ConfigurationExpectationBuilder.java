@@ -43,8 +43,8 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(CASE_NAME, "Joe Blogs", true);
         builder.expectedValue(CASE_MANAGEMENT_CATEGORY, "Personal Independence Payment", true);
         builder.expectedValue(REGION, "4", true);
-        builder.expectedValue(LOCATION, "239985", true);
-        builder.expectedValue(LOCATION_NAME, "Ashford", true);
+        builder.expectedValue(LOCATION, "123456", true);
+        builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
         builder.expectedValue(WORK_TYPE, "routine_work", true);
         builder.expectedValue(ROLE_CATEGORY, "CTSC", true);
         builder.expectedValue(PRIORITY_DATE, "", true);
@@ -64,8 +64,8 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(CASE_NAME, "Joe Blogs", true);
         builder.expectedValue(CASE_MANAGEMENT_CATEGORY, "Personal Independence Payment", true);
         builder.expectedValue(REGION, "4", true);
-        builder.expectedValue(LOCATION, "239985", true);
-        builder.expectedValue(LOCATION_NAME, "Ashford", true);
+        builder.expectedValue(LOCATION, "123456", true);
+        builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
         builder.expectedValue(WORK_TYPE, "post_hearing", true);
         builder.expectedValue(ROLE_CATEGORY, "CTSC", true);
         builder.expectedValue(MINOR_PRIORITY, "500", true);
@@ -84,8 +84,8 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(CASE_NAME, "Joe Blogs", true);
         builder.expectedValue(CASE_MANAGEMENT_CATEGORY, "Personal Independence Payment", true);
         builder.expectedValue(REGION, "4", true);
-        builder.expectedValue(LOCATION, "239985", true);
-        builder.expectedValue(LOCATION_NAME, "Ashford", true);
+        builder.expectedValue(LOCATION, "123456", true);
+        builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
         builder.expectedValue(WORK_TYPE, "access_requests", true);
         builder.expectedValue(MINOR_PRIORITY, "500", true);
         builder.expectedValue(MAJOR_PRIORITY, "5000", true);
@@ -106,8 +106,8 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(CASE_NAME, "Joe Blogs", true);
         builder.expectedValue(CASE_MANAGEMENT_CATEGORY, "Personal Independence Payment", true);
         builder.expectedValue(REGION, "4", true);
-        builder.expectedValue(LOCATION, "239985", true);
-        builder.expectedValue(LOCATION_NAME, "Ashford", true);
+        builder.expectedValue(LOCATION, "123456", true);
+        builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
         builder.expectedValue(WORK_TYPE, "pre_hearing", true);
         builder.expectedValue(ROLE_CATEGORY, "JUDICIAL", true);
         builder.expectedValue(PRIORITY_DATE, "", true);

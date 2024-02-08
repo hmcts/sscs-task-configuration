@@ -17,8 +17,10 @@ public class CaseDataBuilder {
         Map<String,Object> caseData = new HashMap<>();
         caseData.put("caseNamePublic", "Joe Blogs");
         caseData.put("isScottishCase", "No");
-        caseData.put("processingVenueEpimsId", "239985");
-        caseData.put("processingVenue", "Ashford");
+        caseData.put("regionalProcessingCenter", Map.of(
+            "name", "BRADFORD",
+            "epimsId", "123456"
+        ));
         caseData.put("caseManagementLocation", Map.of(
             "region", "4"
         ));
