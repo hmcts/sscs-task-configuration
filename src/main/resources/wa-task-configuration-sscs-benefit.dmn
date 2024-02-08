@@ -107,7 +107,12 @@ null</text>
           <text>"locationName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0efrhlm">
-          <text>if(caseData!=null and caseData.regionalProcessingCenter!=null) then caseData.regionalProcessingCenter.name else ""</text>
+          <text>if(caseData!=null and caseData.regionalProcessingCenter!=null and caseData.regionalProcessingCenter.name!=null) then 
+    if(nextHearingVenue!=null) then
+	caseData.regionalProcessingCenter.name + " - " + nextHearingVenue
+    else
+	caseData.regionalProcessingCenter.name
+else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1n6uzb4">
           <text>true</text>
@@ -1438,6 +1443,7 @@ else ""</text>
       </input>
       <output id="OutputClause_0itajs4" name="nextHearingDate" typeRef="string" biodi:width="347" />
       <output id="OutputClause_0s62lpb" name="nextHearingId" typeRef="string" biodi:width="336" />
+      <output id="OutputClause_1bkgult" name="nextHearingVenue" typeRef="string" biodi:width="260" />
       <rule id="DecisionRule_1aqhpa9">
         <inputEntry id="UnaryTests_12eimss">
           <text>hearings!=null and hearings[1]!=null</text>
@@ -1447,6 +1453,11 @@ else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05s34x8">
           <text>hearings[1].value.hearingId</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18mqqav">
+          <text>if(hearings[1].value.venue!=null) then
+    hearings[1].value.venue.name
+else null</text>
         </outputEntry>
       </rule>
     </decisionTable>

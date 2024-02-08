@@ -35,19 +35,6 @@ public class CaseDataBuilder {
         return this;
     }
 
-    public CaseDataBuilder withRegionalProgressingCentre(String id, String name) {
-        caseData.put("regionalProcessingCenter", Map.of(
-            "name", name,
-            "epimsId", id
-        ));
-        return this;
-    }
-
-    public CaseDataBuilder withProcessingVenue(String processingVenue) {
-        caseData.put("processingVenue", processingVenue);
-        return this;
-    }
-
     public CaseDataBuilder withHearing(Map<String,Object> hearing) {
         caseData.put("hearings", new ArrayList<>(List.of(hearing)));
         return this;
