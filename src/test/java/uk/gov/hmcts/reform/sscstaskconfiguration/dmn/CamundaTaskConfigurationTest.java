@@ -45,7 +45,7 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.caseLink
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     public static final String YES = "Yes";
-    private static final String MANUAL_COMPLETION = "Manual Completion";
+    private static final String MANUAL_COMPLETION = "Mark Task as Done after reviewing";
 
     static Stream<Arguments> nextHearingScenarioProvider() {
         return Stream.of(
@@ -451,6 +451,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "100", true)
                     .expectedValue(MAJOR_PRIORITY, "1000", true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "1", true)
+                    .expectedValue(DESCRIPTION, MANUAL_COMPLETION, true)
                     .build()
             ),
             Arguments.of(
