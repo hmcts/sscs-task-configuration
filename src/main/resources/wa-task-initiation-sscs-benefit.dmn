@@ -6814,6 +6814,92 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"provideListingDirections"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1re0cm6">
+        <inputEntry id="UnaryTests_1g234s7">
+          <text>"writeFinalDecision","adjournCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m0ctvc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0skpd2f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0avrbva">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ie0qq2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ivgs08">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fymdyq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j7z27l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0061qx1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1afo6mk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dnyy2y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o97nns">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12qb8e9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p2mhc5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0319xam">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ti8ay4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17cw7z2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07whi0d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y7p9sg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16g2yf3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kypoci">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13n7qcf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gen790">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0oni60t">
+          <text>"issueDecisionJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nh1ocy">
+          <text>"Issue Decision - Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15q2fbj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mgzu2m">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tr70em">
+          <text>"issueDecisionJudge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
