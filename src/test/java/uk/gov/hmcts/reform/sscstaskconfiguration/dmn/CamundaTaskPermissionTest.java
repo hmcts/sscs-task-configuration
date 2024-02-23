@@ -167,6 +167,37 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "issueDecisionJudge",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("hearing-judge","Read,Own", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
                 "reviewUrgentHearingRequest",
                 "someCaseData",
                 Permissions.defaultPermissionsJudgesReviewTasks()
