@@ -1230,7 +1230,7 @@ else
       </rule>
       <rule id="DecisionRule_0mwh9xm">
         <inputEntry id="UnaryTests_0yxatz8">
-          <text>"prepareForHearingJudge", "writeDecisionJudge","issueDecisionJudge"</text>
+          <text>"prepareForHearingJudge", "writeDecisionJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pc43zs">
           <text></text>
@@ -1251,6 +1251,32 @@ else
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_196de5m">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tathzj">
+        <inputEntry id="UnaryTests_03tax57">
+          <text>"issueDecisionJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12g5zk4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1i53bfw">
+          <text>"hearing-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19ybmb6">
+          <text>"Read,Own,CancelOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1djzy8g">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d72a2i">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bi9xjq">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hlrf7f">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -1308,7 +1334,7 @@ else
       </rule>
       <rule id="DecisionRule_0rflc29">
         <inputEntry id="UnaryTests_0ziy5h4">
-          <text>"writeDecisionJudge","issueDecisionJudge"</text>
+          <text>"writeDecisionJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1b22bhz">
           <text></text>
@@ -1329,6 +1355,32 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_167uthz">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fwwleo">
+        <inputEntry id="UnaryTests_1xcabgo">
+          <text>"issueDecisionJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gyv2ug">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0h297gv">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q4dcf9">
+          <text>"Read,Own,Claim,CancelOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xa3e3k">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kz22k4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mhjs7y">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z41e3v">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -1490,7 +1542,7 @@ else
       </rule>
       <rule id="DecisionRule_1vsp161">
         <inputEntry id="UnaryTests_07r0ktf">
-          <text>"writeDecisionJudge","issueDecisionJudge"</text>
+          <text>"writeDecisionJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0dllrry">
           <text></text>
@@ -1511,6 +1563,32 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gu3ptd">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ymfq28">
+        <inputEntry id="UnaryTests_1hlkqjr">
+          <text>"issueDecisionJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07y58lq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ep60rg">
+          <text>"fee-paid-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sxyx53">
+          <text>"Read,Own,Claim,CancelOwn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14vp6du">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0aup9rh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yl7lv7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0929sui">
           <text>false</text>
         </outputEntry>
       </rule>
