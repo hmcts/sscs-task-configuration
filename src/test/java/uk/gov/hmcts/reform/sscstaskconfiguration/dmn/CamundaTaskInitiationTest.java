@@ -34,7 +34,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     static Stream<Arguments> scenarioProvider() {
-
         return Stream.of(
             Arguments.of(
                 "draftToIncompleteApplication",
@@ -278,25 +277,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 List.of()
             ),
             Arguments.of(
-                "dwpSupplementaryResponse",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewBilingualDocument",
-                        "name", "Review Bi-Lingual Document",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "Translation Tasks"
-                    ),
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
-            Arguments.of(
                 "uploadDocument",
                 null,
                 Map.of("Data", Map.of("languagePreferenceWelsh", true)),
@@ -345,14 +325,17 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document",
                                  10, "Translation Tasks")
                 .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence",
-                                 10, "actionUnprocessedCorrespondence")
+                                 10)
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
+                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
                 .build(),
             event("uploadWelshDocument")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
                 .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
                                  10, "Translation Tasks")
-                .build(),
-            event("sendToAdmin")
-                .initiativesTask("reviewAdminAction", "Review Admin Action", 10)
+                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
                 .build(),
             eventWithState("sentToDwp", "withDwp")
                 .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
@@ -424,19 +407,118 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
-            Arguments.of(
-                "hearingToday",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewOutstandingDraftDecision",
-                        "name", "Review Outstanding Draft Decision",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewOutstandingDraftDecision"
-                    )
-                )
-            ),
+            event("dwpSupplementaryResponse")
+                .withCaseData("languagePreferenceWelsh", true)
+                .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document",
+                             10, "Translation Tasks")
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .build(),
+            event("uploadDocument")
+                .withCaseData("languagePreferenceWelsh", true)
+                .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document",
+                                 10, "Translation Tasks")
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .build(),
+            event("attachScannedDocs")
+                .withCaseData("languagePreferenceWelsh", true)
+                .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document",
+                                 10, "Translation Tasks")
+                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence", 10)
+                .build(),
+            event("uploadWelshDocument")
+                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
+                                 10, "Translation Tasks")
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
+                .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
+                .build(),
+            event("uploadWelshDocument")
+                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
+                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
+                                 10, "Translation Tasks")
+                .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
+                .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request", 2)
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
+                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
+                .build(),
+            event("uploadWelshDocument")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
+                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
+                                 10, "Translation Tasks")
+                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
+                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request", 2)
+                .build(),
+            event("dwpUploadResponse")
+                .withCaseData("dwpEditedEvidenceReason", "phme")
+                .initiativesTask("reviewPheRequestJudge", "Review PHE Request", 2)
+                .build(),
+            event("updateNotListable")
+                .withCaseData("action", "reviewByJudge")
+                .initiativesTask("ftaNotProvidedAppointeeDetailsJudge", "FTA not Provided Appointee Details", 2)
+                .build(),
+            event("actionPostponementRequest")
+                .withCaseData("action", "sendToJudge")
+                .initiativesTask("reviewPostponementRequestJudge", "Review Postponement Request", 2)
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
+                .initiativesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request", 2)
+                .build(),
+            event("uploadWelshDocument")
+                .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
+                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation",
+                                 10, "Translation Tasks")
+                .initiativesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request", 2)
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
+                .initiativesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request", 2)
+                .build(),
+            event("makeCaseUrgent")
+                .initiativesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request", 2)
+                .build(),
+            event("tcwReferToJudge")
+                .withCaseData("workType", "preHearingWork")
+                .initiativesTask("referredByTcwPreHearing", "Referred By TCW", 2)
+                .build(),
+            event("createBundle")
+                .withCaseData("panel", Map.of("assignedTo", "panel member 1"))
+                .withCaseData("nextHearingDate", LocalDate.now().plusDays(7).toString())
+                .initiativesTask("prepareForHearingJudge", "Prepare For Hearing", 2)
+                .build(),
+            event("hearingToday")
+                .initiativesTask("writeDecisionJudge", "Write Decision", 2)
+                .initiativesTask("reviewOutstandingDraftDecision", "Review Outstanding Draft Decision", 5)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("workType", "preHearingWork")
+                .withCaseData("action", "reviewByJudge")
+                .initiativesTask("referredByAdminJudgePreHearing", "Referred By Admin", 2)
+                .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2)
+                .build(),
+            event("dwpUploadResponse")
+                .withCaseData("benefitCode", "026")
+                .initiativesTask("confirmPanelComposition", "Confirm Panel Composition", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByJudge")
+                .withCaseData("interlocReferralReason", "noResponseToDirection")
+                .initiativesTask("referredToInterlocJudge", "Referred to interloc - No response to a direction", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByJudge")
+                .withCaseData("interlocReferralReason", "Other")
+                .initiativesTask("referredToInterlocJudge", "Referred to interloc", 2)
+                .build(),
             event("actionPostponementRequest")
                 .withCaseData("daysToHearing", 14)
                 .build(),
@@ -468,7 +550,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(16));
+        assertThat(logic.getRules().size(), is(28));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

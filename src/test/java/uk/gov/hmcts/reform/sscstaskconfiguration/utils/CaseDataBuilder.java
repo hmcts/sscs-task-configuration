@@ -21,6 +21,9 @@ public class CaseDataBuilder {
             "name", "BRADFORD",
             "epimsId", "123456"
         ));
+        caseData.put("caseManagementLocation", Map.of(
+            "region", "4"
+        ));
         caseData.put("caseManagementCategory", Map.of(
             "value", Map.of("label", "Personal Independence Payment")
         ));
@@ -29,12 +32,6 @@ public class CaseDataBuilder {
 
     public CaseDataBuilder isScottishCase(String value) {
         caseData.put("isScottishCase", value);
-        return this;
-    }
-
-    public CaseDataBuilder withNextHearing(String hearingId, String hearingDate) {
-        caseData.put("nextHearingId", hearingId);
-        caseData.put("nextHearingDate", hearingDate);
         return this;
     }
 

@@ -24,6 +24,7 @@ import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_PERMISSIONS_SSCS_BENEFIT;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.Permissions.permission;
 
 class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
@@ -68,6 +69,49 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 Permissions.defaultCtscPermissions()
             ),
             Arguments.of(
+                "reviewFtaDueDate",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "referredByTcwPreHearing",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+                )
+            ),
+            Arguments.of(
+                "prepareForHearingJudge",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("hearing-judge","Read,Own", "JUDICIAL", 1),
+                    permission("judge","Read,Own", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "writeDecisionJudge",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("hearing-judge","Read,Own", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "reviewUrgentHearingRequest",
+                "someCaseData",
+                Permissions.defaultPermissionsJudgesReviewTasks()
+            ),
+            Arguments.of(
                 "actionUnprocessedCorrespondence",
                 "someCaseData",
                 List.of(
@@ -97,16 +141,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "reviewFtaDueDate",
-                "someCaseData",
-                Permissions.defaultCtscPermissions()
-            ),
-            Arguments.of(
-                "reviewBilingualDocument",
-                "someCaseData",
-                Permissions.defaultCtscPermissionsWithCompleteOwn()
-            ),
-            Arguments.of(
                 "reviewValidAppeal",
                 "someCaseData",
                 Permissions.defaultCtscPermissionsWithCompleteOwn()
@@ -122,6 +156,32 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 Permissions.defaultCtscPermissions()
             ),
             Arguments.of(
+                "reviewConfidentialityRequest",
+                "someCaseData",
+                Permissions.defaultPermissionsJudgesReviewTasks()
+            ),
+            Arguments.of(
+                "reviewReinstatementRequestJudge",
+                "someCaseData",
+            Permissions.defaultPermissionsJudgesReviewTasks()
+            ),
+            Arguments.of(
+                "reviewPheRequestJudge",
+                "someCaseData",
+                Permissions.defaultPermissionsJudgesTasks()
+            ),
+            Arguments.of(
+                "reviewPostponementRequestJudge",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+                    permission("hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
                 "reviewBfDate",
                 "someCaseData",
                 Permissions.defaultCtscPermissions()
@@ -135,6 +195,33 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewOutstandingDraftDecision",
                 "someCaseData",
                 Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "referredByAdminJudgePreHearing",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                )
+            ),
+            Arguments.of(
+                "confirmPanelComposition",
+                "someCaseData",
+                List.of(
+                    permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                )
+            ),
+            Arguments.of(
+                "referredToInterlocJudge",
+                "someCaseData",
+                Permissions.defaultPermissionsJudgesTasks()
             ),
             Arguments.of(
                 "contactParties",
@@ -180,7 +267,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(19));
+        assertThat(logic.getRules().size(), is(31));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

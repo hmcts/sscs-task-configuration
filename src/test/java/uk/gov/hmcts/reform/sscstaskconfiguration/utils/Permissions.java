@@ -9,6 +9,43 @@ public class Permissions {
         // Hide Utility Class Constructor
     }
 
+    public static Map<String, Object> permission(String role, String value) {
+        return Map.of(
+            "name", role,
+            "value", value,
+            "autoAssignable", false
+        );
+    }
+
+    public static Map<String, Object> permission(String role, String value, String roleCategory) {
+        return Map.of(
+            "name", role,
+            "value", value,
+            "roleCategory", roleCategory,
+            "autoAssignable", false
+        );
+    }
+
+    public static Map<String, Object> permission(String role, String value, String roleCategory, int assignmentPriority) {
+        return Map.of(
+            "name", role,
+            "value", value,
+            "roleCategory", roleCategory,
+            "assignmentPriority", assignmentPriority,
+            "autoAssignable", true
+        );
+    }
+
+    public static Map<String, Object> permission(String role, String value, String roleCategory, String authorisations) {
+        return Map.of(
+            "name", role,
+            "value", value,
+            "roleCategory", roleCategory,
+            "authorisations", authorisations,
+            "autoAssignable", false
+        );
+    }
+
     public static Map<String,Object> DEFAULT_CASE_ALLOCATOR_PERMISSIONS = Map.of(
         "name", "case-allocator",
         "value", "Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim",
@@ -129,6 +166,39 @@ public class Permissions {
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
             )
+        );
+    }
+
+    public static List<Map<String, Object>> defaultPermissionsJudgesTasks() {
+        return List.of(
+            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+            permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL","368")
+        );
+    }
+
+    public static List<Map<String, Object>> defaultPermissionsHearingJudgesTasks() {
+        return List.of(
+            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+        );
+    }
+
+    public static List<Map<String, Object>> defaultPermissionsJudgesReviewTasks() {
+        return List.of(
+            permission("case-allocator","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("task-supervisor","Read,Manage,Complete,Cancel,Assign,Unassign,Claim,Unclaim"),
+            permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
+            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
         );
     }
 }

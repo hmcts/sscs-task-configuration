@@ -11,10 +11,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
-
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -38,38 +38,77 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("interlocInformationReceived",
                                     "reviewInformationRequested", "reviewAdminAction", BLANK),
             eventAutoCompletesTasks("validSendToInterloc",
-                                    "reviewInformationRequested", "reviewAdminAction", BLANK),
+                                    "reviewInformationRequested", "reviewAdminAction",
+                                    "reviewConfidentialityRequest", "reviewReinstatementRequestJudge",
+                                    "referredToInterlocJudge", BLANK),
             eventAutoCompletesTasks("interlocSendToTcw",
-                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate", BLANK),
+                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate",
+                                    "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
+                                    "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
+                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge", BLANK),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse", BLANK),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument", BLANK),
             eventAutoCompletesTasks("actionFurtherEvidence",
                                     "issueOutstandingTranslation","actionUnprocessedCorrespondence", BLANK),
+            eventAutoCompletesTasks("reviewConfidentialityRequest","reviewConfidentialityRequest", BLANK),
+            eventAutoCompletesTasks("reviewPhmeRequest","reviewPheRequestJudge", BLANK),
+            eventAutoCompletesTasks("decisionIssued",
+                                    "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
+                                    "referredByAdminJudgePreHearing", "referredToInterlocJudge", BLANK),
+            eventAutoCompletesTasks("struckOut",
+                                    "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
+                                    "referredByAdminJudgePreHearing", BLANK),
+            eventAutoCompletesTasks("abateCase","ftaNotProvidedAppointeeDetailsJudge", BLANK),
+            eventAutoCompletesTasks("writeFinalDecision",
+                                    "referredByTcwPreHearing", "prepareForHearingJudge",
+                                    "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing", BLANK),
+            eventAutoCompletesTasks("actionPostponementRequest","reviewPostponementRequestJudge", BLANK),
+            eventAutoCompletesTasks("adjournCase", "prepareForHearingJudge", BLANK),
+            eventAutoCompletesTasks("issueAdjournmentNotice", "writeDecisionJudge", BLANK),
+            eventAutoCompletesTasks("sendToAdmin",
+                                    "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
+                                    "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
+                                    "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing",
+                                    "referredToInterlocJudge", BLANK),
+            eventAutoCompletesTasks("directionIssued",
+                                    "reviewConfidentialityRequest", "reviewUrgentHearingRequest",
+                                    "reviewReinstatementRequestJudge", "referredByTcwPreHearing",
+                                    "ftaNotProvidedAppointeeDetailsJudge", "referredByAdminJudgePreHearing",
+                                    "referredToInterlocJudge", BLANK),
+            eventAutoCompletesTasks("issueFinalDecision",
+                                    "reviewConfidentialityRequest", "writeDecisionJudge", BLANK),
+            eventAutoCompletesTasks("interlocReviewStateAmend","reviewConfidentialityRequest",
+                                    "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
+                                    "reviewPheRequestJudge", "ftaNotProvidedAppointeeDetailsJudge",
+                                    "referredByTcwPreHearing", "referredByAdminJudgePreHearing",
+                                    "referredToInterlocJudge", BLANK),
+            eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal", BLANK),
             eventAutoCompletesTasks("updateListingRequirement","reviewListingError", BLANK),
             eventAutoCompletesTasks("resendCaseToGAPS2","reviewRoboticFail", BLANK),
-            eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK)
+            eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK),
+            eventAutoCompletesTasks("confirmPanelComposition", "confirmPanelComposition", BLANK)
         );
     }
 
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
-    void given_event_ids_should_evaluate_dmn(String eventId, List<Map<String, String>> expectation) {
+    void given_event_ids_should_evaluate_dmn(String eventId, Set<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        MatcherAssert.assertThat(new HashSet<Map<String,Object>>(dmnDecisionTableResult.getResultList()), is(expectation));
     }
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(13));
+        assertThat(logic.getRules().size(), is(26));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
-        return Arguments.of(event, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toList())
+        return Arguments.of(event, Arrays.stream(tasks).map(t -> outputMap(t)).collect(Collectors.toSet())
         );
     }
 
