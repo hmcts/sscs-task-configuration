@@ -38,309 +38,74 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
-            Arguments.of(
-                "draftToIncompleteApplication",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal - CTSC",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "incompleteApplicationReceived",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal - CTSC",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestForInformation",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInformationRequested",
-                        "name", "Review Information Requested - CTSC",
-                        "workingDaysAllowed", 3,
-                        "processCategories", "reviewInformationRequested"
-                    )
-                )
-            ),
-            Arguments.of(
-                "dwpSupplementaryResponse",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
-            Arguments.of(
-                "uploadDocument",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
-            Arguments.of(
-                "attachScannedDocs",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
-            Arguments.of(
-                "uploadDocumentFurtherEvidence",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
-            Arguments.of(
-                "incompleteApplicationReceived",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal - CTSC",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "draftToIncompleteApplication",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal - CTSC",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "incompleteApplicationReceived",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal - CTSC",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "dwpUploadResponse",
-                "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", true)),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewFtaResponse",
-                        "name", "Review FTA Response - CTSC",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "reviewFtaResponse"
-                    )
-                )
-            ),
-            Arguments.of(
-                "dwpChallengeValidity",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewFtaValidityChallenge",
-                        "name", "Review FTA validity challenge - LO",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "reviewFtaValidityChallenge"
-                    )
-                )
-            ),
-            Arguments.of(
-                "dwpUploadResponse",
-                null,
-                Map.of("Data", Map.of("dwpFurtherInfo", false)),
-                List.of()
-            ),
+            event("draftToIncompleteApplication")
+                .initiativesTask("reviewIncompleteAppeal",
+                                 "Review Incomplete Appeal - CTSC", 5)
+                .build(),
+            event("incompleteApplicationReceived")
+                .initiativesTask("reviewIncompleteAppeal",
+                                 "Review Incomplete Appeal - CTSC", 5)
+                .build(),
+            event("requestForInformation")
+                .initiativesTask("reviewInformationRequested",
+                                 "Review Information Requested - CTSC", 3)
+                .build(),
+            event("dwpSupplementaryResponse")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            event("uploadDocument")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            event("attachScannedDocs")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            event("uploadDocumentFurtherEvidence")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("dwpUploadResponse", "withDwp")
+                .withCaseData("dwpFurtherInfo", true)
+                .initiativesTask("reviewFtaResponse", "Review FTA Response - CTSC", 2)
+                .build(),
+            event("dwpChallengeValidity")
+                .initiativesTask("reviewFtaValidityChallenge",
+                                 "Review FTA validity challenge - LO", 2)
+                .build(),
+            event("dwpUploadResponse")
+                .withCaseData("dwpFurtherInfo", false)
+                .build(),
             event("sendToAdmin")
                 .initiativesTask("reviewAdminAction", "Review Admin Action - CTSC", 10)
                 .build(),
-            Arguments.of(
-                "dwpUploadResponse",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", false)),
-                List.of()
-            ),
-            Arguments.of(
-                "attachScannedDocs",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewBilingualDocument",
-                        "name", "Review Bi-Lingual Document - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "Translation Tasks"
-                    ),
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
-            Arguments.of(
-                "uploadDocumentFurtherEvidence",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewBilingualDocument",
-                        "name", "Review Bi-Lingual Document - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "Translation Tasks"
-                    ),
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
-            Arguments.of(
-                "draftToIncompleteApplication",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal - CTSC",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "incompleteApplicationReceived",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewIncompleteAppeal",
-                        "name", "Review Incomplete Appeal - CTSC",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewIncompleteAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "dwpUploadResponse",
-                "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", true)),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewFtaResponse",
-                        "name", "Review FTA Response - CTSC",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "reviewFtaResponse"
-                    )
-                )
-            ),
-            Arguments.of(
-                "dwpUploadResponse",
-                "withDwp",
-                Map.of("Data", Map.of("dwpFurtherInfo", false)),
-                List.of()
-            ),
-            Arguments.of(
-                "uploadDocument",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewBilingualDocument",
-                        "name", "Review Bi-Lingual Document - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "Translation Tasks"
-                    ),
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
-            Arguments.of(
-                "dwpUploadResponse",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", false)),
-                List.of()
-            ),
-            Arguments.of(
-                "attachScannedDocs",
-                null,
-                Map.of("Data", Map.of("languagePreferenceWelsh", true)),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewBilingualDocument",
-                        "name", "Review Bi-Lingual Document - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "Translation Tasks"
-                    ),
-                    Map.of(
-                        "taskId", "actionUnprocessedCorrespondence",
-                        "name", "Action Unprocessed Correspondence - CTSC",
-                        "workingDaysAllowed", 10,
-                        "processCategories", "actionUnprocessedCorrespondence"
-                    )
-                )
-            ),
+            event("dwpUploadResponse")
+                .withCaseData("languagePreferenceWelsh", false)
+                .build(),
+            event("attachScannedDocs")
+                .withCaseData("languagePreferenceWelsh", true)
+                .initiativesTask("reviewBilingualDocument",
+                                 "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
             event("uploadDocumentFurtherEvidence")
                 .withCaseData("languagePreferenceWelsh", true)
-                .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document - CTSC",
-                                 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence - CTSC",
+                .initiativesTask("reviewBilingualDocument",
+                                 "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC",10)
+                .build(),
+            eventWithState("dwpUploadResponse", "withDwp")
+                .withCaseData("dwpFurtherInfo", false)
+                .build(),
+            event("uploadDocument")
+                .withCaseData("languagePreferenceWelsh", true)
+                .initiativesTask("reviewBilingualDocument",
+                                 "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC",
                                  10)
                 .build(),
             event("actionFurtherEvidence")
@@ -352,85 +117,27 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
                                  10, "Translation Tasks")
                 .build(),
-            Arguments.of(
-                "validAppealCreated",
-                "validAppeal",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewValidAppeal",
-                        "name", "Review Valid Appeal - CTSC",
-                        "delayDuration", 1,
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewValidAppeal"
-                    )
-                )
-            ),
-            Arguments.of(
-                "readyToList",
-                "listingError",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewListingError",
-                        "name", "Review Listing Error - CTSC",
-                        "workingDaysAllowed", 3,
-                        "processCategories", "reviewListingError"
-                    )
-                )
-            ),
-            Arguments.of(
-                "sendToRoboticsError",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRoboticFail",
-                        "name", "Review Robotic Fail - CTSC",
-                        "workingDaysAllowed", 3,
-                        "processCategories", "reviewRoboticFail"
-                    )
-                )
-            ),
-            Arguments.of(
-                "directionDueToday",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewBfDate",
-                        "name", "Review BF Date - CTSC",
-                        "workingDaysAllowed", 5,
-                        "processCategories", "reviewBfDate"
-                    )
-                )
-            ),
-            Arguments.of(
-                "prepareForHearing",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "allocateCaseRolesAndCreateBundle",
-                        "name", "Allocate Case Roles and Create Bundle - RPC",
-                        "workingDaysAllowed", 3,
-                        "processCategories", "allocateCaseRolesAndCreateBundle"
-                    )
-                )
-            ),
+            eventWithState("validAppealCreated", "validAppeal")
+                .initiativesTaskWithDelay("reviewValidAppeal",
+                                 "Review Valid Appeal - CTSC", 1, 5)
+                .build(),
+            eventWithState("readyToList", "listingError")
+                .initiativesTask("reviewListingError",
+                                 "Review Listing Error - CTSC", 3)
+                .build(),
+            event("sendToRoboticsError")
+                .initiativesTask("reviewRoboticFail",
+                                 "Review Robotic Fail - CTSC", 3)
+                .build(),
+            event("directionDueToday")
+                .initiativesTask("reviewBfDate",
+                                 "Review BF Date - CTSC", 5)
+                .build(),
+            event("prepareForHearing")
+                .initiativesTask("allocateCaseRolesAndCreateBundle",
+                                 "Allocate Case Roles and Create Bundle - RPC", 3)
+                .build(),
             event("dwpSupplementaryResponse")
-                .withCaseData("languagePreferenceWelsh", true)
-                .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document - CTSC",
-                                 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence - CTSC", 10)
-                .build(),
-            event("uploadDocument")
-                .withCaseData("languagePreferenceWelsh", true)
-                .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document - CTSC",
-                                 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence - CTSC", 10)
-                .build(),
-            event("attachScannedDocs")
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document - CTSC",
                                  10, "Translation Tasks")
@@ -439,9 +146,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("uploadWelshDocument")
                 .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
                                  10, "Translation Tasks")
-                .build(),
-            event("sendToAdmin")
-                .initiativesTask("reviewAdminAction", "Review Admin Action - CTSC", 10)
                 .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
@@ -455,15 +159,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("manageWelshDocuments")
                 .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
                 .initiativesTask("reviewConfidentialityRequest", "Review Confidentiality Request - Judge", 2)
-                .build(),
-            event("actionFurtherEvidence")
-                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
-                .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request - Judge", 2)
-                .build(),
-            event("uploadWelshDocument")
-                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
-                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
-                                 10, "Translation Tasks")
                 .build(),
             event("manageWelshDocuments")
                 .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
