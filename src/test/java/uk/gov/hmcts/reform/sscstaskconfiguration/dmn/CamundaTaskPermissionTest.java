@@ -100,8 +100,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -131,8 +130,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("hearing-judge","Read,Own", "JUDICIAL", 1),
-                    permission("judge","Read,Own", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own", "JUDICIAL")
+                    permission("judge","Read,Own", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -162,8 +160,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("hearing-judge","Read,Own", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim", "JUDICIAL")
+                    permission("judge","Read,Own,Claim", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -193,8 +190,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("hearing-judge","Read,Own,CancelOwn", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,CancelOwn", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,CancelOwn", "JUDICIAL")
+                    permission("judge","Read,Own,Claim,CancelOwn", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -370,8 +366,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -401,8 +396,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -677,8 +671,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -708,8 +701,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -884,7 +876,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368"),
                     permission("post-hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1)
                 )
             ),
@@ -945,8 +936,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -976,8 +966,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -1191,8 +1180,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1, true),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", false),
-                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", false)
                 )
             )
         );
@@ -1236,7 +1224,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(83));
+        assertThat(logic.getRules().size(), is(79));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
