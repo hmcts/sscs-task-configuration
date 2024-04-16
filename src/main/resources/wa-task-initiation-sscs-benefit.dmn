@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -1787,6 +1787,92 @@ else 0</text>
           <text>"reviewPostponementRequestJudge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1kcc5nj">
+        <inputEntry id="UnaryTests_10f1cl1">
+          <text>"actionPostponementRequest"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l7lxx9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fdwukv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l93y9g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0farw1z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sztlu0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_100vudy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nfb9fp">
+          <text>"reviewByTcw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ckpgw6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c3twto">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qn60xf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_001g1ch">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fz5sd4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mugula">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b3v20e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_021yf4q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hgllyb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yddc1n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0akr882">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ewwsij">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iil922">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gwd0a7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d4ckfd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_044znoi">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uvqajt">
+          <text>"Review postponement request - LO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1km8vmy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g862eo">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hyb7ae">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0ru3w7f">
         <inputEntry id="UnaryTests_1xo57u6">
           <text>"validAppealCreated"</text>
@@ -3185,7 +3271,7 @@ else "Referred to interloc - Judge"</text>
       </rule>
       <rule id="DecisionRule_1ipe0he">
         <inputEntry id="UnaryTests_19epj3f">
-          <text>"actionFurtherEvidence", "manageWelshDocuments"</text>
+          <text>"actionFurtherEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1u4wvpw">
           <text></text>
@@ -3230,7 +3316,7 @@ else "Referred to interloc - Judge"</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0mt85r3">
-          <text></text>
+          <text>"sendToInterlocReviewByTcw"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgtbd2">
           <text></text>
@@ -3266,6 +3352,92 @@ else "Referred to interloc - Judge"</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1kwo8ym">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_064ygra">
+        <inputEntry id="UnaryTests_0jlubke">
+          <text>"manageWelshDocuments"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qdcob2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mbw2ru">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sa0g3v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ocdnuy">
+          <text>contains(scannedDocumentTypes, "postponementRequest")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qsk9d9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b4wnt4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1on7az4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f9eey0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u6y5qf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18sye6y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xtrkb6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qp581f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ecfawr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02jmukx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_167s4k1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gat3uq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bosqbc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ip204c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f45crc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sikk74">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vw067g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16gso04">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rm0pk2">
+          <text>"reviewPostponementRequestTCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1koo4sb">
+          <text>"Review postponement request - LO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xoymm5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t4ey4v">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06y5wac">
           <text>"reviewPostponementRequestTCW"</text>
         </outputEntry>
       </rule>
@@ -6899,6 +7071,92 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tr70em">
           <text>"issueDecisionJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iteoud">
+        <inputEntry id="UnaryTests_0nac55s">
+          <text>"actionFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tt1pkh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ne9ezg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pkn5w5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0szd363">
+          <text>contains(scannedDocumentTypes, "postponementRequest")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i2420g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01mcwa1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fq8ypn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h7qusm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fmdfdn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e84y2u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nf60q6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w9coqd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qu7yps">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rcaqm6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06el80c">
+          <text>"sendToInterlocReviewByJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1woeufm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yits41">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rqml4l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jx4xud">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ga2mmy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05lb7hr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lz4c1w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0warajb">
+          <text>"reviewPostponementRequestJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yto87s">
+          <text>"Review Postponement Request - Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wpjjcx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14pj19n">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01wm3yd">
+          <text>"reviewPostponementRequestJudge"</text>
         </outputEntry>
       </rule>
     </decisionTable>
