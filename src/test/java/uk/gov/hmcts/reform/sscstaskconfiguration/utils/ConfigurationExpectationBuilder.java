@@ -17,7 +17,6 @@ public class ConfigurationExpectationBuilder {
     public static String LOCATION_NAME = "locationName";
     public static String WORK_TYPE = "workType";
     public static String ROLE_CATEGORY = "roleCategory";
-    public static String PRIORITY_DATE = "priorityDate";
     public static String MINOR_PRIORITY = "minorPriority";
     public static String MAJOR_PRIORITY = "majorPriority";
     public static String DESCRIPTION = "description";
@@ -27,10 +26,20 @@ public class ConfigurationExpectationBuilder {
     public static String DUE_DATE_NON_WORKING_CALENDAR = "dueDateNonWorkingCalendar";
     public static String DUE_DATE_INTERVAL_DAYS = "dueDateIntervalDays";
     public static String DUE_DATE_NON_WORKING_DAYS_OF_WEEK = "dueDateNonWorkingDaysOfWeek";
+    public static String CALCULATED_DATES = "calculatedDates";
+    public static String NEXT_HEARING_DATE_PREDATE_ORIGIN_REF = "nextHearingDatePreDateOriginRef";
+    public static String NEXT_HEARING_DATE_PREDATE_INTERVAL_DAYS = "nextHearingDatePreDateIntervalDays";
+    public static String NEXT_HEARING_DATE_PREDATE_NON_WORKING_CALENDAR = "nextHearingDatePreDateNonWorkingCalendar";
+    public static String NEXT_HEARING_DATE_PREDATE_NON_WORKING_DAYS_OF_WEEK = "nextHearingDatePreDateNonWorkingDaysOfWeek";
+    public static String NEXT_HEARING_DATE_PREDATE_SKIP_NON_WORKING_DAYS = "nextHearingDatePreDateSkipNonWorkingDays";
+    public static String NEXT_HEARING_DATE_PREDATE_MUST_BE_WORKING_DAY = "nextHearingDatePreDateMustBeWorkingDay";
+    public static String PRIORITY_DATE_ORIGIN_EARLIEST = "priorityDateOriginEarliest";
 
     private static List<String> EXPECTED_PROPERTIES = Arrays.asList(
         CASE_NAME,CASE_MANAGEMENT_CATEGORY,REGION,LOCATION,LOCATION_NAME,WORK_TYPE,ROLE_CATEGORY,
-        PRIORITY_DATE, MINOR_PRIORITY, MAJOR_PRIORITY, DESCRIPTION, NEXT_HEARING_ID, NEXT_HEARING_DATE,
+        CALCULATED_DATES, NEXT_HEARING_DATE_PREDATE_ORIGIN_REF, NEXT_HEARING_DATE_PREDATE_INTERVAL_DAYS, NEXT_HEARING_DATE_PREDATE_NON_WORKING_CALENDAR,
+        NEXT_HEARING_DATE_PREDATE_NON_WORKING_DAYS_OF_WEEK, NEXT_HEARING_DATE_PREDATE_SKIP_NON_WORKING_DAYS, NEXT_HEARING_DATE_PREDATE_MUST_BE_WORKING_DAY,
+        PRIORITY_DATE_ORIGIN_EARLIEST, MINOR_PRIORITY, MAJOR_PRIORITY, DESCRIPTION, NEXT_HEARING_ID, NEXT_HEARING_DATE,
         DUE_DATE_ORIGIN, DUE_DATE_NON_WORKING_CALENDAR, DUE_DATE_INTERVAL_DAYS, DUE_DATE_NON_WORKING_DAYS_OF_WEEK
     );
 
@@ -47,7 +56,15 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
         builder.expectedValue(WORK_TYPE, "routine_work", true);
         builder.expectedValue(ROLE_CATEGORY, "CTSC", true);
-        builder.expectedValue(PRIORITY_DATE, "", true);
+        builder.expectedValue(CALCULATED_DATES, "nextHearingDate,nextHearingDatePreDate,dueDate,priorityDate", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_ORIGIN_REF, "nextHearingDate", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_INTERVAL_DAYS, "-10", true);
+        builder.expectedValue(DUE_DATE_NON_WORKING_DAYS_OF_WEEK, "SATURDAY,SUNDAY", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_NON_WORKING_CALENDAR, "nonWorkingDayCalendar", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_NON_WORKING_DAYS_OF_WEEK, "SATURDAY, SUNDAY", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_SKIP_NON_WORKING_DAYS, "true", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_MUST_BE_WORKING_DAY, "true", true);
+        builder.expectedValue(PRIORITY_DATE_ORIGIN_EARLIEST, "nextHearingDatePreDate,dueDate", true);
         builder.expectedValue(MINOR_PRIORITY, "500", true);
         builder.expectedValue(MAJOR_PRIORITY, "5000", true);
         builder.expectedValue(NEXT_HEARING_ID, "", true);
@@ -110,7 +127,15 @@ public class ConfigurationExpectationBuilder {
         builder.expectedValue(LOCATION_NAME, "BRADFORD", true);
         builder.expectedValue(WORK_TYPE, "pre_hearing", true);
         builder.expectedValue(ROLE_CATEGORY, "JUDICIAL", true);
-        builder.expectedValue(PRIORITY_DATE, "", true);
+        builder.expectedValue(CALCULATED_DATES, "nextHearingDate,nextHearingDatePreDate,dueDate,priorityDate", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_ORIGIN_REF, "nextHearingDate", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_INTERVAL_DAYS, "-10", true);
+        builder.expectedValue(DUE_DATE_NON_WORKING_DAYS_OF_WEEK, "SATURDAY,SUNDAY", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_NON_WORKING_CALENDAR, "nonWorkingDayCalendar", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_NON_WORKING_DAYS_OF_WEEK, "SATURDAY, SUNDAY", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_SKIP_NON_WORKING_DAYS, "true", true);
+        builder.expectedValue(NEXT_HEARING_DATE_PREDATE_MUST_BE_WORKING_DAY, "true", true);
+        builder.expectedValue(PRIORITY_DATE_ORIGIN_EARLIEST, "nextHearingDatePreDate,dueDate", true);
         builder.expectedValue(MINOR_PRIORITY, "500", true);
         builder.expectedValue(MAJOR_PRIORITY, "5000", true);
         builder.expectedValue(NEXT_HEARING_ID, "", true);
