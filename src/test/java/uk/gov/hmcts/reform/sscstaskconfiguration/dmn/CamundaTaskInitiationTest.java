@@ -539,6 +539,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("validSendToInterloc")
                 .withCaseData("action", "reviewByJudge")
                 .withCaseData("interlocReferralReason", "listingDirections")
+                .build(),
+            eventWithState("validSendToInterloc", "hearing")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByJudge")
+                .initiativesTask("reviewPostponementRequestJudge", "Review Postponement Request - Judge", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "dormantAppealState")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByJudge")
+                .build(),
+            eventWithState("validSendToInterloc", "hearing")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByTcw")
+                .initiativesTask("reviewPostponementRequestTCW", "Review Postponement Request - LO", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "dormantAppealState")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByTcw")
                 .build()
         );
     }
@@ -564,7 +582,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(80));
+        assertThat(logic.getRules().size(), is(82));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
