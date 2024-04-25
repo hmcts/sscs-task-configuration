@@ -307,10 +307,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("interlocReferralReason", "adviceOnHowToProceed")
                 .initiativesTask("referredByAdminTcw", "Referred by Admin - LO", 2)
                 .build(),
-            event("actionFurtherEvidence")
-                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
-                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request - LO", 2)
-                .build(),
             event("uploadWelshDocument")
                 .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
                 .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
@@ -526,9 +522,40 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("interlocReferralReason", "listingDirections")
                 .initiativesTask("provideListingDirections", "Provide Listing Directions - Judge", 2)
                 .build(),
+            event("actionPostponementRequest")
+                .withCaseData("action", "reviewByTcw")
+                .initiativesTask("reviewPostponementRequestTCW", "Review postponement request - LO", 2)
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
+                .initiativesTask("reviewPostponementRequestJudge", "Review Postponement Request - Judge", 2)
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByTcw"))
+                .build(),
             event("validSendToInterloc")
                 .withCaseData("action", "reviewByJudge")
                 .withCaseData("interlocReferralReason", "listingDirections")
+                .build(),
+            eventWithState("validSendToInterloc", "hearing")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByJudge")
+                .initiativesTask("reviewPostponementRequestJudge", "Review Postponement Request - Judge", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "dormantAppealState")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByJudge")
+                .build(),
+            eventWithState("validSendToInterloc", "hearing")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByTcw")
+                .initiativesTask("reviewPostponementRequestTCW", "Review Postponement Request - LO", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "dormantAppealState")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByTcw")
                 .build()
         );
     }
@@ -554,7 +581,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(77));
+        assertThat(logic.getRules().size(), is(81));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
