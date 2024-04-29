@@ -3,21 +3,26 @@ plugins {
   id 'checkstyle'
   id 'pmd'
   id 'jacoco'
-  id 'io.spring.dependency-management' version '1.1.0'
-  id 'org.springframework.boot' version '2.7.14'
-  id 'com.github.ben-manes.versions' version '0.45.0'
+  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+  id 'org.springframework.boot' version '2.7.18'
+  id 'com.github.ben-manes.versions' version '0.46.0'
   id 'org.owasp.dependencycheck' version '8.3.1'
-  id 'org.sonarqube' version '3.2.0'
-  id 'info.solidsoft.pitest' version '1.5.2'
+  id 'org.sonarqube' version '4.3.0.3225'
+  id 'info.solidsoft.pitest' version '1.9.11'
   id 'io.freefair.lombok' version '8.4'
 }
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: "info.solidsoft.pitest"
 
 group = 'uk.gov.hmcts.reform'
 version = '0.0.1'
 
-allprojects {
-  sourceCompatibility = '11'
-  targetCompatibility = '11'
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
 }
 
 sourceSets {
@@ -47,6 +52,14 @@ sourceSets {
     }
     resources.srcDir file('src/smokeTest/resources')
   }
+}
+
+processFunctionalTestResources {
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+processIntegrationTestResources {
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 tasks.withType(JavaCompile) {
@@ -126,7 +139,7 @@ jacocoTestReport {
 
 pitest {
   junit5PluginVersion = '0.12'
-  targetClasses = ['uk.gov.hmcts.reform.iataskconfiguration.*']
+  targetClasses = ['uk.gov.hmcts.reform.sscstaskconfiguration.*']
   excludedClasses = [
     'uk.gov.hmcts.reform.sscstaskconfiguration.config.*',
     'uk.gov.hmcts.reform.sscstaskconfiguration.Application'
@@ -186,9 +199,13 @@ dependencyManagement {
       entry 'snakeyaml'
     }
     dependency group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.68'
-    // CVE-2018-10237 - Unbounded memory allocation
-    dependencySet(group: 'com.google.guava', version: '31.1-jre') {
+
+    dependencySet(group: 'com.google.guava', version: '32.1.2-jre') {
       entry 'guava'
+    }
+
+    dependencySet(group: 'org.yaml', version: '2.1') {
+      entry 'snakeyaml'
     }
 
     //CVE-2021-28170
@@ -207,7 +224,6 @@ dependencyManagement {
     dependency group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.2'
     dependency group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.14.2'
     dependency group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.14.2'
-
   }
 }
 
@@ -225,7 +241,7 @@ def versions = [
   pitest          : '1.11.3',
   pitestPlugin    : '1.9.11',
   sonarPitest     : '0.5',
-  tomcat          : '9.0.73'
+  tomcat          : '9.0.81'
 ]
 
 ext.libraries = [
@@ -252,6 +268,9 @@ dependencies {
 
   implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j
   implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: versions.log4j
+
+  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: versions.tomcat
+  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
 
   implementation group: 'org.camunda.bpm', name: 'camunda-external-task-client', version: versions.camunda
 
