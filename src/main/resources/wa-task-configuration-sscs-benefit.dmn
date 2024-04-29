@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
+    <informationRequirement id="InformationRequirement_0l9qrru">
+      <requiredDecision href="#sscs-task-configuration-non-working-days" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1dxss8x">
+      <requiredDecision href="#nextHearing" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
         <inputExpression id="LiteralExpression_0mra7c4" typeRef="string">
@@ -17,15 +23,1516 @@ else
 null</text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="Name" name="name" typeRef="string" />
-      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803" />
+      <output id="Output_1" label="Name" name="name" typeRef="string" biodi:width="214" />
+      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="828" />
+      <output id="OutputClause_0a7y3b4" label="Can Reconfigure?" name="canReconfigure" typeRef="boolean" />
+      <rule id="DecisionRule_0v043ob">
+        <inputEntry id="UnaryTests_1l01q3m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mcoepe">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_131w2yc">
+          <text>"caseName"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rfnlqn">
+          <text>if(caseData!=null and caseData.caseNamePublic !=null) then caseData.caseNamePublic else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1s03bv2">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dn8wlc">
+        <inputEntry id="UnaryTests_1l0g4pf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vuini3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pt3s5t">
+          <text>"caseManagementCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0atr3gl">
+          <text>if(caseData!=null and caseData.caseManagementCategory!=null) then caseData.caseManagementCategory.value.label else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hr0naf">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vf8opq">
+        <inputEntry id="UnaryTests_0fkxfqx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pnm0ej">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15rspxn">
+          <text>"region"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dj7rx7">
+          <text>if(caseData!=null and caseData.caseManagementLocation!=null and caseData.caseManagementLocation.region!=null) then caseData.caseManagementLocation.region else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1radtvn">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12vbz7t">
+        <description>Location Id</description>
+        <inputEntry id="UnaryTests_0y9tp78">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x9mjjq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nf9e7p">
+          <text>"location"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jb6taf">
+          <text>if(caseData!=null and caseData.regionalProcessingCenter!=null and caseData.regionalProcessingCenter.epimsId!=null) then caseData.regionalProcessingCenter.epimsId else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t0wpwg">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ghvyu8">
+        <description>Short name</description>
+        <inputEntry id="UnaryTests_0djva3j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yhxw7s">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08snzog">
+          <text>"locationName"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0efrhlm">
+          <text>if(caseData!=null and caseData.regionalProcessingCenter!=null and caseData.regionalProcessingCenter.name!=null) then 
+    if(nextHearingVenue!=null) then
+	caseData.regionalProcessingCenter.name + " - " + nextHearingVenue
+    else
+	caseData.regionalProcessingCenter.name
+else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n6uzb4">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0n6znmc">
+        <inputEntry id="UnaryTests_0ooc4t2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j3y284">
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wqk11i">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16td79g">
+          <text>"routine_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1s1cucb">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lvz2py">
+        <inputEntry id="UnaryTests_0grdkbd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a9atyt">
+          <text>"reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","provideListingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xklqhp">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n1ugbr">
+          <text>"pre_hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c8uu42">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1r9c9cq">
+        <inputEntry id="UnaryTests_0tgrjk7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qfyny7">
+          <text>"prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pg0z8u">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1morv5f">
+          <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04whdu7">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zmxy4p">
+        <inputEntry id="UnaryTests_1ag93va">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j4fsmh">
+          <text>"uploadHearingRecordingSORCTSC","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewPostHearingNoticeforListingRequirements","reviewCorrectionApplicationJudge","reviewCorrectionApplicationAdmin","reviewSetAsideApplication","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","reviewApplicationandAllocateJudge","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pimx2r">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1asur35">
+          <text>"post_hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dc09xx">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03umoya">
+        <inputEntry id="UnaryTests_1l734ga">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aecnsw">
+          <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11iwtl8">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1px76z5">
+          <text>"access_requests"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10gby2y">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0460vvp">
+        <inputEntry id="UnaryTests_0pa4ux4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14syl1g">
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","uploadHearingRecordingSORCTSC","reviewPostHearingNoticeforListingRequirements","reviewCorrectionApplicationAdmin","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewSpecificAccessRequestCTSC"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gex6d1">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cd41v4">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02omkc8">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i2nhzv">
+        <inputEntry id="UnaryTests_05olspb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lqa97e">
+          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","referredByTcwPreHearing","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplication","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestJudiciary","provideListingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ga9m4z">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uzw2y1">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lymbb3">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qde3ue">
+        <inputEntry id="UnaryTests_0xa5tez">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k28xtv">
+          <text>"ftaRequestTimeExtension","reviewFtaValidityChallenge","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw","reviewSpecificAccessRequestLegalOps"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fq2vj2">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04gssk0">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j6qgxu">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bt5kqm">
+        <inputEntry id="UnaryTests_0usjdch">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dd312o">
+          <text>"allocateCaseRolesAndCreateBundle","contactParties","updateHearingDetails","reviewSpecificAccessRequestAdmin"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02ykby3">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_106wbkf">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ue19py">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1loicg1">
+        <description>Hearing date if available minus 10 days</description>
+        <inputEntry id="UnaryTests_039jxa1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a085xv">
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0t1trnx">
+          <text>"priorityDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yq77of" expressionLanguage="feel">
+          <text>if(nextHearingDate!=null) then date(nextHearingDate) - duration("P10D")  else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05klryr">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u4vdqa">
+        <description>Default priorty</description>
+        <inputEntry id="UnaryTests_00f1los">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hov4g1">
+          <text>"reviewIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest","reviewValidAppeal","reviewRoboticFail","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","reviewLibertytoApplyApplication","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewPostHearingNoticeforListingRequirements","reviewSetAsideApplication","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","referredByAdminJudgePostHearing","referredByTcwPostHearing","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","provideListingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ek1jdy">
+          <text>"minorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04i60yx">
+          <text>500</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ptswou">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1a8gebd">
+        <description>High priority if hearing data not available</description>
+        <inputEntry id="UnaryTests_1spe9nj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_168dkl4">
+          <text>"reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewRemittedDecisionandProvideListingDirections","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge","updateHearingDetails","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s58bga">
+          <text>"minorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xxo6ds">
+          <text>300</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m753dr">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1uixk45">
+        <inputEntry id="UnaryTests_15j669q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fkxhel">
+          <text>"contactParties", "reviewUrgentHearingRequest", "writeDecisionJudge","issueDecisionJudge", "reviewPostponementRequestJudge", "reviewPostponementRequestTCW","reviewCorrectionApplicationJudge","uploadHearingRecordingSORCTSC"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tnvwwr">
+          <text>"minorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mj8lhz">
+          <text>100</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yhgvie">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0j08ox4">
+        <description>Default priorty</description>
+        <inputEntry id="UnaryTests_01wd578">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jpwpai">
+          <text>"reviewIncompleteAppeal","reviewConfidentialityRequest","reviewBfDate","reviewInformationRequested","reviewReinstatementRequestJudge","referredByTcwPreHearing","prepareForHearingJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","reviewLibertytoApplyApplication","writeStatementofReason","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewPostHearingNoticeforListingRequirements","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","provideListingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ic56e1">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gicqwx">
+          <text>5000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a9nh45">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0l03bs7">
+        <description>Low priority if hearing data not available</description>
+        <inputEntry id="UnaryTests_0fj4f9h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0epq85p">
+          <text>"reviewFtaDueDate","reviewValidAppeal","reviewRoboticFail","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1653vwt">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1al9tsm">
+          <text>6000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zukoi1">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18ijrs0">
+        <description>High priority if hearing data not available</description>
+        <inputEntry id="UnaryTests_1h85ecq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hvpmuj">
+          <text>"reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewRemittedDecisionandProvideListingDirections","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge","updateHearingDetails","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication","uploadHearingRecordingSORCTSC"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vtnzdl">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_123h2cy">
+          <text>3000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0587fwj">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jbhr3j">
+        <inputEntry id="UnaryTests_0tn8bm4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_024rpcl">
+          <text>"contactParties", "reviewUrgentHearingRequest", "writeDecisionJudge","issueDecisionJudge", "reviewPostponementRequestJudge", "reviewPostponementRequestTCW","reviewCorrectionApplicationJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14j8b6m">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hritym">
+          <text>1000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_118ixaz">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0is1370">
+        <inputEntry id="UnaryTests_05yor87">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i6dgcb">
+          <text>"provideListingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ktqx4d">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11si25k">
+          <text>"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Add a note](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/addNote)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jqfwij">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0oyk38s">
+        <inputEntry id="UnaryTests_0qpb9lf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gt5f8f">
+          <text>"reviewIncompleteAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j38iua">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09hhurs">
+          <text>"[Request Information From Party](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestForInformation)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g4fbsy">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0t23nn3">
+        <inputEntry id="UnaryTests_0rr3o2i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15wzdbz">
+          <text>"reviewInformationRequested"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b20p45">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gtav7k">
+          <text>"[Information received](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x6to7m">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rt6nh7">
+        <inputEntry id="UnaryTests_1dsknmi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08bjsdv">
+          <text>"reviewFtaResponse"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k0e9b0">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12okm4q">
+          <text>"[Response reviewed](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/hmctsResponseReviewed)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ehr5wt">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p938bu">
+        <inputEntry id="UnaryTests_0xvluzi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fdbij6">
+          <text>"reviewBilingualDocument"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12q677g">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ydax3u">
+          <text>"[Request translation from WLU](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/requestTranslationFromWLU)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hkaics">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dhqnk3">
+        <inputEntry id="UnaryTests_0kelh97">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_079z55m">
+          <text>"issueOutstandingTranslation","actionUnprocessedCorrespondence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18j8apd">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lo6dhk">
+          <text>"[Action Further Evidence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionFurtherEvidence)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b6kxb5">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0386jr8">
+        <inputEntry id="UnaryTests_12p6zed">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gtxb6p">
+          <text>"reviewAdminAction"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_143igpw">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l4c9u4">
+          <text>"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
+"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Information received](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15vmpq1">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bn3hur">
+        <inputEntry id="UnaryTests_1m1nkh5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_173tie7">
+          <text>"reviewFtaDueDate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s7k1vp">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_098mpbp">
+          <text>"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ef73m6">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cqgoy1">
+        <inputEntry id="UnaryTests_1aijp72">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i60f5x">
+          <text>"ftaRequestTimeExtension"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1af76bg">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11rbcnr">
+          <text>"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ehxfqy">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0w6ramv">
+        <inputEntry id="UnaryTests_0i769ig">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0do6jny">
+          <text>"reviewListingError"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s0vl1q">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1s2f9ma">
+          <text>"[Update Listing Requirements](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/updateListingRequirements)&lt;br/&gt;" +
+"[Ready to list](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/readyToList)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j27evi">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_062r40k">
+        <inputEntry id="UnaryTests_1qa09r4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a4h6yx">
+          <text>"reviewRoboticFail"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s7tol9">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vkt2gs">
+          <text>"[Resend case to GAPS 2](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/resendCaseToGAPS2)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17tgqaf">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0407j4e">
+        <inputEntry id="UnaryTests_1sx10yp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07xhl4g">
+          <text>"reviewBfDate"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1biyumo">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08oadw3">
+          <text>"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
+"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Amend due date](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/amendDueDate)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n21l6b">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0h0wvdg">
+        <inputEntry id="UnaryTests_1f8wwv4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lhzyrz">
+          <text>"allocateCaseRolesAndCreateBundle"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08n3dd4">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dqinsx">
+          <text>"[Create Bundle](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/createBundle)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wo3dip">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ccdk5o">
+        <inputEntry id="UnaryTests_021ozr0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e8hgpr">
+          <text>"reviewCorrectionApplicationAdmin"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15ibm09">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05dqza1">
+          <text>"[Admin - action correction](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/adminActionCorrection)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fy33w3">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dsvccj">
+        <inputEntry id="UnaryTests_0lij37k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bg98p0">
+          <text>"reviewFtaValidityChallenge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1t78g7k">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0utz277">
+          <text>"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" +
+"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
+"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wemmqd">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fv9ty1">
+        <inputEntry id="UnaryTests_14fxds4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xp3mpb">
+          <text>"reviewPostponementRequestTCW","reviewPostponementRequestJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0klccdr">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15k210f">
+          <text>"[Action Postponement Request](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/actionPostponementRequest)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13d2acc">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07yrj5z">
+        <inputEntry id="UnaryTests_0jfm70m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f2yisl">
+          <text>"referredToInterlocTCW"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d5520j">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pes8ej">
+          <text>"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)&lt;br/&gt;" +
+"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10skwzh">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00unrm0">
+        <inputEntry id="UnaryTests_1uxmktv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aaggxj">
+          <text>"ftaResponseOverdue"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00vjhf0">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g7yg46">
+          <text>"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0okoudw">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gcezwp">
+        <inputEntry id="UnaryTests_0bn58o2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13zpvvp">
+          <text>"referredByJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1iqvamp">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gw6t6k">
+          <text>"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)&lt;br/&gt;" +
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p5r8mn">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1th71jq">
+        <inputEntry id="UnaryTests_1kvduos">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xckwek">
+          <text>"processAudioVideoEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xor5gr">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dqdloj">
+          <text>"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" +
+"[Process audio/video evidence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/processAudioVideo)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10pj3bt">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tw6n7m">
+        <inputEntry id="UnaryTests_04budqi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15ql0nd">
+          <text>"reviewNonCompliantAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1eyvd2b">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02x0fbn">
+          <text>"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)&lt;br/&gt;" +
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lpozva">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lsh72u">
+        <inputEntry id="UnaryTests_0wzom7q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j7nphs">
+          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0316sbr">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b12y7k">
+          <text>"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)&lt;br/&gt;" +
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kd45ij">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xzl6pd">
+        <inputEntry id="UnaryTests_0epowep">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yqqywc">
+          <text>"referredByAdminTcw"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pmqede">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06gvohv">
+          <text>"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" +
+"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rjas4r">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ihmkd0">
+        <inputEntry id="UnaryTests_0wrtrlw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b8pxui">
+          <text>"reviewReinstatementRequestJudge","reviewUrgentHearingRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nm76py">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1njh36a">
+          <text>"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" +
+"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d9prrw">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12081oy">
+        <inputEntry id="UnaryTests_1xi7znu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13ey9ji">
+          <text>"prepareForHearingJudge","prepareHearingAppraiser1","prepareHearingAppraiser2","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xuqwh2">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oyvrej">
+          <text>"[View hearing bundle](/case/SSCS/Benefit/${[CASE_REFERENCE]}#Bundles)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_114rok7">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fbsict">
+        <inputEntry id="UnaryTests_0oclwsd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gzkbl3">
+          <text>"updateHearingDetails"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12l2wls">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cayzlq">
+          <text>"[Hearing tab](/case/SSCS/Benefit/${[CASE_REFERENCE]}#hearings)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1crjbmw">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02qktzz">
+        <inputEntry id="UnaryTests_1y6ukih">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19v8r99">
+          <text>"reviewSpecificAccessRequestJudiciary",
+"reviewSpecificAccessRequestLegalOps",
+"reviewSpecificAccessRequestAdmin",
+"reviewSpecificAccessRequestCTSC"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hecwvu">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fzk1cz">
+          <text>if (taskAttributes != null and taskAttributes.taskId != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskId + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
+else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13eeaor">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ptiar3">
+        <inputEntry id="UnaryTests_11yn6r7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11fk0no">
+          <text>"reviewConfidentialityRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rf9b8d">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e8dkiv">
+          <text>"[Review confidentiality request](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewConfidentialityRequest)&lt;br/&gt;" +
+"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Issue final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueFinalDecision)&lt;br/&gt;" +
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rbnd3t">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nsygx6">
+        <inputEntry id="UnaryTests_1j085c4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bdf7m6">
+          <text>"reviewPheRequestJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10jzokc">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ijfcw7">
+          <text>"[Review PHE request](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewPhmeRequest)&lt;br/&gt;" +
+          "[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0quzstr">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_052cs8y">
+        <inputEntry id="UnaryTests_0v4ej52">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1avq1p2">
+          <text>"referredByAdminJudgePreHearing","referredByAdminJudgePostHearing","referredByTcwPreHearing","referredByTcwPostHearing"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xw4ckq">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w2aykb">
+          <text>"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
+"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Strike out case](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/struckOut)&lt;br/&gt;" +
+"[Write final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/writeFinalDecision)&lt;br/&gt;" +
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tasnau">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_009i955">
+        <inputEntry id="UnaryTests_1ajfwm5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16msa6r">
+          <text>"ftaNotProvidedAppointeeDetailsJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kuor2u">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1463uy0">
+          <text>"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
+"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Strike out case](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/struckOut)&lt;br/&gt;" +
+"[Abate case](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/abateCase)&lt;br/&gt;" +
+"[Write final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/writeFinalDecision)&lt;br/&gt;" +
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ng9j8h">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ioipq1">
+        <inputEntry id="UnaryTests_0ox0y12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k8u0qf">
+          <text>"referredToInterlocJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_075svyr">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dh9n8b">
+          <text>"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
+"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
+"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
+"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13w4oj9">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06zkqe3">
+        <inputEntry id="UnaryTests_14ml2sa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yjwnzt">
+          <text>"confirmPanelComposition"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11zi9s4">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ermvvn">
+          <text>"[Confirm Panel Composition](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/confirmPanelComposition)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0smidig">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_023hm1h">
+        <inputEntry id="UnaryTests_107vj07">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01lsdr7">
+          <text>"reviewCorrectionApplicationJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tz45ui">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1176btt">
+          <text>"[Issue final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueFinalDecision)&lt;br/&gt;" +
+"[Review Post Hearing App](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/postHearingReview)&lt;br/&gt;" +
+"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lmncgl">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0baxfe5">
+        <inputEntry id="UnaryTests_0ow0tvx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11rvzwu">
+          <text>"reviewLateStatementofReasonsApplication","reviewSetAsideApplication","reviewLibertytoApplyApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10upk9b">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e2g3gc">
+          <text>"[Review Post Hearing App](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/postHearingReview)&lt;br/&gt;" +
+"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13pheo6">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1n5eubr">
+        <inputEntry id="UnaryTests_10dvco7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q50epr">
+          <text>"reviewRemittedDecisionandProvideListingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13pw4h7">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s49jeu">
+          <text>"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tqqw5i">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gjvdrl">
+        <inputEntry id="UnaryTests_14f3wm0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10dpjs0">
+          <text>"reviewPermissiontoAppealApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o0cf3a">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11ovzr9">
+          <text>"[Review Post Hearing App](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/postHearingReview)&lt;br/&gt;" +
+"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
+"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zuko7w">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lfcdmz">
+        <inputEntry id="UnaryTests_1sz5pao">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ozeq2d">
+          <text>"writeDecisionJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kz8bi8">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1foi64k">
+          <text>"[Write final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/writeFinalDecision)&lt;br/&gt;" +
+"[Write adjournment notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/adjournCase)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18wqr0a">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04vabbf">
+        <inputEntry id="UnaryTests_1kuoo3i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11dn4lm">
+          <text>"issueDecisionJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1p0q01a">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_177oni6">
+          <text>"[Issue final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueFinalDecision)&lt;br/&gt;" +
+"[Issue adjournment notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueAdjournmentNotice)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qm7hux">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rqexl0">
+        <inputEntry id="UnaryTests_1kqrrps">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03lym0s">
+          <text>"writeStatementofReason"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1feir9o">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hljabv">
+          <text>"[Write SOR](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sORWrite)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gaub0e">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pwriw2">
+        <inputEntry id="UnaryTests_0tvu6ra">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zuzqwl">
+          <text>"uploadHearingRecordingSORCTSC","reviewPostHearingNoticeforListingRequirements","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","contactParties"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10iyh5h">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q93ixm">
+          <text>"Mark Task as Done after reviewing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r7pcsa">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i5m72y">
+        <inputEntry id="UnaryTests_1htx15c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18bq24g">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sd17vb">
+          <text>"nextHearingId" </text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jpfbdl" expressionLanguage="feel">
+          <text>if(nextHearingId!=null) then nextHearingId else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0u5nw0y">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08c4axx">
+        <inputEntry id="UnaryTests_19960w4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ad1dl1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kpzbii">
+          <text>"nextHearingDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ebksar" expressionLanguage="feel">
+          <text>if(nextHearingDate!=null) then nextHearingDate else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13eate1">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tig2bx">
+        <inputEntry id="UnaryTests_1hjb4wl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bvb99j">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dkgyss">
+          <text>"dueDateOrigin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04b6wo4">
+          <text>substring(string(now()),1,16)</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12wh31l">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0csil93">
+        <inputEntry id="UnaryTests_0davuqv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zl8zjg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jbc8h5">
+          <text>"dueDateNonWorkingCalendar"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_131g892">
+          <text>nonWorkingDayCalendar</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06j1l34">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0v3ob2a">
+        <inputEntry id="UnaryTests_0zacm9e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1swv4p3">
+          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","updateHearingDetails"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ndgnkl">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pa34m1">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m8pkls">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1radi8u">
+        <inputEntry id="UnaryTests_00tkn3r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pw9fy3">
+          <text>"reviewInformationRequested","reviewListingError","reviewRoboticFail","allocateCaseRolesAndCreateBundle","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hvbenp">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11pvr8w">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lu12o9">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dj6t85">
+        <inputEntry id="UnaryTests_1b6teoc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_035g0v3">
+          <text>"reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","referredByTcwPreHearing","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","uploadHearingRecordingSORCTSC","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","provideListingDirections"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hcibko">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tr6hlv">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xobr9s">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vryjpz">
+        <inputEntry id="UnaryTests_1fy938w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dlxkjg">
+          <text>"reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewPostHearingNoticeforListingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vmpg33">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wp4c3a">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c7f3mw">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y7rfmo">
+        <inputEntry id="UnaryTests_0hbo4py">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wgpkdb">
+          <text>"contactParties"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0h8uqik">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sa0xhh">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uvaig6">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1367vk5">
+        <inputEntry id="UnaryTests_0xsg83y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n0zye2">
+          <text>"writeStatementofReason"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wu8g4n">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ridiqr">
+          <text>28</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0izkehl">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yhpymv">
+        <inputEntry id="UnaryTests_06f3lxp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mq668c">
+          <text>"shareRemittedDecision","shareRemadeDecision","shareRefusedDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l4g571">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k5lsxx">
+          <text>20</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tj81kg">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09ue0fg">
+        <inputEntry id="UnaryTests_15w7f1l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v94hg1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vmruc4">
+          <text>"dueDateNonWorkingDaysOfWeek"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08fmxsz">
+          <text>"SATURDAY,SUNDAY"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fqv75m">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="sscs-task-configuration-non-working-days" name="Non Working Days">
+    <decisionTable id="DecisionTable_19ggug0" hitPolicy="FIRST">
+      <input id="InputClause_1wj25b3" label="isScottishCase" camunda:inputVariable="isScottishCase">
+        <inputExpression id="LiteralExpression_0leh29i" typeRef="string">
+          <text>if(caseData!=null and caseData.isScottishCase!=null) then caseData.isScottishCase else "No"</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0zwrz49" label="processingVenue" camunda:inputVariable="processingVenue">
+        <inputExpression id="LiteralExpression_1ioqfw6" typeRef="string">
+          <text>if(caseData!=null and caseData.processingVenue!=null) then caseData.processingVenue else null</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0c1hiz8" name="nonWorkingDayCalendar" typeRef="string" biodi:width="1098" />
+      <rule id="DecisionRule_0mm2sbm">
+        <inputEntry id="UnaryTests_19y9oib">
+          <text>"No"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1plxypx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hta6gl">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03nkaxj">
+        <inputEntry id="UnaryTests_1ly3nb8">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ysss6b">
+          <text>"Dundee"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0x4hza9">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-dundee.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_130cnxw">
+        <inputEntry id="UnaryTests_074afnu">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xwiy14">
+          <text>"Edinburgh"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a68vda">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-edinburgh.json"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ppo81q">
+        <inputEntry id="UnaryTests_09sdd9k">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h0rrc3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pqjgim">
+          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland.json"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="nextHearing" name="Next Hearing">
+    <informationRequirement id="InformationRequirement_01gi19r">
+      <requiredDecision href="#Decision_1ol51p5" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0je9i6y" hitPolicy="FIRST">
+      <input id="InputClause_08rbi4w" label="hearings" biodi:width="567" camunda:inputVariable="hearings">
+        <inputExpression id="LiteralExpression_1hby6gy" typeRef="">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0itajs4" name="nextHearingDate" typeRef="string" biodi:width="347" />
+      <output id="OutputClause_0s62lpb" name="nextHearingId" typeRef="string" biodi:width="336" />
+      <output id="OutputClause_1bkgult" name="nextHearingVenue" typeRef="string" biodi:width="260" />
+      <rule id="DecisionRule_1aqhpa9">
+        <inputEntry id="UnaryTests_12eimss">
+          <text>hearings!=null and hearings[1]!=null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14pbdy7">
+          <text>hearings[1].value.hearingDate</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05s34x8">
+          <text>hearings[1].value.hearingId</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18mqqav">
+          <text>if(hearings[1].value.venue!=null) then
+    hearings[1].value.venue.name
+else null</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1ol51p5" name="Get Current Hearings">
+    <decisionTable id="DecisionTable_1hyvz6f" hitPolicy="FIRST">
+      <input id="InputClause_0qzlz2v" label="CaseData" camunda:inputVariable="caseData">
+        <inputExpression id="LiteralExpression_0qco4do" typeRef="" />
+      </input>
+      <output id="OutputClause_1ma31u0" label="hearings" name="hearings" typeRef="" biodi:width="915" />
+      <rule id="DecisionRule_1pic1tv">
+        <inputEntry id="UnaryTests_0p8bwrk">
+          <text>caseData.hearings!=null</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h2c0fc">
+          <text>sort(list: caseData.hearings[date(value.hearingDate)&gt;=today()], precedes: function(x,y) x.value.hearingDate &lt; y.value.hearingDate)</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00iip4f">
+        <inputEntry id="UnaryTests_0lubh2e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rgpn8m">
+          <text>null</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="DMNDiagram_1ifewa3">
-      <dmndi:DMNShape id="DMNShape_0ijg0or" dmnElementRef="wa-task-configuration-sscs-asylum">
-        <dc:Bounds height="80" width="180" x="150" y="80" />
+      <dmndi:DMNShape id="DMNShape_0ijg0or" dmnElementRef="wa-task-configuration-sscs-benefit">
+        <dc:Bounds height="80" width="180" x="160" y="40" />
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1mgaz03" dmnElementRef="sscs-task-configuration-non-working-days">
+        <dc:Bounds height="80" width="180" x="160" y="210" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_06d4k2l" dmnElementRef="nextHearing">
+        <dc:Bounds height="80" width="180" x="470" y="40" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1mgaz02" dmnElementRef="Decision_1ol51p5">
+        <dc:Bounds height="80" width="180" x="780" y="40" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_04wmhsp" dmnElementRef="InformationRequirement_0l9qrru">
+        <di:waypoint x="250" y="210" />
+        <di:waypoint x="250" y="140" />
+        <di:waypoint x="250" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0c45t2v" dmnElementRef="InformationRequirement_01gi19r">
+        <di:waypoint x="780" y="80" />
+        <di:waypoint x="670" y="80" />
+        <di:waypoint x="650" y="80" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_07tfpla" dmnElementRef="InformationRequirement_1dxss8x">
+        <di:waypoint x="470" y="80" />
+        <di:waypoint x="360" y="80" />
+        <di:waypoint x="340" y="80" />
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </definitions>

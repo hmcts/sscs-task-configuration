@@ -16,7 +16,6 @@ withCamundaOnlyPipeline(type, product, component, s2sServiceName, tenantId) {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/integration/**/*'
   }
 
-
   // Sync environment specific branches with master branch
   syncBranchesWithMaster(branchesToSync)
 

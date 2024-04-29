@@ -13,6 +13,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
+import uk.gov.hmcts.reform.sscstaskconfiguration.utils.Permissions;
 
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,7 @@ import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_PERMISSIONS_SSCS_BENEFIT;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.Permissions.permission;
 
 class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
@@ -37,44 +39,1160 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "someTaskType",
                 "someCaseData",
                 List.of(
-                    Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
-                        "autoAssignable", false
-                    )
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS
                 )
             ),
             Arguments.of(
-                "null",
+                "reviewIncompleteAppeal",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewInformationRequested",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewBilingualDocument",
+                "someCaseData",
+                Permissions.defaultCtscPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "issueOutstandingTranslation",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewAdminAction",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewFtaDueDate",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "referredByTcwPreHearing",
                 "someCaseData",
                 List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+                )
+            ),
+            Arguments.of(
+                "prepareForHearingJudge",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("hearing-judge","Read,Own", "JUDICIAL", 1),
+                    permission("judge","Read,Own", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "writeDecisionJudge",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("hearing-judge","Read,Own", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "issueDecisionJudge",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("hearing-judge","Read,Own,CancelOwn", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,CancelOwn", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,CancelOwn", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "reviewUrgentHearingRequest",
+                "someCaseData",
+                Permissions.defaultPermissionsJudgesReviewTasks()
+            ),
+            Arguments.of(
+                "actionUnprocessedCorrespondence",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
+                        "name", "allocated-ctsc-caseworker",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "assignmentPriority", 1,
+                        "roleCategory", "CTSC",
+                        "autoAssignable", true
+                    ),
+                    Map.of(
+                        "name", "ctsc",
+                        "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
+                        "roleCategory", "CTSC",
+                        "autoAssignable", false
+                    ),
+                    Map.of(
+                        "name", "ctsc-team-leader",
+                        "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
+                        "roleCategory", "CTSC",
                         "autoAssignable", false
                     )
                 )
             ),
             Arguments.of(
-                "someTaskType",
-                "null",
+                "reviewValidAppeal",
+                "someCaseData",
+                Permissions.defaultCtscPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "reviewListingError",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "reviewRoboticFail",
+                "someCaseData",
                 List.of(
-                    Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
-                        "autoAssignable", false
-                    )
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1, true),
+                    permission("ctsc", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
+                    permission("ctsc-team-leader", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC")
                 )
             ),
             Arguments.of(
-                "someTaskType",
-                "{}",
+                "reviewConfidentialityRequest",
+                "someCaseData",
+                Permissions.defaultPermissionsJudgesReviewTasks()
+            ),
+            Arguments.of(
+                "reviewReinstatementRequestJudge",
+                "someCaseData",
+            Permissions.defaultPermissionsJudgesReviewTasks()
+            ),
+            Arguments.of(
+                "reviewPheRequestJudge",
+                "someCaseData",
+                Permissions.defaultPermissionsJudgesTasks()
+            ),
+            Arguments.of(
+                "reviewPostponementRequestJudge",
+                "someCaseData",
                 List.of(
-                    Map.of(
-                        "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
-                        "autoAssignable", false
-                    )
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+                    permission("hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "reviewBfDate",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
+                "allocateCaseRolesAndCreateBundle",
+                "someCaseData",
+                Permissions.defaultAdminCaseWorkerPermissions()
+            ),
+            Arguments.of(
+                "referredByAdminJudgePreHearing",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                )
+            ),
+            Arguments.of(
+                "confirmPanelComposition",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                )
+            ),
+            Arguments.of(
+                "referredToInterlocJudge",
+                "someCaseData",
+                Permissions.defaultPermissionsJudgesTasks()
+            ),
+            Arguments.of(
+                "contactParties",
+                "someCaseData",
+                Permissions.defaultAdminCaseWorkerPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "reviewCorrectionApplicationAdmin",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1),
+                    permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC")
+                )
+            ),
+            Arguments.of(
+                "reviewFtaValidityChallenge",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "ftaRequestTimeExtension",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember1",
+                "someCaseData",
+                Permissions.defaultJudicalMember1Permissions()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember2",
+                "someCaseData",
+                Permissions.defaultJudicalMember2Permissions()
+            ),
+            Arguments.of(
+                "prepareForHearingTribunalMember3",
+                "someCaseData",
+                Permissions.defaultJudicalMember3Permissions()
+            ),
+            Arguments.of(
+                "reviewPostponementRequestTCW",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn", "LEGAL_OPERATIONS", 1, true),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CancelOwn", "LEGAL_OPERATIONS"),
+                    permission("judge","Read,Execute,Unclaim,UnclaimAssign,CancelOwn", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "referredToInterlocTCW",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "ftaResponseOverdue",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "referredByJudge",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS")
+                )
+            ),
+            Arguments.of(
+                "processAudioVideoEvidence",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "LEGAL_OPERATIONS", 1),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "LEGAL_OPERATIONS"),
+                    permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "reviewNonCompliantAppeal",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "ftaNotProvidedAppointeeDetailsTcw",
+                "someCaseData",
+                Permissions.defaultPermissionsTcwTasks()
+            ),
+            Arguments.of(
+                "referredByAdminTcw",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
+                    permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS")
+                )
+            ),
+            Arguments.of(
+                "uploadHearingRecordingSORCTSC",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1),
+                    permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC")
+                )
+            ),
+            Arguments.of(
+                "reviewLibertytoApplyApplication",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
+            ),
+            Arguments.of(
+                "reviewCorrectionApplicationJudge",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
+            ),
+            Arguments.of(
+                "writeStatementofReason",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                )
+            ),
+            Arguments.of(
+                "reviewStatementofReasons",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                )
+            ),
+            Arguments.of(
+                "reviewPermissiontoAppealApplication",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
+            ),
+            Arguments.of(
+                "reviewRemittedDecisionandProvideListingDirections",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
+            ),
+            Arguments.of(
+                "reviewPostHearingNoticeforListingRequirements",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-ctsc-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1),
+                    permission("ctsc", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
+                    permission("ctsc-team-leader", "Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete", "CTSC")
+                )
+            ),
+            Arguments.of(
+                "reviewSetAsideApplication",
+                "someCaseData",
+                Permissions.defaultPermissionsPostHearingTasks()
+            ),
+            Arguments.of(
+                "shareRemittedDecision",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1),
+                    permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC")
+                )
+            ),
+            Arguments.of(
+                "shareRemadeDecision",
+                "someCaseData",
+                Permissions.defaultCtscPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "shareRefusedDecision",
+                "someCaseData",
+                Permissions.defaultCtscPermissionsWithCompleteOwn()
+            ),
+            Arguments.of(
+                "reviewApplicationandAllocateJudge",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1),
+                    permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,Assign,Unassign,CancelOwn,CompleteOwn", "CTSC")
+                )
+            ),
+            Arguments.of(
+                "reviewLateStatementofReasonsApplicationAndAllocateJudge",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1),
+                    permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,Assign,Unassign,CancelOwn,CompleteOwn", "CTSC")
+                )
+            ),
+            Arguments.of(
+                "reviewLateStatementofReasonsApplication",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368"),
+                    permission("post-hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1)
+                )
+            ),
+            Arguments.of(
+                "updateHearingDetails",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("allocated-admin-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN", 1),
+                    permission("regional-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN"),
+                    permission("regional-centre-team-leader","Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete", "ADMIN"),
+                    permission("hearing-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN"),
+                    permission("hearing-centre-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn", "ADMIN")
+                )
+            ),
+            Arguments.of(
+                "referredByAdminJudgePostHearing",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                )
+            ),
+            Arguments.of(
+                "referredByTcwPostHearing",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+                )
+            ),
+            Arguments.of(
+                "prepareHearingAppraiser1",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    permission("judge", "Read,Own,Manage,Complete", "JUDICIAL"),
+                    permission("appraiser-1", "Read,Own,Manage,Complete", "JUDICIAL", 1),
+                    permission("medical", "Read,Own,Manage,Complete", "JUDICIAL"),
+                    permission("fee-paid-medical", "Read,Own,Manage,Complete", "JUDICIAL"),
+                    permission("leadership-judge", "Read,Own,Manage,Unclaim,Claim,Assign,Unassign", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "prepareHearingAppraiser2",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    permission("judge", "Read,Own,Manage,Complete", "JUDICIAL"),
+                    permission("appraiser-2", "Read,Own,Manage,Complete", "JUDICIAL", 1),
+                    permission("medical", "Read,Own,Manage,Complete", "JUDICIAL"),
+                    permission("fee-paid-medical", "Read,Own,Manage,Complete", "JUDICIAL"),
+                    permission("leadership-judge", "Read,Own,Manage,Unclaim,Claim,Assign,Unassign", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestJudiciary",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("specific-access-approver-judiciary", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "JUDICIAL")
+                )
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestLegalOps",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("specific-access-approver-legal-ops", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "LEGAL_OPERATIONS")
+                )
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestAdmin",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("specific-access-approver-admin", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "ADMIN")
+                )
+            ),
+            Arguments.of(
+                "reviewSpecificAccessRequestCTSC",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("specific-access-approver-ctsc", "Read,Own,Claim,Manage,Assign,Unassign,Complete,Cancel", "CTSC")
+                )
+            ),
+            Arguments.of(
+                "provideListingDirections",
+                "someCaseData",
+                List.of(
+                    Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                    Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                    Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                    Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                    Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                    Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                    permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1, true),
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", false),
+                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
                 )
             )
         );
@@ -88,6 +1206,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
         inputVariables.putValue("case", caseData);
+
+        System.out.println("taskType is: " + taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -116,8 +1236,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(4));
-
+        assertThat(logic.getRules().size(), is(83));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
