@@ -475,11 +475,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
                 .build(),
             eventWithState("sORRequest", "dormantAppealState")
-                .withCaseData("issueFinalDecisionDate", TODAY.minusDays(21))
+                .withCaseData("sorRequestInTime", "Yes")
                 .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
                 .build(),
             eventWithState("sORRequest", "dormantAppealState")
-                .withCaseData("issueFinalDecisionDate", TODAY.minusDays(45))
+                .withCaseData("sorRequestInTime", "No")
                 .initiativesTask("reviewLateStatementofReasonsApplicationAndAllocateJudge",
                                  "Review Late SOR Application and Allocate Judge - CTSC", 2,
                                  "reviewStatementofReasonsApplication")
