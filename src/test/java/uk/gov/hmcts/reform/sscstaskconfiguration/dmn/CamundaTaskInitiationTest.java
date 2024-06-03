@@ -353,12 +353,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("uploadDocument")
                 .withCaseData("scannedDocumentTypes", List.of("audioDocument"))
-                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence - CTSC", 10)
                 .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence - LO", 2)
                 .build(),
             event("dwpSupplementaryResponse")
                 .withCaseData("scannedDocumentTypes", List.of("videoDocument", "audioDocument"))
-                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence - CTSC", 10)
                 .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence - LO", 2)
                 .build(),
             event("dwpUploadResponse")
@@ -371,7 +369,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("uploadDocumentFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("videoDocument"))
-                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence - CTSC", 10)
                 .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence - LO", 2)
                 .build(),
             event("nonCompliant")
