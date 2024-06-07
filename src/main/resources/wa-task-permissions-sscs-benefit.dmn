@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-permissions-sscs-benefit" name="Permissions DMN">
     <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
       <input id="InputClause_12crj6e" label="Task Type" biodi:width="722" camunda:inputVariable="taskType">
@@ -1230,7 +1230,7 @@ else
       </rule>
       <rule id="DecisionRule_0mwh9xm">
         <inputEntry id="UnaryTests_0yxatz8">
-          <text>"prepareForHearingJudge", "writeDecisionJudge"</text>
+          <text>"prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pc43zs">
           <text></text>
@@ -1239,7 +1239,7 @@ else
           <text>"hearing-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03q5xvg">
-          <text>"Read,Own"</text>
+          <text>"Read,Own,Manage,Complete"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1nwah6k">
           <text>"JUDICIAL"</text>
@@ -1251,32 +1251,6 @@ else
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_196de5m">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0tathzj">
-        <inputEntry id="UnaryTests_03tax57">
-          <text>"issueDecisionJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_12g5zk4">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1i53bfw">
-          <text>"hearing-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19ybmb6">
-          <text>"Read,Own,CancelOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1djzy8g">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1d72a2i">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0bi9xjq">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0hlrf7f">
           <text>true</text>
         </outputEntry>
       </rule>
@@ -1308,7 +1282,7 @@ else
       </rule>
       <rule id="DecisionRule_1eh8py1">
         <inputEntry id="UnaryTests_17ynj09">
-          <text>"prepareForHearingJudge"</text>
+          <text>"prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","prepareHearingAppraiser1","prepareHearingAppraiser2"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_05kn4pi">
           <text></text>
@@ -1317,7 +1291,7 @@ else
           <text>"judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wo4e4q">
-          <text>"Read,Own"</text>
+          <text>"Read,Own,Manage,Complete"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ascwu5">
           <text>"JUDICIAL"</text>
@@ -1329,84 +1303,6 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zwzier">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0rflc29">
-        <inputEntry id="UnaryTests_0ziy5h4">
-          <text>"writeDecisionJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1b22bhz">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1o3xbwv">
-          <text>"judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0bl19kv">
-          <text>"Read,Own,Claim"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07wj62n">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_12n8oj6">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0mpguea">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_167uthz">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1fwwleo">
-        <inputEntry id="UnaryTests_1xcabgo">
-          <text>"issueDecisionJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0gyv2ug">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0h297gv">
-          <text>"judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0q4dcf9">
-          <text>"Read,Own,Claim,CancelOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0xa3e3k">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1kz22k4">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1mhjs7y">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0z41e3v">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1h7m9uw">
-        <inputEntry id="UnaryTests_1r3vrqb">
-          <text>"prepareHearingAppraiser1","prepareHearingAppraiser2"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0drmiqe">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1tcsv60">
-          <text>"judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0jg27bi">
-          <text>"Read,Own,Manage,Complete"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0wsr8dh">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1dpyspd">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1hbnzrn">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09bjdca">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -1516,7 +1412,7 @@ else
       </rule>
       <rule id="DecisionRule_0lzvos6">
         <inputEntry id="UnaryTests_0o6w2sc">
-          <text>"prepareForHearingJudge"</text>
+          <text>"prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0v3ta0p">
           <text></text>
@@ -1525,7 +1421,7 @@ else
           <text>"fee-paid-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12r7ov9">
-          <text>"Read,Own"</text>
+          <text>"Read,Own,Manage,Complete"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0v668ph">
           <text>"JUDICIAL"</text>
@@ -1540,55 +1436,29 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1vsp161">
-        <inputEntry id="UnaryTests_07r0ktf">
-          <text>"writeDecisionJudge"</text>
+      <rule id="DecisionRule_1akyo0e">
+        <inputEntry id="UnaryTests_0a7i6n0">
+          <text>"prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0dllrry">
+        <inputEntry id="UnaryTests_0blhplf">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0m7k49v">
+        <outputEntry id="LiteralExpression_0hsvetz">
           <text>"fee-paid-judge"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_16vcg7m">
-          <text>"Read,Own,Claim"</text>
+        <outputEntry id="LiteralExpression_1taqiry">
+          <text>"Read,Own,Manage,Complete"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_10msg0i">
+        <outputEntry id="LiteralExpression_0agec5b">
           <text>"JUDICIAL"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1985d39">
+        <outputEntry id="LiteralExpression_0yafpmd">
+          <text>368</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16csz9h">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0okx6ky">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0gu3ptd">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ymfq28">
-        <inputEntry id="UnaryTests_1hlkqjr">
-          <text>"issueDecisionJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_07y58lq">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0ep60rg">
-          <text>"fee-paid-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1sxyx53">
-          <text>"Read,Own,Claim,CancelOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_14vp6du">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0aup9rh">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0yl7lv7">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0929sui">
+        <outputEntry id="LiteralExpression_17vcy91">
           <text>false</text>
         </outputEntry>
       </rule>
