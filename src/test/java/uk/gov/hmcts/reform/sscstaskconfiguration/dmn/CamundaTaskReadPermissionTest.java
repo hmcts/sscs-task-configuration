@@ -38,7 +38,11 @@ public class CamundaTaskReadPermissionTest extends DmnDecisionTableBaseUnitTest 
         "appraiser-2",
         "medical",
         "fee-paid-medical",
-        "leadership-judge"
+        "leadership-judge",
+        "challenged-access-legal-ops",
+        "challenged-access-ctsc",
+        "challenged-access-admin",
+        "challenged-access-judiciary"
     };
 
     @BeforeAll
