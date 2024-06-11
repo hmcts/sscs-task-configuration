@@ -112,7 +112,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "referredByTcwPostHearing", BLANK),
             eventAutoCompletesTasks("uploadWelshDocument","reviewValidAppeal", BLANK),
             eventAutoCompletesTasks("amendDueDate", "reviewBfDate", BLANK),
-            eventAutoCompletesTasks("updateListingRequirement","reviewListingError", BLANK),
+            eventAutoCompletesTasks("updateListingRequirements","reviewListingError", BLANK),
             eventAutoCompletesTasks("createBundle","allocateCaseRolesAndCreateBundle", BLANK),
             eventAutoCompletesTasks("confirmPanelComposition", "confirmPanelComposition", BLANK),
             eventAutoCompletesTasks("adminActionCorrection", "reviewCorrectionApplicationAdmin", BLANK),
