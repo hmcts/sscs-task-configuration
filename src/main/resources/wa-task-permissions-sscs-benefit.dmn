@@ -1462,32 +1462,6 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1a3ndv4">
-        <inputEntry id="UnaryTests_0i1ce54">
-          <text>"reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","referredByTcwPreHearing","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","writeStatementofReason","reviewStatementofReasons","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplication","provideListingDirections"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0yl9r0u">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_04yjtib">
-          <text>"fee-paid-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0hkkhsu">
-          <text>"Read,Own,Claim,Unclaim"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0z7vq9r">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1dx42o1">
-          <text>368</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16haa1h">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15hg7hf">
-          <text>false</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0c4l3oz">
         <inputEntry id="UnaryTests_1mx7gln">
           <text>"reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","reviewLateStatementofReasonsApplication"</text>

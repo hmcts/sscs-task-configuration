@@ -414,8 +414,7 @@ public class Permissions {
             DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
             permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-            permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL","368")
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
         );
     }
 
@@ -444,8 +443,7 @@ public class Permissions {
             DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
             permission("hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
         );
     }
 
@@ -474,8 +472,7 @@ public class Permissions {
             DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
             permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
-            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
-            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL")
         );
     }
 

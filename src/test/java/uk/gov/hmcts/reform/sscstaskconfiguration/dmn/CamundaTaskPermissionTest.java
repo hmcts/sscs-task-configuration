@@ -100,8 +100,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -132,8 +131,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("hearing-judge","Read,Own,Manage,Complete", "JUDICIAL", 1),
                     permission("judge","Read,Own,Manage,Complete", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Manage,Complete", "JUDICIAL"),
-                    permission("fee-paid-judge", "Read,Own,Manage,Complete", "JUDICIAL", "368")
                 )
             ),
             Arguments.of(
@@ -164,8 +161,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("hearing-judge","Read,Own,Manage,Complete", "JUDICIAL", 1),
                     permission("judge","Read,Own,Manage,Complete", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Manage,Complete", "JUDICIAL"),
-                    permission("fee-paid-judge", "Read,Own,Manage,Complete", "JUDICIAL", "368")
                 )
             ),
             Arguments.of(
@@ -196,8 +191,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("hearing-judge","Read,Own,Manage,Complete", "JUDICIAL", 1),
                     permission("judge","Read,Own,Manage,Complete", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Manage,Complete", "JUDICIAL"),
-                    permission("fee-paid-judge", "Read,Own,Manage,Complete", "JUDICIAL", "368")
                 )
             ),
             Arguments.of(
@@ -373,8 +366,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -404,8 +396,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -680,8 +671,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -711,8 +701,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -887,7 +876,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368"),
                     permission("post-hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1)
                 )
             ),
@@ -948,8 +936,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -979,8 +966,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-                    permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -1194,8 +1180,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
                     permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1, true),
-                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", false),
-                    permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                    permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", false)
                 )
             )
         );
