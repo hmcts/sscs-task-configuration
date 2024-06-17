@@ -42,7 +42,7 @@
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0vqvmjn" label="Scanned Document Types" biodi:width="236" camunda:inputVariable="scannedDocumentTypes">
+      <input id="InputClause_0vqvmjn" label="Scanned Document Types" biodi:width="397" camunda:inputVariable="scannedDocumentTypes">
         <inputExpression id="LiteralExpression_1d10a3h" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.scannedDocumentTypes
             != null) then
@@ -794,7 +794,8 @@ else []</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_5d5h5hd">
-          <text></text>
+          <text>not(contains(scannedDocumentTypes, "audioDocument") or
+contains(scannedDocumentTypes, "videoDocument"))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1f8ht6b">
           <text></text>
@@ -2651,98 +2652,6 @@ else 0</text>
           <text>"ftaRequestTimeExtension"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1h2cmt5">
-        <inputEntry id="UnaryTests_092u3py">
-          <text>"hmctsResponseReviewed"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1on2lom">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_086ldju">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0k75iqb">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0sofcpv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0370smo">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0g2i4pu">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0i3aly8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1hofcpv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_3jofcpv">
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ppx3h3">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0rve493">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_090j70y">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_04naptx">
-          <text>not(list contains(["reviewPostponementRequest","listingDirections","confirmPanelCompositionAndListingDirections"],
-interlocReferralReason))</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_08ur582">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_008cxmp">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_03nqrg8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1t909pa">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_11y69z4">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_016ebil">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1yyhyjj">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0jd7z38">
-          <text>"reviewByJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_184fihv">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1msshde">
-          <text>"referredToInterlocJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1a33gjj">
-          <text>if(interlocReferralReasonLabel!=null) then
-  "Referred to interloc - " + interlocReferralReasonLabel + " - Judge"
-else "Referred to interloc - Judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19edsoj">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0khecyj">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0a6z2ss">
-          <text>"referredToInterlocJudge"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0h323wk">
         <inputEntry id="UnaryTests_0o8s49a">
           <text>"validSendToInterloc"</text>
@@ -3649,98 +3558,6 @@ interlocReferralReason))</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00jk15a">
           <text>"reviewPostponementRequestTCW"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_12nywat">
-        <inputEntry id="UnaryTests_1l5ws5l">
-          <text>"hmctsResponseReviewed"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_08iceto">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ygjiio">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1rg51sa">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0nlzt2s">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_11hhsge">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_02yp93t">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0juzcpc">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_111py3e">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0uhcznw">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1l3n0o8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_13royp5">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1k3eqlm">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0af83ij">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0m6l9wa">
-          <text>not(list contains(["reviewPostponementRequest","confirmPanelCompositionAndListingDirections"],
-interlocReferralReason))</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1pd5b5w">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_00gh2cv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_196txn9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_09sb7aw">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_09l62dg">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1jfoo04">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1jopzvj">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1lqk21p">
-          <text>"reviewByTcw"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_08xeo4a">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0pjusdl">
-          <text>"referredToInterlocTCW"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0mh47dl">
-          <text>if(interlocReferralReasonLabel!=null) then
-  "Referred to interloc - " + interlocReferralReasonLabel + " - LO"
-else "Referred to interloc - LO"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19gb45e">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0qm4uri">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1wz99nr">
-          <text>"referredToInterlocTCW"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0kmw1jk">
