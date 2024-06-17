@@ -129,8 +129,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
-                    permission("hearing-judge","Read,Own", "JUDICIAL", 1),
-                    permission("judge","Read,Own", "JUDICIAL")
+                    permission("hearing-judge","Read,Own,Manage,Complete", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Manage,Complete", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -159,8 +159,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
-                    permission("hearing-judge","Read,Own", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim", "JUDICIAL")
+                    permission("hearing-judge","Read,Own,Manage,Complete", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Manage,Complete", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -189,8 +189,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
-                    permission("hearing-judge","Read,Own,CancelOwn", "JUDICIAL", 1),
-                    permission("judge","Read,Own,Claim,CancelOwn", "JUDICIAL")
+                    permission("hearing-judge","Read,Own,Manage,Complete", "JUDICIAL", 1),
+                    permission("judge","Read,Own,Manage,Complete", "JUDICIAL")
                 )
             ),
             Arguments.of(
@@ -1204,7 +1204,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
-
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
@@ -1224,7 +1223,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(79));
+        assertThat(logic.getRules().size(), is(75));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
