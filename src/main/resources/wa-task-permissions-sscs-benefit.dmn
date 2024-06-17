@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-permissions-sscs-benefit" name="Permissions DMN">
     <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
       <input id="InputClause_12crj6e" label="Task Type" biodi:width="722" camunda:inputVariable="taskType">
@@ -1407,58 +1407,6 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_09vq1z2">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0lzvos6">
-        <inputEntry id="UnaryTests_0o6w2sc">
-          <text>"prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0v3ta0p">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1xsoe7w">
-          <text>"fee-paid-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_12r7ov9">
-          <text>"Read,Own,Manage,Complete"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0v668ph">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16rbmkc">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0qejmsg">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05zv1de">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1akyo0e">
-        <inputEntry id="UnaryTests_0a7i6n0">
-          <text>"prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0blhplf">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0hsvetz">
-          <text>"fee-paid-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1taqiry">
-          <text>"Read,Own,Manage,Complete"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0agec5b">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0yafpmd">
-          <text>368</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16csz9h">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_17vcy91">
           <text>false</text>
         </outputEntry>
       </rule>
