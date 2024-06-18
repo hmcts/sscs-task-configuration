@@ -847,13 +847,13 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "updateHearingDetails",
                 CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
+                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(ROLE_CATEGORY, "ADMIN", true)
                     .expectedValue(DESCRIPTION, caseLink("Hearing tab","hearings"), true)
                     .expectedValue(WORK_TYPE, "hearing_work", true)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "5", true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .build()
             ),
             Arguments.of(
