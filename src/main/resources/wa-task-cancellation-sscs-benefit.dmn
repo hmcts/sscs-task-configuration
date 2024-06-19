@@ -269,7 +269,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1rqi3zd">
-          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "decisionIssued","postponementGranted"</text>
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "interlocReviewStateAmend", "decisionIssued", "postponementGranted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1atwth5">
           <text></text>
@@ -285,6 +285,29 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1i21qjq">
           <text>"writeDecisionJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cd2g85">
+        <inputEntry id="UnaryTests_0xay5hw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vskzlj">
+          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "struckOut", "interlocReviewStateAmend", "decisionIssued", "postponementGranted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mvnped">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ajd5q4">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lni0fo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_045n58v">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zvl3jt">
+          <text>"issueAdjournmentNoticeJudge"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1g2wf79">
@@ -427,7 +450,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1239y4l">
-          <text> "reviewValidAppeal"</text>
+          <text>"reviewValidAppeal"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_07adoje">
@@ -453,7 +476,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bf4ozj">
-          <text> "reviewListingError"</text>
+          <text>"reviewListingError"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_14tgkh8">

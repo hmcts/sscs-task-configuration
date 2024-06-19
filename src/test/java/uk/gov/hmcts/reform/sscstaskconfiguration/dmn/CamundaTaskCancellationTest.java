@@ -46,6 +46,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByTcwPreHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
+                .cancel("issueAdjournmentNoticeJudge")
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
                 .cancel("reviewRoboticFail")
@@ -84,6 +85,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByTcwPreHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
+                .cancel("issueAdjournmentNoticeJudge")
                 .cancel("reviewReinstatementRequestJudge")
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
@@ -123,6 +125,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByTcwPreHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
+                .cancel("issueAdjournmentNoticeJudge")
                 .cancel("reviewReinstatementRequestJudge")
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
@@ -161,6 +164,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByTcwPreHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
+                .cancel("issueAdjournmentNoticeJudge")
                 .cancel("reviewReinstatementRequestJudge")
                 .cancel("allocateCaseRolesAndCreateBundle")
                 .cancel("referredByAdminJudgePreHearing")
@@ -195,6 +199,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewUrgentHearingRequest")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
+                .cancel("issueAdjournmentNoticeJudge")
                 .cancel("reviewReinstatementRequestJudge")
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
@@ -244,6 +249,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByTcwPreHearing")
                 .cancel("prepareForHearingJudge")
                 .cancel("writeDecisionJudge")
+                .cancel("issueAdjournmentNoticeJudge")
                 .cancel("reviewReinstatementRequestJudge")
                 .cancel("reviewPheRequestJudge")
                 .cancel("ftaNotProvidedAppointeeDetailsJudge")
@@ -293,6 +299,8 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("Translation Tasks")
                 .build(),
             event("interlocReviewStateAmend")
+                .cancel("writeDecisionJudge")
+                .cancel("issueAdjournmentNoticeJudge")
                 .build(),
             event("actionPostponementRequest")
                 .cancel("reviewPostponementRequestJudge")
@@ -318,6 +326,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareHearingAppraiser")
                 .cancel("allocateCaseRolesAndCreateBundle")
                 .cancel("writeDecisionJudge")
+                .cancel("issueAdjournmentNoticeJudge")
                 .build(),
             event("dwpUploadResponse")
                 .cancel("reviewFtaDueDate")
@@ -351,6 +360,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(44));
+        assertThat(logic.getRules().size(), is(45));
     }
 }
