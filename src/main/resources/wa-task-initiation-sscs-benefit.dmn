@@ -4646,7 +4646,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"writeStatementofReason"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vt96w8">
-          <text>"Write Statement of Reason - Judge"</text>
+          <text>"Write and Issue SOR - Judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ty6g8z">
           <text></text>
@@ -4732,7 +4732,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"writeStatementofReason"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1d4zgef">
-          <text>"Write Statement of Reason - Judge"</text>
+          <text>"Write and Issue SOR - Judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1i8udyq">
           <text></text>
@@ -4818,7 +4818,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"writeStatementofReason"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03f1m5p">
-          <text>"Write Statement of Reason - Judge"</text>
+          <text>"Write and Issue SOR - Judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1wpvn8x">
           <text></text>

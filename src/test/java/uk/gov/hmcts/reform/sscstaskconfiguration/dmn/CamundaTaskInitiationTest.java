@@ -395,14 +395,14 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             eventWithState("validSendToInterloc", "postHearing")
                 .withCaseData("interlocReferralReason", "statementOfReasonsApplication")
                 .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
-                .initiativesTask("writeStatementofReason", "Write Statement of Reason - Judge", 28)
+                .initiativesTask("writeStatementofReason", "Write and Issue SOR - Judge", 28)
                 .build(),
             eventWithState("setAsideRefusedSOR", "postHearing")
                 .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
-                .initiativesTask("writeStatementofReason", "Write Statement of Reason - Judge", 28)
+                .initiativesTask("writeStatementofReason", "Write and Issue SOR - Judge", 28)
                 .build(),
             eventWithState("sORExtendTime", "postHearing")
-                .initiativesTask("writeStatementofReason", "Write Statement of Reason - Judge", 28)
+                .initiativesTask("writeStatementofReason", "Write and Issue SOR - Judge", 28)
                 .build(),
             eventWithState("validSendToInterloc", "postHearing")
                 .withCaseData("interlocReferralReason", "lateStatementOfReasonsApplication")
