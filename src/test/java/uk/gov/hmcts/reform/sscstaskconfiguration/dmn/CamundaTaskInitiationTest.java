@@ -379,7 +379,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             eventWithState("sORRequest", "postHearing")
                 .withCaseData("sscsHearingRecordings", emptyList())
-                .initiativesTask("uploadHearingRecordingSORCTSC", "Upload Hearing Recording: SOR - CTSC", 2)
+                .initiativesTask("uploadHearingRecordingSORCTSC", "Upload Hearing Recording – RPC", 2)
                 .build(),
             eventWithState("validSendToInterloc", "postHearing")
                 .withCaseData("interlocReferralReason", "reviewLibertyToApplyApplication")
@@ -440,11 +440,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             eventWithState("actionFurtherEvidence", "dormantAppealState")
                 .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
                 .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC",3)
+                .initiativesTask("reviewApplicationandAllocateJudge", "PH - Allocate Judge and Send to interloc - CTSC",3)
                 .build(),
             eventWithState("postHearingRequest", "dormantAppealState")
                 .withCaseData("action", "correction")
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC",3)
+                .initiativesTask("reviewApplicationandAllocateJudge", "PH - Allocate Judge and Send to interloc - CTSC",3)
                 .build(),
             event("sendToFirstTier")
                 .withCaseData("sendToFirstTier", Map.of("action", "remitted"))
@@ -459,22 +459,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("shareRefusedDecision", "Share Refused Decision - CTSC", 20)
                 .build(),
             eventWithState("libertyToApplyRequest", "dormantAppealState")
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
+                .initiativesTask("reviewApplicationandAllocateJudge", "PH - Allocate Judge and Send to interloc - CTSC", 3)
                 .build(),
             eventWithState("permissionToAppealRequest", "dormantAppealState")
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
+                .initiativesTask("reviewApplicationandAllocateJudge", "PH - Allocate Judge and Send to interloc - CTSC", 3)
                 .build(),
             eventWithState("setAsideRequest", "dormantAppealState")
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
+                .initiativesTask("reviewApplicationandAllocateJudge", "PH - Allocate Judge and Send to interloc - CTSC", 3)
                 .build(),
             eventWithState("sORRequest", "dormantAppealState")
                 .withCaseData("issueFinalDecisionDate", TODAY.minusDays(21))
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
+                .initiativesTask("reviewApplicationandAllocateJudge", "PH - Allocate Judge and Send to interloc - CTSC", 3)
                 .build(),
             eventWithState("sORRequest", "dormantAppealState")
                 .withCaseData("issueFinalDecisionDate", TODAY.minusDays(45))
                 .initiativesTask("reviewLateStatementofReasonsApplicationAndAllocateJudge",
-                                 "Review Late SOR Application and Allocate Judge - CTSC", 2,
+                                 "PH -- Review late SOR, allocate Judge and send to interloc CTSC", 2,
                                  "reviewStatementofReasonsApplication")
                 .build(),
             event("validSendToInterloc")

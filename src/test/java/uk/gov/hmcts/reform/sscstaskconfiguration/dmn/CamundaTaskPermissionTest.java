@@ -617,14 +617,15 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
                     Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
                     Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
                     Permissions.DEFAULT_JUDGE_PERMISSIONS,
                     Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
                     Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
-                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
-                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
                     Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
                     Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
                     Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
@@ -635,9 +636,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
-                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1),
-                    permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
-                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC")
+                    permission("regional-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN"),
+                    permission("regional-centre-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "ADMIN")
                 )
             ),
             Arguments.of(
