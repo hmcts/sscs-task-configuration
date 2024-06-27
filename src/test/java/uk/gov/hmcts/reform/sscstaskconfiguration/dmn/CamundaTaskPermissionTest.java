@@ -617,15 +617,15 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
                     Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
-                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_PERMISSIONS,
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
                     Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
                     Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
                     Permissions.DEFAULT_JUDGE_PERMISSIONS,
                     Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
                     Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
                     Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
                     Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
                     Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
@@ -1236,7 +1236,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(83));
+        assertThat(logic.getRules().size(), is(84));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
