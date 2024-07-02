@@ -87,6 +87,12 @@ public class Permissions {
         "autoAssignable", false,
         "roleCategory", "LEGAL_OPERATIONS"
     );
+    public static final Map<String, Object> DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS = Map.of(
+        "name", "challenged-access-legal-ops",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "LEGAL_OPERATIONS"
+    );
     public static final Map<String, Object> DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS = Map.of(
         "name", "allocated-ctsc-caseworker",
         "value", "Read",
@@ -95,6 +101,12 @@ public class Permissions {
     );
     public static final Map<String, Object> DEFAULT_CTSC_PERMISSIONS = Map.of(
         "name", "ctsc",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "CTSC"
+    );
+    public static final Map<String, Object> DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS = Map.of(
+        "name", "challenged-access-ctsc",
         "value", "Read",
         "autoAssignable", false,
         "roleCategory", "CTSC"
@@ -119,6 +131,12 @@ public class Permissions {
     );
     public static final Map<String, Object> DEFAULT_JUDGE_PERMISSIONS = Map.of(
         "name", "judge",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "JUDICIAL"
+    );
+    public static final Map<String, Object> DEFAULT_JUDICIARY_CHALLENGED_ACCESS_PERMISSIONS = Map.of(
+        "name", "challenged-access-judiciary",
         "value", "Read",
         "autoAssignable", false,
         "roleCategory", "JUDICIAL"
@@ -155,6 +173,12 @@ public class Permissions {
     );
     public static final Map<String, Object> DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS = Map.of(
         "name", "hearing-centre-team-leader",
+        "value", "Read",
+        "autoAssignable", false,
+        "roleCategory", "ADMIN"
+    );
+    public static final Map<String, Object> DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS = Map.of(
+        "name", "challenged-access-admin",
         "value", "Read",
         "autoAssignable", false,
         "roleCategory", "ADMIN"
@@ -215,15 +239,18 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
             DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
             DEFAULT_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_JUDICIARY_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
             DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
@@ -241,6 +268,12 @@ public class Permissions {
             ),
             Map.of(
                 "name", "ctsc",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "challenged-access-ctsc",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
                 "roleCategory", "CTSC",
                 "autoAssignable", false
@@ -260,12 +293,15 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
             DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
             DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
             DEFAULT_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_JUDICIARY_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
@@ -291,6 +327,12 @@ public class Permissions {
                 "autoAssignable", false
             ),
             Map.of(
+                "name", "challenged-access-admin",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
                 "name", "regional-centre-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
                 "roleCategory", "ADMIN",
@@ -305,15 +347,18 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
             DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
             DEFAULT_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_JUDICIARY_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
             DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
@@ -336,6 +381,12 @@ public class Permissions {
                 "autoAssignable", false
             ),
             Map.of(
+                "name", "challenged-access-ctsc",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            ),
+            Map.of(
                 "name", "ctsc-team-leader",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
                 "roleCategory", "CTSC",
@@ -350,12 +401,15 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
             DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
             DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
             DEFAULT_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_JUDICIARY_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
@@ -376,6 +430,12 @@ public class Permissions {
             ),
             Map.of(
                 "name", "regional-centre-admin",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "challenged-access-admin",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
                 "roleCategory", "ADMIN",
                 "autoAssignable", false
@@ -396,6 +456,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
             DEFAULT_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
@@ -404,6 +465,7 @@ public class Permissions {
             DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
@@ -413,8 +475,10 @@ public class Permissions {
             DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
             DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("challenged-access-legal-ops","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
             permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
             permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+            permission("challenged-access-judiciary","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
             permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL","368")
         );
     }
@@ -426,6 +490,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
             DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
             DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
@@ -434,6 +499,7 @@ public class Permissions {
             DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
@@ -443,8 +509,10 @@ public class Permissions {
             DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
             DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("challenged-access-legal-ops","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
             permission("hearing-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
             permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+            permission("challenged-access-judiciary","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
             permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
         );
     }
@@ -456,6 +524,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
             DEFAULT_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
@@ -464,6 +533,7 @@ public class Permissions {
             DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
@@ -473,8 +543,10 @@ public class Permissions {
             DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
             DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
+            permission("challenged-access-legal-ops","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
             permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
             permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
+            permission("challenged-access-judiciary","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
             permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
         );
     }
@@ -485,6 +557,7 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
             DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
             DEFAULT_HEARING_JUDGE_PERMISSIONS,
@@ -494,6 +567,7 @@ public class Permissions {
             DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
@@ -504,7 +578,9 @@ public class Permissions {
             DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
             permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
-            permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
+            permission("challenged-access-legal-ops","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
+            permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL"),
+            permission("challenged-access-judiciary","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
         );
     }
 
@@ -514,8 +590,10 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
             DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
             DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
             DEFAULT_HEARING_JUDGE_PERMISSIONS,
@@ -524,6 +602,7 @@ public class Permissions {
             DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
@@ -533,6 +612,7 @@ public class Permissions {
             DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
             DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
             permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
+            permission("challenged-access-judiciary", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
             permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1)
         );
     }
@@ -543,18 +623,22 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
             DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
             DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
             DEFAULT_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_JUDICIARY_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
             DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
             DEFAULT_APPRAISER_1_PERMISSIONS,
@@ -578,18 +662,22 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
             DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
             DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
             DEFAULT_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_JUDICIARY_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
             DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
             DEFAULT_APPRAISER_1_PERMISSIONS,
@@ -613,18 +701,22 @@ public class Permissions {
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
             DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
             DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+            DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
+            DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
             DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
             DEFAULT_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_JUDGE_PERMISSIONS,
+            DEFAULT_JUDICIARY_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
             DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
             DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
             DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
             DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
             DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
             DEFAULT_APPRAISER_1_PERMISSIONS,
