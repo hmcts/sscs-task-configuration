@@ -50,21 +50,89 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewInformationRequested",
                                  "Review Information Requested - CTSC", 3)
                 .build(),
-            event("dwpSupplementaryResponse")
+            eventWithState("dwpSupplementaryResponse", "appealCreated")
                 .initiativesTask("actionUnprocessedCorrespondence",
                                  "Action Unprocessed Correspondence - CTSC", 10)
                 .build(),
-            event("uploadDocument")
+            eventWithState("uploadDocument", "appealCreated")
                 .initiativesTask("actionUnprocessedCorrespondence",
                                  "Action Unprocessed Correspondence - CTSC", 10)
                 .build(),
-            event("attachScannedDocs")
+            eventWithState("uploadDocument", "closed")
                 .initiativesTask("actionUnprocessedCorrespondence",
                                  "Action Unprocessed Correspondence - CTSC", 10)
                 .build(),
-            event("uploadDocumentFurtherEvidence")
+            eventWithState("uploadDocument", "hearing")
                 .initiativesTask("actionUnprocessedCorrespondence",
                                  "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "incompleteApplicationInformationReqsted")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "requestForInformation")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "nonCompliantSendToInterloc")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "listingError")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "notListable")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "readyToList")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "responseReceived")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "validAppeal")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "voidCase")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "withDwp")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "handlingError")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("attachScannedDocs", "appealCreated")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocumentFurtherEvidence", "appealCreated")
+                .initiativesTask("actionUnprocessedCorrespondence",
+                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .build(),
+            eventWithState("dwpSupplementaryResponse", "dormant")
+                .initiativesTask("actionUnprocessedCorrespondenceDormantPostHearing",
+                                 "Action Unprocessed Correspondence - Dormant/PH - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocument", "dormant")
+                .initiativesTask("actionUnprocessedCorrespondenceDormantPostHearing",
+                                 "Action Unprocessed Correspondence - Dormant/PH - CTSC", 10)
+                .build(),
+            eventWithState("attachScannedDocs", "dormant")
+                .initiativesTask("actionUnprocessedCorrespondenceDormantPostHearing",
+                                 "Action Unprocessed Correspondence - Dormant/PH - CTSC", 10)
+                .build(),
+            eventWithState("uploadDocumentFurtherEvidence", "dormant")
+                .initiativesTask("actionUnprocessedCorrespondenceDormantPostHearing",
+                                 "Action Unprocessed Correspondence - Dormant/PH - CTSC", 10)
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("dwpFurtherInfo", true)
@@ -87,15 +155,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiativesTask("reviewBilingualDocument",
                                  "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC", 10)
                 .build(),
             event("uploadDocumentFurtherEvidence")
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiativesTask("reviewBilingualDocument",
                                  "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC",10)
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("dwpFurtherInfo", false)
@@ -104,9 +168,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiativesTask("reviewBilingualDocument",
                                  "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC",
-                                 10)
                 .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
@@ -141,7 +202,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document - CTSC",
                                  10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence - CTSC", 10)
                 .build(),
             event("uploadWelshDocument")
                 .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
@@ -574,7 +634,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(79));
+        assertThat(logic.getRules().size(), is(80));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
