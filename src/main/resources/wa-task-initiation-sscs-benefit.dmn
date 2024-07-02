@@ -4302,7 +4302,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"uploadHearingRecordingSORCTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wjf5xs">
-          <text>"Upload Hearing Recording: SOR - CTSC"</text>
+          <text>"Upload Hearing Recording – RPC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nez522">
           <text></text>
@@ -5852,7 +5852,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"reviewApplicationandAllocateJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1loo6hd">
-          <text>"Review Application and Allocate Judge - CTSC"</text>
+          <text>"PH - Allocate Judge and Send to interloc - CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_01mxass">
           <text></text>
@@ -5938,7 +5938,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"reviewApplicationandAllocateJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qyqekx">
-          <text>"Review Application and Allocate Judge - CTSC"</text>
+          <text>"PH - Allocate Judge and Send to interloc - CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1664rz0">
           <text></text>
@@ -6024,7 +6024,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"reviewApplicationandAllocateJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qegt8g">
-          <text>"Review Application and Allocate Judge - CTSC"</text>
+          <text>"PH - Allocate Judge and Send to interloc - CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1s28qmg">
           <text></text>
@@ -6110,7 +6110,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"reviewApplicationandAllocateJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1o4ruzq">
-          <text>"Review Application and Allocate Judge - CTSC"</text>
+          <text>"PH - Allocate Judge and Send to interloc - CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qvcfwa">
           <text></text>
@@ -6196,7 +6196,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mmh8ub">
-          <text>"Review Late SOR Application and Allocate Judge - CTSC"</text>
+          <text>"PH -- Review late SOR, allocate Judge and send to interloc CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j8t800">
           <text></text>
