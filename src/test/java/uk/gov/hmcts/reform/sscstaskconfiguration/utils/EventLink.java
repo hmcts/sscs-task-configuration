@@ -36,7 +36,7 @@ public interface EventLink {
     String ISSUE_ADJOURNMENT_NOTICE = eventLink("Issue adjournment notice", "issueAdjournmentNotice");
     String CONFIRM_PANEL_COMPOSITION = eventLink("Confirm Panel Composition", "confirmPanelComposition");
     String REVIEW_PH_APP = eventLink("Review Post Hearing App", "postHearingReview");
-    String WRITE_SOR = eventLink("Write SOR", "sORWrite");
+    String WRITE_SOR = eventLink("Write and Issue SOR", "sORWrite");
 
     static String eventLink(String description, String eventId) {
         return String.format("[%s](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/%s)", description, eventId);
