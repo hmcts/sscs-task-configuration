@@ -62,11 +62,11 @@ processIntegrationTestResources {
   duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
   options.compilerArgs << "-Xlint:unchecked"
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
   useJUnitPlatform()
 
   testLogging {
@@ -78,14 +78,14 @@ test {
   failFast = true
 }
 
-task functional(type: Test) {
+tasks.register('functional', Test) {
   description = "Runs functional tests"
   group = "Verification"
   testClassesDirs = sourceSets.functionalTest.output.classesDirs
   classpath = sourceSets.functionalTest.runtimeClasspath
 }
 
-task integration(type: Test) {
+tasks.register('integration', Test) {
   description = "Runs integration tests"
   group = "Verification"
   testClassesDirs = sourceSets.integrationTest.output.classesDirs
@@ -93,13 +93,13 @@ task integration(type: Test) {
   failFast = true
 }
 
-task smoke(type: Test) {
+tasks.register('smoke', Test) {
   description = "Runs Smoke Tests"
   testClassesDirs = sourceSets.smokeTest.output.classesDirs
   classpath = sourceSets.smokeTest.runtimeClasspath
 }
 
-task tests {
+tasks.register('tests') {
   description = "Runs junit , integration and functional tests"
   group = "Verification"
   dependsOn test, integration, smoke, functional
@@ -114,7 +114,7 @@ checkstyle {
 pmd {
   toolVersion = "6.18.0"
   sourceSets = [sourceSets.main]
-  reportsDir = file("$project.buildDir/reports/pmd")
+  reportsDir = layout.buildDirectory.dir("reports/pmd").get().asFile
   // https://github.com/pmd/pmd/issues/876
   ruleSets = []
   ruleSetFiles = files("config/pmd/ruleset.xml")
@@ -133,7 +133,7 @@ jacocoTestReport {
   reports {
     xml.required = true
     csv.required = false
-    xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml")
+    xml.outputLocation = layout.buildDirectory.file("reports/jacoco/test/jacocoTestReport.xml")
   }
 }
 
@@ -150,16 +150,20 @@ pitest {
   mutationThreshold = 80
 }
 
-project.tasks['pitest'].group = "Verification"
+project.tasks.named('pitest') {
+  group = "Verification"
+}
 
 
-project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
+project.tasks.named('sonar') {
+  dependsOn test, integration, jacocoTestReport
+}
 
-sonarqube {
+sonar {
   properties {
     property "sonar.projectName", "Reform :: sscs-task-configuration"
     property "sonar.projectKey", "uk.gov.hmcts.reform:sscs-task-configuration"
-    property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.destination.path}"
+    property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.outputLocation}"
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build/reports/pitest"
     property "sonar.exclusions", "src/main/java/uk/gov/hmcts/reform/sscstaskconfiguration/config/**," +
@@ -256,10 +260,10 @@ ext.libraries = [
 
 dependencies {
 
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json'
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBoot.class.package.implementationVersion
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: springBoot.class.package.implementationVersion
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: springBoot.class.package.implementationVersion
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json', version: springBoot.class.package.implementationVersion
 
   implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.14'
 
@@ -298,7 +302,9 @@ dependencies {
   smokeTestImplementation sourceSets.main.runtimeClasspath
 }
 
-mainClassName = 'uk.gov.hmcts.reform.sscstaskconfiguration.Application'
+application {
+  mainClass.set('uk.gov.hmcts.reform.sscstaskconfiguration.Application')
+}
 
 bootJar {
   getArchiveFileName().set(provider {
