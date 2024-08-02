@@ -155,11 +155,11 @@ project.tasks.named('pitest') {
 }
 
 
-project.tasks.named('sonar') {
+project.tasks.named('sonarqube') {
   dependsOn test, integration, jacocoTestReport
 }
 
-sonar {
+sonarqube {
   properties {
     property "sonar.projectName", "Reform :: sscs-task-configuration"
     property "sonar.projectKey", "uk.gov.hmcts.reform:sscs-task-configuration"
