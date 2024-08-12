@@ -244,7 +244,7 @@ def versions = [
   camunda         : '7.17.0',
   pitest          : '1.11.3',
   sonarPitest     : '0.5',
-  tomcat          : '9.0.83'
+  tomcat          : '9.0.93'
 ]
 
 ext.libraries = [
@@ -264,7 +264,7 @@ dependencies {
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: springBoot.class.package.implementationVersion
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json', version: springBoot.class.package.implementationVersion
 
-  implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.14'
+  implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.8.0'
 
   implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: versions.reformLogging
   implementation group: 'com.github.hmcts.java-logging', name: 'logging-appinsights', version: versions.reformLogging
