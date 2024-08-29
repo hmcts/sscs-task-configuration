@@ -227,7 +227,10 @@ dependencyManagement {
     }
 
     // CVE-2024-22243, CVE-2024-22262
-    dependency group: 'org.springframework', name: 'spring-web', version: '5.3.37'
+    dependencySet(group: 'org.springframework', name: 'spring-web', version: '5.3.39') {
+      entry 'spring-web'
+      entry 'spring-expression'
+    }
   }
 }
 
