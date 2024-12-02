@@ -688,7 +688,18 @@
           <text>"issueDecisionJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0uf661n">
-          <text>"Issue Decision - Judge"</text>
+          <text>"Issue Final Decision - Judge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0he6t9x">
+        <inputEntry id="UnaryTests_01odw90">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bolf56">
+          <text>"issueAdjournmentNoticeJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d6ygje">
+          <text>"Issue adjournment notice - Judge"</text>
         </outputEntry>
       </rule>
     </decisionTable>

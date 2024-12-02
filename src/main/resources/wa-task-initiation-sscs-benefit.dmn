@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -6726,7 +6726,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_1re0cm6">
         <inputEntry id="UnaryTests_1g234s7">
-          <text>"writeFinalDecision","adjournCase"</text>
+          <text>"writeFinalDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0m0ctvc">
           <text></text>
@@ -6798,7 +6798,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"issueDecisionJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1nh1ocy">
-          <text>"Issue Decision - Judge"</text>
+          <text>"Issue Final Decision - Judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15q2fbj">
           <text></text>
@@ -6808,6 +6808,92 @@ contains(scannedDocumentTypes, "videoDocument")</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tr70em">
           <text>"issueDecisionJudge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vmf7ik">
+        <inputEntry id="UnaryTests_02vguk7">
+          <text>"adjournCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ofcu8a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0420l24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18k8pl6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uauf6j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1miev06">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n3860i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11rgile">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ae7jhg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xmwdpz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08rs8yv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h14i0e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14oonyy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07yt30e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j8uwte">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k3ks8t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_061ps9t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ho3jye">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nlwo4d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_017n29a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qk976r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yz96kn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13eb5ol">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n5th5z">
+          <text>"issueAdjournmentNoticeJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0smgipr">
+          <text>"Issue adjournment notice - Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1becz86">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1o7hvkh">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p5irzl">
+          <text>"issueAdjournmentNoticeJudge"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1iteoud">
