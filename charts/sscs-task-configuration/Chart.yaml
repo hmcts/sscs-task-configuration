@@ -3,10 +3,10 @@ appVersion: "1.0"
 description: A Helm chart for sscs-task-configuration
 name: sscs-task-configuration
 home: https://github.com/hmcts/sscs-task-configuration
-version: 0.0.3
+version: 0.0.4
 maintainers:
   - name: HMCTS IA team
 dependencies:
   - name: java
-    version: 3.6.0
+    version: 5.2.1
     repository: '@hmctspublic'
