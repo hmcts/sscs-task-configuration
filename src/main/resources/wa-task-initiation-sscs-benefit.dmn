@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -758,7 +758,8 @@ else []</text>
           <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1lkxm5v">
-          <text></text>
+          <text>not(contains(postEventState, "dormant") or
+contains(postEventState, "postHearing"))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08ea8kt">
           <text></text>
@@ -838,6 +839,93 @@ contains(scannedDocumentTypes, "videoDocument"))</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1l3zbqn">
           <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xrvsnh">
+        <inputEntry id="UnaryTests_1eq4cbm">
+          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dcsnxf">
+          <text>"dormant","postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g39bji">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00oq4n0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ioagez">
+          <text>not(contains(scannedDocumentTypes, "audioDocument") or
+contains(scannedDocumentTypes, "videoDocument"))</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hc9iy7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k18pb1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wxux67">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eooc62">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ooi3t1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t6ubyh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08uoe7q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iheiaq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s48vmx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yic0i6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ndek49">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1er4p59">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wl6zee">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1valpeh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1slzcsc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0csyvdg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00hi386">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12d0q7j">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xgg0q6">
+          <text>"actionUnprocessedCorrespondenceDormantPostHearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hjaei6">
+          <text>"Action Unprocessed Correspondence - Dormant/PH - CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1niojlr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lx6gax">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ie7mdd">
+          <text>"actionUnprocessedCorrespondenceDormantPostHearing"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_15u0n7b">
