@@ -54,10 +54,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("actionUnprocessedCorrespondence",
                                  "Action Unprocessed Correspondence - CTSC", 10)
                 .build(),
-            event("uploadDocument")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC", 10)
-                .build(),
             event("attachScannedDocs")
                 .initiativesTask("actionUnprocessedCorrespondence",
                                  "Action Unprocessed Correspondence - CTSC", 10)
@@ -100,14 +96,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("dwpFurtherInfo", false)
                 .build(),
-            event("uploadDocument")
-                .withCaseData("languagePreferenceWelsh", true)
-                .initiativesTask("reviewBilingualDocument",
-                                 "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC",
-                                 10)
-                .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
                 .initiativesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request - Judge", 2)
@@ -128,14 +116,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("sendToRoboticsError")
                 .initiativesTask("reviewRoboticFail",
                                  "Review Robotic Fail - CTSC", 3)
-                .build(),
-            event("directionDueToday")
-                .initiativesTask("reviewBfDate",
-                                 "Review BF Date - CTSC", 5)
-                .build(),
-            event("prepareForHearing")
-                .initiativesTask("allocateCaseRolesAndCreateBundle",
-                                 "Allocate Case Roles and Create Bundle - RPC", 3)
                 .build(),
             event("dwpSupplementaryResponse")
                 .withCaseData("languagePreferenceWelsh", true)
@@ -195,10 +175,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("createBundle")
                 .withCaseData("assignedCaseRoles", List.of("hearing-judge"))
                 .initiativesTask("prepareForHearingJudge", "Prepare For Hearing - Judge", 2)
-                .build(),
-            event("hearingToday")
-                .initiativesTask("writeDecisionJudge", "Write Decision - Judge", 2)
-                .initiativesTask("updateHearingDetails", "Update Hearing Details - RPC", 5)
                 .build(),
             event("validSendToInterloc")
                 .withCaseData("action", "reviewByJudge")
@@ -272,17 +248,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("assignedCaseRoles", List.of("appraiser-2"))
                 .initiativesTask("prepareHearingAppraiser2", "Prepare for hearing - Appraiser 2", 2, "prepareHearingAppraiser")
                 .build(),
-            event("newCaseRolesAssigned")
-                .withCaseData("assignedCaseRoles", Arrays.asList("hearing-judge",
-                                                                 "tribunal-member-1", "tribunal-member-2", "tribunal-member-3",
-                                                                 "appraiser-1", "appraiser-2"))
-                .initiativesTask("prepareForHearingJudge", "Prepare For Hearing - Judge", 2)
-                .initiativesTask("prepareForHearingTribunalMember1", "Prepare for hearing - Tribunal Member 1", 2, "prepareForHearingTribunalMember")
-                .initiativesTask("prepareForHearingTribunalMember2", "Prepare for hearing - Tribunal Member 2", 2, "prepareForHearingTribunalMember")
-                .initiativesTask("prepareForHearingTribunalMember3", "Prepare for hearing - Tribunal Member 3", 2, "prepareForHearingTribunalMember")
-                .initiativesTask("prepareHearingAppraiser1", "Prepare for hearing - Appraiser 1", 2, "prepareHearingAppraiser")
-                .initiativesTask("prepareHearingAppraiser2", "Prepare for hearing - Appraiser 2", 2, "prepareHearingAppraiser")
-                .build(),
             event("createBundle")
                 .build(),
             event("validSendToInterloc")
@@ -339,17 +304,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date - CTSC", 7, 2)
                 .initiativesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue - LO", 28, 2)
                 .build(),
-            event("directionDueToday")
-                .withCaseData("directionTypeDl", Map.of("value", Map.of("code", "grantExtension")))
-                .initiativesTask("reviewBfDate", "Review BF Date - CTSC", 5)
-                .initiativesTask("ftaResponseOverdue", "Referred to Interloc - FTA response overdue - LO", 2)
-                .build(),
             event("interlocSendToTcw")
                 .initiativesTask("referredByJudge", "Referred By Judge - LO", 2)
-                .build(),
-            event("uploadDocument")
-                .withCaseData("scannedDocumentTypes", List.of("audioDocument"))
-                .initiativesTask("processAudioVideoEvidence", "Process audio/video evidence - LO", 2)
                 .build(),
             event("dwpSupplementaryResponse")
                 .withCaseData("scannedDocumentTypes", List.of("videoDocument", "audioDocument"))
@@ -574,7 +530,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(79));
+        assertThat(logic.getRules().size(), is(74));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

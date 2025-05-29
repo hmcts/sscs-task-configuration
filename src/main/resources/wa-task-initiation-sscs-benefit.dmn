@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -495,7 +495,6 @@ else []</text>
       <rule id="DecisionRule_0ayetr8">
         <inputEntry id="UnaryTests_06b2evz">
           <text>"dwpSupplementaryResponse",
-"uploadDocument",
 "attachScannedDocs",
 "uploadDocumentFurtherEvidence"</text>
         </inputEntry>
@@ -755,7 +754,7 @@ else []</text>
       </rule>
       <rule id="DecisionRule_1rfp02v">
         <inputEntry id="UnaryTests_0q0aptw">
-          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+          <text>"dwpSupplementaryResponse","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1lkxm5v">
           <text></text>
@@ -1274,7 +1273,7 @@ else 0</text>
       </rule>
       <rule id="DecisionRule_0z8zz9l">
         <inputEntry id="UnaryTests_0b3x5ea">
-          <text>"createBundle","newCaseRolesAssigned"</text>
+          <text>"createBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ugm5mi">
           <text></text>
@@ -1356,92 +1355,6 @@ else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j7ec70">
           <text>"prepareForHearingJudge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0cpmj2d">
-        <inputEntry id="UnaryTests_1hsovn9">
-          <text>"hearingToday"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1afwgju">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0whqvjt">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0lcddc3">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_004g32l">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_17towmy">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0em0ugh">
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0lzc90j">
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1s2pqmi">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_00p98jz">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1xlaicx">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0nocs1l">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_18z59qq">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0enzdym">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_04p4h1d">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1j9ueoi">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ehey22">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1t01p37">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1i9r5pu">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0gm3w66">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_001d0qn">
-          <text>"writeDecisionJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zusnzz">
-          <text>"Write Decision - Judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0nak2ut">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0n742fz">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ebouor">
-          <text>"writeDecisionJudge"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0q7nlyl">
@@ -2132,178 +2045,6 @@ else 0</text>
           <text>"reviewRoboticFail"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0m3ft60">
-        <inputEntry id="UnaryTests_1wru0hw">
-          <text>"directionDueToday"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0s0uqeg">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1eda9os">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1bh8fmt">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1bh8gtx">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1bh85gs">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1mwglqd">
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0iph4i7">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0y22jgl">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0f5vsj8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0wn2d2o">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0cssnh3">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_067cp6w">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1sqrv88">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_12g9lgq">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1votff8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1daodb7">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1pa0gws">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1eeetud">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0bvfsss">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_02ma9kd">
-          <text>"reviewBfDate"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0i35tkf">
-          <text>"Review BF Date - CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_17qexd4">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1pi8gz7">
-          <text>5</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1i8s31y">
-          <text>"reviewBfDate"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1p4mccj">
-        <inputEntry id="UnaryTests_0rbvkw2">
-          <text>"prepareForHearing"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0mo20gw">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0awqtic">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ualttb">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_6ualyfb">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_16hfttb">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_00ucfrf">
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry>
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0z99z0v">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0dzy281">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1d672qw">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_06vwvan">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1k8tdqf">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1pyhb5e">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_12wcb4c">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0wb1a14">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_148q4l0">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0tlysq0">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0j8mc5y">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_05qhcx4">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0dw14rv">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0fjsi2c">
-          <text>"allocateCaseRolesAndCreateBundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vxicos">
-          <text>"Allocate Case Roles and Create Bundle - RPC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1t0m0vy">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_18yp8dc">
-          <text>3</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0km2j5l">
-          <text>"allocateCaseRolesAndCreateBundle"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1tis0xy">
         <inputEntry id="UnaryTests_0u75sw4">
           <text>"validSendToInterloc"</text>
@@ -2925,7 +2666,7 @@ else "Referred to interloc - Judge"</text>
       </rule>
       <rule id="DecisionRule_19ubzpc">
         <inputEntry id="UnaryTests_0pcmti3">
-          <text>"createBundle","newCaseRolesAssigned"</text>
+          <text>"createBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08j068n">
           <text></text>
@@ -3011,7 +2752,7 @@ else "Referred to interloc - Judge"</text>
       </rule>
       <rule id="DecisionRule_1aqar24">
         <inputEntry id="UnaryTests_113k0ip">
-          <text>"createBundle","newCaseRolesAssigned"</text>
+          <text>"createBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1f8vabj">
           <text></text>
@@ -3097,7 +2838,7 @@ else "Referred to interloc - Judge"</text>
       </rule>
       <rule id="DecisionRule_0ouzima">
         <inputEntry id="UnaryTests_000r511">
-          <text>"createBundle","newCaseRolesAssigned"</text>
+          <text>"createBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_03lhhd8">
           <text></text>
@@ -3706,92 +3447,6 @@ else 28</text>
           <text>"ftaResponseOverdue"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0nhhghi">
-        <inputEntry id="UnaryTests_1fu8rqs">
-          <text>"directionDueToday"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_16t48bi">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_06huiq5">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1tfwqtc">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_16s89ai">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1kcbhi7">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_14j9jkj">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1bnfmwu">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_11vy1hh">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_08ckm84">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1y4y8wt">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0hzi2s8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_07eit54">
-          <text>"grantExtension"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0o9aoov">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_06gaezs">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0zzsgia">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1cfm2sj">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_089hek1">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0bea7x8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1yrtmvv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0g908ty">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_19n8n62">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0am0311">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_08vby8i">
-          <text>"ftaResponseOverdue"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0lu4y3k">
-          <text>"Referred to Interloc - FTA response overdue - LO"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16x7hsd">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1oj9jmi">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_06y07qb">
-          <text>"ftaResponseOverdue"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0dclo6o">
         <inputEntry id="UnaryTests_14jlk0v">
           <text>"interlocSendToTcw"</text>
@@ -3880,8 +3535,7 @@ else 28</text>
       </rule>
       <rule id="DecisionRule_0izsiel">
         <inputEntry id="UnaryTests_1iocrf4">
-          <text>"uploadDocument",
-"dwpSupplementaryResponse",
+          <text>"dwpSupplementaryResponse",
 "dwpUploadResponse",
 "uploadFurtherEvidence",
 "uploadDocumentFurtherEvidence"</text>
@@ -6208,92 +5862,6 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"reviewStatementofReasonsApplication"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_076p6jp">
-        <inputEntry id="UnaryTests_0ar4gpf">
-          <text>"hearingToday"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0f8cvrk">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_17s98nm">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1i8m2kq">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1m0zmjy">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ikum61">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_00ync9j">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0qnm36l">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0n66xg6">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1rjjnw5">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_172mq28">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_024e8pw">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0uis7qf">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_06twoej">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1m1rnuw">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_18ghsa6">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0k623z1">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0sjs9zk">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_04rg4bv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0in2nuf">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0wwkgx8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0n6vht7">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_15a5jwu">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0bm3d25">
-          <text>"updateHearingDetails"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0f4q89s">
-          <text>"Update Hearing Details - RPC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0d2srbf">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1uzw4lg">
-          <text>5</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0n5m18b">
-          <text>"updateHearingDetails"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0amucn3">
         <inputEntry id="UnaryTests_0e95g5y">
           <text>"validSendToInterloc"</text>
@@ -6468,7 +6036,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_1ughwhb">
         <inputEntry id="UnaryTests_0a8o0fg">
-          <text>"createBundle","newCaseRolesAssigned"</text>
+          <text>"createBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_016h7ua">
           <text></text>
@@ -6554,7 +6122,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_1qs71y6">
         <inputEntry id="UnaryTests_09ezx1j">
-          <text>"createBundle","newCaseRolesAssigned"</text>
+          <text>"createBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_16bhsz3">
           <text></text>
