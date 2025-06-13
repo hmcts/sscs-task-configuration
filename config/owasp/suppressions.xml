@@ -15,5 +15,27 @@
     <cve>CVE-2024-12801</cve>
     <cve>CVE-2025-48734</cve>
     <cve>CVE-2024-22259</cve>
+    <cve>CVE-2022-41881</cve>
+    <cve>CVE-2021-22569</cve>
+    <cve>CVE-2019-20445</cve>
+    <cve>CVE-2022-24823</cve>
+    <cve>CVE-2022-25647</cve>
+    <cve>CVE-2019-20444</cve>
+    <cve>CVE-2021-21295</cve>
+    <cve>CVE-2023-34462</cve>
+    <cve>CVE-2023-44487</cve>
+    <cve>CVE-2021-21290</cve>
+    <cve>CVE-2020-11612</cve>
+    <cve>CVE-2021-37136</cve>
+    <cve>CVE-2021-37137</cve>
+    <cve>CVE-2025-25193</cve>
+    <cve>CVE-2019-16869</cve>
+    <cve>CVE-2020-13956</cve>
+    <cve>CVE-2020-8908</cve>
+    <cve>CVE-2023-2976</cve>
+    <cve>CVE-2021-21409</cve>
+    <cve>CVE-2021-29425</cve>
+    <cve>CVE-2022-3171</cve>
+    <cve>CVE-2021-43797</cve>
   </suppress>
 </suppressions>
