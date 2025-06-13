@@ -37,5 +37,15 @@
     <cve>CVE-2021-29425</cve>
     <cve>CVE-2022-3171</cve>
     <cve>CVE-2021-43797</cve>
+    <cve>CVE-2024-7254</cve>
+    <cve>CVE-2022-3509</cve>
+    <cve>CVE-2024-47554</cve>
+    <cve>CVE-2019-9512</cve>
+    <cve>CVE-2019-9514</cve>
+    <cve>CVE-2019-9515</cve>
+    <cve>CVE-2019-9518</cve>
+    <cve>CVE-2024-29025</cve>
+    <cve>CVE-2022-41915</cve>
+    <cve>CVE-2024-47535</cve>
   </suppress>
 </suppressions>
