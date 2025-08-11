@@ -1161,7 +1161,7 @@ else ""</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hljabv">
-          <text>"[Write SOR](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sORWrite)"</text>
+          <text>"[Write and Issue SOR](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sORWrite)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gaub0e">
           <text>true</text>
