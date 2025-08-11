@@ -277,7 +277,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a085xv">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0t1trnx">
           <text>"priorityDate"</text>
@@ -1257,7 +1257,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1swv4p3">
-          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","updateHearingDetails"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ndgnkl">
           <text>"dueDateIntervalDays"</text>
@@ -1274,7 +1274,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pw9fy3">
-          <text>"reviewInformationRequested","reviewListingError","reviewRoboticFail","allocateCaseRolesAndCreateBundle","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge"</text>
+          <text>"reviewInformationRequested","reviewListingError","reviewRoboticFail","allocateCaseRolesAndCreateBundle","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge","updateHearingDetails"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0hvbenp">
           <text>"dueDateIntervalDays"</text>
