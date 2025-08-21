@@ -4,7 +4,7 @@ plugins {
   id 'pmd'
   id 'jacoco'
   id 'io.spring.dependency-management' version '1.1.7'
-  id 'org.springframework.boot' version '2.7.18'
+  id 'org.springframework.boot' version '3.5.5'
   id 'com.github.ben-manes.versions' version '0.52.0'
   id 'org.owasp.dependencycheck' version '12.1.2'
   id 'org.sonarqube' version '4.3.0.3225'
@@ -227,7 +227,7 @@ dependencyManagement {
     }
 
     // CVE-2024-22243, CVE-2024-22262
-    dependencySet(group: 'org.springframework', name: 'spring-web', version: '5.3.39') {
+    dependencySet(group: 'org.springframework', name: 'spring-web', version: '6.2.10') {
       entry 'spring-web'
       entry 'spring-expression'
     }
