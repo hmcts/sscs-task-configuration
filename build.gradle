@@ -189,7 +189,9 @@ dependencyCheck {
   // range of 0-10 fails the build, anything greater and it doesn't fail the build
   failBuildOnCVSS = System.getProperty('dependencyCheck.failBuild') == 'true' ? 0 : 11
   suppressionFile = 'config/owasp/suppressions.xml'
-
+  nvd {
+    apiKey = '6070e455-b043-4322-846c-77d6f6aeb0fe'
+  }
   analyzers {
     // Disable scanning of .NET related binaries
     assemblyEnabled = false
@@ -298,6 +300,7 @@ dependencies {
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: versions.camunda
   testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
   testImplementation group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
+  testImplementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
 
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath
