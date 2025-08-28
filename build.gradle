@@ -4,7 +4,7 @@ plugins {
   id 'pmd'
   id 'jacoco'
   id 'io.spring.dependency-management' version '1.1.7'
-  id 'org.springframework.boot' version '3.5.3'
+  id 'org.springframework.boot' version '2.7.18'
   id 'com.github.ben-manes.versions' version '0.52.0'
   id 'org.owasp.dependencycheck' version '12.1.2'
   id 'org.sonarqube' version '4.3.0.3225'
@@ -214,7 +214,7 @@ dependencyManagement {
     dependency group: 'commons-io', name: 'commons-io', version: '2.19.0'
 
     //CVE-2021-42550
-    dependencySet(group: 'ch.qos.logback', version: '1.5.18') {
+    dependencySet(group: 'ch.qos.logback', version: '1.2.13') {
       entry 'logback-classic'
       entry 'logback-core'
     }
@@ -297,7 +297,6 @@ dependencies {
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: versions.camunda
   testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
   testImplementation group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
-  testImplementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
 
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath
