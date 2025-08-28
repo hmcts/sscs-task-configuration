@@ -298,6 +298,7 @@ dependencies {
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: versions.camunda
   testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
   testImplementation group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
+  testImplementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
 
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath
