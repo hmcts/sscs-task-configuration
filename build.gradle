@@ -283,7 +283,6 @@ dependencies {
 
   implementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
   implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.2'
-  implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '4.0.5'
 
   testImplementation(platform('org.junit:junit-bom:5.12.2'))
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
