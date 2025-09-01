@@ -286,6 +286,7 @@ dependencies {
   implementation group:'info.solidsoft.gradle.pitest', name: 'gradle-pitest-plugin', version: pitest.pitestVersion.get()
   implementation group:'org.codehaus.sonar-plugins', name:'sonar-pitest-plugin', version: versions.sonarPitest
 
+  implementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
 
   testImplementation(platform('org.junit:junit-bom:5.12.2'))
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
