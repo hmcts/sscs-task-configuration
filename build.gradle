@@ -205,19 +205,15 @@ dependencyManagement {
 
     dependency group: 'org.yaml', name: 'snakeyaml',version: '2.5'
 
-    //CVE-2021-28170
     dependency group: 'org.glassfish', name: 'jakarta.el', version: '4.0.2'
 
-    //CVE-2021-29425
     dependency group: 'commons-io', name: 'commons-io', version: '2.19.0'
 
-    //CVE-2021-42550
     dependencySet(group: 'ch.qos.logback', version: '1.5.18') {
       entry 'logback-classic'
       entry 'logback-core'
     }
 
-    // CVE-2022-42003, CVE-2022-42004
     dependencySet(group: 'com.fasterxml.jackson.core', version: '2.18.3') {
       entry 'jackson-databind'
       entry 'jackson-core'
