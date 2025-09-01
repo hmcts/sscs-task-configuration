@@ -203,7 +203,7 @@ dependencyManagement {
 
     dependency group: 'com.google.guava', name: 'guava',version: '32.1.3-jre'
 
-    dependency group: 'org.yaml', name: 'snakeyaml',version: '2.4'
+    dependency group: 'org.yaml', name: 'snakeyaml',version: '2.5'
 
     //CVE-2021-28170
     dependency group: 'org.glassfish', name: 'jakarta.el', version: '4.0.2'
