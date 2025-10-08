@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
-  <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
+  <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN" camunda:historyTimeToLive="P90D">
     <informationRequirement id="InformationRequirement_0l9qrru">
       <requiredDecision href="#sscs-task-configuration-non-working-days" />
     </informationRequirement>
@@ -1390,7 +1390,7 @@ else ""</text>
       </rule>
     </decisionTable>
   </decision>
-  <decision id="sscs-task-configuration-non-working-days" name="Non Working Days">
+  <decision id="sscs-task-configuration-non-working-days" name="Non Working Days" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_19ggug0" hitPolicy="FIRST">
       <input id="InputClause_1wj25b3" label="isScottishCase" camunda:inputVariable="isScottishCase">
         <inputExpression id="LiteralExpression_0leh29i" typeRef="string">
@@ -1449,7 +1449,7 @@ else ""</text>
       </rule>
     </decisionTable>
   </decision>
-  <decision id="nextHearing" name="Next Hearing">
+  <decision id="nextHearing" name="Next Hearing" camunda:historyTimeToLive="P90D">
     <informationRequirement id="InformationRequirement_01gi19r">
       <requiredDecision href="#Decision_1ol51p5" />
     </informationRequirement>
@@ -1480,7 +1480,7 @@ else null</text>
       </rule>
     </decisionTable>
   </decision>
-  <decision id="Decision_1ol51p5" name="Get Current Hearings">
+  <decision id="Decision_1ol51p5" name="Get Current Hearings" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_1hyvz6f" hitPolicy="FIRST">
       <input id="InputClause_0qzlz2v" label="CaseData" camunda:inputVariable="caseData">
         <inputExpression id="LiteralExpression_0qco4do" typeRef="" />
