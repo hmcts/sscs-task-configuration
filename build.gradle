@@ -209,7 +209,7 @@ dependencyManagement {
 
     dependency group: 'commons-io', name: 'commons-io', version: '2.20.0'
 
-    dependencySet(group: 'ch.qos.logback', version: '1.5.18') {
+    dependencySet(group: 'ch.qos.logback', version: '1.5.19') {
       entry 'logback-classic'
       entry 'logback-core'
     }
