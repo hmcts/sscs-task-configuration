@@ -35,7 +35,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
 
         return Stream.of(
-            eventAutoCompletesTasks("requestForInformation","reviewIncompleteAppeal", BLANK),
+            eventAutoCompletesTasks("ftaCommunication","reviewIncompleteAppeal"),
+            eventAutoCompletesTasks("caseUpdated","reviewIncompleteAppeal"),
             eventAutoCompletesTasks("interlocInformationReceived",
                                     "reviewInformationRequested", "reviewAdminAction", BLANK),
             eventAutoCompletesTasks("validSendToInterloc",

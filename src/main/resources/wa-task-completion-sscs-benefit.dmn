@@ -11,7 +11,7 @@
       <output id="OutputClause_1mldd9e" label="Completion Mode" name="completionMode" typeRef="string" />
       <rule id="DecisionRule_0qzqi5e">
         <inputEntry id="UnaryTests_1xelfx0">
-          <text>"ftaCommunication", "caseUpdated"</text>
+          <text>"ftaCommunication","caseUpdated"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_09is3bq">
           <text>"reviewIncompleteAppeal"</text>
