@@ -214,7 +214,7 @@ dependencyManagement {
       entry 'logback-core'
     }
 
-    dependencySet(group: 'com.fasterxml.jackson.core', version: '2.18.3') {
+    dependencySet(group: 'com.fasterxml.jackson.core', version: '2.20.0') {
       entry 'jackson-databind'
       entry 'jackson-core'
       entry 'jackson-annotations'
