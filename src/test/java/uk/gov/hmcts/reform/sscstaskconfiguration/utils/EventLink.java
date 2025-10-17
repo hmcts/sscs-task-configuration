@@ -2,6 +2,8 @@ package uk.gov.hmcts.reform.sscstaskconfiguration.utils;
 
 public interface EventLink {
 
+    String FTA_COMMUNICATION = eventLink("Communication with FTA","ftaCommunication");
+    String CASE_UPDATED = eventLink("Update to case data","caseUpdated");
     String SEND_TO_ADMIN = eventLink("Send to admin","sendToAdmin");
     String INTERLOC_REVIEW_STATE_AMEND = eventLink("Amend interloc review state","interlocReviewStateAmend");
     String DIRECTION_ISSUED = eventLink("Issue directions notice","directionIssued");
@@ -31,7 +33,6 @@ public interface EventLink {
     String ABATE_CASE = eventLink("Abate case", "abateCase");
     String WRITE_FINAL_DECISION = eventLink("Write final decision", "writeFinalDecision");
     String REVIEW_PHE_REQUEST = eventLink("Review PHE request", "reviewPhmeRequest");
-
     String WRITE_ADJOURNMENT_NOTICE = eventLink("Write adjournment notice", "adjournCase");
     String ISSUE_ADJOURNMENT_NOTICE = eventLink("Issue adjournment notice", "issueAdjournmentNotice");
     String CONFIRM_PANEL_COMPOSITION = eventLink("Confirm Panel Composition", "confirmPanelComposition");
