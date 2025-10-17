@@ -2,7 +2,7 @@ package uk.gov.hmcts.reform.sscstaskconfiguration.utils;
 
 public interface EventLink {
 
-    String FTA_COMMUNICATION = eventLink("Communication with FTA","ftaCommunication");
+    String FTA_COMMUNICATION = eventLink("Communicate with FTA","ftaCommunication");
     String CASE_UPDATED = eventLink("Update to case data","caseUpdated");
     String SEND_TO_ADMIN = eventLink("Send to admin","sendToAdmin");
     String INTERLOC_REVIEW_STATE_AMEND = eventLink("Amend interloc review state","interlocReviewStateAmend");
