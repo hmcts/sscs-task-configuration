@@ -2,4 +2,10 @@ java:
   applicationPort: 4550
   image: 'hmctspublic.azurecr.io/rpe/spring-boot-template:latest'
   ingressHost: sscs-task-configuration-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+  aadIdentityName: sscs
+  keyVaults:
+    sscs:
+      secrets:
+          - name: app-insights-connection-string
+            alias: app-insights-connection-string
   environment:
