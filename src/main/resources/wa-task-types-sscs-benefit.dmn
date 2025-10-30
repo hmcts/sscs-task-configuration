@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
   <decision id="wa-task-types-sscs-benefit" name="Task Types DMN">
     <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
       <input id="Input_1">
@@ -163,237 +163,6 @@
           <text>"Update Hearing Details - RPC"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1vdk2ro">
-        <inputEntry id="UnaryTests_0dcazzr">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_01uz147">
-          <text>"reviewConfidentialityRequest"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1c8viq9">
-          <text>"Review Confidentiality Request - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_057mw6b">
-        <inputEntry id="UnaryTests_1srdig2">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ecb7rl">
-          <text>"reviewReinstatementRequestJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15d85eh">
-          <text>"Review Reinstatement Request - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0il6hok">
-        <inputEntry id="UnaryTests_1kiw98f">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0fzg79x">
-          <text>"reviewUrgentHearingRequest"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0rpokx6">
-          <text>"Review Urgent Hearing Request - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1tyan0n">
-        <inputEntry id="UnaryTests_0w6k30b">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0s0rl48">
-          <text>"processAudioVideoEvidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1pznl80">
-          <text>"Process Audio Video Evidence - LO"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1hmszte">
-        <inputEntry id="UnaryTests_1scvx0d">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_03bctce">
-          <text>"reviewPheRequestJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1lrzv4r">
-          <text>"Review PHE Request - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_17lksmc">
-        <inputEntry id="UnaryTests_12o4emg">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0z88fjf">
-          <text>"reviewNonCompliantAppeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0fksfjc">
-          <text>"Review Non Compliant Appeal - LO"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1vh77rd">
-        <inputEntry id="UnaryTests_1g958sb">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1y2ynva">
-          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07kjo1g">
-          <text>"FTA Not Provided Appointee Details - LO"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1qfxjh6">
-        <inputEntry id="UnaryTests_0sykp2d">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0qt335k">
-          <text>"ftaNotProvidedAppointeeDetailsJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zrz4rl">
-          <text>"FTA Not Provided Appointee Details - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1rft3gn">
-        <inputEntry id="UnaryTests_0vpaxg4">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1rcq2ti">
-          <text>"reviewFtaValidityChallenge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0dun5ao">
-          <text>"Review FTA Validity Challenge - LO"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0hbs1k4">
-        <inputEntry id="UnaryTests_006lgp3">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0a5auo0">
-          <text>"referredByTcwPreHearing"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05kxoa5">
-          <text>"Referred By TCW (Pre-hearing) - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1yd8qzy">
-        <inputEntry id="UnaryTests_0rehswi">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1a9wofp">
-          <text>"referredByTcwPostHearing"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ehm4zq">
-          <text>"Referred By TCW (Post-hearing) - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1jd1j13">
-        <inputEntry id="UnaryTests_12m4sh2">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1c6tps6">
-          <text>"referredByJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1sjul9e">
-          <text>"Referred By Judge - LO"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_14l3w4o">
-        <inputEntry id="UnaryTests_0m01ccf">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0tiv5t9">
-          <text>"referredByAdminJudgePreHearing"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_01m5tjq">
-          <text>"Referred By Admin (Pre-hearing) - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ug1sfu">
-        <inputEntry id="UnaryTests_08ur3yu">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0pv693c">
-          <text>"referredByAdminJudgePostHearing"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0efu0kh">
-          <text>"Referred By Admin (Posthearing) - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1vevsnc">
-        <inputEntry id="UnaryTests_03d8piw">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0ds79s6">
-          <text>"referredByAdminTcw"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_044ry03">
-          <text>"Referred By Admin - LO"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_13e4i5k">
-        <inputEntry id="UnaryTests_1uk0ava">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0xxyasz">
-          <text>"reviewPostponementRequestJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_00gvzh9">
-          <text>"Review Postponement Request - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_05kxzjm">
-        <inputEntry id="UnaryTests_1mpqn5o">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0irdzwi">
-          <text>"reviewPostponementRequestTCW"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zzb4ge">
-          <text>"Review Postponement Request - LO"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1tk40p4">
-        <inputEntry id="UnaryTests_1qn7az1">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_03hewvh">
-          <text>"referredToInterlocJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0aldsiz">
-          <text>"Referred to Interloc - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ajc3wx">
-        <inputEntry id="UnaryTests_0d1egka">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0cebxe5">
-          <text>"referredToInterlocTCW"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0tuwy4r">
-          <text>"Referred to Interloc - LO"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0g9eayt">
-        <inputEntry id="UnaryTests_16oi3pj">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1qallki">
-          <text>"confirmPanelComposition"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0mrwjms">
-          <text>"Confirm Panel Composition - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ehxgzk">
-        <inputEntry id="UnaryTests_1w12ove">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1n7kb7n">
-          <text>"prepareForHearingJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0j74arb">
-          <text>"Prepare For Hearing - Judge"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_03jpy50">
         <inputEntry id="UnaryTests_1mjqw6p">
           <text></text>
@@ -449,17 +218,6 @@
           <text>"Prepare For Hearing - Appraiser 2"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1ny8aci">
-        <inputEntry id="UnaryTests_0ka6nwa">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0ihhp36">
-          <text>"writeDecisionJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_10zphg6">
-          <text>"Write Decision - Judge"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1yc60tp">
         <inputEntry id="UnaryTests_1u5l3ga">
           <text></text>
@@ -469,17 +227,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1we628x">
           <text>"Review Correction Application (Admin) - CTSC"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0blvhhn">
-        <inputEntry id="UnaryTests_06t389z">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_05wmcgt">
-          <text>"reviewCorrectionApplicationJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1s2a1i7">
-          <text>"Review Correction Application - Judge"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_04uatuz">
@@ -493,50 +240,6 @@
           <text>"Upload Hearing Recording: SOR - CTSC"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_026pnfl">
-        <inputEntry id="UnaryTests_1nhfgec">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0sjf4yj">
-          <text>"writeStatementofReason"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0e6qclj">
-          <text>"Write Statement of Reason - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_02d8diq">
-        <inputEntry id="UnaryTests_0xhx1a8">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_03cnu18">
-          <text>"reviewSetAsideApplication"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0g7ql48">
-          <text>"Review Set Aside Application - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1627gdf">
-        <inputEntry id="UnaryTests_1ycl0hz">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_01jne23">
-          <text>"reviewPermissiontoAppealApplication"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1170ha0">
-          <text>"Review Permission to Appeal Application - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_178tuxx">
-        <inputEntry id="UnaryTests_0z4d4uj">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0k22zwt">
-          <text>"reviewLibertytoApplyApplication"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0z5fum6">
-          <text>"Review Liberty to Apply Application - Judge"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1ipditk">
         <inputEntry id="UnaryTests_1irlupc">
           <text></text>
@@ -546,17 +249,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1i4n9dl">
           <text>"Share Remitted Decision - CTSC"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1fp7fak">
-        <inputEntry id="UnaryTests_1hp5r77">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_08tst1y">
-          <text>"reviewRemittedDecisionandProvideListingDirections"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0geqt6x">
-          <text>"Review Remitted Decision and Provide Listing Directions - Judge"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0g9f3cb">
@@ -603,28 +295,6 @@
           <text>"Contact Parties - RPC"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0tqguti">
-        <inputEntry id="UnaryTests_14waj4w">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0fmbt97">
-          <text>"ftaResponseOverdue"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0lomhnl">
-          <text>"Referred to Interloc - FTA response overdue - LO"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_04dyd7k">
-        <inputEntry id="UnaryTests_03c6tvh">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1qfgryb">
-          <text>"reviewLateStatementofReasonsApplication"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0r0v4mv">
-          <text>"Review Late SOR Application - Judge"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1put3z8">
         <inputEntry id="UnaryTests_029ibvq">
           <text></text>
@@ -634,17 +304,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0c5s14y">
           <text>"Review Late SOR Application and Allocate Judge - CTSC"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_04dh5nl">
-        <inputEntry id="UnaryTests_156j2gl">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1pdki1h">
-          <text>"ftaRequestTimeExtension"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0gt2ezo">
-          <text>"Request FTA Time Extension - LO"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1vdinki">
@@ -667,28 +326,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0dpamew">
           <text>"Review Application and Allocate Judge - CTSC"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0cyshcr">
-        <inputEntry id="UnaryTests_0ze3elg">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1fgsl3v">
-          <text>"provideListingDirections"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zgr62c">
-          <text>"Provide Listing Directions - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1eqsemf">
-        <inputEntry id="UnaryTests_0wq3oo4">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0yx79oa">
-          <text>"issueDecisionJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0uf661n">
-          <text>"Issue Decision - Judge"</text>
         </outputEntry>
       </rule>
     </decisionTable>
