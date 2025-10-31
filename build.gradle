@@ -232,8 +232,8 @@ repositories {
 }
 
 def versions = [
-  junit           : '5.14.0',
-  junitPlatform   : '1.14.0',
+  junit           : '6.0.1',
+  junitPlatform   : '6.0.1',
   reformLogging   : '6.1.9',
   camunda         : '7.17.0',
   pitest          : '1.11.3',
@@ -279,7 +279,7 @@ dependencies {
   implementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
   implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.4'
 
-  testImplementation(platform('org.junit:junit-bom:5.14.0'))
+  testImplementation(platform('org.junit:junit-bom:6.0.1'))
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
   testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', {
     exclude group: 'junit', module: 'junit'
