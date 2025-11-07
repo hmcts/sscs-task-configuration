@@ -755,10 +755,13 @@ else []</text>
       </rule>
       <rule id="DecisionRule_1rfp02v">
         <inputEntry id="UnaryTests_0q0aptw">
-          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+          <text>"dwpSupplementaryResponse",
+"uploadDocument",
+"attachScannedDocs",
+"uploadDocumentFurtherEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1lkxm5v">
-          <text></text>
+          <text>not("dormantAppealState", "postHearing")</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08ea8kt">
           <text></text>
@@ -828,7 +831,7 @@ contains(scannedDocumentTypes, "videoDocument"))</text>
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0prhktc">
-          <text>"Action Unprocessed Correspondence - CTSC"</text>
+          <text>"CTSC - Action Unprocessed Correspondence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wru75o">
           <text></text>
