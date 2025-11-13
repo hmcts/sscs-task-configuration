@@ -75,6 +75,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1rc2nda">
+        <inputEntry id="UnaryTests_1weothi">
+          <text>"actionFurtherEvidence", "uploadDocument"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i6kswh">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a2gpy5">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_14ekhb1">
         <inputEntry id="UnaryTests_096dkp4">
           <text>"validSendToInterloc"</text>

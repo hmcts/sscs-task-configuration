@@ -54,10 +54,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiatesTask("actionUnprocessedCorrespondence",
                                "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
-            event("uploadDocument")
-                .initiatesTask("actionUnprocessedCorrespondence",
-                               "CTSC - Action Unprocessed Correspondence", 10)
-                .build(),
             event("attachScannedDocs")
                 .initiatesTask("actionUnprocessedCorrespondence",
                                "CTSC - Action Unprocessed Correspondence", 10)
@@ -104,9 +100,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiatesTask("reviewBilingualDocument",
                                "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
-                .initiatesTask("actionUnprocessedCorrespondence",
-                               "CTSC - Action Unprocessed Correspondence",
-                               10)
                 .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
