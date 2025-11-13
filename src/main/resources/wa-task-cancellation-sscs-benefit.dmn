@@ -1181,6 +1181,29 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0r43n2e">
+        <inputEntry id="UnaryTests_1ujkx0a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tp3ldd">
+          <text>"uploadDocument"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06y47yj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1adgx2z">
+          <text>"Warn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d10ql8">
+          <text>"WC02"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d8uauz">
+          <text>"Uploaded a document"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_047gnde">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
