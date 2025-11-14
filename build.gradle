@@ -234,7 +234,7 @@ def versions = [
   junit           : '5.14.0',
   junitPlatform   : '1.14.0',
   reformLogging   : '6.1.9',
-  camunda         : '7.24.0',
+  camunda         : '7.17.0',
   tomcat          : '11.0.11'
 ]
 
