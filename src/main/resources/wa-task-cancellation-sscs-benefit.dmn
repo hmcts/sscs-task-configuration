@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.39.0">
   <decision id="wa-task-cancellation-sscs-benefit" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -50,6 +50,33 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1encbhf">
           <text>"reviewIncompleteAppeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0otng7k">
+        <inputEntry id="UnaryTests_0kcphve">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17a2isf">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"confirmLapsed",
+"struckOut", "tribunalCommunication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w6058w">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ooe7hb">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nu4wrx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07ur57y">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oa3oef">
+          <text>"ftaReplyOverdueIncompleteAppeal"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01khg43">
