@@ -1,12 +1,10 @@
 package uk.gov.hmcts.reform.sscstaskconfiguration.utils;
 
-import org.junit.jupiter.params.provider.Arguments;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
+import org.junit.jupiter.params.provider.Arguments;
 
 public class CancellationScenarioBuilder {
 
