@@ -295,9 +295,6 @@ dependencies {
   functionalTestImplementation sourceSets.main.runtimeClasspath
 
   smokeTestImplementation sourceSets.main.runtimeClasspath
-  smokeTestImplementation platform('org.junit:junit-bom:5.14.0')
-  smokeTestRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-  smokeTestImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 application {
