@@ -97,6 +97,8 @@ tasks.register('smoke', Test) {
   description = "Runs Smoke Tests"
   testClassesDirs = sourceSets.smokeTest.output.classesDirs
   classpath = sourceSets.smokeTest.runtimeClasspath
+  group = "Verification"
+  useJUnitPlatform()
 }
 
 tasks.register('tests') {
@@ -219,6 +221,15 @@ repositories {
   mavenCentral()
 }
 
+configurations {
+  smokeTestImplementation {
+    extendsFrom testImplementation
+  }
+  smokeTestRuntimeOnly {
+    extendsFrom testRuntimeOnly
+  }
+}
+
 def versions = [
   junit           : '5.14.0',
   junitPlatform   : '1.14.0',
@@ -284,6 +295,9 @@ dependencies {
   functionalTestImplementation sourceSets.main.runtimeClasspath
 
   smokeTestImplementation sourceSets.main.runtimeClasspath
+  smokeTestImplementation platform('org.junit:junit-bom:5.14.0')
+  smokeTestRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+  smokeTestImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 application {
