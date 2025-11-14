@@ -210,6 +210,8 @@ dependencyManagement {
     // CVE-2025-48734 - only used by checkstyle
     dependency group: 'commons-beanutils', name: 'commons-beanutils', version: '1.11.0'
 
+    // CVE-2020-13956 - used by camunda
+    dependency group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.14'
   }
 }
 
@@ -235,7 +237,7 @@ def versions = [
   junitPlatform   : '1.14.0',
   reformLogging   : '6.1.9',
   camunda         : '7.17.0',
-  tomcat          : '11.0.11'
+  tomcat          : '11.0.12'
 ]
 
 ext.libraries = [
