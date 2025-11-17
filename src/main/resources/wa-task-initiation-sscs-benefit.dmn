@@ -236,7 +236,7 @@ else []</text>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="296" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
-      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="955" />
+      <output id="OutputClause_165p3r3" label="Delay Until" name="delayUntil" typeRef="json" biodi:width="955" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="208" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="273" />
       <output id="OutputClause_1joqfg0" label="CommunicationsId" name="communicationsId" typeRef="string" />
@@ -414,7 +414,9 @@ else true</text>
           <text>"CTSC - FTA reply overdue - Incomplete appeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0w1znip">
-          <text></text>
+          <text>{
+"delayUntilTime": time("16:00")
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0of3xva">
           <text>2</text>
@@ -1064,9 +1066,9 @@ contains(scannedDocumentTypes, "videoDocument"))</text>
           <text>"Review FTA Due Date - CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qxxwkc">
-          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.dwpDueDate!= null and additionalData.Data.dwpDueDate!= "")
-	then (date(additionalData.Data.dwpDueDate) - today()).days
-else 0</text>
+          <text>{
+"delayUntilTime": time("16:00")
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1w3hy6t">
           <text>2</text>
