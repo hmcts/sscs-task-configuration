@@ -32,14 +32,14 @@ public class InitiationScenarioBuilder {
         return this;
     }
 
-    public InitiationScenarioBuilder initiativesTask(String taskId, String name, int workingDaysAllowed) {
-        return initiativesTask(taskId, name, workingDaysAllowed, taskId);
+    public InitiationScenarioBuilder initiatesTask(String taskId, String name, int workingDaysAllowed) {
+        return initiatesTask(taskId, name, workingDaysAllowed, taskId);
     }
 
-    public InitiationScenarioBuilder initiativesTask(String taskId,
-                                                     String name,
-                                                     int workingDaysAllowed,
-                                                     String processCategories) {
+    public InitiationScenarioBuilder initiatesTask(String taskId,
+                                                   String name,
+                                                   int workingDaysAllowed,
+                                                   String processCategories) {
         results.add(Map.of(
             "taskId", taskId,
             "name", name,
@@ -49,10 +49,10 @@ public class InitiationScenarioBuilder {
         return this;
     }
 
-    public InitiationScenarioBuilder initiativesTaskWithDelay(String taskId,
-                                                              String name,
-                                                              int delayDuration,
-                                                              int workingDaysAllowed) {
+    public InitiationScenarioBuilder initiatesTaskWithDelay(String taskId,
+                                                            String name,
+                                                            int delayDuration,
+                                                            int workingDaysAllowed) {
         results.add(Map.of(
             "taskId", taskId,
             "name", name,
