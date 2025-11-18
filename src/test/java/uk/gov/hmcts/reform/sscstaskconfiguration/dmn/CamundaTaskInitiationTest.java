@@ -46,6 +46,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewIncompleteAppeal",
                                  "Review Incomplete Appeal - CTSC", 5)
                 .build(),
+            eventWithState("ftaCommunication", "incompleteApplication")
+                .initiativesTask("ftaReplyOverdueIncompleteAppeal",
+                                 "CTSC - FTA reply overdue - Incomplete appeal",
+                                 2).build(),
             event("requestForInformation")
                 .initiativesTask("reviewInformationRequested",
                                  "Review Information Requested - CTSC", 3)
@@ -68,7 +72,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("dwpFurtherInfo", true)
-                .initiativesTask("reviewFtaResponse", "CTSC - Review FTA Response", 2)
+                .initiativesTask("reviewFtaResponse", "Review FTA Response - CTSC", 2)
                 .build(),
             event("dwpChallengeValidity")
                 .initiativesTask("reviewFtaValidityChallenge",
@@ -574,7 +578,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(79));
+        assertThat(logic.getRules().size(), is(80));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

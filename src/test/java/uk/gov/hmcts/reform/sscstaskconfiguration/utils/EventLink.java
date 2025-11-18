@@ -2,7 +2,8 @@ package uk.gov.hmcts.reform.sscstaskconfiguration.utils;
 
 public interface EventLink {
 
-    String SEND_TO_ADMIN = eventLink("Send to admin","sendToAdmin");
+
+    String FTA_COMMUNICATION = eventLink("Communicate with FTA","ftaCommunication");String SEND_TO_ADMIN = eventLink("Send to admin","sendToAdmin");
     String INTERLOC_REVIEW_STATE_AMEND = eventLink("Amend interloc review state","interlocReviewStateAmend");
     String DIRECTION_ISSUED = eventLink("Issue directions notice","directionIssued");
     String DECISION_ISSUED = eventLink("Issue interlocutory decision","decisionIssued");

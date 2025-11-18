@@ -34,6 +34,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             event("caseUpdated").reconfigureAll().build(),
             event("voidCase")
                 .cancel("reviewIncompleteAppeal")
+                .cancel("ftaReplyOverdueIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
@@ -72,6 +73,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
+                .cancel("ftaReplyOverdueIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
@@ -111,6 +113,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
+                .cancel("ftaReplyOverdueIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
@@ -150,6 +153,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
+                .cancel("ftaReplyOverdueIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewConfidentialityRequest")
@@ -185,6 +189,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
+                .cancel("ftaReplyOverdueIncompleteAppeal")
                 .cancel("reviewInformationRequested")
                 .cancel("reviewFtaResponse")
                 .cancel("reviewFtaDueDate")
@@ -261,6 +266,9 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByTcwPostHearing")
                 .cancel("prepareHearingAppraiser")
                 .cancel("reviewFtaValidityChallenge")
+                .build(),
+            event("tribunalCommunication")
+                .cancel("ftaReplyOverdueIncompleteAppeal")
                 .build(),
             event("issueFinalDecision")
                 .cancel("reviewUrgentHearingRequest")

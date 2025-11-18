@@ -49,6 +49,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 Permissions.defaultCtscPermissions()
             ),
             Arguments.of(
+                "ftaReplyOverdueIncompleteAppeal",
+                "someCaseData",
+                Permissions.defaultCtscPermissions()
+            ),
+            Arguments.of(
                 "reviewInformationRequested",
                 "someCaseData",
                 Permissions.defaultCtscPermissions()
