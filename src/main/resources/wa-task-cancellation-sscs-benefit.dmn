@@ -1204,7 +1204,7 @@
           <text>"Unprocessed Correspondence on case"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12gv82g">
-          <text></text>
+          <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
       </rule>
     </decisionTable>
