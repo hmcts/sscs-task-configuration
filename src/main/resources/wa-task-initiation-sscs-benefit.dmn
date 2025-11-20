@@ -322,10 +322,10 @@ else []</text>
       </rule>
       <rule id="DecisionRule_1gvns56">
         <inputEntry id="UnaryTests_1meyhxx">
-          <text>"ftaCommunication"</text>
+          <text>"overdueResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0my9jnu">
-          <text>"incompleteApplication"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0abp1jk">
           <text></text>
