@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.39.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.41.0">
   <decision id="wa-task-cancellation-sscs-benefit" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -1158,29 +1158,6 @@
           <text>"uploadHearingRecordingSORCTSC"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1a32qeb">
-        <inputEntry id="UnaryTests_0aedlb9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1r4hjnv">
-          <text>"manageScannedDocuments"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1oxkwx8">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1cd0st5">
-          <text>"Warn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0yu3d3d">
-          <text>"WC01"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1kgc6c7">
-          <text>"Manage Unprocessed Corres task was run for this case"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0q9uan1">
-          <text></text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0r43n2e">
         <inputEntry id="UnaryTests_1ujkx0a">
           <text></text>
@@ -1195,12 +1172,38 @@
           <text>"Warn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0d10ql8">
-          <text>"WC02"</text>
+          <text>"RI01"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0d8uauz">
-          <text>"Uploaded a document"</text>
+          <text>"Requested information"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_047gnde">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0oursdw">
+        <inputEntry id="UnaryTests_1skeusj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mxptep">
+          <text>"dwpSupplementaryResponse",
+"uploadDocument",
+"attachScannedDocs",
+"uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09g2z39">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jv1y1w">
+          <text>"Warn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0umez95">
+          <text>"UC01"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pu4fhi">
+          <text>"Unprocessed Correspondence on case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12gv82g">
           <text></text>
         </outputEntry>
       </rule>
