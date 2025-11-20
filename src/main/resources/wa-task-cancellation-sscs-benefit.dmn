@@ -1178,7 +1178,7 @@
           <text>"Requested information"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_047gnde">
-          <text></text>
+          <text>"reviewInformationRequested"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0oursdw">
