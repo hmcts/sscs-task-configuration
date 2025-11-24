@@ -1163,10 +1163,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1mxptep">
-          <text>"dwpSupplementaryResponse",
-"uploadDocument",
-"attachScannedDocs",
-"uploadDocumentFurtherEvidence"</text>
+          <text>"dwpSupplementaryResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09g2z39">
           <text></text>
@@ -1181,6 +1178,75 @@
           <text>"Unprocessed Correspondence on case"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12gv82g">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gg2z5p">
+        <inputEntry id="UnaryTests_1btcl2b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l4xg7l">
+          <text>"uploadDocument"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z8uo9n">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xsj4xs">
+          <text>"Warn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gzrrgn">
+          <text>"UC01"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f1mo8t">
+          <text>"Unprocessed Correspondence on case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c1sahx">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13wavyf">
+        <inputEntry id="UnaryTests_0ck8972">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i6xaxr">
+          <text>"attachScannedDocs"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02rxmhk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0m63jbl">
+          <text>"Warn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f3gx5g">
+          <text>"UC01"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qxgfqq">
+          <text>"Unprocessed Correspondence on case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03lecxe">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x7y7ku">
+        <inputEntry id="UnaryTests_0navh0i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0obnrov">
+          <text>"uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17tzfis">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mwzvfi">
+          <text>"Warn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fixr2h">
+          <text>"UC01"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12aysmr">
+          <text>"Unprocessed Correspondence on case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09is027">
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
       </rule>
