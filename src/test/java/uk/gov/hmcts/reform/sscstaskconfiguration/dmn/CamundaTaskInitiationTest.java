@@ -46,7 +46,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiativesTask("reviewIncompleteAppeal",
                                  "Review Incomplete Appeal - CTSC", 5)
                 .build(),
-            eventWithState("ftaCommunication", "incompleteApplication")
+            eventWithState("overdueResponse", "incompleteApplication")
                 .initiativesTask("ftaReplyOverdueIncompleteAppeal",
                                  "CTSC - FTA reply overdue - Incomplete appeal",
                                  2).build(),
