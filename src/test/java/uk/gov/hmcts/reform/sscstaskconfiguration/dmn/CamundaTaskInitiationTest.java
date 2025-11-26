@@ -39,11 +39,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
             event("draftToIncompleteApplication")
-                .initiativesTask("reviewIncompleteAppeal",
+                .initiatesTask("reviewIncompleteAppeal",
                                  "CTSC - Review Incomplete Appeal", 5)
                 .build(),
             event("incompleteApplicationReceived")
-                .initiativesTask("reviewIncompleteAppeal",
+                .initiatesTask("reviewIncompleteAppeal",
                                  "CTSC - Review Incomplete Appeal", 5)
                 .build(),
             event("requestForInformation")
