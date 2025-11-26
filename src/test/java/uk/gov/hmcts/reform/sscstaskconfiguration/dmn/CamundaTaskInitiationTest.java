@@ -64,7 +64,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("dwpFurtherInfo", true)
-                .initiatesTask("reviewFtaResponse", "Review FTA Response - CTSC", 2)
+                .initiatesTask("reviewFtaResponse", "CTSC - Review FTA Response", 2)
                 .build(),
             event("dwpChallengeValidity")
                 .initiatesTask("reviewFtaValidityChallenge",
