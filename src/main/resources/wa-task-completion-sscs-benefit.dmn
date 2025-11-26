@@ -77,7 +77,7 @@
       </rule>
       <rule id="DecisionRule_1rc2nda">
         <inputEntry id="UnaryTests_1weothi">
-          <text>"actionFurtherEvidence"</text>
+          <text>"actionFurtherEvidence", "uploadDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0i6kswh">
           <text>"actionUnprocessedCorrespondence"</text>
@@ -506,7 +506,7 @@
       </rule>
       <rule id="DecisionRule_2rmkvgk">
         <inputEntry id="UnaryTests_1ht7wfx">
-          <text>"abateCase","actionFurtherEvidence","actionPostponementRequest","adjournCase","adminActionCorrection","adminCorrectionBody","amendDueDate","cancelTranslations","caseUpdated","confirmPanelComposition","correctionGranted","correctionRefused","createBundle","decisionIssued","directionIssued","ftaCommunication","hmctsResponseReviewed","interlocInformationReceived","interlocReviewStateAmend","interlocSendToTcw","issueAdjournmentNotice","issueFinalDecision","libertyToApplyGranted","libertyToApplyRefused","permissionToAppealGranted","permissionToAppealRefused","postHearingReview","processAudioVideo","readyToList","requestForInformation","requestTranslationFromWLU","resendCaseToGAPS2","reviewConfidentialityRequest","reviewPhmeRequest","sendToAdmin","setAsideGranted","setAsideIssueDirections","setAsideRefused","setAsideRefusedSOR","sORExtendTime","sORRefused","sORWrite","struckOut","tcwReferToJudge","updateListingRequirements","uploadWelshDocument","validSendToInterloc","writeFinalDecision","addNote"</text>
+          <text>"abateCase","actionFurtherEvidence","actionPostponementRequest","addNote","adjournCase","adminActionCorrection","adminCorrectionBody","amendDueDate","cancelTranslations","caseUpdated","confirmPanelComposition","correctionGranted","correctionRefused","createBundle","decisionIssued","directionIssued","ftaCommunication","hmctsResponseReviewed","interlocInformationReceived","interlocReviewStateAmend","interlocSendToTcw","issueAdjournmentNotice","issueFinalDecision","libertyToApplyGranted","libertyToApplyRefused","permissionToAppealGranted","permissionToAppealRefused","postHearingReview","processAudioVideo","readyToList","requestForInformation","requestTranslationFromWLU","resendCaseToGAPS2","reviewConfidentialityRequest","reviewPhmeRequest","sendToAdmin","setAsideGranted","setAsideIssueDirections","setAsideRefused","setAsideRefusedSOR","sORExtendTime","sORRefused","sORWrite","struckOut","tcwReferToJudge","updateListingRequirements","uploadDocument","uploadWelshDocument","validSendToInterloc","writeFinalDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02yaug9">
           <text></text>
