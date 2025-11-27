@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -308,7 +308,7 @@ else []</text>
           <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zzimui">
-          <text>"Review Incomplete Appeal - CTSC"</text>
+          <text>"CTSC - Review Incomplete Appeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1oeazlt">
           <text></text>
@@ -480,7 +480,7 @@ else []</text>
           <text>"reviewFtaResponse"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1208ebj">
-          <text>"Review FTA Response - CTSC"</text>
+          <text>"CTSC - Review FTA Response"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17h8e8i">
           <text></text>
@@ -755,10 +755,12 @@ else []</text>
       </rule>
       <rule id="DecisionRule_1rfp02v">
         <inputEntry id="UnaryTests_0q0aptw">
-          <text>"dwpSupplementaryResponse","uploadDocument","attachScannedDocs","uploadDocumentFurtherEvidence"</text>
+          <text>"dwpSupplementaryResponse",
+"attachScannedDocs",
+"uploadDocumentFurtherEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1lkxm5v">
-          <text></text>
+          <text>not("dormantAppealState", "postHearing")</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08ea8kt">
           <text></text>
@@ -828,7 +830,7 @@ contains(scannedDocumentTypes, "videoDocument"))</text>
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0prhktc">
-          <text>"Action Unprocessed Correspondence - CTSC"</text>
+          <text>"CTSC - Action Unprocessed Correspondence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wru75o">
           <text></text>

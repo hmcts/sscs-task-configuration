@@ -34,7 +34,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     static Stream<Arguments> scenarioProvider() {
 
         return Stream.of(
-            eventAutoCompletesTasks("requestForInformation","reviewIncompleteAppeal", BLANK),
+            eventAutoCompletesTasks("ftaCommunication","reviewIncompleteAppeal",BLANK),
+            eventAutoCompletesTasks("caseUpdated","reviewIncompleteAppeal", BLANK),
             eventAutoCompletesTasks("interlocInformationReceived",
                                     "reviewInformationRequested", "reviewAdminAction", BLANK),
             eventAutoCompletesTasks("validSendToInterloc",
@@ -49,8 +50,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "referredByAdminJudgePostHearing", "referredByTcwPostHearing", BLANK),
             eventAutoCompletesTasks("hmctsResponseReviewed","reviewFtaResponse", BLANK),
             eventAutoCompletesTasks("requestTranslationFromWLU","reviewBilingualDocument", BLANK),
-            eventAutoCompletesTasks("actionFurtherEvidence",
-                                    "issueOutstandingTranslation","actionUnprocessedCorrespondence", BLANK),
             eventAutoCompletesTasks("reviewConfidentialityRequest","reviewConfidentialityRequest", BLANK),
             eventAutoCompletesTasks("reviewPhmeRequest","reviewPheRequestJudge", BLANK),
             eventAutoCompletesTasks("decisionIssued",
@@ -126,7 +125,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "reviewLibertytoApplyApplication", "reviewCorrectionApplicationJudge",
                                     "reviewLateStatementofReasonsApplication", "reviewPermissiontoAppealApplication",
                                     "reviewSetAsideApplication", BLANK),
-            eventAutoCompletesTasks("addNote", "provideListingDirections", BLANK)
+            eventAutoCompletesTasks("addNote", "provideListingDirections", BLANK),
+            eventAutoCompletesTasks("uploadDocument", "actionUnprocessedCorrespondence", BLANK)
         );
     }
 
