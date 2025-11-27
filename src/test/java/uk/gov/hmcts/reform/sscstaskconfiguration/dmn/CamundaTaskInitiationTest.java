@@ -174,9 +174,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiatesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
                                10, "Translation Tasks")
                 .build(),
-            event("hearingToday")
-                .initiativesTask("updateHearingDetails", "Update Hearing Details - RPC", 5)
-                .build(),
             event("manageWelshDocuments")
                 .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
                 .initiatesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request - Judge", 2)
