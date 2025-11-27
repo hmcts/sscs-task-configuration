@@ -32,210 +32,462 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     private static final LocalDate TODAY = LocalDate.now();
 
     @BeforeAll
-    public static void initialization() {
+    public static void initialisation() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_INITIATION_SSCS_BENEFIT;
     }
 
     static Stream<Arguments> scenarioProvider() {
         return Stream.of(
             event("draftToIncompleteApplication")
-                .initiativesTask("reviewIncompleteAppeal",
-                                 "Review Incomplete Appeal - CTSC", 5)
+                .initiatesTask("reviewIncompleteAppeal",
+                                 "CTSC - Review Incomplete Appeal", 5)
                 .build(),
             event("incompleteApplicationReceived")
-                .initiativesTask("reviewIncompleteAppeal",
-                                 "Review Incomplete Appeal - CTSC", 5)
+                .initiatesTask("reviewIncompleteAppeal",
+                                 "CTSC - Review Incomplete Appeal", 5)
                 .build(),
             event("requestForInformation")
-                .initiativesTask("reviewInformationRequested",
-                                 "Review Information Requested - CTSC", 3)
+                .initiatesTask("reviewInformationRequested",
+                               "Review Information Requested - CTSC", 3)
                 .build(),
             event("dwpSupplementaryResponse")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC", 10)
-                .build(),
-            event("uploadDocument")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .initiatesTask("actionUnprocessedCorrespondence",
+                               "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             event("attachScannedDocs")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .initiatesTask("actionUnprocessedCorrespondence",
+                               "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             event("uploadDocumentFurtherEvidence")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .initiatesTask("actionUnprocessedCorrespondence",
+                               "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("dwpFurtherInfo", true)
-                .initiativesTask("reviewFtaResponse", "CTSC - Review FTA Response", 2)
+                .initiatesTask("reviewFtaResponse", "CTSC - Review FTA Response", 2)
+                .build(),
+            event("dwpChallengeValidity")
+                .initiatesTask("reviewFtaValidityChallenge",
+                               "Review FTA validity challenge - LO", 2)
                 .build(),
             event("dwpUploadResponse")
                 .withCaseData("dwpFurtherInfo", false)
                 .build(),
             event("sendToAdmin")
-                .initiativesTask("reviewAdminAction", "Review Admin Action - CTSC", 10)
+                .initiatesTask("reviewAdminAction", "Review Admin Action - CTSC", 10)
                 .build(),
             event("dwpUploadResponse")
                 .withCaseData("languagePreferenceWelsh", false)
                 .build(),
             event("attachScannedDocs")
                 .withCaseData("languagePreferenceWelsh", true)
-                .initiativesTask("reviewBilingualDocument",
-                                 "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC", 10)
+                .initiatesTask("reviewBilingualDocument",
+                               "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
+                .initiatesTask("actionUnprocessedCorrespondence",
+                               "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             event("uploadDocumentFurtherEvidence")
                 .withCaseData("languagePreferenceWelsh", true)
-                .initiativesTask("reviewBilingualDocument",
-                                 "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC",10)
+                .initiatesTask("reviewBilingualDocument",
+                               "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
+                .initiatesTask("actionUnprocessedCorrespondence",
+                               "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("dwpFurtherInfo", false)
                 .build(),
             event("uploadDocument")
                 .withCaseData("languagePreferenceWelsh", true)
-                .initiativesTask("reviewBilingualDocument",
-                                 "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence",
-                                 "Action Unprocessed Correspondence - CTSC",
-                                 10)
+                .initiatesTask("reviewBilingualDocument",
+                               "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
+                .initiatesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request - Judge", 2)
                 .build(),
             event("uploadWelshDocument")
                 .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
-                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
-                                 10, "Translation Tasks")
+                .initiatesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
+                               10, "Translation Tasks")
                 .build(),
             eventWithState("validAppealCreated", "validAppeal")
-                .initiativesTaskWithDelay("reviewValidAppeal",
-                                 "Review Valid Appeal - CTSC", 1, 5)
+                .initiatesTaskWithDelay("reviewValidAppeal",
+                                        "Review Valid Appeal - CTSC", 1, 5)
                 .build(),
             eventWithState("readyToList", "listingError")
-                .initiativesTask("reviewListingError",
-                                 "Review Listing Error - CTSC", 3)
+                .initiatesTask("reviewListingError",
+                               "Review Listing Error - CTSC", 3)
                 .build(),
             event("sendToRoboticsError")
-                .initiativesTask("reviewRoboticFail",
-                                 "Review Robotic Fail - CTSC", 3)
+                .initiatesTask("reviewRoboticFail",
+                               "Review Robotic Fail - CTSC", 3)
                 .build(),
             event("directionDueToday")
-                .initiativesTask("reviewBfDate",
-                                 "Review BF Date - CTSC", 5)
+                .initiatesTask("reviewBfDate",
+                               "Review BF Date - CTSC", 5)
                 .build(),
             event("prepareForHearing")
-                .initiativesTask("allocateCaseRolesAndCreateBundle",
-                                 "Allocate Case Roles and Create Bundle - RPC", 3)
+                .initiatesTask("allocateCaseRolesAndCreateBundle",
+                               "Allocate Case Roles and Create Bundle - RPC", 3)
                 .build(),
             event("dwpSupplementaryResponse")
                 .withCaseData("languagePreferenceWelsh", true)
-                .initiativesTask("reviewBilingualDocument", "Review Bi-Lingual Document - CTSC",
-                                 10, "Translation Tasks")
-                .initiativesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence - CTSC", 10)
+                .initiatesTask("reviewBilingualDocument", "Review Bi-Lingual Document - CTSC",
+                               10, "Translation Tasks")
+                .initiatesTask("actionUnprocessedCorrespondence", "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             event("uploadWelshDocument")
-                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
-                                 10, "Translation Tasks")
+                .initiatesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
+                               10, "Translation Tasks")
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
+                .initiatesTask("reviewConfidentialityRequest", "Review Confidentiality Request - Judge", 2)
                 .build(),
             event("uploadWelshDocument")
                 .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
-                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
-                                 10, "Translation Tasks")
+                .initiatesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
+                               10, "Translation Tasks")
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
+                .initiatesTask("reviewConfidentialityRequest", "Review Confidentiality Request - Judge", 2)
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
+                .initiatesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request - Judge", 2)
+                .build(),
+            event("dwpUploadResponse")
+                .withCaseData("dwpEditedEvidenceReason", "phme")
+                .initiatesTask("reviewPheRequestJudge", "Review PHE Request - Judge", 2)
+                .build(),
+            event("updateNotListable")
+                .withCaseData("action", "reviewByJudge")
+                .initiatesTask("ftaNotProvidedAppointeeDetailsJudge", "FTA not Provided Appointee Details - Judge", 2)
+                .build(),
+            event("actionPostponementRequest")
+                .withCaseData("action", "reviewByJudge")
+                .initiatesTask("reviewPostponementRequestJudge", "Review Postponement Request - Judge", 2)
                 .build(),
             event("uploadWelshDocument")
                 .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
-                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
-                                 10, "Translation Tasks")
+                .initiatesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
+                               10, "Translation Tasks")
                 .build(),
             event("hearingToday")
                 .initiativesTask("updateHearingDetails", "Update Hearing Details - RPC", 5)
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
+                .initiatesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request - Judge", 2)
+                .build(),
+            event("makeCaseUrgent")
+                .initiatesTask("reviewUrgentHearingRequest", "Review Urgent Hearing Request - Judge", 2)
+                .build(),
+            event("tcwReferToJudge")
+                .withCaseData("workType", "pre")
+                .initiatesTask("referredByTcwPreHearing", "Referred By TCW - Judge", 2)
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", List.of("hearing-judge"))
+                .initiatesTask("prepareForHearingJudge", "Prepare For Hearing - Judge", 2)
+                .build(),
+            event("hearingToday")
+                .initiatesTask("writeDecisionJudge", "Write Decision - Judge", 2)
+                .initiatesTask("updateHearingDetails", "Update Hearing Details - RPC", 5)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByJudge")
+                .withCaseData("interlocReferralReason", "N/A")
+                .initiatesTask("referredToInterlocJudge", "Referred to interloc - Judge", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByJudge")
+                .withCaseData("workType", "pre")
+                .withCaseData("interlocReferralReason", "adviceOnHowToProceed")
+                .initiatesTask("referredByAdminJudgePreHearing", "Referred By Admin - Judge", 2)
+                .build(),
+            event("hmctsResponseReviewed")
+                .withCaseData("action", dynamicListValue("reviewByJudge"))
+                .withCaseData("interlocReferralReason", "confirmPanelCompositionAndListingDirections")
+                .initiatesTask("confirmPanelComposition", "Confirm Panel Composition - Judge", 2)
+                .initiatesTask("provideListingDirections", "Provide Listing Directions - Judge", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByJudge")
+                .withCaseData("interlocReferralReason", "noResponseToDirection")
+                .initiatesTask("referredToInterlocJudge", "Referred to interloc - No response to a direction - Judge", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByJudge")
+                .withCaseData("interlocReferralReason", "Other")
+                .initiatesTask("referredToInterlocJudge", "Referred to interloc - Judge", 2)
                 .build(),
             event("actionPostponementRequest")
                 .withCaseData("daysToHearing", 14)
                 .build(),
             event("actionPostponementRequest")
                 .withCaseData("daysToHearing", 6)
-                .initiativesTask("contactParties", "Contact Parties - RPC", 1)
+                .initiatesTask("contactParties", "Contact Parties - RPC", 1)
                 .build(),
             eventWithState("correctionRequest","postHearing")
                 .build(),
             eventWithState("actionFurtherEvidence","dormantAppealState")
                 .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
                 .withCaseData("furtherEvidenceAction", dynamicListValue("adminActionCorrection"))
-                .initiativesTask("reviewCorrectionApplicationAdmin", "Review Correction Application - CTSC", 3)
+                .initiatesTask("reviewCorrectionApplicationAdmin", "Review Correction Application - CTSC", 3)
+                .build(),
+            event("dwpRequestTimeExtension")
+                .initiatesTask("ftaRequestTimeExtension", "Request FTA Time Extension - LO", 2)
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", Arrays.asList("tribunal-member-1", "tribunal-member-2", "tribunal-member-3", "appraiser-1", "appraiser-2"))
+                .initiatesTask("prepareForHearingTribunalMember1", "Prepare for hearing - Tribunal Member 1", 2, "prepareForHearingTribunalMember")
+                .initiatesTask("prepareForHearingTribunalMember2", "Prepare for hearing - Tribunal Member 2", 2, "prepareForHearingTribunalMember")
+                .initiatesTask("prepareForHearingTribunalMember3", "Prepare for hearing - Tribunal Member 3", 2, "prepareForHearingTribunalMember")
+                .initiatesTask("prepareHearingAppraiser1", "Prepare for hearing - Appraiser 1", 2, "prepareHearingAppraiser")
+                .initiatesTask("prepareHearingAppraiser2", "Prepare for hearing - Appraiser 2", 2, "prepareHearingAppraiser")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", List.of("tribunal-member-1"))
+                .initiatesTask("prepareForHearingTribunalMember1", "Prepare for hearing - Tribunal Member 1", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", List.of("tribunal-member-2"))
+                .initiatesTask("prepareForHearingTribunalMember2", "Prepare for hearing - Tribunal Member 2", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", List.of("tribunal-member-3"))
+                .initiatesTask("prepareForHearingTribunalMember3", "Prepare for hearing - Tribunal Member 3", 2, "prepareForHearingTribunalMember")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", List.of("appraiser-1"))
+                .initiatesTask("prepareHearingAppraiser1", "Prepare for hearing - Appraiser 1", 2, "prepareHearingAppraiser")
+                .build(),
+            event("createBundle")
+                .withCaseData("assignedCaseRoles", List.of("appraiser-2"))
+                .initiatesTask("prepareHearingAppraiser2", "Prepare for hearing - Appraiser 2", 2, "prepareHearingAppraiser")
+                .build(),
+            event("newCaseRolesAssigned")
+                .withCaseData("assignedCaseRoles", Arrays.asList("hearing-judge",
+                                                                 "tribunal-member-1", "tribunal-member-2", "tribunal-member-3",
+                                                                 "appraiser-1", "appraiser-2"))
+                .initiatesTask("prepareForHearingJudge", "Prepare For Hearing - Judge", 2)
+                .initiatesTask("prepareForHearingTribunalMember1", "Prepare for hearing - Tribunal Member 1", 2, "prepareForHearingTribunalMember")
+                .initiatesTask("prepareForHearingTribunalMember2", "Prepare for hearing - Tribunal Member 2", 2, "prepareForHearingTribunalMember")
+                .initiatesTask("prepareForHearingTribunalMember3", "Prepare for hearing - Tribunal Member 3", 2, "prepareForHearingTribunalMember")
+                .initiatesTask("prepareHearingAppraiser1", "Prepare for hearing - Appraiser 1", 2, "prepareHearingAppraiser")
+                .initiatesTask("prepareHearingAppraiser2", "Prepare for hearing - Appraiser 2", 2, "prepareHearingAppraiser")
                 .build(),
             event("createBundle")
                 .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByTcw")
+                .initiatesTask("referredToInterlocTCW", "Referred to interloc - LO", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByTcw")
+                .withCaseData("interlocReferralReason", "timeExtension")
+                .initiatesTask("referredToInterlocTCW", "Referred to interloc - Time extension - LO", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "postponementRequestInterlocSendToTcw")
+                .initiatesTask("reviewPostponementRequestTCW", "Review postponement request - LO", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByTcw")
+                .withCaseData("interlocReferralReason", "adviceOnHowToProceed")
+                .initiatesTask("referredByAdminTcw", "Referred by Admin - LO", 2)
+                .build(),
             event("uploadWelshDocument")
                 .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
-                .initiativesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
-                                 10, "Translation Tasks")
+                .initiatesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
+                               10, "Translation Tasks")
+                .build(),
+            event("manageWelshDocuments")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .initiatesTask("reviewPostponementRequestTCW", "Review postponement request - LO", 2)
+                .build(),
+            event("postponementRequest")
+                .initiatesTask("reviewPostponementRequestTCW", "Review postponement request - LO", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("action", "reviewByTcw")
+                .withCaseData("interlocReferralReason", "complexCase")
+                .initiatesTask("referredToInterlocTCW", "Referred to interloc - Complex Case - LO", 2)
+                .build(),
+            event("nonCompliantSendToInterloc")
+                .initiatesTask("referredToInterlocTCW", "Referred to interloc - LO", 2)
+                .build(),
+            event("sentToDwp")
+                .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "childSupport")))
+                .initiatesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue - LO", 42, 2)
                 .build(),
             eventWithState("sentToDwp", "withDwp")
                 .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
                 .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "childSupport")))
-                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date - CTSC", 7, 2)
+                .initiatesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date - CTSC", 7, 2)
+                .initiatesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue - LO", 42, 2)
                 .build(),
             eventWithState("sentToDwp", "withDwp")
                 .withCaseData("dwpDueDate", LocalDate.now().plusDays(7).toString())
                 .withCaseData("caseManagementCategory", Map.of("value", Map.of("code", "PIP")))
-                .initiativesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date - CTSC", 7, 2)
+                .initiatesTaskWithDelay("reviewFtaDueDate", "Review FTA Due Date - CTSC", 7, 2)
+                .initiatesTaskWithDelay("ftaResponseOverdue", "Referred to Interloc - FTA response overdue - LO", 28, 2)
                 .build(),
             event("directionDueToday")
                 .withCaseData("directionTypeDl", Map.of("value", Map.of("code", "grantExtension")))
-                .initiativesTask("reviewBfDate", "Review BF Date - CTSC", 5)
+                .initiatesTask("reviewBfDate", "Review BF Date - CTSC", 5)
+                .initiatesTask("ftaResponseOverdue", "Referred to Interloc - FTA response overdue - LO", 2)
+                .build(),
+            event("interlocSendToTcw")
+                .initiatesTask("referredByJudge", "Referred By Judge - LO", 2)
+                .build(),
+            event("uploadDocument")
+                .withCaseData("scannedDocumentTypes", List.of("audioDocument"))
+                .initiatesTask("processAudioVideoEvidence", "Process audio/video evidence - LO", 2)
+                .build(),
+            event("dwpSupplementaryResponse")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument", "audioDocument"))
+                .initiatesTask("processAudioVideoEvidence", "Process audio/video evidence - LO", 2)
+                .build(),
+            event("dwpUploadResponse")
+                .withCaseData("scannedDocumentTypes", List.of("audioDocument", "other"))
+                .initiatesTask("processAudioVideoEvidence", "Process audio/video evidence - LO", 2)
+                .build(),
+            event("uploadFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument"))
+                .initiatesTask("processAudioVideoEvidence", "Process audio/video evidence - LO", 2)
+                .build(),
+            event("uploadDocumentFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("videoDocument"))
+                .initiatesTask("processAudioVideoEvidence", "Process audio/video evidence - LO", 2)
+                .build(),
+            event("nonCompliant")
+                .initiatesTask("reviewNonCompliantAppeal", "Review Non Compliant Appeal - LO", 2)
+                .build(),
+            event("draftToNonCompliant")
+                .initiatesTask("reviewNonCompliantAppeal", "Review Non Compliant Appeal - LO", 2)
+                .build(),
+            event("updateNotListable")
+                .withCaseData("action", "reviewByTcw")
+                .initiatesTask("ftaNotProvidedAppointeeDetailsTcw", "FTA Not Provided Appointee Details - LO", 2)
                 .build(),
             eventWithState("sORRequest", "postHearing")
                 .withCaseData("sscsHearingRecordings", emptyList())
-                .initiativesTask("uploadHearingRecordingSORCTSC", "Upload Hearing Recording: SOR - CTSC", 2)
+                .initiatesTask("uploadHearingRecordingSORCTSC", "Upload Hearing Recording: SOR - CTSC", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewLibertyToApplyApplication")
+                .initiatesTask("reviewLibertytoApplyApplication", "Review Liberty to Apply Application - Judge", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("interlocReferralReason", "reviewCorrectionApplication")
+                .initiatesTask("reviewCorrectionApplicationJudge", "Review Correction Application - Judge", 2)
+                .build(),
+            event("adminActionCorrection")
+                .initiatesTask("reviewCorrectionApplicationJudge", "Review Correction Application - Judge", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "statementOfReasonsApplication")
+                .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
+                .initiatesTask("writeStatementofReason", "Write Statement of Reason - Judge", 28)
+                .build(),
+            eventWithState("setAsideRefusedSOR", "postHearing")
+                .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-28L)) // 1 month or less ago
+                .initiatesTask("writeStatementofReason", "Write Statement of Reason - Judge", 28)
+                .build(),
+            eventWithState("sORExtendTime", "postHearing")
+                .initiatesTask("writeStatementofReason", "Write Statement of Reason - Judge", 28)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "lateStatementOfReasonsApplication")
+                .withCaseData("issueFinalDecisionDate", TODAY.plusDays(-32)) // over 1 month ago
+                .initiatesTask("reviewLateStatementofReasonsApplication", "Review Late SOR Application - Judge", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewPermissionToAppealApplication")
+                .initiatesTask("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application - Judge", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewPermissionToAppealApplication")
+                .withCaseData("otherParties", List.of("other party 1"))
+                .initiatesTaskWithDelay("reviewPermissiontoAppealApplication", "Review Permission to Appeal Application - Judge", 21, 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("interlocReferralReason", "reviewUpperTribunalDecision")
+                .initiatesTask("reviewRemittedDecisionandProvideListingDirections",
+                               "Review Remitted Decision and Provide Listing Directions - Judge", 2)
                 .build(),
             event("libertyToApplyGranted")
-                .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements - CTSC", 10)
+                .initiatesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements - CTSC", 10)
                 .build(),
             event("reviewAndSetAside")
-                .initiativesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements - CTSC", 10)
+                .initiatesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements - CTSC", 10)
+                .build(),
+            eventWithState("validSendToInterloc", "dormantAppealState")
+                .withCaseData("interlocReferralReason", "reviewSetAsideApplication")
+                .initiatesTask("reviewSetAsideApplication", "Review Set Aside Application - Judge", 2)
+                .build(),
+            eventWithState("validSendToInterloc", "postHearing")
+                .withCaseData("interlocReferralReason", "reviewSetAsideApplication")
+                .withCaseData("jointParty", "Yes")
+                .initiatesTaskWithDelay("reviewSetAsideApplication", "Review Set Aside Application - Judge", 21, 2)
                 .build(),
             eventWithState("actionFurtherEvidence", "dormantAppealState")
                 .withCaseData("scannedDocumentTypes", List.of("correctionApplication"))
                 .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC",3)
+                .initiatesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
                 .build(),
             eventWithState("postHearingRequest", "dormantAppealState")
                 .withCaseData("action", "correction")
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC",3)
+                .initiatesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
                 .build(),
             event("sendToFirstTier")
                 .withCaseData("sendToFirstTier", Map.of("action", "remitted"))
-                .initiativesTask("shareRemittedDecision", "Allocate Judge and Share Remitted Decision - CTSC", 20)
+                .initiatesTask("shareRemittedDecision", "Allocate Judge and Share Remitted Decision - CTSC", 20)
                 .build(),
             eventWithState("sendToFirstTier", "dormantAppealState")
                 .withCaseData("sendToFirstTier", Map.of("action", "remade"))
-                .initiativesTask("shareRemadeDecision", "Share Remade Decision - CTSC", 20)
+                .initiatesTask("shareRemadeDecision", "Share Remade Decision - CTSC", 20)
                 .build(),
             eventWithState("sendToFirstTier", "dormantAppealState")
                 .withCaseData("sendToFirstTier", Map.of("action", "refused"))
-                .initiativesTask("shareRefusedDecision", "Share Refused Decision - CTSC", 20)
+                .initiatesTask("shareRefusedDecision", "Share Refused Decision - CTSC", 20)
                 .build(),
             eventWithState("libertyToApplyRequest", "dormantAppealState")
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
+                .initiatesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
                 .build(),
             eventWithState("permissionToAppealRequest", "dormantAppealState")
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
+                .initiatesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
                 .build(),
             eventWithState("setAsideRequest", "dormantAppealState")
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
+                .initiatesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
                 .build(),
             eventWithState("sORRequest", "dormantAppealState")
                 .withCaseData("issueFinalDecisionDate", TODAY.minusDays(21))
-                .initiativesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
+                .initiatesTask("reviewApplicationandAllocateJudge", "Review Application and Allocate Judge - CTSC", 3)
                 .build(),
             eventWithState("sORRequest", "dormantAppealState")
                 .withCaseData("issueFinalDecisionDate", TODAY.minusDays(45))
-                .initiativesTask("reviewLateStatementofReasonsApplicationAndAllocateJudge",
-                                 "Review Late SOR Application and Allocate Judge - CTSC", 2,
-                                 "reviewStatementofReasonsApplication")
+                .initiatesTask("reviewLateStatementofReasonsApplicationAndAllocateJudge",
+                               "Review Late SOR Application and Allocate Judge - CTSC", 2,
+                               "reviewStatementofReasonsApplication")
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("workType", "post")
+                .withCaseData("action", "reviewByJudge")
+                .withCaseData("interlocReferralReason", "adviceOnHowToProceed")
+                .initiatesTask("referredByAdminJudgePostHearing", "Referred By Admin - Judge", 2)
+                .build(),
+            event("tcwReferToJudge")
+                .withCaseData("workType", "post")
+                .initiatesTask("referredByTcwPostHearing", "Referred By TCW - Judge", 2)
+                .build(),
+            event("validSendToInterloc")
+                .withCaseData("interlocReferralReason", "timeExtension")
+                .withCaseData("action", "reviewByJudge")
+                .initiatesTask("referredToInterlocJudge", "Referred to interloc - Time extension - Judge", 2)
                 .build(),
             event("hmctsResponseReviewed")
                 .withCaseData("interlocReferralReason", "reviewPostponementRequest")
@@ -252,6 +504,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("nonCompliantSendToInterloc")
                 .withCaseData("interlocReferralReason", "reviewPostponementRequest")
                 .build(),
+            event("writeFinalDecision")
+                .initiatesTask("issueDecisionJudge", "Issue Decision - Judge", 2)
+                .build(),
+            event("hmctsResponseReviewed")
+                .withCaseData("action", dynamicListValue("reviewByJudge"))
+                .withCaseData("interlocReferralReason", "listingDirections")
+                .initiatesTask("provideListingDirections", "Provide Listing Directions - Judge", 2)
+                .build(),
+            event("actionPostponementRequest")
+                .withCaseData("action", "reviewByTcw")
+                .initiatesTask("reviewPostponementRequestTCW", "Review postponement request - LO", 2)
+                .build(),
+            event("actionFurtherEvidence")
+                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
+                .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByJudge"))
+                .initiatesTask("reviewPostponementRequestJudge", "Review Postponement Request - Judge", 2)
+                .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
                 .withCaseData("furtherEvidenceAction", dynamicListValue("sendToInterlocReviewByTcw"))
@@ -260,9 +529,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("action", "reviewByJudge")
                 .withCaseData("interlocReferralReason", "listingDirections")
                 .build(),
+            eventWithState("validSendToInterloc", "hearing")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByJudge")
+                .initiatesTask("reviewPostponementRequestJudge", "Review Postponement Request - Judge", 2)
+                .build(),
             eventWithState("validSendToInterloc", "dormantAppealState")
                 .withCaseData("interlocReferralReason", "reviewPostponementRequest")
                 .withCaseData("action", "reviewByJudge")
+                .build(),
+            eventWithState("validSendToInterloc", "hearing")
+                .withCaseData("interlocReferralReason", "reviewPostponementRequest")
+                .withCaseData("action", "reviewByTcw")
+                .initiatesTask("reviewPostponementRequestTCW", "Review Postponement Request - LO", 2)
                 .build(),
             eventWithState("validSendToInterloc", "dormantAppealState")
                 .withCaseData("interlocReferralReason", "reviewPostponementRequest")
