@@ -40,11 +40,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         return Stream.of(
             event("draftToIncompleteApplication")
                 .initiatesTask("reviewIncompleteAppeal",
-                               "Review Incomplete Appeal - CTSC", 5)
+                                 "CTSC - Review Incomplete Appeal", 5)
                 .build(),
             event("incompleteApplicationReceived")
                 .initiatesTask("reviewIncompleteAppeal",
-                               "Review Incomplete Appeal - CTSC", 5)
+                                 "CTSC - Review Incomplete Appeal", 5)
                 .build(),
             event("requestForInformation")
                 .initiatesTask("reviewInformationRequested",
@@ -52,23 +52,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("dwpSupplementaryResponse")
                 .initiatesTask("actionUnprocessedCorrespondence",
-                               "Action Unprocessed Correspondence - CTSC", 10)
-                .build(),
-            event("uploadDocument")
-                .initiatesTask("actionUnprocessedCorrespondence",
-                               "Action Unprocessed Correspondence - CTSC", 10)
+                               "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             event("attachScannedDocs")
                 .initiatesTask("actionUnprocessedCorrespondence",
-                               "Action Unprocessed Correspondence - CTSC", 10)
+                               "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             event("uploadDocumentFurtherEvidence")
                 .initiatesTask("actionUnprocessedCorrespondence",
-                               "Action Unprocessed Correspondence - CTSC", 10)
+                               "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("dwpFurtherInfo", true)
-                .initiatesTask("reviewFtaResponse", "Review FTA Response - CTSC", 2)
+                .initiatesTask("reviewFtaResponse", "CTSC - Review FTA Response", 2)
                 .build(),
             event("dwpChallengeValidity")
                 .initiatesTask("reviewFtaValidityChallenge",
@@ -88,14 +84,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiatesTask("reviewBilingualDocument",
                                "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
                 .initiatesTask("actionUnprocessedCorrespondence",
-                               "Action Unprocessed Correspondence - CTSC", 10)
+                               "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             event("uploadDocumentFurtherEvidence")
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiatesTask("reviewBilingualDocument",
                                "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
                 .initiatesTask("actionUnprocessedCorrespondence",
-                               "Action Unprocessed Correspondence - CTSC", 10)
+
+                               "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("dwpFurtherInfo", false)
@@ -104,9 +101,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiatesTask("reviewBilingualDocument",
                                "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
-                .initiatesTask("actionUnprocessedCorrespondence",
-                               "Action Unprocessed Correspondence - CTSC",
-                               10)
                 .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
@@ -141,7 +135,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiatesTask("reviewBilingualDocument", "Review Bi-Lingual Document - CTSC",
                                10, "Translation Tasks")
-                .initiatesTask("actionUnprocessedCorrespondence", "Action Unprocessed Correspondence - CTSC", 10)
+                .initiatesTask("actionUnprocessedCorrespondence", "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             event("uploadWelshDocument")
                 .initiatesTask("issueOutstandingTranslation", "CTSC - Issue Outstanding Translation",
@@ -424,12 +418,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                "Review Remitted Decision and Provide Listing Directions - Judge", 2)
                 .build(),
             event("libertyToApplyGranted")
-                .initiatesTask("reviewPostHearingNoticeforListingRequirements",
-                               "Review Post Hearing Notice for Listing Requirements - CTSC", 10)
+
+                .initiatesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements - CTSC", 10)
                 .build(),
             event("reviewAndSetAside")
-                .initiatesTask("reviewPostHearingNoticeforListingRequirements",
-                               "Review Post Hearing Notice for Listing Requirements - CTSC", 10)
+                .initiatesTask("reviewPostHearingNoticeforListingRequirements", "Review Post Hearing Notice for Listing Requirements - CTSC", 10)
                 .build(),
             eventWithState("validSendToInterloc", "dormantAppealState")
                 .withCaseData("interlocReferralReason", "reviewSetAsideApplication")

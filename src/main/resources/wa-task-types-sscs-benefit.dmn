@@ -17,7 +17,7 @@
           <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16sxwk3">
-          <text>"Review Incomplete Appeal - CTSC"</text>
+          <text>"CTSC - Review Incomplete Appeal"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00z88kj">
@@ -39,7 +39,7 @@
           <text>"reviewFtaResponse"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cg1syh">
-          <text>"Review FTA Response - CTSC"</text>
+          <text>"CTSC - Review FTA Response"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0z7xgws">
