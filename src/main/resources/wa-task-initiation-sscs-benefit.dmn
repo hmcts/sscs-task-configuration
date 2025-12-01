@@ -403,7 +403,7 @@ else []</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1folck0">
-          <text>"ftaReplyOverdueIncompleteAppeal"</text>
+          <text>"ftaCommunicationId_"+additionalData.Data.benefitCode</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_02rz2kk">
