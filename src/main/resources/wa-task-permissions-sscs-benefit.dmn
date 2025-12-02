@@ -93,7 +93,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_09xmni3">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0t5lx59">
           <text>"allocated-tribunal-caseworker"</text>
@@ -122,7 +122,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jmqxq3">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0mc45j4">
           <text>"tribunal-caseworker"</text>
@@ -615,7 +615,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1qr6y3c">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_16r8hz6">
           <text>"tribunal-member-1"</text>
@@ -644,7 +644,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wnldk3">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hchedh">
           <text>"tribunal-member-2"</text>
@@ -673,7 +673,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ay9flp">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0d8mpyc">
           <text>"tribunal-member-3"</text>
@@ -702,7 +702,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_03slzx7">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1v3wbg9">
           <text>"appraiser-1"</text>
@@ -731,7 +731,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_03awkd4">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1dhu76s">
           <text>"appraiser-2"</text>
@@ -760,7 +760,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0n5dxt1">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0iqnq8q">
           <text>"medical"</text>
@@ -789,7 +789,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_05cgnab">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1akpag5">
           <text>"fee-paid-medical"</text>
@@ -818,7 +818,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10sjn28">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0w7711z">
           <text>"leadership-judge"</text>
