@@ -1,5 +1,9 @@
 #!groovy
 
+properties([
+  pipelineTriggers([cron('H 07 * * 1-5')])
+])
+
 @Library("Infrastructure")
 
 def type = "java"
@@ -7,4 +11,5 @@ def product = "sscs"
 def component = "task-configuration"
 
 withPipeline(type, product, component) {
+  enableSlackNotifications('#sscs-tech')
 }
