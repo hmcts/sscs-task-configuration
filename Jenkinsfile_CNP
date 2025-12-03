@@ -28,11 +28,11 @@ withCamundaOnlyPipeline(type, product, component, s2sServiceName, tenantId) {
 def runFunctionalTests() {
   stage('Functional tests') {
     try {
-//      sh './gradlew functional'
-      echo 'New stage added'
+      sh './gradlew functional'
     } catch (Error) {
       unstable(message: "${STAGE_NAME} is unstable: " + Error.toString())
     } finally {
+      echo 'New stage run - FF'
 //      steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'definitions/test/functional-report/**'
 //      publishHTML([
 //        allowMissing         : true,
