@@ -15,7 +15,7 @@ else
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0v9qmgf" label="Judge Toggle">
+      <input id="InputClause_0v9qmgf" label="Judge Toggle" camunda:inputVariable="judgeEnabled">
         <inputExpression id="LiteralExpression_1q22fdq" typeRef="boolean">
           <text>false</text>
         </inputExpression>

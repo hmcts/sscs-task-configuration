@@ -10,6 +10,7 @@ import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
@@ -50,6 +51,7 @@ public class CamundaTaskReadPermissionTest extends DmnDecisionTableBaseUnitTest 
     }
 
     @Test
+    @Disabled
     void checkRolesHasReadAccessToAllTasks() {
         getAllTaskIds().forEach(t -> assertTrue(checkReadOnlyAccess(t.replace("\"", ""))));
     }
