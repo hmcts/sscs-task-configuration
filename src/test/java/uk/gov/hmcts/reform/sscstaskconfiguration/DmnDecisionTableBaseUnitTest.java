@@ -1,19 +1,18 @@
 package uk.gov.hmcts.reform.sscstaskconfiguration;
 
-import org.camunda.bpm.dmn.engine.DmnDecision;
-import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
-import org.camunda.bpm.dmn.engine.DmnEngine;
-import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
-import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
-import org.junit.jupiter.api.BeforeEach;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_SSCS_BENEFIT;
 
 import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-
-import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_SSCS_BENEFIT;
+import org.camunda.bpm.dmn.engine.DmnDecision;
+import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
+import org.camunda.bpm.dmn.engine.DmnEngine;
+import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
+import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
+import org.junit.jupiter.api.BeforeEach;
 
 public abstract class DmnDecisionTableBaseUnitTest {
 
