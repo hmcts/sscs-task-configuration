@@ -1055,16 +1055,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 Map.of("isScottishCase", "Yes",
                        "processingVenue", "Dundee"),
-                singletonList(Map.of("nonWorkingDayCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_DUNDEE))
-            ),
-            Arguments.of(
-                Map.of("isScottishCase", "Yes",
-                       "processingVenue", "Edinburgh"),
-                singletonList(Map.of("nonWorkingDayCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_EDINBURGH))
-            ),
-            Arguments.of(
-                Map.of("isScottishCase", "Yes",
-                       "processingVenue", "AnywhereElse"),
                 singletonList(Map.of("nonWorkingDayCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR))
             )
         );

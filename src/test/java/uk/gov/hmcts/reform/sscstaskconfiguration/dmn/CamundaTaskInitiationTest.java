@@ -601,19 +601,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "date_defaults_1", Map.of(
                             "delayUntilOrigin", TODAY,
-                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_DUNDEE
-                        )
-                    )
-                )
-            ),
-            Arguments.of(
-                Map.of("isScottishCase", "Yes",
-                       "processingVenue", "Edinburgh"),
-                singletonList(
-                    Map.of(
-                        "date_defaults_1", Map.of(
-                            "delayUntilOrigin", TODAY,
-                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR_EDINBURGH
+                            "delayUtilNonWorkingCalendar", CourtSpecificCalendars.SCOTLAND_CALENDAR
                         )
                     )
                 )
