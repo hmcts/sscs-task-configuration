@@ -1184,6 +1184,52 @@
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0pszoye">
+        <inputEntry id="UnaryTests_1i7o4um">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dbujpf">
+          <text>"requestForInformation"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_195a9fz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b4freq">
+          <text>"Warn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pa18lg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1meklsv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19m9rkp">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zuwggn">
+        <inputEntry id="UnaryTests_1ancav1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ya93ec">
+          <text>"makeCaseUrgent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iwmlcj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g0dp1j">
+          <text>"Warn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_068if49">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i0n5p6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qkdxpp">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
