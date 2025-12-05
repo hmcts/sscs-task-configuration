@@ -403,7 +403,9 @@ else []</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1folck0">
-          <text>"ftaCommunicationId_"+additionalData.Data.benefitCode</text>
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.latestFtaCommunicationId!= null and additionalData.Data.latestFtaCommunicationId!= "")
+	then "ftaCommunicationId_"+additionalData.Data.latestFtaCommunicationId
+else "ftaCommunicationId_1234"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_02rz2kk">
