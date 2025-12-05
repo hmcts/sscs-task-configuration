@@ -1673,7 +1673,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pim5gv">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0qu12mi">
           <text>"interloc-judge"</text>

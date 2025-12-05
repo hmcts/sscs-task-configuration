@@ -272,32 +272,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
-            Map.of(
-                "name", "allocated-admin-caseworker",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
-                "assignmentPriority", 1,
-                "roleCategory", "ADMIN",
-                "autoAssignable", true
-            ),
-            Map.of(
-                "name", "regional-centre-admin",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
-                "roleCategory", "ADMIN",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "challenged-access-admin",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
-                "roleCategory", "ADMIN",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "regional-centre-team-leader",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
-                "roleCategory", "ADMIN",
-                "autoAssignable", false
-            )
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
         );
     }
 
@@ -340,32 +315,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
-            Map.of(
-                "name", "allocated-admin-caseworker",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
-                "assignmentPriority", 1,
-                "roleCategory", "ADMIN",
-                "autoAssignable", true
-            ),
-            Map.of(
-                "name", "regional-centre-admin",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
-                "roleCategory", "ADMIN",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "challenged-access-admin",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
-                "roleCategory", "ADMIN",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "regional-centre-team-leader",
-                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
-                "roleCategory", "ADMIN",
-                "autoAssignable", false
-            )
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
         );
     }
 
@@ -376,13 +326,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
-            permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
-            permission("challenged-access-legal-ops","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
-            permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1),
-            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-            permission("challenged-access-judiciary","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-            permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL","368")
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
         );
     }
 
@@ -427,13 +371,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
-            permission("tribunal-caseworker","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
-            permission("challenged-access-legal-ops","Read,Execute,Unclaim", "LEGAL_OPERATIONS"),
-            permission("interloc-judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL", 1),
-            permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
-            permission("challenged-access-judiciary","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Complete", "JUDICIAL"),
-            permission("fee-paid-judge","Read,Own,Claim,Unclaim", "JUDICIAL","368")
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
         );
     }
 
@@ -444,12 +382,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
-            permission("allocated-tribunal-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS", 1),
-            permission("tribunal-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
-            permission("challenged-access-legal-ops","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "LEGAL_OPERATIONS"),
-            permission("judge","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL"),
-            permission("challenged-access-judiciary","Read,Execute,Unclaim,UnclaimAssign", "JUDICIAL")
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
         );
     }
 
@@ -460,10 +393,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
-            permission("judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-            permission("challenged-access-judiciary", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL"),
-            permission("post-hearing-judge", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", 1)
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
         );
     }
 
@@ -474,14 +404,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
-            Map.of(
-                "name", "tribunal-member-1",
-                "value", "Read,Own,Manage,Complete",
-                "assignmentPriority", 1,
-                "roleCategory", "JUDICIAL",
-                "autoAssignable", true
-            )
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
         );
     }
 
@@ -492,14 +415,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
-            Map.of(
-                "name", "tribunal-member-2",
-                "value", "Read,Own,Manage,Complete",
-                "assignmentPriority", 1,
-                "roleCategory", "JUDICIAL",
-                "autoAssignable", true
-            )
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
         );
     }
 
@@ -510,14 +426,7 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
-            Map.of(
-                "name", "tribunal-member-3",
-                "value", "Read,Own,Manage,Complete",
-                "assignmentPriority", 1,
-                "roleCategory", "JUDICIAL",
-                "autoAssignable", true
-            )
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
         );
     }
 }
