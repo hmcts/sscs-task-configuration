@@ -9,6 +9,7 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DESCRIPTION;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DUE_DATE_NON_WORKING_CALENDAR;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.HEARING_DATE_PREDATE_NON_WORKING_CALENDAR;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.MAJOR_PRIORITY;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.MINOR_PRIORITY;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.NEXT_HEARING_DATE;
@@ -141,6 +142,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(DESCRIPTION, EventLink.REQUEST_FOR_INFORMATION, true)
+                    .expectedValue(HEARING_DATE_PREDATE_NON_WORKING_CALENDAR, "https://www.gov.uk/bank-holidays/scotland.json", true)
                     .expectedValue(DUE_DATE_NON_WORKING_CALENDAR,
                                    CourtSpecificCalendars.SCOTLAND_CALENDAR, true)
                     .expectedValue(DESCRIPTION,
