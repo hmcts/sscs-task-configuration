@@ -632,7 +632,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        List<String> inputColumnIds = asList("taskType", "case", "judgeEnabled");
+        List<String> inputColumnIds = asList("taskType", "case", "nonCtscEnabled");
         //Inputs
         assertThat(logic.getInputs().size(), is(3));
         assertThatInputContainInOrder(inputColumnIds, logic.getInputs());

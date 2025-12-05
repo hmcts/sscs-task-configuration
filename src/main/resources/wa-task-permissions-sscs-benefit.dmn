@@ -15,7 +15,7 @@ else
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0v9qmgf" label="Non CTSC Enabled" camunda:inputVariable="judgeEnabled">
+      <input id="InputClause_0v9qmgf" label="Non CTSC Enabled" camunda:inputVariable="nonCtscEnabled">
         <inputExpression id="LiteralExpression_1q22fdq" typeRef="boolean">
           <text>false</text>
         </inputExpression>
