@@ -1846,46 +1846,24 @@ else ""</text>
       <output id="OutputClause_0c1hiz8" name="nonWorkingDayCalendar" typeRef="string" biodi:width="1098" />
       <rule id="DecisionRule_0mm2sbm">
         <inputEntry id="UnaryTests_19y9oib">
-          <text>"No"</text>
+          <text>"Yes"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1plxypx">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hta6gl">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_03nkaxj">
-        <inputEntry id="UnaryTests_1ly3nb8">
-          <text>"Yes"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ysss6b">
-          <text>"Dundee"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0x4hza9">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-dundee.json"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_130cnxw">
-        <inputEntry id="UnaryTests_074afnu">
-          <text>"Yes"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1xwiy14">
-          <text>"Edinburgh"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0a68vda">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-edinburgh.json"</text>
+          <text>"https://www.gov.uk/bank-holidays/scotland.json"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ppo81q">
         <inputEntry id="UnaryTests_09sdd9k">
-          <text>"Yes"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0h0rrc3">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0pqjgim">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland.json"</text>
+          <text>"https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
         </outputEntry>
       </rule>
     </decisionTable>

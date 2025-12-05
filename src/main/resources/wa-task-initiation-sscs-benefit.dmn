@@ -7204,39 +7204,6 @@ null</text>
         </inputExpression>
       </input>
       <output id="OutputClause_16oeyw9" label="nonWorkingDayCalendar" name="nonWorkingDayCalendar" typeRef="string" biodi:width="1020" />
-      <rule id="DecisionRule_0fs7scb">
-        <inputEntry id="UnaryTests_0wfsts1">
-          <text>"No"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0lkheq6">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0k547o3">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0nuuzf6">
-        <inputEntry id="UnaryTests_0d5j63h">
-          <text>"Yes"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_15aug2u">
-          <text>"Dundee"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ry3nv1">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-dundee.json"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0r79p18">
-        <inputEntry id="UnaryTests_1wipwas">
-          <text>"Yes"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1roo56f">
-          <text>"Edinburgh"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1tkdctg">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland-edinburgh.json"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0hp6ifj">
         <inputEntry id="UnaryTests_180p17v">
           <text>"Yes"</text>
@@ -7245,7 +7212,7 @@ null</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bukt9p">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-scotland.json"</text>
+          <text>"https://www.gov.uk/bank-holidays/scotland.json"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_19qqa57">
@@ -7256,7 +7223,7 @@ null</text>
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1veyac7">
-          <text>"https://raw.githubusercontent.com/hmcts/sscs-task-configuration/work-allocation-admin-tasks/src/main/resources/sscs-non-working-days-england-and-wales.json"</text>
+          <text>"https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
         </outputEntry>
       </rule>
     </decisionTable>
