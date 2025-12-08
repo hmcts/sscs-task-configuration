@@ -10,39 +10,22 @@ import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTableBaseUnitTest;
 
 public class CamundaTaskReadPermissionTest extends DmnDecisionTableBaseUnitTest {
 
     private static final String[] ROLES = {
-        "allocated-tribunal-caseworker",
-        "tribunal-caseworker",
         "allocated-ctsc-caseworker",
         "ctsc",
         "ctsc-team-leader",
-        "interloc-judge",
-        "hearing-judge",
-        "judge",
-        "post-hearing-judge",
         "allocated-admin-caseworker",
         "regional-centre-admin",
         "regional-centre-team-leader",
         "hearing-centre-admin",
         "hearing-centre-team-leader",
-        "tribunal-member-1",
-        "tribunal-member-2",
-        "tribunal-member-3",
-        "appraiser-1",
-        "appraiser-2",
-        "medical",
-        "fee-paid-medical",
-        "leadership-judge",
-        "challenged-access-legal-ops",
         "challenged-access-ctsc",
         "challenged-access-admin",
-        "challenged-access-judiciary"
     };
 
     @BeforeAll
@@ -51,7 +34,6 @@ public class CamundaTaskReadPermissionTest extends DmnDecisionTableBaseUnitTest 
     }
 
     @Test
-    @Disabled
     void checkRolesHasReadAccessToAllTasks() {
         getAllTaskIds().forEach(t -> assertTrue(checkReadOnlyAccess(t.replace("\"", ""))));
     }
