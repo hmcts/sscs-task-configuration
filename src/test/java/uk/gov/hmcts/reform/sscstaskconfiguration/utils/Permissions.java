@@ -237,6 +237,12 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             Map.of(
                 "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
@@ -272,7 +278,34 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            Map.of(
+                "name", "allocated-admin-caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "assignmentPriority", 1,
+                "roleCategory", "ADMIN",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "regional-centre-admin",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "challenged-access-admin",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "regional-centre-team-leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel",
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            )
         );
     }
 
@@ -280,6 +313,12 @@ public class Permissions {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
             Map.of(
                 "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
@@ -315,7 +354,34 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            Map.of(
+                "name", "allocated-admin-caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "assignmentPriority", 1,
+                "roleCategory", "ADMIN",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "regional-centre-admin",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "challenged-access-admin",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "regional-centre-team-leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn",
+                "roleCategory", "ADMIN",
+                "autoAssignable", false
+            )
         );
     }
 
@@ -326,7 +392,13 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
         );
     }
 
@@ -371,7 +443,13 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
         );
     }
 
@@ -382,7 +460,13 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
         );
     }
 
@@ -393,7 +477,13 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
         );
     }
 
@@ -404,7 +494,13 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
         );
     }
 
@@ -415,7 +511,13 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
         );
     }
 
@@ -426,7 +528,13 @@ public class Permissions {
             DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
             DEFAULT_CTSC_PERMISSIONS,
             DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+            DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
         );
     }
 }

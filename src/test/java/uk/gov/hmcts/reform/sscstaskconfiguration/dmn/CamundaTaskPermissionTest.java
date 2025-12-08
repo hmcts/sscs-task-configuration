@@ -81,8 +81,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
-                )
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
+                    )
             ),
             Arguments.of(
                 "prepareForHearingJudge",
@@ -93,7 +99,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -105,7 +117,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -117,7 +135,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -131,6 +155,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
                     Map.of(
                         "name", "allocated-ctsc-caseworker",
                         "value", "Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn",
@@ -174,6 +204,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1, true),
                     permission("ctsc", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
                     permission("challenged-access-ctsc", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
@@ -204,7 +240,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -226,7 +268,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -238,7 +286,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -257,6 +311,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1),
                     permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
                     permission("challenged-access-ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
@@ -297,7 +357,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -319,7 +385,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -331,7 +403,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -353,7 +431,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -362,6 +446,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1),
                     permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
                     permission("challenged-access-ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
@@ -387,7 +477,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -399,7 +495,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
                 )
             ),
             Arguments.of(
@@ -418,6 +520,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
                     permission("allocated-ctsc-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1),
                     permission("ctsc", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
                     permission("challenged-access-ctsc", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
@@ -435,6 +543,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC", 1),
                     permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
                     permission("challenged-access-ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "CTSC"),
@@ -457,6 +571,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1),
                     permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
                     permission("challenged-access-ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
@@ -469,6 +589,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
                     Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
                     permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1),
                     permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
                     permission("challenged-access-ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC"),
@@ -484,8 +610,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
-                )
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
+                    )
             ),
             Arguments.of(
                 "updateHearingDetails",
@@ -496,7 +628,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    permission("allocated-admin-caseworker", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN", 1),
+                    permission("regional-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN"),
+                    permission("challenged-access-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN"),
+                    permission("regional-centre-team-leader","Read,Own,Claim,Unclaim,Manage,Assign,Unassign,Cancel,Complete", "ADMIN"),
+                    permission("hearing-centre-admin","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn", "ADMIN"),
+                    permission("hearing-centre-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,CompleteOwn", "ADMIN")
                 )
             ),
             Arguments.of(
@@ -508,8 +646,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
-                )
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
+                    )
             ),
             Arguments.of(
                 "referredByTcwPostHearing",
@@ -520,8 +664,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
-                )
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
+                    )
             ),
             Arguments.of(
                 "prepareHearingAppraiser1",
@@ -532,8 +682,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
-                )
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
+                    )
             ),
             Arguments.of(
                 "prepareHearingAppraiser2",
@@ -544,8 +700,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
-                )
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
+                    )
             ),
             Arguments.of(
                 "reviewSpecificAccessRequestJudiciary",
@@ -556,8 +718,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
-                )
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
+                    )
             ),
             Arguments.of(
                 "reviewSpecificAccessRequestLegalOps",
@@ -568,8 +736,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
-                )
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
+                    )
             ),
             Arguments.of(
                 "reviewSpecificAccessRequestAdmin",
@@ -580,8 +754,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
-                )
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
+                    )
             ),
             Arguments.of(
                 "reviewSpecificAccessRequestCTSC",
@@ -592,8 +772,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
-                )
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
+                    )
             ),
             Arguments.of(
                 "provideListingDirections",
@@ -604,8 +790,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CTSC_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_PERMISSIONS,
                     Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS
-                )
+                    Permissions.DEFAULT_CTSC_TEAM_LEAD_PERMISSIONS,
+                    Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                    Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                    Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS
+                    )
             )
         );
     }
