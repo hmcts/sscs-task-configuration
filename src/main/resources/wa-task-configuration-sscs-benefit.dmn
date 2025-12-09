@@ -282,7 +282,7 @@ else ""</text>
           <text>"calculatedDates"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1s2z9yu">
-          <text>"nextHearingDate,nextHearingDatePreDate,dueDate,priorityDate"</text>
+          <text>"nextHearingDate,hearingDatePreDate,dueDate,priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_128794t">
           <text>true</text>
@@ -297,7 +297,7 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0t1trnx">
-          <text>"nextHearingDatePreDateOriginRef"</text>
+          <text>"hearingDatePreDateOriginRef"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yq77of" expressionLanguage="feel">
           <text> "nextHearingDate"</text>
@@ -315,7 +315,7 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1y9tyf8">
-          <text>"nextHearingDatePreDateIntervalDays"</text>
+          <text>"hearingDatePreDateIntervalDays"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1arlbde" expressionLanguage="feel">
           <text>
@@ -334,10 +334,10 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1fx14mc">
-          <text>"nextHearingDatePreDateNonWorkingCalendar"</text>
+          <text>"hearingDatePreDateNonWorkingCalendar"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0io8a3h" expressionLanguage="feel">
-          <text>"nonWorkingDayCalendar"</text>
+          <text>nonWorkingDayCalendar</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_145el1n">
           <text>true</text>
@@ -352,10 +352,10 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_04iwpbm">
-          <text>"nextHearingDatePreDateNonWorkingDaysOfWeek"</text>
+          <text>"hearingDatePreDateNonWorkingDaysOfWeek"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_196vukw" expressionLanguage="feel">
-          <text> "SATURDAY, SUNDAY"</text>
+          <text> "SATURDAY,SUNDAY"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_10xdq41">
           <text>true</text>
@@ -370,7 +370,7 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1y6gb5a">
-          <text>"nextHearingDatePreDateSkipNonWorkingDays"</text>
+          <text>"hearingDatePreDateSkipNonWorkingDays"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19738t8" expressionLanguage="feel">
           <text>true</text>
@@ -388,10 +388,10 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14xjqj6">
-          <text>"nextHearingDatePreDateMustBeWorkingDay"</text>
+          <text>"hearingDatePreDateMustBeWorkingDay"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0keyet3" expressionLanguage="feel">
-          <text>true</text>
+          <text>"Next"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cnjbdd">
           <text>true</text>
@@ -409,7 +409,7 @@ else ""</text>
           <text>"priorityDateOriginEarliest"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_079sqon" expressionLanguage="feel">
-          <text>"nextHearingDatePreDate,dueDate"</text>
+          <text>"hearingDatePreDate,dueDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0eh0yfe">
           <text>true</text>
