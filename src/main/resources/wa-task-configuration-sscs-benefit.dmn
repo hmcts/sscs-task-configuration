@@ -727,7 +727,7 @@ else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1s2f9ma">
           <text>"[Update Listing Requirements](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/updateListingRequirements)&lt;br/&gt;" +
-"[Ready to list](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/readyToList)"</text>
+"[Review Listing Error](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewListingError)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j27evi">
           <text>true</text>
