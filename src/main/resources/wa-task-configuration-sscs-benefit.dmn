@@ -300,7 +300,7 @@ else ""</text>
           <text>"hearingDatePreDateOriginRef"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yq77of" expressionLanguage="feel">
-          <text>nextHearingDate</text>
+          <text>"nextHearingDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05klryr">
           <text>true</text>
