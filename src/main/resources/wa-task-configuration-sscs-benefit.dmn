@@ -1401,7 +1401,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1swv4p3">
-          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","updateHearingDetails"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","updateHearingDetails","reviewAdminAction"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ndgnkl">
           <text>"dueDateIntervalDays"</text>
