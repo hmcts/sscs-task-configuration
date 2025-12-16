@@ -1020,8 +1020,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         for (int index = 0; index < expectation.size(); index++) {
             if ("dueDateOrigin".equals(expectation.get(index).get("name"))) {
                 assertEquals(
-                    results.get(index).get("canReconfigure"),
-                    expectation.get(index).get("canReconfigure")
+                    expectation.get(index).get("canReconfigure"),
+                    results.get(index).get("canReconfigure")
                 );
                 assertTrue(validNow(
                     LocalDateTime.parse(results.get(index).get("value").toString()),
