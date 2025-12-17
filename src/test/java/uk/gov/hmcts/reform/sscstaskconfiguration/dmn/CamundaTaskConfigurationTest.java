@@ -199,7 +199,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         EventLink.VALID_SEND_TO_INTERLOC,
                         EventLink.INTERLOC_SEND_TO_TCW,
                         EventLink.INTERLOC_INFORMATION_RECEIVED), true)
-                    .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "10", true).build()
+                    .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "5", true).build()
             ),
             Arguments.of(
                 "actionUnprocessedCorrespondence",
