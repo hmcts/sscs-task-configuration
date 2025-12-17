@@ -47,6 +47,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("writeDecisionJudge")
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
+                .cancel("reviewAdminAction")
                 .cancel("reviewRoboticFail")
                 .cancel("allocateCaseRolesAndCreateBundle")
                 .cancel("referredByAdminJudgePreHearing")
@@ -86,6 +87,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewReinstatementRequestJudge")
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
+                .cancel("reviewAdminAction")
                 .cancel("reviewRoboticFail")
                 .cancel("allocateCaseRolesAndCreateBundle")
                 .cancel("referredByAdminJudgePreHearing")
@@ -125,6 +127,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewReinstatementRequestJudge")
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
+                .cancel("reviewAdminAction")
                 .cancel("reviewRoboticFail")
                 .cancel("allocateCaseRolesAndCreateBundle")
                 .cancel("referredByAdminJudgePreHearing")
@@ -197,6 +200,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("reviewReinstatementRequestJudge")
                 .cancel("reviewValidAppeal")
                 .cancel("reviewListingError")
+                .cancel("reviewAdminAction")
                 .cancel("reviewRoboticFail")
                 .cancel("allocateCaseRolesAndCreateBundle")
                 .cancel("referredByAdminJudgePreHearing")
@@ -350,6 +354,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(44));
+        assertThat(logic.getRules().size(), is(45));
     }
 }
