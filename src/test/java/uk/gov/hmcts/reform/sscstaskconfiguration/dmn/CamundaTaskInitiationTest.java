@@ -50,7 +50,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                                     "CTSC - FTA reply overdue - Incomplete appeal", 2, "ftaCommunicationId_1234")
                 .build(),
             eventWithState("overdueFtaResponse","incompleteApplication")
-                .withCaseData("latestFtaCommunicationId", "002")
+                .withCaseData("waTaskFtaCommunicationId", "002")
                 .initiatesTaskWithProcessCategories("ftaReplyOverdueIncompleteAppeal",
                                                     "CTSC - FTA reply overdue - Incomplete appeal", 2, "ftaCommunicationId_002")
                 .build(),
