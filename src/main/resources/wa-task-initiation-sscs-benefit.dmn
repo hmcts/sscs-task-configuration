@@ -322,7 +322,7 @@ else []</text>
       </rule>
       <rule id="DecisionRule_1gvns56">
         <inputEntry id="UnaryTests_1meyhxx">
-          <text>"overdueResponse"</text>
+          <text>"overdueFtaResponse"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0my9jnu">
           <text></text>
