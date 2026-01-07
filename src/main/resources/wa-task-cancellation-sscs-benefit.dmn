@@ -456,6 +456,32 @@
           <text> "reviewListingError"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1s3eeip">
+        <inputEntry id="UnaryTests_1pez0x4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o1afq9">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ekb1ti">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sp26jb">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xj6wub">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_156r6h8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0h0phrh">
+          <text>"reviewAdminAction"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_14tgkh8">
         <inputEntry id="UnaryTests_00da1wb">
           <text></text>

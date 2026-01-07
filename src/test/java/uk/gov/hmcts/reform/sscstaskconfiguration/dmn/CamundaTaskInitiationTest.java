@@ -73,7 +73,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("dwpFurtherInfo", false)
                 .build(),
             event("sendToAdmin")
-                .initiatesTask("reviewAdminAction", "Review Admin Action - CTSC", 10)
+                .initiatesTask("reviewAdminAction", "CTSC - Review Admin Action", 5)
                 .build(),
             event("dwpUploadResponse")
                 .withCaseData("languagePreferenceWelsh", false)
