@@ -282,7 +282,7 @@ else ""</text>
           <text>"calculatedDates"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1s2z9yu">
-          <text>"nextHearingDate,nextHearingDatePreDate,dueDate,priorityDate"</text>
+          <text>"nextHearingDate,hearingDatePreDate,dueDate,priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_128794t">
           <text>true</text>
@@ -297,10 +297,10 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0t1trnx">
-          <text>"nextHearingDatePreDateOriginRef"</text>
+          <text>"hearingDatePreDateOriginRef"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yq77of" expressionLanguage="feel">
-          <text> "nextHearingDate"</text>
+          <text>"nextHearingDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05klryr">
           <text>true</text>
@@ -315,7 +315,7 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1y9tyf8">
-          <text>"nextHearingDatePreDateIntervalDays"</text>
+          <text>"hearingDatePreDateIntervalDays"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1arlbde" expressionLanguage="feel">
           <text>
@@ -334,10 +334,10 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1fx14mc">
-          <text>"nextHearingDatePreDateNonWorkingCalendar"</text>
+          <text>"hearingDatePreDateNonWorkingCalendar"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0io8a3h" expressionLanguage="feel">
-          <text>"nonWorkingDayCalendar"</text>
+          <text>nonWorkingDayCalendar</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_145el1n">
           <text>true</text>
@@ -352,10 +352,10 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_04iwpbm">
-          <text>"nextHearingDatePreDateNonWorkingDaysOfWeek"</text>
+          <text>"hearingDatePreDateNonWorkingDaysOfWeek"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_196vukw" expressionLanguage="feel">
-          <text> "SATURDAY, SUNDAY"</text>
+          <text> "SATURDAY,SUNDAY"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_10xdq41">
           <text>true</text>
@@ -370,7 +370,7 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1y6gb5a">
-          <text>"nextHearingDatePreDateSkipNonWorkingDays"</text>
+          <text>"hearingDatePreDateSkipNonWorkingDays"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19738t8" expressionLanguage="feel">
           <text>true</text>
@@ -388,10 +388,10 @@ else ""</text>
           <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw","reviewConfidentialityRequest","referredByTcwPreHearing","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge", "referredByTcwPreHearing", "referredByAdminJudgePreHearing", "confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","updateHearingDetails","prepareHearingAppraiser1","prepareHearingAppraiser2","provideListingDirections"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14xjqj6">
-          <text>"nextHearingDatePreDateMustBeWorkingDay"</text>
+          <text>"hearingDatePreDateMustBeWorkingDay"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0keyet3" expressionLanguage="feel">
-          <text>true</text>
+          <text>"Next"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cnjbdd">
           <text>true</text>
@@ -409,7 +409,7 @@ else ""</text>
           <text>"priorityDateOriginEarliest"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_079sqon" expressionLanguage="feel">
-          <text>"nextHearingDatePreDate,dueDate"</text>
+          <text>"hearingDatePreDate,dueDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0eh0yfe">
           <text>true</text>
@@ -587,7 +587,7 @@ else ""</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gtav7k">
-          <text>"[Information received](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)"</text>
+          <text>"[Interloc Information received](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x6to7m">
           <text>true</text>
@@ -672,9 +672,9 @@ else ""</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1l4c9u4">
-          <text>"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
-"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
-"[Information received](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)"</text>
+          <text>"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
+"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Interloc Information received](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocInformationReceived)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15vmpq1">
           <text>true</text>
@@ -691,7 +691,7 @@ else ""</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_098mpbp">
-          <text>"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)"</text>
+          <text>"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ef73m6">
           <text>true</text>
@@ -761,8 +761,8 @@ else ""</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08oadw3">
-          <text>"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
-"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+          <text>"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
+"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
 "[Amend due date](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/amendDueDate)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0n21l6b">
@@ -856,7 +856,7 @@ else ""</text>
 "[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
 "[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
 "[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)&lt;br/&gt;" +
-"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
+"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
 "[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_10skwzh">
@@ -995,7 +995,7 @@ else ""</text>
           <text>"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)&lt;br/&gt;" +
 "[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
 "[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
-"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)"</text>
+"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1d9prrw">
           <text>true</text>
@@ -1070,7 +1070,7 @@ else ""</text>
           <text>"[Review confidentiality request](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reviewConfidentialityRequest)&lt;br/&gt;" +
 "[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
 "[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
-"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
 "[Issue final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/issueFinalDecision)&lt;br/&gt;" +
 "[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
         </outputEntry>
@@ -1110,7 +1110,7 @@ else ""</text>
           <text>"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
 "[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
 "[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
-"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
 "[Strike out case](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/struckOut)&lt;br/&gt;" +
 "[Write final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/writeFinalDecision)&lt;br/&gt;" +
 "[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
@@ -1133,7 +1133,7 @@ else ""</text>
           <text>"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
 "[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
 "[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
-"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
 "[Strike out case](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/struckOut)&lt;br/&gt;" +
 "[Abate case](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/abateCase)&lt;br/&gt;" +
 "[Write final decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/writeFinalDecision)&lt;br/&gt;" +
@@ -1157,8 +1157,8 @@ else ""</text>
           <text>"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
 "[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
 "[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
-"[Send case to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
-"[Send to interloc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
+"[Send to TCW](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocSendToTcw)&lt;br/&gt;" +
+"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/validSendToInterloc)&lt;br/&gt;" +
 "[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13w4oj9">
@@ -1401,7 +1401,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1swv4p3">
-          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","updateHearingDetails"</text>
+          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","updateHearingDetails","reviewAdminAction"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ndgnkl">
           <text>"dueDateIntervalDays"</text>
@@ -1452,7 +1452,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dlxkjg">
-          <text>"reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewPostHearingNoticeforListingRequirements"</text>
+          <text>"reviewBilingualDocument","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewPostHearingNoticeforListingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vmpg33">
           <text>"dueDateIntervalDays"</text>
