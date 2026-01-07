@@ -9,10 +9,10 @@ public interface EventLink {
     String DIRECTION_ISSUED = eventLink("Issue directions notice","directionIssued");
     String DECISION_ISSUED = eventLink("Issue interlocutory decision","decisionIssued");
     String ACTION_FURTHER_EVIDENCE = eventLink("Action Further Evidence","actionFurtherEvidence");
-    String VALID_SEND_TO_INTERLOC = eventLink("Send to interloc", "validSendToInterloc");
-    String INTERLOC_INFORMATION_RECEIVED = eventLink("Information received", "interlocInformationReceived");
+    String VALID_SEND_TO_INTERLOC = eventLink("Send to Judge", "validSendToInterloc");
+    String INTERLOC_INFORMATION_RECEIVED = eventLink("Interloc Information received", "interlocInformationReceived");
     String TCW_REFER_TO_JUDGE = eventLink("Send to Judge","tcwReferToJudge");
-    String INTERLOC_SEND_TO_TCW = eventLink("Send case to TCW", "interlocSendToTcw");
+    String INTERLOC_SEND_TO_TCW = eventLink("Send to TCW", "interlocSendToTcw");
     String REQUEST_FOR_INFORMATION = eventLink("Request Information From Party", "requestForInformation");
     String HMCTS_RESPONSE_REVIEWED = eventLink("Response reviewed", "hmctsResponseReviewed");
     String REQUEST_TRANSLATION_FROM_WLU = eventLink("Request translation from WLU", "requestTranslationFromWLU");
