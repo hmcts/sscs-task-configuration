@@ -20,6 +20,7 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpec
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.caseLink;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -1089,5 +1090,28 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "sscs-task-configuration-non-working-days", inputVariables);
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+    @Test
+    void when_ftaReplyOverdueIncompleteAppeal_then_return_ftaCommunicationId() {
+
+        Map<String, Object> caseData = new HashMap<>();
+
+        caseData.put("waTaskFtaCommunicationId", "ftaCommunicationId");
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("caseData", caseData);
+        String ftaCommunicationId = "ftaCommunicationId";
+        inputVariables.putValue("taskAttributes", Map.of(
+            "taskType", "ftaReplyOverdueIncompleteAppeal",
+            "__processCategory__ftaCommunicationId_" + ftaCommunicationId, false
+        ));
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "canReconfigure", false,
+            "name", "additionalProperties_ftaCommunicationId",
+            "value", ftaCommunicationId
+        )));
     }
 }
