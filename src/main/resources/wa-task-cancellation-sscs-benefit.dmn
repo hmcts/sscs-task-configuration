@@ -52,58 +52,6 @@
           <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0otng7k">
-        <inputEntry id="UnaryTests_0kcphve">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_17a2isf">
-          <text>"voidCase",
-"appealWithdrawn",
-"appealDormant",
-"confirmLapsed",
-"struckOut"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0w6058w">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0ooe7hb">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0nu4wrx">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07ur57y">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0oa3oef">
-          <text>"ftaReplyOverdueIncompleteAppeal"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0xixyae">
-        <inputEntry id="UnaryTests_0mgl867">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1y9oea7">
-          <text>"tribunalCommunication"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_09l614w">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0qothn4">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1kyh9bs">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15314i0">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0pjdn15">
-          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.waTaskFtaCommunicationId!= null and additionalData.Data.waTaskFtaCommunicationId!= "")
-	then "ftaCommunicationId_"+additionalData.Data.waTaskFtaCommunicationId
-else "ftaCommunicationId_1234"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_01khg43">
         <inputEntry id="UnaryTests_1kryeuw">
           <text></text>
