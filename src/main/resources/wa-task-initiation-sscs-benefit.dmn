@@ -829,13 +829,13 @@ else "ftaCommunicationId_1234"</text>
           <text>"reviewAdminAction"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0o512rv">
-          <text>"Review Admin Action - CTSC"</text>
+          <text>"CTSC - Review Admin Action"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1xlhj92">
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_019bkck">
-          <text>10</text>
+          <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00vxeom">
           <text>"reviewAdminAction"</text>
