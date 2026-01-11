@@ -1234,29 +1234,6 @@
           <text>"reviewFailedFE"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_16e0ikv">
-        <inputEntry id="UnaryTests_1h5j1qx">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1lipjkm">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_113a2xh">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ytzd5b">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_04gckgz">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0bwq9j4">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0gc29s2">
-          <text></text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
