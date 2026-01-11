@@ -7070,6 +7070,92 @@ contains(scannedDocumentTypes, "videoDocument")</text>
           <text>"reviewPostponementRequestTCW"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0fxsu1j">
+        <inputEntry id="UnaryTests_1y3nb5a">
+          <text>"reissueFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0whgbhc">
+          <text>"failedSendingFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zp77gv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ahy9dr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01q56ph">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15pg8x5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cfvdn1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15mru7r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0118qoc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v4mdgl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14qsm5p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rhsoga">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v1bd9m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19louuk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18jp65z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07mikep">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03hx84t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n0qjtl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v9hm93">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16aulpb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bd8401">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ogubie">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xr8rzl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cs3rwd">
+          <text>"reviewFailedFE"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w8liy6">
+          <text>"CTSC - Review Failed FE"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kpujib">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wsttrp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sy4elt">
+          <text>"reviewFailedFE"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
