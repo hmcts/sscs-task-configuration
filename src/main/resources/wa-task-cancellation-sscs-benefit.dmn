@@ -1210,30 +1210,6 @@
           <text>"reviewFailedFE"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0t6gbam">
-        <inputEntry id="UnaryTests_0gra30c">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1cna7xb">
-          <text>"addHearing",
-"caseUpdated"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_02jzki9">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0hpwr4b">
-          <text>"Reconfigure"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_02z62nm">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_01t21br">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_012xrw4">
-          <text>"reviewFailedFE"</text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
