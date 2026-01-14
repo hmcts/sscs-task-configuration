@@ -7072,7 +7072,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
     </decisionTable>
   </decision>
-  <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults" camunda:historyTimeToLive="P1D">
+  <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults" camunda:historyTimeToLive="P90D">
     <informationRequirement id="InformationRequirement_0tk6k3u">
       <requiredDecision href="#Decision_1n3y86t" />
     </informationRequirement>
@@ -7140,7 +7140,7 @@ null</text>
       </rule>
     </decisionTable>
   </decision>
-  <decision id="Decision_1376vj8" name="Interloc Referral Reason" camunda:historyTimeToLive="P1D">
+  <decision id="Decision_1376vj8" name="Interloc Referral Reason" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0l90u7m" hitPolicy="FIRST">
       <input id="InputClause_1x6zj2u" label="Interloc referal reason" biodi:width="391" camunda:inputVariable="interlocReferralReason">
         <inputExpression id="LiteralExpression_1byq3al" typeRef="string">
