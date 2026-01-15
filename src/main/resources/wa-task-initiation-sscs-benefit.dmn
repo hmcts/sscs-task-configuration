@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
-  <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN">
+  <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN" camunda:historyTimeToLive="P90D">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
     </informationRequirement>
@@ -7158,7 +7158,7 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
     </decisionTable>
   </decision>
-  <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults">
+  <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults" camunda:historyTimeToLive="P90D">
     <informationRequirement id="InformationRequirement_0tk6k3u">
       <requiredDecision href="#Decision_1n3y86t" />
     </informationRequirement>
@@ -7226,7 +7226,7 @@ null</text>
       </rule>
     </decisionTable>
   </decision>
-  <decision id="Decision_1376vj8" name="Interloc Referral Reason">
+  <decision id="Decision_1376vj8" name="Interloc Referral Reason" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0l90u7m" hitPolicy="FIRST">
       <input id="InputClause_1x6zj2u" label="Interloc referal reason" biodi:width="391" camunda:inputVariable="interlocReferralReason">
         <inputExpression id="LiteralExpression_1byq3al" typeRef="string">
