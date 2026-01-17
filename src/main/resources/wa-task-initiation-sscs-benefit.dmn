@@ -7072,10 +7072,10 @@ contains(scannedDocumentTypes, "videoDocument")</text>
       </rule>
       <rule id="DecisionRule_0fxsu1j">
         <inputEntry id="UnaryTests_1y3nb5a">
-          <text>"reissueFurtherEvidence"</text>
+          <text>"issueFurtherEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0whgbhc">
-          <text>"failedSendingFurtherEvidence"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0zp77gv">
           <text></text>
