@@ -6936,9 +6936,7 @@ else 28</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tpnyyc">
-          <text>list
-            contains(["listingDirections","confirmPanelCompositionAndListingDirections"],interlocReferralReason)
-          </text>
+          <text>list contains(["listingDirections","confirmPanelCompositionAndListingDirections"],interlocReferralReason)</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1mbgc1s">
           <text></text>
