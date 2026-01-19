@@ -18,6 +18,7 @@ public interface EventLink {
     String REQUEST_TRANSLATION_FROM_WLU = eventLink("Request translation from WLU", "requestTranslationFromWLU");
     String UPDATE_LISTING_REQUIREMENTS = eventLink("Update Listing Requirements", "updateListingRequirements");
     String READY_TO_LIST = eventLink("Ready to list", "readyToList");
+    String REISSUE_FURTHER_EVIDENCE = eventLink("Reissue further evidence", "reissueFurtherEvidence");
     String RESENT_CASE_TO_GAPS2 = eventLink("Resend case to GAPS 2","resendCaseToGAPS2");
     String AMEND_DUE_DATE = eventLink("Amend due date", "amendDueDate");
     String CREATE_BUNDLE = eventLink("Create Bundle","createBundle");
