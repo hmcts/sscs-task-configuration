@@ -733,6 +733,23 @@ else ""</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0org9zw">
+        <inputEntry id="UnaryTests_0yow499">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t6smnq">
+          <text>"reviewFailedFE"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03hlz00">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v92b91">
+          <text>"[Reissue futher evidence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reissueFutherEvidence)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03e7ihc">
+          <text></text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_062r40k">
         <inputEntry id="UnaryTests_1qa09r4">
           <text></text>
