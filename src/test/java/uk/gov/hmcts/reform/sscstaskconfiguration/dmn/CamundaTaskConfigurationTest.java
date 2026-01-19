@@ -341,8 +341,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(DESCRIPTION, buildDescription(
-                        EventLink.UPDATE_LISTING_REQUIREMENTS,
-                        EventLink.READY_TO_LIST), true)
+                        EventLink.UPDATE_LISTING_REQUIREMENTS), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .build()
             ),
