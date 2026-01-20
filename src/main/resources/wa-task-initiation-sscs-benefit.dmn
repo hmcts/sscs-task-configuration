@@ -24,7 +24,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_01ru66y" label="HMCTS DWP State" camunda:inputVariable="HmctsDwpState">
+      <input id="InputClause_01ru66y" label="HMCTS DWP State" camunda:inputVariable="hmctsDwpState">
         <inputExpression id="LiteralExpression_1s762de">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.hmctsDwpState != null)
             then additionalData.Data.hmctsDwpState
