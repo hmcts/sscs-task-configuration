@@ -282,6 +282,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "someCaseData",
                 Permissions.defaultCtscPermissions()
             ),
+//            Arguments.of(
+//                "reviewFailedFE",
+//                "someCaseData",
+//                Permissions.defaultCtscPermissions()
+//            ),
             Arguments.of(
                 "reviewRoboticFail",
                 "someCaseData",
@@ -1325,6 +1330,40 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     permission("judge","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", false),
                     permission("challenged-access-judiciary","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "JUDICIAL", false),
                     permission("fee-paid-judge", "Read,Own,Claim,Unclaim", "JUDICIAL", "368")
+                )
+            ),
+            Arguments.of(
+                        "reviewFailedFE",
+                        "someCaseData",
+                        List.of(
+                            Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
+                            Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
+                            Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
+                            Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
+                            Permissions.DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS,
+                            Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
+                            Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
+                            Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
+                            Permissions.DEFAULT_JUDGE_PERMISSIONS,
+                            Permissions.DEFAULT_JUDICIARY_CHALLENGED_ACCESS_PERMISSIONS,
+                            Permissions.DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
+                            Permissions.DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
+                            Permissions.DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
+                            Permissions.DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
+                            Permissions.DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
+                            Permissions.DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
+                            Permissions.DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
+                            Permissions.DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
+                            Permissions.DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
+                            Permissions.DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
+                            Permissions.DEFAULT_APPRAISER_1_PERMISSIONS,
+                            Permissions.DEFAULT_APPRAISER_2_PERMISSIONS,
+                            Permissions.DEFAULT_MEDICAL_PERMISSIONS,
+                            Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
+                            Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+                            permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "CTSC", 1,true),
+                            permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "CTSC", false),
+                            permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel", "CTSC", false)
                 )
             )
         );
