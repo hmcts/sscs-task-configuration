@@ -117,6 +117,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiatesTask("reviewListingError",
                                "Review Listing Error - CTSC", 3)
                 .build(),
+            event("issueFurtherEvidence")
+                .withCaseData("hmctsDwpState", "failedSendingFurtherEvidence")
+                .initiatesTask("reviewFailedFE",
+                               "CTSC - Review Failed FE", 3)
+                .build(),
             event("sendToRoboticsError")
                 .initiatesTask("reviewRoboticFail",
                                "Review Robotic Fail - CTSC", 3)
