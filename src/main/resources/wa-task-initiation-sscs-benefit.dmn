@@ -858,7 +858,8 @@ contains(scannedDocumentTypes, "videoDocument"))</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_01xe7a1">
-          <text></text>
+          <text>not(contains(scannedDocumentTypes, "audioDocument") or
+contains(scannedDocumentTypes, "videoDocument"))</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1mrr7cu">
           <text></text>
@@ -918,7 +919,7 @@ contains(scannedDocumentTypes, "videoDocument"))</text>
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17ev0s1">
-          <text>"CTSC - Action Unprocessed Correspondence"</text>
+          <text>"CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hiv564">
           <text></text>
