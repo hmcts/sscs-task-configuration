@@ -842,6 +842,94 @@ contains(scannedDocumentTypes, "videoDocument"))</text>
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1mws12r">
+        <inputEntry id="UnaryTests_1iv7l2q">
+          <text>"dwpSupplementaryResponse",
+"attachScannedDocs",
+"uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ysk3a8">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iogxsz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jjz125">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01xe7a1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mrr7cu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12gigtv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o40qn3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0agfkly">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pcd17t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k0ind9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vhv8m4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f3alsz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i3ufoy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lvtowf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1502fpc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06wa7oh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v80acy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b6l6wh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_018fowo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w3xs95">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09tzvby">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rs55vw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0m6ihj6">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17ev0s1">
+          <text>"CTSC - Action Unprocessed Correspondence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hiv564">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13yl8lo">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qxl4ay">
+          <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_15u0n7b">
         <inputEntry id="UnaryTests_0xg9m4u">
           <text>"sentToDwp"</text>
