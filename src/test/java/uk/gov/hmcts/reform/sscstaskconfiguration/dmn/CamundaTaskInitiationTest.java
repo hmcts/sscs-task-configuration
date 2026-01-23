@@ -63,27 +63,27 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             eventWithState("dwpSupplementaryResponse", "dormantAppealState")
                 .initiatesTask("actionUnprocessedCorrespondence",
-                               "CTSC - Action Unprocessed Correspondence", 10)
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
                 .build(),
             eventWithState("attachScannedDocs", "dormantAppealState")
                 .initiatesTask("actionUnprocessedCorrespondence",
-                               "CTSC - Action Unprocessed Correspondence", 10)
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
                 .build(),
             eventWithState("uploadDocumentFurtherEvidence", "dormantAppealState")
                 .initiatesTask("actionUnprocessedCorrespondence",
-                               "CTSC - Action Unprocessed Correspondence", 10)
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
                 .build(),
             eventWithState("dwpSupplementaryResponse", "postHearing")
                 .initiatesTask("actionUnprocessedCorrespondence",
-                               "CTSC - Action Unprocessed Correspondence", 10)
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
                 .build(),
             eventWithState("attachScannedDocs", "postHearing")
                 .initiatesTask("actionUnprocessedCorrespondence",
-                               "CTSC - Action Unprocessed Correspondence", 10)
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
                 .build(),
             eventWithState("uploadDocumentFurtherEvidence", "postHearing")
                 .initiatesTask("actionUnprocessedCorrespondence",
-                               "CTSC - Action Unprocessed Correspondence", 10)
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("dwpFurtherInfo", true)
