@@ -127,7 +127,7 @@
           <text>"reviewListingError"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1lxu8bz">
-          <text>"Review Listing Error - CTSC"</text>
+          <text>"CTSC - Review Listing Error"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00dl6kb">
