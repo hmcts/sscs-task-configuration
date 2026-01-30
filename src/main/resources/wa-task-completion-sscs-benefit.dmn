@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.39.0">
   <decision id="wa-task-completion-sscs-benefit" name="Task completion DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="613">
@@ -504,9 +504,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0w9grjx">
+        <inputEntry id="UnaryTests_05azjyq">
+          <text>"reissueFurtherEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1otabq8">
+          <text>"reviewFailedFE"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gqzdzp">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_2rmkvgk">
         <inputEntry id="UnaryTests_1ht7wfx">
-          <text>"abateCase","actionFurtherEvidence","actionPostponementRequest","addNote","adjournCase","adminActionCorrection","adminCorrectionBody","amendDueDate","cancelTranslations","caseUpdated","confirmPanelComposition","correctionGranted","correctionRefused","createBundle","decisionIssued","directionIssued","ftaCommunication","hmctsResponseReviewed","interlocInformationReceived","interlocReviewStateAmend","interlocSendToTcw","issueAdjournmentNotice","issueFinalDecision","libertyToApplyGranted","libertyToApplyRefused","permissionToAppealGranted","permissionToAppealRefused","postHearingReview","processAudioVideo","readyToList","requestForInformation","requestTranslationFromWLU","resendCaseToGAPS2","reviewConfidentialityRequest","reviewPhmeRequest","sendToAdmin","setAsideGranted","setAsideIssueDirections","setAsideRefused","setAsideRefusedSOR","sORExtendTime","sORRefused","sORWrite","struckOut","tcwReferToJudge","updateListingRequirements","uploadDocument","uploadWelshDocument","validSendToInterloc","writeFinalDecision"</text>
+          <text>"abateCase","actionFurtherEvidence","actionPostponementRequest","addNote","adjournCase","adminActionCorrection","adminCorrectionBody","amendDueDate","cancelTranslations","caseUpdated","confirmPanelComposition","correctionGranted","correctionRefused","createBundle","decisionIssued","directionIssued","ftaCommunication","hmctsResponseReviewed","interlocInformationReceived","interlocReviewStateAmend","interlocSendToTcw","issueAdjournmentNotice","issueFinalDecision","libertyToApplyGranted","libertyToApplyRefused","permissionToAppealGranted","permissionToAppealRefused","postHearingReview","processAudioVideo","readyToList","reissueFurtherEvidence","requestForInformation","requestTranslationFromWLU","resendCaseToGAPS2","reviewConfidentialityRequest","reviewPhmeRequest","sendToAdmin","setAsideGranted","setAsideIssueDirections","setAsideRefused","setAsideRefusedSOR","sORExtendTime","sORRefused","sORWrite","struckOut","tcwReferToJudge","updateListingRequirements","uploadDocument","uploadWelshDocument","validSendToInterloc","writeFinalDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02yaug9">
           <text></text>
@@ -523,17 +534,6 @@
           <text>"provideListingDirections"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03si0d0">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0w9grjx">
-        <inputEntry id="UnaryTests_05azjyq">
-          <text>"reissueFurtherEvidence"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1otabq8">
-          <text>"reviewFailedFE"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0gqzdzp">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
