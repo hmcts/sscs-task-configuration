@@ -24,13 +24,13 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_09qqpx6" label="DWP Further Info" camunda:inputVariable="dwpFurtherInfo">
+      <input id="InputClause_09qqpx6" label="FTA Response Review Required" camunda:inputVariable="ftaResponseReviewRequired">
         <inputExpression id="LiteralExpression_0nsfl92" typeRef="boolean">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.dwpFurtherInfo
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.ftaResponseReviewRequired
             != null) then
-            additionalData.Data.dwpFurtherInfo
+            additionalData.Data.ftaResponseReviewRequired
             else
-            null</text>
+            true</text>
         </inputExpression>
       </input>
       <input id="InputClause_19ghw9y" label="Language Preference Welsh" biodi:width="153" camunda:inputVariable="languagePreferenceWelsh">
