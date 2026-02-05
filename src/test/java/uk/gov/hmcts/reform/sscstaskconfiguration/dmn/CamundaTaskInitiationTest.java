@@ -73,7 +73,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("ftaResponseReviewRequired", false)
                 .build(),
             event("sendToAdmin")
-                .initiatesTask("reviewAdminAction", "Review Admin Action - CTSC", 10)
+                .initiatesTask("reviewAdminAction", "CTSC - Review Admin Action", 5)
                 .build(),
             event("dwpUploadResponse")
                 .withCaseData("languagePreferenceWelsh", false)
@@ -116,7 +116,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             eventWithState("readyToList", "listingError")
                 .initiatesTask("reviewListingError",
-                               "Review Listing Error - CTSC", 3)
+                               "CTSC - Review Listing Error", 3)
                 .build(),
             event("sendToRoboticsError")
                 .initiatesTask("reviewRoboticFail",

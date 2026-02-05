@@ -9,6 +9,7 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.DmnDecisionTable.WA_TASK
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DESCRIPTION;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.DUE_DATE_NON_WORKING_CALENDAR;
+import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.HEARING_DATE_PREDATE_NON_WORKING_CALENDAR;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.MAJOR_PRIORITY;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.MINOR_PRIORITY;
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpectationBuilder.NEXT_HEARING_DATE;
@@ -141,6 +142,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(DESCRIPTION, EventLink.REQUEST_FOR_INFORMATION, true)
+                    .expectedValue(HEARING_DATE_PREDATE_NON_WORKING_CALENDAR, "https://www.gov.uk/bank-holidays/scotland.json", true)
                     .expectedValue(DUE_DATE_NON_WORKING_CALENDAR,
                                    CourtSpecificCalendars.SCOTLAND_CALENDAR, true)
                     .expectedValue(DESCRIPTION,
@@ -197,7 +199,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         EventLink.VALID_SEND_TO_INTERLOC,
                         EventLink.INTERLOC_SEND_TO_TCW,
                         EventLink.INTERLOC_INFORMATION_RECEIVED), true)
-                    .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "10", true).build()
+                    .expectedValue(ConfigurationExpectationBuilder.DUE_DATE_INTERVAL_DAYS, "5", true).build()
             ),
             Arguments.of(
                 "actionUnprocessedCorrespondence",
@@ -339,8 +341,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(DESCRIPTION, buildDescription(
-                        EventLink.UPDATE_LISTING_REQUIREMENTS,
-                        EventLink.READY_TO_LIST), true)
+                        EventLink.UPDATE_LISTING_REQUIREMENTS), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .build()
             ),
@@ -1018,8 +1019,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         for (int index = 0; index < expectation.size(); index++) {
             if ("dueDateOrigin".equals(expectation.get(index).get("name"))) {
                 assertEquals(
-                    results.get(index).get("canReconfigure"),
-                    expectation.get(index).get("canReconfigure")
+                    expectation.get(index).get("canReconfigure"),
+                    results.get(index).get("canReconfigure")
                 );
                 assertTrue(validNow(
                     LocalDateTime.parse(results.get(index).get("value").toString()),
