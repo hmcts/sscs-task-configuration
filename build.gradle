@@ -12,10 +12,6 @@ plugins {
   id 'io.freefair.lombok' version '9.2.0'
 }
 
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: "info.solidsoft.pitest"
-
 group = 'uk.gov.hmcts.reform'
 version = '0.0.1'
 
@@ -218,7 +214,7 @@ dependencyManagement {
 repositories {
   mavenLocal()
   maven {
-    url 'https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1'
+    url = 'https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1'
   }
   mavenCentral()
 }
@@ -272,8 +268,6 @@ dependencies {
   implementation group: 'org.camunda.bpm', name: 'camunda-external-task-client', version: versions.camunda
 
   implementation group: 'org.pitest', name: 'pitest', version: '1.21.1'
-  implementation group:'info.solidsoft.gradle.pitest', name: 'gradle-pitest-plugin', version: pitest.pitestVersion.get()
-  implementation group:'org.codehaus.sonar-plugins', name:'sonar-pitest-plugin', version: '0.5'
 
   implementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
   implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.4'
