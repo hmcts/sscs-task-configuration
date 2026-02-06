@@ -111,7 +111,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             eventWithState("validAppealCreated", "validAppeal")
                 .initiatesTaskWithDelay("reviewValidAppeal",
-                                        "Review Valid Appeal - CTSC", 1, 5)
+                                        "CTSC - Review Valid Appeal", 1, 5)
                 .build(),
             eventWithState("readyToList", "listingError")
                 .initiatesTask("reviewListingError",
