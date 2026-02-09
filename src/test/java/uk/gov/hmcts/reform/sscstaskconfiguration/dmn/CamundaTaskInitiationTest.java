@@ -62,7 +62,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
-                .withCaseData("dwpFurtherInfo", true)
+                .withCaseData("ftaResponseReviewRequired", true)
                 .initiatesTask("reviewFtaResponse", "CTSC - Review FTA Response", 2)
                 .build(),
             event("dwpChallengeValidity")
@@ -70,13 +70,14 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                "Review FTA validity challenge - LO", 2)
                 .build(),
             event("dwpUploadResponse")
-                .withCaseData("dwpFurtherInfo", false)
+                .withCaseData("ftaResponseReviewRequired", false)
                 .build(),
             event("sendToAdmin")
                 .initiatesTask("reviewAdminAction", "CTSC - Review Admin Action", 5)
                 .build(),
             event("dwpUploadResponse")
                 .withCaseData("languagePreferenceWelsh", false)
+                .withCaseData("ftaResponseReviewRequired", false)
                 .build(),
             event("attachScannedDocs")
                 .withCaseData("languagePreferenceWelsh", true)
@@ -93,7 +94,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
-                .withCaseData("dwpFurtherInfo", false)
+                .withCaseData("ftaResponseReviewRequired", false)
                 .build(),
             event("uploadDocument")
                 .withCaseData("languagePreferenceWelsh", true)
@@ -158,6 +159,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("dwpUploadResponse")
                 .withCaseData("dwpEditedEvidenceReason", "phme")
+                .withCaseData("ftaResponseReviewRequired", false)
                 .initiatesTask("reviewPheRequestJudge", "Review PHE Request - Judge", 2)
                 .build(),
             event("updateNotListable")
@@ -349,6 +351,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("dwpUploadResponse")
                 .withCaseData("scannedDocumentTypes", List.of("audioDocument", "other"))
+                .withCaseData("ftaResponseReviewRequired", false)
                 .initiatesTask("processAudioVideoEvidence", "Process audio/video evidence - LO", 2)
                 .build(),
             event("uploadFurtherEvidence")
