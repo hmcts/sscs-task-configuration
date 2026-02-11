@@ -145,18 +145,11 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(47));
+        assertThat(logic.getRules().size(), is(45));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
         return Arguments.of(event, null, Arrays.stream(tasks).map(CamundaTaskCompletionTest::outputMap).collect(Collectors.toSet())
-        );
-    }
-
-    public static Arguments eventAutoCompletesTasks(String event, Map<String, Object> caseData, String... tasks) {
-        return Arguments.of(event,
-                            Map.of("Data", caseData),
-                            Arrays.stream(tasks).map(CamundaTaskCompletionTest::outputMap).collect(Collectors.toSet())
         );
     }
 
