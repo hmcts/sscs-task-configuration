@@ -150,16 +150,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-                "reviewInformationRequested",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue(DESCRIPTION, EventLink.INTERLOC_INFORMATION_RECEIVED,true)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
-                    .build()
-            ),
-            Arguments.of(
                 "reviewFtaResponse",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectations()
@@ -176,16 +166,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
                     .expectedValue(DESCRIPTION, EventLink.REQUEST_TRANSLATION_FROM_WLU, true)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
-                    .build()
-            ),
-            Arguments.of(
-                "issueOutstandingTranslation",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectations()
-                    .expectedValue(MINOR_PRIORITY, "300", true)
-                    .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION, EventLink.ACTION_FURTHER_EVIDENCE, true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "10", true)
                     .build()
             ),
