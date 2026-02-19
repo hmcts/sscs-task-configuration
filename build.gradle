@@ -202,7 +202,7 @@ dependencyManagement {
   dependencies {
 
     // CVE-2023-2976, CVE-2018-10237, CVE-2020-8908 - due to sonar-pitest-plugin
-    dependency group: 'com.google.guava', name: 'guava',version: '32.1.3-jre'
+    dependency group: 'com.google.guava', name: 'guava',version: '33.5.0-jre'
 
     // CVE-2025-48924
     dependency group: 'org.apache.commons', name: 'commons-lang3', version: '3.20.0'
