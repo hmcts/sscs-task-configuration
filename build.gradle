@@ -109,7 +109,7 @@ tasks.register('tests') {
 
 checkstyle {
   maxWarnings = 0
-  toolVersion = '10.26.1'
+  toolVersion = '13.2.0'
   getConfigDirectory().set(new File(rootDir, 'config/checkstyle'))
 }
 
