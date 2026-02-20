@@ -20,17 +20,6 @@
           <text>"CTSC - Review Incomplete Appeal"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_00z88kj">
-        <inputEntry id="UnaryTests_1tknaxp">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0c2hvz9">
-          <text>"reviewInformationRequested"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1pci7yh">
-          <text>"Review Information Requested - CTSC"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1iupvws">
         <inputEntry id="UnaryTests_04hjlvt">
           <text></text>
@@ -62,17 +51,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0sord3s">
           <text>"Review Bi-Lingual Document - CTSC"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_15lvs3k">
-        <inputEntry id="UnaryTests_0j6zcy8">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0boca6l">
-          <text>"issueOutstandingTranslation"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0sb9mem">
-          <text>"Issue Outstanding Translation - CTSC"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1h6wr5e">

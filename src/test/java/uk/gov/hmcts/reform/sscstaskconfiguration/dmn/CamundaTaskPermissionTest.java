@@ -48,19 +48,9 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 Permissions.defaultCtscPermissions()
             ),
             Arguments.of(
-                "reviewInformationRequested",
-                "someCaseData",
-                Permissions.defaultCtscPermissions()
-            ),
-            Arguments.of(
                 "reviewBilingualDocument",
                 "someCaseData",
                 Permissions.defaultCtscPermissionsWithCompleteOwn()
-            ),
-            Arguments.of(
-                "issueOutstandingTranslation",
-                "someCaseData",
-                Permissions.defaultCtscPermissions()
             ),
             Arguments.of(
                 "reviewAdminAction",

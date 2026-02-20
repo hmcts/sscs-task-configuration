@@ -45,10 +45,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiatesTask("reviewIncompleteAppeal",
                                  "CTSC - Review Incomplete Appeal", 5)
                 .build(),
-            event("requestForInformation")
-                .initiatesTask("reviewInformationRequested",
-                               "Review Information Requested - CTSC", 3)
-                .build(),
             event("dwpSupplementaryResponse")
                 .initiatesTask("actionUnprocessedCorrespondence",
                                "CTSC - Action Unprocessed Correspondence", 10)
@@ -105,11 +101,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
                 .initiatesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request - Judge", 2)
                 .build(),
-            event("uploadWelshDocument")
-                .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
-                .initiatesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
-                               10, "Translation Tasks")
-                .build(),
             eventWithState("validAppealCreated", "validAppeal")
                 .initiatesTaskWithDelay("reviewValidAppeal",
                                         "Review Valid Appeal - CTSC", 1, 5)
@@ -136,18 +127,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                10, "Translation Tasks")
                 .initiatesTask("actionUnprocessedCorrespondence", "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
-            event("uploadWelshDocument")
-                .initiatesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
-                               10, "Translation Tasks")
-                .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
                 .initiatesTask("reviewConfidentialityRequest", "Review Confidentiality Request - Judge", 2)
-                .build(),
-            event("uploadWelshDocument")
-                .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
-                .initiatesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
-                               10, "Translation Tasks")
                 .build(),
             event("manageWelshDocuments")
                 .withCaseData("scannedDocumentTypes", List.of("confidentialityRequest"))
@@ -169,11 +151,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("actionPostponementRequest")
                 .withCaseData("action", "reviewByJudge")
                 .initiatesTask("reviewPostponementRequestJudge", "Review Postponement Request - Judge", 2)
-                .build(),
-            event("uploadWelshDocument")
-                .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
-                .initiatesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
-                               10, "Translation Tasks")
                 .build(),
             event("manageWelshDocuments")
                 .withCaseData("scannedDocumentTypes", List.of("urgentHearingRequest"))
@@ -296,11 +273,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .withCaseData("action", "reviewByTcw")
                 .withCaseData("interlocReferralReason", "adviceOnHowToProceed")
                 .initiatesTask("referredByAdminTcw", "Referred by Admin - LO", 2)
-                .build(),
-            event("uploadWelshDocument")
-                .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
-                .initiatesTask("issueOutstandingTranslation", "Issue Outstanding Translation - CTSC",
-                               10, "Translation Tasks")
                 .build(),
             event("manageWelshDocuments")
                 .withCaseData("scannedDocumentTypes", List.of("postponementRequest"))
@@ -570,7 +542,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(79));
+        assertThat(logic.getRules().size(), is(77));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
