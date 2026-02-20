@@ -39,6 +39,8 @@ public interface EventLink {
     String REVIEW_PH_APP = eventLink("Review Post Hearing App", "postHearingReview");
     String WRITE_SOR = eventLink("Write SOR", "sORWrite");
     String MANAGE_DOCUMENTS = eventLink("Manage Documents", "uploadDocument");
+    String UPLOAD_WELSH_DOC = eventLink("Welsh - upload translated doc", "uploadWelshDocument");
+    String CANCEL_TRANSLATIONS = eventLink("Welsh - cancel translations", "cancelTranslations");
 
     static String eventLink(String description, String eventId) {
         return String.format("[%s](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/%s)", description, eventId);
