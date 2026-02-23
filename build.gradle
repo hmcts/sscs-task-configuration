@@ -105,7 +105,7 @@ tasks.register('tests') {
 
 checkstyle {
   maxWarnings = 0
-  toolVersion = '13.1.0'
+  toolVersion = '13.2.0'
   getConfigDirectory().set(new File(rootDir, 'config/checkstyle'))
 }
 
@@ -257,7 +257,7 @@ dependencies {
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
 
   implementation group: 'org.camunda.bpm', name: 'camunda-external-task-client', version: versions.camunda
-  implementation group: 'org.pitest', name: 'pitest', version: '1.21.1'
+  implementation group: 'org.pitest', name: 'pitest', version: '1.22.1'
 
   implementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
   implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.5'
