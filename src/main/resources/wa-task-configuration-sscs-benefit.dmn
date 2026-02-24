@@ -697,6 +697,24 @@ else ""</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1arlkmn">
+        <inputEntry id="UnaryTests_17gql46">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0myn66m">
+          <text>"reviewValidAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kj8no4">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lk2xsb">
+          <text>"[Welsh - upload translated doc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/uploadWelshDocument)&lt;br/&gt;" +
+"[Welsh - cancel translations](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/cancelTranslations)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b58p77">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0cqgoy1">
         <inputEntry id="UnaryTests_1aijp72">
           <text></text>
