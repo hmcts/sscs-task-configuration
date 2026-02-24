@@ -50,7 +50,18 @@
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0r43kqg">
-          <text>"Action Unprocessed Correspondence - CTSC"</text>
+          <text>"CTSC - Action Unprocessed Correspondence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zbc76p">
+        <inputEntry id="UnaryTests_1w8nkp9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k4u4u6">
+          <text>"actionUnprocessedCorrespondenceDormant"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1chvsqv">
+          <text>"CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_109jxmd">
