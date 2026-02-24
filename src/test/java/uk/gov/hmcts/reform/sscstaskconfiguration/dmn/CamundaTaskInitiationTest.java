@@ -61,6 +61,30 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .initiatesTask("actionUnprocessedCorrespondence",
                                "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
+            eventWithState("dwpSupplementaryResponse", "dormantAppealState")
+                .initiatesTask("actionUnprocessedCorrespondenceDormant",
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
+                .build(),
+            eventWithState("dwpSupplementaryResponse", "postHearing")
+                .initiatesTask("actionUnprocessedCorrespondenceDormant",
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
+                .build(),
+            eventWithState("attachScannedDocs", "dormantAppealState")
+                .initiatesTask("actionUnprocessedCorrespondenceDormant",
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
+                .build(),
+            eventWithState("attachScannedDocs", "postHearing")
+                .initiatesTask("actionUnprocessedCorrespondenceDormant",
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
+                .build(),
+            eventWithState("uploadDocumentFurtherEvidence", "dormantAppealState")
+                .initiatesTask("actionUnprocessedCorrespondenceDormant",
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
+                .build(),
+            eventWithState("uploadDocumentFurtherEvidence", "postHearing")
+                .initiatesTask("actionUnprocessedCorrespondenceDormant",
+                               "CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing", 10)
+                .build(),
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("ftaResponseReviewRequired", true)
                 .initiatesTask("reviewFtaResponse", "CTSC - Review FTA Response", 2)
@@ -570,7 +594,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(79));
+        assertThat(logic.getRules().size(), is(80));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {
