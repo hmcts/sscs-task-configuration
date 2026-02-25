@@ -4,24 +4,20 @@ plugins {
   id 'pmd'
   id 'jacoco'
   id 'io.spring.dependency-management' version '1.1.7'
-  id 'org.springframework.boot' version '3.5.7'
+  id 'org.springframework.boot' version '3.5.10'
   id 'com.github.ben-manes.versions' version '0.53.0'
-  id 'org.owasp.dependencycheck' version '12.1.2'
-  id 'org.sonarqube' version '7.0.1.6134'
+  id 'org.owasp.dependencycheck' version '12.2.0'
+  id 'org.sonarqube' version '7.2.2.6593'
   id 'info.solidsoft.pitest' version '1.15.0'
-  id 'io.freefair.lombok' version '9.1.0'
+  id 'io.freefair.lombok' version '9.2.0'
 }
-
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: "info.solidsoft.pitest"
 
 group = 'uk.gov.hmcts.reform'
 version = '0.0.1'
 
 java {
   toolchain {
-    languageVersion = JavaLanguageVersion.of(17)
+    languageVersion = JavaLanguageVersion.of(21)
   }
 }
 
@@ -109,12 +105,12 @@ tasks.register('tests') {
 
 checkstyle {
   maxWarnings = 0
-  toolVersion = '10.12.4'
+  toolVersion = '13.2.0'
   getConfigDirectory().set(new File(rootDir, 'config/checkstyle'))
 }
 
 pmd {
-  toolVersion = "7.18.0"
+  toolVersion = "7.21.0"
   sourceSets = [sourceSets.main]
   reportsDir = layout.buildDirectory.dir("reports/pmd").get().asFile
   // https://github.com/pmd/pmd/issues/876
@@ -201,24 +197,15 @@ dependencyCheck {
 dependencyManagement {
   dependencies {
 
-    // CVE-2023-2976, CVE-2018-10237, CVE-2020-8908 - due to sonar-pitest-plugin
-    dependency group: 'com.google.guava', name: 'guava',version: '32.0.1-jre'
-
     // CVE-2025-48924
     dependency group: 'org.apache.commons', name: 'commons-lang3', version: '3.20.0'
-
-    // CVE-2025-48734 - only used by checkstyle
-    dependency group: 'commons-beanutils', name: 'commons-beanutils', version: '1.11.0'
-
-    // CVE-2020-13956 - used by camunda
-    dependency group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.14'
   }
 }
 
 repositories {
   mavenLocal()
   maven {
-    url 'https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1'
+    url = 'https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1'
   }
   mavenCentral()
 }
@@ -233,11 +220,11 @@ configurations {
 }
 
 def versions = [
-  junit           : '5.14.0',
-  junitPlatform   : '1.14.0',
-  reformLogging   : '6.1.9',
-  camunda         : '7.17.0',
-  tomcat          : '11.0.12'
+  junit           : '5.14.3',
+  junitPlatform   : '1.14.3',
+  log4j           : '2.25.3',
+  camunda         : '7.20.0',
+  tomcat          : '11.0.18'
 ]
 
 ext.libraries = [
@@ -257,11 +244,11 @@ dependencies {
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: springBoot.class.package.implementationVersion
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json', version: springBoot.class.package.implementationVersion
 
-  implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.8.13'
+  implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.8.15'
 
-  implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: versions.reformLogging
-  implementation group: 'com.github.hmcts.java-logging', name: 'logging-appinsights', version: versions.reformLogging
-  implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '8.1'
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: '7.0.0'
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging-appinsights', version: '6.1.9'
+  implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '9.0'
 
   implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j
   implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: versions.log4j
@@ -270,15 +257,12 @@ dependencies {
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
 
   implementation group: 'org.camunda.bpm', name: 'camunda-external-task-client', version: versions.camunda
-
-  implementation group: 'org.pitest', name: 'pitest', version: '1.21.1'
-  implementation group:'info.solidsoft.gradle.pitest', name: 'gradle-pitest-plugin', version: pitest.pitestVersion.get()
-  implementation group:'org.codehaus.sonar-plugins', name:'sonar-pitest-plugin', version: '0.5'
+  implementation group: 'org.pitest', name: 'pitest', version: '1.22.1'
 
   implementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
-  implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.4'
+  implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.5'
 
-  testImplementation(platform('org.junit:junit-bom:5.14.0'))
+  testImplementation(platform('org.junit:junit-bom:5.14.3'))
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
   testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', {
     exclude group: 'junit', module: 'junit'
@@ -286,11 +270,11 @@ dependencies {
   }
 
   testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: versions.camunda
-  testImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
+  testImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '15.0.0'
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: versions.camunda
-  testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+  testImplementation group: 'com.h2database', name: 'h2', version: '2.4.240'
   testImplementation group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
-  testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.5.5'
+  testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '6.0.0'
 
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath

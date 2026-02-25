@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
-  <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN" camunda:historyTimeToLive="P90D">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.39.0">
+  <decision id="wa-task-configuration-sscs-benefit" name="Task configuration DMN">
     <informationRequirement id="InformationRequirement_0l9qrru">
       <requiredDecision href="#sscs-task-configuration-non-working-days" />
     </informationRequirement>
@@ -146,7 +146,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j3y284">
-          <text>"reviewIncompleteAppeal","ftaReplyOverdueIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw"</text>
+          <text>"reviewIncompleteAppeal","ftaReplyOverdueIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","contactParties","referredByJudge","referredByAdminTcw"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0of78np">
           <text></text>
@@ -246,7 +246,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14syl1g">
-          <text>"reviewIncompleteAppeal","ftaReplyOverdueIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","uploadHearingRecordingSORCTSC","reviewPostHearingNoticeforListingRequirements","reviewCorrectionApplicationAdmin","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewSpecificAccessRequestCTSC"</text>
+          <text>"reviewIncompleteAppeal","ftaReplyOverdueIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant","reviewFtaDueDate","reviewValidAppeal","reviewListingError","reviewRoboticFail","reviewBfDate","reviewOutstandingDraftDecision","uploadHearingRecordingSORCTSC","reviewPostHearingNoticeforListingRequirements","reviewCorrectionApplicationAdmin","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewSpecificAccessRequestCTSC"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1capxt9">
           <text></text>
@@ -516,7 +516,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_168dkl4">
-          <text>"ftaReplyOverdueIncompleteAppeal","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewRemittedDecisionandProvideListingDirections","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge","updateHearingDetails","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication"</text>
+          <text>"ftaReplyOverdueIncompleteAppeal","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant","reviewListingError","allocateCaseRolesAndCreateBundle","reviewRemittedDecisionandProvideListingDirections","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge","updateHearingDetails","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1659cfb">
           <text></text>
@@ -599,7 +599,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hvpmuj">
-          <text>"ftaReplyOverdueIncompleteAppeal","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewListingError","allocateCaseRolesAndCreateBundle","reviewRemittedDecisionandProvideListingDirections","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge","updateHearingDetails","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication","uploadHearingRecordingSORCTSC"</text>
+          <text>"ftaReplyOverdueIncompleteAppeal","reviewFtaResponse","reviewBilingualDocument","reviewAdminAction","issueOutstandingTranslation","actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant","reviewListingError","allocateCaseRolesAndCreateBundle","reviewRemittedDecisionandProvideListingDirections","reviewCorrectionApplicationAdmin","reviewApplicationandAllocateJudge","updateHearingDetails","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication","uploadHearingRecordingSORCTSC"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_016a33z">
           <text></text>
@@ -782,7 +782,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_18vuxqa">
-          <text>"actionUnprocessedCorrespondence"</text>
+          <text>"actionUnprocessedCorrespondence", "actionUnprocessedCorrespondenceDormant"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0unalkf">
           <text></text>
@@ -839,6 +839,27 @@ else ""</text>
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0vupygp">
+        <inputEntry id="UnaryTests_1ua185u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pj5rsu">
+          <text>"reviewValidAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03w1lel">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18d4faw">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pgvfba">
+          <text>"[Welsh - upload translated doc](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/uploadWelshDocument)&lt;br/&gt;" +
+"[Welsh - cancel translations](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/cancelTranslations)"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w3j2q6">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0cqgoy1">
         <inputEntry id="UnaryTests_1aijp72">
           <text></text>
@@ -874,8 +895,7 @@ else ""</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1s2f9ma">
-          <text>"[Update Listing Requirements](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/updateListingRequirements)&lt;br/&gt;" +
-"[Ready to list](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/readyToList)"</text>
+          <text>"[Update Listing Requirements](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/updateListingRequirements)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j27evi">
           <text>true</text>
@@ -1654,7 +1674,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1swv4p3">
-          <text>"reviewIncompleteAppeal","reviewValidAppeal","reviewBfDate","updateHearingDetails","reviewAdminAction"</text>
+          <text>"reviewIncompleteAppeal","reviewFtaResponse","reviewValidAppeal","reviewBfDate","updateHearingDetails","reviewAdminAction"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1lycxbq">
           <text></text>
@@ -1694,7 +1714,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_035g0v3">
-          <text>"ftaReplyOverdueIncompleteAppeal","reviewFtaResponse","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","referredByTcwPreHearing","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","uploadHearingRecordingSORCTSC","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","provideListingDirections"</text>
+          <text>"ftaReplyOverdueIncompleteAppeal","reviewFtaDueDate","reviewConfidentialityRequest","reviewReinstatementRequestJudge","reviewUrgentHearingRequest","referredByTcwPreHearing","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","referredByAdminJudgePreHearing","confirmPanelComposition","referredToInterlocJudge","reviewFtaValidityChallenge","ftaRequestTimeExtension","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","uploadHearingRecordingSORCTSC","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewStatementofReasons","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewLateStatementofReasonsApplication","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","provideListingDirections"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0z4akm5">
           <text></text>
@@ -1714,7 +1734,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dlxkjg">
-          <text>"reviewBilingualDocument","issueOutstandingTranslation","actionUnprocessedCorrespondence","reviewPostHearingNoticeforListingRequirements"</text>
+          <text>"reviewBilingualDocument","issueOutstandingTranslation","actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant","reviewPostHearingNoticeforListingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1kzet5u">
           <text></text>
