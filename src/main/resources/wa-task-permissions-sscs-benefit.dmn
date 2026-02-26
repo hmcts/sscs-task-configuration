@@ -206,7 +206,7 @@ else
       </rule>
       <rule id="DecisionRule_0bejz5k">
         <inputEntry id="UnaryTests_1fx13zh">
-          <text>"reviewConfidentialityRequest","reviewUrgentHearingRequest","referredByTcwPreHearing","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","reviewReinstatementRequestJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","referredByAdminJudgePreHearing","confirmPanelComposition","ftaRequestTimeExtension","referredToInterlocJudge","contactParties","reviewFtaValidityChallenge","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewLateStatementofReasonsApplication","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","updateHearingDetails","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewStatementofReasons","writeStatementofReason","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestCTSC","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","provideListingDirections","reviewFailedFE"</text>
+          <text>"reviewConfidentialityRequest","reviewUrgentHearingRequest","referredByTcwPreHearing","prepareForHearingJudge","writeDecisionJudge","issueDecisionJudge","reviewReinstatementRequestJudge","reviewPheRequestJudge","ftaNotProvidedAppointeeDetailsJudge","reviewPostponementRequestJudge","allocateCaseRolesAndCreateBundle","reviewOutstandingDraftDecision","referredByAdminJudgePreHearing","confirmPanelComposition","ftaRequestTimeExtension","referredToInterlocJudge","contactParties","reviewFtaValidityChallenge","prepareForHearingTribunalMember1","prepareForHearingTribunalMember2","prepareForHearingTribunalMember3","reviewPostponementRequestTCW","referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence","reviewNonCompliantAppeal","ftaNotProvidedAppointeeDetailsTcw","referredByAdminTcw","reviewLibertytoApplyApplication","reviewCorrectionApplicationJudge","reviewLateStatementofReasonsApplication","reviewPermissiontoAppealApplication","reviewRemittedDecisionandProvideListingDirections","reviewSetAsideApplication","updateHearingDetails","referredByAdminJudgePostHearing","referredByTcwPostHearing","reviewStatementofReasons","writeStatementofReason","prepareHearingAppraiser1","prepareHearingAppraiser2","reviewSpecificAccessRequestCTSC","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","provideListingDirections"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nwwpsw">
           <text></text>
@@ -1039,7 +1039,7 @@ else
       <rule id="DecisionRule_19cn0u8">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1vcxbly">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","reviewFtaDueDate","reviewListingError","reviewBfDate","reviewFailedFE"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","reviewFtaDueDate","reviewListingError","reviewBfDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hxa6gg">
           <text></text>
@@ -1120,7 +1120,7 @@ else
       <rule id="DecisionRule_06439sc">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_1uojej9">
-          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
+          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewFailedFE"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p2b6fz">
           <text></text>
@@ -1147,7 +1147,7 @@ else
       <rule id="DecisionRule_0e3j7rq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1kh84kf">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewListingError","reviewBfDate","reviewFailedFE"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewListingError","reviewBfDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0e41w3x">
           <text></text>
@@ -1309,7 +1309,7 @@ else
       <rule id="DecisionRule_0n0jktj">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_02vbxbe">
-          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
+          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewFailedFE"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0us0gct">
           <text></text>
@@ -1336,7 +1336,7 @@ else
       <rule id="DecisionRule_0i02y1i">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_1wlb5b2">
-          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
+          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewFailedFE"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0afwv2g">
           <text></text>
@@ -1363,7 +1363,7 @@ else
       <rule id="DecisionRule_0q51lrq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_03ctmk1">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","reviewFtaDueDate","reviewListingError","reviewBfDate","reviewFailedFE"</text>
+          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewFtaResponse","reviewAdminAction","issueOutstandingTranslation","reviewFtaDueDate","reviewListingError","reviewBfDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tw6aye">
           <text></text>
@@ -1441,7 +1441,7 @@ else
       </rule>
       <rule id="DecisionRule_0z1t4ev">
         <inputEntry id="UnaryTests_0hn5txp">
-          <text>"reviewCorrectionApplicationAdmin","reviewRoboticFail","shareRemittedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewCorrectionApplicationAdmin","reviewRoboticFail","shareRemittedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin","reviewFailedFE"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0mhs9zz">
           <text></text>

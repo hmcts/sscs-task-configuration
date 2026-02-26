@@ -1391,7 +1391,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
                     Permissions.DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS,
-                    Permissions.DEFAULT_CTSC_CHALLENGED_ACCESS_PERMISSIONS,
                     Permissions.DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
                     Permissions.DEFAULT_HEARING_JUDGE_PERMISSIONS,
                     Permissions.DEFAULT_JUDGE_PERMISSIONS,
@@ -1411,9 +1410,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Permissions.DEFAULT_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
                     Permissions.DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
-                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "CTSC", 1,true),
-                    permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign", "CTSC", false),
-                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel", "CTSC", false)
+                    permission("allocated-ctsc-caseworker","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", 1,true),
+                    permission("ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", false),
+                    permission("challenged-access-ctsc","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn", "CTSC", false),
+                    permission("ctsc-team-leader","Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete", "CTSC", false)
                 )
             )
         );
