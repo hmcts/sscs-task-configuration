@@ -368,7 +368,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ConfigurationExpectationBuilder.defaultExpectations()
                     .expectedValue(MINOR_PRIORITY, "300", true)
                     .expectedValue(MAJOR_PRIORITY, "3000", true)
-                    .expectedValue(DESCRIPTION, "Manual Task Completion Required", true)
+                    .expectedValue(DESCRIPTION, buildDescription(EventLink.REISSUE_FURTHER_EVIDENCE), true)
                     .expectedValue(DUE_DATE_INTERVAL_DAYS, "3", true)
                     .build()
             ),
