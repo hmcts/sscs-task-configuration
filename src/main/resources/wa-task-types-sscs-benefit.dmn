@@ -160,7 +160,7 @@
           <text>"reviewRoboticFail"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1i6rti9">
-          <text>"Review Robotic Fail - CTSC"</text>
+          <text>"CTSC - Review Robotic Fail"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1l3i3xt">
