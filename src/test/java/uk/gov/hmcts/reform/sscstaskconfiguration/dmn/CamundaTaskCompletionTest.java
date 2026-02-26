@@ -126,8 +126,11 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                                     "reviewLateStatementofReasonsApplication", "reviewPermissiontoAppealApplication",
                                     "reviewSetAsideApplication", BLANK),
             eventAutoCompletesTasks("addNote", "provideListingDirections", BLANK),
-            eventAutoCompletesTasks("uploadDocument", "actionUnprocessedCorrespondence", BLANK),
-            eventAutoCompletesTasks("resendCaseToGAPS2", "reviewRoboticFail", BLANK)
+            eventAutoCompletesTasks("uploadDocument", "actionUnprocessedCorrespondence",
+                                    "actionUnprocessedCorrespondenceDormant", BLANK),
+            eventAutoCompletesTasks("resendCaseToGAPS2", "reviewRoboticFail", BLANK),
+            eventAutoCompletesTasks("uploadDocument", "actionUnprocessedCorrespondence",
+                                    "actionUnprocessedCorrespondenceDormant", BLANK)
         );
     }
 
