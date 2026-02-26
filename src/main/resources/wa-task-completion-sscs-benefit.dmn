@@ -86,6 +86,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0vf7f4p">
+        <inputEntry id="UnaryTests_1lqfgiv">
+          <text>"actionFurtherEvidence", "uploadDocument"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jty16c">
+          <text>"actionUnprocessedCorrespondenceDormant"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07aynso">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_14ekhb1">
         <inputEntry id="UnaryTests_096dkp4">
           <text>"validSendToInterloc"</text>

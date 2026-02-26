@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.39.0">
   <decision id="wa-task-initiation-sscs-benefit" name="Task initiation DMN" camunda:historyTimeToLive="P90D">
     <informationRequirement id="InformationRequirement_0tjxocg">
       <requiredDecision href="#sscs-task-initiation-date-calculation-defaults" />
@@ -27,18 +27,18 @@
       <input id="InputClause_01ru66y" label="HMCTS DWP State" camunda:inputVariable="hmctsDwpState">
         <inputExpression id="LiteralExpression_1s762de">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.hmctsDwpState != null)
-            then additionalData.Data.hmctsDwpState
-            else null
-          </text>
+                  then additionalData.Data.hmctsDwpState
+                  else null
+                </text>
         </inputExpression>
       </input>
-      <input id="InputClause_09qqpx6" label="DWP Further Info" camunda:inputVariable="dwpFurtherInfo">
+      <input id="InputClause_09qqpx6" label="FTA Response Review Required" camunda:inputVariable="ftaResponseReviewRequired">
         <inputExpression id="LiteralExpression_0nsfl92" typeRef="boolean">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.dwpFurtherInfo
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.ftaResponseReviewRequired
             != null) then
-            additionalData.Data.dwpFurtherInfo
+            additionalData.Data.ftaResponseReviewRequired
             else
-            null</text>
+            true</text>
         </inputExpression>
       </input>
       <input id="InputClause_19ghw9y" label="Language Preference Welsh" biodi:width="153" camunda:inputVariable="languagePreferenceWelsh">
@@ -241,14 +241,11 @@ else []</text>
           </text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="296"/>
-      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234"/>
-      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer"
-              biodi:width="955"/>
-      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer"
-              biodi:width="208"/>
-      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string"
-              biodi:width="273"/>
+      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="296" />
+      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="234" />
+      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="955" />
+      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="208" />
+      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="273" />
       <rule id="DecisionRule_1xca00x">
         <inputEntry id="UnaryTests_0m0pdx9">
           <text>"draftToIncompleteApplication", "incompleteApplicationReceived"</text>
@@ -879,6 +876,98 @@ else []</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1l3zbqn">
           <text>"actionUnprocessedCorrespondence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1aj89wi">
+        <inputEntry id="UnaryTests_0ylet2x">
+          <text>"dwpSupplementaryResponse",
+"attachScannedDocs",
+"uploadDocumentFurtherEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10dqmh7">
+          <text>"dormantAppealState", "postHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vk9fyd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hvszl2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cz4ntg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a8u660">
+          <text>not(contains(scannedDocumentTypes, "audioDocument") or
+contains(scannedDocumentTypes, "videoDocument"))</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hb0y8y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e1v82l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nln1jj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vxhjp7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cppb7e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_000look">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fjrjk4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nufv80">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vx9gzr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rugzmy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lkc9u3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qq7btc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vnjy94">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vp6hu0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_185af6b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04nlywd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e6fdyq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17443sn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xb9vg2">
+          <text>"actionUnprocessedCorrespondenceDormant"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sdtadi">
+          <text>"CTSC - Action Unprocessed Correspondence - Dormant/Post Hearing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jpc2av">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09x8btn">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ef0voe">
+          <text>"actionUnprocessedCorrespondenceDormant"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_15u0n7b">
@@ -2030,7 +2119,7 @@ else []</text>
           <text>"reviewValidAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0omk3t0">
-          <text>"Review Valid Appeal - CTSC"</text>
+          <text>"CTSC - Review Valid Appeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jsyluq">
           <text>1</text>
@@ -7425,19 +7514,18 @@ else 28</text>
       </rule>
     </decisionTable>
   </decision>
-  <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults"
-            camunda:historyTimeToLive="P90D">
+  <decision id="sscs-task-initiation-date-calculation-defaults" name="Date Calculation Defaults" camunda:historyTimeToLive="P90D">
     <informationRequirement id="InformationRequirement_0tk6k3u">
-      <requiredDecision href="#Decision_1n3y86t"/>
+      <requiredDecision href="#Decision_1n3y86t" />
     </informationRequirement>
     <informationRequirement id="InformationRequirement_0tx6qya">
-      <requiredDecision href="#Decision_1n3y86t"/>
+      <requiredDecision href="#Decision_1n3y86t" />
     </informationRequirement>
     <decisionTable id="DecisionTable_172aal0">
       <input id="InputClause_1ivphcb" biodi:width="150">
-        <inputExpression id="LiteralExpression_1q5ra4z" typeRef="string"/>
+        <inputExpression id="LiteralExpression_1q5ra4z" typeRef="string" />
       </input>
-      <output id="OutputClause_09u4yj0" label="date_defaults_1" name="date_defaults_1" typeRef="" biodi:width="699"/>
+      <output id="OutputClause_09u4yj0" label="date_defaults_1" name="date_defaults_1" typeRef="" biodi:width="699" />
       <rule id="DecisionRule_1hf309o">
         <inputEntry id="UnaryTests_14er03w">
           <text></text>
@@ -7507,8 +7595,7 @@ null</text>
           </text>
         </inputExpression>
       </input>
-      <output id="OutputClause_1riazgo" label="Label" name="interlocReferralReasonLabel" typeRef="string"
-              biodi:width="655"/>
+      <output id="OutputClause_1riazgo" label="Label" name="interlocReferralReasonLabel" typeRef="string" biodi:width="655" />
       <rule id="DecisionRule_1dab8j9">
         <inputEntry id="UnaryTests_18nx4pb">
           <text>null</text>
