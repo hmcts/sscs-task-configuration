@@ -120,11 +120,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("ftaResponseReviewRequired", false)
                 .build(),
-            event("uploadDocument")
-                .withCaseData("languagePreferenceWelsh", true)
-                .initiatesTask("reviewBilingualDocument",
-                               "CTSC - Review Bi-Lingual Document", 10, "Translation Tasks")
-                .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
                 .initiatesTask("reviewReinstatementRequestJudge", "Review Reinstatement Request - Judge", 2)
