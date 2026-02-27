@@ -20,6 +20,17 @@
           <text>"CTSC - Review Incomplete Appeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_077dd1i">
+        <inputEntry id="UnaryTests_0m1nd57">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j2iqle">
+          <text>"ftaReplyOverdueIncompleteAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gx9nos">
+          <text>"CTSC - FTA reply overdue - Incomplete appeal"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_00z88kj">
         <inputEntry id="UnaryTests_1tknaxp">
           <text></text>

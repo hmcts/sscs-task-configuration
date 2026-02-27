@@ -48,6 +48,11 @@ public class InitiationScenarioBuilder {
         return this;
     }
 
+    public InitiationScenarioBuilder initiatesTaskWithProcessCategories(String taskId, String name,
+                                                                        int workingDaysAllowed, String processCategories) {
+        return initiatesTask(taskId, name, workingDaysAllowed, processCategories);
+    }
+
     public InitiationScenarioBuilder initiatesTaskWithDelay(String taskId,
                                                             String name,
                                                             int delayDuration,
