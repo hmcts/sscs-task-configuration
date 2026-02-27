@@ -233,7 +233,7 @@ public class Permissions {
         "roleCategory", "JUDICIAL"
     );
 
-    public static List<Map<String, Object>> defaultCtscPermissionsWithCancelOwn(){
+    public static List<Map<String, Object>> defaultCtscPermissionsWithCancelOwn() {
         return List.of(
             Permissions.DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             Permissions.DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
