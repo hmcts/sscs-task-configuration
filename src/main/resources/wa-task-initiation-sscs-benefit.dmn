@@ -495,7 +495,6 @@ else []</text>
       <rule id="DecisionRule_0ayetr8">
         <inputEntry id="UnaryTests_06b2evz">
           <text>"dwpSupplementaryResponse",
-"uploadDocument",
 "attachScannedDocs",
 "uploadDocumentFurtherEvidence"</text>
         </inputEntry>
@@ -569,7 +568,7 @@ else []</text>
           <text>"reviewBilingualDocument"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1oph97h">
-          <text>"Review Bi-Lingual Document - CTSC"</text>
+          <text>"CTSC - Review Bi-Lingual Document"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1uf6uj8">
           <text></text>
