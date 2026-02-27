@@ -761,7 +761,7 @@ else ""</text>
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0v92b91">
-          <text>"[Reissue further evidence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reissueFurtherEvidence)"</text>
+          <text>"[Reissue further evidence](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/reissueFurtherEvidence)&lt;br/&gt;" + "This task needs to be manually closed"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03e7ihc">
           <text>true</text>
