@@ -320,6 +320,94 @@ else []</text>
           <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1gvns56">
+        <inputEntry id="UnaryTests_1meyhxx">
+          <text>"overdueFtaResponse"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0my9jnu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0abp1jk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jid5mi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n6qzgi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nx3awd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u1tn92">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e3kkfw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07f2rlz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09zmzrl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02k3rjn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13b5y1y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19soyaz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qwqs69">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17z2kp0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1in1q6x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06ow3e5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ni9nho">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05nrpxn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v7i6qa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lr5o3b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wvcg7p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fhfdhy">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v6sk5k">
+          <text>"ftaReplyOverdueIncompleteAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0awlcot">
+          <text>"CTSC - FTA reply overdue - Incomplete appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i80xqt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17mnhwa">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1folck0">
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.waTaskFtaCommunicationId!= null and additionalData.Data.waTaskFtaCommunicationId!= "")
+	then "ftaCommunicationId_"+additionalData.Data.waTaskFtaCommunicationId
+else "ftaCommunicationId_1234"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_02rz2kk">
         <inputEntry id="UnaryTests_0rqm4u2">
           <text>"requestForInformation"</text>

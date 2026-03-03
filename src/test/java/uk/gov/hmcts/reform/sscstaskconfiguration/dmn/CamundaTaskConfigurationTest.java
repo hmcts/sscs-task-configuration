@@ -20,6 +20,7 @@ import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.ConfigurationExpec
 import static uk.gov.hmcts.reform.sscstaskconfiguration.utils.EventLink.caseLink;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -147,6 +148,16 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                                    CourtSpecificCalendars.SCOTLAND_CALENDAR, true)
                     .expectedValue(DESCRIPTION,
                                    buildDescription(EventLink.FTA_COMMUNICATION, EventLink.CASE_UPDATED),true)
+                    .build()
+            ),
+            Arguments.of(
+                "ftaReplyOverdueIncompleteAppeal",
+                CaseDataBuilder.defaultCase().build(),
+                ConfigurationExpectationBuilder.defaultExpectations()
+                    .expectedValue(MINOR_PRIORITY, "300", true)
+                    .expectedValue(MAJOR_PRIORITY, "3000", true)
+                    .expectedValue(DESCRIPTION, EventLink.FTA_COMMUNICATION,true)
+                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
                     .build()
             ),
             Arguments.of(
@@ -995,6 +1006,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskType", taskType);
         inputVariables.putValue("caseData", caseData);
+        inputVariables.putValue(
+            "taskAttributes",
+            Map.of("taskId", "1234",
+                   "name", "workType"
+            ));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -1013,6 +1029,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskType", taskType);
         inputVariables.putValue("caseData", caseData);
+
         inputVariables.putValue("taskAttributes", Map.of(
             "taskType", taskType,
             "taskId", "taskId",
@@ -1028,7 +1045,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(84));
+        assertThat(logic.getRules().size(), is(86));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {
@@ -1089,5 +1106,28 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "sscs-task-configuration-non-working-days", inputVariables);
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+    @Test
+    void when_ftaReplyOverdueIncompleteAppeal_then_return_ftaCommunicationId() {
+
+        Map<String, Object> caseData = new HashMap<>();
+
+        caseData.put("waTaskFtaCommunicationId", "ftaCommunicationId");
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("caseData", caseData);
+        String ftaCommunicationId = "ftaCommunicationId";
+        inputVariables.putValue("taskAttributes", Map.of(
+            "taskType", "ftaReplyOverdueIncompleteAppeal",
+            "__processCategory__ftaCommunicationId_" + ftaCommunicationId, false
+        ));
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "canReconfigure", false,
+            "name", "additionalProperties_ftaCommunicationId",
+            "value", ftaCommunicationId
+        )));
     }
 }

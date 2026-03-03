@@ -20,6 +20,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1slucpn">
+        <inputEntry id="UnaryTests_09bow65">
+          <text>"ftaCommunication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kvqlob">
+          <text>"ftaReplyOverdueIncompleteAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a24s6f">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_19hzqdb">
         <inputEntry id="UnaryTests_1i3a9vf">
           <text>"interlocInformationReceived","validSendToInterloc","interlocSendToTcw"</text>
