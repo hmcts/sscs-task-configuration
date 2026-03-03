@@ -1066,7 +1066,7 @@ else
       <rule id="DecisionRule_0tnerzn">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_1p95dss">
-          <text>"reviewBilingualDocument","reviewValidAppeal","reviewRoboticFail","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewValidAppeal","reviewRoboticFail","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sfltx1">
           <text></text>
@@ -1120,7 +1120,7 @@ else
       <rule id="DecisionRule_06439sc">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_1uojej9">
-          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
+          <text>"reviewBilingualDocument","reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p2b6fz">
           <text></text>
@@ -1201,7 +1201,7 @@ else
       <rule id="DecisionRule_1ixi90a">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_070qpxe">
-          <text>"reviewBilingualDocument","reviewRoboticFail","reviewValidAppeal","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewRoboticFail","reviewValidAppeal","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1mtnbmi">
           <text></text>
@@ -1228,7 +1228,7 @@ else
       <rule id="DecisionRule_1f9pv62">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_0zngexd">
-          <text>"reviewBilingualDocument","reviewRoboticFail","reviewValidAppeal","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewRoboticFail","reviewValidAppeal","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yrqcag">
           <text></text>
@@ -1309,7 +1309,7 @@ else
       <rule id="DecisionRule_0n0jktj">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_02vbxbe">
-          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
+          <text>"reviewBilingualDocument","reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0us0gct">
           <text></text>
@@ -1336,7 +1336,7 @@ else
       <rule id="DecisionRule_0i02y1i">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_1wlb5b2">
-          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
+          <text>"reviewBilingualDocument","reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0afwv2g">
           <text></text>
@@ -1441,7 +1441,7 @@ else
       </rule>
       <rule id="DecisionRule_0z1t4ev">
         <inputEntry id="UnaryTests_0hn5txp">
-          <text>"reviewCorrectionApplicationAdmin","reviewRoboticFail","shareRemittedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewBilingualDocument","reviewCorrectionApplicationAdmin","reviewRoboticFail","shareRemittedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0mhs9zz">
           <text></text>
@@ -1468,7 +1468,7 @@ else
       <rule id="DecisionRule_1x6hqz8">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_0qh8zyy">
-          <text>"reviewBilingualDocument","actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant","reviewValidAppeal","shareRemadeDecision","shareRefusedDecision"</text>
+          <text>"actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant","reviewValidAppeal","shareRemadeDecision","shareRefusedDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0z6yehi">
           <text></text>

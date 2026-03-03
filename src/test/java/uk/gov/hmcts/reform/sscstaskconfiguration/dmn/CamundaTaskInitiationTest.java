@@ -106,24 +106,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("attachScannedDocs")
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiatesTask("reviewBilingualDocument",
-                               "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
+                               "CTSC - Review Bi-Lingual Document", 10, "Translation Tasks")
                 .initiatesTask("actionUnprocessedCorrespondence",
                                "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             event("uploadDocumentFurtherEvidence")
                 .withCaseData("languagePreferenceWelsh", true)
                 .initiatesTask("reviewBilingualDocument",
-                               "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
+                               "CTSC - Review Bi-Lingual Document", 10, "Translation Tasks")
                 .initiatesTask("actionUnprocessedCorrespondence",
                                "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
             eventWithState("dwpUploadResponse", "withDwp")
                 .withCaseData("ftaResponseReviewRequired", false)
-                .build(),
-            event("uploadDocument")
-                .withCaseData("languagePreferenceWelsh", true)
-                .initiatesTask("reviewBilingualDocument",
-                               "Review Bi-Lingual Document - CTSC", 10, "Translation Tasks")
                 .build(),
             event("actionFurtherEvidence")
                 .withCaseData("scannedDocumentTypes", List.of("reinstatementRequest"))
@@ -156,7 +151,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             event("dwpSupplementaryResponse")
                 .withCaseData("languagePreferenceWelsh", true)
-                .initiatesTask("reviewBilingualDocument", "Review Bi-Lingual Document - CTSC",
+                .initiatesTask("reviewBilingualDocument", "CTSC - Review Bi-Lingual Document",
                                10, "Translation Tasks")
                 .initiatesTask("actionUnprocessedCorrespondence", "CTSC - Action Unprocessed Correspondence", 10)
                 .build(),
