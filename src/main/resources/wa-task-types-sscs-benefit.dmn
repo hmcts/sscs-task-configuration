@@ -702,6 +702,17 @@
           <text>"Issue Decision - Judge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0nl3orw">
+        <inputEntry id="UnaryTests_16hz681">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cxcoo9">
+          <text>"reviewFailedFE"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e5p4nk">
+          <text>"CTSC - Review Failed FE"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -1184,6 +1184,32 @@
           <text>"uploadHearingRecordingSORCTSC"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1qgctv3">
+        <inputEntry id="UnaryTests_10kqdtd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13wqm8s">
+          <text>"voidCase",
+"appealWithdrawn",
+"appealDormant",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15wuw0o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qujb9e">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ij6am5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06ztygv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yox31u">
+          <text>"reviewFailedFE"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

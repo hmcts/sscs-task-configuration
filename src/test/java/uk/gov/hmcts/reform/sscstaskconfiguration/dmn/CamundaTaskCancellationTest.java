@@ -69,6 +69,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByTcwPostHearing")
                 .cancel("prepareHearingAppraiser")
                 .cancel("provideListingDirections")
+                .cancel("reviewFailedFE")
                 .build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
@@ -109,6 +110,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByTcwPostHearing")
                 .cancel("prepareHearingAppraiser")
                 .cancel("provideListingDirections")
+                .cancel("reviewFailedFE")
                 .build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
@@ -149,6 +151,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByTcwPostHearing")
                 .cancel("prepareHearingAppraiser")
                 .cancel("provideListingDirections")
+                .cancel("reviewFailedFE")
                 .build(),
             event("confirmLapsed")
                 .cancel("reviewIncompleteAppeal")
@@ -221,6 +224,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("referredByAdminJudgePostHearing")
                 .cancel("prepareHearingAppraiser")
                 .cancel("provideListingDirections")
+                .cancel("reviewFailedFE")
                 .build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
@@ -354,6 +358,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(45));
+        assertThat(logic.getRules().size(), is(46));
     }
 }
