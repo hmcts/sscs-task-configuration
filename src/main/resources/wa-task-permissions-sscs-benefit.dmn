@@ -1090,33 +1090,6 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0e3o7rq">
-        <description>Standard CTSC permission</description>
-        <inputEntry id="UnaryTests_1kc55kf">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_09za0uf">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_199bn0p">
-          <text>"allocated-ctsc-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0phev3w">
-          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1yphz7g">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1bxxvr0">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vj5ioq">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_150sn0l">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_06439sc">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_1uojej9">
@@ -1249,60 +1222,6 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1cxn03s">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1wtxh4u">
-        <description>Standard CTSC permission with Cancel and CompleteOwn</description>
-        <inputEntry id="UnaryTests_0pqcwnw">
-          <text>"actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0pwxv75">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0kftsid">
-          <text>"ctsc"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1dhvrmb">
-          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0u45a86">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0e1gjh9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0jx62i2">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0kk50cn">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_03lo650">
-        <description>Standard CTSC permission with Cancel and CompleteOwn</description>
-        <inputEntry id="UnaryTests_04ntnv1">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0q8u23x">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_184o5eo">
-          <text>"challenged-access-ctsc"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_13gis82">
-          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0pscyhd">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1bzypyw">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1jwnwcc">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1srs7du">
           <text>false</text>
         </outputEntry>
       </rule>
