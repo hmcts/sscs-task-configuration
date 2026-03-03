@@ -105,12 +105,12 @@ tasks.register('tests') {
 
 checkstyle {
   maxWarnings = 0
-  toolVersion = '13.2.0'
+  toolVersion = '13.3.0'
   getConfigDirectory().set(new File(rootDir, 'config/checkstyle'))
 }
 
 pmd {
-  toolVersion = "7.21.0"
+  toolVersion = "7.22.0"
   sourceSets = [sourceSets.main]
   reportsDir = layout.buildDirectory.dir("reports/pmd").get().asFile
   // https://github.com/pmd/pmd/issues/876
@@ -244,7 +244,7 @@ dependencies {
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: springBoot.class.package.implementationVersion
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json', version: springBoot.class.package.implementationVersion
 
-  implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.8.15'
+  implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.8.16'
 
   implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: '8.0.0'
   implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '9.0'
