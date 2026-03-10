@@ -233,7 +233,7 @@ public class Permissions {
         "roleCategory", "JUDICIAL"
     );
 
-    public static List<Map<String, Object>> defaultCtscPermissions() {
+    public static List<Map<String, Object>> baseCtscPermissions() {
         return List.of(
             DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
             DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
@@ -258,7 +258,13 @@ public class Permissions {
             DEFAULT_APPRAISER_2_PERMISSIONS,
             DEFAULT_MEDICAL_PERMISSIONS,
             DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
-            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS
+        );
+    }
+
+    public static List<Map<String, Object>> defaultCtscPermissions() {
+        var defaultCtscPermissions = new java.util.ArrayList<>(baseCtscPermissions());
+        defaultCtscPermissions.addAll(List.of(
             Map.of(
                 "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign",
@@ -284,7 +290,8 @@ public class Permissions {
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             )
-        );
+        ));
+        return  defaultCtscPermissions;
     }
 
     public static List<Map<String, Object>> defaultAdminCaseWorkerPermissions() {
@@ -342,31 +349,8 @@ public class Permissions {
     }
 
     public static List<Map<String, Object>> defaultCtscPermissionsWithCompleteOwn() {
-        return List.of(
-            DEFAULT_CASE_ALLOCATOR_PERMISSIONS,
-            DEFAULT_TASK_SUPERVISOR_PERMISSIONS,
-            DEFAULT_ALLOCATED_CASEWORKER_PERMISSIONS,
-            DEFAULT_TRIBUNAL_CASEWORKER_PERMISSIONS,
-            DEFAULT_LEGAL_OPS_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_INTERLOC_JUDGE_PERMISSIONS,
-            DEFAULT_HEARING_JUDGE_PERMISSIONS,
-            DEFAULT_JUDGE_PERMISSIONS,
-            DEFAULT_JUDICIARY_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_POST_HEARING_JUDGE_PERMISSIONS,
-            DEFAULT_ALLOCATED_ADMIN_CASEWORKER_PERMISSIONS,
-            DEFAULT_REGIONAL_CENTER_ADMIN_PERMISSIONS,
-            DEFAULT_REGIONAL_CENTER_TEAM_LEADER_PERMISSIONS,
-            DEFAULT_HEARING_CENTER_ADMIN_PERMISSIONS,
-            DEFAULT_HEARING_CENTER_TEAM_LEADER_PERMISSIONS,
-            DEFAULT_ADMIN_CHALLENGED_ACCESS_PERMISSIONS,
-            DEFAULT_TRIBUNAL_MEMBER_1_PERMISSIONS,
-            DEFAULT_TRIBUNAL_MEMBER_2_PERMISSIONS,
-            DEFAULT_TRIBUNAL_MEMBER_3_PERMISSIONS,
-            DEFAULT_APPRAISER_1_PERMISSIONS,
-            DEFAULT_APPRAISER_2_PERMISSIONS,
-            DEFAULT_MEDICAL_PERMISSIONS,
-            DEFAULT_FEE_PAID_MEDICAL_PERMISSIONS,
-            DEFAULT_LEADERSHIP_JUDGE_PERMISSIONS,
+        var defaultCtscPermissionsWithCompleteOwn = new java.util.ArrayList<>(baseCtscPermissions());
+        defaultCtscPermissionsWithCompleteOwn.addAll(List.of(
             Map.of(
                 "name", "allocated-ctsc-caseworker",
                 "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn",
@@ -392,7 +376,40 @@ public class Permissions {
                 "roleCategory", "CTSC",
                 "autoAssignable", false
             )
-        );
+        ));
+        return defaultCtscPermissionsWithCompleteOwn;
+    }
+
+    public static List<Map<String, Object>> defaultCtscPermissionsWithCompleteAndCancelOwn() {
+        var defaultCtscPermissionsWithCompleteAndCancelOwn = new java.util.ArrayList<>(baseCtscPermissions());
+        defaultCtscPermissionsWithCompleteAndCancelOwn.addAll(List.of(
+            Map.of(
+                "name", "allocated-ctsc-caseworker",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn",
+                "assignmentPriority", 1,
+                "roleCategory", "CTSC",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "ctsc",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn",
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "challenged-access-ctsc",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,CompleteOwn,CancelOwn",
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "ctsc-team-leader",
+                "value", "Read,Own,Claim,Unclaim,Manage,UnclaimAssign,Assign,Unassign,Cancel,Complete",
+                "roleCategory", "CTSC",
+                "autoAssignable", false
+            )
+        ));
+        return defaultCtscPermissionsWithCompleteAndCancelOwn;
     }
 
     public static List<Map<String, Object>> defaultAdminCaseWorkerPermissionsWithCompleteOwn() {
