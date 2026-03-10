@@ -1039,7 +1039,7 @@ else
       <rule id="DecisionRule_19cn0u8">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1vcxbly">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewAdminAction","issueOutstandingTranslation","reviewFtaDueDate","reviewListingError","reviewBfDate"</text>
+          <text>"reviewInformationRequested","issueOutstandingTranslation","reviewFtaDueDate","reviewBfDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hxa6gg">
           <text></text>
@@ -1066,7 +1066,7 @@ else
       <rule id="DecisionRule_0tnerzn">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_1p95dss">
-          <text>"reviewBilingualDocument","reviewValidAppeal","reviewRoboticFail","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewBilingualDocument","reviewValidAppeal","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sfltx1">
           <text></text>
@@ -1090,37 +1090,10 @@ else
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0e3o7rq">
-        <description>Standard CTSC permission</description>
-        <inputEntry id="UnaryTests_1kc55kf">
-          <text>"actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_09za0uf">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_199bn0p">
-          <text>"allocated-ctsc-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0phev3w">
-          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1yphz7g">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1bxxvr0">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vj5ioq">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_150sn0l">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_06439sc">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_1uojej9">
-          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewFtaResponse"</text>
+          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewFtaResponse","reviewIncompleteAppeal","reviewAdminAction","reviewListingError","reviewRoboticFail","actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p2b6fz">
           <text></text>
@@ -1147,7 +1120,7 @@ else
       <rule id="DecisionRule_0e3j7rq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_1kh84kf">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewListingError","reviewBfDate"</text>
+          <text>"reviewInformationRequested","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewBfDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0e41w3x">
           <text></text>
@@ -1174,7 +1147,7 @@ else
       <rule id="DecisionRule_0tckt4j">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_0wwks5r">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewAdminAction","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewListingError","reviewBfDate"</text>
+          <text>"reviewInformationRequested","issueOutstandingTranslation","requestInfoIncompleteApplication","reviewFtaDueDate","reviewBfDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0z9uv9q">
           <text></text>
@@ -1201,7 +1174,7 @@ else
       <rule id="DecisionRule_1ixi90a">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_070qpxe">
-          <text>"reviewBilingualDocument","reviewRoboticFail","reviewValidAppeal","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewBilingualDocument","reviewValidAppeal","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1mtnbmi">
           <text></text>
@@ -1228,7 +1201,7 @@ else
       <rule id="DecisionRule_1f9pv62">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_0zngexd">
-          <text>"reviewBilingualDocument","reviewRoboticFail","reviewValidAppeal","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
+          <text>"reviewBilingualDocument","reviewValidAppeal","shareRemittedDecision","shareRemadeDecision","shareRefusedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yrqcag">
           <text></text>
@@ -1252,64 +1225,10 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1wtxh4u">
-        <description>Standard CTSC permission with Cancel and CompleteOwn</description>
-        <inputEntry id="UnaryTests_0pqcwnw">
-          <text>"actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0pwxv75">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0kftsid">
-          <text>"ctsc"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1dhvrmb">
-          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0u45a86">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0e1gjh9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0jx62i2">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0kk50cn">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_03lo650">
-        <description>Standard CTSC permission with Cancel and CompleteOwn</description>
-        <inputEntry id="UnaryTests_04ntnv1">
-          <text>"actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0q8u23x">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_184o5eo">
-          <text>"challenged-access-ctsc"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_13gis82">
-          <text>"Read,Own,Claim,Unclaim,Manage,Cancel,UnclaimAssign,CompleteOwn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0pscyhd">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1bzypyw">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1jwnwcc">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1srs7du">
-          <text>false</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0n0jktj">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_02vbxbe">
-          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewFtaResponse"</text>
+          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewFtaResponse","reviewIncompleteAppeal","reviewAdminAction","reviewListingError","reviewRoboticFail","actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0us0gct">
           <text></text>
@@ -1336,7 +1255,7 @@ else
       <rule id="DecisionRule_0i02y1i">
         <description>Standard CTSC permission with CompleteOwn, CancelOwn</description>
         <inputEntry id="UnaryTests_1wlb5b2">
-          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewFtaResponse"</text>
+          <text>"reviewPostHearingNoticeforListingRequirements","reviewApplicationandAllocateJudge","reviewLateStatementofReasonsApplicationAndAllocateJudge","reviewFtaResponse","reviewIncompleteAppeal","reviewAdminAction","reviewListingError","reviewRoboticFail","actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0afwv2g">
           <text></text>
@@ -1363,7 +1282,7 @@ else
       <rule id="DecisionRule_0q51lrq">
         <description>Standard CTSC permission</description>
         <inputEntry id="UnaryTests_03ctmk1">
-          <text>"reviewIncompleteAppeal","reviewInformationRequested","reviewAdminAction","issueOutstandingTranslation","reviewFtaDueDate","reviewListingError","reviewBfDate"</text>
+          <text>"reviewInformationRequested","issueOutstandingTranslation","reviewFtaDueDate","reviewBfDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1tw6aye">
           <text></text>
@@ -1441,7 +1360,7 @@ else
       </rule>
       <rule id="DecisionRule_0z1t4ev">
         <inputEntry id="UnaryTests_0hn5txp">
-          <text>"reviewCorrectionApplicationAdmin","reviewRoboticFail","shareRemittedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin","reviewFtaResponse"</text>
+          <text>"reviewCorrectionApplicationAdmin","reviewRoboticFail","shareRemittedDecision","uploadHearingRecordingSORCTSC","reviewCorrectionApplicationAdmin","reviewFtaResponse","reviewIncompleteAppeal","reviewAdminAction","reviewListingError","actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0mhs9zz">
           <text></text>
@@ -1468,7 +1387,7 @@ else
       <rule id="DecisionRule_1x6hqz8">
         <description>Standard CTSC permission with CompleteOwn</description>
         <inputEntry id="UnaryTests_0qh8zyy">
-          <text>"reviewBilingualDocument","actionUnprocessedCorrespondence","actionUnprocessedCorrespondenceDormant","reviewValidAppeal","shareRemadeDecision","shareRefusedDecision"</text>
+          <text>"reviewBilingualDocument","reviewValidAppeal","shareRemadeDecision","shareRefusedDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0z6yehi">
           <text></text>
