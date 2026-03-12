@@ -253,11 +253,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Permissions.defaultPermissionsJudgesReviewTasks()
             ),
             Arguments.of(
-                "reviewPheRequestJudge",
-                "someCaseData",
-                Permissions.defaultPermissionsJudgesTasks()
-            ),
-            Arguments.of(
                 "reviewPostponementRequestJudge",
                 "someCaseData",
                 List.of(
