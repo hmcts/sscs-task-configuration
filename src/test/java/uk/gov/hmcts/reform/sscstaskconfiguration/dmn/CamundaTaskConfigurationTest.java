@@ -295,14 +295,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-                "reviewPheRequestJudge",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultJudicialTaskExpectations()
-                    .expectedValue(DESCRIPTION, buildDescription(EventLink.REVIEW_PHE_REQUEST,
-                                                                 EventLink.INTERLOC_REVIEW_STATE_AMEND), true)
-                    .build()
-            ),
-            Arguments.of(
                 "ftaNotProvidedAppointeeDetailsJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultJudicialTaskExpectations()
@@ -888,24 +880,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     .build()
             ),
             Arguments.of(
-                "referredByTcwPostHearing",
-                CaseDataBuilder.defaultCase().build(),
-                ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
-                    .expectedValue(MINOR_PRIORITY, "500", true)
-                    .expectedValue(MAJOR_PRIORITY, "5000", true)
-                    .expectedValue(WORK_TYPE, "post_hearing", true)
-                    .expectedValue(DESCRIPTION, buildDescription(EventLink.DECISION_ISSUED,
-                                                                 EventLink.DIRECTION_ISSUED,
-                                                                 EventLink.SEND_TO_ADMIN,
-                                                                 EventLink.INTERLOC_SEND_TO_TCW,
-                                                                 EventLink.STRUCK_OUT,
-                                                                 EventLink.WRITE_FINAL_DECISION,
-                                                                 EventLink.INTERLOC_REVIEW_STATE_AMEND), true)
-                    .expectedValue(ROLE_CATEGORY, "JUDICIAL", true)
-                    .expectedValue(DUE_DATE_INTERVAL_DAYS, "2", true)
-                    .build()
-            ),
-            Arguments.of(
                 "reviewLateStatementofReasonsApplicationAndAllocateJudge",
                 CaseDataBuilder.defaultCase().build(),
                 ConfigurationExpectationBuilder.defaultExpectationsPostHearings()
@@ -1028,7 +1002,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(84));
+        assertThat(logic.getRules().size(), is(83));
     }
 
     private void resultsMatch(List<Map<String, Object>> results, List<Map<String, Object>> expectation) {

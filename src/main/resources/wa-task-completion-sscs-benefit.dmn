@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.39.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
   <decision id="wa-task-completion-sscs-benefit" name="Task completion DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="613">
@@ -182,17 +182,6 @@
           <text>"reviewReinstatementRequestJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0uin319">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0d06llx">
-        <inputEntry id="UnaryTests_16nn4kn">
-          <text>"reviewPhmeRequest","interlocReviewStateAmend"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_14b5adl">
-          <text>"reviewPheRequestJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1micw2h">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -501,17 +490,6 @@
           <text>"referredByAdminJudgePostHearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02diar5">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0x0p42z">
-        <inputEntry id="UnaryTests_08ju9hi">
-          <text>"decisionIssued","directionIssued","sendToAdmin","interlocSendToTcw","writeFinalDecision","interlocReviewStateAmend"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_08j2e7u">
-          <text>"referredByTcwPostHearing"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0c5cmri">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

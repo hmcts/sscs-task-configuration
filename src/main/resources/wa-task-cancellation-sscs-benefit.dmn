@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.25.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
   <decision id="wa-task-cancellation-sscs-benefit" name="Task cancellation DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -314,35 +314,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1qngd2x">
           <text>"reviewReinstatementRequestJudge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_17gkhmc">
-        <inputEntry id="UnaryTests_07n5vyu">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0hntzw6">
-          <text>"voidCase",
-"appealWithdrawn",
-"appealDormant",
-"confirmLapsed",
-"struckOut",
-"issueFinalDecision",
-"decisionIssued"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0zn1d9u">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ckrdi0">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_00h9xqp">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0piu1ni">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0hde770">
-          <text>"reviewPheRequestJudge"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_109ovnc">
@@ -987,29 +958,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1ho4uwj">
           <text>"referredByAdminJudgePostHearing"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0g8wz3k">
-        <inputEntry id="UnaryTests_0s2fsn4">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1txtwbg">
-          <text>"voidCase", "appealWithdrawn", "appealDormant", "confirmLapsed", "issueFinalDecision", "decisionIssued"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0c08vlu">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0uujq1e">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1navibf">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1s40cma">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0w2qv2o">
-          <text>"referredByTcwPostHearing"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_03ks9y1">
