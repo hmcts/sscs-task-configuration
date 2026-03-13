@@ -392,10 +392,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("draftToNonCompliant")
                 .initiatesTask("reviewNonCompliantAppeal", "Review Non Compliant Appeal - LO", 2)
                 .build(),
-            event("updateNotListable")
-                .withCaseData("action", "reviewByTcw")
-                .initiatesTask("ftaNotProvidedAppointeeDetailsTcw", "FTA Not Provided Appointee Details - LO", 2)
-                .build(),
             eventWithState("sORRequest", "postHearing")
                 .withCaseData("sscsHearingRecordings", emptyList())
                 .initiatesTask("uploadHearingRecordingSORCTSC", "Upload Hearing Recording: SOR - CTSC", 2)
@@ -594,7 +590,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(80));
+        assertThat(logic.getRules().size(), is(79));
     }
 
     static Stream<Arguments> scenarioProviderDateDefaults() {

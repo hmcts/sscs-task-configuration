@@ -558,11 +558,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 Permissions.defaultPermissionsTcwTasks()
             ),
             Arguments.of(
-                "ftaNotProvidedAppointeeDetailsTcw",
-                "someCaseData",
-                Permissions.defaultPermissionsTcwTasks()
-            ),
-            Arguments.of(
                 "referredByAdminTcw",
                 "someCaseData",
                 List.of(
