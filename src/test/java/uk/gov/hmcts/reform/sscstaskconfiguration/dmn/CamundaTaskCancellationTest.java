@@ -70,6 +70,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareHearingAppraiser")
                 .cancel("provideListingDirections")
                 .cancel("actionUnprocessedCorrespondence")
+                .cancel("actionUnprocessedCorrespondenceDormant")
                 .build(),
             event("appealWithdrawn")
                 .cancel("reviewIncompleteAppeal")
@@ -111,6 +112,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareHearingAppraiser")
                 .cancel("provideListingDirections")
                 .cancel("actionUnprocessedCorrespondence")
+                .cancel("actionUnprocessedCorrespondenceDormant")
                 .build(),
             event("appealDormant")
                 .cancel("reviewIncompleteAppeal")
@@ -188,6 +190,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareHearingAppraiser")
                 .cancel("provideListingDirections")
                 .cancel("actionUnprocessedCorrespondence")
+                .cancel("actionUnprocessedCorrespondenceDormant")
                 .build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
@@ -226,6 +229,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareHearingAppraiser")
                 .cancel("provideListingDirections")
                 .cancel("actionUnprocessedCorrespondence")
+                .cancel("actionUnprocessedCorrespondenceDormant")
                 .build(),
             event("validSendToInterloc")
                 .cancel("reviewIncompleteAppeal")
@@ -359,6 +363,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(46));
+        assertThat(logic.getRules().size(), is(47));
     }
 }
