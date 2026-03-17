@@ -387,10 +387,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             event("draftToNonCompliant")
                 .initiatesTask("reviewNonCompliantAppeal", "Review Non Compliant Appeal - LO", 2)
                 .build(),
-            event("updateNotListable")
-                .withCaseData("action", "reviewByTcw")
-                .initiatesTask("ftaNotProvidedAppointeeDetailsTcw", "FTA Not Provided Appointee Details - LO", 2)
-                .build(),
             eventWithState("sORRequest", "postHearing")
                 .withCaseData("sscsHearingRecordings", emptyList())
                 .initiatesTask("uploadHearingRecordingSORCTSC", "Upload Hearing Recording: SOR - CTSC", 2)

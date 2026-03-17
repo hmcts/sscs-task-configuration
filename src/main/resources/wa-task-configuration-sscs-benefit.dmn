@@ -242,7 +242,7 @@ else ""</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1k28xtv">
-          <text>"ftaRequestTimeExtension","reviewFtaValidityChallenge","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence", "reviewNonCompliantAppeal", "ftaNotProvidedAppointeeDetailsTcw", "referredByAdminTcw","reviewSpecificAccessRequestLegalOps"</text>
+          <text>"ftaRequestTimeExtension","reviewFtaValidityChallenge","reviewPostponementRequestTCW", "referredToInterlocTCW","ftaResponseOverdue","referredByJudge","processAudioVideoEvidence", "reviewNonCompliantAppeal",  "referredByAdminTcw","reviewSpecificAccessRequestLegalOps"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0fq2vj2">
           <text>"roleCategory"</text>
@@ -954,27 +954,6 @@ else ""</text>
 "[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1lpozva">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1lsh72u">
-        <inputEntry id="UnaryTests_0wzom7q">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0j7nphs">
-          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0316sbr">
-          <text>"description"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0b12y7k">
-          <text>"[Issue directions notice](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/directionIssued)&lt;br/&gt;" +
-"[Issue interlocutory decision](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/decisionIssued)&lt;br/&gt;" +
-"[Send to admin](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/sendToAdmin)&lt;br/&gt;" +
-"[Send to Judge](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/tcwReferToJudge)&lt;br/&gt;" +
-"[Amend interloc review state](/case/SSCS/Benefit/${[CASE_REFERENCE]}/trigger/interlocReviewStateAmend)"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0kd45ij">
           <text>true</text>
         </outputEntry>
       </rule>

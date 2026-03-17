@@ -229,17 +229,6 @@
           <text>"Review Non Compliant Appeal - LO"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1vh77rd">
-        <inputEntry id="UnaryTests_1g958sb">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1y2ynva">
-          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07kjo1g">
-          <text>"FTA Not Provided Appointee Details - LO"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1qfxjh6">
         <inputEntry id="UnaryTests_0sykp2d">
           <text></text>
