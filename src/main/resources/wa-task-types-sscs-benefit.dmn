@@ -218,17 +218,6 @@
           <text>"Process Audio Video Evidence - LO"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1hmszte">
-        <inputEntry id="UnaryTests_1scvx0d">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_03bctce">
-          <text>"reviewPheRequestJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1lrzv4r">
-          <text>"Review PHE Request - Judge"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_17lksmc">
         <inputEntry id="UnaryTests_12o4emg">
           <text></text>
@@ -238,17 +227,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0fksfjc">
           <text>"Review Non Compliant Appeal - LO"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1vh77rd">
-        <inputEntry id="UnaryTests_1g958sb">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1y2ynva">
-          <text>"ftaNotProvidedAppointeeDetailsTcw"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07kjo1g">
-          <text>"FTA Not Provided Appointee Details - LO"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1qfxjh6">
@@ -282,17 +260,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_05kxoa5">
           <text>"Referred By TCW (Pre-hearing) - Judge"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1yd8qzy">
-        <inputEntry id="UnaryTests_0rehswi">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1a9wofp">
-          <text>"referredByTcwPostHearing"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ehm4zq">
-          <text>"Referred By TCW (Post-hearing) - Judge"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1jd1j13">
