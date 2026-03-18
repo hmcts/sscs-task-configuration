@@ -190,7 +190,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .cancel("prepareHearingAppraiser")
                 .cancel("provideListingDirections")
                 .cancel("actionUnprocessedCorrespondence")
-                .cancel("actionUnprocessedCorrespondenceDormant")
                 .build(),
             event("struckOut")
                 .cancel("reviewIncompleteAppeal")
