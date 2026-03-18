@@ -37,13 +37,13 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             eventAutoCompletesTasks("ftaCommunication","reviewIncompleteAppeal",BLANK),
             eventAutoCompletesTasks("caseUpdated","reviewIncompleteAppeal", BLANK),
             eventAutoCompletesTasks("interlocInformationReceived",
-                                    "reviewInformationRequested", "reviewAdminAction", BLANK),
+                                    "reviewAdminAction", BLANK),
             eventAutoCompletesTasks("validSendToInterloc",
-                                    "reviewInformationRequested", "reviewAdminAction", "reviewFtaDueDate",
+                                    "reviewAdminAction", "reviewFtaDueDate",
                                     "reviewConfidentialityRequest", "reviewReinstatementRequestJudge",
                                     "referredToInterlocJudge", "referredToInterlocTCW", "reviewBfDate", BLANK),
             eventAutoCompletesTasks("interlocSendToTcw",
-                                    "reviewInformationRequested", "reviewAdminAction",
+                                    "reviewAdminAction",
                                     "reviewUrgentHearingRequest", "reviewReinstatementRequestJudge",
                                     "referredByTcwPreHearing", "ftaNotProvidedAppointeeDetailsJudge",
                                     "referredByAdminJudgePreHearing", "referredToInterlocJudge", "reviewBfDate",
@@ -143,7 +143,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(46));
+        assertThat(logic.getRules().size(), is(44));
     }
 
     public static Arguments eventAutoCompletesTasks(String event, String... tasks) {
