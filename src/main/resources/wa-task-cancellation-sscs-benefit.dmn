@@ -1106,6 +1106,31 @@
           <text>"actionUnprocessedCorrespondence"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_00dyz6x">
+        <inputEntry id="UnaryTests_1p4m26g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p4se8c">
+          <text>"voidCase",
+"appealWithdrawn",
+"struckOut"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15siin9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0u63mui">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rtecgx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qkw9e8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bfumk3">
+          <text>"actionUnprocessedCorrespondenceDormant"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
