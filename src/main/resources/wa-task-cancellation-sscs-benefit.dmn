@@ -52,36 +52,6 @@
           <text>"reviewIncompleteAppeal"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_01khg43">
-        <inputEntry id="UnaryTests_1kryeuw">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0334dsw">
-          <text>"voidCase",
-"appealWithdrawn",
-"appealDormant",
-"confirmLapsed",
-"struckOut",
-"makeCaseUrgent",
-"readyToList",
-"decisionIssued"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1bjzm1a">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0jlts89">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0yyfcxh">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1qcft7w">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1eehncr">
-          <text>"reviewInformationRequested"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0ctfolu">
         <inputEntry id="UnaryTests_1gdbh3i">
           <text></text>

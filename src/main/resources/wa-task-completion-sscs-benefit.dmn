@@ -20,17 +20,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_19hzqdb">
-        <inputEntry id="UnaryTests_1i3a9vf">
-          <text>"interlocInformationReceived","validSendToInterloc","interlocSendToTcw"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1tsx1xn">
-          <text>"reviewInformationRequested"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_03cwskq">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0fapfny">
         <inputEntry id="UnaryTests_1kt3e2j">
           <text>"hmctsResponseReviewed"</text>
@@ -61,17 +50,6 @@
           <text>"reviewAdminAction"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0r044ge">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_15dt7j9">
-        <inputEntry id="UnaryTests_17sw41f">
-          <text>"actionFurtherEvidence"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_17yfh8o">
-          <text>"issueOutstandingTranslation"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1q66fiv">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
