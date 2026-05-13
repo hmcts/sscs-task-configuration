@@ -224,7 +224,7 @@ def versions = [
   junitPlatform   : '6.0.3',
   log4j           : '2.26.0',
   camunda         : '7.20.0',
-  tomcat          : '11.0.21'
+  tomcat          : '11.0.22'
 ]
 
 ext.libraries = [
