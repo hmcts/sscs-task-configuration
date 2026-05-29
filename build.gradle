@@ -223,7 +223,7 @@ def versions = [
   junit           : '6.1.0',
   junitPlatform   : '6.1.0',
   log4j           : '2.26.0',
-  camunda         : '7.20.0',
+  camunda         : '7.24.0',
   tomcat          : '11.0.22'
 ]
 
