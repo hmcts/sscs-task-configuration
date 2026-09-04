@@ -7,7 +7,7 @@ plugins {
   id 'org.springframework.boot' version '3.5.16'
   id 'com.github.ben-manes.versions' version '0.61.0'
   id 'org.owasp.dependencycheck' version '13.0.0'
-  id 'org.sonarqube' version '7.4.0.8496'
+  id 'org.sonarqube' version '7.5.0.8588'
   id 'info.solidsoft.pitest' version '1.19.0'
   id 'io.freefair.lombok' version '9.5.0'
 }
@@ -105,7 +105,7 @@ tasks.register('tests') {
 
 checkstyle {
   maxWarnings = 0
-  toolVersion = '14.0.0'
+  toolVersion = '14.1.0'
   getConfigDirectory().set(new File(rootDir, 'config/checkstyle'))
 }
 
@@ -256,7 +256,7 @@ dependencies {
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
 
   implementation group: 'org.camunda.bpm', name: 'camunda-external-task-client', version: versions.camunda
-  implementation group: 'org.pitest', name: 'pitest', version: '1.25.9'
+  implementation group: 'org.pitest', name: 'pitest', version: '1.30.0'
 
   implementation group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
   implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.5'
