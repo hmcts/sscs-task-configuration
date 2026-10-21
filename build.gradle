@@ -224,7 +224,7 @@ def versions = [
   junitPlatform   : '6.1.3',
   log4j           : '2.26.1',
   camunda         : '7.24.0',
-  tomcat          : '11.0.25'
+  tomcat          : '11.0.27'
 ]
 
 ext.libraries = [
@@ -244,7 +244,7 @@ dependencies {
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: springBoot.class.package.implementationVersion
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json', version: springBoot.class.package.implementationVersion
 
-  implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.9.0'
+  implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.9.1'
 
   implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: '8.0.0'
   implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '9.0'
@@ -273,7 +273,7 @@ dependencies {
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: versions.camunda
   testImplementation group: 'com.h2database', name: 'h2', version: '2.5.252'
   testImplementation group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
-  testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '6.0.1'
+  testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '6.2.0'
 
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath
